@@ -1,0 +1,1172 @@
+{
+  "timestamp": "2026-10-09T09:21:40.327Z",
+  "node": "v24.20.0",
+  "platform": "darwin arm64",
+  "cpu": "Apple M5 Max",
+  "repeats": 1,
+  "warmups": 0,
+  "iterations": 1,
+  "dependencies": {
+    "@babel/generator": "8.0.6",
+    "@babel/parser": "8.0.7",
+    "@babel/traverse": "8.0.7",
+    "@babel/types": "8.0.6",
+    "@phenomnomnominal/tsquery": "6.2.0",
+    "@swc/core": "1.16.13",
+    "@typescript-eslint/typescript-estree": "8.71.1",
+    "acorn": "8.19.0",
+    "acorn-walk": "8.3.5",
+    "ast-types": "0.16.3",
+    "astring": "1.9.0",
+    "esquery": "1.7.0",
+    "esrecurse": "4.3.0",
+    "estraverse": "5.3.0",
+    "estree-toolkit": "1.7.14",
+    "estree-util-visit": "2.0.0",
+    "estree-walker": "3.0.3",
+    "jscodeshift": "17.4.0",
+    "oxc-parser": "0.153.0",
+    "oxc-walker": "1.1.1",
+    "ts-morph": "28.0.0",
+    "typescript": "6.0.3",
+    "yuku-ast": "0.18.0",
+    "zimmerframe": "1.1.5"
+  },
+  "swcNext": {
+    "repository": "https://github.com/swc-project/swc-next",
+    "branch": "codex/js-ast-hooks",
+    "commit": "a20f5fa4755e52e9760d51c41a1f7a02ba3e3316",
+    "sha256": {
+      "vendor/swc-next/ast.js": "1e2badf9c742cb7b8dc7c582a240ad290213f8996bae22a991fd083b61a9df5a",
+      "vendor/swc-next/child-visitors.js": "43139c56481baec90bd1e4aa27d356185847c804dc4a2745b33176862e2dc1c3",
+      "vendor/swc-next/visitor-keys.js": "5e9aa3076a3beda6be1007e72202b3489f3e0b04793ee93c36095bdd6dad4a7f"
+    }
+  },
+  "runs": [
+    {
+      "id": "direct-ast",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.2552430000000783
+      ],
+      "setupMs": [
+        19.867961000000037
+      ],
+      "observedHeapMiB": 16.390090942382812,
+      "observedRssMiB": 86.8125,
+      "peakRssMiB": 88.6875,
+      "serverMemoryMiB": null,
+      "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "direct-ast",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        2.2673330000000647
+      ],
+      "setupMs": [
+        16.27275099999997
+      ],
+      "observedHeapMiB": 12.225173950195312,
+      "observedRssMiB": 81.9375,
+      "peakRssMiB": 87.21875,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "swc-next",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        2.5145820000000185
+      ],
+      "setupMs": [
+        20.163417999999965
+      ],
+      "observedHeapMiB": 15.986892700195312,
+      "observedRssMiB": 86.96875,
+      "peakRssMiB": 88.984375,
+      "serverMemoryMiB": null,
+      "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "swc-next",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.6318690000001226
+      ],
+      "setupMs": [
+        17.322626000000014
+      ],
+      "observedHeapMiB": 10.975059509277344,
+      "observedRssMiB": 78.78125,
+      "peakRssMiB": 82.640625,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "yuku-ast",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        2.971414000000024
+      ],
+      "setupMs": [
+        20.229455999999928
+      ],
+      "observedHeapMiB": 16.72216033935547,
+      "observedRssMiB": 88.359375,
+      "peakRssMiB": 90.390625,
+      "serverMemoryMiB": null,
+      "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "yuku-ast",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        2.0031649999999956
+      ],
+      "setupMs": [
+        17.41695900000009
+      ],
+      "observedHeapMiB": 14.796066284179688,
+      "observedRssMiB": 81.0625,
+      "peakRssMiB": 83.84375,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "estree-walker",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.7676670000000456
+      ],
+      "setupMs": [
+        20.602621
+      ],
+      "observedHeapMiB": 15.707275390625,
+      "observedRssMiB": 86.3125,
+      "peakRssMiB": 87.828125,
+      "serverMemoryMiB": null,
+      "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "estree-walker",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        2.3813369999999736
+      ],
+      "setupMs": [
+        17.565788000000005
+      ],
+      "observedHeapMiB": 10.56500244140625,
+      "observedRssMiB": 77.984375,
+      "peakRssMiB": 81.671875,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "oxc-walker",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.5257120000000128
+      ],
+      "setupMs": [
+        19.98020400000005
+      ],
+      "observedHeapMiB": 15.782508850097656,
+      "observedRssMiB": 86.5,
+      "peakRssMiB": 88.390625,
+      "serverMemoryMiB": null,
+      "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "oxc-walker",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        2.038620999999978
+      ],
+      "setupMs": [
+        16.957875000000044
+      ],
+      "observedHeapMiB": 14.034111022949219,
+      "observedRssMiB": 78.59375,
+      "peakRssMiB": 81.953125,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "oxc-visitor",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.8962470000000025
+      ],
+      "setupMs": [
+        20.036836999999963
+      ],
+      "observedHeapMiB": 16.155982971191406,
+      "observedRssMiB": 92.859375,
+      "peakRssMiB": 94.921875,
+      "serverMemoryMiB": null,
+      "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "oxc-visitor",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.0357480000000407
+      ],
+      "setupMs": [
+        17.317161999999954
+      ],
+      "observedHeapMiB": 11.146438598632812,
+      "observedRssMiB": 84.875,
+      "peakRssMiB": 85.390625,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "acorn-simple",
+      "kind": "original",
+      "status": "unsupported",
+      "filename": "packages/L4-Entry/app-flow-slides/src/entry/main/routes/layout.tsx",
+      "reason": "No walker function defined for node type JSXElement",
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "acorn-simple",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.4694190000000944
+      ],
+      "setupMs": [
+        17.16541200000004
+      ],
+      "observedHeapMiB": 10.037788391113281,
+      "observedRssMiB": 77.578125,
+      "peakRssMiB": 81.703125,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "acorn-recursive",
+      "kind": "original",
+      "status": "unsupported",
+      "filename": "packages/L4-Entry/app-flow-slides/src/entry/main/routes/layout.tsx",
+      "reason": "visitor[(override || node.type)] is not a function",
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "acorn-recursive",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        0.9782450000000225
+      ],
+      "setupMs": [
+        17.792285000000042
+      ],
+      "observedHeapMiB": 10.812660217285156,
+      "observedRssMiB": 78.25,
+      "peakRssMiB": 81.9375,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "acorn-full",
+      "kind": "original",
+      "status": "unsupported",
+      "filename": "packages/L4-Entry/app-flow-slides/src/entry/main/routes/layout.tsx",
+      "reason": "No walker function defined for node type JSXElement",
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "acorn-full",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.5821720000000425
+      ],
+      "setupMs": [
+        17.734501000000016
+      ],
+      "observedHeapMiB": 10.314186096191406,
+      "observedRssMiB": 85.421875,
+      "peakRssMiB": 86.328125,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "estraverse",
+      "kind": "original",
+      "status": "unsupported",
+      "filename": "packages/L4-Entry/app-flow-slides/src/entry/main/routes/layout.tsx",
+      "reason": "Unknown node type ParenthesizedExpression.",
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "estraverse",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        2.65104300000003
+      ],
+      "setupMs": [
+        17.724874999999997
+      ],
+      "observedHeapMiB": 11.483840942382812,
+      "observedRssMiB": 84.40625,
+      "peakRssMiB": 85.046875,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "esrecurse",
+      "kind": "original",
+      "status": "unsupported",
+      "filename": "packages/L4-Entry/app-flow-slides/src/entry/main/routes/layout.tsx",
+      "reason": "Unknown node type ParenthesizedExpression.",
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "esrecurse",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.3200799999999475
+      ],
+      "setupMs": [
+        17.346211999999923
+      ],
+      "observedHeapMiB": 13.959190368652344,
+      "observedRssMiB": 78.640625,
+      "peakRssMiB": 81.90625,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "estree-toolkit",
+      "kind": "original",
+      "status": "unsupported",
+      "filename": "packages/L3-Feature/desktop-foundation/native/src/service/local-file/search-worker-client.ts",
+      "reason": "Ordered output mismatch: expected 11 matches, received 10",
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "estree-toolkit",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        4.224799999999917
+      ],
+      "setupMs": [
+        18.30971099999995
+      ],
+      "observedHeapMiB": 17.0150146484375,
+      "observedRssMiB": 89.109375,
+      "peakRssMiB": 92.34375,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "estree-toolkit-scope",
+      "kind": "original",
+      "status": "unsupported",
+      "filename": "packages/L3-Feature/desktop-foundation/native/src/service/local-file/search-worker-client.ts",
+      "reason": "`identifierCrawlers.AssignmentPattern` is not implemented",
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "estree-toolkit-scope",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        8.636130999999992
+      ],
+      "setupMs": [
+        16.547043999999914
+      ],
+      "observedHeapMiB": 13.408554077148438,
+      "observedRssMiB": 88.078125,
+      "peakRssMiB": 91.609375,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "ast-types",
+      "kind": "original",
+      "status": "unsupported",
+      "filename": "packages/L3-Feature/business/lib-chat-biz-write/src/biz-component/docx-sdk-editor-v2/components/doc-toolbar/plugins/text-color/index.tsx",
+      "reason": "did not recognize object of type \"PropertyDefinition\"",
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "ast-types",
+      "kind": "javascript",
+      "status": "unsupported",
+      "filename": "packages/L3-Feature/business/lib-chat-biz-write/src/biz-component/docx-sdk-editor-v2/components/doc-toolbar/plugins/text-color/index.tsx",
+      "reason": "did not recognize object of type \"PropertyDefinition\"",
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "zimmerframe",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        2.26483199999997
+      ],
+      "setupMs": [
+        20.82066800000014
+      ],
+      "observedHeapMiB": 12.538108825683594,
+      "observedRssMiB": 90.46875,
+      "peakRssMiB": 91.96875,
+      "serverMemoryMiB": null,
+      "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "zimmerframe",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        2.1859540000000663
+      ],
+      "setupMs": [
+        16.50387900000004
+      ],
+      "observedHeapMiB": 13.297805786132812,
+      "observedRssMiB": 81.890625,
+      "peakRssMiB": 86.265625,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "jscodeshift",
+      "kind": "original",
+      "status": "unsupported",
+      "filename": "packages/L3-Feature/business/lib-chat-biz-write/src/biz-component/docx-sdk-editor-v2/components/doc-toolbar/plugins/text-color/index.tsx",
+      "reason": "did not recognize object of type \"PropertyDefinition\"",
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "jscodeshift",
+      "kind": "javascript",
+      "status": "unsupported",
+      "filename": "packages/L3-Feature/business/lib-chat-biz-write/src/biz-component/docx-sdk-editor-v2/components/doc-toolbar/plugins/text-color/index.tsx",
+      "reason": "did not recognize object of type \"PropertyDefinition\"",
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "esquery",
+      "kind": "original",
+      "status": "unsupported",
+      "filename": "packages/L3-Feature/desktop-foundation/native/src/service/local-file/search-worker-client.ts",
+      "reason": "Ordered output mismatch: expected 11 matches, received 10",
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "esquery",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        3.9290430000000214
+      ],
+      "setupMs": [
+        16.9929139999999
+      ],
+      "observedHeapMiB": 13.433296203613281,
+      "observedRssMiB": 84.609375,
+      "peakRssMiB": 88.171875,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "estree-util-visit",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        7.064580000000035
+      ],
+      "setupMs": [
+        20.605290999999994
+      ],
+      "observedHeapMiB": 21.69727325439453,
+      "observedRssMiB": 93.875,
+      "peakRssMiB": 93.875,
+      "serverMemoryMiB": null,
+      "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "estree-util-visit",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        10.214502000000053
+      ],
+      "setupMs": [
+        16.624376999999967
+      ],
+      "observedHeapMiB": 16.547019958496094,
+      "observedRssMiB": 85.890625,
+      "peakRssMiB": 89.875,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "typescript-eslint",
+      "kind": "original",
+      "status": "unsupported",
+      "filename": "packages/L3-Feature/business/lib-chat-biz-video/src/video-share/components/invalid-tips-area/index.tsx",
+      "reason": "Ordered output mismatch: expected 2 matches, received 0",
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "typescript-eslint",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.8853760000000932
+      ],
+      "setupMs": [
+        16.820041999999972
+      ],
+      "observedHeapMiB": 44.57402038574219,
+      "observedRssMiB": 167.859375,
+      "peakRssMiB": 173.640625,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "babel-types",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.8667490000000129
+      ],
+      "setupMs": [
+        21.438871000000077
+      ],
+      "observedHeapMiB": 16.421218872070312,
+      "observedRssMiB": 90.390625,
+      "peakRssMiB": 96.65625,
+      "serverMemoryMiB": null,
+      "astHash": "6fdf6316f366be3571f2b94469a1bb01519641f7ab05917e4aae3d1039d64fbc",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "Babel AST (not ESTree)"
+    },
+    {
+      "id": "babel-types",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.6381229999999078
+      ],
+      "setupMs": [
+        9.656539000000038
+      ],
+      "observedHeapMiB": 20.059242248535156,
+      "observedRssMiB": 100.84375,
+      "peakRssMiB": 107.140625,
+      "serverMemoryMiB": null,
+      "astHash": "b2062248d181a1f4b33bd649c0b74063134f33737d7d1d83aa9d75705f4a2b6b",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "Babel AST (not ESTree)"
+    },
+    {
+      "id": "babel-fast",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.6545430000000607
+      ],
+      "setupMs": [
+        21.773327999999978
+      ],
+      "observedHeapMiB": 15.288101196289062,
+      "observedRssMiB": 90.484375,
+      "peakRssMiB": 96.703125,
+      "serverMemoryMiB": null,
+      "astHash": "6fdf6316f366be3571f2b94469a1bb01519641f7ab05917e4aae3d1039d64fbc",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "Babel AST (not ESTree)"
+    },
+    {
+      "id": "babel-fast",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.3653719999999225
+      ],
+      "setupMs": [
+        9.500127999999975
+      ],
+      "observedHeapMiB": 19.052162170410156,
+      "observedRssMiB": 100.453125,
+      "peakRssMiB": 107.171875,
+      "serverMemoryMiB": null,
+      "astHash": "b2062248d181a1f4b33bd649c0b74063134f33737d7d1d83aa9d75705f4a2b6b",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "Babel AST (not ESTree)"
+    },
+    {
+      "id": "babel",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        14.722330999999983
+      ],
+      "setupMs": [
+        24.305449999999908
+      ],
+      "observedHeapMiB": 39.40625,
+      "observedRssMiB": 150.40625,
+      "peakRssMiB": 150.40625,
+      "serverMemoryMiB": null,
+      "astHash": "6fdf6316f366be3571f2b94469a1bb01519641f7ab05917e4aae3d1039d64fbc",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "Babel AST (not ESTree)"
+    },
+    {
+      "id": "babel",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        13.840162999999876
+      ],
+      "setupMs": [
+        18.58045800000002
+      ],
+      "observedHeapMiB": 31.322494506835938,
+      "observedRssMiB": 152.203125,
+      "peakRssMiB": 152.203125,
+      "serverMemoryMiB": null,
+      "astHash": "b2062248d181a1f4b33bd649c0b74063134f33737d7d1d83aa9d75705f4a2b6b",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "Babel AST (not ESTree)"
+    },
+    {
+      "id": "babel-no-scope",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        7.177957000000077
+      ],
+      "setupMs": [
+        21.79720700000007
+      ],
+      "observedHeapMiB": 33.398582458496094,
+      "observedRssMiB": 146.921875,
+      "peakRssMiB": 146.921875,
+      "serverMemoryMiB": null,
+      "astHash": "6fdf6316f366be3571f2b94469a1bb01519641f7ab05917e4aae3d1039d64fbc",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "Babel AST (not ESTree)"
+    },
+    {
+      "id": "babel-no-scope",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        4.046996000000007
+      ],
+      "setupMs": [
+        9.680580000000091
+      ],
+      "observedHeapMiB": 41.068084716796875,
+      "observedRssMiB": 145.84375,
+      "peakRssMiB": 145.84375,
+      "serverMemoryMiB": null,
+      "astHash": "b2062248d181a1f4b33bd649c0b74063134f33737d7d1d83aa9d75705f4a2b6b",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "Babel AST (not ESTree)"
+    },
+    {
+      "id": "swc-visitor",
+      "kind": "original",
+      "status": "unsupported",
+      "filename": "public-contract-fixture",
+      "reason": "Public contract fixture: ordered output differs from Babel",
+      "repeat": 0,
+      "ast": "SWC AST (not ESTree)"
+    },
+    {
+      "id": "swc-visitor",
+      "kind": "javascript",
+      "status": "unsupported",
+      "filename": "public-contract-fixture",
+      "reason": "Public contract fixture: ordered output differs from Babel",
+      "repeat": 0,
+      "ast": "SWC AST (not ESTree)"
+    },
+    {
+      "id": "typescript",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.1161189999999976
+      ],
+      "setupMs": [
+        12.089494999999943
+      ],
+      "observedHeapMiB": 23.28564453125,
+      "observedRssMiB": 150.65625,
+      "peakRssMiB": 152.5625,
+      "serverMemoryMiB": null,
+      "astHash": "909338f6407e0afed9a1bc6b52760e80250a24a9dbc09198d965f4ed26904a28",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "TypeScript 6 AST (not ESTree)"
+    },
+    {
+      "id": "typescript",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        0.9555800000000545
+      ],
+      "setupMs": [
+        9.780919000000125
+      ],
+      "observedHeapMiB": 20.370582580566406,
+      "observedRssMiB": 148.109375,
+      "peakRssMiB": 150.046875,
+      "serverMemoryMiB": null,
+      "astHash": "564d2656303791a6a5ce359a5e111c4631d2c7c3b83357da25bd6e85ca242f02",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "TypeScript 6 AST (not ESTree)"
+    },
+    {
+      "id": "tsquery",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        11.526370999999841
+      ],
+      "setupMs": [
+        12.579999999999984
+      ],
+      "observedHeapMiB": 39.94189453125,
+      "observedRssMiB": 195.453125,
+      "peakRssMiB": 195.453125,
+      "serverMemoryMiB": null,
+      "astHash": "909338f6407e0afed9a1bc6b52760e80250a24a9dbc09198d965f4ed26904a28",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "TypeScript 6 AST (not ESTree)"
+    },
+    {
+      "id": "tsquery",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        8.703294999999855
+      ],
+      "setupMs": [
+        12.980125999999984
+      ],
+      "observedHeapMiB": 35.297828674316406,
+      "observedRssMiB": 196.03125,
+      "peakRssMiB": 196.03125,
+      "serverMemoryMiB": null,
+      "astHash": "564d2656303791a6a5ce359a5e111c4631d2c7c3b83357da25bd6e85ca242f02",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "TypeScript 6 AST (not ESTree)"
+    },
+    {
+      "id": "ts-morph",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        17.52650100000011
+      ],
+      "setupMs": [
+        17.16191299999994
+      ],
+      "observedHeapMiB": 60.97358703613281,
+      "observedRssMiB": 225.421875,
+      "peakRssMiB": 225.421875,
+      "serverMemoryMiB": null,
+      "astHash": "909338f6407e0afed9a1bc6b52760e80250a24a9dbc09198d965f4ed26904a28",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "TypeScript AST (not ESTree)"
+    },
+    {
+      "id": "ts-morph",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        15.095793999999984
+      ],
+      "setupMs": [
+        15.285000999999994
+      ],
+      "observedHeapMiB": 51.32593536376953,
+      "observedRssMiB": 224.984375,
+      "peakRssMiB": 224.984375,
+      "serverMemoryMiB": null,
+      "astHash": "564d2656303791a6a5ce359a5e111c4631d2c7c3b83357da25bd6e85ca242f02",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "TypeScript AST (not ESTree)"
+    },
+    {
+      "id": "babel-business",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        17.805208000000135
+      ],
+      "setupMs": [
+        24.114005000000077
+      ],
+      "observedHeapMiB": 45.26996612548828,
+      "observedRssMiB": 156.421875,
+      "peakRssMiB": 156.421875,
+      "serverMemoryMiB": null,
+      "astHash": "287673a4fcc1b4da1d8be148028941ac430b9596f38c2d8a8c18a5bc4cff924a",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "Babel 7 AST (not ESTree)"
+    },
+    {
+      "id": "babel-business",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        18.085332000000022
+      ],
+      "setupMs": [
+        18.532035000000064
+      ],
+      "observedHeapMiB": 37.201438903808594,
+      "observedRssMiB": 161.515625,
+      "peakRssMiB": 161.515625,
+      "serverMemoryMiB": null,
+      "astHash": "13d0c95af96a2dfcca339ea6de4c0b4086eaf59f2c889f8004e766ab2ded939f",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "Babel 7 AST (not ESTree)"
+    },
+    {
+      "id": "babel-business-no-scope",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        5.497002000000009
+      ],
+      "setupMs": [
+        21.173451000000057
+      ],
+      "observedHeapMiB": 47.0855712890625,
+      "observedRssMiB": 145.59375,
+      "peakRssMiB": 145.59375,
+      "serverMemoryMiB": null,
+      "astHash": "287673a4fcc1b4da1d8be148028941ac430b9596f38c2d8a8c18a5bc4cff924a",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "Babel 7 AST (not ESTree)"
+    },
+    {
+      "id": "babel-business-no-scope",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        5.1279140000000325
+      ],
+      "setupMs": [
+        9.955793000000142
+      ],
+      "observedHeapMiB": 40.345375061035156,
+      "observedRssMiB": 141.78125,
+      "peakRssMiB": 141.796875,
+      "serverMemoryMiB": null,
+      "astHash": "13d0c95af96a2dfcca339ea6de4c0b4086eaf59f2c889f8004e766ab2ded939f",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "Babel 7 AST (not ESTree)"
+    },
+    {
+      "id": "babel-business-fast",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.750045000000057
+      ],
+      "setupMs": [
+        21.442790000000088
+      ],
+      "observedHeapMiB": 21.48889923095703,
+      "observedRssMiB": 122.578125,
+      "peakRssMiB": 129.765625,
+      "serverMemoryMiB": null,
+      "astHash": "287673a4fcc1b4da1d8be148028941ac430b9596f38c2d8a8c18a5bc4cff924a",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "Babel 7 AST (not ESTree)"
+    },
+    {
+      "id": "babel-business-fast",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.4501730000000492
+      ],
+      "setupMs": [
+        9.538505999999927
+      ],
+      "observedHeapMiB": 33.331451416015625,
+      "observedRssMiB": 130.296875,
+      "peakRssMiB": 138.109375,
+      "serverMemoryMiB": null,
+      "astHash": "13d0c95af96a2dfcca339ea6de4c0b4086eaf59f2c889f8004e766ab2ded939f",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "Babel 7 AST (not ESTree)"
+    }
+  ]
+}

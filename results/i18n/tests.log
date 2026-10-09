@@ -1,0 +1,44 @@
+✔ i18n direct-ast: nested strings, static keys, order, duplicates, non-matches and templates (5.208208ms)
+✔ i18n swc-next: nested strings, static keys, order, duplicates, non-matches and templates (1.750875ms)
+✔ i18n yuku-ast: nested strings, static keys, order, duplicates, non-matches and templates (2.811708ms)
+✔ i18n estree-walker: nested strings, static keys, order, duplicates, non-matches and templates (1.218208ms)
+✔ i18n oxc-walker: nested strings, static keys, order, duplicates, non-matches and templates (0.881625ms)
+✔ i18n oxc-visitor: nested strings, static keys, order, duplicates, non-matches and templates (3.796916ms)
+✔ i18n acorn-simple: nested strings, static keys, order, duplicates, non-matches and templates (0.802667ms)
+✔ i18n acorn-recursive: nested strings, static keys, order, duplicates, non-matches and templates (0.376167ms)
+✔ i18n acorn-full: nested strings, static keys, order, duplicates, non-matches and templates (0.731125ms)
+✔ i18n estraverse: nested strings, static keys, order, duplicates, non-matches and templates (1.039625ms)
+✔ i18n esrecurse: nested strings, static keys, order, duplicates, non-matches and templates (0.691625ms)
+✔ i18n estree-toolkit: nested strings, static keys, order, duplicates, non-matches and templates (3.894458ms)
+✔ i18n estree-toolkit-scope: nested strings, static keys, order, duplicates, non-matches and templates (0.68775ms)
+✔ i18n ast-types: nested strings, static keys, order, duplicates, non-matches and templates (14.921875ms)
+✔ i18n zimmerframe: nested strings, static keys, order, duplicates, non-matches and templates (1.019167ms)
+✔ i18n jscodeshift: nested strings, static keys, order, duplicates, non-matches and templates (18.619208ms)
+✔ i18n esquery: nested strings, static keys, order, duplicates, non-matches and templates (1.856666ms)
+✔ i18n estree-util-visit: nested strings, static keys, order, duplicates, non-matches and templates (0.617709ms)
+✔ i18n typescript-eslint: nested strings, static keys, order, duplicates, non-matches and templates (91.053708ms)
+✔ i18n babel-types: nested strings, static keys, order, duplicates, non-matches and templates (12.620375ms)
+✔ i18n babel-fast: nested strings, static keys, order, duplicates, non-matches and templates (0.624666ms)
+✔ i18n babel: nested strings, static keys, order, duplicates, non-matches and templates (11.418958ms)
+✔ i18n babel-no-scope: nested strings, static keys, order, duplicates, non-matches and templates (0.61475ms)
+✔ i18n swc-visitor: nested strings, static keys, order, duplicates, non-matches and templates (15.4505ms)
+✔ i18n typescript: nested strings, static keys, order, duplicates, non-matches and templates (27.724125ms)
+✔ i18n tsquery: nested strings, static keys, order, duplicates, non-matches and templates (3.106083ms)
+✔ i18n ts-morph: nested strings, static keys, order, duplicates, non-matches and templates (82.809ms)
+✔ i18n swc-next: TS literal types and JSX attributes (0.456375ms)
+✔ i18n yuku-ast: TS literal types and JSX attributes (0.103459ms)
+✔ i18n oxc-walker: TS literal types and JSX attributes (0.077708ms)
+✔ i18n oxc-visitor: TS literal types and JSX attributes (0.1185ms)
+✔ i18n babel: TS literal types and JSX attributes (1.021667ms)
+✔ i18n babel-fast: TS literal types and JSX attributes (0.218125ms)
+✔ i18n typescript: TS literal types and JSX attributes (0.649625ms)
+✔ i18n tsquery: TS literal types and JSX attributes (0.210708ms)
+✔ i18n ts-morph: TS literal types and JSX attributes (0.922625ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 353.567209

@@ -10,7 +10,7 @@ if(chart.status!==0)throw new Error('Chart generation failed. Install scripts/re
 const data=JSON.parse(readFileSync(new URL('results/latest.json',root)));
 const env=data.environment, commit=data.provenance.commit;
 writeFileSync(new URL('results/latest.md',root),report(data).markdown);
-writeFileSync(new URL('README.md',root),`# JavaScript Visitor Benchmark
+const styledReadme = `# JavaScript Visitor Benchmark
 
 Compare ${data.variants.length} JavaScript AST traversal and editing implementations using a styled-components \`displayName\` / \`componentId\` transform.
 
@@ -70,8 +70,9 @@ This is a focused config-injection workload, **not the complete styled-component
 SWC Next is pinned to [\`${commit.slice(0,7)}\`](https://github.com/swc-project/swc-next/commit/${commit}) on \`${data.provenance.branch}\`. The default \`npm run bench\` refreshes this snapshot automatically. Use \`npm run bench:pinned\` to explicitly reuse it offline.
 
 Presentation inspired by [Native ECMAScript Parser Benchmark](https://github.com/yuku-toolchain/ecmascript-parser-benchmark-native).
-`);
+`;
+writeFileSync(new URL('docs/styled-components.md', root), styledReadme.replaceAll('](charts/', '](../charts/').replaceAll('](results/', '](../results/').replaceAll('](src/', '](../src/').replaceAll('](docs/methodology.md)', '](methodology.md)'));
 function files(dir){return readdirSync(new URL(dir,root),{withFileTypes:true}).flatMap(x=>x.isDirectory()?files(`${dir}/${x.name}`):[`${dir}/${x.name}`]);}
 const names=['package.json','package-lock.json',...files('src'),...files('scripts'),...files('vendor')];
 writeFileSync(new URL('results/source-manifest.json',root),JSON.stringify(Object.fromEntries(names.sort().map(name=>[name,createHash('sha256').update(readFileSync(new URL(name,root))).digest('hex')])),null,2)+'\n');
-console.log('Updated README.md, charts/, results/latest.md and source-manifest.json.');
+console.log('Updated docs/styled-components.md, charts/, results/latest.md and source-manifest.json.');

@@ -53,3 +53,10 @@ export async function engine(id, kind) {
   }
   return { prepare, collect, snapshot };
 }
+
+export function businessDependencies() {
+  const root = process.env.FLOW_WEB_ROOT || '/Users/bytedance/Documents/codes/flow-web-monorepo';
+  const req = createRequire(resolve(root, 'packages/Infra/build/src/plugins/edenx/inline-i18n/rspack-plugin/loader/index.ts'));
+  const nested = createRequire(req.resolve('@babel/traverse'));
+  return { parser: req('@babel/parser/package.json').version, traverse: req('@babel/traverse/package.json').version, types: nested('@babel/types/package.json').version };
+}

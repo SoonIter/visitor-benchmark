@@ -2,11 +2,12 @@ import { spawnSync, execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import os from 'node:os';
 import { variants } from '../../src/i18n/registry.mjs';
+import { businessDependencies } from '../../src/i18n/engine.mjs';
 const quick = process.argv.includes('--quick');
 const validate = process.argv.includes('--validate');
 const repeats = validate || quick ? 1 : 3, warmups = validate ? 0 : quick ? 1 : 5, iterations = validate ? 1 : quick ? 3 : 12;
 const out = new URL(`../../results/i18n/${validate ? 'validation' : quick ? 'quick' : 'latest'}.json`, import.meta.url);
-const report = { benchmarkCommit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(), corpus: JSON.parse(readFileSync(new URL('../../docs/i18n/corpus.json', import.meta.url))), timestamp: new Date().toISOString(), node: process.version, platform: `${os.platform()} ${os.arch()}`, cpu: os.cpus()[0].model, repeats, warmups, iterations, dependencies: JSON.parse(readFileSync(new URL('../../package.json', import.meta.url))).dependencies, swcNext: JSON.parse(readFileSync(new URL('../../vendor/provenance.json', import.meta.url))), runs: [] };
+const report = { businessDependencies: businessDependencies(), benchmarkCommit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(), corpus: JSON.parse(readFileSync(new URL('../../docs/i18n/corpus.json', import.meta.url))), timestamp: new Date().toISOString(), node: process.version, platform: `${os.platform()} ${os.arch()}`, cpu: os.cpus()[0].model, repeats, warmups, iterations, dependencies: JSON.parse(readFileSync(new URL('../../package.json', import.meta.url))).dependencies, swcNext: JSON.parse(readFileSync(new URL('../../vendor/provenance.json', import.meta.url))), runs: [] };
 const excluded = new Set();
 for (let repeat = 0; repeat < repeats; repeat++) {
   let order = variants.slice(repeat * 7).concat(variants.slice(0, repeat * 7));

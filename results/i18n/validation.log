@@ -1,0 +1,61 @@
+1/1 original direct-ast: 1.255 ms
+1/1 javascript direct-ast: 2.267 ms
+1/1 original swc-next: 2.515 ms
+1/1 javascript swc-next: 1.632 ms
+1/1 original yuku-ast: 2.971 ms
+1/1 javascript yuku-ast: 2.003 ms
+1/1 original estree-walker: 1.768 ms
+1/1 javascript estree-walker: 2.381 ms
+1/1 original oxc-walker: 1.526 ms
+1/1 javascript oxc-walker: 2.039 ms
+1/1 original oxc-visitor: 1.896 ms
+1/1 javascript oxc-visitor: 1.036 ms
+1/1 original acorn-simple: No walker function defined for node type JSXElement
+1/1 javascript acorn-simple: 1.469 ms
+1/1 original acorn-recursive: visitor[(override || node.type)] is not a function
+1/1 javascript acorn-recursive: 0.978 ms
+1/1 original acorn-full: No walker function defined for node type JSXElement
+1/1 javascript acorn-full: 1.582 ms
+1/1 original estraverse: Unknown node type ParenthesizedExpression.
+1/1 javascript estraverse: 2.651 ms
+1/1 original esrecurse: Unknown node type ParenthesizedExpression.
+1/1 javascript esrecurse: 1.320 ms
+1/1 original estree-toolkit: Ordered output mismatch: expected 11 matches, received 10
+1/1 javascript estree-toolkit: 4.225 ms
+1/1 original estree-toolkit-scope: `identifierCrawlers.AssignmentPattern` is not implemented
+1/1 javascript estree-toolkit-scope: 8.636 ms
+1/1 original ast-types: did not recognize object of type "PropertyDefinition"
+1/1 javascript ast-types: did not recognize object of type "PropertyDefinition"
+1/1 original zimmerframe: 2.265 ms
+1/1 javascript zimmerframe: 2.186 ms
+1/1 original jscodeshift: did not recognize object of type "PropertyDefinition"
+1/1 javascript jscodeshift: did not recognize object of type "PropertyDefinition"
+1/1 original esquery: Ordered output mismatch: expected 11 matches, received 10
+1/1 javascript esquery: 3.929 ms
+1/1 original estree-util-visit: 7.065 ms
+1/1 javascript estree-util-visit: 10.215 ms
+1/1 original typescript-eslint: Ordered output mismatch: expected 2 matches, received 0
+1/1 javascript typescript-eslint: 1.885 ms
+1/1 original babel-types: 1.867 ms
+1/1 javascript babel-types: 1.638 ms
+1/1 original babel-fast: 1.655 ms
+1/1 javascript babel-fast: 1.365 ms
+1/1 original babel: 14.722 ms
+1/1 javascript babel: 13.840 ms
+1/1 original babel-no-scope: 7.178 ms
+1/1 javascript babel-no-scope: 4.047 ms
+1/1 original swc-visitor: Public contract fixture: ordered output differs from Babel
+1/1 javascript swc-visitor: Public contract fixture: ordered output differs from Babel
+1/1 original typescript: 1.116 ms
+1/1 javascript typescript: 0.956 ms
+1/1 original tsquery: 11.526 ms
+1/1 javascript tsquery: 8.703 ms
+1/1 original ts-morph: 17.527 ms
+1/1 javascript ts-morph: 15.096 ms
+1/1 original babel-business: 17.805 ms
+1/1 javascript babel-business: 18.085 ms
+1/1 original babel-business-no-scope: 5.497 ms
+1/1 javascript babel-business-no-scope: 5.128 ms
+1/1 original babel-business-fast: 1.750 ms
+1/1 javascript babel-business-fast: 1.450 ms
+Saved /Users/bytedance/Documents/codes/visitor-benchmark/results/i18n/validation.json
