@@ -12,7 +12,12 @@
     "fixtures": "node scripts/fixtures.mjs",
     "report": "node scripts/render.mjs",
     "sync:swc": "node scripts/sync-swc.mjs",
-    "bench:pinned": "node scripts/bench.mjs"
+    "bench:pinned": "node scripts/bench.mjs",
+    "i18n:prepare": "node scripts/i18n/prepare.mjs",
+    "i18n:validate": "node scripts/i18n/bench.mjs --validate",
+    "i18n:bench": "node scripts/sync-swc.mjs && node scripts/i18n/bench.mjs",
+    "i18n:quick": "node scripts/i18n/bench.mjs --quick",
+    "i18n:report": "node scripts/i18n/render.mjs"
   },
   "dependencies": {
     "@babel/generator": "8.0.6",
