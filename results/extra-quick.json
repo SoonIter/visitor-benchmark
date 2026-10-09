@@ -1,0 +1,344 @@
+{
+  "createdAt": "2026-10-09T08:08:46.683Z",
+  "config": {
+    "repetitions": 1,
+    "warmups": 2,
+    "iterations": 3,
+    "corpora": [
+      "dense",
+      "sparse"
+    ]
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpu": "Apple M5 Max",
+    "cpuCount": 18,
+    "totalMemoryGiB": 64,
+    "loadAverageAtStart": [
+      5.4375,
+      6.02685546875,
+      4.8564453125
+    ],
+    "loadAverageAtEnd": [
+      5.4375,
+      6.02685546875,
+      4.8564453125
+    ]
+  },
+  "dependencies": {
+    "@babel/generator": "8.0.6",
+    "@babel/parser": "8.0.7",
+    "@babel/traverse": "8.0.7",
+    "@babel/types": "8.0.6",
+    "@phenomnomnominal/tsquery": "6.2.0",
+    "@swc/core": "1.16.13",
+    "@typescript-eslint/typescript-estree": "8.71.1",
+    "acorn": "8.19.0",
+    "acorn-walk": "8.3.5",
+    "ast-types": "0.16.3",
+    "astring": "1.9.0",
+    "esquery": "1.7.0",
+    "esrecurse": "4.3.0",
+    "estraverse": "5.3.0",
+    "estree-toolkit": "1.7.14",
+    "estree-util-visit": "2.0.0",
+    "estree-walker": "3.0.3",
+    "jscodeshift": "17.4.0",
+    "oxc-parser": "0.153.0",
+    "oxc-walker": "1.1.1",
+    "ts-morph": "28.0.0",
+    "typescript": "6.0.3",
+    "yuku-ast": "0.18.0",
+    "zimmerframe": "1.1.5"
+  },
+  "provenance": {
+    "repository": "https://github.com/swc-project/swc-next",
+    "sha256": {
+      "vendor/swc-next/visitor-keys.js": "5e9aa3076a3beda6be1007e72202b3489f3e0b04793ee93c36095bdd6dad4a7f",
+      "vendor/swc-next/ast.js": "e8d7c891ec8e732a1093db0f3480aec6eb49f21501da332bed53ba9d0d88e50a"
+    },
+    "commit": "d23a0a6880ce4dd66fb49a5a04d45f7616e4d20b",
+    "branch": "codex/js-ast-hooks"
+  },
+  "variants": [
+    {
+      "id": "estree-util-visit",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "generic leave hook, structural duck typing"
+    },
+    {
+      "id": "typescript-eslint",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "simpleTraverse; deferred edits because enter-only"
+    },
+    {
+      "id": "babel-types",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "note": "@babel/types.traverse, no NodePath"
+    },
+    {
+      "id": "babel-fast",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "note": "@babel/types.traverseFast; deferred edits"
+    }
+  ],
+  "runs": [
+    {
+      "id": "estree-util-visit",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        6.120041000000015,
+        4.973708000000016,
+        5.103207999999995
+      ],
+      "setupMs": [
+        12.803792999999985,
+        13.032666999999975,
+        13.107833999999997
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 148.40625,
+      "observedHeapMiB": 38.40699005126953,
+      "repetition": 0
+    },
+    {
+      "id": "typescript-eslint",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        2.100416000000024,
+        1.491333999999938,
+        1.465458999999953
+      ],
+      "setupMs": [
+        13.193250000000006,
+        13.207665999999989,
+        13.02066700000006
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 212.546875,
+      "observedHeapMiB": 56.55810546875,
+      "repetition": 0
+    },
+    {
+      "id": "babel-types",
+      "kind": "dense",
+      "ast": "Babel AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        0.6367079999999987,
+        0.651501000000053,
+        0.5764159999999663
+      ],
+      "setupMs": [
+        8.071751000000006,
+        4.32483400000001,
+        3.508958000000007
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 154.890625,
+      "observedHeapMiB": 49.02906036376953,
+      "repetition": 0
+    },
+    {
+      "id": "babel-fast",
+      "kind": "dense",
+      "ast": "Babel AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        0.634083000000004,
+        0.6632509999999741,
+        0.5903750000000514
+      ],
+      "setupMs": [
+        8.571791000000005,
+        4.523541000000023,
+        3.551458999999994
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 155,
+      "observedHeapMiB": 31.427841186523438,
+      "repetition": 0
+    },
+    {
+      "id": "estree-util-visit",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        10.543290999999982,
+        13.559668000000045,
+        9.76191700000004
+      ],
+      "setupMs": [
+        29.359334000000047,
+        27.135084000000006,
+        26.784167000000025
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 252.3125,
+      "observedHeapMiB": 54.13196563720703,
+      "repetition": 0
+    },
+    {
+      "id": "typescript-eslint",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        5.7135000000000105,
+        2.68874900000003,
+        2.374540999999965
+      ],
+      "setupMs": [
+        26.83483300000009,
+        27.384165999999937,
+        26.455542000000037
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 329.859375,
+      "observedHeapMiB": 116.3113784790039,
+      "repetition": 0
+    },
+    {
+      "id": "babel-types",
+      "kind": "sparse",
+      "ast": "Babel AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        1.3391239999999982,
+        1.2180840000000046,
+        1.3896669999999745
+      ],
+      "setupMs": [
+        13.232167000000004,
+        7.633209000000022,
+        5.880166000000031
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 190.234375,
+      "observedHeapMiB": 66.47970581054688,
+      "repetition": 0
+    },
+    {
+      "id": "babel-fast",
+      "kind": "sparse",
+      "ast": "Babel AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        1.2834159999999883,
+        1.0444999999999993,
+        1.1689569999999492
+      ],
+      "setupMs": [
+        13.120957000000004,
+        7.734292000000011,
+        5.611624000000035
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 189.0625,
+      "observedHeapMiB": 65.37480163574219,
+      "repetition": 0
+    }
+  ],
+  "order": [
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "estree-util-visit"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "typescript-eslint"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "babel-types"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "babel-fast"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "estree-util-visit"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "typescript-eslint"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "babel-types"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "babel-fast"
+    }
+  ],
+  "selectionNote": "Retains measurements for the currently listed variants from the original run; timings are unchanged."
+}

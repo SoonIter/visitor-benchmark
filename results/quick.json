@@ -1,0 +1,1568 @@
+{
+  "createdAt": "2026-10-09T08:07:39.464Z",
+  "config": {
+    "repetitions": 1,
+    "warmups": 2,
+    "iterations": 3,
+    "corpora": [
+      "dense",
+      "sparse"
+    ]
+  },
+  "environment": {
+    "node": "v24.20.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpu": "Apple M5 Max",
+    "cpuCount": 18,
+    "totalMemoryGiB": 64,
+    "loadAverageAtStart": [
+      6.6025390625,
+      6.248046875,
+      4.82568359375
+    ],
+    "loadAverageAtEnd": [
+      6.57666015625,
+      6.263671875,
+      4.86376953125
+    ]
+  },
+  "dependencies": {
+    "@babel/generator": "8.0.6",
+    "@babel/parser": "8.0.7",
+    "@babel/traverse": "8.0.7",
+    "@babel/types": "8.0.6",
+    "@phenomnomnominal/tsquery": "6.2.0",
+    "@swc/core": "1.16.13",
+    "@typescript-eslint/typescript-estree": "8.71.1",
+    "acorn": "8.19.0",
+    "acorn-walk": "8.3.5",
+    "ast-types": "0.16.3",
+    "astring": "1.9.0",
+    "esquery": "1.7.0",
+    "esrecurse": "4.3.0",
+    "estraverse": "5.3.0",
+    "estree-toolkit": "1.7.14",
+    "estree-util-visit": "2.0.0",
+    "estree-walker": "3.0.3",
+    "jscodeshift": "17.4.0",
+    "oxc-parser": "0.153.0",
+    "oxc-walker": "1.1.1",
+    "ts-morph": "28.0.0",
+    "typescript": "6.0.3",
+    "yuku-ast": "0.18.0",
+    "zimmerframe": "1.1.5"
+  },
+  "provenance": {
+    "repository": "https://github.com/swc-project/swc-next",
+    "sha256": {
+      "vendor/swc-next/visitor-keys.js": "5e9aa3076a3beda6be1007e72202b3489f3e0b04793ee93c36095bdd6dad4a7f",
+      "vendor/swc-next/ast.js": "e8d7c891ec8e732a1093db0f3480aec6eb49f21501da332bed53ba9d0d88e50a"
+    },
+    "commit": "d23a0a6880ce4dd66fb49a5a04d45f7616e4d20b",
+    "branch": "codex/js-ast-hooks"
+  },
+  "variants": [
+    {
+      "id": "swc-next",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "vendored current local snapshot"
+    },
+    {
+      "id": "yuku-ast",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "typed leave hook"
+    },
+    {
+      "id": "estree-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "generic leave hook"
+    },
+    {
+      "id": "oxc-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "generic leave hook"
+    },
+    {
+      "id": "oxc-visitor",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "oxc-parser Visitor on shared Acorn AST"
+    },
+    {
+      "id": "acorn-simple",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "acorn-walk.simple"
+    },
+    {
+      "id": "acorn-recursive",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "acorn-walk.recursive"
+    },
+    {
+      "id": "acorn-full",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "acorn-walk.full"
+    },
+    {
+      "id": "estraverse",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "estraverse.traverse; parent field edit"
+    },
+    {
+      "id": "esrecurse",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "Visitor.visitChildren"
+    },
+    {
+      "id": "estree-toolkit",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "scope disabled"
+    },
+    {
+      "id": "estree-toolkit-scope",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "scope enabled; extra analysis"
+    },
+    {
+      "id": "ast-types",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "also the traversal engine exported by recast"
+    },
+    {
+      "id": "zimmerframe",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "context.next then parent field edit"
+    },
+    {
+      "id": "jscodeshift",
+      "ast": "ESTree",
+      "group": "query",
+      "note": "collection find + forEach"
+    },
+    {
+      "id": "esquery",
+      "ast": "ESTree",
+      "group": "query",
+      "note": "selector query + manual edit"
+    },
+    {
+      "id": "babel",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "note": "default scope analysis"
+    },
+    {
+      "id": "babel-no-scope",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "note": "noScope:true"
+    },
+    {
+      "id": "swc-visitor",
+      "ast": "SWC AST (not ESTree)",
+      "group": "recursive",
+      "note": "legacy @swc/core/Visitor.js"
+    },
+    {
+      "id": "typescript",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "recursive",
+      "note": "transform + visitEachChild + factory"
+    },
+    {
+      "id": "tsquery",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "query",
+      "note": "query + transform replacement map"
+    },
+    {
+      "id": "ts-morph",
+      "ast": "TypeScript AST (not ESTree)",
+      "group": "wrapper",
+      "note": "SourceFile.transform + native factory"
+    }
+  ],
+  "runs": [
+    {
+      "id": "swc-next",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        2.837957999999986,
+        2.3767500000000155,
+        1.6307090000000244
+      ],
+      "setupMs": [
+        12.593874999999997,
+        13.894459000000012,
+        13.012624999999986
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 150.109375,
+      "observedHeapMiB": 48.10200500488281,
+      "repetition": 0
+    },
+    {
+      "id": "yuku-ast",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        2.5099179999999706,
+        1.3003750000000025,
+        1.212791999999979
+      ],
+      "setupMs": [
+        12.629165999999984,
+        14.274875000000009,
+        13.07770800000003
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 147.234375,
+      "observedHeapMiB": 32.89549255371094,
+      "repetition": 0
+    },
+    {
+      "id": "estree-walker",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        1.3801670000000144,
+        0.931999999999988,
+        0.8235410000000343
+      ],
+      "setupMs": [
+        13.021374999999992,
+        13.800666000000007,
+        14.257251000000025
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 149.125,
+      "observedHeapMiB": 43.376708984375,
+      "repetition": 0
+    },
+    {
+      "id": "oxc-walker",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        1.651709000000011,
+        0.8110839999999939,
+        0.7108750000000157
+      ],
+      "setupMs": [
+        12.76870799999999,
+        13.61024999999998,
+        13.910833999999994
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 147.984375,
+      "observedHeapMiB": 43.48442840576172,
+      "repetition": 0
+    },
+    {
+      "id": "oxc-visitor",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        1.0042929999999757,
+        0.9051240000000291,
+        0.83487599999998
+      ],
+      "setupMs": [
+        12.712499000000037,
+        13.902168000000017,
+        13.210706999999985
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 148.734375,
+      "observedHeapMiB": 33.19141387939453,
+      "repetition": 0
+    },
+    {
+      "id": "acorn-simple",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        1.4100409999999926,
+        1.2795839999999714,
+        1.2131660000000295
+      ],
+      "setupMs": [
+        12.42795900000003,
+        13.291914999999932,
+        14.277332999999999
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 147.890625,
+      "observedHeapMiB": 43.38639831542969,
+      "repetition": 0
+    },
+    {
+      "id": "acorn-recursive",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        1.1007079999999831,
+        0.9927500000000293,
+        1.029333999999949
+      ],
+      "setupMs": [
+        12.799000000000007,
+        13.55741599999999,
+        14.073624999999993
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 148.6875,
+      "observedHeapMiB": 43.37605285644531,
+      "repetition": 0
+    },
+    {
+      "id": "acorn-full",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        1.4335430000000287,
+        1.3560839999999814,
+        1.1682069999999953
+      ],
+      "setupMs": [
+        13.020540999999994,
+        13.790708999999964,
+        14.17262500000001
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 149.203125,
+      "observedHeapMiB": 43.44245147705078,
+      "repetition": 0
+    },
+    {
+      "id": "estraverse",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        2.156416000000007,
+        1.664749999999998,
+        1.163208999999938
+      ],
+      "setupMs": [
+        12.898249999999976,
+        13.836541000000011,
+        13.022041999999999
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 146.9375,
+      "observedHeapMiB": 35.992835998535156,
+      "repetition": 0
+    },
+    {
+      "id": "esrecurse",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        1.4540409999999753,
+        1.3598329999999805,
+        1.116832999999957
+      ],
+      "setupMs": [
+        12.819375999999977,
+        14.344082000000014,
+        13.192457999999988
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 147.828125,
+      "observedHeapMiB": 32.67768859863281,
+      "repetition": 0
+    },
+    {
+      "id": "estree-toolkit",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        5.029707999999971,
+        3.06954300000001,
+        2.2079569999999933
+      ],
+      "setupMs": [
+        13.06145800000003,
+        13.607709999999969,
+        13.586749000000026
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 148.625,
+      "observedHeapMiB": 47.899452209472656,
+      "repetition": 0
+    },
+    {
+      "id": "estree-toolkit-scope",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        8.448833000000008,
+        5.960459000000014,
+        5.463041000000061
+      ],
+      "setupMs": [
+        12.863749000000013,
+        13.457625999999976,
+        12.966916999999995
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 153.390625,
+      "observedHeapMiB": 39.641441345214844,
+      "repetition": 0
+    },
+    {
+      "id": "ast-types",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        10.839917000000014,
+        7.403959000000015,
+        7.187166000000019
+      ],
+      "setupMs": [
+        13.030791000000022,
+        13.346414999999979,
+        12.89050000000006
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 155.125,
+      "observedHeapMiB": 21.25475311279297,
+      "repetition": 0
+    },
+    {
+      "id": "zimmerframe",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        1.7372920000000107,
+        1.816915999999992,
+        1.25487499999997
+      ],
+      "setupMs": [
+        12.933251000000041,
+        13.636042999999972,
+        13.321083000000016
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 149.84375,
+      "observedHeapMiB": 37.681480407714844,
+      "repetition": 0
+    },
+    {
+      "id": "jscodeshift",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        7.0039580000000115,
+        7.915584000000024,
+        9.76204100000001
+      ],
+      "setupMs": [
+        13.406083999999993,
+        13.840666999999996,
+        13.265875000000051
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 288.546875,
+      "observedHeapMiB": 115.30430603027344,
+      "repetition": 0
+    },
+    {
+      "id": "esquery",
+      "kind": "dense",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        3.1410000000000053,
+        2.2624179999999683,
+        2.472042000000016
+      ],
+      "setupMs": [
+        12.857123999999999,
+        14.017292000000026,
+        13.821457999999978
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 149.984375,
+      "observedHeapMiB": 46.76417541503906,
+      "repetition": 0
+    },
+    {
+      "id": "babel",
+      "kind": "dense",
+      "ast": "Babel AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        6.750623999999988,
+        8.106791000000015,
+        5.611289999999997
+      ],
+      "setupMs": [
+        8.591124000000008,
+        4.703331999999989,
+        4.173208999999986
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 241.625,
+      "observedHeapMiB": 75.5947036743164,
+      "repetition": 0
+    },
+    {
+      "id": "babel-no-scope",
+      "kind": "dense",
+      "ast": "Babel AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        2.3686250000000086,
+        2.5655000000000143,
+        2.850083000000012
+      ],
+      "setupMs": [
+        8.522708999999992,
+        4.591249000000033,
+        4.65020899999999
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 262.1875,
+      "observedHeapMiB": 97.05060577392578,
+      "repetition": 0
+    },
+    {
+      "id": "swc-visitor",
+      "kind": "dense",
+      "ast": "SWC AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        0.8457089999999994,
+        0.7590000000000146,
+        0.6978760000000364
+      ],
+      "setupMs": [
+        5.237499999999983,
+        5.123041999999998,
+        5.42554100000001
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 163.09375,
+      "observedHeapMiB": 47.821014404296875,
+      "repetition": 0
+    },
+    {
+      "id": "typescript",
+      "kind": "dense",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        1.7031250000000568,
+        1.57325000000003,
+        1.8253760000000057
+      ],
+      "setupMs": [
+        3.9736660000000086,
+        4.892541999999992,
+        4.275084000000049
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 215.125,
+      "observedHeapMiB": 59.682952880859375,
+      "repetition": 0
+    },
+    {
+      "id": "tsquery",
+      "kind": "dense",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        5.065832999999856,
+        5.516624999999976,
+        4.392541999999992
+      ],
+      "setupMs": [
+        4.475209000000035,
+        4.9535829999999805,
+        3.306039999999996
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 252.609375,
+      "observedHeapMiB": 61.46058654785156,
+      "repetition": 0
+    },
+    {
+      "id": "ts-morph",
+      "kind": "dense",
+      "ast": "TypeScript AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        15.140791999999948,
+        12.010293000000104,
+        12.190250000000049
+      ],
+      "setupMs": [
+        3.767709000000025,
+        3.6866249999998786,
+        3.528998999999942
+      ],
+      "edits": 400,
+      "outputHash": "60da0f7808240ff1b1afafe04151a26499056993a6abc9c7ab6991b715e25821",
+      "inputHash": "3568c65c9fae4a10e8e58743171a84b7dab8e07f33c3562666b3ee23254ffbd0",
+      "sharedESTreeHash": "211faf857f5d0d17e85d28a124bf0b15bb799916a424e7927948f2e209158426",
+      "sourceBytes": 50056,
+      "files": 4,
+      "peakRssMiB": 302.875,
+      "observedHeapMiB": 117.86947631835938,
+      "repetition": 0
+    },
+    {
+      "id": "swc-next",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        4.379042999999996,
+        3.2244999999999777,
+        3.6415420000000154
+      ],
+      "setupMs": [
+        26.674960000000056,
+        31.038415999999984,
+        28.90358299999997
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 231.6875,
+      "observedHeapMiB": 77.07495880126953,
+      "repetition": 0
+    },
+    {
+      "id": "yuku-ast",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        3.791292999999996,
+        3.645793000000026,
+        2.6154999999999973
+      ],
+      "setupMs": [
+        29.608666999999997,
+        43.21900099999999,
+        36.88183299999997
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 219.375,
+      "observedHeapMiB": 51.09727478027344,
+      "repetition": 0
+    },
+    {
+      "id": "estree-walker",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        2.313707999999963,
+        1.834667999999965,
+        1.489917999999932
+      ],
+      "setupMs": [
+        27.27291600000001,
+        28.188334000000026,
+        26.893291999999974
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 215.265625,
+      "observedHeapMiB": 62.62419891357422,
+      "repetition": 0
+    },
+    {
+      "id": "oxc-walker",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        2.024416000000002,
+        1.4130409999999074,
+        1.7337499999999295
+      ],
+      "setupMs": [
+        29.061251000000027,
+        28.89862599999998,
+        29.543792000000053
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 218.65625,
+      "observedHeapMiB": 50.7537841796875,
+      "repetition": 0
+    },
+    {
+      "id": "oxc-visitor",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        1.6172500000000127,
+        1.6171670000001086,
+        1.7863750000000778
+      ],
+      "setupMs": [
+        27.187164999999936,
+        28.68154299999992,
+        29.683542000000045
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 218.9375,
+      "observedHeapMiB": 65.03404235839844,
+      "repetition": 0
+    },
+    {
+      "id": "acorn-simple",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        2.567417000000006,
+        2.2693760000000793,
+        2.058499999999981
+      ],
+      "setupMs": [
+        27.07945799999999,
+        27.441707999999977,
+        27.06354099999993
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 210.546875,
+      "observedHeapMiB": 50.8741455078125,
+      "repetition": 0
+    },
+    {
+      "id": "acorn-recursive",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        1.8588750000000402,
+        1.784667000000013,
+        1.7427900000000136
+      ],
+      "setupMs": [
+        27.38629099999997,
+        27.82958299999993,
+        29.67920799999996
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 214.25,
+      "observedHeapMiB": 62.625831604003906,
+      "repetition": 0
+    },
+    {
+      "id": "acorn-full",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        2.500666999999993,
+        2.2648339999999507,
+        2.2375410000000215
+      ],
+      "setupMs": [
+        26.80379099999999,
+        30.12787400000002,
+        27.32758400000006
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 212.140625,
+      "observedHeapMiB": 50.59333801269531,
+      "repetition": 0
+    },
+    {
+      "id": "estraverse",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        3.2777909999999792,
+        2.441041000000041,
+        2.796207999999922
+      ],
+      "setupMs": [
+        27.163916999999998,
+        27.465375000000023,
+        29.303334000000007
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 252.8125,
+      "observedHeapMiB": 60.796234130859375,
+      "repetition": 0
+    },
+    {
+      "id": "esrecurse",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        3.2267499999999814,
+        2.2651260000000093,
+        1.9982499999999845
+      ],
+      "setupMs": [
+        33.749708000000055,
+        31.808583,
+        27.175126000000034
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 218.96875,
+      "observedHeapMiB": 50.59405517578125,
+      "repetition": 0
+    },
+    {
+      "id": "estree-toolkit",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        6.284542000000016,
+        8.175082999999916,
+        4.829208999999935
+      ],
+      "setupMs": [
+        28.47875099999999,
+        26.739331999999933,
+        27.227790999999968
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 251.6875,
+      "observedHeapMiB": 54.42521667480469,
+      "repetition": 0
+    },
+    {
+      "id": "estree-toolkit-scope",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        20.01641600000002,
+        15.186999999999955,
+        15.418626000000017
+      ],
+      "setupMs": [
+        27.138083999999964,
+        28.60674900000015,
+        28.11337400000002
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 238.859375,
+      "observedHeapMiB": 67.85380554199219,
+      "repetition": 0
+    },
+    {
+      "id": "ast-types",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        28.126543000000026,
+        22.016832000000022,
+        18.420415999999875
+      ],
+      "setupMs": [
+        34.29079199999998,
+        31.90537400000011,
+        32.04062500000009
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 246.65625,
+      "observedHeapMiB": 71.73216247558594,
+      "repetition": 0
+    },
+    {
+      "id": "zimmerframe",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        2.7719579999999553,
+        2.2427490000000034,
+        3.987209000000064
+      ],
+      "setupMs": [
+        28.59129199999998,
+        27.51766699999996,
+        27.83887399999992
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 234.6875,
+      "observedHeapMiB": 82.42613220214844,
+      "repetition": 0
+    },
+    {
+      "id": "jscodeshift",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        15.971709000000033,
+        19.94233200000008,
+        16.98895900000008
+      ],
+      "setupMs": [
+        28.596916999999962,
+        28.75641799999994,
+        27.61137599999995
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 343.640625,
+      "observedHeapMiB": 149.94420623779297,
+      "repetition": 0
+    },
+    {
+      "id": "esquery",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        5.435332999999957,
+        3.5108750000000555,
+        3.4834169999999176
+      ],
+      "setupMs": [
+        28.930251000000027,
+        27.88179100000002,
+        27.972207999999966
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 249.75,
+      "observedHeapMiB": 61.71936798095703,
+      "repetition": 0
+    },
+    {
+      "id": "babel",
+      "kind": "sparse",
+      "ast": "Babel AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        15.797875000000005,
+        14.29762599999998,
+        12.527708000000018
+      ],
+      "setupMs": [
+        16.173959000000053,
+        10.585290999999984,
+        5.882749999999987
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 305.046875,
+      "observedHeapMiB": 133.7567138671875,
+      "repetition": 0
+    },
+    {
+      "id": "babel-no-scope",
+      "kind": "sparse",
+      "ast": "Babel AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        5.190166999999974,
+        5.236874000000057,
+        4.668291999999894
+      ],
+      "setupMs": [
+        14.771124999999984,
+        8.259250999999978,
+        6.352125000000001
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 300.734375,
+      "observedHeapMiB": 99.34002685546875,
+      "repetition": 0
+    },
+    {
+      "id": "swc-visitor",
+      "kind": "sparse",
+      "ast": "SWC AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        0.9981670000000236,
+        0.9348339999999666,
+        0.8639149999999631
+      ],
+      "setupMs": [
+        11.68662599999999,
+        12.151998999999932,
+        11.338583000000028
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 187.125,
+      "observedHeapMiB": 23.009674072265625,
+      "repetition": 0
+    },
+    {
+      "id": "typescript",
+      "kind": "sparse",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        1.6598340000000178,
+        1.4610829999999737,
+        1.4240830000000528
+      ],
+      "setupMs": [
+        8.872543000000036,
+        7.130085000000008,
+        6.752040999999963
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 306.71875,
+      "observedHeapMiB": 107.11091613769531,
+      "repetition": 0
+    },
+    {
+      "id": "tsquery",
+      "kind": "sparse",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        10.820750999999916,
+        10.595958000000053,
+        9.056208000000083
+      ],
+      "setupMs": [
+        8.02166699999998,
+        8.69845799999996,
+        8.712666000000013
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 325.4375,
+      "observedHeapMiB": 107.90564727783203,
+      "repetition": 0
+    },
+    {
+      "id": "ts-morph",
+      "kind": "sparse",
+      "ast": "TypeScript AST (not ESTree)",
+      "warmups": 2,
+      "iterations": 3,
+      "samplesMs": [
+        14.016543000000013,
+        12.10141800000008,
+        12.894333999999958
+      ],
+      "setupMs": [
+        9.535916999999984,
+        9.777957999999956,
+        11.200041999999996
+      ],
+      "edits": 80,
+      "outputHash": "d552943f7a9efab94dc7a59d88380147bbbeff4072ea767aebb2baa76d1cf2e1",
+      "inputHash": "f2424f3f0bc87c259fb86da7dc2ed58fea0d03eb3e8f8dac3152ef7a60da759e",
+      "sharedESTreeHash": "28e514c6806de9fca7c6d4ac312ed341f0880a3573cf1c81301b36088734cb93",
+      "sourceBytes": 83872,
+      "files": 4,
+      "peakRssMiB": 331.953125,
+      "observedHeapMiB": 145.46984100341797,
+      "repetition": 0
+    }
+  ],
+  "order": [
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "swc-next"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "yuku-ast"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "estree-walker"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "oxc-walker"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "oxc-visitor"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "acorn-simple"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "acorn-recursive"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "acorn-full"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "estraverse"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "esrecurse"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "estree-toolkit"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "estree-toolkit-scope"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "ast-types"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "zimmerframe"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "jscodeshift"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "esquery"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "babel"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "babel-no-scope"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "swc-visitor"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "typescript"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "tsquery"
+    },
+    {
+      "rep": 0,
+      "kind": "dense",
+      "id": "ts-morph"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "swc-next"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "yuku-ast"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "estree-walker"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "oxc-walker"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "oxc-visitor"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "acorn-simple"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "acorn-recursive"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "acorn-full"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "estraverse"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "esrecurse"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "estree-toolkit"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "estree-toolkit-scope"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "ast-types"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "zimmerframe"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "jscodeshift"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "esquery"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "babel"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "babel-no-scope"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "swc-visitor"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "typescript"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "tsquery"
+    },
+    {
+      "rep": 0,
+      "kind": "sparse",
+      "id": "ts-morph"
+    }
+  ],
+  "selectionNote": "Retains measurements for the currently listed variants from the original run; timings are unchanged."
+}
