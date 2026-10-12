@@ -28,7 +28,11 @@ A focused config-injection transform, **not the complete official plugin**. Dens
 
 ![Styled-components — shared ESTree](charts/styled-components/estree.svg)
 
-[Native AST chart](charts/styled-components/native.svg) · [All numbers and strategies](results/styled-components/latest.md)
+Native Babel, SWC and TypeScript ASTs are **not ESTree**; these results are not a same-AST walker ranking.
+
+![Styled-components — native ASTs](charts/styled-components/native.svg)
+
+[All numbers and strategies](results/styled-components/latest.md)
 
 ## 2. Remove debugger
 
@@ -36,7 +40,11 @@ Removes consecutive and nested debugger statements. Single statement slots (for 
 
 ![Remove debugger — shared ESTree](charts/remove-debugger/estree.svg)
 
-[Native AST chart](charts/remove-debugger/native.svg) · [All numbers and strategies](results/remove-debugger/latest.md)
+Native Babel, SWC and TypeScript ASTs are **not ESTree**; these results are not a same-AST walker ranking.
+
+![Remove debugger — native ASTs](charts/remove-debugger/native.svg)
+
+[All numbers and strategies](results/remove-debugger/latest.md)
 
 ## 3. Collect i18n strings
 
