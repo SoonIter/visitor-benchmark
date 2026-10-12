@@ -100,13 +100,13 @@ L 495.993264 96.768
     <g id="ytick_1">
      <g id="line2d_11"/>
      <g id="text_7">
-      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="251.2" y="121.134633" transform="rotate(-0 251.2 121.134633)">babel-fast</text>
+      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="251.2" y="121.134633" transform="rotate(-0 251.2 121.134633)">babel-types-traverse-fast</text>
      </g>
     </g>
     <g id="ytick_2">
      <g id="line2d_12"/>
      <g id="text_8">
-      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="251.2" y="155.413658" transform="rotate(-0 251.2 155.413658)">babel-types</text>
+      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="251.2" y="155.413658" transform="rotate(-0 251.2 155.413658)">babel-types-traverse</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -124,7 +124,7 @@ L 495.993264 96.768
     <g id="ytick_5">
      <g id="line2d_15"/>
      <g id="text_11">
-      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="251.2" y="258.250731" transform="rotate(-0 251.2 258.250731)">babel-no-scope</text>
+      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="251.2" y="258.250731" transform="rotate(-0 251.2 258.250731)">babel-traverse-no-scope</text>
      </g>
     </g>
     <g id="ytick_6">
@@ -136,7 +136,7 @@ L 495.993264 96.768
     <g id="ytick_7">
      <g id="line2d_17"/>
      <g id="text_13">
-      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="251.2" y="326.80878" transform="rotate(-0 251.2 326.80878)">babel</text>
+      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="251.2" y="326.80878" transform="rotate(-0 251.2 326.80878)">babel-traverse</text>
      </g>
     </g>
     <g id="ytick_8">
@@ -366,13 +366,13 @@ L 1042.888382 96.768
     <g id="ytick_9">
      <g id="line2d_31"/>
      <g id="text_30">
-      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="802.173793" y="121.134633" transform="rotate(-0 802.173793 121.134633)">babel-fast</text>
+      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="802.173793" y="121.134633" transform="rotate(-0 802.173793 121.134633)">babel-types-traverse-fast</text>
      </g>
     </g>
     <g id="ytick_10">
      <g id="line2d_32"/>
      <g id="text_31">
-      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="802.173793" y="155.413658" transform="rotate(-0 802.173793 155.413658)">babel-types</text>
+      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="802.173793" y="155.413658" transform="rotate(-0 802.173793 155.413658)">babel-types-traverse</text>
      </g>
     </g>
     <g id="ytick_11">
@@ -390,7 +390,7 @@ L 1042.888382 96.768
     <g id="ytick_13">
      <g id="line2d_35"/>
      <g id="text_34">
-      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="802.173793" y="258.250731" transform="rotate(-0 802.173793 258.250731)">babel-no-scope</text>
+      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="802.173793" y="258.250731" transform="rotate(-0 802.173793 258.250731)">babel-traverse-no-scope</text>
      </g>
     </g>
     <g id="ytick_14">
@@ -402,7 +402,7 @@ L 1042.888382 96.768
     <g id="ytick_15">
      <g id="line2d_37"/>
      <g id="text_36">
-      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="802.173793" y="326.80878" transform="rotate(-0 802.173793 326.80878)">babel</text>
+      <text style="fill: #172033; font: 10px 'DejaVu Sans'; text-anchor: end" x="802.173793" y="326.80878" transform="rotate(-0 802.173793 326.80878)">babel-traverse</text>
      </g>
     </g>
     <g id="ytick_16">

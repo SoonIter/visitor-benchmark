@@ -1,5 +1,5 @@
 import { implementations } from '../shared/implementations.mjs';
-const nativeRemove = new Set(['swc-next', 'yuku-ast', 'estree-walker', 'oxc-walker', 'estraverse', 'estree-toolkit', 'estree-toolkit-scope', 'ast-types', 'jscodeshift', 'babel', 'babel-no-scope']);
+const nativeRemove = new Set(['swc-next', 'yuku-ast', 'estree-walker', 'oxc-walker', 'estraverse', 'estree-toolkit', 'estree-toolkit-scope', 'ast-types', 'jscodeshift', 'babel-traverse', 'babel-traverse-no-scope']);
 export const variants = implementations.map(v => ({ ...v, note:
   nativeRemove.has(v.id) ? 'native remove for lists; replacement for single statement slots' :
   v.id === 'typescript' || v.id === 'tsquery' ? 'compiler transform; undefined for lists, EmptyStatement for single slots' :

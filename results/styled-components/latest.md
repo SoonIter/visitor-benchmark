@@ -38,13 +38,13 @@ Preparation, parsing, cloning, external printing, validation and disposal are ex
 
 | API | AST | Median ms | Process range ms | Peak RSS MiB | Observed heap MiB |
 | :-- | :-- | --: | :-- | --: | --: |
-| babel-fast | Babel AST (not ESTree) | 0.533 | 0.532–0.572 | 243.1 | 99.2 |
-| babel-types | Babel AST (not ESTree) | 0.573 | 0.550–0.582 | 237.8 | 100.7 |
+| babel-types-traverse-fast | Babel AST (not ESTree) | 0.533 | 0.532–0.572 | 243.1 | 99.2 |
+| babel-types-traverse | Babel AST (not ESTree) | 0.573 | 0.550–0.582 | 237.8 | 100.7 |
 | swc-visitor | SWC AST (not ESTree) | 0.613 | 0.596–0.697 | 234.4 | 84.6 |
 | typescript | TypeScript 6 AST (not ESTree) | 1.055 | 1.043–1.107 | 363.6 | 165.4 |
-| babel-no-scope | Babel AST (not ESTree) | 2.145 | 2.070–2.181 | 344.5 | 190.8 |
+| babel-traverse-no-scope | Babel AST (not ESTree) | 2.145 | 2.070–2.181 | 344.5 | 190.8 |
 | tsquery | TypeScript 6 AST (not ESTree) | 3.560 | 3.477–3.603 | 392.2 | 189.5 |
-| babel | Babel AST (not ESTree) | 4.645 | 4.631–4.761 | 351.9 | 176.3 |
+| babel-traverse | Babel AST (not ESTree) | 4.645 | 4.631–4.761 | 351.9 | 176.3 |
 | ts-morph | TypeScript AST (not ESTree) | 7.828 | 7.671–7.838 | 426.0 | 240.6 |
 
 ## sparse
@@ -80,13 +80,13 @@ Preparation, parsing, cloning, external printing, validation and disposal are ex
 | API | AST | Median ms | Process range ms | Peak RSS MiB | Observed heap MiB |
 | :-- | :-- | --: | :-- | --: | --: |
 | swc-visitor | SWC AST (not ESTree) | 0.773 | 0.709–0.804 | 298.1 | 117.2 |
-| babel-fast | Babel AST (not ESTree) | 0.972 | 0.889–1.039 | 284.9 | 116.6 |
-| babel-types | Babel AST (not ESTree) | 1.097 | 1.019–1.109 | 305.7 | 132.6 |
+| babel-types-traverse-fast | Babel AST (not ESTree) | 0.972 | 0.889–1.039 | 284.9 | 116.6 |
+| babel-types-traverse | Babel AST (not ESTree) | 1.097 | 1.019–1.109 | 305.7 | 132.6 |
 | typescript | TypeScript 6 AST (not ESTree) | 1.227 | 1.134–1.259 | 401.6 | 183.7 |
-| babel-no-scope | Babel AST (not ESTree) | 4.406 | 4.133–4.828 | 413.4 | 203.1 |
+| babel-traverse-no-scope | Babel AST (not ESTree) | 4.406 | 4.133–4.828 | 413.4 | 203.1 |
 | ts-morph | TypeScript AST (not ESTree) | 8.484 | 8.383–8.670 | 516.1 | 295.0 |
 | tsquery | TypeScript 6 AST (not ESTree) | 8.769 | 8.168–9.573 | 451.6 | 226.1 |
-| babel | Babel AST (not ESTree) | 10.831 | 10.288–11.963 | 415.0 | 210.9 |
+| babel-traverse | Babel AST (not ESTree) | 10.831 | 10.288–11.963 | 415.0 | 210.9 |
 
 ## Implementations
 
@@ -111,10 +111,10 @@ Preparation, parsing, cloning, external printing, validation and disposal are ex
 | esquery | selector query + manual edit |
 | estree-util-visit | generic leave hook, structural duck typing |
 | typescript-eslint | simpleTraverse; deferred edits because enter-only |
-| babel-types | @babel/types.traverse, no NodePath |
-| babel-fast | @babel/types.traverseFast; deferred edits |
-| babel | default scope analysis |
-| babel-no-scope | noScope:true |
+| babel-types-traverse | @babel/types.traverse, no NodePath |
+| babel-types-traverse-fast | @babel/types.traverseFast; deferred edits |
+| babel-traverse | default scope analysis |
+| babel-traverse-no-scope | noScope:true |
 | swc-visitor | legacy @swc/core/Visitor.js |
 | typescript | transform + visitEachChild + factory |
 | tsquery | query + transform replacement map |

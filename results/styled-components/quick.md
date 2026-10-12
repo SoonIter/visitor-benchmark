@@ -39,9 +39,9 @@ This measures a scoped displayName/componentId transform on generated JS modules
 |---|---|---:|---:|---:|---:|
 | swc-visitor | SWC AST (not ESTree) | 0.759 | 0.759–0.759 | 163.1 | 47.8 |
 | typescript | TypeScript 6 AST (not ESTree) | 1.703 | 1.703–1.703 | 215.1 | 59.7 |
-| babel-no-scope | Babel AST (not ESTree) | 2.566 | 2.566–2.566 | 262.2 | 97.1 |
+| babel-traverse-no-scope | Babel AST (not ESTree) | 2.566 | 2.566–2.566 | 262.2 | 97.1 |
 | tsquery | TypeScript 6 AST (not ESTree) | 5.066 | 5.066–5.066 | 252.6 | 61.5 |
-| babel | Babel AST (not ESTree) | 6.751 | 6.751–6.751 | 241.6 | 75.6 |
+| babel-traverse | Babel AST (not ESTree) | 6.751 | 6.751–6.751 | 241.6 | 75.6 |
 | ts-morph | TypeScript AST (not ESTree) | 12.190 | 12.190–12.190 | 302.9 | 117.9 |
 
 ## sparse
@@ -73,10 +73,10 @@ This measures a scoped displayName/componentId transform on generated JS modules
 |---|---|---:|---:|---:|---:|
 | swc-visitor | SWC AST (not ESTree) | 0.935 | 0.935–0.935 | 187.1 | 23.0 |
 | typescript | TypeScript 6 AST (not ESTree) | 1.461 | 1.461–1.461 | 306.7 | 107.1 |
-| babel-no-scope | Babel AST (not ESTree) | 5.190 | 5.190–5.190 | 300.7 | 99.3 |
+| babel-traverse-no-scope | Babel AST (not ESTree) | 5.190 | 5.190–5.190 | 300.7 | 99.3 |
 | tsquery | TypeScript 6 AST (not ESTree) | 10.596 | 10.596–10.596 | 325.4 | 107.9 |
 | ts-morph | TypeScript AST (not ESTree) | 12.894 | 12.894–12.894 | 332.0 | 145.5 |
-| babel | Babel AST (not ESTree) | 14.298 | 14.298–14.298 | 305.0 | 133.8 |
+| babel-traverse | Babel AST (not ESTree) | 14.298 | 14.298–14.298 | 305.0 | 133.8 |
 
 `direct-ast` is a task-specific top-level edit loop, with no visitor API or child-key table. It skips unrelated subtrees and does not implement general nested traversal.
 

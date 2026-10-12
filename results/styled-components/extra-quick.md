@@ -23,8 +23,8 @@ This measures a scoped displayName/componentId transform on generated JS modules
 
 | Implementation | AST | Median ms | Process range ms | Peak RSS MiB | Observed heap MiB |
 |---|---|---:|---:|---:|---:|
-| babel-fast | Babel AST (not ESTree) | 0.634 | 0.634–0.634 | 155.0 | 31.4 |
-| babel-types | Babel AST (not ESTree) | 0.637 | 0.637–0.637 | 154.9 | 49.0 |
+| babel-types-traverse-fast | Babel AST (not ESTree) | 0.634 | 0.634–0.634 | 155.0 | 31.4 |
+| babel-types-traverse | Babel AST (not ESTree) | 0.637 | 0.637–0.637 | 154.9 | 49.0 |
 
 ## sparse
 
@@ -39,8 +39,8 @@ This measures a scoped displayName/componentId transform on generated JS modules
 
 | Implementation | AST | Median ms | Process range ms | Peak RSS MiB | Observed heap MiB |
 |---|---|---:|---:|---:|---:|
-| babel-fast | Babel AST (not ESTree) | 1.169 | 1.169–1.169 | 189.1 | 65.4 |
-| babel-types | Babel AST (not ESTree) | 1.339 | 1.339–1.339 | 190.2 | 66.5 |
+| babel-types-traverse-fast | Babel AST (not ESTree) | 1.169 | 1.169–1.169 | 189.1 | 65.4 |
+| babel-types-traverse | Babel AST (not ESTree) | 1.339 | 1.339–1.339 | 190.2 | 66.5 |
 
 `direct-ast` is a task-specific top-level edit loop, with no visitor API or child-key table. It skips unrelated subtrees and does not implement general nested traversal.
 

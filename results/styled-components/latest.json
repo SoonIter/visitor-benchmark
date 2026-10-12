@@ -311,25 +311,25 @@
       "note": "simpleTraverse; deferred edits because enter-only"
     },
     {
-      "id": "babel-types",
+      "id": "babel-types-traverse",
       "ast": "Babel AST (not ESTree)",
       "group": "recursive",
       "note": "@babel/types.traverse, no NodePath"
     },
     {
-      "id": "babel-fast",
+      "id": "babel-types-traverse-fast",
       "ast": "Babel AST (not ESTree)",
       "group": "recursive",
       "note": "@babel/types.traverseFast; deferred edits"
     },
     {
-      "id": "babel",
+      "id": "babel-traverse",
       "ast": "Babel AST (not ESTree)",
       "group": "path",
       "note": "default scope analysis"
     },
     {
-      "id": "babel-no-scope",
+      "id": "babel-traverse-no-scope",
       "ast": "Babel AST (not ESTree)",
       "group": "path",
       "note": "noScope:true"
@@ -1501,7 +1501,7 @@
       "repetition": 0
     },
     {
-      "id": "babel-types",
+      "id": "babel-types-traverse",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -1561,7 +1561,7 @@
       "repetition": 0
     },
     {
-      "id": "babel-fast",
+      "id": "babel-types-traverse-fast",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -1621,7 +1621,7 @@
       "repetition": 0
     },
     {
-      "id": "babel",
+      "id": "babel-traverse",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -1681,7 +1681,7 @@
       "repetition": 0
     },
     {
-      "id": "babel-no-scope",
+      "id": "babel-traverse-no-scope",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -3121,7 +3121,7 @@
       "repetition": 0
     },
     {
-      "id": "babel-types",
+      "id": "babel-types-traverse",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -3181,7 +3181,7 @@
       "repetition": 0
     },
     {
-      "id": "babel-fast",
+      "id": "babel-types-traverse-fast",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -3241,7 +3241,7 @@
       "repetition": 0
     },
     {
-      "id": "babel",
+      "id": "babel-traverse",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -3301,7 +3301,7 @@
       "repetition": 0
     },
     {
-      "id": "babel-no-scope",
+      "id": "babel-traverse-no-scope",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -4381,7 +4381,7 @@
       "repetition": 1
     },
     {
-      "id": "babel-no-scope",
+      "id": "babel-traverse-no-scope",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -4441,7 +4441,7 @@
       "repetition": 1
     },
     {
-      "id": "babel",
+      "id": "babel-traverse",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -4501,7 +4501,7 @@
       "repetition": 1
     },
     {
-      "id": "babel-fast",
+      "id": "babel-types-traverse-fast",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -4561,7 +4561,7 @@
       "repetition": 1
     },
     {
-      "id": "babel-types",
+      "id": "babel-types-traverse",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -6001,7 +6001,7 @@
       "repetition": 1
     },
     {
-      "id": "babel-no-scope",
+      "id": "babel-traverse-no-scope",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -6061,7 +6061,7 @@
       "repetition": 1
     },
     {
-      "id": "babel",
+      "id": "babel-traverse",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -6121,7 +6121,7 @@
       "repetition": 1
     },
     {
-      "id": "babel-fast",
+      "id": "babel-types-traverse-fast",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -6181,7 +6181,7 @@
       "repetition": 1
     },
     {
-      "id": "babel-types",
+      "id": "babel-types-traverse",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -6901,7 +6901,7 @@
       "repetition": 2
     },
     {
-      "id": "babel-types",
+      "id": "babel-types-traverse",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -6961,7 +6961,7 @@
       "repetition": 2
     },
     {
-      "id": "babel-fast",
+      "id": "babel-types-traverse-fast",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -7021,7 +7021,7 @@
       "repetition": 2
     },
     {
-      "id": "babel",
+      "id": "babel-traverse",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -7081,7 +7081,7 @@
       "repetition": 2
     },
     {
-      "id": "babel-no-scope",
+      "id": "babel-traverse-no-scope",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -8521,7 +8521,7 @@
       "repetition": 2
     },
     {
-      "id": "babel-types",
+      "id": "babel-types-traverse",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -8581,7 +8581,7 @@
       "repetition": 2
     },
     {
-      "id": "babel-fast",
+      "id": "babel-types-traverse-fast",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -8641,7 +8641,7 @@
       "repetition": 2
     },
     {
-      "id": "babel",
+      "id": "babel-traverse",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -8701,7 +8701,7 @@
       "repetition": 2
     },
     {
-      "id": "babel-no-scope",
+      "id": "babel-traverse-no-scope",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 8,
@@ -10180,22 +10180,22 @@
     {
       "rep": 0,
       "kind": "dense",
-      "id": "babel-types"
+      "id": "babel-types-traverse"
     },
     {
       "rep": 0,
       "kind": "dense",
-      "id": "babel-fast"
+      "id": "babel-types-traverse-fast"
     },
     {
       "rep": 0,
       "kind": "dense",
-      "id": "babel"
+      "id": "babel-traverse"
     },
     {
       "rep": 0,
       "kind": "dense",
-      "id": "babel-no-scope"
+      "id": "babel-traverse-no-scope"
     },
     {
       "rep": 0,
@@ -10315,22 +10315,22 @@
     {
       "rep": 0,
       "kind": "sparse",
-      "id": "babel-types"
+      "id": "babel-types-traverse"
     },
     {
       "rep": 0,
       "kind": "sparse",
-      "id": "babel-fast"
+      "id": "babel-types-traverse-fast"
     },
     {
       "rep": 0,
       "kind": "sparse",
-      "id": "babel"
+      "id": "babel-traverse"
     },
     {
       "rep": 0,
       "kind": "sparse",
-      "id": "babel-no-scope"
+      "id": "babel-traverse-no-scope"
     },
     {
       "rep": 0,
@@ -10420,22 +10420,22 @@
     {
       "rep": 1,
       "kind": "sparse",
-      "id": "babel-no-scope"
+      "id": "babel-traverse-no-scope"
     },
     {
       "rep": 1,
       "kind": "sparse",
-      "id": "babel"
+      "id": "babel-traverse"
     },
     {
       "rep": 1,
       "kind": "sparse",
-      "id": "babel-fast"
+      "id": "babel-types-traverse-fast"
     },
     {
       "rep": 1,
       "kind": "sparse",
-      "id": "babel-types"
+      "id": "babel-types-traverse"
     },
     {
       "rep": 1,
@@ -10555,22 +10555,22 @@
     {
       "rep": 1,
       "kind": "dense",
-      "id": "babel-no-scope"
+      "id": "babel-traverse-no-scope"
     },
     {
       "rep": 1,
       "kind": "dense",
-      "id": "babel"
+      "id": "babel-traverse"
     },
     {
       "rep": 1,
       "kind": "dense",
-      "id": "babel-fast"
+      "id": "babel-types-traverse-fast"
     },
     {
       "rep": 1,
       "kind": "dense",
-      "id": "babel-types"
+      "id": "babel-types-traverse"
     },
     {
       "rep": 1,
@@ -10630,22 +10630,22 @@
     {
       "rep": 2,
       "kind": "dense",
-      "id": "babel-types"
+      "id": "babel-types-traverse"
     },
     {
       "rep": 2,
       "kind": "dense",
-      "id": "babel-fast"
+      "id": "babel-types-traverse-fast"
     },
     {
       "rep": 2,
       "kind": "dense",
-      "id": "babel"
+      "id": "babel-traverse"
     },
     {
       "rep": 2,
       "kind": "dense",
-      "id": "babel-no-scope"
+      "id": "babel-traverse-no-scope"
     },
     {
       "rep": 2,
@@ -10765,22 +10765,22 @@
     {
       "rep": 2,
       "kind": "sparse",
-      "id": "babel-types"
+      "id": "babel-types-traverse"
     },
     {
       "rep": 2,
       "kind": "sparse",
-      "id": "babel-fast"
+      "id": "babel-types-traverse-fast"
     },
     {
       "rep": 2,
       "kind": "sparse",
-      "id": "babel"
+      "id": "babel-traverse"
     },
     {
       "rep": 2,
       "kind": "sparse",
-      "id": "babel-no-scope"
+      "id": "babel-traverse-no-scope"
     },
     {
       "rep": 2,
@@ -10892,5 +10892,11 @@
       "kind": "sparse",
       "id": "estree-util-visit"
     }
-  ]
+  ],
+  "variantIdRenames": {
+    "babel": "babel-traverse",
+    "babel-no-scope": "babel-traverse-no-scope",
+    "babel-fast": "babel-types-traverse-fast",
+    "babel-types": "babel-types-traverse"
+  }
 }

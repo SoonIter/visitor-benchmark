@@ -39,12 +39,12 @@ Preparation, parsing, cloning, external printing, validation and disposal are ex
 | API | AST | Median ms | Process range ms | Peak RSS MiB | Observed heap MiB |
 | :-- | :-- | --: | :-- | --: | --: |
 | swc-visitor | SWC AST (not ESTree) | 0.262 | 0.237–0.285 | 116.8 | 26.7 |
-| babel-fast | Babel AST (not ESTree) | 0.280 | 0.277–0.287 | 153.4 | 45.2 |
-| babel-types | Babel AST (not ESTree) | 0.305 | 0.297–0.319 | 152.0 | 44.5 |
+| babel-types-traverse-fast | Babel AST (not ESTree) | 0.280 | 0.277–0.287 | 153.4 | 45.2 |
+| babel-types-traverse | Babel AST (not ESTree) | 0.305 | 0.297–0.319 | 152.0 | 44.5 |
 | typescript | TypeScript 6 AST (not ESTree) | 0.502 | 0.488–0.642 | 304.8 | 99.6 |
-| babel-no-scope | Babel AST (not ESTree) | 1.288 | 1.272–1.374 | 286.2 | 123.8 |
+| babel-traverse-no-scope | Babel AST (not ESTree) | 1.288 | 1.272–1.374 | 286.2 | 123.8 |
 | tsquery | TypeScript 6 AST (not ESTree) | 2.904 | 2.663–2.916 | 344.8 | 129.5 |
-| babel | Babel AST (not ESTree) | 3.177 | 3.127–3.415 | 303.9 | 146.6 |
+| babel-traverse | Babel AST (not ESTree) | 3.177 | 3.127–3.415 | 303.9 | 146.6 |
 | ts-morph | TypeScript AST (not ESTree) | 4.844 | 4.180–5.880 | 346.8 | 158.2 |
 
 ## sparse
@@ -81,11 +81,11 @@ Preparation, parsing, cloning, external printing, validation and disposal are ex
 | :-- | :-- | --: | :-- | --: | --: |
 | swc-visitor | SWC AST (not ESTree) | 0.482 | 0.475–0.512 | 236.0 | 78.3 |
 | typescript | TypeScript 6 AST (not ESTree) | 0.719 | 0.712–0.746 | 369.0 | 171.8 |
-| babel-fast | Babel AST (not ESTree) | 0.757 | 0.753–0.778 | 267.7 | 98.6 |
-| babel-types | Babel AST (not ESTree) | 0.814 | 0.790–0.829 | 248.6 | 91.5 |
-| babel-no-scope | Babel AST (not ESTree) | 2.486 | 2.455–2.506 | 351.4 | 179.3 |
+| babel-types-traverse-fast | Babel AST (not ESTree) | 0.757 | 0.753–0.778 | 267.7 | 98.6 |
+| babel-types-traverse | Babel AST (not ESTree) | 0.814 | 0.790–0.829 | 248.6 | 91.5 |
+| babel-traverse-no-scope | Babel AST (not ESTree) | 2.486 | 2.455–2.506 | 351.4 | 179.3 |
 | tsquery | TypeScript 6 AST (not ESTree) | 4.765 | 4.670–4.801 | 414.9 | 214.3 |
-| babel | Babel AST (not ESTree) | 6.248 | 6.030–6.517 | 370.1 | 199.0 |
+| babel-traverse | Babel AST (not ESTree) | 6.248 | 6.030–6.517 | 370.1 | 199.0 |
 | ts-morph | TypeScript AST (not ESTree) | 9.439 | 9.426–10.075 | 427.0 | 222.1 |
 
 ## Implementations
@@ -111,10 +111,10 @@ Preparation, parsing, cloning, external printing, validation and disposal are ex
 | esquery | query statement containers + manual slot edits |
 | estree-util-visit | native traversal + manual statement-slot edits |
 | typescript-eslint | native traversal + manual statement-slot edits |
-| babel-types | native traversal + manual statement-slot edits |
-| babel-fast | native traversal + manual statement-slot edits |
-| babel | native remove for lists; replacement for single statement slots |
-| babel-no-scope | native remove for lists; replacement for single statement slots |
+| babel-types-traverse | native traversal + manual statement-slot edits |
+| babel-types-traverse-fast | native traversal + manual statement-slot edits |
+| babel-traverse | native remove for lists; replacement for single statement slots |
+| babel-traverse-no-scope | native remove for lists; replacement for single statement slots |
 | swc-visitor | native traversal + manual statement-slot edits |
 | typescript | compiler transform; undefined for lists, EmptyStatement for single slots |
 | tsquery | compiler transform; undefined for lists, EmptyStatement for single slots |

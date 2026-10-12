@@ -76,13 +76,13 @@
       "note": "simpleTraverse; deferred edits because enter-only"
     },
     {
-      "id": "babel-types",
+      "id": "babel-types-traverse",
       "ast": "Babel AST (not ESTree)",
       "group": "recursive",
       "note": "@babel/types.traverse, no NodePath"
     },
     {
-      "id": "babel-fast",
+      "id": "babel-types-traverse-fast",
       "ast": "Babel AST (not ESTree)",
       "group": "recursive",
       "note": "@babel/types.traverseFast; deferred edits"
@@ -142,7 +142,7 @@
       "repetition": 0
     },
     {
-      "id": "babel-types",
+      "id": "babel-types-traverse",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 2,
@@ -168,7 +168,7 @@
       "repetition": 0
     },
     {
-      "id": "babel-fast",
+      "id": "babel-types-traverse-fast",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 2,
@@ -246,7 +246,7 @@
       "repetition": 0
     },
     {
-      "id": "babel-types",
+      "id": "babel-types-traverse",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 2,
@@ -272,7 +272,7 @@
       "repetition": 0
     },
     {
-      "id": "babel-fast",
+      "id": "babel-types-traverse-fast",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 2,
@@ -312,12 +312,12 @@
     {
       "rep": 0,
       "kind": "dense",
-      "id": "babel-types"
+      "id": "babel-types-traverse"
     },
     {
       "rep": 0,
       "kind": "dense",
-      "id": "babel-fast"
+      "id": "babel-types-traverse-fast"
     },
     {
       "rep": 0,
@@ -332,13 +332,19 @@
     {
       "rep": 0,
       "kind": "sparse",
-      "id": "babel-types"
+      "id": "babel-types-traverse"
     },
     {
       "rep": 0,
       "kind": "sparse",
-      "id": "babel-fast"
+      "id": "babel-types-traverse-fast"
     }
   ],
-  "selectionNote": "Retains measurements for the currently listed variants from the original run; timings are unchanged."
+  "selectionNote": "Retains measurements for the currently listed variants from the original run; timings are unchanged.",
+  "variantIdRenames": {
+    "babel": "babel-traverse",
+    "babel-no-scope": "babel-traverse-no-scope",
+    "babel-fast": "babel-types-traverse-fast",
+    "babel-types": "babel-types-traverse"
+  }
 }

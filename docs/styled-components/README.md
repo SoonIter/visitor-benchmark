@@ -28,7 +28,7 @@ Native Babel, SWC and TypeScript ASTs are **not ESTree**. Their chart includes A
 - Timing includes visitor construction, traversal, queries, scope work when enabled and all edits. Parsing, cloning, external printing and validation are excluded. ts-morph internal text synchronization stays timed.
 - The direct-ast baseline is specialized to this corpus. Other implementations use their package traversal; not all perform identical work, such as scope analysis or wrapper bookkeeping.
 - Every measured output is printed and reparsed, then compared structurally with independently authored expected source. Counts and cross-process input/output hashes must agree.
-- babel / babel-no-scope use @babel/traverse 8; babel-fast uses @babel/types.traverseFast; babel-types uses @babel/types.traverse. Exact versions are in raw results.
+- babel-traverse / babel-traverse-no-scope use @babel/traverse 8; babel-types-traverse-fast uses @babel/types.traverseFast; babel-types-traverse uses @babel/types.traverse. Exact versions are in raw results.
 - SWC Next: [a20f5fa](https://github.com/swc-project/swc-next/commit/a20f5fa4755e52e9760d51c41a1f7a02ba3e3316). One pinned implementation; no before/after variants.
 
 ## Reproduce

@@ -160,13 +160,13 @@
       "note": "selector query + manual edit"
     },
     {
-      "id": "babel",
+      "id": "babel-traverse",
       "ast": "Babel AST (not ESTree)",
       "group": "path",
       "note": "default scope analysis"
     },
     {
-      "id": "babel-no-scope",
+      "id": "babel-traverse-no-scope",
       "ast": "Babel AST (not ESTree)",
       "group": "path",
       "note": "noScope:true"
@@ -614,7 +614,7 @@
       "repetition": 0
     },
     {
-      "id": "babel",
+      "id": "babel-traverse",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 2,
@@ -640,7 +640,7 @@
       "repetition": 0
     },
     {
-      "id": "babel-no-scope",
+      "id": "babel-traverse-no-scope",
       "kind": "dense",
       "ast": "Babel AST (not ESTree)",
       "warmups": 2,
@@ -1186,7 +1186,7 @@
       "repetition": 0
     },
     {
-      "id": "babel",
+      "id": "babel-traverse",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 2,
@@ -1212,7 +1212,7 @@
       "repetition": 0
     },
     {
-      "id": "babel-no-scope",
+      "id": "babel-traverse-no-scope",
       "kind": "sparse",
       "ast": "Babel AST (not ESTree)",
       "warmups": 2,
@@ -1426,12 +1426,12 @@
     {
       "rep": 0,
       "kind": "dense",
-      "id": "babel"
+      "id": "babel-traverse"
     },
     {
       "rep": 0,
       "kind": "dense",
-      "id": "babel-no-scope"
+      "id": "babel-traverse-no-scope"
     },
     {
       "rep": 0,
@@ -1536,12 +1536,12 @@
     {
       "rep": 0,
       "kind": "sparse",
-      "id": "babel"
+      "id": "babel-traverse"
     },
     {
       "rep": 0,
       "kind": "sparse",
-      "id": "babel-no-scope"
+      "id": "babel-traverse-no-scope"
     },
     {
       "rep": 0,
@@ -1564,5 +1564,11 @@
       "id": "ts-morph"
     }
   ],
-  "selectionNote": "Retains measurements for the currently listed variants from the original run; timings are unchanged."
+  "selectionNote": "Retains measurements for the currently listed variants from the original run; timings are unchanged.",
+  "variantIdRenames": {
+    "babel": "babel-traverse",
+    "babel-no-scope": "babel-traverse-no-scope",
+    "babel-fast": "babel-types-traverse-fast",
+    "babel-types": "babel-types-traverse"
+  }
 }
