@@ -1,0 +1,804 @@
+[
+  {
+    "id": "acorn-fixed",
+    "samples": 11844,
+    "sampledMs": 3012.792,
+    "files": [
+      {
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "selfMs": 2639.925,
+        "selfPercent": 87.62387181059961
+      },
+      {
+        "file": "experiments/i18n-dispatch/cases.mjs",
+        "selfMs": 250.08,
+        "selfPercent": 8.300606215098819
+      },
+      {
+        "file": "src/i18n/acorn-base.mjs",
+        "selfMs": 87.996,
+        "selfPercent": 2.9207459393147617
+      },
+      {
+        "file": "experiments/i18n-dispatch/profile.mjs",
+        "selfMs": 14.665,
+        "selfPercent": 0.48675779808231034
+      },
+      {
+        "file": "node:inspector",
+        "selfMs": 12.5,
+        "selfPercent": 0.41489754354100783
+      },
+      {
+        "file": "(program)",
+        "selfMs": 5.542,
+        "selfPercent": 0.18394897490434123
+      },
+      {
+        "file": "(garbage collector)",
+        "selfMs": 1.292,
+        "selfPercent": 0.042883810100398566
+      },
+      {
+        "file": "node:internal/errors",
+        "selfMs": 0.542,
+        "selfPercent": 0.017989957487938097
+      },
+      {
+        "file": "node:internal/perf/performance",
+        "selfMs": 0.25,
+        "selfPercent": 0.008297950870820156
+      }
+    ],
+    "self": [
+      {
+        "function": "c",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 51,
+        "selfMs": 1536.725,
+        "selfPercent": 51.00667420784442
+      },
+      {
+        "function": "Literal",
+        "file": "experiments/i18n-dispatch/cases.mjs",
+        "line": 28,
+        "selfMs": 233.289,
+        "selfPercent": 7.743282642811054
+      },
+      {
+        "function": "skipThrough",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 180,
+        "selfMs": 194.26,
+        "selfPercent": 6.447839744662094
+      },
+      {
+        "function": "base.NewExpression.base.CallExpression",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 381,
+        "selfMs": 151.604,
+        "selfPercent": 5.032010175279276
+      },
+      {
+        "function": "base.MemberExpression",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 391,
+        "selfMs": 81.047,
+        "selfPercent": 2.690096096909445
+      },
+      {
+        "function": "property",
+        "file": "src/i18n/acorn-base.mjs",
+        "line": 5,
+        "selfMs": 63.582,
+        "selfPercent": 2.1104012490739485
+      },
+      {
+        "function": "base.ObjectExpression",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 332,
+        "selfMs": 60.71,
+        "selfPercent": 2.0150743894699668
+      },
+      {
+        "function": "base.Program.base.BlockStatement.base.StaticBlock",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 192,
+        "selfMs": 56.623,
+        "selfPercent": 1.8794194886337987
+      },
+      {
+        "function": "base.VariableDeclaration",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 268,
+        "selfMs": 52.998,
+        "selfPercent": 1.7590992010069066
+      },
+      {
+        "function": "base.ExpressionStatement.base.ParenthesizedExpression.base.ChainExpression",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 203,
+        "selfMs": 47.418,
+        "selfPercent": 1.5738889375702008
+      },
+      {
+        "function": "base.ReturnStatement.base.YieldExpression.base.AwaitExpression",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 232,
+        "selfMs": 46.917,
+        "selfPercent": 1.5572598440250771
+      },
+      {
+        "function": "base.BinaryExpression.base.LogicalExpression",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 368,
+        "selfMs": 45.915,
+        "selfPercent": 1.5240016569348298
+      },
+      {
+        "function": "base.Pattern",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 292,
+        "selfMs": 45.539,
+        "selfPercent": 1.5115215388251164
+      },
+      {
+        "function": "ignore",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 181,
+        "selfMs": 38.751,
+        "selfPercent": 1.2862155767806074
+      },
+      {
+        "function": "base.IfStatement",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 204,
+        "selfMs": 36.333,
+        "selfPercent": 1.205957795958035
+      },
+      {
+        "function": "base.Function",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 281,
+        "selfMs": 34.836,
+        "selfPercent": 1.1562696661435639
+      },
+      {
+        "function": "base.VariableDeclarator",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 276,
+        "selfMs": 31.042,
+        "selfPercent": 1.030339963727997
+      },
+      {
+        "function": "base.FunctionDeclaration",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 267,
+        "selfMs": 31.0,
+        "selfPercent": 1.0289459079816994
+      },
+      {
+        "function": "base.ImportDeclaration",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 422,
+        "selfMs": 25.29,
+        "selfPercent": 0.839420710092167
+      },
+      {
+        "function": "base.ArrayExpression",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 325,
+        "selfMs": 25.166,
+        "selfPercent": 0.8353049264602402
+      },
+      {
+        "function": "base.AssignmentExpression.base.AssignmentPattern",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 372,
+        "selfMs": 20.126,
+        "selfPercent": 0.6680182369045059
+      },
+      {
+        "function": "ExportNamedDeclaration",
+        "file": "src/i18n/acorn-base.mjs",
+        "line": 19,
+        "selfMs": 18.999,
+        "selfPercent": 0.6306110743788486
+      },
+      {
+        "function": "base.UnaryExpression.base.UpdateExpression",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 365,
+        "selfMs": 17.459,
+        "selfPercent": 0.5794956970145965
+      },
+      {
+        "function": "ObjectPattern",
+        "file": "experiments/i18n-dispatch/cases.mjs",
+        "line": 17,
+        "selfMs": 16.541,
+        "selfPercent": 0.5490256214169448
+      },
+      {
+        "function": "base.ConditionalExpression",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 376,
+        "selfMs": 14.372,
+        "selfPercent": 0.47703259966170913
+      }
+    ]
+  },
+  {
+    "id": "acorn-full-coverage",
+    "samples": 11826,
+    "sampledMs": 3014.666,
+    "files": [
+      {
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "selfMs": 1562.152,
+        "selfPercent": 51.81841039770243
+      },
+      {
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "selfMs": 1177.884,
+        "selfPercent": 39.071791037547776
+      },
+      {
+        "file": "experiments/i18n-dispatch/cases.mjs",
+        "selfMs": 237.919,
+        "selfPercent": 7.892051723142796
+      },
+      {
+        "file": "experiments/i18n-dispatch/profile.mjs",
+        "selfMs": 16.71,
+        "selfPercent": 0.5542902596838257
+      },
+      {
+        "file": "node:inspector",
+        "selfMs": 12.75,
+        "selfPercent": 0.42293242435480416
+      },
+      {
+        "file": "(program)",
+        "selfMs": 5.042,
+        "selfPercent": 0.16724904185073902
+      },
+      {
+        "file": "(garbage collector)",
+        "selfMs": 2.0,
+        "selfPercent": 0.06634234107526339
+      },
+      {
+        "file": "node:internal/errors",
+        "selfMs": 0.209,
+        "selfPercent": 0.006932774642365025
+      }
+    ],
+    "self": [
+      {
+        "function": "c",
+        "file": "node_modules/acorn-walk/dist/walk.mjs",
+        "line": 51,
+        "selfMs": 1562.152,
+        "selfPercent": 51.81841039770243
+      },
+      {
+        "function": "Literal",
+        "file": "experiments/i18n-dispatch/cases.mjs",
+        "line": 28,
+        "selfMs": 237.669,
+        "selfPercent": 7.883758930508388
+      },
+      {
+        "function": "childrenCallExpression",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 490,
+        "selfMs": 123.753,
+        "selfPercent": 4.105031867543535
+      },
+      {
+        "function": "childrenMemberExpression",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 468,
+        "selfMs": 108.378,
+        "selfPercent": 3.595025120527448
+      },
+      {
+        "function": "childrenProperty",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 446,
+        "selfMs": 100.089,
+        "selfPercent": 3.320069287941019
+      },
+      {
+        "function": "childrenIdentifier",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 1090,
+        "selfMs": 85.54,
+        "selfPercent": 2.8374619277890156
+      },
+      {
+        "function": "childrenVariableDeclaration",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 1505,
+        "selfMs": 68.378,
+        "selfPercent": 2.26817829902218
+      },
+      {
+        "function": "childrenObjectExpression",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 422,
+        "selfMs": 58.415,
+        "selfPercent": 1.9376939269557556
+      },
+      {
+        "function": "childrenArrowFunctionExpression",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 26,
+        "selfMs": 50.707,
+        "selfPercent": 1.6820105444516904
+      },
+      {
+        "function": "childrenExpressionStatement",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 1115,
+        "selfMs": 50.255,
+        "selfPercent": 1.6670171753686809
+      },
+      {
+        "function": "childrenBlockStatement",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 276,
+        "selfMs": 45.543,
+        "selfPercent": 1.5107146197953605
+      },
+      {
+        "function": "childrenVariableDeclarator",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 1517,
+        "selfMs": 41.244,
+        "selfPercent": 1.3681117576540818
+      },
+      {
+        "function": "childrenReturnStatement",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 1421,
+        "selfMs": 37.832,
+        "selfPercent": 1.2549317237796824
+      },
+      {
+        "function": "childrenIfStatement",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 1127,
+        "selfMs": 36.669,
+        "selfPercent": 1.2163536524444167
+      },
+      {
+        "function": "childrenImportDeclaration",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 1721,
+        "selfMs": 32.921,
+        "selfPercent": 1.0920281052693732
+      },
+      {
+        "function": "childrenLogicalExpression",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 310,
+        "selfMs": 32.793,
+        "selfPercent": 1.0877821954405562
+      },
+      {
+        "function": "childrenBinaryExpression",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 288,
+        "selfMs": 28.873,
+        "selfPercent": 0.9577512069330401
+      },
+      {
+        "function": "childrenExportNamedDeclaration",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 1821,
+        "selfMs": 22.663,
+        "selfPercent": 0.7517582378943471
+      },
+      {
+        "function": "childrenImportSpecifier",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 1753,
+        "selfMs": 21.832,
+        "selfPercent": 0.7241929951775752
+      },
+      {
+        "function": "childrenSpreadElement",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 434,
+        "selfMs": 18.586,
+        "selfPercent": 0.6165193756124228
+      },
+      {
+        "function": "childrenArrayExpression",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 410,
+        "selfMs": 17.501,
+        "selfPercent": 0.5805286555790924
+      },
+      {
+        "function": "childrenObjectPattern",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 1645,
+        "selfMs": 16.958,
+        "selfPercent": 0.5625167099771583
+      },
+      {
+        "function": "childrenChainExpression",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 522,
+        "selfMs": 15.334,
+        "selfPercent": 0.5086467290240445
+      },
+      {
+        "function": "childrenNewExpression",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 566,
+        "selfMs": 15.0,
+        "selfPercent": 0.49756755806447545
+      },
+      {
+        "function": "childrenAssignmentExpression",
+        "file": "experiments/i18n-dispatch/generated/acorn-full-base.mjs",
+        "line": 388,
+        "selfMs": 14.959,
+        "selfPercent": 0.49620754007243256
+      }
+    ]
+  },
+  {
+    "id": "yuku-direct-hooks-readonly",
+    "samples": 11837,
+    "sampledMs": 3016.5,
+    "files": [
+      {
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "selfMs": 2738.292,
+        "selfPercent": 90.7771258080557
+      },
+      {
+        "file": "experiments/i18n-dispatch/cases.mjs",
+        "selfMs": 204.207,
+        "selfPercent": 6.769666832421681
+      },
+      {
+        "file": "(program)",
+        "selfMs": 44.082,
+        "selfPercent": 1.461362506215813
+      },
+      {
+        "file": "node:inspector",
+        "selfMs": 16.375,
+        "selfPercent": 0.542847671142052
+      },
+      {
+        "file": "experiments/i18n-dispatch/profile.mjs",
+        "selfMs": 8.544,
+        "selfPercent": 0.2832421680755843
+      },
+      {
+        "file": "(garbage collector)",
+        "selfMs": 4.75,
+        "selfPercent": 0.1574672633847174
+      },
+      {
+        "file": "node:internal/perf/performance",
+        "selfMs": 0.25,
+        "selfPercent": 0.00828775070445881
+      }
+    ],
+    "self": [
+      {
+        "function": "visit",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 3424,
+        "selfMs": 750.461,
+        "selfPercent": 24.87853472567545
+      },
+      {
+        "function": "typed",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 43,
+        "selfMs": 450.252,
+        "selfPercent": 14.926305320735953
+      },
+      {
+        "function": "childrenMemberExpression",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 530,
+        "selfMs": 215.871,
+        "selfPercent": 7.156340129288911
+      },
+      {
+        "function": "Literal",
+        "file": "experiments/i18n-dispatch/cases.mjs",
+        "line": 35,
+        "selfMs": 204.207,
+        "selfPercent": 6.769666832421681
+      },
+      {
+        "function": "childrenCallExpression",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 553,
+        "selfMs": 203.581,
+        "selfPercent": 6.748914304657716
+      },
+      {
+        "function": "childrenIdentifier",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 1160,
+        "selfMs": 141.459,
+        "selfPercent": 4.689507707608155
+      },
+      {
+        "function": "childrenProperty",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 507,
+        "selfMs": 140.708,
+        "selfPercent": 4.664611304491961
+      },
+      {
+        "function": "childrenBlockStatement",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 327,
+        "selfMs": 77.872,
+        "selfPercent": 2.581534891430466
+      },
+      {
+        "function": "childrenObjectExpression",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 481,
+        "selfMs": 72.089,
+        "selfPercent": 2.3898226421349245
+      },
+      {
+        "function": "childrenArrowFunctionExpression",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 72,
+        "selfMs": 60.712,
+        "selfPercent": 2.012663683076413
+      },
+      {
+        "function": "createDispatch",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 6,
+        "selfMs": 56.579,
+        "selfPercent": 1.8756505884303
+      },
+      {
+        "function": "childrenVariableDeclarator",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 1597,
+        "selfMs": 55.374,
+        "selfPercent": 1.8357036300348086
+      },
+      {
+        "function": "(program)",
+        "file": "",
+        "line": 0,
+        "selfMs": 44.082,
+        "selfPercent": 1.461362506215813
+      },
+      {
+        "function": "childrenVariableDeclaration",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 1584,
+        "selfMs": 40.832,
+        "selfPercent": 1.3536217470578484
+      },
+      {
+        "function": "childrenImportDeclaration",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 1808,
+        "selfMs": 38.666,
+        "selfPercent": 1.2818166749544173
+      },
+      {
+        "function": "childrenBinaryExpression",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 340,
+        "selfMs": 37.622,
+        "selfPercent": 1.2472070280125973
+      },
+      {
+        "function": "childrenImportSpecifier",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 1841,
+        "selfMs": 34.877,
+        "selfPercent": 1.1562075252776396
+      },
+      {
+        "function": "childrenIfStatement",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 1196,
+        "selfMs": 33.127,
+        "selfPercent": 1.0981932703464279
+      },
+      {
+        "function": "childrenObjectPattern",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 1729,
+        "selfMs": 31.711,
+        "selfPercent": 1.0512514503563732
+      },
+      {
+        "function": "childrenExpressionStatement",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 1183,
+        "selfMs": 31.043,
+        "selfPercent": 1.0291065804740593
+      },
+      {
+        "function": "childrenLogicalExpression",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 363,
+        "selfMs": 28.916,
+        "selfPercent": 0.9585943974805238
+      },
+      {
+        "function": "childrenArrayExpression",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 468,
+        "selfMs": 27.54,
+        "selfPercent": 0.9129786176031826
+      },
+      {
+        "function": "childrenAssignmentExpression",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 445,
+        "selfMs": 26.707,
+        "selfPercent": 0.8853638322559257
+      },
+      {
+        "function": "childrenReturnStatement",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 1502,
+        "selfMs": 18.331,
+        "selfPercent": 0.6076910326537378
+      },
+      {
+        "function": "childrenProgram",
+        "file": "experiments/i18n-dispatch/generated/yuku-direct-hooks-readonly.mjs",
+        "line": 1762,
+        "selfMs": 18.253,
+        "selfPercent": 0.6051052544339466
+      }
+    ]
+  },
+  {
+    "id": "yuku-stock",
+    "samples": 11848,
+    "sampledMs": 3022.917,
+    "files": [
+      {
+        "file": "node_modules/yuku-ast/dist/walk.js",
+        "selfMs": 2814.208,
+        "selfPercent": 93.0957747103212
+      },
+      {
+        "file": "experiments/i18n-dispatch/cases.mjs",
+        "selfMs": 139.126,
+        "selfPercent": 4.602375784713904
+      },
+      {
+        "file": "(program)",
+        "selfMs": 45.998,
+        "selfPercent": 1.5216428370345596
+      },
+      {
+        "file": "node:inspector",
+        "selfMs": 11.833,
+        "selfPercent": 0.39144309949628125
+      },
+      {
+        "file": "(garbage collector)",
+        "selfMs": 6.667,
+        "selfPercent": 0.22054856286163332
+      },
+      {
+        "file": "experiments/i18n-dispatch/profile.mjs",
+        "selfMs": 5.085,
+        "selfPercent": 0.16821500557243219
+      }
+    ],
+    "self": [
+      {
+        "function": "visit",
+        "file": "node_modules/yuku-ast/dist/walk.js",
+        "line": 90,
+        "selfMs": 2466.497,
+        "selfPercent": 81.5932756340978
+      },
+      {
+        "function": "typed",
+        "file": "node_modules/yuku-ast/dist/walk.js",
+        "line": 41,
+        "selfMs": 303.043,
+        "selfPercent": 10.02485347761781
+      },
+      {
+        "function": "Literal",
+        "file": "experiments/i18n-dispatch/cases.mjs",
+        "line": 35,
+        "selfMs": 139.126,
+        "selfPercent": 4.602375784713904
+      },
+      {
+        "function": "(program)",
+        "file": "",
+        "line": 0,
+        "selfMs": 45.998,
+        "selfPercent": 1.5216428370345596
+      },
+      {
+        "function": "createDispatch",
+        "file": "node_modules/yuku-ast/dist/walk.js",
+        "line": 4,
+        "selfMs": 35.502,
+        "selfPercent": 1.174428540380037
+      },
+      {
+        "function": "post",
+        "file": "node:inspector",
+        "line": 115,
+        "selfMs": 11.833,
+        "selfPercent": 0.39144309949628125
+      },
+      {
+        "function": "_walk",
+        "file": "node_modules/yuku-ast/dist/walk.js",
+        "line": 86,
+        "selfMs": 7.25,
+        "selfPercent": 0.23983457038350706
+      },
+      {
+        "function": "(garbage collector)",
+        "file": "",
+        "line": 0,
+        "selfMs": 6.667,
+        "selfPercent": 0.22054856286163332
+      },
+      {
+        "function": "collectCorpus",
+        "file": "experiments/i18n-dispatch/profile.mjs",
+        "line": 11,
+        "selfMs": 4.585,
+        "selfPercent": 0.15167469037356965
+      },
+      {
+        "function": "add",
+        "file": "node_modules/yuku-ast/dist/walk.js",
+        "line": 10,
+        "selfMs": 1.666,
+        "selfPercent": 0.05511233024261004
+      },
+      {
+        "function": "position",
+        "file": "node_modules/yuku-ast/dist/walk.js",
+        "line": 61,
+        "selfMs": 0.25,
+        "selfPercent": 0.008270157599431277
+      },
+      {
+        "function": "(anonymous)",
+        "file": "experiments/i18n-dispatch/profile.mjs",
+        "line": 0,
+        "selfMs": 0.25,
+        "selfPercent": 0.008270157599431277
+      },
+      {
+        "function": "(anonymous)",
+        "file": "experiments/i18n-dispatch/profile.mjs",
+        "line": 17,
+        "selfMs": 0.25,
+        "selfPercent": 0.008270157599431277
+      }
+    ]
+  }
+]

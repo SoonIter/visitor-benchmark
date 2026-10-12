@@ -1,0 +1,161 @@
+{
+  "files": 64,
+  "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+  "astHash": "4a6c83ac705a1213e9d2ce6c670073b7f0f957c5b35404974a82b778dda43d9e",
+  "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+  "counters": {
+    "fullNodes": 19769,
+    "acornNodes": 16148,
+    "stringLiterals": 1247,
+    "childFieldReads": 35961,
+    "arrayFields": 4028,
+    "nonemptyNodes": 17825,
+    "literalNodes": 1671,
+    "types": {
+      "Program": 64,
+      "ImportDeclaration": 227,
+      "ImportSpecifier": 328,
+      "Identifier": 7705,
+      "Literal": 1671,
+      "ExportAllDeclaration": 5,
+      "ExportNamedDeclaration": 130,
+      "VariableDeclaration": 551,
+      "VariableDeclarator": 551,
+      "CallExpression": 1217,
+      "ArrowFunctionExpression": 344,
+      "NewExpression": 50,
+      "BlockStatement": 533,
+      "ExpressionStatement": 575,
+      "MemberExpression": 1422,
+      "ObjectExpression": 454,
+      "Property": 1414,
+      "ArrayExpression": 131,
+      "SpreadElement": 92,
+      "AwaitExpression": 49,
+      "ReturnStatement": 311,
+      "ExportDefaultDeclaration": 7,
+      "ImportDefaultSpecifier": 21,
+      "TemplateLiteral": 47,
+      "TemplateElement": 92,
+      "TryStatement": 14,
+      "ObjectPattern": 86,
+      "ImportExpression": 1,
+      "CatchClause": 13,
+      "ConditionalExpression": 82,
+      "BinaryExpression": 222,
+      "AssignmentPattern": 32,
+      "UnaryExpression": 108,
+      "IfStatement": 222,
+      "AssignmentExpression": 233,
+      "ChainExpression": 118,
+      "LogicalExpression": 209,
+      "ArrayPattern": 25,
+      "FunctionExpression": 51,
+      "RestElement": 5,
+      "ClassDeclaration": 7,
+      "ClassBody": 7,
+      "PropertyDefinition": 32,
+      "ThisExpression": 180,
+      "MethodDefinition": 36,
+      "SwitchStatement": 7,
+      "SwitchCase": 45,
+      "BreakStatement": 4,
+      "FunctionDeclaration": 12,
+      "ImportNamespaceSpecifier": 3,
+      "ExportSpecifier": 2,
+      "ForOfStatement": 13,
+      "ContinueStatement": 3,
+      "ThrowStatement": 2,
+      "UpdateExpression": 2,
+      "MetaProperty": 1,
+      "Super": 1
+    }
+  },
+  "rows": [
+    {
+      "id": "yuku-stock",
+      "i18nPassed": true,
+      "allStringsPassed": true,
+      "allStringMismatches": 0,
+      "contractPassed": true
+    },
+    {
+      "id": "acorn-current",
+      "i18nPassed": true,
+      "allStringsPassed": true,
+      "allStringMismatches": 0,
+      "contractPassed": false
+    },
+    {
+      "id": "acorn-fixed",
+      "i18nPassed": true,
+      "allStringsPassed": true,
+      "allStringMismatches": 0,
+      "contractPassed": true
+    },
+    {
+      "id": "acorn-full-coverage",
+      "i18nPassed": true,
+      "allStringsPassed": true,
+      "allStringMismatches": 0,
+      "contractPassed": true
+    },
+    {
+      "id": "yuku-keys-hooks-context",
+      "i18nPassed": true,
+      "allStringsPassed": true,
+      "allStringMismatches": 0,
+      "contractPassed": true
+    },
+    {
+      "id": "yuku-keys-hooks-readonly",
+      "i18nPassed": true,
+      "allStringsPassed": true,
+      "allStringMismatches": 0,
+      "contractPassed": true
+    },
+    {
+      "id": "yuku-keys-flat-context",
+      "i18nPassed": true,
+      "allStringsPassed": true,
+      "allStringMismatches": 0,
+      "contractPassed": true
+    },
+    {
+      "id": "yuku-keys-flat-readonly",
+      "i18nPassed": true,
+      "allStringsPassed": true,
+      "allStringMismatches": 0,
+      "contractPassed": true
+    },
+    {
+      "id": "yuku-direct-hooks-context",
+      "i18nPassed": true,
+      "allStringsPassed": true,
+      "allStringMismatches": 0,
+      "contractPassed": true
+    },
+    {
+      "id": "yuku-direct-hooks-readonly",
+      "i18nPassed": true,
+      "allStringsPassed": true,
+      "allStringMismatches": 0,
+      "contractPassed": true
+    },
+    {
+      "id": "yuku-direct-flat-context",
+      "i18nPassed": true,
+      "allStringsPassed": true,
+      "allStringMismatches": 0,
+      "contractPassed": true
+    },
+    {
+      "id": "yuku-direct-flat-readonly",
+      "i18nPassed": true,
+      "allStringsPassed": true,
+      "allStringMismatches": 0,
+      "contractPassed": true
+    }
+  ],
+  "fullCoverageNodeOrderVerified": true
+}

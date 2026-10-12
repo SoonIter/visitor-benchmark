@@ -4,6 +4,8 @@ Collect real i18n keys from **64 business modules** using **30 JavaScript traver
 
 [Full results & compatibility](docs/i18n/results.md) · [Corpus manifest](docs/i18n/corpus.json) · [Collector implementations](src/i18n/plugins) · [Styled-components benchmark](docs/styled-components.md)
 
+[Acorn vs Yuku: CPU profiles and controlled ablations](docs/i18n-dispatch/README.md) explain the measured gap and the historical Acorn case's destructuring-key limitation.
+
 ## The task
 
 ```js

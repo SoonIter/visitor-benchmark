@@ -1,0 +1,289 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1149" viewBox="0 0 1600 1149">
+<rect width="1600" height="1149" fill="#fafbfd"/>
+<text x="20" y="30" font-family="sans-serif" font-size="22" font-weight="bold">yuku-stock · CPU flame graph</text>
+<text x="20" y="55" font-family="sans-serif" font-size="13">Reused AST · profiler enabled only during collection · nominal 200 μs interval · hover for source and inclusive time</text>
+<g><title>(root) | :0 | 3022.9 ms inclusive (100.00%)</title><rect x="20.000" y="1103" width="1559.800" height="20" fill="#dcc241"/>
+<text x="23.000" y="1117" font-family="monospace" font-size="11">(root)</text>
+</g>
+<g><title>(anonymous) | experiments/i18n-dispatch/profile.mjs:0 | 2952.8 ms inclusive (97.68%)</title><rect x="20.000" y="1082" width="1523.633" height="20" fill="#d5a241"/>
+<text x="23.000" y="1096" font-family="monospace" font-size="11">(anonymous)</text>
+</g>
+<g><title>post | experiments/i18n-dispatch/profile.mjs:17 | 12.1 ms inclusive (0.40%)</title><rect x="20.000" y="1061" width="6.036" height="20" fill="#e5aa41"/>
+</g>
+<g><title>(anonymous) | experiments/i18n-dispatch/profile.mjs:17 | 12.1 ms inclusive (0.40%)</title><rect x="20.000" y="1040" width="6.036" height="20" fill="#d6b141"/>
+</g>
+<g><title>post | node:inspector:115 | 11.8 ms inclusive (0.39%)</title><rect x="20.000" y="1019" width="5.907" height="20" fill="#e88b41"/>
+</g>
+<g><title>collectCorpus | experiments/i18n-dispatch/profile.mjs:11 | 2940.5 ms inclusive (97.27%)</title><rect x="26.236" y="1061" width="1517.269" height="20" fill="#df9541"/>
+<text x="29.236" y="1075" font-family="monospace" font-size="11">collectCorpus</text>
+</g>
+<g><title>collect | experiments/i18n-dispatch/cases.mjs:33 | 2935.9 ms inclusive (97.12%)</title><rect x="26.236" y="1040" width="1514.902" height="20" fill="#ead041"/>
+<text x="29.236" y="1054" font-family="monospace" font-size="11">collect</text>
+</g>
+<g><title>walk | node_modules/yuku-ast/dist/walk.js:48 | 2935.9 ms inclusive (97.12%)</title><rect x="26.236" y="1019" width="1514.902" height="20" fill="#e98341"/>
+<text x="29.236" y="1033" font-family="monospace" font-size="11">walk</text>
+</g>
+<g><title>_walk | node_modules/yuku-ast/dist/walk.js:86 | 2935.9 ms inclusive (97.12%)</title><rect x="26.236" y="998" width="1514.902" height="20" fill="#dead41"/>
+<text x="29.236" y="1012" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 2891.5 ms inclusive (95.65%)</title><rect x="26.236" y="977" width="1491.980" height="20" fill="#d88c41"/>
+<text x="29.236" y="991" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 2851.0 ms inclusive (94.31%)</title><rect x="26.236" y="956" width="1471.082" height="20" fill="#d88c41"/>
+<text x="29.236" y="970" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 2764.3 ms inclusive (91.44%)</title><rect x="26.236" y="935" width="1426.316" height="20" fill="#d88c41"/>
+<text x="29.236" y="949" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 2621.2 ms inclusive (86.71%)</title><rect x="26.236" y="914" width="1352.476" height="20" fill="#d88c41"/>
+<text x="29.236" y="928" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 2508.7 ms inclusive (82.99%)</title><rect x="26.236" y="893" width="1294.416" height="20" fill="#d88c41"/>
+<text x="29.236" y="907" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 2413.5 ms inclusive (79.84%)</title><rect x="26.236" y="872" width="1245.325" height="20" fill="#d88c41"/>
+<text x="29.236" y="886" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 2301.1 ms inclusive (76.12%)</title><rect x="26.236" y="851" width="1187.315" height="20" fill="#d88c41"/>
+<text x="29.236" y="865" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 2136.0 ms inclusive (70.66%)</title><rect x="26.236" y="830" width="1102.119" height="20" fill="#d88c41"/>
+<text x="29.236" y="844" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 1934.8 ms inclusive (64.00%)</title><rect x="26.236" y="809" width="998.263" height="20" fill="#d88c41"/>
+<text x="29.236" y="823" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 1690.9 ms inclusive (55.94%)</title><rect x="26.236" y="788" width="872.407" height="20" fill="#d88c41"/>
+<text x="29.236" y="802" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 1419.5 ms inclusive (46.96%)</title><rect x="26.236" y="767" width="732.323" height="20" fill="#d88c41"/>
+<text x="29.236" y="781" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 1187.8 ms inclusive (39.29%)</title><rect x="26.236" y="746" width="612.775" height="20" fill="#d88c41"/>
+<text x="29.236" y="760" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 991.5 ms inclusive (32.80%)</title><rect x="26.236" y="725" width="511.458" height="20" fill="#d88c41"/>
+<text x="29.236" y="739" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 785.1 ms inclusive (25.97%)</title><rect x="26.236" y="704" width="404.974" height="20" fill="#d88c41"/>
+<text x="29.236" y="718" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 612.8 ms inclusive (20.27%)</title><rect x="26.236" y="683" width="316.059" height="20" fill="#d88c41"/>
+<text x="29.236" y="697" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 476.9 ms inclusive (15.78%)</title><rect x="26.236" y="662" width="245.893" height="20" fill="#d88c41"/>
+<text x="29.236" y="676" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 374.0 ms inclusive (12.37%)</title><rect x="26.236" y="641" width="192.826" height="20" fill="#d88c41"/>
+<text x="29.236" y="655" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 301.9 ms inclusive (9.99%)</title><rect x="26.236" y="620" width="155.606" height="20" fill="#d88c41"/>
+<text x="29.236" y="634" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 242.8 ms inclusive (8.03%)</title><rect x="26.236" y="599" width="125.094" height="20" fill="#d88c41"/>
+<text x="29.236" y="613" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 193.8 ms inclusive (6.41%)</title><rect x="26.236" y="578" width="99.809" height="20" fill="#d88c41"/>
+<text x="29.236" y="592" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 161.7 ms inclusive (5.35%)</title><rect x="26.236" y="557" width="83.231" height="20" fill="#d88c41"/>
+<text x="29.236" y="571" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 131.3 ms inclusive (4.34%)</title><rect x="26.236" y="536" width="67.534" height="20" fill="#d88c41"/>
+<text x="29.236" y="550" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 109.0 ms inclusive (3.61%)</title><rect x="26.236" y="515" width="56.050" height="20" fill="#d88c41"/>
+<text x="29.236" y="529" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 98.7 ms inclusive (3.27%)</title><rect x="26.236" y="494" width="50.738" height="20" fill="#d88c41"/>
+<text x="29.236" y="508" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 84.9 ms inclusive (2.81%)</title><rect x="26.236" y="473" width="43.599" height="20" fill="#d88c41"/>
+<text x="29.236" y="487" font-family="monospace" font-size="11">visit</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 73.9 ms inclusive (2.44%)</title><rect x="26.236" y="452" width="37.942" height="20" fill="#d88c41"/>
+<text x="29.236" y="466" font-family="monospace" font-size="11">visi</text>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 63.5 ms inclusive (2.10%)</title><rect x="26.236" y="431" width="32.545" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 52.1 ms inclusive (1.72%)</title><rect x="26.236" y="410" width="26.675" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 40.7 ms inclusive (1.35%)</title><rect x="26.236" y="389" width="20.805" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 29.7 ms inclusive (0.98%)</title><rect x="26.236" y="368" width="15.150" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 23.8 ms inclusive (0.79%)</title><rect x="26.236" y="347" width="12.098" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 21.2 ms inclusive (0.70%)</title><rect x="26.236" y="326" width="10.721" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 14.8 ms inclusive (0.49%)</title><rect x="26.236" y="305" width="7.431" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 8.7 ms inclusive (0.29%)</title><rect x="26.236" y="284" width="4.293" height="20" fill="#d88c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 0.2 ms inclusive (0.01%)</title><rect x="26.236" y="263" width="0.000" height="20" fill="#e27e41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 6.1 ms inclusive (0.20%)</title><rect x="26.321" y="263" width="2.939" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 3.5 ms inclusive (0.12%)</title><rect x="26.321" y="242" width="1.627" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 3.0 ms inclusive (0.10%)</title><rect x="26.321" y="221" width="1.369" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 2.2 ms inclusive (0.07%)</title><rect x="26.321" y="200" width="0.961" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 1.7 ms inclusive (0.06%)</title><rect x="26.321" y="179" width="0.681" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 0.9 ms inclusive (0.03%)</title><rect x="26.321" y="158" width="0.273" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 0.9 ms inclusive (0.03%)</title><rect x="26.321" y="137" width="0.273" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 0.4 ms inclusive (0.01%)</title><rect x="26.321" y="116" width="0.015" height="20" fill="#d88c41"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 0.2 ms inclusive (0.01%)</title><rect x="26.321" y="95" width="0.000" height="20" fill="#d88c41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 0.3 ms inclusive (0.01%)</title><rect x="27.482" y="200" width="0.000" height="20" fill="#e79c41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 0.5 ms inclusive (0.02%)</title><rect x="28.149" y="242" width="0.058" height="20" fill="#e79c41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 0.5 ms inclusive (0.02%)</title><rect x="30.728" y="284" width="0.058" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 1.5 ms inclusive (0.05%)</title><rect x="30.986" y="284" width="0.574" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 1.5 ms inclusive (0.05%)</title><rect x="33.866" y="305" width="0.574" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 0.8 ms inclusive (0.02%)</title><rect x="34.641" y="305" width="0.187" height="20" fill="#e27e41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 0.8 ms inclusive (0.02%)</title><rect x="37.157" y="326" width="0.187" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 0.2 ms inclusive (0.01%)</title><rect x="37.544" y="326" width="0.000" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 1.3 ms inclusive (0.04%)</title><rect x="38.533" y="347" width="0.488" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 0.3 ms inclusive (0.01%)</title><rect x="39.221" y="347" width="0.000" height="20" fill="#e79c41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 0.5 ms inclusive (0.02%)</title><rect x="41.586" y="368" width="0.058" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 1.5 ms inclusive (0.05%)</title><rect x="41.844" y="368" width="0.596" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 2.4 ms inclusive (0.08%)</title><rect x="47.241" y="389" width="1.047" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 0.2 ms inclusive (0.01%)</title><rect x="48.487" y="389" width="0.000" height="20" fill="#e27e41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 1.0 ms inclusive (0.03%)</title><rect x="53.110" y="410" width="0.338" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 0.5 ms inclusive (0.02%)</title><rect x="53.648" y="410" width="0.058" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 1.2 ms inclusive (0.04%)</title><rect x="58.980" y="431" width="0.445" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 0.2 ms inclusive (0.01%)</title><rect x="59.626" y="431" width="0.000" height="20" fill="#e79c41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 0.5 ms inclusive (0.02%)</title><rect x="64.377" y="452" width="0.058" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 1.8 ms inclusive (0.06%)</title><rect x="64.635" y="452" width="0.725" height="20" fill="#e27e41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 1.8 ms inclusive (0.06%)</title><rect x="70.034" y="473" width="0.725" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 1.0 ms inclusive (0.03%)</title><rect x="70.959" y="473" width="0.316" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 1.0 ms inclusive (0.03%)</title><rect x="77.174" y="494" width="0.316" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 0.2 ms inclusive (0.01%)</title><rect x="77.689" y="494" width="0.000" height="20" fill="#e79c41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 2.3 ms inclusive (0.08%)</title><rect x="82.485" y="515" width="0.983" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 3.3 ms inclusive (0.11%)</title><rect x="83.669" y="515" width="1.498" height="20" fill="#e27e41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 3.9 ms inclusive (0.13%)</title><rect x="93.969" y="536" width="1.800" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 2.3 ms inclusive (0.08%)</title><rect x="95.969" y="536" width="0.982" height="20" fill="#e79c41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 3.0 ms inclusive (0.10%)</title><rect x="109.666" y="557" width="1.327" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 3.3 ms inclusive (0.11%)</title><rect x="111.193" y="557" width="1.498" height="20" fill="#e27e41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 5.7 ms inclusive (0.19%)</title><rect x="126.245" y="578" width="2.746" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 3.4 ms inclusive (0.11%)</title><rect x="129.191" y="578" width="1.541" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 6.7 ms inclusive (0.22%)</title><rect x="151.529" y="599" width="3.263" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 3.0 ms inclusive (0.10%)</title><rect x="154.992" y="599" width="1.369" height="20" fill="#e79c41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 6.8 ms inclusive (0.22%)</title><rect x="182.042" y="620" width="3.283" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 8.3 ms inclusive (0.27%)</title><rect x="185.525" y="620" width="4.079" height="20" fill="#e27e41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 12.0 ms inclusive (0.40%)</title><rect x="219.262" y="641" width="5.993" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 7.1 ms inclusive (0.23%)</title><rect x="225.454" y="641" width="3.456" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 15.2 ms inclusive (0.50%)</title><rect x="272.329" y="662" width="7.627" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 9.9 ms inclusive (0.33%)</title><rect x="280.156" y="662" width="4.898" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 21.8 ms inclusive (0.72%)</title><rect x="342.495" y="683" width="11.047" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 7.6 ms inclusive (0.25%)</title><rect x="353.742" y="683" width="3.714" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 24.8 ms inclusive (0.82%)</title><rect x="431.410" y="704" width="12.573" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 13.0 ms inclusive (0.43%)</title><rect x="444.183" y="704" width="6.488" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 26.5 ms inclusive (0.88%)</title><rect x="537.894" y="725" width="13.475" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 6.3 ms inclusive (0.21%)</title><rect x="551.568" y="725" width="3.069" height="20" fill="#e79c41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 7.8 ms inclusive (0.26%)</title><rect x="639.210" y="746" width="3.820" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 29.4 ms inclusive (0.97%)</title><rect x="643.230" y="746" width="14.980" height="20" fill="#e27e41"/>
+</g>
+<g><title>position | node_modules/yuku-ast/dist/walk.js:61 | 0.2 ms inclusive (0.01%)</title><rect x="758.758" y="767" width="0.000" height="20" fill="#ea8941"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 16.1 ms inclusive (0.53%)</title><rect x="758.887" y="767" width="8.098" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 26.0 ms inclusive (0.86%)</title><rect x="767.186" y="767" width="13.238" height="20" fill="#e27e41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 30.0 ms inclusive (0.99%)</title><rect x="898.843" y="788" width="15.282" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 2.9 ms inclusive (0.10%)</title><rect x="914.325" y="788" width="1.283" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 18.8 ms inclusive (0.62%)</title><rect x="1024.698" y="809" width="9.521" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 3.8 ms inclusive (0.13%)</title><rect x="1034.419" y="809" width="1.757" height="20" fill="#e79c41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 7.2 ms inclusive (0.24%)</title><rect x="1128.554" y="830" width="3.520" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 14.7 ms inclusive (0.49%)</title><rect x="1132.274" y="830" width="7.370" height="20" fill="#e27e41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 10.7 ms inclusive (0.35%)</title><rect x="1213.751" y="851" width="5.325" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 2.9 ms inclusive (0.10%)</title><rect x="1219.276" y="851" width="1.305" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 8.9 ms inclusive (0.29%)</title><rect x="1271.761" y="872" width="4.379" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 0.2 ms inclusive (0.01%)</title><rect x="1276.340" y="872" width="0.000" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 11.5 ms inclusive (0.38%)</title><rect x="1320.851" y="893" width="5.756" height="20" fill="#e27e41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 0.8 ms inclusive (0.02%)</title><rect x="1326.807" y="893" width="0.187" height="20" fill="#e79c41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 22.7 ms inclusive (0.75%)</title><rect x="1378.911" y="914" width="11.520" height="20" fill="#e79c41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 5.1 ms inclusive (0.17%)</title><rect x="1390.632" y="914" width="2.445" height="20" fill="#e27e41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 2.8 ms inclusive (0.09%)</title><rect x="1452.752" y="935" width="1.219" height="20" fill="#e27e41"/>
+</g>
+<g><title>typed | node_modules/yuku-ast/dist/walk.js:41 | 0.5 ms inclusive (0.02%)</title><rect x="1497.517" y="956" width="0.080" height="20" fill="#e27e41"/>
+</g>
+<g><title>createDispatch | node_modules/yuku-ast/dist/walk.js:4 | 37.2 ms inclusive (1.23%)</title><rect x="1518.416" y="977" width="18.981" height="20" fill="#e3ae41"/>
+</g>
+<g><title>add | node_modules/yuku-ast/dist/walk.js:10 | 1.7 ms inclusive (0.06%)</title><rect x="1518.416" y="956" width="0.660" height="20" fill="#e08e41"/>
+</g>
+<g><title>(program) | :0 | 46.0 ms inclusive (1.52%)</title><rect x="1543.833" y="1082" width="23.538" height="20" fill="#efa641"/>
+</g>
+<g><title>visit | node_modules/yuku-ast/dist/walk.js:90 | 15.9 ms inclusive (0.53%)</title><rect x="1567.571" y="1082" width="7.993" height="20" fill="#d88c41"/>
+</g>
+<g><title>(garbage collector) | :0 | 6.7 ms inclusive (0.22%)</title><rect x="1575.764" y="1082" width="3.241" height="20" fill="#e0ab41"/>
+</g>
+<g><title>Literal | experiments/i18n-dispatch/cases.mjs:35 | 1.5 ms inclusive (0.05%)</title><rect x="1579.204" y="1082" width="0.596" height="20" fill="#e79c41"/>
+</g>
+</svg>

@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict';
+import { Session } from 'node:inspector';
+import { performance } from 'node:perf_hooks';
+import { mkdirSync,writeFileSync } from 'node:fs';
+import { parse } from 'acorn';
+import { loadCorpus } from '../../src/i18n/corpus.mjs';
+import { loadVariant } from './cases.mjs';
+const id=process.argv[2],corpus=loadCorpus(),keys=new Set(corpus.keys),collect=await loadVariant(id);
+const fixtures=corpus.files.map(f=>({...f,ast:parse(f.javascript,{ecmaVersion:2022,sourceType:'module',locations:true,ranges:true})}));
+let sink=0;
+function collectCorpus(){let count=0;for(const f of fixtures)count+=collect(f.ast,keys).length;return count;}
+const matches=fixtures.reduce((n,f)=>n+f.expectedJavascript.length,0);
+for(const f of fixtures)assert.deepEqual(collect(f.ast,keys),f.expectedJavascript);
+for(let i=0;i<500;i++)sink+=collectCorpus();
+global.gc?.();
+const session=new Session();session.connect();
+const post=(method,params={})=>new Promise((resolve,reject)=>session.post(method,params,(err,data)=>err?reject(err):resolve(data)));
+await post('Profiler.enable');await post('Profiler.setSamplingInterval',{interval:200});await post('Profiler.start');
+let corpora=0;const start=performance.now();
+do {for(let j=0;j<20;j++){sink+=collectCorpus();corpora++;}}while(performance.now()-start<3000);
+const {profile}=await post('Profiler.stop');session.disconnect();
+assert.equal(sink,matches*(500+corpora));
+const dir=new URL('../../results/i18n-dispatch/profiles/',import.meta.url);mkdirSync(dir,{recursive:true});
+writeFileSync(new URL(`${id}.cpuprofile`,dir),JSON.stringify(profile));
+console.log(JSON.stringify({id,samples:profile.samples.length,corpora,samplingIntervalUs:200}));

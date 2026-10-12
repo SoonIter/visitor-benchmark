@@ -1,0 +1,55 @@
+{
+  "yukuVersion": "0.18.0",
+  "sourceSHA256": "bc4f66405f9c6b0a5e265d9cbd0cc2313cf9caf653a26c3efb7d3b616813f27c",
+  "contextSHA256": "9b5fce4733ec682ed7bd02a66f671842640649fec56590311a10753d8714f9cf",
+  "variants": [
+    {
+      "id": "yuku-keys-hooks-context",
+      "direct": false,
+      "flat": false,
+      "context": true
+    },
+    {
+      "id": "yuku-keys-hooks-readonly",
+      "direct": false,
+      "flat": false,
+      "context": false
+    },
+    {
+      "id": "yuku-keys-flat-context",
+      "direct": false,
+      "flat": true,
+      "context": true
+    },
+    {
+      "id": "yuku-keys-flat-readonly",
+      "direct": false,
+      "flat": true,
+      "context": false
+    },
+    {
+      "id": "yuku-direct-hooks-context",
+      "direct": true,
+      "flat": false,
+      "context": true
+    },
+    {
+      "id": "yuku-direct-hooks-readonly",
+      "direct": true,
+      "flat": false,
+      "context": false
+    },
+    {
+      "id": "yuku-direct-flat-context",
+      "direct": true,
+      "flat": true,
+      "context": true
+    },
+    {
+      "id": "yuku-direct-flat-readonly",
+      "direct": true,
+      "flat": true,
+      "context": false
+    }
+  ]
+}

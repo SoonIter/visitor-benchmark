@@ -1,0 +1,821 @@
+{
+  "environment": {
+    "timestamp": "2026-10-12T06:14:26.703Z",
+    "node": "v24.20.0",
+    "cpu": "Apple M5 Max",
+    "platform": "darwin arm64"
+  },
+  "rows": [
+    {
+      "mode": "fresh",
+      "id": "yuku-stock",
+      "medianMs": 0.8783749999999202,
+      "minMs": 0.8599374999999441,
+      "maxMs": 0.906371499999949,
+      "processMedians": {
+        "0": 0.8648530000000676,
+        "1": 0.8763519999999403,
+        "2": 0.8783749999999202,
+        "3": 0.9011475000001212,
+        "4": 0.906371499999949,
+        "5": 0.8799159999999233,
+        "6": 0.8599374999999441
+      },
+      "peakRssMiB": 135.625,
+      "observedHeapMiB": 27.669235229492188
+    },
+    {
+      "mode": "reused",
+      "id": "yuku-stock",
+      "medianMs": 0.8293125000000003,
+      "minMs": 0.7880958500000019,
+      "maxMs": 0.8404957999999993,
+      "processMedians": {
+        "0": 0.807585400000002,
+        "1": 0.8293125000000003,
+        "2": 0.8235291500000017,
+        "3": 0.7880958500000019,
+        "4": 0.8404957999999993,
+        "5": 0.8395729000000017,
+        "6": 0.8301625000000001
+      },
+      "peakRssMiB": 115.984375,
+      "observedHeapMiB": 22.927337646484375
+    },
+    {
+      "mode": "fresh",
+      "id": "acorn-current",
+      "medianMs": 0.45343300000010345,
+      "minMs": 0.4481660000000147,
+      "maxMs": 0.5192704999998909,
+      "processMedians": {
+        "0": 0.46648149999990096,
+        "1": 0.4481660000000147,
+        "2": 0.4516865000001644,
+        "3": 0.5192704999998909,
+        "4": 0.4620019999999272,
+        "5": 0.45343300000010345,
+        "6": 0.4514785000000643
+      },
+      "peakRssMiB": 152.3125,
+      "observedHeapMiB": 47.126983642578125
+    },
+    {
+      "mode": "reused",
+      "id": "acorn-current",
+      "medianMs": 0.3863874499999994,
+      "minMs": 0.37445004999999865,
+      "maxMs": 0.4026312500000017,
+      "processMedians": {
+        "0": 0.37445004999999865,
+        "1": 0.38994169999999995,
+        "2": 0.3861041999999998,
+        "3": 0.3794332999999995,
+        "4": 0.39211664999999984,
+        "5": 0.3863874499999994,
+        "6": 0.4026312500000017
+      },
+      "peakRssMiB": 115.109375,
+      "observedHeapMiB": 22.735069274902344
+    },
+    {
+      "mode": "fresh",
+      "id": "acorn-fixed",
+      "medianMs": 0.46791549999989,
+      "minMs": 0.44735550000001467,
+      "maxMs": 0.642498999999674,
+      "processMedians": {
+        "0": 0.642498999999674,
+        "1": 0.44735550000001467,
+        "2": 0.44745799999972746,
+        "3": 0.5145814999999061,
+        "4": 0.46791549999989,
+        "5": 0.4958299999998417,
+        "6": 0.45877249999992387
+      },
+      "peakRssMiB": 137.609375,
+      "observedHeapMiB": 32.14863586425781
+    },
+    {
+      "mode": "reused",
+      "id": "acorn-fixed",
+      "medianMs": 0.3906854500000009,
+      "minMs": 0.3826728999999972,
+      "maxMs": 0.4344458000000003,
+      "processMedians": {
+        "0": 0.4344458000000003,
+        "1": 0.3830687499999996,
+        "2": 0.39563959999999837,
+        "3": 0.3906854500000009,
+        "4": 0.39144790000000285,
+        "5": 0.3845103999999992,
+        "6": 0.3826728999999972
+      },
+      "peakRssMiB": 115.359375,
+      "observedHeapMiB": 22.736061096191406
+    },
+    {
+      "mode": "fresh",
+      "id": "acorn-full-coverage",
+      "medianMs": 0.4279999999997983,
+      "minMs": 0.4198350000000062,
+      "maxMs": 0.4617500000001371,
+      "processMedians": {
+        "0": 0.4250804999999218,
+        "1": 0.4198350000000062,
+        "2": 0.4218509999998048,
+        "3": 0.4617500000001371,
+        "4": 0.4306879999999751,
+        "5": 0.4279999999997983,
+        "6": 0.4329610000000059
+      },
+      "peakRssMiB": 153.546875,
+      "observedHeapMiB": 45.86553955078125
+    },
+    {
+      "mode": "reused",
+      "id": "acorn-full-coverage",
+      "medianMs": 0.34819584999999903,
+      "minMs": 0.3382791500000024,
+      "maxMs": 0.3725625000000008,
+      "processMedians": {
+        "0": 0.3382791500000024,
+        "1": 0.34011669999999866,
+        "2": 0.34819584999999903,
+        "3": 0.35242295000000046,
+        "4": 0.3725625000000008,
+        "5": 0.3517395999999991,
+        "6": 0.3392228999999986
+      },
+      "peakRssMiB": 115.390625,
+      "observedHeapMiB": 23.026962280273438
+    },
+    {
+      "mode": "fresh",
+      "id": "yuku-keys-hooks-context",
+      "medianMs": 0.8837889999998083,
+      "minMs": 0.8723310000000595,
+      "maxMs": 1.011996500000123,
+      "processMedians": {
+        "0": 0.8837889999998083,
+        "1": 0.8760835000001066,
+        "2": 0.8861030000000767,
+        "3": 0.8723310000000595,
+        "4": 0.9091474999999036,
+        "5": 1.011996500000123,
+        "6": 0.8808984999999154
+      },
+      "peakRssMiB": 134.765625,
+      "observedHeapMiB": 27.466201782226562
+    },
+    {
+      "mode": "reused",
+      "id": "yuku-keys-hooks-context",
+      "medianMs": 0.8401083499999971,
+      "minMs": 0.8219562499999995,
+      "maxMs": 0.8622353499999974,
+      "processMedians": {
+        "0": 0.8257333000000018,
+        "1": 0.8219562499999995,
+        "2": 0.8269833500000032,
+        "3": 0.8622353499999974,
+        "4": 0.8529500000000012,
+        "5": 0.8470979000000028,
+        "6": 0.8401083499999971
+      },
+      "peakRssMiB": 114.875,
+      "observedHeapMiB": 22.711135864257812
+    },
+    {
+      "mode": "fresh",
+      "id": "yuku-keys-hooks-readonly",
+      "medianMs": 0.7469394999999395,
+      "minMs": 0.7196090000002187,
+      "maxMs": 0.9015839999999287,
+      "processMedians": {
+        "0": 0.9015839999999287,
+        "1": 0.7469394999999395,
+        "2": 0.7196090000002187,
+        "3": 0.7726265000000296,
+        "4": 0.7291264999999214,
+        "5": 0.7541665000001672,
+        "6": 0.7410850000000835
+      },
+      "peakRssMiB": 135.671875,
+      "observedHeapMiB": 32.46717834472656
+    },
+    {
+      "mode": "reused",
+      "id": "yuku-keys-hooks-readonly",
+      "medianMs": 0.6920020999999992,
+      "minMs": 0.6715541500000001,
+      "maxMs": 0.7672479499999951,
+      "processMedians": {
+        "0": 0.6715541500000001,
+        "1": 0.7136791499999987,
+        "2": 0.7672479499999951,
+        "3": 0.7368583499999999,
+        "4": 0.6724770999999976,
+        "5": 0.6920020999999992,
+        "6": 0.6833020999999974
+      },
+      "peakRssMiB": 114.765625,
+      "observedHeapMiB": 22.44097900390625
+    },
+    {
+      "mode": "fresh",
+      "id": "yuku-keys-flat-context",
+      "medianMs": 0.8779805000000636,
+      "minMs": 0.8551485000000127,
+      "maxMs": 0.935164500000127,
+      "processMedians": {
+        "0": 0.8551485000000127,
+        "1": 0.8822755000001905,
+        "2": 0.935164500000127,
+        "3": 0.8675645000000429,
+        "4": 0.8610639999999989,
+        "5": 0.8779805000000636,
+        "6": 0.8852109999998845
+      },
+      "peakRssMiB": 135.078125,
+      "observedHeapMiB": 27.311302185058594
+    },
+    {
+      "mode": "reused",
+      "id": "yuku-keys-flat-context",
+      "medianMs": 0.8335125000000005,
+      "minMs": 0.8046520499999985,
+      "maxMs": 0.8646062499999971,
+      "processMedians": {
+        "0": 0.813024950000002,
+        "1": 0.8086104000000005,
+        "2": 0.8646062499999971,
+        "3": 0.8545978499999933,
+        "4": 0.8347042000000044,
+        "5": 0.8335125000000005,
+        "6": 0.8046520499999985
+      },
+      "peakRssMiB": 114.96875,
+      "observedHeapMiB": 22.55986785888672
+    },
+    {
+      "mode": "fresh",
+      "id": "yuku-keys-flat-readonly",
+      "medianMs": 0.7367709999998908,
+      "minMs": 0.7227675000000033,
+      "maxMs": 0.7483334999999443,
+      "processMedians": {
+        "0": 0.7227675000000033,
+        "1": 0.7367709999998908,
+        "2": 0.7422710000000166,
+        "3": 0.7483334999999443,
+        "4": 0.7316639999998529,
+        "5": 0.7432284999997592,
+        "6": 0.7293745000002616
+      },
+      "peakRssMiB": 134.953125,
+      "observedHeapMiB": 32.18162536621094
+    },
+    {
+      "mode": "reused",
+      "id": "yuku-keys-flat-readonly",
+      "medianMs": 0.690614599999995,
+      "minMs": 0.6772604499999999,
+      "maxMs": 0.7031979000000035,
+      "processMedians": {
+        "0": 0.6772604499999999,
+        "1": 0.6859124999999977,
+        "2": 0.7007083500000022,
+        "3": 0.6896250000000008,
+        "4": 0.7031979000000035,
+        "5": 0.6976166499999976,
+        "6": 0.690614599999995
+      },
+      "peakRssMiB": 115.03125,
+      "observedHeapMiB": 22.704490661621094
+    },
+    {
+      "mode": "fresh",
+      "id": "yuku-direct-hooks-context",
+      "medianMs": 0.7427285000000836,
+      "minMs": 0.7291890000001331,
+      "maxMs": 0.7976864999998838,
+      "processMedians": {
+        "0": 0.7401699999999778,
+        "1": 0.7427285000000836,
+        "2": 0.7976864999998838,
+        "3": 0.7291890000001331,
+        "4": 0.748207500000234,
+        "5": 0.749543499999703,
+        "6": 0.7307515000000251
+      },
+      "peakRssMiB": 135.90625,
+      "observedHeapMiB": 28.085708618164062
+    },
+    {
+      "mode": "reused",
+      "id": "yuku-direct-hooks-context",
+      "medianMs": 0.6595708000000031,
+      "minMs": 0.6383062499999994,
+      "maxMs": 0.6834207999999989,
+      "processMedians": {
+        "0": 0.6383062499999994,
+        "1": 0.6617978999999992,
+        "2": 0.6595708000000031,
+        "3": 0.6509646000000032,
+        "4": 0.6834207999999989,
+        "5": 0.6517916500000013,
+        "6": 0.6621187500000019
+      },
+      "peakRssMiB": 132.515625,
+      "observedHeapMiB": 30.22504425048828
+    },
+    {
+      "mode": "fresh",
+      "id": "yuku-direct-hooks-readonly",
+      "medianMs": 0.5596239999998431,
+      "minMs": 0.5246020000000158,
+      "maxMs": 0.6032480000001215,
+      "processMedians": {
+        "0": 0.5652515000001586,
+        "1": 0.5595414999999093,
+        "2": 0.5596239999998431,
+        "3": 0.5246020000000158,
+        "4": 0.5957044999999823,
+        "5": 0.6032480000001215,
+        "6": 0.5476654999996811
+      },
+      "peakRssMiB": 136.3125,
+      "observedHeapMiB": 32.95930480957031
+    },
+    {
+      "mode": "reused",
+      "id": "yuku-direct-hooks-readonly",
+      "medianMs": 0.4374104499999987,
+      "minMs": 0.42363749999999956,
+      "maxMs": 0.4429416500000031,
+      "processMedians": {
+        "0": 0.43298335000000066,
+        "1": 0.4300707999999986,
+        "2": 0.43913960000000146,
+        "3": 0.42363749999999956,
+        "4": 0.4380708999999996,
+        "5": 0.4429416500000031,
+        "6": 0.4374104499999987
+      },
+      "peakRssMiB": 116.84375,
+      "observedHeapMiB": 23.161758422851562
+    },
+    {
+      "mode": "fresh",
+      "id": "yuku-direct-flat-context",
+      "medianMs": 0.731289500000031,
+      "minMs": 0.7074605000000815,
+      "maxMs": 0.8848729999999421,
+      "processMedians": {
+        "0": 0.7074605000000815,
+        "1": 0.8848729999999421,
+        "2": 0.731289500000031,
+        "3": 0.7213964999999405,
+        "4": 0.774709500000057,
+        "5": 0.7437319999998806,
+        "6": 0.721627499999812
+      },
+      "peakRssMiB": 137.125,
+      "observedHeapMiB": 27.731712341308594
+    },
+    {
+      "mode": "reused",
+      "id": "yuku-direct-flat-context",
+      "medianMs": 0.6572833500000002,
+      "minMs": 0.6489603999999958,
+      "maxMs": 0.6820582999999971,
+      "processMedians": {
+        "0": 0.6497083500000032,
+        "1": 0.6489603999999958,
+        "2": 0.6566874999999982,
+        "3": 0.6587125500000013,
+        "4": 0.661212500000002,
+        "5": 0.6572833500000002,
+        "6": 0.6820582999999971
+      },
+      "peakRssMiB": 131.875,
+      "observedHeapMiB": 30.621910095214844
+    },
+    {
+      "mode": "fresh",
+      "id": "yuku-direct-flat-readonly",
+      "medianMs": 0.5340660000001378,
+      "minMs": 0.5262494999999774,
+      "maxMs": 0.7418955000001972,
+      "processMedians": {
+        "0": 0.5262494999999774,
+        "1": 0.5340660000001378,
+        "2": 0.5471004999998854,
+        "3": 0.5362295000002462,
+        "4": 0.7418955000001972,
+        "5": 0.530998000000011,
+        "6": 0.5266459999998006
+      },
+      "peakRssMiB": 135.640625,
+      "observedHeapMiB": 32.653099060058594
+    },
+    {
+      "mode": "reused",
+      "id": "yuku-direct-flat-readonly",
+      "medianMs": 0.4392375000000015,
+      "minMs": 0.4248812500000014,
+      "maxMs": 0.45125625000000014,
+      "processMedians": {
+        "0": 0.44295835000000067,
+        "1": 0.4389104500000002,
+        "2": 0.4248812500000014,
+        "3": 0.4373812499999985,
+        "4": 0.4392375000000015,
+        "5": 0.45125625000000014,
+        "6": 0.439639600000001
+      },
+      "peakRssMiB": 115.921875,
+      "observedHeapMiB": 23.28497314453125
+    }
+  ],
+  "hookRows": [
+    {
+      "mode": "fresh",
+      "id": "yuku-keys-hooks-context",
+      "medianMs": 0.8991680000000315,
+      "minMs": 0.8647914999999955,
+      "maxMs": 1.0261865000000228,
+      "processMedians": {
+        "0": 1.0017545000000325,
+        "1": 1.0261865000000228,
+        "2": 0.8991680000000315,
+        "3": 0.8767939999999896,
+        "4": 0.903810000000135,
+        "5": 0.8647914999999955,
+        "6": 0.8943314999999643
+      },
+      "peakRssMiB": 135.34375,
+      "observedHeapMiB": 27.578399658203125
+    },
+    {
+      "mode": "reused",
+      "id": "yuku-keys-hooks-context",
+      "medianMs": 0.8401020500000016,
+      "minMs": 0.8071583500000004,
+      "maxMs": 0.9225583499999971,
+      "processMedians": {
+        "0": 0.8401020500000016,
+        "1": 0.9225583499999971,
+        "2": 0.8462957999999958,
+        "3": 0.8126000000000033,
+        "4": 0.8343687000000017,
+        "5": 0.8071583500000004,
+        "6": 0.8421729000000027
+      },
+      "peakRssMiB": 115.125,
+      "observedHeapMiB": 22.700538635253906
+    },
+    {
+      "mode": "fresh",
+      "id": "yuku-keys-object-hooks-context",
+      "medianMs": 0.8962494999999251,
+      "minMs": 0.8212099999997804,
+      "maxMs": 0.9827909999998212,
+      "processMedians": {
+        "0": 0.8811894999999481,
+        "1": 0.8962494999999251,
+        "2": 0.971060499999993,
+        "3": 0.947459000000066,
+        "4": 0.9827909999998212,
+        "5": 0.8281270000001655,
+        "6": 0.8212099999997804
+      },
+      "peakRssMiB": 134.921875,
+      "observedHeapMiB": 27.555084228515625
+    },
+    {
+      "mode": "reused",
+      "id": "yuku-keys-object-hooks-context",
+      "medianMs": 0.8537374499999941,
+      "minMs": 0.8163208499999997,
+      "maxMs": 0.9101249999999993,
+      "processMedians": {
+        "0": 0.8212687000000016,
+        "1": 0.8163208499999997,
+        "2": 0.8544957999999951,
+        "3": 0.8462208000000033,
+        "4": 0.9101249999999993,
+        "5": 0.8537374499999941,
+        "6": 0.8550291999999956
+      },
+      "peakRssMiB": 115.09375,
+      "observedHeapMiB": 22.711654663085938
+    },
+    {
+      "mode": "fresh",
+      "id": "yuku-keys-hooks-no-generic-context",
+      "medianMs": 0.9026254999999708,
+      "minMs": 0.8489205000001334,
+      "maxMs": 1.035208499999868,
+      "processMedians": {
+        "0": 0.9493729999997242,
+        "1": 0.8892675000003578,
+        "2": 1.035208499999868,
+        "3": 0.873566499999896,
+        "4": 0.8489205000001334,
+        "5": 0.9437115000001484,
+        "6": 0.9026254999999708
+      },
+      "peakRssMiB": 135.546875,
+      "observedHeapMiB": 27.545074462890625
+    },
+    {
+      "mode": "reused",
+      "id": "yuku-keys-hooks-no-generic-context",
+      "medianMs": 0.8522562499999993,
+      "minMs": 0.8038437499999986,
+      "maxMs": 0.904295849999994,
+      "processMedians": {
+        "0": 0.8227417000000004,
+        "1": 0.8522562499999993,
+        "2": 0.8611791499999981,
+        "3": 0.8644249999999971,
+        "4": 0.8038437499999986,
+        "5": 0.904295849999994,
+        "6": 0.8443458500000076
+      },
+      "peakRssMiB": 115.53125,
+      "observedHeapMiB": 22.73016357421875
+    }
+  ],
+  "effects": [
+    {
+      "mode": "fresh",
+      "label": "Direct child access only",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-direct-hooks-context",
+      "reductionPercent": 17.052483907886774,
+      "ci95": [
+        13.87988222587282,
+        20.611248903334378
+      ]
+    },
+    {
+      "mode": "fresh",
+      "label": "Remove context only",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-keys-hooks-readonly",
+      "reductionPercent": 15.22994886779948,
+      "ci95": [
+        8.876042285394458,
+        20.3721423995353
+      ]
+    },
+    {
+      "mode": "fresh",
+      "label": "Flatten typed hook arrays only",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-keys-flat-context",
+      "reductionPercent": 2.385388490672491,
+      "ci95": [
+        -1.4003605098356964,
+        6.767151970762009
+      ]
+    },
+    {
+      "mode": "fresh",
+      "label": "Direct access + remove context",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-direct-hooks-readonly",
+      "reductionPercent": 37.39952049214743,
+      "ci95": [
+        35.98759531702629,
+        38.88386126699357
+      ]
+    },
+    {
+      "mode": "fresh",
+      "label": "All three changes",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-direct-flat-readonly",
+      "reductionPercent": 37.987391134382676,
+      "ci95": [
+        31.220942942134588,
+        42.854270658897775
+      ]
+    },
+    {
+      "mode": "fresh",
+      "label": "Unmodified clone vs package control",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-stock",
+      "reductionPercent": 2.324090868178741,
+      "ci95": [
+        -0.6070461895881563,
+        6.390478285251977
+      ]
+    },
+    {
+      "mode": "fresh",
+      "label": "Map lookup to object lookup only",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-keys-object-hooks-context",
+      "reductionPercent": 2.176441285575492,
+      "ci95": [
+        -4.89854046358984,
+        8.585490020573094
+      ]
+    },
+    {
+      "mode": "fresh",
+      "label": "Remove unused global hooks only",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-keys-hooks-no-generic-context",
+      "reductionPercent": 0.3679366608773549,
+      "ci95": [
+        -6.48697664956801,
+        6.531270289392943
+      ]
+    },
+    {
+      "mode": "reused",
+      "label": "Direct child access only",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-direct-hooks-context",
+      "reductionPercent": 21.59767545797694,
+      "ci95": [
+        20.332007931313722,
+        22.92171419561089
+      ]
+    },
+    {
+      "mode": "reused",
+      "label": "Remove context only",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-keys-hooks-readonly",
+      "reductionPercent": 16.073386682261315,
+      "ci95": [
+        12.665968922561321,
+        18.94003717904549
+      ]
+    },
+    {
+      "mode": "reused",
+      "label": "Flatten typed hook arrays only",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-keys-flat-context",
+      "reductionPercent": 1.0967926453729238,
+      "ci95": [
+        -0.9942498275416378,
+        2.6383913051101104
+      ]
+    },
+    {
+      "mode": "reused",
+      "label": "Direct access + remove context",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-direct-hooks-readonly",
+      "reductionPercent": 48.19869920426918,
+      "ci95": [
+        47.465149785814845,
+        49.18782788166638
+      ]
+    },
+    {
+      "mode": "reused",
+      "label": "All three changes",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-direct-flat-readonly",
+      "reductionPercent": 47.69018281840312,
+      "ci95": [
+        46.90548368914095,
+        48.4850439712165
+      ]
+    },
+    {
+      "mode": "reused",
+      "label": "Unmodified clone vs package control",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-stock",
+      "reductionPercent": 2.0214135377739972,
+      "ci95": [
+        0.36616384321391804,
+        4.467872715263477
+      ]
+    },
+    {
+      "mode": "reused",
+      "label": "Map lookup to object lookup only",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-keys-object-hooks-context",
+      "reductionPercent": -0.9087973081605805,
+      "ci95": [
+        -5.1247384677689745,
+        3.9886666220452005
+      ]
+    },
+    {
+      "mode": "reused",
+      "label": "Remove unused global hooks only",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-keys-hooks-no-generic-context",
+      "reductionPercent": -0.8328460322950093,
+      "ci95": [
+        -5.351279316674984,
+        3.3375547335026234
+      ]
+    }
+  ],
+  "conditionalEffects": [
+    {
+      "mode": "fresh",
+      "label": "Remove context under keys/hooks",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-keys-hooks-readonly",
+      "reductionPercent": 15.22994886779948,
+      "ci95": [
+        8.91256159001398,
+        20.381412234652085
+      ]
+    },
+    {
+      "mode": "fresh",
+      "label": "Remove context under keys/flat",
+      "baseline": "yuku-keys-flat-context",
+      "changed": "yuku-keys-flat-readonly",
+      "reductionPercent": 16.35800198094598,
+      "ci95": [
+        14.95635684595442,
+        17.9898130496311
+      ]
+    },
+    {
+      "mode": "fresh",
+      "label": "Remove context under direct/hooks",
+      "baseline": "yuku-direct-hooks-context",
+      "changed": "yuku-direct-hooks-readonly",
+      "reductionPercent": 24.53001312500457,
+      "ci95": [
+        21.94329965773607,
+        27.05949819090222
+      ]
+    },
+    {
+      "mode": "fresh",
+      "label": "Remove context under direct/flat",
+      "baseline": "yuku-direct-flat-context",
+      "changed": "yuku-direct-flat-readonly",
+      "reductionPercent": 25.736108531039303,
+      "ci95": [
+        17.749739589523383,
+        32.33692037972806
+      ]
+    },
+    {
+      "mode": "reused",
+      "label": "Remove context under keys/hooks",
+      "baseline": "yuku-keys-hooks-context",
+      "changed": "yuku-keys-hooks-readonly",
+      "reductionPercent": 16.073386682261315,
+      "ci95": [
+        12.533952770344236,
+        18.941002834221244
+      ]
+    },
+    {
+      "mode": "reused",
+      "label": "Remove context under keys/flat",
+      "baseline": "yuku-keys-flat-context",
+      "changed": "yuku-keys-flat-readonly",
+      "reductionPercent": 16.642063708681775,
+      "ci95": [
+        15.37504520510159,
+        17.936998877794817
+      ]
+    },
+    {
+      "mode": "reused",
+      "label": "Remove context under direct/hooks",
+      "baseline": "yuku-direct-hooks-context",
+      "changed": "yuku-direct-hooks-readonly",
+      "reductionPercent": 33.928871244160995,
+      "ci95": [
+        32.93049294872632,
+        34.87845127616281
+      ]
+    },
+    {
+      "mode": "reused",
+      "label": "Remove context under direct/flat",
+      "baseline": "yuku-direct-flat-context",
+      "changed": "yuku-direct-flat-readonly",
+      "reductionPercent": 33.38115987571665,
+      "ci95": [
+        32.28307710520896,
+        34.47488772832001
+      ]
+    }
+  ],
+  "method": "Median of seven process medians; contrast is geometric mean of paired within-round time ratios. CI is paired bootstrap over seven rounds (10000 draws, fixed seed), descriptive rather than proof of universal significance."
+}

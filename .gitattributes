@@ -1,0 +1,2 @@
+# Preserve measured generated-source bytes so their recorded hashes stay verifiable.
+experiments/i18n-dispatch/generated/*.mjs whitespace=-blank-at-eol
