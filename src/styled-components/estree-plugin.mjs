@@ -26,3 +26,15 @@ export function edit(node,state) {
   const config=configFor(node,state); if(!config) return;
   node.init.tag={type:'CallExpression',optional:false,callee:{type:'MemberExpression',computed:false,optional:false,object:node.init.tag,property:id('withConfig')},arguments:[{type:'ObjectExpression',properties:Object.entries(config).map(([name,value])=>({type:'Property',key:id(name),value:str(value),kind:'init',method:false,shorthand:false,computed:false}))}]};
 }
+
+// Build a replacement without mutating the input. Editing adapters apply it via
+// their own replacement API; node-only walkers continue to use edit().
+export function replacementTagFor(node, state) {
+  const config = configFor(node, state);
+  if (!config) return null;
+  return {type:'CallExpression',optional:false,callee:{type:'MemberExpression',computed:false,optional:false,object:node.init.tag,property:id('withConfig')},arguments:[{type:'ObjectExpression',properties:Object.entries(config).map(([name,value])=>({type:'Property',key:id(name),value:str(value),kind:'init',method:false,shorthand:false,computed:false}))}]};
+}
+export function replacementFor(node, state) {
+  const tag = replacementTagFor(node, state);
+  return tag ? { ...node, init: { ...node.init, tag } } : null;
+}

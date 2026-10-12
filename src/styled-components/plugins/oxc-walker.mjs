@@ -1,7 +1,11 @@
-import { stateFor, edit } from '../estree-plugin.mjs';
+import { stateFor, replacementFor } from '../estree-plugin.mjs';
 import { walk } from 'oxc-walker';
-export function run(ast,filename) {
- const state=stateFor(ast,filename);
- walk(ast,{leave(node) { if(node.type==='VariableDeclarator') edit(node,state); }});
- return {ast,changed:state.changed};
+export function run(ast, filename) {
+  const state = stateFor(ast, filename);
+  ast = walk(ast, { leave(node) {
+    if (node.type !== 'VariableDeclarator') return;
+    const next = replacementFor(node, state);
+    if (next) this.replace(next);
+  } });
+  return { ast, changed: state.changed };
 }

@@ -1,5 +1,12 @@
 import ts from 'typescript';
-import { tsquery } from '@phenomnomnominal/tsquery';
-import { transform } from '../typescript.mjs';
+import { map } from '@phenomnomnominal/tsquery';
+import { inList } from '../typescript.mjs';
 export { prepare, print } from './typescript.mjs';
-export const run = ast => transform(ts, ast, new Set(tsquery(ast, 'DebuggerStatement')));
+export function run(ast) {
+  let changed = 0;
+  ast = map(ast, 'DebuggerStatement', node => {
+    changed++;
+    return inList(ts, node) ? undefined : ts.factory.createEmptyStatement();
+  });
+  return { ast, changed };
+}

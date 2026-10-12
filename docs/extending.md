@@ -2,6 +2,14 @@
 
 Keep task semantics separate from traversal libraries. A plugin implements one task with one package's actual API; do not route every library through a universal visitor adapter.
 
+## Editing API policy
+
+- Use native removal/replacement when offered: context/path operations, return-value transforms or documented bulk transforms. Do not replace them with raw property assignments or array splices just to equalize algorithms.
+- Node-only walkers and query APIs without editing support may modify AST slots manually. Scalar updates are distinct from structural replacement. The direct-ast baseline is intentionally manual.
+- Follow immutable APIs by returning replacements and using the returned root. Do not mutate their inputs.
+- Include internal work performed by public APIs, including TSQuery map printing/reparsing and ts-morph text synchronization. Label these costs explicitly.
+- Equal task semantics and output do not require identical algorithms. Experimental equal-algorithm controls are diagnostic, not contestant implementations. See the [complete audit](api-audit.md).
+
 ## Editing scenarios
 
 1. Add `src/<scenario>/workload.mjs`: export `corpus(kind, small)` returning `{ filename, source, expected, count, ast }` fixtures. Author expected code independently of the tested plugins. Reuse `src/shared/ast.mjs` for parsing, canonical comparison and SHA-256.
