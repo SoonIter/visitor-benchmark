@@ -66,7 +66,7 @@ def render(title, subtitle, panels, environment, repetitions, output):
         ax.set_xlabel(panel['xlabel'], fontsize=9, labelpad=12)
     fig.text(.035, .065, environment, fontsize=9, color=MUTED)
     fig.text(.035, .029,
-             f'Median of {repetitions} process medians · Whiskers: min–max · Lower is better · Parsing and external printing excluded',
+             f'Median of {repetitions} process medians · Whiskers: min–max · Lower is better · External parsing/printing excluded',
              fontsize=8.5, color=MUTED)
     output = Path(output)
     output.parent.mkdir(parents=True, exist_ok=True)

@@ -33,7 +33,7 @@ for name, estree in [('estree', True), ('native', False)]:
     title = 'Styled-components' if scenario == 'styled-components' else 'Remove debugger'
     title += ' · Shared ESTree' if estree else ' · Native ASTs'
     subtitle = ('Identical Acorn AST input for every implementation' if estree else
-                'Babel, SWC and TypeScript ASTs are not ESTree; this is not a same-AST ranking')
+                'Not a same-AST ranking; includes TSQuery print/reparse and ts-morph text updates')
     render(title, subtitle, panels,
            f"{env['cpu']} · Node {env['node']} · {data['createdAt'][:10]}",
            data['config']['repetitions'], ROOT / f'charts/{scenario}/{name}')

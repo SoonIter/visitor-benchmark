@@ -843,7 +843,7 @@ L 989.905298 468.689442
    <text style="fill: #64748b; font: 9px 'DejaVu Sans'; text-anchor: start" x="40.32" y="548.658" transform="rotate(-0 40.32 548.658)">Apple M5 Max · Node v24.20.0 · 2026-10-12</text>
   </g>
   <g id="text_86">
-   <text style="fill: #64748b; font: 8.5px 'DejaVu Sans'; text-anchor: start" x="40.32" y="569.7828" transform="rotate(-0 40.32 569.7828)">Median of 3 process medians · Whiskers: min–max · Lower is better · Parsing and external printing excluded</text>
+   <text style="fill: #64748b; font: 8.5px 'DejaVu Sans'; text-anchor: start" x="40.32" y="569.7828" transform="rotate(-0 40.32 569.7828)">Median of 3 process medians · Whiskers: min–max · Lower is better · External parsing/printing excluded</text>
   </g>
  </g>
  <defs>

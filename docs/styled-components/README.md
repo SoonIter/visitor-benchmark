@@ -25,7 +25,7 @@ Native Babel, SWC and TypeScript ASTs are **not ESTree**. Their chart includes A
 ## Comparison boundaries
 
 - ESTree participants receive fresh, structurally identical Acorn AST clones. Native participants parse the same source into their own ASTs outside measurement.
-- Timing includes visitor construction, traversal, queries, scope work when enabled and all edits. Parsing, cloning, external printing and validation are excluded. ts-morph internal text synchronization stays timed.
+- Timing includes visitor construction, traversal, queries, scope work when enabled and all edits. Parsing, cloning, external printing and validation are excluded. ts-morph internal text synchronization and tsquery.map printing/reparsing stay timed.
 - The direct-ast baseline is specialized to this corpus. Other implementations use their package traversal; not all perform identical work, such as scope analysis or wrapper bookkeeping.
 - Every measured output is printed and reparsed, then compared structurally with independently authored expected source. Counts and cross-process input/output hashes must agree.
 - babel-traverse / babel-traverse-no-scope use @babel/traverse 8; babel-types-traverse-fast uses @babel/types.traverseFast; babel-types-traverse uses @babel/types.traverse. Exact versions are in raw results.
