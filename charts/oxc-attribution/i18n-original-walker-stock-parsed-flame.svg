@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="918" viewBox="0 0 1600 918">
+<rect width="1600" height="918" fill="white"/>
+<text x="20" y="30" font-family="sans-serif" font-size="22" font-weight="bold">TS/TSX i18n-walker-stock-parsed · CPU flame graph</text>
+<text x="20" y="55" font-family="sans-serif" font-size="13">Reused AST · profiler enabled only during collection · nominal 200 μs interval · hover for source and inclusive time</text>
+<g><title>(root) | :0 | 2023.3 ms inclusive (100.00%)</title><rect x="20.000" y="872" width="1559.800" height="20" fill="#dcc241"/>
+<text x="23.000" y="886" font-family="monospace" font-size="11">(root)</text>
+</g>
+<g><title>(anonymous) | experiments/oxc-attribution/profile.mjs:0 | 1999.4 ms inclusive (98.82%)</title><rect x="20.000" y="851" width="1541.363" height="20" fill="#f0a041"/>
+<text x="23.000" y="865" font-family="monospace" font-size="11">(anonymous)</text>
+</g>
+<g><title>post | experiments/oxc-attribution/profile.mjs:23 | 11.0 ms inclusive (0.55%)</title><rect x="20.000" y="830" width="8.313" height="20" fill="#ce8441"/>
+</g>
+<g><title>(anonymous) | experiments/oxc-attribution/profile.mjs:23 | 11.0 ms inclusive (0.55%)</title><rect x="20.000" y="809" width="8.313" height="20" fill="#e58a41"/>
+</g>
+<g><title>post | node:inspector:115 | 11.0 ms inclusive (0.55%)</title><rect x="20.000" y="788" width="8.313" height="20" fill="#e88b41"/>
+</g>
+<g><title>collectCorpus | experiments/oxc-attribution/profile.mjs:19 | 1988.2 ms inclusive (98.26%)</title><rect x="28.513" y="830" width="1532.721" height="20" fill="#f08f41"/>
+<text x="31.513" y="844" font-family="monospace" font-size="11">collectCorpus</text>
+</g>
+<g><title>(anonymous) | experiments/oxc-attribution/cases.mjs:44 | 1987.4 ms inclusive (98.22%)</title><rect x="28.513" y="809" width="1532.079" height="20" fill="#f28c41"/>
+<text x="31.513" y="823" font-family="monospace" font-size="11">(anonymous)</text>
+</g>
+<g><title>walk | node_modules/oxc-walker/dist/index.mjs:181 | 1965.8 ms inclusive (97.15%)</title><rect x="28.513" y="788" width="1515.408" height="20" fill="#ee8c41"/>
+<text x="31.513" y="802" font-family="monospace" font-size="11">walk</text>
+</g>
+<g><title>traverse | node_modules/oxc-walker/dist/index.mjs:57 | 1962.9 ms inclusive (97.01%)</title><rect x="28.513" y="767" width="1513.224" height="20" fill="#d4d241"/>
+<text x="31.513" y="781" font-family="monospace" font-size="11">traverse</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 1960.7 ms inclusive (96.91%)</title><rect x="28.513" y="746" width="1511.520" height="20" fill="#f9a841"/>
+<text x="31.513" y="760" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 1943.8 ms inclusive (96.07%)</title><rect x="28.513" y="725" width="1498.480" height="20" fill="#f9a841"/>
+<text x="31.513" y="739" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 1884.3 ms inclusive (93.13%)</title><rect x="28.513" y="704" width="1452.604" height="20" fill="#f9a841"/>
+<text x="31.513" y="718" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 1793.7 ms inclusive (88.65%)</title><rect x="28.513" y="683" width="1382.768" height="20" fill="#f9a841"/>
+<text x="31.513" y="697" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 1689.1 ms inclusive (83.48%)</title><rect x="28.513" y="662" width="1302.130" height="20" fill="#f9a841"/>
+<text x="31.513" y="676" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 1597.7 ms inclusive (78.96%)</title><rect x="28.513" y="641" width="1231.613" height="20" fill="#f9a841"/>
+<text x="31.513" y="655" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 1472.8 ms inclusive (72.79%)</title><rect x="28.513" y="620" width="1135.361" height="20" fill="#f9a841"/>
+<text x="31.513" y="634" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 1336.0 ms inclusive (66.03%)</title><rect x="28.513" y="599" width="1029.828" height="20" fill="#f9a841"/>
+<text x="31.513" y="613" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 1192.8 ms inclusive (58.95%)</title><rect x="28.513" y="578" width="919.417" height="20" fill="#f9a841"/>
+<text x="31.513" y="592" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 19.0 ms inclusive (0.94%)</title><rect x="28.513" y="557" width="14.449" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 2.1 ms inclusive (0.10%)</title><rect x="28.513" y="536" width="1.406" height="20" fill="#f0bf41"/>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 1025.5 ms inclusive (50.68%)</title><rect x="43.163" y="557" width="790.465" height="20" fill="#f9a841"/>
+<text x="46.163" y="571" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 851.0 ms inclusive (42.06%)</title><rect x="43.163" y="536" width="655.960" height="20" fill="#f9a841"/>
+<text x="46.163" y="550" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 701.6 ms inclusive (34.67%)</title><rect x="43.163" y="515" width="540.729" height="20" fill="#f9a841"/>
+<text x="46.163" y="529" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 19.1 ms inclusive (0.95%)</title><rect x="43.163" y="494" width="14.545" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 1.8 ms inclusive (0.09%)</title><rect x="43.163" y="473" width="1.149" height="20" fill="#f0bf41"/>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 581.1 ms inclusive (28.72%)</title><rect x="57.907" y="494" width="447.825" height="20" fill="#f9a841"/>
+<text x="60.907" y="508" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 447.1 ms inclusive (22.10%)</title><rect x="57.907" y="473" width="344.511" height="20" fill="#f9a841"/>
+<text x="60.907" y="487" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 335.0 ms inclusive (16.56%)</title><rect x="57.907" y="452" width="258.067" height="20" fill="#f9a841"/>
+<text x="60.907" y="466" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 250.6 ms inclusive (12.39%)</title><rect x="57.907" y="431" width="193.012" height="20" fill="#f9a841"/>
+<text x="60.907" y="445" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 186.4 ms inclusive (9.21%)</title><rect x="57.907" y="410" width="143.500" height="20" fill="#f9a841"/>
+<text x="60.907" y="424" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 137.0 ms inclusive (6.77%)</title><rect x="57.907" y="389" width="105.398" height="20" fill="#f9a841"/>
+<text x="60.907" y="403" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 98.4 ms inclusive (4.86%)</title><rect x="57.907" y="368" width="75.648" height="20" fill="#f9a841"/>
+<text x="60.907" y="382" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 72.4 ms inclusive (3.58%)</title><rect x="57.907" y="347" width="55.632" height="20" fill="#f9a841"/>
+<text x="60.907" y="361" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 53.8 ms inclusive (2.66%)</title><rect x="57.907" y="326" width="41.274" height="20" fill="#f9a841"/>
+<text x="60.907" y="340" font-family="monospace" font-size="11">_walk</text>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 38.7 ms inclusive (1.91%)</title><rect x="57.907" y="305" width="29.644" height="20" fill="#f9a841"/>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 29.0 ms inclusive (1.43%)</title><rect x="57.907" y="284" width="22.159" height="20" fill="#f9a841"/>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 22.5 ms inclusive (1.11%)</title><rect x="57.907" y="263" width="17.116" height="20" fill="#f9a841"/>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 16.9 ms inclusive (0.84%)</title><rect x="57.907" y="242" width="12.843" height="20" fill="#f9a841"/>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 11.7 ms inclusive (0.58%)</title><rect x="57.907" y="221" width="8.795" height="20" fill="#f9a841"/>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 10.2 ms inclusive (0.50%)</title><rect x="57.907" y="200" width="7.638" height="20" fill="#f9a841"/>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 8.5 ms inclusive (0.42%)</title><rect x="57.907" y="179" width="6.384" height="20" fill="#f9a841"/>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 7.0 ms inclusive (0.34%)</title><rect x="57.907" y="158" width="5.164" height="20" fill="#f9a841"/>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 4.2 ms inclusive (0.21%)</title><rect x="57.907" y="137" width="3.011" height="20" fill="#f9a841"/>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 2.3 ms inclusive (0.12%)</title><rect x="57.907" y="116" width="1.598" height="20" fill="#f9a841"/>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 0.2 ms inclusive (0.01%)</title><rect x="57.907" y="95" width="0.000" height="20" fill="#f9a841"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 0.3 ms inclusive (0.01%)</title><rect x="59.705" y="116" width="0.024" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 0.2 ms inclusive (0.01%)</title><rect x="59.930" y="116" width="0.000" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 0.2 ms inclusive (0.01%)</title><rect x="61.118" y="137" width="0.000" height="20" fill="#d2b241"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 0.2 ms inclusive (0.01%)</title><rect x="64.492" y="179" width="0.000" height="20" fill="#d2b241"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 0.2 ms inclusive (0.01%)</title><rect x="65.745" y="200" width="0.000" height="20" fill="#d2b241"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 1.0 ms inclusive (0.05%)</title><rect x="66.902" y="221" width="0.571" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 0.5 ms inclusive (0.02%)</title><rect x="66.902" y="200" width="0.186" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 0.5 ms inclusive (0.02%)</title><rect x="70.950" y="242" width="0.186" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 0.2 ms inclusive (0.01%)</title><rect x="70.950" y="221" width="0.000" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 1.0 ms inclusive (0.05%)</title><rect x="75.223" y="263" width="0.571" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 0.5 ms inclusive (0.02%)</title><rect x="75.223" y="242" width="0.186" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 1.2 ms inclusive (0.06%)</title><rect x="80.266" y="284" width="0.764" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 0.2 ms inclusive (0.01%)</title><rect x="80.266" y="263" width="0.000" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 1.8 ms inclusive (0.09%)</title><rect x="87.751" y="305" width="1.214" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 0.8 ms inclusive (0.04%)</title><rect x="87.751" y="284" width="0.411" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 2.1 ms inclusive (0.10%)</title><rect x="99.381" y="326" width="1.406" height="20" fill="#d2b241"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 3.1 ms inclusive (0.15%)</title><rect x="113.739" y="347" width="2.178" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 0.2 ms inclusive (0.01%)</title><rect x="113.739" y="326" width="0.000" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 8.8 ms inclusive (0.43%)</title><rect x="133.756" y="368" width="6.579" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 1.0 ms inclusive (0.05%)</title><rect x="133.756" y="347" width="0.603" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 7.5 ms inclusive (0.37%)</title><rect x="163.506" y="389" width="5.551" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 1.8 ms inclusive (0.09%)</title><rect x="163.506" y="368" width="1.212" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 11.4 ms inclusive (0.56%)</title><rect x="201.607" y="410" width="8.572" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 2.5 ms inclusive (0.13%)</title><rect x="201.607" y="389" width="1.760" height="20" fill="#f0bf41"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 0.2 ms inclusive (0.01%)</title><rect x="210.380" y="410" width="0.000" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 14.8 ms inclusive (0.73%)</title><rect x="251.119" y="431" width="11.174" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 3.8 ms inclusive (0.19%)</title><rect x="251.119" y="410" width="2.691" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 18.1 ms inclusive (0.89%)</title><rect x="316.175" y="452" width="13.738" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 4.5 ms inclusive (0.22%)</title><rect x="316.175" y="431" width="3.267" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 16.4 ms inclusive (0.81%)</title><rect x="402.618" y="473" width="12.424" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 1.5 ms inclusive (0.08%)</title><rect x="402.618" y="452" width="0.988" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 18.6 ms inclusive (0.92%)</title><rect x="584.092" y="515" width="14.160" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 4.7 ms inclusive (0.23%)</title><rect x="584.092" y="494" width="3.398" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 16.2 ms inclusive (0.80%)</title><rect x="699.322" y="536" width="12.294" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 4.4 ms inclusive (0.22%)</title><rect x="699.322" y="515" width="3.172" height="20" fill="#f0bf41"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 0.2 ms inclusive (0.01%)</title><rect x="711.816" y="536" width="0.000" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 16.3 ms inclusive (0.81%)</title><rect x="948.130" y="578" width="12.393" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 2.1 ms inclusive (0.11%)</title><rect x="948.130" y="557" width="1.438" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 12.8 ms inclusive (0.63%)</title><rect x="1058.542" y="599" width="9.663" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 0.8 ms inclusive (0.04%)</title><rect x="1058.542" y="578" width="0.378" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 11.5 ms inclusive (0.57%)</title><rect x="1164.075" y="620" width="8.636" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 1.7 ms inclusive (0.08%)</title><rect x="1164.075" y="599" width="1.117" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 5.9 ms inclusive (0.29%)</title><rect x="1260.327" y="641" width="4.330" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 0.2 ms inclusive (0.01%)</title><rect x="1260.327" y="620" width="0.000" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 11.0 ms inclusive (0.54%)</title><rect x="1330.844" y="662" width="8.249" height="20" fill="#d2b241"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 15.8 ms inclusive (0.78%)</title><rect x="1411.482" y="683" width="11.974" height="20" fill="#d2b241"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 9.6 ms inclusive (0.48%)</title><rect x="1411.482" y="662" width="7.221" height="20" fill="#f0bf41"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 4.7 ms inclusive (0.23%)</title><rect x="1481.318" y="704" width="3.431" height="20" fill="#d2b241"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 0.3 ms inclusive (0.01%)</title><rect x="1527.193" y="725" width="0.025" height="20" fill="#d2b241"/>
+</g>
+<g><title>WalkerSync | node_modules/oxc-walker/dist/index.mjs:54 | 2.8 ms inclusive (0.14%)</title><rect x="1541.937" y="767" width="1.984" height="20" fill="#db8441"/>
+</g>
+<g><title>WalkerBase | node_modules/oxc-walker/dist/index.mjs:30 | 1.8 ms inclusive (0.09%)</title><rect x="1541.937" y="746" width="1.149" height="20" fill="#d19a41"/>
+</g>
+<g><title>(anonymous) | experiments/oxc-attribution/cases.mjs:44 | 0.2 ms inclusive (0.01%)</title><rect x="1561.434" y="830" width="0.000" height="20" fill="#f28c41"/>
+</g>
+<g><title>matches | experiments/oxc-attribution/cases.mjs:54 | 0.2 ms inclusive (0.01%)</title><rect x="1561.563" y="851" width="0.000" height="20" fill="#cec841"/>
+</g>
+<g><title>walk | experiments/oxc-attribution/cases.mjs:62 | 15.5 ms inclusive (0.77%)</title><rect x="1561.756" y="851" width="11.782" height="20" fill="#d2b241"/>
+</g>
+<g><title>(program) | :0 | 1.2 ms inclusive (0.06%)</title><rect x="1573.738" y="851" width="0.699" height="20" fill="#efa641"/>
+</g>
+<g><title>(garbage collector) | :0 | 1.0 ms inclusive (0.05%)</title><rect x="1574.637" y="851" width="0.571" height="20" fill="#e0ab41"/>
+</g>
+<g><title>_walk | node_modules/oxc-walker/dist/index.mjs:68 | 5.7 ms inclusive (0.28%)</title><rect x="1575.408" y="851" width="4.199" height="20" fill="#f9a841"/>
+</g>
+<g><title>callback | experiments/oxc-attribution/cases.mjs:52 | 0.2 ms inclusive (0.01%)</title><rect x="1579.807" y="851" width="0.000" height="20" fill="#f0bf41"/>
+</g>
+</svg>

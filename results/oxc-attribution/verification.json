@@ -1,0 +1,91 @@
+{
+  "datasets": {
+    "fresh": {
+      "workers": 420,
+      "measuredCorpusIterations": 8400,
+      "measuredSourceHashesMatch": true,
+      "inputAndOutputParity": true
+    },
+    "cloned": {
+      "workers": 280,
+      "measuredCorpusIterations": 5600,
+      "measuredSourceHashesMatch": true,
+      "inputAndOutputParity": true
+    },
+    "strings": {
+      "workers": 224,
+      "measuredCorpusIterations": 4480,
+      "measuredSourceHashesMatch": true,
+      "inputAndOutputParity": true
+    }
+  },
+  "nonMeasuredSnapshotChanges": {
+    "cloned": [
+      "experiments/oxc-attribution/profile.mjs"
+    ]
+  },
+  "generatedHashes": {
+    "walker-clone.mjs": "888ba0240d2fa54429deb7cce4780b62ed84e91fb83521ab0a4fe097887a0a38",
+    "walker-keys.mjs": "97133cfbd52669ab8b6d0e3db259299ab60cfbc374c2d7d59ea2f0c37f48fc9f",
+    "walker-no-meta-skip.mjs": "fc9d4fad2dbfa0cb31cf7f526dcd5b6673842dd3e6c54634a6d5ce30c9ac346a",
+    "walker-fresh-context.mjs": "6b3fc937a2a0c695790a92f86178977b9129cb5f3a487ad293cd2b4badba62e9",
+    "walker-readonly.mjs": "4dee7657d78f982fdb4a217781cd90e7fe4dd8776374007910f516004481bf85",
+    "visitor-clone.mjs": "d30ca69129f089064e2049c270d5844558356c2590377b169f57e15c8bed58e2",
+    "visitor-generic.mjs": "1bb3a6cde4d5dec5f2d046cd64898fdd95735e4aeacc7ee5f2f19e486d793339",
+    "visitor-keys.mjs": "139075056392ebaddd7eb65d4b8e05b9c1f28daac77d8636c2b339a8ded85e9b",
+    "schema.json": "fb528cb8aa534c6bad8fa1ef9251f0c5790a980542c0f50cd479603098b3839c",
+    "direct-for-in.mjs": "a415415fb38741499578fd333d89f6c24a69ce5b76094ae730f54004c3556fd9",
+    "direct-guarded.mjs": "8c6f36201fc90642d1b7bc609b357dac5ceffef90dc04f4aca5fe167fedb2876"
+  },
+  "supportingFiles": {
+    "experiments/oxc-attribution/worker.mjs": "0cbbc4d3a6dc8ca007d0aeb4d56e947b19812d59ae884afb989e2fe972bb81f2",
+    "experiments/oxc-attribution/strings.cjs": "e6de1648793fea282fc8cb432bf230ffe68273171dd34dc475535af6546ed4ef",
+    "experiments/oxc-attribution/profile.mjs": "38d03acb608a415e7a5c1fad66f142e4ff2edeba42d2e0edf88029f843b3ea65",
+    "experiments/oxc-attribution/shape-worker.mjs": "69a8740c5ba35c5cbe9bc752d27107387829fea0734362d5d3a6fb17780404e8",
+    "experiments/oxc-attribution/shape-bench.mjs": "482ed5416cf571e80e2c1c1ebf506a427b0b039b70352a7114e9490b1c3debed",
+    "experiments/oxc-attribution/flamegraphs.py": "020774cb92c078d0a35d551d027b6cced4161a3d52c526ef98c3c3e91f250291",
+    "experiments/oxc-attribution/chart.py": "dde46fddb6b4751f2e9e13a203e04fa3dfcc48877423a185e93e3a5688e82dbc",
+    "experiments/oxc-attribution/summarize.py": "d90253f86cbad5cd837cd4bc21fa061808aa30250907b5bdb1154c26b566e11e",
+    "experiments/oxc-attribution/cases.mjs": "570d188c17966718bc4b5c01fb55e00f45bfcfbba1cd369d84a9eff28c1f8338",
+    "experiments/oxc-attribution/README.md": "431cb12f7b4c2b30aa38787d378c52b4609f68b3dbc33c08d08e2a4a4b62fc82",
+    "experiments/oxc-attribution/clone-worker.mjs": "24553fda9dd6925591fe71e8022190d587b3d2cb63533b56b742c2b935433253",
+    "experiments/oxc-attribution/clone-bench.mjs": "767822988aed1b49819ded7b27c1cc9724d5d3a5f5ef22c6830d4927e739b871",
+    "experiments/oxc-attribution/bench.mjs": "d04b1b90506240c614b3c3e754b8fa75390675cf65393610ddada8a86dc7ab81",
+    "experiments/oxc-attribution/generate.mjs": "10ec357eff501273de828ed1e3da05749350ccef921c30132521b080ebb1f343",
+    "experiments/oxc-attribution/shape-summary.py": "5b5b49a54ca1846e693737f74cf227450fe76c709f9e64ecd25a274909c27d7f",
+    "experiments/oxc-attribution/audit.mjs": "5674a26efbbf375775660c04612d777c3bb8e164a2cd814c66864771566ed683",
+    "experiments/oxc-attribution/report.py": "c6798d0bcb4b5a5d6a81c3568dfdddeed1fd13162aa099757bcf9a502ea5c2f7",
+    "experiments/oxc-attribution/shape.cjs": "dd78574dcdd601367fd4e5203172929bd737bc7871a83cd211aaa894639a5472",
+    "src/remove-debugger/typescript.mjs": "404f0442b1111fced7f7eb53a835cad1834125d7112a2146d6d04c12f86eaab5",
+    "src/remove-debugger/edit.mjs": "d463d09eabb0270f343f871d75ce88dfe38d3eccbb94ad46df79f87e66ae7a5a",
+    "src/remove-debugger/workload.mjs": "6fc234eca172be12bd9070224b1239e9148ad1d12a4fa5302706c55a4e9eeeb7",
+    "src/remove-debugger/registry.mjs": "d83791d569225acdacc038244c188701bc58d235603491863ffd4c920dda9108",
+    "src/remove-debugger/execute.mjs": "107b73c77411596d19c018e5a0f27ba950b52bde868f3a691a80438494beec11",
+    "src/styled-components/estree-plugin.mjs": "996a9600986785e312abceae40fbd594180f657cf6942ed51d9c95c6dbe7ce3b",
+    "src/styled-components/babel-plugin.mjs": "18dd290f2627a3cd28c9236a14855d2675a5f40ce873011c5eef3d276bf2bb11",
+    "src/styled-components/ts-plugin.mjs": "d99b660c6f12721998f90119ef3ce3787d23d6634997758805db3cfecddd689d",
+    "src/styled-components/workload.mjs": "afa7a46f8193a46dd050db79e973ff8578700dc6986737d188e7d88f08d6a5a1",
+    "src/styled-components/babel-io.mjs": "84c361e89d36f16feb73f4d5dc62eead2419b026c7d3fd2c9c62966f463b96fb",
+    "src/styled-components/registry.mjs": "c433c40f3f929cc8068139926ce04a81b9e052da4daef2cc4d50691740d4124d",
+    "src/styled-components/execute.mjs": "f4808eb8c57934b4d6fcaef040cbdbc844dddbf165287a8f9bcc2481bfe66675",
+    "src/shared/ast.mjs": "df5c07cfc6b77979264b4cd8871b552a380a995e714f02b963f17b26e51e164b",
+    "src/i18n/corpus.mjs": "f0177ba4dfea529cfc139f3ff21ab238902e28098087cf2f1585c82f25f407a6",
+    "node_modules/oxc-parser/src-js/visit/index.js": "40f3b0bfafc2cb8bf141bc52433c7c478cfeeae41ed048fe130a6528b3b1f425",
+    "node_modules/oxc-parser/src-js/visit/visitor.js": "991588c5f776e5c2568dbe92a16f69c0bc3bde2029d88c3fcddc40e44b4c896e",
+    "node_modules/oxc-parser/src-js/generated/visit/keys.js": "7845365183841507f3a7e1dadc7e22af7bfc621a9a9a0c2184efc575c80515cd",
+    "node_modules/oxc-parser/src-js/generated/visit/walk.js": "d30ca69129f089064e2049c270d5844558356c2590377b169f57e15c8bed58e2",
+    "node_modules/oxc-parser/src-js/generated/visit/type_ids.js": "71b4a1858e88319291abf36fe8de500e650a580849b90645af642124c27ae2e9",
+    "node_modules/oxc-walker/dist/index.mjs": "34a08a2378be5c2e7df0b260409d1d9f8a85172e15738e7d5f96277d4535fd61",
+    "package-lock.json": "eb1d536a3d7aae8286b692ff3d782be3acf963bf5106f7d30378fd2d09e6e356"
+  },
+  "note": "Historical manifests include some files not used by their measured workers; nonMeasuredSnapshotChanges lists later changes to those supporting files. All measured entry points, harnesses, generators, and generated variant hashes match.",
+  "genericDispatchIdentityAndOrder": {
+    "debugger-dense": 6292,
+    "debugger-sparse": 14020,
+    "styled-dense": 11944,
+    "styled-sparse": 24588,
+    "i18n-javascript": 19769,
+    "i18n-original": 25310,
+    "i18n-javascript-compact": 19769
+  }
+}

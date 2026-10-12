@@ -1,0 +1,53 @@
+Parsed type
+DebugPrint: 0x3e61eb55a671: [String]: #BinaryExpression
+0x6dbd37c0249: [Map] in ReadOnlySpace
+ - map: 0x06dbd37c07e9 <MetaMap (0x06dbd37c0041 <null>)>
+ - type: INTERNALIZED_ONE_BYTE_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - non-extensible
+ - back pointer: 0x06dbd37c0011 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x06dbd37c0d59 <DescriptorArray[0]>
+ - prototype: 0x06dbd37c0041 <null>
+ - constructor: 0x06dbd37c0041 <null>
+ - dependent code: 0x06dbd37c0d19 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+Cloned type
+DebugPrint: 0x12a409151099: [String]: "BinaryExpression"
+0x6dbd37c0129: [Map] in ReadOnlySpace
+ - map: 0x06dbd37c07e9 <MetaMap (0x06dbd37c0041 <null>)>
+ - type: SEQ_ONE_BYTE_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - non-extensible
+ - back pointer: 0x06dbd37c0011 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x06dbd37c0d59 <DescriptorArray[0]>
+ - prototype: 0x06dbd37c0041 <null>
+ - constructor: 0x06dbd37c0041 <null>
+ - dependent code: 0x06dbd37c0d19 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+Canonical property-name type
+DebugPrint: 0x3e61eb55a671: [String]: #BinaryExpression
+0x6dbd37c0249: [Map] in ReadOnlySpace
+ - map: 0x06dbd37c07e9 <MetaMap (0x06dbd37c0041 <null>)>
+ - type: INTERNALIZED_ONE_BYTE_STRING_TYPE
+ - instance size: variable
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - stable_map
+ - non-extensible
+ - back pointer: 0x06dbd37c0011 <undefined>
+ - prototype_validity cell: 0
+ - instance descriptors (own) #0: 0x06dbd37c0d59 <DescriptorArray[0]>
+ - prototype: 0x06dbd37c0041 <null>
+ - constructor: 0x06dbd37c0041 <null>
+ - dependent code: 0x06dbd37c0d19 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0

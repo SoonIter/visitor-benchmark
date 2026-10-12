@@ -46,7 +46,7 @@ Native Babel and TypeScript ASTs are **not ESTree**; these results are not a sam
 
 ![i18n — native ASTs](charts/i18n/native.svg)
 
-[Compatibility failures and all results](docs/i18n/results.md) · [Corpus provenance](docs/i18n/corpus.json) · [Historical Acorn/Yuku profiling study](docs/i18n-dispatch/README.md)
+[Compatibility failures and all results](docs/i18n/results.md) · [Corpus provenance](docs/i18n/corpus.json) · [Historical Acorn/Yuku profiling study](docs/i18n-dispatch/README.md) · [Oxc performance attribution](docs/oxc-attribution/README.md)
 
 The JavaScript compatibility track transforms the same modules before timing so JS-only walkers can participate. It is not captured loader input and must not be compared directly with the original TS/TSX track. Acorn's static destructuring-key collection is covered by a regression fixture.
 

@@ -1,0 +1,1013 @@
+{
+  "environment": {
+    "timestamp": "2026-10-12T08:21:53.188Z",
+    "node": "v24.20.0",
+    "cpu": "Apple M5 Max",
+    "platform": "darwin arm64"
+  },
+  "method": "Median of seven independent process medians. Effects: geometric mean of paired round time ratios, positive means slower. Descriptive 95% paired bootstrap interval, 10000 resamples, fixed seed. Pairing controls round-level drift, not simultaneous timing; variants run in separate serial processes.",
+  "rows": [
+    {
+      "track": "debugger-dense",
+      "id": "walker-stock",
+      "medianMs": 0.2833750000000066,
+      "processMedians": {
+        "0": 0.2763125000000173,
+        "1": 0.2823959999999772,
+        "2": 0.2833750000000066,
+        "3": 0.2856454999999869,
+        "4": 0.28847899999999527,
+        "5": 0.2827284999999904,
+        "6": 0.3205415000000187
+      },
+      "minMs": 0.2763125000000173,
+      "maxMs": 0.3205415000000187
+    },
+    {
+      "track": "debugger-dense",
+      "id": "walker-clone",
+      "medianMs": 0.284791499999983,
+      "processMedians": {
+        "0": 0.284791499999983,
+        "1": 0.28062499999998636,
+        "2": 0.28758350000001087,
+        "3": 0.2890000000000157,
+        "4": 0.28389549999997143,
+        "5": 0.28170799999998053,
+        "6": 0.32941649999997935
+      },
+      "minMs": 0.28062499999998636,
+      "maxMs": 0.32941649999997935
+    },
+    {
+      "track": "debugger-dense",
+      "id": "visitor-stock",
+      "medianMs": 0.38483300000001464,
+      "processMedians": {
+        "0": 0.3599169999999958,
+        "1": 0.37043749999998,
+        "2": 0.3826245000000199,
+        "3": 0.38483300000001464,
+        "4": 0.3877290000000073,
+        "5": 0.40639600000000087,
+        "6": 0.4837295000000097
+      },
+      "minMs": 0.3599169999999958,
+      "maxMs": 0.4837295000000097
+    },
+    {
+      "track": "debugger-dense",
+      "id": "visitor-clone",
+      "medianMs": 0.38391699999999673,
+      "processMedians": {
+        "0": 0.36397949999999923,
+        "1": 0.36539600000000405,
+        "2": 0.38372900000001664,
+        "3": 0.38391699999999673,
+        "4": 0.3852919999999642,
+        "5": 0.4326250000000016,
+        "6": 0.4784170000000074
+      },
+      "minMs": 0.36397949999999923,
+      "maxMs": 0.4784170000000074
+    },
+    {
+      "track": "debugger-dense",
+      "id": "visitor-keys",
+      "medianMs": 0.4540619999999933,
+      "processMedians": {
+        "0": 0.43399949999999876,
+        "1": 0.4540619999999933,
+        "2": 0.4449170000000322,
+        "3": 0.4482294999999965,
+        "4": 0.4678119999999808,
+        "5": 0.4601040000000012,
+        "6": 0.5731460000000084
+      },
+      "minMs": 0.43399949999999876,
+      "maxMs": 0.5731460000000084
+    },
+    {
+      "track": "debugger-dense",
+      "id": "visitor-generic",
+      "medianMs": 0.5032084999999995,
+      "processMedians": {
+        "0": 0.4944164999999998,
+        "1": 0.4983540000000346,
+        "2": 0.5032084999999995,
+        "3": 0.5104795000000024,
+        "4": 0.5009584999999959,
+        "5": 0.5820834999999818,
+        "6": 0.5566664999999773
+      },
+      "minMs": 0.4944164999999998,
+      "maxMs": 0.5820834999999818
+    },
+    {
+      "track": "debugger-dense",
+      "id": "walker-keys",
+      "medianMs": 0.4046874999999943,
+      "processMedians": {
+        "0": 0.4046874999999943,
+        "1": 0.4020414999999673,
+        "2": 0.41289599999996085,
+        "3": 0.40266650000000936,
+        "4": 0.4031255000000158,
+        "5": 0.4096879999999885,
+        "6": 0.4367914999999982
+      },
+      "minMs": 0.4020414999999673,
+      "maxMs": 0.4367914999999982
+    },
+    {
+      "track": "debugger-dense",
+      "id": "walker-no-meta-skip",
+      "medianMs": 0.29243750000000546,
+      "processMedians": {
+        "0": 0.29218750000001137,
+        "1": 0.2907084999999938,
+        "2": 0.29466650000000527,
+        "3": 0.29243750000000546,
+        "4": 0.29377050000002214,
+        "5": 0.28918749999999704,
+        "6": 0.31433300000000486
+      },
+      "minMs": 0.28918749999999704,
+      "maxMs": 0.31433300000000486
+    },
+    {
+      "track": "debugger-dense",
+      "id": "walker-fresh-context",
+      "medianMs": 0.2873124999999561,
+      "processMedians": {
+        "0": 0.2941040000000328,
+        "1": 0.2873124999999561,
+        "2": 0.2882709999999804,
+        "3": 0.2852919999999983,
+        "4": 0.28270849999998404,
+        "5": 0.28335400000000277,
+        "6": 0.31262499999999704
+      },
+      "minMs": 0.28270849999998404,
+      "maxMs": 0.31262499999999704
+    },
+    {
+      "track": "debugger-dense",
+      "id": "walker-parent-exit",
+      "medianMs": 0.4553954999999803,
+      "processMedians": {
+        "0": 0.4553954999999803,
+        "1": 0.4586460000000159,
+        "2": 0.4497289999999907,
+        "3": 0.44056250000002706,
+        "4": 0.45858350000000314,
+        "5": 0.443104500000004,
+        "6": 0.46691699999999514
+      },
+      "minMs": 0.44056250000002706,
+      "maxMs": 0.46691699999999514
+    },
+    {
+      "track": "debugger-dense",
+      "id": "direct-stock",
+      "medianMs": 0.6269584999999722,
+      "processMedians": {
+        "0": 0.6269584999999722,
+        "1": 0.6179794999999615,
+        "2": 0.6183545000000095,
+        "3": 0.6455204999999751,
+        "4": 0.6209790000000055,
+        "5": 0.6398954999999944,
+        "6": 0.6637085000000127
+      },
+      "minMs": 0.6179794999999615,
+      "maxMs": 0.6637085000000127
+    },
+    {
+      "track": "debugger-dense",
+      "id": "direct-for-in",
+      "medianMs": 0.48495850000000473,
+      "processMedians": {
+        "0": 0.4649794999999983,
+        "1": 0.47914550000001555,
+        "2": 0.4936255000000074,
+        "3": 0.4950420000000122,
+        "4": 0.48495850000000473,
+        "5": 0.47839650000000233,
+        "6": 0.5142914999999846
+      },
+      "minMs": 0.4649794999999983,
+      "maxMs": 0.5142914999999846
+    },
+    {
+      "track": "debugger-dense",
+      "id": "direct-guarded",
+      "medianMs": 0.31943749999999227,
+      "processMedians": {
+        "0": 0.31943749999999227,
+        "1": 0.3146250000000066,
+        "2": 0.3152290000000164,
+        "3": 0.31841649999998367,
+        "4": 0.3301255000000083,
+        "5": 0.322458499999982,
+        "6": 0.34308349999997745
+      },
+      "minMs": 0.3146250000000066,
+      "maxMs": 0.34308349999997745
+    },
+    {
+      "track": "debugger-sparse",
+      "id": "walker-stock",
+      "medianMs": 0.6672704999999723,
+      "processMedians": {
+        "0": 0.6444374999999809,
+        "1": 0.6668745000000627,
+        "2": 0.6696040000000494,
+        "3": 0.6613124999999513,
+        "4": 0.6672704999999723,
+        "5": 0.6710835000000657,
+        "6": 0.6949994999999944
+      },
+      "minMs": 0.6444374999999809,
+      "maxMs": 0.6949994999999944
+    },
+    {
+      "track": "debugger-sparse",
+      "id": "walker-clone",
+      "medianMs": 0.6651039999999284,
+      "processMedians": {
+        "0": 0.6901454999999714,
+        "1": 0.6651039999999284,
+        "2": 0.6522289999999771,
+        "3": 0.6591664999999693,
+        "4": 0.663562499999955,
+        "5": 0.6786460000000716,
+        "6": 0.6815624999999841
+      },
+      "minMs": 0.6522289999999771,
+      "maxMs": 0.6901454999999714
+    },
+    {
+      "track": "debugger-sparse",
+      "id": "visitor-stock",
+      "medianMs": 0.73568750000004,
+      "processMedians": {
+        "0": 0.7119169999999713,
+        "1": 0.7521874999999909,
+        "2": 0.73568750000004,
+        "3": 0.7451040000000262,
+        "4": 0.7173334999999952,
+        "5": 0.7159790000000044,
+        "6": 0.7851459999999975
+      },
+      "minMs": 0.7119169999999713,
+      "maxMs": 0.7851459999999975
+    },
+    {
+      "track": "debugger-sparse",
+      "id": "visitor-clone",
+      "medianMs": 0.7323545000000422,
+      "processMedians": {
+        "0": 0.7073334999999474,
+        "1": 0.7606460000000652,
+        "2": 0.7307084999999915,
+        "3": 0.7323545000000422,
+        "4": 0.7378749999999741,
+        "5": 0.7187079999999924,
+        "6": 0.7753124999999841
+      },
+      "minMs": 0.7073334999999474,
+      "maxMs": 0.7753124999999841
+    },
+    {
+      "track": "debugger-sparse",
+      "id": "visitor-keys",
+      "medianMs": 0.8734374999999659,
+      "processMedians": {
+        "0": 0.8648749999999836,
+        "1": 0.8707914999999957,
+        "2": 0.884166999999934,
+        "3": 0.8857084999999643,
+        "4": 0.8734374999999659,
+        "5": 0.8605830000000196,
+        "6": 0.9226879999999937
+      },
+      "minMs": 0.8605830000000196,
+      "maxMs": 0.9226879999999937
+    },
+    {
+      "track": "debugger-sparse",
+      "id": "visitor-generic",
+      "medianMs": 1.0088334999999233,
+      "processMedians": {
+        "0": 0.961979499999984,
+        "1": 1.0167085000000498,
+        "2": 1.0028955000000224,
+        "3": 0.9706669999999917,
+        "4": 1.0292289999999298,
+        "5": 1.0088334999999233,
+        "6": 1.0123755000000187
+      },
+      "minMs": 0.961979499999984,
+      "maxMs": 1.0292289999999298
+    },
+    {
+      "track": "debugger-sparse",
+      "id": "walker-keys",
+      "medianMs": 1.0120210000000043,
+      "processMedians": {
+        "0": 0.9958750000000123,
+        "1": 1.0123329999999555,
+        "2": 1.0120210000000043,
+        "3": 1.0136249999999336,
+        "4": 1.002145999999982,
+        "5": 1.0230209999999715,
+        "6": 0.9969794999999522
+      },
+      "minMs": 0.9958750000000123,
+      "maxMs": 1.0230209999999715
+    },
+    {
+      "track": "debugger-sparse",
+      "id": "walker-no-meta-skip",
+      "medianMs": 0.6934374999999591,
+      "processMedians": {
+        "0": 0.6873955000000365,
+        "1": 0.6934374999999591,
+        "2": 0.6871874999999932,
+        "3": 0.6812710000000379,
+        "4": 0.7031875000000696,
+        "5": 0.7019169999999235,
+        "6": 0.7124999999999773
+      },
+      "minMs": 0.6812710000000379,
+      "maxMs": 0.7124999999999773
+    },
+    {
+      "track": "debugger-sparse",
+      "id": "walker-fresh-context",
+      "medianMs": 0.6813334999999938,
+      "processMedians": {
+        "0": 0.6909789999999703,
+        "1": 0.6825829999999087,
+        "2": 0.6750205000000165,
+        "3": 0.6692920000000413,
+        "4": 0.6813334999999938,
+        "5": 0.6940829999999778,
+        "6": 0.6652080000000069
+      },
+      "minMs": 0.6652080000000069,
+      "maxMs": 0.6940829999999778
+    },
+    {
+      "track": "debugger-sparse",
+      "id": "walker-parent-exit",
+      "medianMs": 0.9783544999999663,
+      "processMedians": {
+        "0": 0.9626874999999586,
+        "1": 0.9783544999999663,
+        "2": 0.9919170000000008,
+        "3": 0.9588334999999688,
+        "4": 0.9943539999999302,
+        "5": 0.9605414999999766,
+        "6": 1.009791499999892
+      },
+      "minMs": 0.9588334999999688,
+      "maxMs": 1.009791499999892
+    },
+    {
+      "track": "debugger-sparse",
+      "id": "direct-stock",
+      "medianMs": 1.6971250000000282,
+      "processMedians": {
+        "0": 1.7585830000000442,
+        "1": 1.6428750000000036,
+        "2": 1.6971250000000282,
+        "3": 1.7835625000000164,
+        "4": 1.6774169999999913,
+        "5": 1.6596459999999524,
+        "6": 1.7384795000000395
+      },
+      "minMs": 1.6428750000000036,
+      "maxMs": 1.7835625000000164
+    },
+    {
+      "track": "debugger-sparse",
+      "id": "direct-for-in",
+      "medianMs": 1.3180210000000443,
+      "processMedians": {
+        "0": 1.2541249999999309,
+        "1": 1.3180210000000443,
+        "2": 1.2622499999999945,
+        "3": 1.3571245000000545,
+        "4": 1.3181875000000218,
+        "5": 1.2899584999999547,
+        "6": 1.3634170000000267
+      },
+      "minMs": 1.2541249999999309,
+      "maxMs": 1.3634170000000267
+    },
+    {
+      "track": "debugger-sparse",
+      "id": "direct-guarded",
+      "medianMs": 0.8440625000000637,
+      "processMedians": {
+        "0": 0.819500000000005,
+        "1": 0.8541664999999625,
+        "2": 0.8692295000000172,
+        "3": 0.8327295000000277,
+        "4": 0.8376874999999586,
+        "5": 0.8440625000000637,
+        "6": 0.8493755000001215
+      },
+      "minMs": 0.819500000000005,
+      "maxMs": 0.8692295000000172
+    },
+    {
+      "track": "styled-dense",
+      "id": "walker-stock",
+      "medianMs": 0.7417710000000284,
+      "processMedians": {
+        "0": 0.7417710000000284,
+        "1": 0.7630210000000375,
+        "2": 0.7469375000000014,
+        "3": 0.7335630000000037,
+        "4": 0.7361039999999548,
+        "5": 0.7320000000000277,
+        "6": 0.7450624999999604
+      },
+      "minMs": 0.7320000000000277,
+      "maxMs": 0.7630210000000375
+    },
+    {
+      "track": "styled-dense",
+      "id": "walker-clone",
+      "medianMs": 0.7469790000000103,
+      "processMedians": {
+        "0": 0.7336255000000165,
+        "1": 0.7388120000000526,
+        "2": 0.7469790000000103,
+        "3": 0.7868340000000558,
+        "4": 0.7589789999999539,
+        "5": 0.7284164999999803,
+        "6": 0.764020999999957
+      },
+      "minMs": 0.7284164999999803,
+      "maxMs": 0.7868340000000558
+    },
+    {
+      "track": "styled-dense",
+      "id": "visitor-stock",
+      "medianMs": 0.9141664999999648,
+      "processMedians": {
+        "0": 0.9141664999999648,
+        "1": 0.8869789999999966,
+        "2": 0.9041879999999765,
+        "3": 1.0579784999999333,
+        "4": 0.9556044999999926,
+        "5": 0.8750625000000127,
+        "6": 1.009999999999934
+      },
+      "minMs": 0.8750625000000127,
+      "maxMs": 1.0579784999999333
+    },
+    {
+      "track": "styled-dense",
+      "id": "visitor-clone",
+      "medianMs": 0.9137914999999452,
+      "processMedians": {
+        "0": 0.9101875000000064,
+        "1": 0.9137914999999452,
+        "2": 0.9096875000000182,
+        "3": 0.9505210000000375,
+        "4": 0.9291670000000067,
+        "5": 0.8869580000000497,
+        "6": 0.9522915000000012
+      },
+      "minMs": 0.8869580000000497,
+      "maxMs": 0.9522915000000012
+    },
+    {
+      "track": "styled-dense",
+      "id": "visitor-keys",
+      "medianMs": 1.0152289999999766,
+      "processMedians": {
+        "0": 0.9984379999999646,
+        "1": 1.0061249999999973,
+        "2": 1.0152289999999766,
+        "3": 1.0237914999999589,
+        "4": 1.1418125000000714,
+        "5": 1.0095624999999586,
+        "6": 1.105103999999983
+      },
+      "minMs": 0.9984379999999646,
+      "maxMs": 1.1418125000000714
+    },
+    {
+      "track": "styled-dense",
+      "id": "visitor-generic",
+      "medianMs": 0.9723750000000564,
+      "processMedians": {
+        "0": 0.958479000000068,
+        "1": 0.9468540000000303,
+        "2": 0.9723750000000564,
+        "3": 0.9956040000000144,
+        "4": 1.045812499999954,
+        "5": 0.9560830000000351,
+        "6": 1.0060629999999833
+      },
+      "minMs": 0.9468540000000303,
+      "maxMs": 1.045812499999954
+    },
+    {
+      "track": "styled-sparse",
+      "id": "walker-stock",
+      "medianMs": 1.2399790000000621,
+      "processMedians": {
+        "0": 1.2428539999999657,
+        "1": 1.2399790000000621,
+        "2": 1.2508334999999988,
+        "3": 1.23081250000007,
+        "4": 1.2337085000000343,
+        "5": 1.230707999999936,
+        "6": 1.2531460000000152
+      },
+      "minMs": 1.230707999999936,
+      "maxMs": 1.2531460000000152
+    },
+    {
+      "track": "styled-sparse",
+      "id": "walker-clone",
+      "medianMs": 1.2402080000000524,
+      "processMedians": {
+        "0": 1.2138539999999693,
+        "1": 1.2366460000000643,
+        "2": 1.2530830000000606,
+        "3": 1.2163335000000188,
+        "4": 1.2431874999999764,
+        "5": 1.2402080000000524,
+        "6": 1.2911874999998645
+      },
+      "minMs": 1.2138539999999693,
+      "maxMs": 1.2911874999998645
+    },
+    {
+      "track": "styled-sparse",
+      "id": "visitor-stock",
+      "medianMs": 1.2442500000000791,
+      "processMedians": {
+        "0": 1.2132290000000694,
+        "1": 1.2444169999999986,
+        "2": 1.2465835000000425,
+        "3": 1.2442500000000791,
+        "4": 1.2262494999999944,
+        "5": 1.2350420000000213,
+        "6": 1.3266459999999825
+      },
+      "minMs": 1.2132290000000694,
+      "maxMs": 1.3266459999999825
+    },
+    {
+      "track": "styled-sparse",
+      "id": "visitor-clone",
+      "medianMs": 1.2472495000000663,
+      "processMedians": {
+        "0": 1.2472495000000663,
+        "1": 1.228811999999948,
+        "2": 1.2700624999999945,
+        "3": 1.2451460000000907,
+        "4": 1.233333499999958,
+        "5": 1.253520999999978,
+        "6": 1.419000499999811
+      },
+      "minMs": 1.228811999999948,
+      "maxMs": 1.419000499999811
+    },
+    {
+      "track": "styled-sparse",
+      "id": "visitor-keys",
+      "medianMs": 1.514062499999909,
+      "processMedians": {
+        "0": 1.514062499999909,
+        "1": 1.5463540000000648,
+        "2": 1.510770999999977,
+        "3": 1.4726460000000543,
+        "4": 1.8012500000000955,
+        "5": 1.479520999999977,
+        "6": 1.574312500000019
+      },
+      "minMs": 1.4726460000000543,
+      "maxMs": 1.8012500000000955
+    },
+    {
+      "track": "styled-sparse",
+      "id": "visitor-generic",
+      "medianMs": 1.3543540000000576,
+      "processMedians": {
+        "0": 1.3970420000000559,
+        "1": 1.3288955000000442,
+        "2": 1.3543540000000576,
+        "3": 1.3346244999999044,
+        "4": 1.3456455000001597,
+        "5": 1.3630619999998999,
+        "6": 1.4927915000000667
+      },
+      "minMs": 1.3288955000000442,
+      "maxMs": 1.4927915000000667
+    },
+    {
+      "track": "i18n-javascript",
+      "id": "walker-stock",
+      "medianMs": 1.1469580000000406,
+      "processMedians": {
+        "0": 1.1469580000000406,
+        "1": 1.1203544999999622,
+        "2": 1.142187500000091,
+        "3": 1.1291664999999966,
+        "4": 1.161811999999884,
+        "5": 1.167645499999992,
+        "6": 1.2527500000000487
+      },
+      "minMs": 1.1203544999999622,
+      "maxMs": 1.2527500000000487
+    },
+    {
+      "track": "i18n-javascript",
+      "id": "visitor-stock",
+      "medianMs": 1.2891874999999118,
+      "processMedians": {
+        "0": 1.2891874999999118,
+        "1": 1.2777915000000348,
+        "2": 1.3147084999999947,
+        "3": 1.2609789999999066,
+        "4": 1.318728999999962,
+        "5": 1.27329200000014,
+        "6": 1.4042085000000384
+      },
+      "minMs": 1.2609789999999066,
+      "maxMs": 1.4042085000000384
+    }
+  ],
+  "effects": [
+    {
+      "track": "debugger-dense",
+      "baseline": "walker-stock",
+      "changed": "walker-clone",
+      "changedTrack": "debugger-dense",
+      "label": "Unmodified walker clone",
+      "deltaPercent": 0.832447942811676,
+      "ci95": [
+        -0.34988890100211556,
+        2.03160522775343
+      ]
+    },
+    {
+      "track": "debugger-dense",
+      "baseline": "visitor-stock",
+      "changed": "visitor-clone",
+      "changedTrack": "debugger-dense",
+      "label": "Unmodified visitor clone",
+      "deltaPercent": 0.6192726747568988,
+      "ci95": [
+        -0.7619178056001208,
+        2.669114353029167
+      ]
+    },
+    {
+      "track": "debugger-dense",
+      "baseline": "visitor-clone",
+      "changed": "visitor-keys",
+      "changedTrack": "debugger-dense",
+      "label": "Direct child fields to key loop",
+      "deltaPercent": 17.558009598719202,
+      "ci95": [
+        13.145203924054094,
+        21.04540340812955
+      ]
+    },
+    {
+      "track": "debugger-dense",
+      "baseline": "visitor-clone",
+      "changed": "visitor-generic",
+      "changedTrack": "debugger-dense",
+      "label": "Typed callbacks to callback for every node",
+      "deltaPercent": 30.872053503625562,
+      "ci95": [
+        25.366836683535876,
+        34.715296046209176
+      ]
+    },
+    {
+      "track": "debugger-dense",
+      "baseline": "walker-clone",
+      "changed": "walker-keys",
+      "changedTrack": "debugger-dense",
+      "label": "for-in to Object.keys",
+      "deltaPercent": 41.12957871888485,
+      "ci95": [
+        37.76156121890568,
+        43.574841494513784
+      ]
+    },
+    {
+      "track": "debugger-dense",
+      "baseline": "walker-clone",
+      "changed": "walker-no-meta-skip",
+      "changedTrack": "debugger-dense",
+      "label": "Stop skipping type/start/end",
+      "deltaPercent": 1.5928711656869599,
+      "ci95": [
+        -0.6168926734891,
+        3.093883605899439
+      ]
+    },
+    {
+      "track": "debugger-dense",
+      "baseline": "walker-clone",
+      "changed": "walker-fresh-context",
+      "changedTrack": "debugger-dense",
+      "label": "Create callback position object per node",
+      "deltaPercent": -0.07826735329484746,
+      "ci95": [
+        -2.0837622414670243,
+        1.633646110780429
+      ]
+    },
+    {
+      "track": "debugger-dense",
+      "baseline": "walker-stock",
+      "changed": "walker-parent-exit",
+      "changedTrack": "debugger-dense",
+      "label": "Use parent-exit deletion strategy",
+      "deltaPercent": 57.25198671178493,
+      "ci95": [
+        52.74113323062475,
+        61.243327309014674
+      ]
+    },
+    {
+      "track": "debugger-dense",
+      "baseline": "walker-parent-exit",
+      "changed": "visitor-stock",
+      "changedTrack": "debugger-dense",
+      "label": "Same parent-exit strategy: walker to visitor",
+      "deltaPercent": -12.873449711740259,
+      "ci95": [
+        -17.55827074040385,
+        -6.852799166208645
+      ]
+    },
+    {
+      "track": "debugger-dense",
+      "baseline": "direct-stock",
+      "changed": "direct-for-in",
+      "changedTrack": "debugger-dense",
+      "label": "Direct baseline: Object.keys to for-in",
+      "deltaPercent": -23.08394543767367,
+      "ci95": [
+        -24.386654290999456,
+        -21.749794480072783
+      ]
+    },
+    {
+      "track": "debugger-dense",
+      "baseline": "direct-for-in",
+      "changed": "direct-guarded",
+      "changedTrack": "debugger-dense",
+      "label": "Direct baseline: add metadata/object guards",
+      "deltaPercent": -33.63200639375975,
+      "ci95": [
+        -34.917675606035736,
+        -32.39047234171102
+      ]
+    },
+    {
+      "track": "debugger-sparse",
+      "baseline": "walker-stock",
+      "changed": "walker-clone",
+      "changedTrack": "debugger-sparse",
+      "label": "Unmodified walker clone",
+      "deltaPercent": 0.32102098683288727,
+      "ci95": [
+        -1.4538599015984865,
+        2.735893780308274
+      ]
+    },
+    {
+      "track": "debugger-sparse",
+      "baseline": "visitor-stock",
+      "changed": "visitor-clone",
+      "changedTrack": "debugger-sparse",
+      "label": "Unmodified visitor clone",
+      "deltaPercent": 0.0015401244649160262,
+      "ci95": [
+        -0.9832886268334229,
+        1.1358227926898001
+      ]
+    },
+    {
+      "track": "debugger-sparse",
+      "baseline": "visitor-clone",
+      "changed": "visitor-keys",
+      "changedTrack": "debugger-sparse",
+      "label": "Direct child fields to key loop",
+      "deltaPercent": 19.378692277266918,
+      "ci95": [
+        17.529517551745343,
+        20.97411419565942
+      ]
+    },
+    {
+      "track": "debugger-sparse",
+      "baseline": "visitor-clone",
+      "changed": "visitor-generic",
+      "changedTrack": "debugger-sparse",
+      "label": "Typed callbacks to callback for every node",
+      "deltaPercent": 35.656174812210416,
+      "ci95": [
+        33.240370993979894,
+        38.106464430590556
+      ]
+    },
+    {
+      "track": "debugger-sparse",
+      "baseline": "walker-clone",
+      "changed": "walker-keys",
+      "changedTrack": "debugger-sparse",
+      "label": "for-in to Object.keys",
+      "deltaPercent": 50.45471261476631,
+      "ci95": [
+        47.7136507545104,
+        53.03128928079672
+      ]
+    },
+    {
+      "track": "debugger-sparse",
+      "baseline": "walker-clone",
+      "changed": "walker-no-meta-skip",
+      "changedTrack": "debugger-sparse",
+      "label": "Stop skipping type/start/end",
+      "deltaPercent": 3.7697251578694857,
+      "ci95": [
+        2.1596323554901264,
+        5.016520431788951
+      ]
+    },
+    {
+      "track": "debugger-sparse",
+      "baseline": "walker-clone",
+      "changed": "walker-fresh-context",
+      "changedTrack": "debugger-sparse",
+      "label": "Create callback position object per node",
+      "deltaPercent": 1.4587068316889162,
+      "ci95": [
+        -0.057750586951221816,
+        2.68145369910735
+      ]
+    },
+    {
+      "track": "debugger-sparse",
+      "baseline": "walker-stock",
+      "changed": "walker-parent-exit",
+      "changedTrack": "debugger-sparse",
+      "label": "Use parent-exit deletion strategy",
+      "deltaPercent": 46.65008902444674,
+      "ci95": [
+        45.066735453564235,
+        48.17913243539491
+      ]
+    },
+    {
+      "track": "debugger-sparse",
+      "baseline": "walker-parent-exit",
+      "changed": "visitor-stock",
+      "changedTrack": "debugger-sparse",
+      "label": "Same parent-exit strategy: walker to visitor",
+      "deltaPercent": -24.72021510338592,
+      "ci95": [
+        -26.196021724108608,
+        -23.270668244924174
+      ]
+    },
+    {
+      "track": "debugger-sparse",
+      "baseline": "direct-stock",
+      "changed": "direct-for-in",
+      "changedTrack": "debugger-sparse",
+      "label": "Direct baseline: Object.keys to for-in",
+      "deltaPercent": -23.374475418970952,
+      "ci95": [
+        -25.668917706342896,
+        -21.4594212558072
+      ]
+    },
+    {
+      "track": "debugger-sparse",
+      "baseline": "direct-for-in",
+      "changed": "direct-guarded",
+      "changedTrack": "debugger-sparse",
+      "label": "Direct baseline: add metadata/object guards",
+      "deltaPercent": -35.51785327244681,
+      "ci95": [
+        -37.09764983529348,
+        -33.74223752916069
+      ]
+    },
+    {
+      "track": "styled-dense",
+      "baseline": "walker-stock",
+      "changed": "walker-clone",
+      "changedTrack": "styled-dense",
+      "label": "Unmodified walker clone",
+      "deltaPercent": 1.1161511605354946,
+      "ci95": [
+        -1.063078112152127,
+        3.588010292348076
+      ]
+    },
+    {
+      "track": "styled-dense",
+      "baseline": "visitor-stock",
+      "changed": "visitor-clone",
+      "changedTrack": "styled-dense",
+      "label": "Unmodified visitor clone",
+      "deltaPercent": -2.1062160764042437,
+      "ci95": [
+        -5.450845003434668,
+        0.8642377370340126
+      ]
+    },
+    {
+      "track": "styled-dense",
+      "baseline": "visitor-clone",
+      "changed": "visitor-keys",
+      "changedTrack": "styled-dense",
+      "label": "Direct child fields to key loop",
+      "deltaPercent": 13.027210525608046,
+      "ci95": [
+        10.011002135062409,
+        16.77163421799792
+      ]
+    },
+    {
+      "track": "styled-dense",
+      "baseline": "visitor-clone",
+      "changed": "visitor-generic",
+      "changedTrack": "styled-dense",
+      "label": "Typed callbacks to callback for every node",
+      "deltaPercent": 6.616185236321814,
+      "ci95": [
+        4.899417768486414,
+        8.765260641569949
+      ]
+    },
+    {
+      "track": "styled-sparse",
+      "baseline": "walker-stock",
+      "changed": "walker-clone",
+      "changedTrack": "styled-sparse",
+      "label": "Unmodified walker clone",
+      "deltaPercent": 0.12737235295994243,
+      "ci95": [
+        -0.9948027428989925,
+        1.3267020714939237
+      ]
+    },
+    {
+      "track": "styled-sparse",
+      "baseline": "visitor-stock",
+      "changed": "visitor-clone",
+      "changedTrack": "styled-sparse",
+      "label": "Unmodified visitor clone",
+      "deltaPercent": 1.7628717511767311,
+      "ci95": [
+        0.17811113531880363,
+        3.708282642863381
+      ]
+    },
+    {
+      "track": "styled-sparse",
+      "baseline": "visitor-clone",
+      "changed": "visitor-keys",
+      "changedTrack": "styled-sparse",
+      "label": "Direct child fields to key loop",
+      "deltaPercent": 22.3753228744378,
+      "ci95": [
+        16.255145067804456,
+        30.637340313544993
+      ]
+    },
+    {
+      "track": "styled-sparse",
+      "baseline": "visitor-clone",
+      "changed": "visitor-generic",
+      "changedTrack": "styled-sparse",
+      "label": "Typed callbacks to callback for every node",
+      "deltaPercent": 8.127678975782393,
+      "ci95": [
+        6.729699350616514,
+        9.682218759538097
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1639 @@
+[
+  {
+    "id": "i18n-javascript-visitor-keys-parsed",
+    "samples": 7924,
+    "sampledMs": 2022.042,
+    "files": [
+      {
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "selfMs": 1837.004,
+        "selfPercent": 90.84895368147644
+      },
+      {
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "selfMs": 117.458,
+        "selfPercent": 5.808880329884345
+      },
+      {
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "selfMs": 27.331,
+        "selfPercent": 1.3516534275746992
+      },
+      {
+        "file": "node_modules/oxc-parser/src-js/visit/visitor.js",
+        "selfMs": 17.126,
+        "selfPercent": 0.8469655922082726
+      },
+      {
+        "file": "node:inspector",
+        "selfMs": 13.833,
+        "selfPercent": 0.6841104190714139
+      },
+      {
+        "file": "(garbage collector)",
+        "selfMs": 5.792,
+        "selfPercent": 0.28644311047940646
+      },
+      {
+        "file": "(program)",
+        "selfMs": 2.498,
+        "selfPercent": 0.12353848238562799
+      },
+      {
+        "file": "node:internal/errors",
+        "selfMs": 0.5,
+        "selfPercent": 0.024727478459893513
+      },
+      {
+        "file": "node:internal/validators",
+        "selfMs": 0.292,
+        "selfPercent": 0.014440847420577812
+      },
+      {
+        "file": "node:internal/perf/performance",
+        "selfMs": 0.208,
+        "selfPercent": 0.010286631039315701
+      }
+    ],
+    "self": [
+      {
+        "function": "walkNode",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 6,
+        "selfMs": 1385.092,
+        "selfPercent": 68.49966518994165
+      },
+      {
+        "function": "walkMemberExpression",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 1125,
+        "selfMs": 91.581,
+        "selfPercent": 4.529134409671015
+      },
+      {
+        "function": "walkProperty",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 1221,
+        "selfMs": 86.922,
+        "selfPercent": 4.298723765381728
+      },
+      {
+        "function": "callback",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 52,
+        "selfMs": 67.92,
+        "selfPercent": 3.358980673991935
+      },
+      {
+        "function": "walkCallExpression",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 765,
+        "selfMs": 59.167,
+        "selfPercent": 2.926101436073039
+      },
+      {
+        "function": "(anonymous)",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 44,
+        "selfMs": 49.538,
+        "selfPercent": 2.4498996558924095
+      },
+      {
+        "function": "walkImportSpecifier",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 1089,
+        "selfMs": 28.169,
+        "selfPercent": 1.3930966814734809
+      },
+      {
+        "function": "collectCorpus",
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "line": 19,
+        "selfMs": 27.331,
+        "selfPercent": 1.3516534275746992
+      },
+      {
+        "function": "walkIdentifier",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 1005,
+        "selfMs": 26.543,
+        "selfPercent": 1.3126829215219071
+      },
+      {
+        "function": "walkVariableDeclarator",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 1425,
+        "selfMs": 23.496,
+        "selfPercent": 1.161993667787316
+      },
+      {
+        "function": "walkLiteral",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 520,
+        "selfMs": 22.957,
+        "selfPercent": 1.1353374460075507
+      },
+      {
+        "function": "post",
+        "file": "node:inspector",
+        "line": 115,
+        "selfMs": 13.833,
+        "selfPercent": 0.6841104190714139
+      },
+      {
+        "function": "finalizeCompiledVisitor",
+        "file": "node_modules/oxc-parser/src-js/visit/visitor.js",
+        "line": 285,
+        "selfMs": 12.71,
+        "selfPercent": 0.6285725024504931
+      },
+      {
+        "function": "walkArrowFunctionExpression",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 681,
+        "selfMs": 10.583,
+        "selfPercent": 0.5233818090821061
+      },
+      {
+        "function": "walkBinaryExpression",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 729,
+        "selfMs": 10.04,
+        "selfPercent": 0.49652776747466176
+      },
+      {
+        "function": "walkIfStatement",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 1017,
+        "selfMs": 6.958,
+        "selfPercent": 0.3441075902478781
+      },
+      {
+        "function": "walkAssignmentExpression",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 693,
+        "selfMs": 6.748,
+        "selfPercent": 0.3337220492947229
+      },
+      {
+        "function": "walkReturnStatement",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 1257,
+        "selfMs": 6.458,
+        "selfPercent": 0.31938011178798464
+      },
+      {
+        "function": "walkVariableDeclaration",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 1413,
+        "selfMs": 6.084,
+        "selfPercent": 0.3008839578999843
+      },
+      {
+        "function": "walkLogicalExpression",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 1113,
+        "selfMs": 6.042,
+        "selfPercent": 0.29880684970935323
+      },
+      {
+        "function": "walkImportDeclaration",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 1041,
+        "selfMs": 5.913,
+        "selfPercent": 0.2924271602667007
+      },
+      {
+        "function": "walkExpressionStatement",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 933,
+        "selfMs": 5.874,
+        "selfPercent": 0.290498416946829
+      },
+      {
+        "function": "(garbage collector)",
+        "file": "",
+        "line": 0,
+        "selfMs": 5.792,
+        "selfPercent": 0.28644311047940646
+      },
+      {
+        "function": "walkBlockStatement",
+        "file": ".cache/oxc-attribution/visitor-keys.mjs",
+        "line": 741,
+        "selfMs": 4.667,
+        "selfPercent": 0.23080628394464606
+      },
+      {
+        "function": "addVisitorToCompiled",
+        "file": "node_modules/oxc-parser/src-js/visit/visitor.js",
+        "line": 194,
+        "selfMs": 3.875,
+        "selfPercent": 0.19163795806417472
+      }
+    ]
+  },
+  {
+    "id": "i18n-javascript-visitor-stock-cloned",
+    "samples": 7947,
+    "sampledMs": 2024.625,
+    "files": [
+      {
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "selfMs": 1877.836,
+        "selfPercent": 92.74981786750632
+      },
+      {
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "selfMs": 89.333,
+        "selfPercent": 4.41232326974131
+      },
+      {
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "selfMs": 22.875,
+        "selfPercent": 1.1298388590479718
+      },
+      {
+        "file": "node:inspector",
+        "selfMs": 14.042,
+        "selfPercent": 0.6935605359017102
+      },
+      {
+        "file": "node_modules/oxc-parser/src-js/visit/visitor.js",
+        "selfMs": 13.789,
+        "selfPercent": 0.6810643946409829
+      },
+      {
+        "file": "(garbage collector)",
+        "selfMs": 3.792,
+        "selfPercent": 0.18729394332283755
+      },
+      {
+        "file": "(program)",
+        "selfMs": 2.208,
+        "selfPercent": 0.10905723282089276
+      },
+      {
+        "file": "node_modules/oxc-parser/src-js/visit/index.js",
+        "selfMs": 0.25,
+        "selfPercent": 0.01234796567265543
+      },
+      {
+        "file": "node:internal/perf/performance",
+        "selfMs": 0.25,
+        "selfPercent": 0.01234796567265543
+      },
+      {
+        "file": "node:internal/errors",
+        "selfMs": 0.25,
+        "selfPercent": 0.01234796567265543
+      }
+    ],
+    "self": [
+      {
+        "function": "walkNode",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 6,
+        "selfMs": 1569.752,
+        "selfPercent": 77.53297524232883
+      },
+      {
+        "function": "callback",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 52,
+        "selfMs": 54.248,
+        "selfPercent": 2.679409767240847
+      },
+      {
+        "function": "walkProperty",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1291,
+        "selfMs": 53.209,
+        "selfPercent": 2.628091621905291
+      },
+      {
+        "function": "walkMemberExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1187,
+        "selfMs": 42.706,
+        "selfPercent": 2.1093288880656913
+      },
+      {
+        "function": "(anonymous)",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 44,
+        "selfMs": 35.085,
+        "selfPercent": 1.732913502500463
+      },
+      {
+        "function": "walkCallExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 778,
+        "selfMs": 34.125,
+        "selfPercent": 1.6854973143174663
+      },
+      {
+        "function": "walkVariableDeclarator",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1509,
+        "selfMs": 22.915,
+        "selfPercent": 1.1318145335555967
+      },
+      {
+        "function": "collectCorpus",
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "line": 19,
+        "selfMs": 22.375,
+        "selfPercent": 1.105142927702661
+      },
+      {
+        "function": "walkExpressionStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 970,
+        "selfMs": 16.208,
+        "selfPercent": 0.8005433104895968
+      },
+      {
+        "function": "walkIfStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1070,
+        "selfMs": 14.459,
+        "selfPercent": 0.7141569426436994
+      },
+      {
+        "function": "post",
+        "file": "node:inspector",
+        "line": 115,
+        "selfMs": 14.042,
+        "selfPercent": 0.6935605359017102
+      },
+      {
+        "function": "walkLiteral",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 520,
+        "selfMs": 13.917,
+        "selfPercent": 0.6873865530653824
+      },
+      {
+        "function": "walkArrowFunctionExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 686,
+        "selfMs": 13.792,
+        "selfPercent": 0.6812125702290548
+      },
+      {
+        "function": "walkLogicalExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1174,
+        "selfMs": 12.792,
+        "selfPercent": 0.631820707538433
+      },
+      {
+        "function": "finalizeCompiledVisitor",
+        "file": "node_modules/oxc-parser/src-js/visit/visitor.js",
+        "line": 285,
+        "selfMs": 11.373,
+        "selfPercent": 0.5617336543804409
+      },
+      {
+        "function": "walkBinaryExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 741,
+        "selfMs": 11.248,
+        "selfPercent": 0.5555596715441131
+      },
+      {
+        "function": "walkAssignmentExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 701,
+        "selfMs": 10.753,
+        "selfPercent": 0.5311106995122553
+      },
+      {
+        "function": "walkImportSpecifier",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1148,
+        "selfMs": 7.835,
+        "selfPercent": 0.3869852441810212
+      },
+      {
+        "function": "walkConditionalExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 865,
+        "selfMs": 5.959,
+        "selfPercent": 0.29432610977341483
+      },
+      {
+        "function": "walkReturnStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1333,
+        "selfMs": 5.543,
+        "selfPercent": 0.27377909489411617
+      },
+      {
+        "function": "walkImportDeclaration",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1097,
+        "selfMs": 4.249,
+        "selfPercent": 0.20986602457245168
+      },
+      {
+        "function": "walkFunctionExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1041,
+        "selfMs": 4.167,
+        "selfPercent": 0.2058158918318207
+      },
+      {
+        "function": "(garbage collector)",
+        "file": "",
+        "line": 0,
+        "selfMs": 3.792,
+        "selfPercent": 0.18729394332283755
+      },
+      {
+        "function": "walkBlockStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 754,
+        "selfMs": 3.581,
+        "selfPercent": 0.17687226029511638
+      },
+      {
+        "function": "walkChainExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 805,
+        "selfMs": 3.333,
+        "selfPercent": 0.1646230783478422
+      }
+    ]
+  },
+  {
+    "id": "i18n-javascript-visitor-stock-interned",
+    "samples": 7918,
+    "sampledMs": 2016.5,
+    "files": [
+      {
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "selfMs": 1796.873,
+        "selfPercent": 89.10850483511034
+      },
+      {
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "selfMs": 135.879,
+        "selfPercent": 6.738358542028267
+      },
+      {
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "selfMs": 42.625,
+        "selfPercent": 2.113811058765187
+      },
+      {
+        "file": "node_modules/oxc-parser/src-js/visit/visitor.js",
+        "selfMs": 18.123,
+        "selfPercent": 0.8987354326803868
+      },
+      {
+        "file": "node:inspector",
+        "selfMs": 13.833,
+        "selfPercent": 0.685990577733697
+      },
+      {
+        "file": "(garbage collector)",
+        "selfMs": 6.042,
+        "selfPercent": 0.2996280684354079
+      },
+      {
+        "file": "(program)",
+        "selfMs": 2.875,
+        "selfPercent": 0.14257376642697744
+      },
+      {
+        "file": "node:internal/errors",
+        "selfMs": 0.25,
+        "selfPercent": 0.012397718819737169
+      }
+    ],
+    "self": [
+      {
+        "function": "walkNode",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 6,
+        "selfMs": 1599.968,
+        "selfPercent": 79.34381353830895
+      },
+      {
+        "function": "callback",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 52,
+        "selfMs": 69.419,
+        "selfPercent": 3.4425489709893378
+      },
+      {
+        "function": "(anonymous)",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 44,
+        "selfMs": 66.46,
+        "selfPercent": 3.295809571038929
+      },
+      {
+        "function": "collectCorpus",
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "line": 19,
+        "selfMs": 42.375,
+        "selfPercent": 2.10141333994545
+      },
+      {
+        "function": "walkProperty",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1291,
+        "selfMs": 24.248,
+        "selfPercent": 1.2024795437639475
+      },
+      {
+        "function": "walkCallExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 778,
+        "selfMs": 23.584,
+        "selfPercent": 1.1695512025787256
+      },
+      {
+        "function": "walkMemberExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1187,
+        "selfMs": 23.374,
+        "selfPercent": 1.1591371187701462
+      },
+      {
+        "function": "walkLiteral",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 520,
+        "selfMs": 22.295,
+        "selfPercent": 1.1056285643441606
+      },
+      {
+        "function": "finalizeCompiledVisitor",
+        "file": "node_modules/oxc-parser/src-js/visit/visitor.js",
+        "line": 285,
+        "selfMs": 17.331,
+        "selfPercent": 0.8594594594594595
+      },
+      {
+        "function": "walkExpressionStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 970,
+        "selfMs": 15.165,
+        "selfPercent": 0.7520456236052566
+      },
+      {
+        "function": "post",
+        "file": "node:inspector",
+        "line": 115,
+        "selfMs": 13.833,
+        "selfPercent": 0.685990577733697
+      },
+      {
+        "function": "walkVariableDeclarator",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1509,
+        "selfMs": 11.246,
+        "selfPercent": 0.5576989833870568
+      },
+      {
+        "function": "walkArrowFunctionExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 686,
+        "selfMs": 7.959,
+        "selfPercent": 0.3946937763451525
+      },
+      {
+        "function": "walkBinaryExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 741,
+        "selfMs": 6.042,
+        "selfPercent": 0.2996280684354079
+      },
+      {
+        "function": "(garbage collector)",
+        "file": "",
+        "line": 0,
+        "selfMs": 6.042,
+        "selfPercent": 0.2996280684354079
+      },
+      {
+        "function": "walkIfStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1070,
+        "selfMs": 5.876,
+        "selfPercent": 0.2913959831391024
+      },
+      {
+        "function": "walkBlockStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 754,
+        "selfMs": 5.415,
+        "selfPercent": 0.2685345896355071
+      },
+      {
+        "function": "walkImportSpecifier",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1148,
+        "selfMs": 5.042,
+        "selfPercent": 0.2500371931564592
+      },
+      {
+        "function": "walkExportNamedDeclaration",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 942,
+        "selfMs": 5.0,
+        "selfPercent": 0.24795437639474338
+      },
+      {
+        "function": "walkAssignmentExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 701,
+        "selfMs": 4.374,
+        "selfPercent": 0.2169104884701215
+      },
+      {
+        "function": "walkChainExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 805,
+        "selfMs": 3.709,
+        "selfPercent": 0.18393255640962064
+      },
+      {
+        "function": "walkReturnStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1333,
+        "selfMs": 3.584,
+        "selfPercent": 0.17773369699975206
+      },
+      {
+        "function": "walkImportDeclaration",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1097,
+        "selfMs": 3.541,
+        "selfPercent": 0.17560128936275726
+      },
+      {
+        "function": "walkVariableDeclaration",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1497,
+        "selfMs": 3.331,
+        "selfPercent": 0.16518720555417804
+      },
+      {
+        "function": "walkLogicalExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1174,
+        "selfMs": 3.207,
+        "selfPercent": 0.1590379370195884
+      }
+    ]
+  },
+  {
+    "id": "i18n-javascript-visitor-stock-parsed",
+    "samples": 7896,
+    "sampledMs": 2015.708,
+    "files": [
+      {
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "selfMs": 1785.371,
+        "selfPercent": 88.57289845553026
+      },
+      {
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "selfMs": 140.925,
+        "selfPercent": 6.991340015518121
+      },
+      {
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "selfMs": 39.415,
+        "selfPercent": 1.955392348494921
+      },
+      {
+        "file": "node_modules/oxc-parser/src-js/visit/visitor.js",
+        "selfMs": 21.621,
+        "selfPercent": 1.072625598548996
+      },
+      {
+        "file": "node:inspector",
+        "selfMs": 13.292,
+        "selfPercent": 0.6594209081870985
+      },
+      {
+        "file": "(garbage collector)",
+        "selfMs": 10.959,
+        "selfPercent": 0.5436799377687641
+      },
+      {
+        "file": "(program)",
+        "selfMs": 3.625,
+        "selfPercent": 0.17983755583646044
+      },
+      {
+        "file": "node_modules/oxc-parser/src-js/visit/index.js",
+        "selfMs": 0.25,
+        "selfPercent": 0.012402590057686926
+      },
+      {
+        "file": "node:internal/errors",
+        "selfMs": 0.25,
+        "selfPercent": 0.012402590057686926
+      }
+    ],
+    "self": [
+      {
+        "function": "walkNode",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 6,
+        "selfMs": 1586.118,
+        "selfPercent": 78.68788534847309
+      },
+      {
+        "function": "callback",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 52,
+        "selfMs": 77.588,
+        "selfPercent": 3.8491686295832532
+      },
+      {
+        "function": "(anonymous)",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 44,
+        "selfMs": 63.337,
+        "selfPercent": 3.1421713859348674
+      },
+      {
+        "function": "collectCorpus",
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "line": 19,
+        "selfMs": 38.957,
+        "selfPercent": 1.9326708035092384
+      },
+      {
+        "function": "walkCallExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 778,
+        "selfMs": 29.165,
+        "selfPercent": 1.4468861561297568
+      },
+      {
+        "function": "walkMemberExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1187,
+        "selfMs": 24.711,
+        "selfPercent": 1.2259216116620066
+      },
+      {
+        "function": "walkLiteral",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 520,
+        "selfMs": 23.08,
+        "selfPercent": 1.145007114125657
+      },
+      {
+        "function": "walkProperty",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1291,
+        "selfMs": 22.917,
+        "selfPercent": 1.1369206254080453
+      },
+      {
+        "function": "finalizeCompiledVisitor",
+        "file": "node_modules/oxc-parser/src-js/visit/visitor.js",
+        "line": 285,
+        "selfMs": 17.871,
+        "selfPercent": 0.8865867476836923
+      },
+      {
+        "function": "post",
+        "file": "node:inspector",
+        "line": 115,
+        "selfMs": 13.292,
+        "selfPercent": 0.6594209081870985
+      },
+      {
+        "function": "walkExpressionStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 970,
+        "selfMs": 12.747,
+        "selfPercent": 0.632383261861341
+      },
+      {
+        "function": "(garbage collector)",
+        "file": "",
+        "line": 0,
+        "selfMs": 10.959,
+        "selfPercent": 0.5436799377687641
+      },
+      {
+        "function": "walkArrowFunctionExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 686,
+        "selfMs": 8.833,
+        "selfPercent": 0.4382083119181945
+      },
+      {
+        "function": "walkVariableDeclarator",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1509,
+        "selfMs": 8.42,
+        "selfPercent": 0.4177192331428957
+      },
+      {
+        "function": "walkIfStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1070,
+        "selfMs": 5.919,
+        "selfPercent": 0.29364372220579565
+      },
+      {
+        "function": "walkBinaryExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 741,
+        "selfMs": 5.834,
+        "selfPercent": 0.28942684158618215
+      },
+      {
+        "function": "walkImportDeclaration",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1097,
+        "selfMs": 5.584,
+        "selfPercent": 0.2770242515284952
+      },
+      {
+        "function": "walkLogicalExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1174,
+        "selfMs": 5.375,
+        "selfPercent": 0.2666556862402689
+      },
+      {
+        "function": "walkExportNamedDeclaration",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 942,
+        "selfMs": 5.126,
+        "selfPercent": 0.25430270654281273
+      },
+      {
+        "function": "walkConditionalExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 865,
+        "selfMs": 4.875,
+        "selfPercent": 0.2418505061248951
+      },
+      {
+        "function": "walkImportSpecifier",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1148,
+        "selfMs": 4.583,
+        "selfPercent": 0.22736428093751673
+      },
+      {
+        "function": "walkBlockStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 754,
+        "selfMs": 4.5,
+        "selfPercent": 0.22324662103836468
+      },
+      {
+        "function": "walkAssignmentExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 701,
+        "selfMs": 3.999,
+        "selfPercent": 0.19839183056276008
+      },
+      {
+        "function": "(program)",
+        "file": "",
+        "line": 0,
+        "selfMs": 3.625,
+        "selfPercent": 0.17983755583646044
+      },
+      {
+        "function": "walkVariableDeclaration",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1497,
+        "selfMs": 3.582,
+        "selfPercent": 0.17770431034653827
+      }
+    ]
+  },
+  {
+    "id": "i18n-javascript-walker-stock-parsed",
+    "samples": 7947,
+    "sampledMs": 2030.833,
+    "files": [
+      {
+        "file": "node_modules/oxc-walker/dist/index.mjs",
+        "selfMs": 1842.002,
+        "selfPercent": 90.70179576557993
+      },
+      {
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "selfMs": 172.873,
+        "selfPercent": 8.512418303228282
+      },
+      {
+        "file": "node:inspector",
+        "selfMs": 12.666,
+        "selfPercent": 0.623684960801799
+      },
+      {
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "selfMs": 1.75,
+        "selfPercent": 0.08617153650743316
+      },
+      {
+        "file": "(program)",
+        "selfMs": 0.5,
+        "selfPercent": 0.02462043900212376
+      },
+      {
+        "file": "(garbage collector)",
+        "selfMs": 0.5,
+        "selfPercent": 0.02462043900212376
+      },
+      {
+        "file": "node:internal/errors",
+        "selfMs": 0.292,
+        "selfPercent": 0.014378336377240276
+      },
+      {
+        "file": "node:internal/perf/performance",
+        "selfMs": 0.25,
+        "selfPercent": 0.01231021950106188
+      }
+    ],
+    "self": [
+      {
+        "function": "_walk",
+        "file": "node_modules/oxc-walker/dist/index.mjs",
+        "line": 68,
+        "selfMs": 1837.336,
+        "selfPercent": 90.47203782881212
+      },
+      {
+        "function": "walk",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 62,
+        "selfMs": 102.004,
+        "selfPercent": 5.022766519945264
+      },
+      {
+        "function": "callback",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 52,
+        "selfMs": 59.079,
+        "selfPercent": 2.909101831612939
+      },
+      {
+        "function": "post",
+        "file": "node:inspector",
+        "line": 115,
+        "selfMs": 12.666,
+        "selfPercent": 0.623684960801799
+      },
+      {
+        "function": "(anonymous)",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 44,
+        "selfMs": 11.79,
+        "selfPercent": 0.5805499516700783
+      },
+      {
+        "function": "traverse",
+        "file": "node_modules/oxc-walker/dist/index.mjs",
+        "line": 57,
+        "selfMs": 2.583,
+        "selfPercent": 0.12718918788497133
+      },
+      {
+        "function": "WalkerBase",
+        "file": "node_modules/oxc-walker/dist/index.mjs",
+        "line": 30,
+        "selfMs": 2.083,
+        "selfPercent": 0.10256874888284757
+      },
+      {
+        "function": "collectCorpus",
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "line": 19,
+        "selfMs": 1.208,
+        "selfPercent": 0.059482980629131
+      },
+      {
+        "function": "(anonymous)",
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "line": 0,
+        "selfMs": 0.542,
+        "selfPercent": 0.026688555878302156
+      },
+      {
+        "function": "(program)",
+        "file": "",
+        "line": 0,
+        "selfMs": 0.5,
+        "selfPercent": 0.02462043900212376
+      },
+      {
+        "function": "(garbage collector)",
+        "file": "",
+        "line": 0,
+        "selfMs": 0.5,
+        "selfPercent": 0.02462043900212376
+      },
+      {
+        "function": "wrappedFn",
+        "file": "node:internal/errors",
+        "line": 538,
+        "selfMs": 0.292,
+        "selfPercent": 0.014378336377240276
+      },
+      {
+        "function": "now",
+        "file": "node:internal/perf/performance",
+        "line": 137,
+        "selfMs": 0.25,
+        "selfPercent": 0.01231021950106188
+      }
+    ]
+  },
+  {
+    "id": "i18n-original-visitor-stock-interned",
+    "samples": 7914,
+    "sampledMs": 2015.75,
+    "files": [
+      {
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "selfMs": 1836.253,
+        "selfPercent": 91.09527471164579
+      },
+      {
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "selfMs": 102.209,
+        "selfPercent": 5.070519657695646
+      },
+      {
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "selfMs": 37.457,
+        "selfPercent": 1.8582165447104055
+      },
+      {
+        "file": "node_modules/oxc-parser/src-js/visit/visitor.js",
+        "selfMs": 20.038,
+        "selfPercent": 0.9940716854768696
+      },
+      {
+        "file": "node:inspector",
+        "selfMs": 12.167,
+        "selfPercent": 0.6035966761751209
+      },
+      {
+        "file": "(garbage collector)",
+        "selfMs": 5.625,
+        "selfPercent": 0.2790524618628302
+      },
+      {
+        "file": "(program)",
+        "selfMs": 1.751,
+        "selfPercent": 0.08686593079498946
+      },
+      {
+        "file": "node_modules/oxc-parser/src-js/visit/index.js",
+        "selfMs": 0.25,
+        "selfPercent": 0.012402331638348009
+      }
+    ],
+    "self": [
+      {
+        "function": "walkNode",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 6,
+        "selfMs": 1631.202,
+        "selfPercent": 80.9228326925462
+      },
+      {
+        "function": "(anonymous)",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 44,
+        "selfMs": 51.336,
+        "selfPercent": 2.546744387944934
+      },
+      {
+        "function": "callback",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 52,
+        "selfMs": 50.873,
+        "selfPercent": 2.523775269750713
+      },
+      {
+        "function": "collectCorpus",
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "line": 19,
+        "selfMs": 37.457,
+        "selfPercent": 1.8582165447104055
+      },
+      {
+        "function": "walkMemberExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1187,
+        "selfMs": 19.625,
+        "selfPercent": 0.9735830336103187
+      },
+      {
+        "function": "walkLiteral",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 520,
+        "selfMs": 17.545,
+        "selfPercent": 0.8703956343792633
+      },
+      {
+        "function": "finalizeCompiledVisitor",
+        "file": "node_modules/oxc-parser/src-js/visit/visitor.js",
+        "line": 285,
+        "selfMs": 16.997,
+        "selfPercent": 0.8432097234280045
+      },
+      {
+        "function": "walkCallExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 778,
+        "selfMs": 16.504,
+        "selfPercent": 0.8187523254371822
+      },
+      {
+        "function": "walkVariableDeclarator",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1509,
+        "selfMs": 12.25,
+        "selfPercent": 0.6077142502790525
+      },
+      {
+        "function": "post",
+        "file": "node:inspector",
+        "line": 115,
+        "selfMs": 12.167,
+        "selfPercent": 0.6035966761751209
+      },
+      {
+        "function": "walkProperty",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1291,
+        "selfMs": 10.169,
+        "selfPercent": 0.5044772417214436
+      },
+      {
+        "function": "walkTSPropertySignature",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 2228,
+        "selfMs": 8.998,
+        "selfPercent": 0.44638472032742155
+      },
+      {
+        "function": "walkImportSpecifier",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1148,
+        "selfMs": 7.667,
+        "selfPercent": 0.38035470668485677
+      },
+      {
+        "function": "walkTSTypeAnnotation",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 2318,
+        "selfMs": 7.334,
+        "selfPercent": 0.3638348009425772
+      },
+      {
+        "function": "walkJSXAttribute",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1560,
+        "selfMs": 7.208,
+        "selfPercent": 0.3575840257968498
+      },
+      {
+        "function": "walkExportNamedDeclaration",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 942,
+        "selfMs": 7.002,
+        "selfPercent": 0.347364504526851
+      },
+      {
+        "function": "walkTSTypeReference",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 2431,
+        "selfMs": 6.791,
+        "selfPercent": 0.3368969366240853
+      },
+      {
+        "function": "walkExpressionStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 970,
+        "selfMs": 6.377,
+        "selfPercent": 0.316358675430981
+      },
+      {
+        "function": "walkArrowFunctionExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 686,
+        "selfMs": 6.123,
+        "selfPercent": 0.3037579064864194
+      },
+      {
+        "function": "(garbage collector)",
+        "file": "",
+        "line": 0,
+        "selfMs": 5.625,
+        "selfPercent": 0.2790524618628302
+      },
+      {
+        "function": "walkBlockStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 754,
+        "selfMs": 4.668,
+        "selfPercent": 0.23157633635123404
+      },
+      {
+        "function": "walkVariableDeclaration",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1497,
+        "selfMs": 4.625,
+        "selfPercent": 0.22944313530943816
+      },
+      {
+        "function": "walkJSXElement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1585,
+        "selfMs": 3.25,
+        "selfPercent": 0.1612303112985241
+      },
+      {
+        "function": "walkJSXIdentifier",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 555,
+        "selfMs": 3.126,
+        "selfPercent": 0.15507875480590352
+      },
+      {
+        "function": "walkJSXOpeningElement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1651,
+        "selfMs": 3.042,
+        "selfPercent": 0.15091157137541858
+      }
+    ]
+  },
+  {
+    "id": "i18n-original-visitor-stock-parsed",
+    "samples": 7918,
+    "sampledMs": 2021.292,
+    "files": [
+      {
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "selfMs": 1916.959,
+        "selfPercent": 94.83830144283954
+      },
+      {
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "selfMs": 57.581,
+        "selfPercent": 2.8487225002622085
+      },
+      {
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "selfMs": 18.92,
+        "selfPercent": 0.9360349716913736
+      },
+      {
+        "file": "node:inspector",
+        "selfMs": 12.084,
+        "selfPercent": 0.5978354438646173
+      },
+      {
+        "file": "node_modules/oxc-parser/src-js/visit/visitor.js",
+        "selfMs": 11.207,
+        "selfPercent": 0.5544473534749061
+      },
+      {
+        "file": "(garbage collector)",
+        "selfMs": 2.25,
+        "selfPercent": 0.11131494113665913
+      },
+      {
+        "file": "(program)",
+        "selfMs": 1.5,
+        "selfPercent": 0.07420996075777275
+      },
+      {
+        "file": "node_modules/oxc-parser/src-js/visit/index.js",
+        "selfMs": 0.5,
+        "selfPercent": 0.02473665358592425
+      },
+      {
+        "file": "node:internal/errors",
+        "selfMs": 0.291,
+        "selfPercent": 0.014396732387007914
+      }
+    ],
+    "self": [
+      {
+        "function": "walkNode",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 6,
+        "selfMs": 1570.37,
+        "selfPercent": 77.69139738345574
+      },
+      {
+        "function": "walkTSTypeAnnotation",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 2318,
+        "selfMs": 42.128,
+        "selfPercent": 2.0842114845356337
+      },
+      {
+        "function": "walkTSPropertySignature",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 2228,
+        "selfMs": 32.373,
+        "selfPercent": 1.6015993730742515
+      },
+      {
+        "function": "callback",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 52,
+        "selfMs": 30.001,
+        "selfPercent": 1.484248688462627
+      },
+      {
+        "function": "walkMemberExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1187,
+        "selfMs": 29.543,
+        "selfPercent": 1.4615899137779202
+      },
+      {
+        "function": "(anonymous)",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 44,
+        "selfMs": 27.58,
+        "selfPercent": 1.3644738117995816
+      },
+      {
+        "function": "walkProperty",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1291,
+        "selfMs": 22.289,
+        "selfPercent": 1.1027105435533313
+      },
+      {
+        "function": "walkCallExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 778,
+        "selfMs": 19.587,
+        "selfPercent": 0.9690336675749965
+      },
+      {
+        "function": "collectCorpus",
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "line": 19,
+        "selfMs": 18.67,
+        "selfPercent": 0.9236666448984115
+      },
+      {
+        "function": "walkVariableDeclarator",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1509,
+        "selfMs": 15.628,
+        "selfPercent": 0.7731688444816484
+      },
+      {
+        "function": "walkArrowFunctionExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 686,
+        "selfMs": 13.665,
+        "selfPercent": 0.6760527425033097
+      },
+      {
+        "function": "post",
+        "file": "node:inspector",
+        "line": 115,
+        "selfMs": 12.084,
+        "selfPercent": 0.5978354438646173
+      },
+      {
+        "function": "walkExpressionStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 970,
+        "selfMs": 11.709,
+        "selfPercent": 0.5792829536751741
+      },
+      {
+        "function": "walkIdentifier",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1057,
+        "selfMs": 11.291,
+        "selfPercent": 0.5586031112773414
+      },
+      {
+        "function": "walkIfStatement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1070,
+        "selfMs": 10.709,
+        "selfPercent": 0.5298096465033256
+      },
+      {
+        "function": "walkLiteral",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 520,
+        "selfMs": 10.169,
+        "selfPercent": 0.5030940606305274
+      },
+      {
+        "function": "walkLogicalExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1174,
+        "selfMs": 10.043,
+        "selfPercent": 0.4968604239268745
+      },
+      {
+        "function": "walkTSTypeReference",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 2431,
+        "selfMs": 9.834,
+        "selfPercent": 0.48652050272795816
+      },
+      {
+        "function": "finalizeCompiledVisitor",
+        "file": "node_modules/oxc-parser/src-js/visit/visitor.js",
+        "line": 285,
+        "selfMs": 8.873,
+        "selfPercent": 0.43897665453581175
+      },
+      {
+        "function": "walkJSXElement",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1585,
+        "selfMs": 8.789,
+        "selfPercent": 0.4348208967333765
+      },
+      {
+        "function": "walkJSXAttribute",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1560,
+        "selfMs": 8.292,
+        "selfPercent": 0.4102326630689678
+      },
+      {
+        "function": "walkBinaryExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 741,
+        "selfMs": 7.207,
+        "selfPercent": 0.35655412478751214
+      },
+      {
+        "function": "walkImportSpecifier",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1148,
+        "selfMs": 5.666,
+        "selfPercent": 0.2803157584356936
+      },
+      {
+        "function": "walkJSXExpressionContainer",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 1599,
+        "selfMs": 4.999,
+        "selfPercent": 0.24731706255207064
+      },
+      {
+        "function": "walkAssignmentExpression",
+        "file": "node_modules/oxc-parser/src-js/generated/visit/walk.js",
+        "line": 701,
+        "selfMs": 4.916,
+        "selfPercent": 0.24321077805680724
+      }
+    ]
+  },
+  {
+    "id": "i18n-original-walker-stock-parsed",
+    "samples": 7927,
+    "sampledMs": 2023.334,
+    "files": [
+      {
+        "file": "node_modules/oxc-walker/dist/index.mjs",
+        "selfMs": 1731.048,
+        "selfPercent": 85.5542386971207
+      },
+      {
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "selfMs": 278.246,
+        "selfPercent": 13.75185708340788
+      },
+      {
+        "file": "node:inspector",
+        "selfMs": 11.042,
+        "selfPercent": 0.5457329338606478
+      },
+      {
+        "file": "(program)",
+        "selfMs": 1.166,
+        "selfPercent": 0.057627658112797985
+      },
+      {
+        "file": "(garbage collector)",
+        "selfMs": 1.0,
+        "selfPercent": 0.04942337745522983
+      },
+      {
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "selfMs": 0.832,
+        "selfPercent": 0.04112025004275122
+      }
+    ],
+    "self": [
+      {
+        "function": "_walk",
+        "file": "node_modules/oxc-walker/dist/index.mjs",
+        "line": 68,
+        "selfMs": 1726.006,
+        "selfPercent": 85.30504602799142
+      },
+      {
+        "function": "walk",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 62,
+        "selfMs": 210.212,
+        "selfPercent": 10.389387021618774
+      },
+      {
+        "function": "callback",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 52,
+        "selfMs": 45.994,
+        "selfPercent": 2.273178822675841
+      },
+      {
+        "function": "(anonymous)",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 44,
+        "selfMs": 21.79,
+        "selfPercent": 1.076935394749458
+      },
+      {
+        "function": "post",
+        "file": "node:inspector",
+        "line": 115,
+        "selfMs": 11.042,
+        "selfPercent": 0.5457329338606478
+      },
+      {
+        "function": "traverse",
+        "file": "node_modules/oxc-walker/dist/index.mjs",
+        "line": 57,
+        "selfMs": 2.209,
+        "selfPercent": 0.1091762407986027
+      },
+      {
+        "function": "WalkerBase",
+        "file": "node_modules/oxc-walker/dist/index.mjs",
+        "line": 30,
+        "selfMs": 1.75,
+        "selfPercent": 0.08649091054665221
+      },
+      {
+        "function": "(program)",
+        "file": "",
+        "line": 0,
+        "selfMs": 1.166,
+        "selfPercent": 0.057627658112797985
+      },
+      {
+        "function": "WalkerSync",
+        "file": "node_modules/oxc-walker/dist/index.mjs",
+        "line": 54,
+        "selfMs": 1.083,
+        "selfPercent": 0.05352551778401391
+      },
+      {
+        "function": "(garbage collector)",
+        "file": "",
+        "line": 0,
+        "selfMs": 1.0,
+        "selfPercent": 0.04942337745522983
+      },
+      {
+        "function": "collectCorpus",
+        "file": "experiments/oxc-attribution/profile.mjs",
+        "line": 19,
+        "selfMs": 0.832,
+        "selfPercent": 0.04112025004275122
+      },
+      {
+        "function": "matches",
+        "file": "experiments/oxc-attribution/cases.mjs",
+        "line": 54,
+        "selfMs": 0.25,
+        "selfPercent": 0.012355844363807458
+      }
+    ]
+  }
+]
