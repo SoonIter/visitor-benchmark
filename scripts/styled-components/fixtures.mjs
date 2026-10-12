@@ -1,10 +1,10 @@
 import { mkdirSync,writeFileSync } from 'node:fs';
-import { corpus } from '../src/workload.mjs';
-import { prepare as babel } from '../src/babel-io.mjs';
-import { prepare as swc } from '../src/plugins/swc-visitor.mjs';
-import { prepare as typescript } from '../src/plugins/typescript.mjs';
+import { corpus } from '../../src/styled-components/workload.mjs';
+import { prepare as babel } from '../../src/styled-components/babel-io.mjs';
+import { prepare as swc } from '../../src/styled-components/plugins/swc-visitor.mjs';
+import { prepare as typescript } from '../../src/styled-components/plugins/typescript.mjs';
 import ts from 'typescript';
-const dir=new URL('../fixtures/sample/',import.meta.url);mkdirSync(dir,{recursive:true});
+const dir=new URL('../../fixtures/sample/',import.meta.url);mkdirSync(dir,{recursive:true});
 const fixture=corpus('dense',true)[0];
 const write=(name,content)=>writeFileSync(new URL(name,dir),content);
 write('input.js',fixture.source);write('expected.js',fixture.expected);

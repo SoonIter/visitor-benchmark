@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { variants } from '../src/registry.mjs';
-import { corpus, canonical, digest } from '../src/workload.mjs';
-import { load } from '../src/execute.mjs';
+import { variants } from '../src/styled-components/registry.mjs';
+import { corpus, canonical, digest } from '../src/styled-components/workload.mjs';
+import { load } from '../src/styled-components/execute.mjs';
 for(const variant of variants) test(`${variant.id}: identical styled-components edits and negative controls`,async()=>{
  const engine=await load(variant);
  for(const fixture of corpus('dense',true)){

@@ -8,6 +8,15 @@ function property(node, state, next) {
 }
 export const collectionBase = {
   ...base,
+  ObjectPattern(node, state, next) {
+    for (const prop of node.properties) {
+      if (prop.type === 'RestElement') next(prop.argument, state, 'Pattern');
+      else {
+        if (prop.computed || prop.key.type === 'Literal') next(prop.key, state);
+        next(prop.value, state, 'Pattern');
+      }
+    }
+  },
   Property: property,
   MethodDefinition: property,
   PropertyDefinition: property,

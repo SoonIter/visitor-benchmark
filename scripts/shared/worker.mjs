@@ -1,9 +1,9 @@
 import { performance } from 'node:perf_hooks';
 import { resourceUsage, memoryUsage } from 'node:process';
-import { variants } from '../src/registry.mjs';
-import { corpus, digest } from '../src/workload.mjs';
-import { load } from '../src/execute.mjs';
-const [id,kind,warmArg,iterationsArg]=process.argv.slice(2);
+const [scenario,id,kind,warmArg,iterationsArg]=process.argv.slice(2);
+const { variants } = await import(`../../src/${scenario}/registry.mjs`);
+const { corpus, digest } = await import(`../../src/${scenario}/workload.mjs`);
+const { load } = await import(`../../src/${scenario}/execute.mjs`);
 const warmups=Number(warmArg), iterations=Number(iterationsArg);
 const variant=variants.find(v=>v.id===id); if(!variant)throw new Error(`Unknown variant ${id}`);
 const fixtures=corpus(kind),engine=await load(variant);

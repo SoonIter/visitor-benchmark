@@ -53,14 +53,14 @@ Every measured output is printed, reparsed and structurally compared with indepe
 
 - `package-lock.json` pins npm dependencies.
 - `vendor/provenance.json` identifies the single SWC Next snapshot by branch, commit and SHA-256.
-- `npm run bench` and `npm run bench:quick` first refresh the snapshot from the latest committed PR head using GitHub CLI; local uncommitted work is never copied. `npm run sync:swc` refreshes it separately. `npm run bench:pinned` explicitly reuses the recorded snapshot offline.
-- `results/latest.json` preserves environment, execution order, individual timings, memory and hashes.
-- `results/source-manifest.json` identifies the current scripts and implementation files.
+- `npm run bench` and `npm run bench:quick` reuse the pinned snapshot. `npm run sync:swc` explicitly refreshes it from the latest committed PR head using GitHub CLI; local uncommitted work is never copied. Rerun tests and all scenarios after refreshing.
+- `results/styled-components/latest.json` preserves environment, execution order, individual timings, memory and hashes.
+- Each latest.json embeds sourceManifest with the hashes of scripts and implementations at measurement time. Rendering does not rewrite measurement provenance.
 - `npm run report` regenerates the README, charts and detailed report from recorded data without rerunning measurements.
 
 ## Coverage
 
-See [`src/registry.mjs`](../src/registry.mjs) for every entry point and configuration. The suite covers typed hooks, generic enter/leave hooks, recursive visitors, NodePath, query collections and compiler wrappers. ESTree participants share business logic, not a walker compatibility adapter.
+See [`src/styled-components/registry.mjs`](../src/styled-components/registry.mjs) for every entry point and configuration. The suite covers typed hooks, generic enter/leave hooks, recursive visitors, NodePath, query collections and compiler wrappers. ESTree participants share business logic, not a walker compatibility adapter.
 
 | Package family | Entry points |
 | --- | --- |

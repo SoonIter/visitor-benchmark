@@ -1,6 +1,5 @@
-import { parse } from 'acorn';
-import { createHash } from 'node:crypto';
-export const parseESTree = source => parse(source, { ecmaVersion: 2022, sourceType: 'module', locations: true, ranges: true });
+import { parseESTree } from '../shared/ast.mjs';
+export { canonical, digest, verifyCode } from '../shared/ast.mjs';
 export function hash(value) { let h=2166136261; for (let i=0;i<value.length;i++) h=Math.imul(h ^ value.charCodeAt(i),16777619); return (h>>>0).toString(36); }
 export const metadata = (filename,name,index) => ({displayName: `${filename.replace('.js','')}__${name}`, componentId:`sc-${hash(filename)}-${index}`});
 export function corpus(kind='dense', small=false) {
@@ -25,17 +24,4 @@ export function corpus(kind='dense', small=false) {
     source+=tail;expected+=tail;
     return {filename,source,expected,count,ast:parseESTree(source)};
   });
-}
-// Independent oracle: expected source is generated with the fixtures, not by a benchmark plugin.
-function clean(node) {
-  if(Array.isArray(node)) return node.map(clean);
-  if(node && typeof node==='object') return Object.fromEntries(Object.entries(node).filter(([k])=>!['start','end','loc','range','raw'].includes(k)).map(([k,v])=>[k,clean(v)]));
-  return node;
-}
-export const canonical = ast => JSON.stringify(clean(ast));
-export const digest = value => createHash('sha256').update(value).digest('hex');
-export function verifyCode(code, fixture) {
-  const actual=canonical(parseESTree(code)), expected=canonical(parseESTree(fixture.expected));
-  if(actual!==expected) throw new Error(`Output mismatch: ${fixture.filename}`);
-  return digest(actual);
 }

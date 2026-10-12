@@ -1,4 +1,4 @@
-import { variants as editingVariants } from '../registry.mjs';
+import { implementations as editingVariants } from '../shared/implementations.mjs';
 const babelIds = {
   "babel": "babel-traverse-v8",
   "babel-no-scope": "babel-traverse-no-scope-v8",

@@ -1,78 +1,114 @@
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
-import { createHash } from 'node:crypto';
-import { spawnSync } from 'node:child_process';
-import { fileURLToPath } from 'node:url';
-import { report } from './report.mjs';
-const root=new URL('../',import.meta.url);
-const chart=spawnSync(process.env.PYTHON || 'python3',[fileURLToPath(new URL('./charts.py',import.meta.url))],{stdio:'inherit'});
-if(chart.error)throw chart.error;
-if(chart.status!==0)throw new Error('Chart generation failed. Install scripts/requirements-charts.txt and optionally set PYTHON.');
-const data=JSON.parse(readFileSync(new URL('results/latest.json',root)));
-const env=data.environment, commit=data.provenance.commit;
-writeFileSync(new URL('results/latest.md',root),report(data).markdown);
-const styledReadme = `# JavaScript Visitor Benchmark
+import { execFileSync } from 'node:child_process';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { scenarios } from '../src/scenarios.mjs';
+const root = new URL('../', import.meta.url);
+for (const scenario of scenarios) {
+  execFileSync(process.execPath, scenario.runner === 'mutation'
+    ? [new URL('shared/render.mjs', import.meta.url).pathname, scenario.id]
+    : [new URL('i18n/render.mjs', import.meta.url).pathname], { stdio: 'inherit' });
+}
+const styled = JSON.parse(readFileSync(new URL('results/styled-components/latest.json', root)));
+const removal = JSON.parse(readFileSync(new URL('results/remove-debugger/latest.json', root)));
+const i18n = JSON.parse(readFileSync(new URL('results/i18n/latest.json', root)));
+const overview = `# JavaScript AST traversal benchmarks
 
-Compare ${data.variants.length} JavaScript AST traversal and editing implementations using a styled-components \`displayName\` / \`componentId\` transform.
+**Three concrete tasks. Same AST within each ESTree track. Validated output on every measured iteration.**
 
-## System
+| Scenario | Work | Corpus | Results |
+| :-- | :-- | :-- | :-- |
+| Styled-components | Inject displayName / componentId | Generated JS; dense + sparse | [Details](docs/styled-components/README.md) |
+| Remove debugger | Delete list elements; replace single statement slots | Generated JS; dense + sparse | [Details](docs/remove-debugger/README.md) |
+| Collect i18n strings | Read literals, check dictionary, preserve order and duplicates | 64 real TS/TSX modules + pre-transpiled JS | [Details](docs/i18n/README.md) |
 
-| Property | Value |
-| --- | --- |
-| CPU | ${env.cpu} |
-| OS | ${env.platform} (${env.arch}) |
-| Runtime | Node.js ${env.node} |
-| Memory | ${env.totalMemoryGiB.toFixed(0)} GiB |
-| Measured | ${data.createdAt.slice(0,10)} |
+Lower is better. Bars show medians of process medians; whiskers show their min–max range, **not confidence intervals**. Compare implementations within a track; do not compare absolute times across scenarios or AST families. Scope analysis, query setup and wrapper work are included where the API performs them.
 
-## Benchmarks
+## 1. Styled-components
 
-### Shared ESTree
+A focused config-injection transform, **not the complete official plugin**. Dense: 400 edits; sparse: 80 edits across more unrelated code. The direct-ast baseline exploits top-level declarations and skips unrelated subtrees.
 
-Every implementation receives an independent clone of the **same Acorn AST**. Dense: 400 components; sparse: 80 components with more unrelated code. Both workloads contain four files.
+![Styled-components — shared ESTree](charts/styled-components/estree.svg)
 
-\`direct-ast\` edits top-level declarations without a visitor API. It skips unrelated subtrees by design.
+[Native AST chart](charts/styled-components/native.svg) · [All numbers and strategies](results/styled-components/latest.md)
 
-![Shared ESTree benchmark](charts/estree.png)
+## 2. Remove debugger
 
-### Native ASTs
+Removes consecutive and nested debugger statements. Single statement slots (for example \`if (flag) debugger;\`) become empty statements to preserve control flow. APIs without built-in removal use explicit manual edits, **included in the timer**. See the [strategy table](results/remove-debugger/latest.md#implementations).
 
-Babel, SWC and TypeScript prepare their own ASTs from the same source. **These inputs are not ESTree**; do not treat this chart as a same-AST comparison. Scope-enabled and wrapper APIs include their additional work.
+![Remove debugger — shared ESTree](charts/remove-debugger/estree.svg)
 
-![Native AST benchmark](charts/native.png)
+[Native AST chart](charts/remove-debugger/native.svg) · [All numbers and strategies](results/remove-debugger/latest.md)
 
-[Full results and memory](results/latest.md) · [Raw samples](results/latest.json) · [Implementations](src/registry.mjs)
+## 3. Collect i18n strings
+
+The application's Babel StringLiteral collector, using 18,868 real dictionary keys. No source edits. Original source: 59 matches; pre-transpiled JavaScript: 58 matches. Private source stays outside Git.
+
+![i18n — original business source](charts/i18n/original.svg)
+
+[Pre-transpiled JS chart](charts/i18n/javascript.svg) · [Compatibility failures and all results](docs/i18n/results.md) · [Corpus provenance](docs/i18n/corpus.json) · [Historical Acorn/Yuku profiling study](docs/i18n-dispatch/README.md)
+
+The JavaScript compatibility track transforms the same modules before timing so JS-only walkers can participate. It is not captured loader input and must not be compared directly with the original TS/TSX track. Acorn's static destructuring-key collection is covered by a regression fixture.
+
+## Measurement
+
+- **ESTree:** identical Acorn AST clones for editing; Oxc TS-ESTree for original i18n and Acorn ESTree for its JavaScript track. Fresh AST preparation is outside every timed transform/collection.
+- **Native ASTs:** Babel, SWC and TypeScript parse the same source into their own representations, explicitly labeled **not ESTree**. These rows measure both tree layout and API costs.
+- **Correctness:** editing results are printed/reparsed and compared against independent expected source; i18n results are exact ordered arrays checked against Babel. Unsupported implementations are reported, not assigned a zero time.
+- **Timing:** isolated processes, sequential execution with rotated/reversed order. Edits: ${styled.config.repetitions} processes × ${styled.config.warmups} warmups + ${styled.config.iterations} samples; i18n: ${i18n.repeats} × ${i18n.warmups} + ${i18n.iterations}. Preparation, external printing and checks are excluded; internal ts-morph text updates are included.
+- **Evidence:** [styled raw data](results/styled-components/latest.json), [debugger raw data](results/remove-debugger/latest.json), [i18n raw data](results/i18n/latest.json) retain samples, source hashes, versions and whole-worker memory. Results are corpus-specific, not a universal performance ceiling.
+
+${styled.environment.cpu} · ${styled.environment.platform}/${styled.environment.arch} · Node ${styled.environment.node}. Measured: styled ${styled.createdAt.slice(0,10)}, debugger ${removal.createdAt.slice(0,10)}, i18n ${i18n.timestamp.slice(0,10)}. SWC Next uses the committed PR snapshot recorded in each result; no before/after variants.
 
 ## Run
 
-Node.js 24+ and GitHub CLI (\`gh\`) for refreshing the SWC Next branch snapshot:
+Node 24+; Python + Matplotlib for charts. The real i18n corpus additionally needs the business checkout and its installed Babel 7 dependencies.
 
 \`\`\`sh
 npm ci
 npm test
+# Synthetic scenarios are self-contained:
+npm run bench -- styled-components
+npm run bench -- remove-debugger
+
+# Private business corpus:
+export FLOW_WEB_ROOT=/absolute/path/to/flow-web-monorepo
+npm run i18n:prepare
+npm run bench -- i18n
+
+# All three, sequentially (requires the prepared business corpus):
 npm run bench
+
+python3 -m venv .cache/charts-venv
+.cache/charts-venv/bin/pip install -r scripts/requirements-charts.txt
+PYTHON=.cache/charts-venv/bin/python npm run report
 \`\`\`
 
-Regenerate the charts and this README (Python 3 + Matplotlib):
+\`--quick\` writes smoke results separately. Runs use the committed SWC Next snapshot; \`npm run sync:swc\` explicitly refreshes PR #840 via GitHub CLI. Rerun tests and all benchmarks after refreshing. \`i18n:prepare\` resamples the current checkout: check corpus hashes before comparing reruns.
 
-\`\`\`sh
-python3 -m pip install -r scripts/requirements-charts.txt
-npm run report
+## Layout & extension
+
+\`\`\`text
+src/
+  scenarios.mjs          # Scenario catalog
+  shared/                # AST oracle, implementation identities, Babel I/O
+  styled-components/     # Workload, registry, plugins
+  remove-debugger/       # Workload, registry, plugins
+  i18n/                  # Corpus, registry, collectors
+scripts/
+  bench.mjs              # One entry point; sequential scenario execution
+  render.mjs             # Generate all reports and this README
+  shared/                # Mutation runner, measurement provenance, charts
+  styled-components/     # Input AST sample generation
+  i18n/                  # Business corpus preparation and read-only runner
+results/<scenario>/      # Raw samples and summaries
+charts/<scenario>/       # Generated SVG/PNG charts
+docs/<scenario>/         # Contracts, methodology and interpretation
+experiments/             # Separate profiling/ablation studies
+vendor/                  # Pinned SWC Next source and provenance
 \`\`\`
 
-Use \`npm run bench:quick\` for a smoke run, or \`npm run bench -- --only=swc-next,yuku-ast,oxc-walker --output=focused\` for selected implementations. Set \`PYTHON\` to use a virtual environment for chart generation.
-
-## Methodology
-
-Each implementation runs in ${data.config.repetitions} fresh processes with ${data.config.warmups} warmups and ${data.config.iterations} measured iterations per process. Timing covers visitor setup, traversal and edits; parsing, cloning, printing and output validation are excluded. Every measured output is checked against an independent expected result.
-
-This is a focused config-injection workload, **not the complete styled-components plugin**. See [methodology and coverage](docs/methodology.md) for semantics, exclusions and memory definitions.
-
-SWC Next is pinned to [\`${commit.slice(0,7)}\`](https://github.com/swc-project/swc-next/commit/${commit}) on \`${data.provenance.branch}\`. The default \`npm run bench\` refreshes this snapshot automatically. Use \`npm run bench:pinned\` to explicitly reuse it offline.
+To add an editing scenario, implement \`workload.mjs\` (source + independently expected output), \`registry.mjs\` and \`execute.mjs\` (prepare/run/validate), add package-specific modules under \`plugins/\`, then register it in \`src/scenarios.mjs\`. [Extension guide](docs/extending.md) covers runners, validation and reports.
 
 Presentation inspired by [Native ECMAScript Parser Benchmark](https://github.com/yuku-toolchain/ecmascript-parser-benchmark-native).
 `;
-writeFileSync(new URL('docs/styled-components.md', root), styledReadme.replaceAll('](charts/', '](../charts/').replaceAll('](results/', '](../results/').replaceAll('](src/', '](../src/').replaceAll('](docs/methodology.md)', '](methodology.md)'));
-function files(dir){return readdirSync(new URL(dir,root),{withFileTypes:true}).flatMap(x=>x.isDirectory()?files(`${dir}/${x.name}`):[`${dir}/${x.name}`]);}
-const names=['package.json','package-lock.json',...files('src'),...files('scripts'),...files('vendor')];
-writeFileSync(new URL('results/source-manifest.json',root),JSON.stringify(Object.fromEntries(names.sort().map(name=>[name,createHash('sha256').update(readFileSync(new URL(name,root))).digest('hex')])),null,2)+'\n');
-console.log('Updated docs/styled-components.md, charts/, results/latest.md and source-manifest.json.');
+writeFileSync(new URL('README.md', root), overview);
+console.log('Updated the three-scenario README.');

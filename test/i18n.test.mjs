@@ -9,7 +9,7 @@ for (const { id } of variants.filter(v => !v.id.endsWith('-v7'))) {
     const actual = impl.collect(impl.prepare({filename: 'fixture.js', source}), keys);
     if (id === 'swc-visitor') {
       // A documented incompatibility: its method body precedes the key.
-      assert.deepEqual(actual, [...expected.slice(0, 5), 'nested-key', 'title-key']);
+      assert.deepEqual(actual, [...expected.slice(0, 6), 'nested-key', 'title-key']);
       assert.notDeepEqual(actual, expected);
     } else assert.deepEqual(actual, expected);
   });
