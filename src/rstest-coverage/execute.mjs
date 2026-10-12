@@ -4,7 +4,7 @@ import { canonical, parseESTree, digest } from '../shared/ast.mjs';
 export async function load(variant) {
   const plugin = await import(`./plugins/${variant.id}.mjs`);
   return {
-    prepare: f => plugin.prepare ? plugin.prepare(f.source, f.filename) : structuredClone(f.ast),
+    prepare: f => plugin.prepare ? plugin.prepare(f.source, f.filename) : parseESTree(f.source),
     run: (ast, f) => plugin.run(ast, f),
     validate(result, f) {
       assert.equal(result.changed, f.count, `${variant.id}: replacement count`);

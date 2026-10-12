@@ -27,7 +27,7 @@ The i18n runner is separate because it checks ordered values instead of printed 
 
 ## Evidence and reports
 
-- Prepare the same ESTree once logically and supply structurally identical fresh trees to every compatible implementation. Record input hashes to detect drift.
+- Reparse the same source with the same parser version and options before every iteration, outside timing. Pass the parser output directly to each compatible implementation; do not clone, serialize/deserialize, or reuse edited trees. Record input hashes to detect drift. Raw results label this preparation as `fresh-parse-v1`; do not compare older clone-based results as implementation speedups.
 - Preserve native ASTs when the API requires them. They are a different comparison group, never evidence of a same-AST speedup.
 - Include API-specific costs needed to complete the task: queries, manual editing, scope work and wrapper text updates. Exclude parse/print only when they are outside the actual measured API call.
 - A correctness failure is not a timing. Fix the implementation or record incompatibility; never silently narrow the contract.

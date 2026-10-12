@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 const root = new URL('../../', import.meta.url);
 const data = JSON.parse(readFileSync(new URL('results/i18n/latest.json', root)));
+if (data.astPreparation !== "fresh-parse-v1") throw new Error("Regenerate i18n results using fresh parser output before reporting");
 const manifest = data.corpus;
 for (const run of data.runs.filter(r => r.status === 'passed')) {
   if (run.samplesMs.length !== data.iterations || run.samplesMs.some(x => !Number.isFinite(x) || x < 0)) throw new Error('Invalid i18n samples');
@@ -81,13 +82,15 @@ The JavaScript compatibility track expands coverage to JS-only walkers. Transpil
 
 - **${(originalBytes/1024).toFixed(1)} KiB** of original source: 40 TS + 24 TSX files, deterministically sampled from four application layers, without selecting by match count. 11 files contain matches.
 - **18,868 dictionary keys**, from the actual domestic configuration (\`zh\` + \`zh-Hant\`). Original source: **59 matches**; JavaScript: **58 matches**. No synthetic i18n strings are injected.
-- ESTree participants receive structurally identical inputs: Oxc TS-ESTree for original source, Acorn ESTree for JavaScript. Babel, SWC and TypeScript participants prepare their own ASTs, explicitly labeled **not ESTree**.
+- ESTree participants receive fresh, structurally identical parser output on every iteration, without cloning: Oxc TS-ESTree for original source, Acorn ESTree for JavaScript. Babel, SWC and TypeScript participants prepare their own ASTs, explicitly labeled **not ESTree**.
 - **3 isolated processes × 5 warmups + 12 measured iterations**, per variant and track; rotated process order. Each iteration collects all 64 files. Bars are medians of process medians, with min–max whiskers.
 - Fresh parsing/AST preparation occurs **outside each timed collection** to avoid warm NodePath/scope caches. Hook construction, scope analysis when enabled, traversal, \`Set.has\` and result allocation are timed. GC during collection is included.
 - Ordered arrays are checked against the Babel oracle per file, every iteration. The oracle was also checked against the business repository's installed Babel 7.27.3. Unsupported or mismatching implementations are excluded, not assigned zero time.
 - Corpus parity is not universal Babel compatibility. In particular, ESTree \`Literal\` includes directive strings, while Babel \`StringLiteral\` excludes directives. The actual dictionary/corpus passes; adapting arbitrary future inputs needs a separate semantic audit.
 
 SWC Next is pinned to the latest committed PR branch snapshot **[${data.swcNext.commit.slice(0,7)}](${data.swcNext.repository}/commit/${data.swcNext.commit})**. No before/after variants. \`direct-ast\` recursively inspects AST properties itself, with no package visitor or visitor-key table; it does not assume top-level declarations. The removed \`handwritten\` case is not restored.
+
+Fresh parser output is used for every iteration, without AST cloning. Earlier results through [8143bc9](https://github.com/SoonIter/visitor-benchmark/tree/8143bc994901c2321b31ad271c83bbcb6e5cf4ca) used cloned ASTs in editing and original-source i18n; do not interpret changes from those results as implementation speedups.
 
 ## Reproduce
 

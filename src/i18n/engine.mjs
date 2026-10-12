@@ -38,13 +38,13 @@ export async function engine(id, kind) {
     prepare = f => new Project({ useInMemoryFileSystem: true, skipAddingFilesFromTsConfig: true, compilerOptions: { target: ts.ScriptTarget.Latest, allowJs: true } }).createSourceFile(original ? f.filename : f.filename + '.js', f.source);
     snapshot = ast => ast.getFullText();
   } else {
-    // Each ESTree participant gets fresh clones of exactly the same parser output.
+    // Each ESTree participant receives fresh parser output, preserving its runtime representation.
     if (original) {
       const { parseSync } = await import('oxc-parser');
       prepare = f => {
         const result = parseSync(f.filename, f.source, { sourceType: 'module' });
         if (result.errors.length) throw new Error('Oxc rejected original source');
-        return structuredClone(result.program);
+        return result.program;
       };
     } else {
       const { parse } = await import('acorn');

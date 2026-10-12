@@ -13,7 +13,7 @@ const filter=process.argv.find(x=>x.startsWith('--only='))?.slice(7).split(',');
 const variants=filter?all.filter(v=>filter.includes(v.id)):all;
 if(!variants.length)throw new Error('No variants selected');
 const pkg=JSON.parse(readFileSync(new URL('../../package.json',import.meta.url)));
-const data={scenario,sourceManifest:sourceManifest(),createdAt:new Date().toISOString(),config,environment:{node:process.version,platform:platform(),arch:arch(),cpu:cpus()[0].model,cpuCount:cpus().length,totalMemoryGiB:totalmem()/1024**3,loadAverageAtStart:loadavg()},dependencies:pkg.dependencies,provenance:JSON.parse(readFileSync(new URL('../../vendor/provenance.json',import.meta.url))),variants,runs:[],order:[]};
+const data={scenario,astPreparation:"fresh-parse-v1",sourceManifest:sourceManifest(),createdAt:new Date().toISOString(),config,environment:{node:process.version,platform:platform(),arch:arch(),cpu:cpus()[0].model,cpuCount:cpus().length,totalMemoryGiB:totalmem()/1024**3,loadAverageAtStart:loadavg()},dependencies:pkg.dependencies,provenance:JSON.parse(readFileSync(new URL('../../vendor/provenance.json',import.meta.url))),variants,runs:[],order:[]};
 mkdirSync(new URL(`../../results/${scenario}/`,import.meta.url),{recursive:true});
 const stem=process.argv.find(x=>x.startsWith('--output='))?.slice(9)??(quick?'quick':'latest');
 const out=new URL(`../../results/${scenario}/${stem}.json`,import.meta.url);

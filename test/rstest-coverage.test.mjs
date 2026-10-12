@@ -21,7 +21,7 @@ for (const variant of variants) test(`rstest-coverage ${variant.id}: real module
   const engine = await load(variant);
   for (const f of [...cases, ...corpus('runtime'), ...corpus('tooling')]) {
     const input = engine.prepare(f);
-    const before = variant.id === 'zimmerframe' ? structuredClone(input) : null;
+    const before = variant.id === 'zimmerframe' ? engine.prepare(f) : null;
     const result = engine.run(input, f);
     try { assert.match(engine.validate(result, f), /^[a-f0-9]{64}$/); }
     finally { result.dispose?.(); }

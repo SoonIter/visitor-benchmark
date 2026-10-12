@@ -41,7 +41,9 @@ The full converter's statement/function maps, source-map lookup, V8 range normal
 
 ## API fairness
 
-All **27 adapters** participate: 19 share fresh copies of the same Acorn ESTree; 8 use their own Babel/SWC/TypeScript representations. Parsing, AST preparation and validation are outside the timer. Business state, traversal setup, metadata construction, ordering, edits, scope analysis where enabled, and internal API work are timed.
+Fresh parser output replaces the cloned-AST preparation used through [8143bc9](https://github.com/SoonIter/visitor-benchmark/tree/8143bc994901c2321b31ad271c83bbcb6e5cf4ca). Changes from that historical run are not implementation speedups.
+
+All **27 adapters** participate: 19 use fresh output from the same Acorn parser on every iteration, without AST cloning; 8 use their own Babel/SWC/TypeScript representations. Parsing, AST preparation and validation are outside the timer. Business state, traversal setup, metadata construction, ordering, edits, scope analysis where enabled, and internal API work are timed.
 
 - Editors use context/path replacement, immutable returns or official compiler factories. Node-only APIs use manual assignment. direct-ast is the explicit manual-recursion baseline.
 - Post-order Acorn APIs collect targets before source-order planning; query APIs pay their query/setup costs. They do not claim to prune subtrees when their APIs cannot do so. jscodeshift applies planned child edits before parent wrapping to preserve path validity.
@@ -66,4 +68,4 @@ RSTEST_ROOT=/path/to/rstest node scripts/rstest-coverage/prepare.mjs
 
 Three isolated processes per adapter/cohort, eight warmups, twenty measured iterations, sequential execution with rotated order. Results retain every sample and source hash. Compare within each AST track; this is application-task time, not a universal walker ceiling.
 
-Recorded run: **119 tests passed, 162 isolated processes, 3,240 timed corpus iterations**. All 164 measured-source hashes match commit `3e92b2a` and the checked-in files. The raw manifest retains its `dirty` flag because generated result files were already present; the measured implementation itself matches that commit.
+The [raw results](../../results/rstest-coverage/latest.json) record the measured source commit, file hashes and `fresh-parse-v1` preparation method. Historical cloned-AST runs remain available in Git history.

@@ -11,7 +11,7 @@ for (const [scenario, load, corpus] of [
   const engine = await load({ id: 'zimmerframe' });
   for (const fixture of corpus('dense', true)) {
     const input = engine.prepare(fixture);
-    const before = structuredClone(input);
+    const before = engine.prepare(fixture);
     const result = engine.run(input, fixture);
     assert.notEqual(result.ast, input);
     assert.deepEqual(input, before);
