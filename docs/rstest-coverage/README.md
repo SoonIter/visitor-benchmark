@@ -65,3 +65,5 @@ RSTEST_ROOT=/path/to/rstest node scripts/rstest-coverage/prepare.mjs
 ```
 
 Three isolated processes per adapter/cohort, eight warmups, twenty measured iterations, sequential execution with rotated order. Results retain every sample and source hash. Compare within each AST track; this is application-task time, not a universal walker ceiling.
+
+Recorded run: **119 tests passed, 162 isolated processes, 3,240 timed corpus iterations**. All 164 measured-source hashes match commit `053549d` and the checked-in files. The raw manifest retains its `dirty` flag because generated result files were already present; the measured implementation itself matches that commit.

@@ -120,4 +120,4 @@ Preparation, parsing, cloning, external printing, validation and disposal are ex
 | tsquery | tsquery.map; internal print/reparse included |
 | ts-morph | SourceFile.transform + native factory |
 
-Every measured output is printed, reparsed and compared to independently authored expected code. The adjacent JSON records all samples, execution order, dependency versions, SWC Next SHA and source hashes.
+Every measured output is validated against its scenario oracle. For rstest-coverage this includes both normalized AST structure and exact ordered branch metadata; other editing tasks compare against independently authored expected code. The adjacent JSON records all samples, execution order, dependency versions, SWC Next SHA and source hashes.
