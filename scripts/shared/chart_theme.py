@@ -33,20 +33,25 @@ def render(title, subtitle, panels, environment, repetitions, output):
     fig.text(.035, .895, subtitle, fontsize=10, color=MUTED, va='top')
     for ax, panel in zip(axes, panels):
         rows = panel['rows']
-        values = [r['median'] for r in rows]
-        positions = list(range(len(rows)))
-        colors = [COLORS.get(r['id'], DEFAULT_COLOR) for r in rows]
+        measured = [(i, r) for i, r in enumerate(rows) if r['median'] is not None]
+        positions = [i for i, r in measured]
+        values = [r['median'] for i, r in measured]
+        colors = [COLORS.get(r['id'], DEFAULT_COLOR) for i, r in measured]
         ax.barh(positions, values, height=.60, color=colors, zorder=3)
         ax.errorbar(values, positions,
-                    xerr=[[r['median'] - r['min'] for r in rows],
-                          [r['max'] - r['median'] for r in rows]],
+                    xerr=[[r['median'] - r['min'] for i, r in measured],
+                          [r['max'] - r['median'] for i, r in measured]],
                     fmt='none', ecolor=TEXT, capsize=2, elinewidth=.9, zorder=4)
-        upper = max(r['max'] for r in rows)
+        upper = max((r['max'] for i, r in measured), default=1)
         for y, row in enumerate(rows):
+            if row['median'] is None:
+                ax.text(.025, y, 'Unsupported', transform=ax.get_yaxis_transform(),
+                        va='center', fontsize=9, color=MUTED)
+                continue
             ax.text(row['max'] + upper*.025, y, f"{row['median']:.3f}",
                     va='center', fontsize=9, color=TEXT)
         ax.set_xlim(0, upper*1.25)
-        ax.set_yticks(positions, [r.get('label', r['id']) for r in rows])
+        ax.set_yticks(range(len(rows)), [r.get('label', r['id']) for r in rows])
         # Keep physical row spacing consistent even when the groups differ in size.
         ax.set_ylim(max(len(p['rows']) for p in panels) - .4, -.6)
         ax.tick_params(axis='both', length=0, pad=8)

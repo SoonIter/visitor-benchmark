@@ -37,11 +37,15 @@ For the existing Babel loader, the smallest measured changes are **`noScope: tru
 | babel-traverse-no-scope-v7 | Babel 7 AST (not ESTree) | 5.817 |
 | babel-types-traverse-fast-v7 | Babel 7 AST (not ESTree) | 1.086 |
 
-![Original business source](../../charts/i18n/original.svg)
+Each chart groups one AST family. Left: original TS/TSX; right: the same modules pre-transpiled to ES2022 JavaScript. Implementation rows align across panels. Unsupported combinations show a label, never a zero-valued bar; implementations unsupported in both tracks are listed in the compatibility report.
 
-The compatibility track uses the **same modules pre-transpiled to ES2022 JavaScript**. It expands coverage to JS-only walkers. Transpilation happens before measurement and changes the strings available to collect; **do not compare timings between tracks**.
+![Shared ESTree](../../charts/i18n/estree.svg)
 
-![Pre-transpiled JavaScript](../../charts/i18n/javascript.svg)
+Babel and TypeScript use native ASTs, **not ESTree**. These rows are not a same-AST walker ranking.
+
+![Native ASTs](../../charts/i18n/native.svg)
+
+The JavaScript compatibility track expands coverage to JS-only walkers. Transpilation happens before measurement and changes the available strings and AST shape; **do not compare timings between tracks**.
 
 ## Corpus & measurement
 

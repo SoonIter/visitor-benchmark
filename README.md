@@ -38,9 +38,15 @@ Native Babel, SWC and TypeScript ASTs are **not ESTree**; these results are not 
 
 The application's Babel StringLiteral collector, using 18,868 real dictionary keys. No source edits. Original source: 59 matches; pre-transpiled JavaScript: 58 matches. Private source stays outside Git.
 
-![i18n — original business source](charts/i18n/original.svg)
+Each chart uses the same layout as the editing scenarios: one AST family per image, with original TS/TSX on the left and pre-transpiled JavaScript on the right. Rows align across columns; unsupported combinations have no timing bar.
 
-[Pre-transpiled JS chart](charts/i18n/javascript.svg) · [Compatibility failures and all results](docs/i18n/results.md) · [Corpus provenance](docs/i18n/corpus.json) · [Historical Acorn/Yuku profiling study](docs/i18n-dispatch/README.md)
+![i18n — shared ESTree](charts/i18n/estree.svg)
+
+Native Babel and TypeScript ASTs are **not ESTree**; these results are not a same-AST walker ranking.
+
+![i18n — native ASTs](charts/i18n/native.svg)
+
+[Compatibility failures and all results](docs/i18n/results.md) · [Corpus provenance](docs/i18n/corpus.json) · [Historical Acorn/Yuku profiling study](docs/i18n-dispatch/README.md)
 
 The JavaScript compatibility track transforms the same modules before timing so JS-only walkers can participate. It is not captured loader input and must not be compared directly with the original TS/TSX track. Acorn's static destructuring-key collection is covered by a regression fixture.
 
