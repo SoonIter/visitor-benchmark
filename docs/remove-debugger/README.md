@@ -32,7 +32,7 @@ Native Babel, SWC and TypeScript ASTs are **not ESTree**. Their chart includes A
 - APIs with removal support use native removal/replacement. APIs without removal use explicit statement-slot edits; that work is timed and listed in the strategy table. Acorn is not credited with a remove API. direct-ast recursively inspects properties without visitor keys or a package walker.
 - Every measured output is printed and reparsed, then compared structurally with independently authored expected source. Counts and cross-process input/output hashes must agree.
 - babel-traverse / babel-traverse-no-scope use @babel/traverse 8; babel-types-traverse-fast uses @babel/types.traverseFast; babel-types-traverse uses @babel/types.traverse. Exact versions are in raw results.
-- SWC Next: [a20f5fa](https://github.com/swc-project/swc-next/commit/a20f5fa4755e52e9760d51c41a1f7a02ba3e3316). One pinned implementation; no before/after variants.
+- SWC Next: [439dba8](https://github.com/swc-project/swc-next/commit/439dba831c8f3dd5336013116043b225b27951af). One pinned implementation; no before/after variants.
 
 ## Reproduce
 

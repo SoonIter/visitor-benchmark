@@ -1,6 +1,6 @@
 # remove-debugger results
 
-2026-10-12T09:05:12.100Z · Apple M5 Max · darwin/arm64 · Node v24.20.0
+2026-10-12T14:39:08.675Z · Apple M5 Max · darwin/arm64 · Node v24.20.0
 
 3 isolated processes × 8 warmups + 20 measured iterations per track. Each iteration processes four files. Bars/tables show the median of process medians; ranges are min–max, not confidence intervals.
 
@@ -14,38 +14,38 @@ Preparation, parsing, cloning, external printing, validation and disposal are ex
 
 | API | AST | Median ms | Process range ms | Peak RSS MiB | Observed heap MiB |
 | :-- | :-- | --: | :-- | --: | --: |
-| oxc-walker | ESTree | 0.289 | 0.283–0.301 | 136.1 | 39.7 |
-| estree-walker | ESTree | 0.337 | 0.325–0.339 | 136.5 | 40.7 |
-| oxc-visitor | ESTree | 0.377 | 0.372–0.414 | 140.4 | 41.6 |
-| acorn-recursive | ESTree | 0.385 | 0.367–0.411 | 136.9 | 40.0 |
-| esrecurse | ESTree | 0.446 | 0.438–0.485 | 136.4 | 40.5 |
-| estraverse | ESTree | 0.490 | 0.466–0.496 | 136.6 | 37.3 |
-| yuku-ast | ESTree | 0.509 | 0.508–0.567 | 136.8 | 40.9 |
-| typescript-eslint | ESTree | 0.529 | 0.518–0.559 | 203.9 | 65.6 |
-| swc-next | ESTree | 0.549 | 0.548–0.604 | 136.3 | 40.8 |
-| acorn-simple | ESTree | 0.608 | 0.608–0.650 | 135.9 | 40.8 |
-| acorn-full | ESTree | 0.625 | 0.620–0.656 | 136.7 | 37.3 |
-| direct-ast | ESTree | 0.630 | 0.623–0.646 | 135.9 | 36.1 |
-| estree-toolkit | ESTree | 1.381 | 1.286–1.447 | 138.7 | 42.1 |
-| zimmerframe | ESTree | 1.832 | 1.778–1.909 | 137.9 | 41.1 |
-| esquery | ESTree | 1.878 | 1.811–1.888 | 139.0 | 40.5 |
-| estree-util-visit | ESTree | 2.094 | 2.062–2.124 | 137.7 | 40.4 |
-| estree-toolkit-scope | ESTree | 3.160 | 3.033–3.204 | 139.0 | 41.3 |
-| ast-types | ESTree | 3.656 | 3.522–3.702 | 153.3 | 53.3 |
-| jscodeshift | ESTree | 3.783 | 3.486–3.808 | 303.5 | 153.0 |
+| oxc-walker | ESTree | 0.294 | 0.289–0.307 | 137.4 | 39.7 |
+| estree-walker | ESTree | 0.330 | 0.327–0.359 | 135.8 | 40.7 |
+| oxc-visitor | ESTree | 0.373 | 0.369–0.379 | 139.6 | 41.5 |
+| acorn-recursive | ESTree | 0.378 | 0.372–0.405 | 136.6 | 40.5 |
+| esrecurse | ESTree | 0.466 | 0.452–0.495 | 136.4 | 40.8 |
+| yuku-ast | ESTree | 0.517 | 0.511–0.593 | 137.4 | 41.2 |
+| estraverse | ESTree | 0.517 | 0.473–0.521 | 136.7 | 37.3 |
+| typescript-eslint | ESTree | 0.527 | 0.526–0.530 | 203.5 | 65.8 |
+| swc-next | ESTree | 0.531 | 0.513–0.572 | 136.4 | 41.2 |
+| acorn-full | ESTree | 0.622 | 0.618–0.676 | 136.7 | 37.3 |
+| direct-ast | ESTree | 0.634 | 0.605–0.645 | 137.8 | 36.3 |
+| acorn-simple | ESTree | 0.649 | 0.607–0.665 | 136.3 | 41.2 |
+| estree-toolkit | ESTree | 1.366 | 1.274–1.513 | 138.9 | 42.1 |
+| zimmerframe | ESTree | 1.872 | 1.798–1.904 | 136.5 | 41.1 |
+| esquery | ESTree | 1.904 | 1.834–1.946 | 139.1 | 38.7 |
+| estree-util-visit | ESTree | 2.123 | 2.070–2.124 | 136.9 | 40.9 |
+| estree-toolkit-scope | ESTree | 3.248 | 3.052–3.730 | 140.3 | 41.3 |
+| jscodeshift | ESTree | 3.755 | 3.657–3.863 | 303.5 | 153.0 |
+| ast-types | ESTree | 3.765 | 3.659–4.131 | 152.5 | 53.3 |
 
 ### Native ASTs — not a same-AST ranking
 
 | API | AST | Median ms | Process range ms | Peak RSS MiB | Observed heap MiB |
 | :-- | :-- | --: | :-- | --: | --: |
-| swc-visitor | SWC AST (not ESTree) | 0.241 | 0.234–0.280 | 116.9 | 26.5 |
-| babel-types-traverse-fast | Babel AST (not ESTree) | 0.280 | 0.276–0.303 | 152.7 | 45.2 |
-| babel-types-traverse | Babel AST (not ESTree) | 0.294 | 0.293–0.317 | 140.2 | 44.0 |
-| typescript | TypeScript 6 AST (not ESTree) | 0.489 | 0.480–0.527 | 303.4 | 99.6 |
-| babel-traverse-no-scope | Babel AST (not ESTree) | 1.266 | 1.259–1.378 | 285.7 | 128.8 |
-| babel-traverse | Babel AST (not ESTree) | 3.119 | 3.106–3.340 | 309.0 | 152.6 |
-| ts-morph | TypeScript AST (not ESTree) | 4.297 | 4.212–4.397 | 346.4 | 133.9 |
-| tsquery | TypeScript 6 AST (not ESTree) | 6.663 | 6.271–6.790 | 327.4 | 139.3 |
+| swc-visitor | SWC AST (not ESTree) | 0.238 | 0.236–0.253 | 117.3 | 26.5 |
+| babel-types-traverse-fast | Babel AST (not ESTree) | 0.286 | 0.283–0.289 | 152.6 | 44.8 |
+| babel-types-traverse | Babel AST (not ESTree) | 0.302 | 0.296–0.311 | 140.3 | 44.3 |
+| typescript | TypeScript 6 AST (not ESTree) | 0.486 | 0.481–0.501 | 302.4 | 105.3 |
+| babel-traverse-no-scope | Babel AST (not ESTree) | 1.315 | 1.293–1.400 | 285.9 | 124.0 |
+| babel-traverse | Babel AST (not ESTree) | 3.176 | 3.103–3.193 | 309.5 | 147.2 |
+| ts-morph | TypeScript AST (not ESTree) | 4.370 | 4.177–4.658 | 346.7 | 133.9 |
+| tsquery | TypeScript 6 AST (not ESTree) | 6.574 | 6.459–6.640 | 327.2 | 138.6 |
 
 ## sparse
 
@@ -55,38 +55,38 @@ Preparation, parsing, cloning, external printing, validation and disposal are ex
 
 | API | AST | Median ms | Process range ms | Peak RSS MiB | Observed heap MiB |
 | :-- | :-- | --: | :-- | --: | --: |
-| oxc-walker | ESTree | 0.647 | 0.594–0.650 | 220.6 | 79.9 |
-| estree-walker | ESTree | 0.718 | 0.672–0.720 | 221.3 | 80.5 |
-| oxc-visitor | ESTree | 0.788 | 0.724–0.803 | 238.2 | 80.7 |
-| acorn-recursive | ESTree | 0.884 | 0.737–0.960 | 219.1 | 80.6 |
-| estraverse | ESTree | 0.956 | 0.953–0.966 | 252.1 | 111.3 |
-| esrecurse | ESTree | 0.965 | 0.962–1.074 | 220.9 | 80.6 |
-| yuku-ast | ESTree | 1.068 | 1.052–1.174 | 217.2 | 78.6 |
-| swc-next | ESTree | 1.099 | 1.090–1.174 | 219.7 | 80.8 |
-| acorn-simple | ESTree | 1.199 | 1.079–1.220 | 218.1 | 80.6 |
-| typescript-eslint | ESTree | 1.254 | 1.249–1.279 | 310.7 | 130.8 |
-| acorn-full | ESTree | 1.308 | 1.111–1.633 | 255.4 | 112.5 |
-| zimmerframe | ESTree | 1.455 | 1.448–1.460 | 218.6 | 82.2 |
-| direct-ast | ESTree | 1.626 | 1.616–1.751 | 221.1 | 82.0 |
-| estree-toolkit | ESTree | 2.387 | 2.313–2.392 | 252.8 | 97.7 |
-| esquery | ESTree | 3.707 | 3.679–3.721 | 250.9 | 113.1 |
-| estree-util-visit | ESTree | 5.409 | 5.306–5.524 | 217.1 | 77.0 |
-| estree-toolkit-scope | ESTree | 5.647 | 5.438–6.065 | 221.9 | 73.0 |
-| ast-types | ESTree | 7.948 | 7.797–8.588 | 257.0 | 114.9 |
-| jscodeshift | ESTree | 8.510 | 7.626–8.610 | 399.3 | 223.5 |
+| oxc-walker | ESTree | 0.611 | 0.605–0.622 | 217.8 | 79.9 |
+| oxc-visitor | ESTree | 0.691 | 0.680–0.693 | 239.1 | 84.1 |
+| estree-walker | ESTree | 0.698 | 0.697–0.699 | 221.9 | 79.7 |
+| acorn-recursive | ESTree | 0.771 | 0.768–0.787 | 218.3 | 80.6 |
+| estraverse | ESTree | 0.957 | 0.952–0.967 | 252.6 | 111.3 |
+| esrecurse | ESTree | 0.986 | 0.962–0.986 | 219.3 | 80.6 |
+| swc-next | ESTree | 1.001 | 0.993–1.020 | 219.0 | 80.6 |
+| yuku-ast | ESTree | 1.077 | 1.075–1.101 | 218.7 | 80.1 |
+| acorn-simple | ESTree | 1.089 | 1.087–1.115 | 217.8 | 80.6 |
+| acorn-full | ESTree | 1.178 | 1.151–1.179 | 253.8 | 112.5 |
+| typescript-eslint | ESTree | 1.305 | 1.276–1.346 | 311.4 | 131.1 |
+| zimmerframe | ESTree | 1.475 | 1.449–1.530 | 220.3 | 82.2 |
+| direct-ast | ESTree | 1.696 | 1.658–1.702 | 217.5 | 82.0 |
+| estree-toolkit | ESTree | 2.316 | 2.282–2.357 | 255.7 | 101.1 |
+| esquery | ESTree | 3.792 | 3.732–3.822 | 250.5 | 113.4 |
+| estree-util-visit | ESTree | 5.397 | 5.391–5.425 | 219.2 | 77.0 |
+| estree-toolkit-scope | ESTree | 5.768 | 5.696–6.050 | 222.8 | 73.2 |
+| ast-types | ESTree | 8.316 | 7.918–9.038 | 341.3 | 184.6 |
+| jscodeshift | ESTree | 8.616 | 8.159–9.682 | 399.4 | 224.6 |
 
 ### Native ASTs — not a same-AST ranking
 
 | API | AST | Median ms | Process range ms | Peak RSS MiB | Observed heap MiB |
 | :-- | :-- | --: | :-- | --: | --: |
-| swc-visitor | SWC AST (not ESTree) | 0.464 | 0.438–0.521 | 237.6 | 78.3 |
-| typescript | TypeScript 6 AST (not ESTree) | 0.688 | 0.660–0.705 | 368.3 | 170.1 |
-| babel-types-traverse-fast | Babel AST (not ESTree) | 0.742 | 0.728–0.875 | 258.0 | 101.3 |
-| babel-types-traverse | Babel AST (not ESTree) | 0.793 | 0.779–0.821 | 246.4 | 91.5 |
-| babel-traverse-no-scope | Babel AST (not ESTree) | 2.463 | 2.424–2.596 | 350.4 | 179.3 |
-| babel-traverse | Babel AST (not ESTree) | 5.878 | 5.814–7.373 | 369.5 | 199.0 |
-| ts-morph | TypeScript AST (not ESTree) | 9.329 | 9.232–9.330 | 427.5 | 222.2 |
-| tsquery | TypeScript 6 AST (not ESTree) | 13.253 | 12.026–14.567 | 418.5 | 203.8 |
+| swc-visitor | SWC AST (not ESTree) | 0.456 | 0.446–0.514 | 238.0 | 78.2 |
+| typescript | TypeScript 6 AST (not ESTree) | 0.665 | 0.662–0.670 | 367.8 | 170.0 |
+| babel-types-traverse-fast | Babel AST (not ESTree) | 0.761 | 0.732–0.788 | 259.8 | 114.9 |
+| babel-types-traverse | Babel AST (not ESTree) | 0.795 | 0.783–0.972 | 246.8 | 92.7 |
+| babel-traverse-no-scope | Babel AST (not ESTree) | 2.510 | 2.483–2.532 | 350.1 | 179.3 |
+| babel-traverse | Babel AST (not ESTree) | 6.124 | 6.106–6.353 | 369.6 | 199.1 |
+| ts-morph | TypeScript AST (not ESTree) | 9.516 | 9.495–9.628 | 426.8 | 221.8 |
+| tsquery | TypeScript 6 AST (not ESTree) | 12.397 | 12.161–13.252 | 415.3 | 197.9 |
 
 ## Implementations
 
