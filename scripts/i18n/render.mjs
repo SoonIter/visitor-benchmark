@@ -3,6 +3,14 @@ import { execFileSync } from 'node:child_process';
 const root = new URL('../../', import.meta.url);
 const data = JSON.parse(readFileSync(new URL('results/i18n/latest.json', root)));
 const manifest = data.corpus;
+for (const run of data.runs.filter(r => r.status === 'passed')) {
+  if (run.samplesMs.length !== data.iterations || run.samplesMs.some(x => !Number.isFinite(x) || x < 0)) throw new Error('Invalid i18n samples');
+}
+for (const kind of ['original', 'javascript']) {
+  const passed = data.runs.filter(r => r.kind === kind && r.status === 'passed');
+  for (const key of ['outputHash', 'sourceHash', 'matches']) if (new Set(passed.map(r => r[key])).size !== 1) throw new Error(`i18n parity mismatch: ${kind}/${key}`);
+  if (new Set(passed.filter(r => r.ast === 'ESTree').map(r => r.astHash)).size !== 1) throw new Error(`i18n AST mismatch: ${kind}`);
+}
 const median = a => { const s = a.slice().sort((a,b)=>a-b); return (s[Math.floor((s.length-1)/2)] + s[Math.floor(s.length/2)])/2; };
 const groups = new Map();
 for (const run of data.runs.filter(r=>r.status === 'passed')) {
@@ -11,7 +19,7 @@ for (const run of data.runs.filter(r=>r.status === 'passed')) {
   groups.get(key).push(run);
 }
 const rows = [...groups.values()].map(runs => {
-  if (runs.length !== data.repeats) throw new Error(`Incomplete run: ${runs[0].id}`);
+  if (new Set(runs.map(r=>r.repeat)).size !== data.repeats || runs.length !== data.repeats) throw new Error(`Incomplete run: ${runs[0].id}`);
   const medians = runs.map(r=>median(r.samplesMs));
   return { id: runs[0].id, kind: runs[0].kind, ast: runs[0].ast, medianMs: median(medians), minMs: Math.min(...medians), maxMs: Math.max(...medians), setupMs: median(runs.map(r=>median(r.setupMs))), observedHeapMiB: Math.max(...runs.map(r=>r.observedHeapMiB)), observedRssMiB: Math.max(...runs.map(r=>r.observedRssMiB)), peakRssMiB: Math.max(...runs.map(r=>r.peakRssMiB)), normalizedFiles: Math.max(...runs.map(r=>r.normalizedFiles)) };
 }).sort((a,b)=>a.medianMs-b.medianMs);
@@ -32,7 +40,7 @@ Collect real i18n keys from **64 business modules** using **30 JavaScript traver
 
 [Full results & compatibility](docs/i18n/results.md) · [Corpus manifest](docs/i18n/corpus.json) · [Collector implementations](src/i18n/plugins) · [Styled-components benchmark](docs/styled-components/README.md)
 
-[Acorn vs Yuku: CPU profiles and controlled ablations](docs/i18n-dispatch/README.md) explain the measured gap and the historical Acorn case's destructuring-key limitation.
+[Acorn vs Yuku: CPU profiles and controlled ablations](docs/i18n-dispatch/README.md) explain the historical measured gap. The main benchmark now includes the static destructuring-key fix; the study keeps its original measured source.
 
 ## The task
 

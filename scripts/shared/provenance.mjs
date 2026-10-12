@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 const root = new URL('../../', import.meta.url);
 function files(dir) {
-  return readdirSync(new URL(dir, root), { withFileTypes: true }).flatMap(e => e.isDirectory() ? files(`${dir}/${e.name}`) : [`${dir}/${e.name}`]);
+  return readdirSync(new URL(dir, root), { withFileTypes: true }).filter(e => !e.name.startsWith('.') && e.name !== '__pycache__').flatMap(e => e.isDirectory() ? files(`${dir}/${e.name}`) : [`${dir}/${e.name}`]);
 }
 export function sourceManifest() {
   return {
