@@ -1,10 +1,10 @@
 {
   "repository": "https://github.com/swc-project/swc-next",
   "branch": "codex/js-ast-hooks",
-  "commit": "a20f5fa4755e52e9760d51c41a1f7a02ba3e3316",
+  "commit": "439dba831c8f3dd5336013116043b225b27951af",
   "sha256": {
-    "vendor/swc-next/ast.js": "1e2badf9c742cb7b8dc7c582a240ad290213f8996bae22a991fd083b61a9df5a",
-    "vendor/swc-next/child-visitors.js": "43139c56481baec90bd1e4aa27d356185847c804dc4a2745b33176862e2dc1c3",
+    "vendor/swc-next/ast.js": "d221ba89a05f7f37077793308b8df605742b8c344d7e941b4ecfa084628d9d57",
+    "vendor/swc-next/child-visitors.js": "523e109bf3c9d16a4b12ffe28708db156a1164eaf21952be4ef5ca52c18db3fb",
     "vendor/swc-next/visitor-keys.js": "5e9aa3076a3beda6be1007e72202b3489f3e0b04793ee93c36095bdd6dad4a7f"
   }
 }
