@@ -11,6 +11,10 @@ writeFileSync(new URL(`results/${scenario}/latest.md`, root), result.markdown);
 writeFileSync(new URL(`results/${scenario}/summary.json`, root), JSON.stringify(result.rows, null, 2)+'\n');
 execFileSync(process.env.PYTHON || 'python3', [new URL('./charts.py', import.meta.url).pathname, scenario], { stdio: 'inherit' });
 mkdirSync(new URL(`docs/${scenario}/`, root), { recursive: true });
+if (scenario === 'rstest-coverage') {
+  console.log('Rendered rstest-coverage; scenario contract is maintained in docs/rstest-coverage/README.md');
+  process.exit(0);
+}
 const debuggerTask = scenario === 'remove-debugger';
 const description = debuggerTask
   ? 'Remove every DebuggerStatement, including consecutive statements and nested functions, methods, switch cases, loops and try/catch/finally. Remove list elements; replace single-statement fields with EmptyStatement. This preserves valid syntax and control flow. Strings and property names containing "debugger" remain unchanged.'

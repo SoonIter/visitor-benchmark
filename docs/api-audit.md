@@ -4,6 +4,8 @@ Audited 2026-10-12: **27 styled-components adapters, 27 remove-debugger adapters
 
 **Compare the task through each tool's editing API.** Removal, replacement, path maintenance, immutable reconstruction and internal text work belong in the measured cost. Equal output does not require identical editing algorithms.
 
+The subsequently added [rstest-coverage scenario](rstest-coverage/README.md#api-fairness) audits another 27 adapters under the same native-editing policy. Its task-specific strategies, schema extension and nested-path handling are documented separately.
+
 ## Findings and fixes
 
 | Finding | Affected cases | Resolution |

@@ -10,14 +10,16 @@ for (const scenario of scenarios) {
 const styled = JSON.parse(readFileSync(new URL('results/styled-components/latest.json', root)));
 const removal = JSON.parse(readFileSync(new URL('results/remove-debugger/latest.json', root)));
 const i18n = JSON.parse(readFileSync(new URL('results/i18n/latest.json', root)));
+const coverage = JSON.parse(readFileSync(new URL('results/rstest-coverage/latest.json', root)));
 const overview = `# JavaScript AST traversal benchmarks
 
-**Three concrete tasks. Same AST within each ESTree track. Validated output on every measured iteration.**
+**Four concrete tasks. Same AST within each ESTree track. Validated output on every measured iteration.**
 
 | Scenario | Work | Corpus | Results |
 | :-- | :-- | :-- | :-- |
 | Styled-components | Inject displayName / componentId | Generated JS; dense + sparse | [Details](docs/styled-components/README.md) |
 | Remove debugger | Delete list elements; replace single statement slots | Generated JS; dense + sparse | [Details](docs/remove-debugger/README.md) |
+| Rstest coverage | Normalize if branches and describe coverage ranges | Eight public Rstest modules; runtime + tooling | [Details](docs/rstest-coverage/README.md) |
 | Collect i18n strings | Read literals, check dictionary, preserve order and duplicates | 64 real TS/TSX modules + pre-transpiled JS | [Details](docs/i18n/README.md) |
 
 Lower is better. Bars show medians of process medians; whiskers show their min–max range, **not confidence intervals**. Compare implementations within a track; do not compare absolute times across scenarios or AST families. Scope analysis, query setup and wrapper work are included where the API performs them.
@@ -46,7 +48,19 @@ Native Babel, SWC and TypeScript ASTs are **not ESTree**; these results are not 
 
 [All numbers and strategies](results/remove-debugger/latest.md)
 
-## 3. Collect i18n strings
+## 3. Normalize coverage branches
+
+The AST-editing phase of Rstest V8 coverage: wrap unbraced if/else arms and record branch ranges. Eight real modules pinned to a public commit, transpiled once outside timing. Runtime: 101 if statements / 10 edits; tooling: 84 if statements / 21 edits. This is a focused adaptation, not full coverage conversion or instrumentation.
+
+![Rstest coverage — shared ESTree](charts/rstest-coverage/estree.svg)
+
+Native Babel, SWC and TypeScript ASTs are **not ESTree**; their costs include their node representations and native editing APIs.
+
+![Rstest coverage — native ASTs](charts/rstest-coverage/native.svg)
+
+[Contract, boundaries and provenance](docs/rstest-coverage/README.md) · [All numbers and strategies](results/rstest-coverage/latest.md)
+
+## 4. Collect i18n strings
 
 The application's Babel StringLiteral collector, using 18,868 real dictionary keys. No source edits. Original source: 59 matches; pre-transpiled JavaScript: 58 matches. Private source stays outside Git.
 
@@ -68,11 +82,11 @@ The JavaScript compatibility track transforms the same modules before timing so 
 
 - **ESTree:** identical Acorn AST clones for editing; Oxc TS-ESTree for original i18n and Acorn ESTree for its JavaScript track. Fresh AST preparation is outside every timed transform/collection.
 - **Native ASTs:** Babel, SWC and TypeScript parse the same source into their own representations, explicitly labeled **not ESTree**. These rows measure both tree layout and API costs.
-- **Correctness:** editing results are printed/reparsed and compared against independent expected source; i18n results are exact ordered arrays checked against Babel. Unsupported implementations are reported, not assigned a zero time.
+- **Correctness:** editing results are printed/reparsed and compared against independent expected source or a task oracle; coverage additionally checks exact branch metadata; i18n results are exact ordered arrays checked against Babel. Unsupported implementations are reported, not assigned a zero time.
 - **Timing:** isolated processes, sequential execution with rotated/reversed order. Edits: ${styled.config.repetitions} processes × ${styled.config.warmups} warmups + ${styled.config.iterations} samples; i18n: ${i18n.repeats} × ${i18n.warmups} + ${i18n.iterations}. Preparation, external printing and checks are excluded; internal ts-morph text updates and tsquery.map printing/reparsing are included.
-- **Evidence:** [styled raw data](results/styled-components/latest.json), [debugger raw data](results/remove-debugger/latest.json), [i18n raw data](results/i18n/latest.json) retain samples, source hashes, versions and whole-worker memory. Results are corpus-specific, not a universal performance ceiling.
+- **Evidence:** [styled raw data](results/styled-components/latest.json), [debugger raw data](results/remove-debugger/latest.json), [coverage raw data](results/rstest-coverage/latest.json), [i18n raw data](results/i18n/latest.json) retain samples, source hashes, versions and whole-worker memory. Results are corpus-specific, not a universal performance ceiling.
 
-${styled.environment.cpu} · ${styled.environment.platform}/${styled.environment.arch} · Node ${styled.environment.node}. Measured: styled ${styled.createdAt.slice(0,10)}, debugger ${removal.createdAt.slice(0,10)}, i18n ${i18n.timestamp.slice(0,10)}. SWC Next uses the committed PR snapshot recorded in each result; no before/after variants.
+${styled.environment.cpu} · ${styled.environment.platform}/${styled.environment.arch} · Node ${styled.environment.node}. Measured: styled ${styled.createdAt.slice(0,10)}, debugger ${removal.createdAt.slice(0,10)}, coverage ${coverage.createdAt.slice(0,10)}, i18n ${i18n.timestamp.slice(0,10)}. SWC Next uses the committed PR snapshot recorded in each result; no before/after variants.
 
 ## Run
 
@@ -81,16 +95,17 @@ Node 24+; Python + Matplotlib for charts. The real i18n corpus additionally need
 \`\`\`sh
 npm ci
 npm test
-# Synthetic scenarios are self-contained:
+# Editing scenarios are self-contained (public corpus is committed):
 npm run bench -- styled-components
 npm run bench -- remove-debugger
+npm run bench -- rstest-coverage
 
 # Private business corpus:
 export FLOW_WEB_ROOT=/absolute/path/to/flow-web-monorepo
 npm run i18n:prepare
 npm run bench -- i18n
 
-# All three, sequentially (requires the prepared business corpus):
+# All four, sequentially (requires the prepared business corpus):
 npm run bench
 
 python3 -m venv .cache/charts-venv
@@ -108,6 +123,7 @@ src/
   shared/                # AST oracle, implementation identities, Babel I/O
   styled-components/     # Workload, registry, plugins
   remove-debugger/       # Workload, registry, plugins
+  rstest-coverage/       # Real-source branch normalization and native adapters
   i18n/                  # Corpus, registry, collectors
 scripts/
   bench.mjs              # One entry point; sequential scenario execution
@@ -127,4 +143,4 @@ To add an editing scenario, implement \`workload.mjs\` (source + independently e
 Presentation inspired by [Native ECMAScript Parser Benchmark](https://github.com/yuku-toolchain/ecmascript-parser-benchmark-native).
 `;
 writeFileSync(new URL('README.md', root), overview);
-console.log('Updated the three-scenario README.');
+console.log('Updated the four-scenario README.');

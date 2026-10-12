@@ -22,15 +22,15 @@ def measurement(variant, kind):
 
 for name, estree in [('estree', True), ('native', False)]:
     variants = [v for v in data['variants'] if (v['ast'] == 'ESTree') == estree]
-    variants.sort(key=lambda v: measurement(v, 'dense')['median'])
+    variants.sort(key=lambda v: measurement(v, data['config']['corpora'][0])['median'])
     panels = []
-    for kind in ['dense', 'sparse']:
+    for kind in data['config']['corpora']:
         edits = next(r['edits'] for r in data['runs'] if r['kind'] == kind)
         panels.append({'title': f'{kind.title()} · {edits} edits',
                        'xlabel': 'Milliseconds / 4 files · lower is better',
                        'rows': [measurement(v, kind) for v in variants]})
     env = data['environment']
-    title = 'Styled-components' if scenario == 'styled-components' else 'Remove debugger'
+    title = {'styled-components': 'Styled-components', 'remove-debugger': 'Remove debugger', 'rstest-coverage': 'Normalize coverage branches'}[scenario]
     title += ' · Shared ESTree' if estree else ' · Native ASTs'
     subtitle = ('Identical Acorn AST input for every implementation' if estree else
                 'Not a same-AST ranking; includes TSQuery print/reparse and ts-morph text updates')

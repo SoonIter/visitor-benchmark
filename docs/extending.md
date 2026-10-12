@@ -19,7 +19,7 @@ Keep task semantics separate from traversal libraries. A plugin implements one t
 5. Register the scenario in `src/scenarios.mjs` with `runner: 'mutation'`. Add contract tests under `test/`, including negative controls and every supported edit position. Extend the report's task description/example and overview for the new scenario.
 6. Run a quick smoke test, then a full run. `scripts/shared/bench.mjs` and `worker.mjs` own process isolation, rotated order, timing, fresh AST preparation, output parity, memory and source provenance. Results live under `results/<scenario>/`; never promote quick results to published results.
 
-The existing mutation runner uses `dense` and `sparse` tracks. A different corpus layout must declare its track configuration and be reflected in the chart labels and validation contract.
+The mutation runner defaults to `dense` and `sparse`. Export `tracks` from the workload for other cohorts, as rstest-coverage does with `runtime` and `tooling`. Keep four files per cohort for the existing renderer/worker reporting contract, and document the corpus and validation boundaries.
 
 ## Read-only scenarios
 
