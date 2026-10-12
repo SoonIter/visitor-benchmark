@@ -3,7 +3,7 @@ import { parse } from 'acorn';
 import { recursive } from 'acorn-walk';
 import { walk } from 'yuku-ast';
 import { loadCorpus } from '../../src/i18n/corpus.mjs';
-import { collectionBase } from '../../src/i18n/acorn-base.mjs';
+import { collectionBase } from './acorn-base-historical.mjs';
 import { base as completeBase } from './generated/acorn-full-base.mjs';
 const asts=loadCorpus().files.map(f=>parse(f.javascript,{ecmaVersion:2022,sourceType:'module',locations:true,ranges:true}));
 const result={};

@@ -1,76 +1,99 @@
-# Read-only AST visitor benchmark
+# JavaScript AST traversal benchmarks
 
-Collect real i18n keys from **64 business modules** using **30 JavaScript traversal variants**. Based on the application's actual Rspack loader; no source edits or code generation inside the benchmark.
+**Three concrete tasks. Same AST within each ESTree track. Validated output on every measured iteration.**
 
-[Full results & compatibility](docs/i18n/results.md) · [Corpus manifest](docs/i18n/corpus.json) · [Collector implementations](src/i18n/plugins) · [Styled-components benchmark](docs/styled-components.md)
+| Scenario | Work | Corpus | Results |
+| :-- | :-- | :-- | :-- |
+| Styled-components | Inject displayName / componentId | Generated JS; dense + sparse | [Details](docs/styled-components/README.md) |
+| Remove debugger | Delete list elements; replace single statement slots | Generated JS; dense + sparse | [Details](docs/remove-debugger/README.md) |
+| Collect i18n strings | Read literals, check dictionary, preserve order and duplicates | 64 real TS/TSX modules + pre-transpiled JS | [Details](docs/i18n/README.md) |
 
-[Acorn vs Yuku: CPU profiles and controlled ablations](docs/i18n-dispatch/README.md) explain the measured gap and the historical Acorn case's destructuring-key limitation.
+Lower is better. Bars show medians of process medians; whiskers show their min–max range, **not confidence intervals**. Compare implementations within a track; do not compare absolute times across scenarios or AST families. Scope analysis, query setup and wrapper work are included where the API performs them.
 
-## The task
+## 1. Styled-components
 
-```js
-const usedKeys = [];
-traverse(ast, {
-  StringLiteral(path) {
-    if (allKeysSet.has(path.node.value)) usedKeys.push(path.node.value);
-  },
-});
-```
+A focused config-injection transform, **not the complete official plugin**. Dense: 400 edits; sparse: 80 edits across more unrelated code. The direct-ast baseline exploits top-level declarations and skips unrelated subtrees.
 
-All string literal positions count, including nested code, imports and object keys. Preserve order and duplicates. This requires neither scope analysis nor AST editing.
+![Styled-components — shared ESTree](charts/styled-components/estree.svg)
 
-Case names identify the API and Babel major version: the **babel-traverse** prefix means **@babel/traverse**; **babel-types** means **@babel/types**. The **v7** cases resolve dependencies from the business workspace; **v8** uses this benchmark's pinned dependencies.
+[Native AST chart](charts/styled-components/native.svg) · [All numbers and strategies](results/styled-components/latest.md)
 
-## Results
+## 2. Remove debugger
 
-**direct-ast leads the shared-ESTree original-source group at 0.994 ms / 64 files.** AST families are ranked separately: a native-AST result measures its tree layout as well as its traversal API.
+Removes consecutive and nested debugger statements. Single statement slots (for example `if (flag) debugger;`) become empty statements to preserve control flow. APIs without built-in removal use explicit manual edits, **included in the timer**. See the [strategy table](results/remove-debugger/latest.md#implementations).
 
-For the existing Babel loader, the smallest measured changes are **`noScope: true` (3.2×)** or **`@babel/types.traverseFast` (18.4×)**, relative to its installed Babel 7.27.3 traverse. These are collection-stage speedups, not loader/build speedups.
+![Remove debugger — shared ESTree](charts/remove-debugger/estree.svg)
 
-| Original TS/TSX | AST | Collection, ms |
-| :-- | :-- | --: |
-| direct-ast | ESTree | 0.994 |
-| oxc-walker | ESTree | 1.099 |
-| swc-next | ESTree | 2.191 |
-| yuku-ast | ESTree | 2.120 |
-| babel-traverse-v7 | Babel 7 AST (not ESTree) | 21.360 |
-| babel-traverse-no-scope-v7 | Babel 7 AST (not ESTree) | 6.629 |
-| babel-types-traverse-fast-v7 | Babel 7 AST (not ESTree) | 1.162 |
+[Native AST chart](charts/remove-debugger/native.svg) · [All numbers and strategies](results/remove-debugger/latest.md)
 
-![Original business source](charts/i18n/original.svg)
+## 3. Collect i18n strings
 
-The compatibility track uses the **same modules pre-transpiled to ES2022 JavaScript**. It expands coverage to JS-only walkers. Transpilation happens before measurement and changes the strings available to collect; **do not compare timings between tracks**.
+The application's Babel StringLiteral collector, using 18,868 real dictionary keys. No source edits. Original source: 59 matches; pre-transpiled JavaScript: 58 matches. Private source stays outside Git.
 
-![Pre-transpiled JavaScript](charts/i18n/javascript.svg)
+![i18n — original business source](charts/i18n/original.svg)
 
-## Corpus & measurement
+[Pre-transpiled JS chart](charts/i18n/javascript.svg) · [Compatibility failures and all results](docs/i18n/results.md) · [Corpus provenance](docs/i18n/corpus.json) · [Historical Acorn/Yuku profiling study](docs/i18n-dispatch/README.md)
 
-- **231.2 KiB** of original source: 40 TS + 24 TSX files, deterministically sampled from four application layers, without selecting by match count. 11 files contain matches.
-- **18,868 dictionary keys**, from the actual domestic configuration (`zh` + `zh-Hant`). Original source: **59 matches**; JavaScript: **58 matches**. No synthetic i18n strings are injected.
-- ESTree participants receive structurally identical inputs: Oxc TS-ESTree for original source, Acorn ESTree for JavaScript. Babel, SWC and TypeScript participants prepare their own ASTs, explicitly labeled **not ESTree**.
-- **3 isolated processes × 5 warmups + 12 measured iterations**, per variant and track; rotated process order. Each iteration collects all 64 files. Bars are medians of process medians, with min–max whiskers.
-- Fresh parsing/AST preparation occurs **outside each timed collection** to avoid warm NodePath/scope caches. Hook construction, scope analysis when enabled, traversal, `Set.has` and result allocation are timed. GC during collection is included.
-- Ordered arrays are checked against the Babel oracle per file, every iteration. The oracle was also checked against the business repository's installed Babel 7.27.3. Unsupported or mismatching implementations are excluded, not assigned zero time.
-- Corpus parity is not universal Babel compatibility. In particular, ESTree `Literal` includes directive strings, while Babel `StringLiteral` excludes directives. The actual dictionary/corpus passes; adapting arbitrary future inputs needs a separate semantic audit.
+The JavaScript compatibility track transforms the same modules before timing so JS-only walkers can participate. It is not captured loader input and must not be compared directly with the original TS/TSX track. Acorn's static destructuring-key collection is covered by a regression fixture.
 
-SWC Next is pinned to the latest committed PR branch snapshot **[a20f5fa](https://github.com/swc-project/swc-next/commit/a20f5fa4755e52e9760d51c41a1f7a02ba3e3316)**. No before/after variants. `direct-ast` recursively inspects AST properties itself, with no package visitor or visitor-key table; it does not assume top-level declarations. The removed `handwritten` case is not restored.
+## Measurement
 
-## Reproduce
+- **ESTree:** identical Acorn AST clones for editing; Oxc TS-ESTree for original i18n and Acorn ESTree for its JavaScript track. Fresh AST preparation is outside every timed transform/collection.
+- **Native ASTs:** Babel, SWC and TypeScript parse the same source into their own representations, explicitly labeled **not ESTree**. These rows measure both tree layout and API costs.
+- **Correctness:** editing results are printed/reparsed and compared against independent expected source; i18n results are exact ordered arrays checked against Babel. Unsupported implementations are reported, not assigned a zero time.
+- **Timing:** isolated processes, sequential execution with rotated/reversed order. Edits: 3 processes × 8 warmups + 20 samples; i18n: 3 × 5 + 12. Preparation, external printing and checks are excluded; internal ts-morph text updates are included.
+- **Evidence:** [styled raw data](results/styled-components/latest.json), [debugger raw data](results/remove-debugger/latest.json), [i18n raw data](results/i18n/latest.json) retain samples, source hashes, versions and whole-worker memory. Results are corpus-specific, not a universal performance ceiling.
 
-Requires Node 24+, the local business checkout (source + locale files), and its installed Babel dependencies. Private source and dictionary values remain in ignored `.cache/i18n/`; only paths, hashes and aggregate results are tracked.
+Apple M5 Max · darwin/arm64 · Node v24.20.0. Measured: styled 2026-10-12, debugger 2026-10-12, i18n 2026-10-12. SWC Next uses the committed PR snapshot recorded in each result; no before/after variants.
+
+## Run
+
+Node 24+; Python + Matplotlib for charts. The real i18n corpus additionally needs the business checkout and its installed Babel 7 dependencies.
 
 ```sh
 npm ci
+npm test
+# Synthetic scenarios are self-contained:
+npm run bench -- styled-components
+npm run bench -- remove-debugger
+
+# Private business corpus:
 export FLOW_WEB_ROOT=/absolute/path/to/flow-web-monorepo
 npm run i18n:prepare
-npm test
-npm run i18n:validate
-npm run i18n:bench
+npm run bench -- i18n
+
+# All three, sequentially (requires the prepared business corpus):
+npm run bench
+
 python3 -m venv .cache/charts-venv
 .cache/charts-venv/bin/pip install -r scripts/requirements-charts.txt
-PYTHON=.cache/charts-venv/bin/python npm run i18n:report
+PYTHON=.cache/charts-venv/bin/python npm run report
 ```
 
-`i18n:bench` refreshes SWC Next from PR #840 via `gh`. For the committed snapshot, run `node scripts/i18n/bench.mjs` directly. `i18n:prepare` intentionally resamples the current checkout; compare its manifest hashes before treating reruns as the same corpus.
+`--quick` writes smoke results separately. Runs use the committed SWC Next snapshot; `npm run sync:swc` explicitly refreshes PR #840 via GitHub CLI. Rerun tests and all benchmarks after refreshing. `i18n:prepare` resamples the current checkout: check corpus hashes before comparing reruns.
 
-Measured on **Apple M5 Max · darwin arm64 · Node v24.20.0**. The sample contains original repository source, not captured loader inputs or a full Rspack build. [Raw samples](results/i18n/latest.json) include preparation time, heap, process RSS and peak RSS.
+## Layout & extension
+
+```text
+src/
+  scenarios.mjs          # Scenario catalog
+  shared/                # AST oracle, implementation identities, Babel I/O
+  styled-components/     # Workload, registry, plugins
+  remove-debugger/       # Workload, registry, plugins
+  i18n/                  # Corpus, registry, collectors
+scripts/
+  bench.mjs              # One entry point; sequential scenario execution
+  render.mjs             # Generate all reports and this README
+  shared/                # Mutation runner, measurement provenance, charts
+  styled-components/     # Input AST sample generation
+  i18n/                  # Business corpus preparation and read-only runner
+results/<scenario>/      # Raw samples and summaries
+charts/<scenario>/       # Generated SVG/PNG charts
+docs/<scenario>/         # Contracts, methodology and interpretation
+experiments/             # Separate profiling/ablation studies
+vendor/                  # Pinned SWC Next source and provenance
+```
+
+To add an editing scenario, implement `workload.mjs` (source + independently expected output), `registry.mjs` and `execute.mjs` (prepare/run/validate), add package-specific modules under `plugins/`, then register it in `src/scenarios.mjs`. [Extension guide](docs/extending.md) covers runners, validation and reports.
+
+Presentation inspired by [Native ECMAScript Parser Benchmark](https://github.com/yuku-toolchain/ecmascript-parser-benchmark-native).

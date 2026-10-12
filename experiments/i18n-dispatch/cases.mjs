@@ -13,7 +13,7 @@ export async function loadVariant(id) {
   let base;
   if(id==='acorn-full-coverage') ({base}=await import('./generated/acorn-full-base.mjs'));
   else {
-   const {collectionBase}=await import('../../src/i18n/acorn-base.mjs');
+   const {collectionBase}=await import('./acorn-base-historical.mjs');
    base=id==='acorn-current'?collectionBase:{...collectionBase,ObjectPattern(node,state,next){
     for(const property of node.properties) {
      if(property.type==='Property') {

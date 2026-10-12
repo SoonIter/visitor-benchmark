@@ -1,5 +1,879 @@
 {
-  "timestamp": "2026-10-09T09:21:40.327Z",
+  "sourceManifest": {
+    "commit": "8e6cf8a68728d06ec321e4c47bbc3af979a2a3c3",
+    "dirty": true,
+    "sha256": {
+      "package-lock.json": "eb1d536a3d7aae8286b692ff3d782be3acf963bf5106f7d30378fd2d09e6e356",
+      "package.json": "81733bd131c033af52c2445439c6b4cff53502576ff55cb4936919ef35bc0c70",
+      "scripts/bench.mjs": "6174cc047d2930cd2cd8ae87aafa9f5053507173694c8ee2c60fcdcbb08cc63f",
+      "scripts/i18n/bench.mjs": "4c59f1652900c7133fa3f2ac1ad0d808a6caaa592fe61b6dec8484a8042cda55",
+      "scripts/i18n/charts.py": "e2d1b488ccb6fe8d6bd9720b41a914464342aa391318e137ff1ba1c670e6b435",
+      "scripts/i18n/prepare.mjs": "a44d07b1185941d3f3f829fe1a194a1ad361ec05d5b60073108f50c7b9de64da",
+      "scripts/i18n/render.mjs": "12f513c8d98da9d0ee1d45df0e2d41c64d31d489069b2cea579ecfb991fdf92a",
+      "scripts/i18n/worker.mjs": "5826099dcbf6960de8f76d34e53aad7c8bf4aa593b479329254146e5628ffc37",
+      "scripts/render.mjs": "e1e5550747cb8bd2169bb4eec8e3ad2c04b5a5ad5f400ec99d02fdba681845a9",
+      "scripts/requirements-charts.txt": "fd70c5b60168fd91d504345ec04061037fb9de084f7ec8fa53255486c9c94ab1",
+      "scripts/shared/bench.mjs": "77933b34e7821623360021c977dde790de5d29c8fec0c7e54c4713b7a9b0d099",
+      "scripts/shared/charts.py": "158ab37a4b5e699c4cd7c6e1effaec8920e07a31082f75e4a0ecdd6e2a08720a",
+      "scripts/shared/provenance.mjs": "832b2823f5899d4c3fd4d7867218b9e2de9672d096da92bafa589a21635a9a43",
+      "scripts/shared/render.mjs": "1c56e941d8b7727a63a5ec84e929361fe9bdd1d83f5411f7c7aea33c62bdb010",
+      "scripts/shared/report.mjs": "560f616da9349c7efdeaff3b2add3d0a25d46170cf87e462c7a6268a12313ba0",
+      "scripts/shared/worker.mjs": "774276c698b38908d540101016b16d31a332b2f7252d64c14c4b1524f2ed5771",
+      "scripts/styled-components/fixtures.mjs": "be048fa48340735dd8af7e7837a404cff8f84509e51ec0bfaa0ee9c47b7e26b2",
+      "scripts/sync-swc.mjs": "5177184f277a1c4e8f6a21d490c844d91478dfa3ddafc1010ee91b2d3761412c",
+      "src/i18n/acorn-base.mjs": "2f99d17d43bd17e857c7ee013c5600dff3c96245e514dc7a0c12f6ef5cc918dc",
+      "src/i18n/corpus.mjs": "f0177ba4dfea529cfc139f3ff21ab238902e28098087cf2f1585c82f25f407a6",
+      "src/i18n/engine.mjs": "ee768881e7db39e608a069e4c52ffdcac84b381ba39c65b93483180cecf4e40b",
+      "src/i18n/fixture.mjs": "b9a533b605d7eaf22af0df100bc6a0582fd7bf64fd8319638c636e2bf2ad6183",
+      "src/i18n/plugins/acorn-full.mjs": "27448955e29a5339e0313fb665edd77cc44678643008885be5665ae6f2172460",
+      "src/i18n/plugins/acorn-recursive.mjs": "241beb6c2d44874fd3e28b68d4c60cca446e47cf2e891dc4f9087e254122c8aa",
+      "src/i18n/plugins/acorn-simple.mjs": "a300b8d68cba01f9e2e9e06dad81ecefef7457a3d002f01499a90251dd856ebd",
+      "src/i18n/plugins/ast-types.mjs": "1f0822d383ee3a496824921516d564001e4c9cc790b2f2e104a126e06a8668fb",
+      "src/i18n/plugins/babel-traverse-no-scope-v8.mjs": "6575b4df5de1781bb24135afd5942d9934a32aff89efde14085329a7505a381a",
+      "src/i18n/plugins/babel-traverse-v8.mjs": "16bd21d5ccc585b8542796c1960732b634a49ef8b5f91b90a2da1e55cedca9ea",
+      "src/i18n/plugins/babel-types-traverse-fast-v8.mjs": "aa9e0fbb6a8b6728b848e03cef29b2b6e9ac7dc6cbbeffc574add862a7cc2ff8",
+      "src/i18n/plugins/babel-types-traverse-v8.mjs": "142cc43a04e2846fa351a055af0054d1ca97fd7ae60c6f8fe857005b20890cf7",
+      "src/i18n/plugins/direct-ast.mjs": "93cf327c0ec0e939981353b32d91c80241e53fd58f356e49ddb949eee5eabd1e",
+      "src/i18n/plugins/esquery.mjs": "7c32c162fb3f7fb881a74df1e4aaf2445e009f834d738da4dd72f0cef61f632c",
+      "src/i18n/plugins/esrecurse.mjs": "342b0e3803f590ed4b34b3b8465db13bd1d900dda666359d0b8b6a4635141a1e",
+      "src/i18n/plugins/estraverse.mjs": "d45966e1f6222a9a77464f3ac0c6d42355287bf87db69edbfded71130514d319",
+      "src/i18n/plugins/estree-toolkit-scope.mjs": "75f51903393f826739c29e060eebe9f8a2b0c36a4697dbf8ed34429e8a0f297c",
+      "src/i18n/plugins/estree-toolkit.mjs": "77a1276f66bf5204b104786fffb4610ccc15a9b7fa2663d0a29dcd02b80f4743",
+      "src/i18n/plugins/estree-util-visit.mjs": "8db6ae62772816b3f8d207b7a9a5c006753e39f5916b7dea27f8f6500af94f50",
+      "src/i18n/plugins/estree-walker.mjs": "2faadc6e2186014a12c6c7279bd8bc9e32bd367e7bf461ec88158e13258c3614",
+      "src/i18n/plugins/jscodeshift.mjs": "14065d91a8e8ff6465ee852fee6caff15677b31fac38e0d2cff778abeda26b70",
+      "src/i18n/plugins/oxc-visitor.mjs": "6b4b4d8120c400349827ebded31228f953369b82e9f2e3ed3e6b3ca3096f680d",
+      "src/i18n/plugins/oxc-walker.mjs": "2c28bc41ab5af22a883a29b17390d6656ea5c2aec754a5106099a3522610fec0",
+      "src/i18n/plugins/swc-next.mjs": "4f3ee3d6c0c505c4542fbf8d37614a4b8b5e65681667e02570ce6c74b0cc7876",
+      "src/i18n/plugins/swc-visitor.mjs": "b8afc48563cd7721842bd6d8a6865dc7a615cfb823452e3e2a38999f838f0f47",
+      "src/i18n/plugins/ts-morph.mjs": "d727626d5800a4ca670e17ac726c2dee54a639d671b1862ba0c91affb4826801",
+      "src/i18n/plugins/tsquery.mjs": "4609762cbd2fab65274bb2f81a01b77fe208ffe9ab90d1c27b081f7508d681c4",
+      "src/i18n/plugins/typescript-eslint.mjs": "dfcd248014d1740dd0a11055703094dcd694c66d371cb2d54315f957d8621150",
+      "src/i18n/plugins/typescript.mjs": "99982612edc7309b8c82dc20e28111110d48d48e3bb0978e7d27f0ac7afcb93b",
+      "src/i18n/plugins/yuku-ast.mjs": "2b51de4533cd8a6da74d6b21cee3a65445c55618aa525327cea08dbe418f98a5",
+      "src/i18n/plugins/zimmerframe.mjs": "eee42675543fd0fc343d9ca466a428b48b1996e656f49188bcc541ed79d44f0a",
+      "src/i18n/registry.mjs": "d077d77f04b9947d4337a697c2bbef78924ca636bb31b6a226c22abb94138f92",
+      "src/remove-debugger/edit.mjs": "d463d09eabb0270f343f871d75ce88dfe38d3eccbb94ad46df79f87e66ae7a5a",
+      "src/remove-debugger/execute.mjs": "107b73c77411596d19c018e5a0f27ba950b52bde868f3a691a80438494beec11",
+      "src/remove-debugger/plugins/acorn-full.mjs": "681e0dfa3c3dcf26048990a892719e264691bc29d211b6395352e80b50efe239",
+      "src/remove-debugger/plugins/acorn-recursive.mjs": "1ed599bbb3caf01c3485e8d00a2433b55986171eddbf2319cd03746c2beea259",
+      "src/remove-debugger/plugins/acorn-simple.mjs": "f693329274f6c61d3616e69f5034ff56874e571b9b445308ab55338d3b7358f5",
+      "src/remove-debugger/plugins/ast-types.mjs": "3e93729322a83490b6b9d1c6bff32a94c55082e554200b16f52d897ad24114e0",
+      "src/remove-debugger/plugins/babel-fast.mjs": "ff2fb8a804f2305e7e065a1c622c02b85d00eb818a2ecfa0bb2882f2563cc7d5",
+      "src/remove-debugger/plugins/babel-no-scope.mjs": "073db3a094c9afe059db90af1c7caeedbc3b056be9af2729a9000cd093139e49",
+      "src/remove-debugger/plugins/babel-types.mjs": "ec313ad5c6bd52ba7ed87a7e1691911a091ef8f8ade6ee217ff693459220e044",
+      "src/remove-debugger/plugins/babel.mjs": "542985905e577672911bec4c00b7d4e313e21baf9c5c387ae512b68adf59951f",
+      "src/remove-debugger/plugins/direct-ast.mjs": "6b7553d287712106ff76b7151012d52e3e562a276b6c5648b7f64c2368af1b1b",
+      "src/remove-debugger/plugins/esquery.mjs": "73f1973efd424907f49fd46601d3e04cd5ccf21d44498320d098854b8e3f8d23",
+      "src/remove-debugger/plugins/esrecurse.mjs": "23ea26443cd4c5adeb780a24183285bbad4ff6367a0454a58bca706388ea472a",
+      "src/remove-debugger/plugins/estraverse.mjs": "e5ea8d81d2c584cf6520152a2e26b7753df411fec8032d808a34b26c8c676e80",
+      "src/remove-debugger/plugins/estree-toolkit-scope.mjs": "feba1adcba8c62910c1c0287b7301ca4912ee78231f836466d07d14ae4107d5a",
+      "src/remove-debugger/plugins/estree-toolkit.mjs": "9de666718a082b66cd82abe61a5de25498c440a55cd8470804832145c6e5f21a",
+      "src/remove-debugger/plugins/estree-util-visit.mjs": "4b3dc570c3688f09ec63e1b1a2c528329b0226044ff35b27990f5b5022e9814d",
+      "src/remove-debugger/plugins/estree-walker.mjs": "2339f8bab49ec56ebca1f6c609aa095d407275cba44e5bcd75452eafd13994b1",
+      "src/remove-debugger/plugins/jscodeshift.mjs": "a8a8a098a6f9c4afcd6f1fc27e981d763b7e2688ffb5e8f78c5d0f7e99de00af",
+      "src/remove-debugger/plugins/oxc-visitor.mjs": "86ff05f02594cf0bc0fbf47a2a9d8217ae2ae157045f1456f4fd26348674f190",
+      "src/remove-debugger/plugins/oxc-walker.mjs": "f9334712127a694f6d472d2d9882800e52bdfa25b13861a027557e10f27b46fe",
+      "src/remove-debugger/plugins/swc-next.mjs": "79da8a48bea61cab14afebd9351cdfb61d2b1d714a044c72c19e75fd3e3f11b7",
+      "src/remove-debugger/plugins/swc-visitor.mjs": "09310deb92eef2ad3353c7a536a5ebb8d0fc3cad6e1b173e7682ae791b8f038a",
+      "src/remove-debugger/plugins/ts-morph.mjs": "c1a7d2e53d08b70dc9379121d4272aefc13db401fc1a87336917a68cc97f68ec",
+      "src/remove-debugger/plugins/tsquery.mjs": "58ed5107c8153d9aa9fed921519d326c75b0662c32b6d75d524a5e8fea74ccb2",
+      "src/remove-debugger/plugins/typescript-eslint.mjs": "80fe9ef3508f6e86d45cf7593a3a34786657c7f1daddccf892a98774811b0026",
+      "src/remove-debugger/plugins/typescript.mjs": "fadd5f1820abe19246734b749f86d7f9a991236435c5271964ed5a676965c6ab",
+      "src/remove-debugger/plugins/yuku-ast.mjs": "456bd7b26a5edee762ad48d25b3289aad79cbad5d045031687338ae6aa10dffa",
+      "src/remove-debugger/plugins/zimmerframe.mjs": "a05851904b7c57d4a6cb8f3fa012e1b67a535d13cb60c1a39cf2acb95aae48a6",
+      "src/remove-debugger/registry.mjs": "dd6733616c0a1fab6fbc0e1049d90f61686fdc5f566650d7a4b2378499c5e137",
+      "src/remove-debugger/typescript.mjs": "404f0442b1111fced7f7eb53a835cad1834125d7112a2146d6d04c12f86eaab5",
+      "src/remove-debugger/workload.mjs": "6fc234eca172be12bd9070224b1239e9148ad1d12a4fa5302706c55a4e9eeeb7",
+      "src/scenarios.mjs": "a1847172ea3ddf56826e1d4797277c8300efd97a7944fbe6f73006cf0d19dcf9",
+      "src/shared/ast.mjs": "df5c07cfc6b77979264b4cd8871b552a380a995e714f02b963f17b26e51e164b",
+      "src/shared/babel-io.mjs": "4b408b97a3baccd1c221e89114f5832edd0821f076580d3a30223a2c9bbc8425",
+      "src/shared/implementations.mjs": "ac60426b51f9fc3ee0e8d476acde39a3a3d3daf1f4978485eec1dd80ba177b40",
+      "src/styled-components/babel-io.mjs": "4b408b97a3baccd1c221e89114f5832edd0821f076580d3a30223a2c9bbc8425",
+      "src/styled-components/babel-plugin.mjs": "18dd290f2627a3cd28c9236a14855d2675a5f40ce873011c5eef3d276bf2bb11",
+      "src/styled-components/estree-plugin.mjs": "996a9600986785e312abceae40fbd594180f657cf6942ed51d9c95c6dbe7ce3b",
+      "src/styled-components/execute.mjs": "f4808eb8c57934b4d6fcaef040cbdbc844dddbf165287a8f9bcc2481bfe66675",
+      "src/styled-components/plugins/acorn-full.mjs": "2a337787b8f3c8f53a1b82dedd9754a07823008bac736ff0f0815afebc5ac43f",
+      "src/styled-components/plugins/acorn-recursive.mjs": "6cc8e0408db88548a1d6e3c5112b0fc737c85803933386b2bf94debfe2050d67",
+      "src/styled-components/plugins/acorn-simple.mjs": "40b586d0421c3ea56db08692eaa531e89c2b142f8e01624c146ab88f29715b08",
+      "src/styled-components/plugins/ast-types.mjs": "3225f14ce6ea7f4931721293986c843e10d50dc53d48097217f1f7caf4235ba0",
+      "src/styled-components/plugins/babel-fast.mjs": "50798cc76e4f6ec4074ae94a51e83a96524eeac173f81c954b669a68896903bc",
+      "src/styled-components/plugins/babel-no-scope.mjs": "b775ed0048161b2bd51c84f19089f628bedd2a361671fb60d4ef7c0f93a57c2c",
+      "src/styled-components/plugins/babel-types.mjs": "b77ece6df0663ec4a36e52f1dc258a2641e995342e5c51a080784e25ffc5261c",
+      "src/styled-components/plugins/babel.mjs": "eeacb56edc7eb33f3a63ea072b6d363eaae9fb06e28aa2f68e33e2b140275b57",
+      "src/styled-components/plugins/direct-ast.mjs": "cc8ce1f8375d7efd083c513f7813e367800d75f8235235cfdb06c822fb24ab9c",
+      "src/styled-components/plugins/esquery.mjs": "80fa59052b7e2f784725ef0b6fe2f14240180469d30c40cf7a7747608f643cf4",
+      "src/styled-components/plugins/esrecurse.mjs": "00642c97ab8ac9e3268484a7d0e091d628feb235df5c9ad2561f3e773df26ec3",
+      "src/styled-components/plugins/estraverse.mjs": "a8b17603c121267a16213e2591385fe1f05f939d9dc3ffafae7c0cff0e162667",
+      "src/styled-components/plugins/estree-toolkit-scope.mjs": "c30482be1d2900b13a72c237f8b5f64faf2f65ff1ca78bb663983529a2bed9bd",
+      "src/styled-components/plugins/estree-toolkit.mjs": "1189adfce83ab3a8b4bcc5e596bbefd0a64924346a9c8df22cfb9ba0d9c6714c",
+      "src/styled-components/plugins/estree-util-visit.mjs": "7e790392422408ec57d836a7ce323028aa8ef1b88d93e70766ca46ffc31c2fbe",
+      "src/styled-components/plugins/estree-walker.mjs": "6efe316058038d6fccf7529f7e1a7b607e99ba5e6e5aa3d6a1d94d6e490247db",
+      "src/styled-components/plugins/jscodeshift.mjs": "3ff7f5c5bccec6ad8546a68dc3ebd34a93998a8ae7daace357a82d37ff3cb689",
+      "src/styled-components/plugins/oxc-visitor.mjs": "87e289bbe57c4594d5a5626fab2cb5f0f135a37e53198833a7b9b78afe986dae",
+      "src/styled-components/plugins/oxc-walker.mjs": "fb8117ddbe8f188ac9bee9bfca2631a7714eed333ebad7519b828e58c468494d",
+      "src/styled-components/plugins/swc-next.mjs": "49c1a12d6a87bd41049921e53db630038d240f54fe34faf5b71baa123b903cf1",
+      "src/styled-components/plugins/swc-visitor.mjs": "3023c6ccdebe4a0eaaf6e280ded245e55b3ec2f176a7d49503ce55f46120a3a7",
+      "src/styled-components/plugins/ts-morph.mjs": "05d5d267f3ac57ec2db72b704a3a75a3002b7aac837aec04aff1639deea7664a",
+      "src/styled-components/plugins/tsquery.mjs": "b5df84c1e560837d5727269dcb4517a2fec7ef2ac67609009e465d620cef885f",
+      "src/styled-components/plugins/typescript-eslint.mjs": "bac95924c493fa8e544bd30d3ec68194d0f5b2c9d869848b935a46c8a15b7b44",
+      "src/styled-components/plugins/typescript.mjs": "ae74221660554d7c28089fad1da1a351d000d5c80099ab12e3fb5be6ed203491",
+      "src/styled-components/plugins/yuku-ast.mjs": "eab9e4f5990aba7a7663dbe3c625b83e93077c64fbebdd74ca1dd110c2f70079",
+      "src/styled-components/plugins/zimmerframe.mjs": "4dbd1088a2335a88428db8fdc32b9950ad243e84df39fe8254437c7881f9b177",
+      "src/styled-components/registry.mjs": "9d214e586d0b77a22ee16115086de9792e34f939e96c19e896e71a7e22cc43f9",
+      "src/styled-components/ts-plugin.mjs": "d99b660c6f12721998f90119ef3ce3787d23d6634997758805db3cfecddd689d",
+      "src/styled-components/workload.mjs": "afa7a46f8193a46dd050db79e973ff8578700dc6986737d188e7d88f08d6a5a1",
+      "vendor/provenance.json": "686c4ba7e5df84af8e3578b863e8aa598dd98c25c0b3eaa8a8fd29b9fda249d9",
+      "vendor/swc-next/LICENSE": "d96eba1f1881334d50ffc144276dfa98e147a415e7c591ecdfcb81680361dc91",
+      "vendor/swc-next/ast.js": "1e2badf9c742cb7b8dc7c582a240ad290213f8996bae22a991fd083b61a9df5a",
+      "vendor/swc-next/child-visitors.js": "43139c56481baec90bd1e4aa27d356185847c804dc4a2745b33176862e2dc1c3",
+      "vendor/swc-next/visitor-keys.js": "5e9aa3076a3beda6be1007e72202b3489f3e0b04793ee93c36095bdd6dad4a7f"
+    }
+  },
+  "businessDependencies": {
+    "parser": "7.27.3",
+    "traverse": "7.27.3",
+    "types": "7.28.6"
+  },
+  "benchmarkCommit": "8e6cf8a68728d06ec321e4c47bbc3af979a2a3c3",
+  "corpus": {
+    "format": 1,
+    "selection": "First 64 SHA-256-ranked paths (i18n-v1 seed), 256–32768 bytes, four application layers; no selection by match count.",
+    "candidateFiles": 28894,
+    "loader": "packages/Infra/build/src/plugins/edenx/inline-i18n/rspack-plugin/loader/index.ts",
+    "loaderHash": "a2cc65a5fbdcb057bd6d59b59e20ad51debedc3dbcf8475f760bb826757c21d4",
+    "sourceCommit": "05373a5441ecdee0581a1a9e68d950f6f1246e4d",
+    "dictionary": {
+      "locales": [
+        "zh",
+        "zh-Hant"
+      ],
+      "keys": 18868,
+      "files": [
+        {
+          "filename": "packages/L1-Arch/business/i18n/resource/locales/web/zh.json",
+          "sha256": "cddfc920518a7d5b7d049f2dd5cf4b0196250c5660a1d9af31b83c64cd71c333"
+        },
+        {
+          "filename": "packages/L1-Arch/business/i18n/resource/locales/web/zh-Hant.json",
+          "sha256": "b5f0d7f73ca584ec837383d41663dc61c49820febc63cd1408bd4f18c9a1b515"
+        }
+      ]
+    },
+    "businessBabel": {
+      "parser": "7.27.3",
+      "traverse": "7.27.3"
+    },
+    "businessBabelOracleVerified": true,
+    "rejected": [],
+    "files": [
+      {
+        "filename": "packages/L3-Feature/business/lib-chat-biz-read/src/store/index.ts",
+        "originalBytes": 639,
+        "javascriptBytes": 523,
+        "originalHash": "ac2e952146827cbb49bc50b41ce3f2a72f53d6c78dae7e18f3fc508e94406562",
+        "javascriptHash": "b03f7ed3902753328e7876631cb2f03b83f83cd898767c82b922140100d9ce0a",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L4-Entry/app-flow-slides/src/entry/main/routes/layout.tsx",
+        "originalBytes": 2703,
+        "javascriptBytes": 2864,
+        "originalHash": "6a468833e1297290b9338eea85605d4191773c5bd78ab2c4dd5428865faea3d4",
+        "javascriptHash": "f829d0b9de2f9ed7778c9285c130beadbd3c9c5d91b236c57ea6ab9e33529245",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L1-Arch/orchestration/spi-token/src/chat/skill.ts",
+        "originalBytes": 13298,
+        "javascriptBytes": 3308,
+        "originalHash": "35811656d983958ed01d956c9da9dc4d595504273db065a1bd740d5c82b7ef86",
+        "javascriptHash": "a9d2abee43702e3ee0e83b43674463081e609207882a255cd7722c72b4a1419a",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/lib-chat-biz-video/src/video-share/components/invalid-tips-area/index.tsx",
+        "originalBytes": 733,
+        "javascriptBytes": 1022,
+        "originalHash": "9d07e8bf957ebbb77e8cfee7adbff1180898883ab9cac06c5b66f85d9043a299",
+        "javascriptHash": "8decff5e5c0e41225a823b51a4877cf7df902d92daffb0e8fcd989949f3ed1fc",
+        "originalMatches": 2,
+        "javascriptMatches": 2,
+        "originalOutputHash": "13de8409b280a57a8a600fd9e109521d74abfe255a72a475faf883f61241764b",
+        "javascriptOutputHash": "13de8409b280a57a8a600fd9e109521d74abfe255a72a475faf883f61241764b"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/ug/src/fission-login-popup/runtime-plugin.ts",
+        "originalBytes": 1722,
+        "javascriptBytes": 1335,
+        "originalHash": "5c782786876a0d46d816bc09c25a15de5e5a0adccde828dd3643b762c086f150",
+        "javascriptHash": "f46e3571d8ae1f37201c530963db6ddc95c944b7fccaf97c85b1be2dd6efd7ad",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/voice-features/src/asr/asr-overlay-button/use-listen-space-long-press.ts",
+        "originalBytes": 9741,
+        "javascriptBytes": 9202,
+        "originalHash": "48c3f7424fb7fc99622de8f591a10c4483c88ee3ea79ee01e8dc31ac49b7aec2",
+        "javascriptHash": "c292072642586259f168682cf5b457a054866468ff00be01152865df1d9f961d",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/framework/features/global-search/src/internal/ui/surface/search-ahalet-loading-surface.tsx",
+        "originalBytes": 1786,
+        "javascriptBytes": 3208,
+        "originalHash": "82539ba72b796ca905b74eeff26bfe2144a72efc07ca88b140314a7ae27e4f9a",
+        "javascriptHash": "f2c7026eeb4cee06b3178794c2d5b5d4c1c01598f9ce2c73eeeed4c5e572f8f1",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L1-Arch/business/samantha-ui-deprecated/src/components/asset-card/index.tsx",
+        "originalBytes": 15742,
+        "javascriptBytes": 15248,
+        "originalHash": "bb0b83d4ef2ff5fe55511c628d932f904efe4b946882beb79deac5988b43de5a",
+        "javascriptHash": "6d6df182fa1c3a83d32f12ae21c4c4fd2429f269e9f5b7b99e6768e047df47dc",
+        "originalMatches": 3,
+        "javascriptMatches": 3,
+        "originalOutputHash": "583228bd19af7e77ff8d0ca7dc9b985181f0ac928540b0d7eff123bdd4d1185e",
+        "javascriptOutputHash": "583228bd19af7e77ff8d0ca7dc9b985181f0ac928540b0d7eff123bdd4d1185e"
+      },
+      {
+        "filename": "packages/L3-Feature/business/lib-chat-biz-write/src/biz-component/docx-sdk-editor-v2/components/doc-toolbar/plugins/text-color/index.tsx",
+        "originalBytes": 5803,
+        "javascriptBytes": 5636,
+        "originalHash": "da9a228ba88d525cfecd86152638978ee40415deebe1a5e4afad23f87a84f3b6",
+        "javascriptHash": "de208f9cee2d9ed68f5da8332c6c7f0aaad0abc2efee8add332550a18bab002a",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/write-ui/src/write/flow-doc-editor/utils/converter/deltaset-to-markdown/plugins/math.ts",
+        "originalBytes": 540,
+        "javascriptBytes": 372,
+        "originalHash": "4bf84540d60b28eab7a7a70c02b22efef94064e1ea2ae8951b4deae1984a3d7a",
+        "javascriptHash": "37ee185b3f59539292bb66b73dfeb6872e36978e636c56420095358ce1881070",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/agent/src/services/tool-permissions/folders/authfolder-chat-permission-store.ts",
+        "originalBytes": 5668,
+        "javascriptBytes": 5097,
+        "originalHash": "f729569dedc95c1d2abd57e1b28ef17e9b76f39459d4e56f735149495661f129",
+        "javascriptHash": "81e7ed86118eec69ddff37b4d51e304c8d3fa0c9dfaa067d9bc3adf96bd7a059",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/general-session/src/lib-search/biz-component/receive-search-rich-media-node/hooks/use-group-media/index.ts",
+        "originalBytes": 2708,
+        "javascriptBytes": 2513,
+        "originalHash": "7b4d6a2e5f768a0f6e33b3495e778d0c733e696991d7e498554b8675844d6a83",
+        "javascriptHash": "d90c2a25437d0c4732e245ade30781935e6f580171eb268e48317b4d84366b59",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/task-center/src/navigation/discover.ts",
+        "originalBytes": 914,
+        "javascriptBytes": 518,
+        "originalHash": "46c18236af9c79f4174d749733c4508b206f1be5afd66d560ea4fcdd9ee5646e",
+        "javascriptHash": "48982568bc72bb5f404474962c113219688dd787270ebf0506c5c82e3d968c4e",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/ai-ppt/src/core/slides-resource-preload/type.ts",
+        "originalBytes": 406,
+        "javascriptBytes": 12,
+        "originalHash": "f8c88b67d10e026e6f18258f87826cbb843122904b56f90198697a6d4a287571",
+        "javascriptHash": "2d7a65e1c18496e1f3eee66351b4d127c9ebd77031ec2ffb1f937e64dfd5d48a",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/general-session/src/lib-biz-memory/plugins/message-node/memory-tag/props-selector.tsx",
+        "originalBytes": 610,
+        "javascriptBytes": 326,
+        "originalHash": "d5444892f07a2b27b5cbe4028fd2905e836cee74348924fff4bd9a2e6f0b95be",
+        "javascriptHash": "e69d2522bb76c705d2ee81c86994db14a33cb38bde174d01cccb21a305df673e",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/local-sheet/src/local-resource/recovery-isolation.ts",
+        "originalBytes": 1768,
+        "javascriptBytes": 1581,
+        "originalHash": "2a9331c76701bb762a9dd82a279961c9f0567535421f524b9ac7adee2c6d2b0f",
+        "javascriptHash": "dc6441cae88ec4d184ea448efcbb9662061b1d579d486d4feecb0726b32a9f85",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/lib-chat-biz-write/src/docx-modules/draft/utils/index.ts",
+        "originalBytes": 860,
+        "javascriptBytes": 817,
+        "originalHash": "9ed33c21360279b953448f3209ec017bc2e3d5ce8fa054fed9cf56be22000bf1",
+        "javascriptHash": "6faf3ee1caa4f44c4f8ce2949f83347e547dbc17cb543ef95838fc580d501e47",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/mobile-download-page/src/page.tsx",
+        "originalBytes": 4809,
+        "javascriptBytes": 5777,
+        "originalHash": "80da9b34a50ab93d01c4079071e405f0e1d45d6299d313bd676393770977abd2",
+        "javascriptHash": "a297437c9142950525bd33ec2f75fa3656a1f863f0f92f2f5201f2b840b9d956",
+        "originalMatches": 3,
+        "javascriptMatches": 3,
+        "originalOutputHash": "13999497dcdfe7e3e7889b649684df00efc739a876acf1e1eb6a8e8e49803328",
+        "javascriptOutputHash": "13999497dcdfe7e3e7889b649684df00efc739a876acf1e1eb6a8e8e49803328"
+      },
+      {
+        "filename": "packages/L4-Entry/app-flow-sso/src/Document.tsx",
+        "originalBytes": 2803,
+        "javascriptBytes": 3390,
+        "originalHash": "bb3afc8572804346d22865038895e2baea3ec214451631bd57914d4315949ac1",
+        "javascriptHash": "4daca15b784567f86034aa0f914a6418d07612d6a15cee3a441aae44fd0a361a",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L4-Entry/app-flow-desktop-js-runtime/rspack-config/resolve.ts",
+        "originalBytes": 1716,
+        "javascriptBytes": 1884,
+        "originalHash": "45fd2299dedbe5cb9dd7002aa124888df9b19e6b76e6090fa626a745cc602281",
+        "javascriptHash": "ab4e871ffeb77b9d2692b93ac577814f85a0e0fdc044ae4ce6f6b58fd3e38327",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L1-Arch/base/dbx-icons/svg-tsx/mono/DbxIcLineStyleIcon.tsx",
+        "originalBytes": 1818,
+        "javascriptBytes": 2355,
+        "originalHash": "a558f18f01d232efbe3305320864b11c7681a82003be30a8571a411b7cfd8ad4",
+        "javascriptHash": "b0de4b21c20418ba29f5d94ec43a97204dd5bb48e8276b5df1049775550f2e61",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L2-Core/chat/lib-chat-input/src/submit-pipeline/nodes/send-message.ts",
+        "originalBytes": 9393,
+        "javascriptBytes": 8994,
+        "originalHash": "fe960c3df3faea9845777db5c622aa7e6152bed1705a3e336da3d55f7d600704",
+        "javascriptHash": "4700aa33dd49f634bd07c113394cdab1dfe0c696ad9521236ea50eebe32a9442",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/doubao-member/src/utils/quota-usage-tracking.ts",
+        "originalBytes": 17127,
+        "javascriptBytes": 14277,
+        "originalHash": "a80502a47be58ab249279a7a550b4cc7c298429564d28eec87c439b6703a11bb",
+        "javascriptHash": "79eccd1d0355110fc72e86cca7b8eea2bb78726b0d095a2724f2fbd9c87863e5",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L1-Arch/base/dbx-token/scripts/04-build-js-color-tokens.ts",
+        "originalBytes": 4227,
+        "javascriptBytes": 3810,
+        "originalHash": "7446388ef918dd74fc626cbff3cb64de1dbc0fe7ee29f6661ec17c09e41eba90",
+        "javascriptHash": "7f5cf994c8836c489c2e61ac8587e8a2fe89e0785d7a9e052e7fe46af064458d",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/ai-ppt/src/utils/canvas-props.ts",
+        "originalBytes": 2902,
+        "javascriptBytes": 2173,
+        "originalHash": "a62748ae150147ed2335e2819db6b62b82673e0e764308fbff335b5f4b3417b2",
+        "javascriptHash": "69028a2fd812b751a92c3c1780021cf039409cf81f4c0abd8a83229038a08012",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/agent/src/agent-tools/read/helpers/resolve-read-upload-facts.ts",
+        "originalBytes": 2541,
+        "javascriptBytes": 2370,
+        "originalHash": "19c60f8310d92439fca80bac2de91ca6474701ba149d4a6e3de7b9eaf73368b0",
+        "javascriptHash": "d9d9e3fc82073ca125b5e21beb0acdbcddc2c8b02e2a5997c33b0c3738bf6eee",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/ai-sheet/src/plugins/message-lifecycle/sheet/plugin.ts",
+        "originalBytes": 949,
+        "javascriptBytes": 652,
+        "originalHash": "cbedf22d7b8dff1940bd4a3a35835cb187b159c3ac04740fa1b82aed2f9bad40",
+        "javascriptHash": "a226a32235e82695c31affbd6840b18dc3f04851ead1672e9c782077a112d18f",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L4-Entry/app-flow-desktop-framework/src/entry-chat/custom-routes/canvas/page.tsx",
+        "originalBytes": 4523,
+        "javascriptBytes": 4438,
+        "originalHash": "6c04ad367ddd5f48dbba86f3cd936925fc1b02b0060ed6e907fb3ef7f05a2c56",
+        "javascriptHash": "26a95577d5e8f5b6d9453c545a4d83093cf1170ffc1145bfca4c00c5410569ed",
+        "originalMatches": 2,
+        "javascriptMatches": 2,
+        "originalOutputHash": "d3a30ef0dae3e79c1a87d5035463b733cb5647a09af74058bf34a1410f29ec61",
+        "javascriptOutputHash": "d3a30ef0dae3e79c1a87d5035463b733cb5647a09af74058bf34a1410f29ec61"
+      },
+      {
+        "filename": "packages/L4-Entry/app-flow-web-oversea/src/entry-main/routes/my-collection.[collection_id$]/components/collection-list-tag-selector/collection-tag.tsx",
+        "originalBytes": 2144,
+        "javascriptBytes": 2192,
+        "originalHash": "d67a4a337e004734b49314d765c493aaa66be40a0b412d618a003462f07d4267",
+        "javascriptHash": "606eae6e911913a70ddfa6f71a548b993b48da163f86374408955b1782c0b510",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/agent/src/cloud_browser/api.ts",
+        "originalBytes": 810,
+        "javascriptBytes": 624,
+        "originalHash": "b39994b10563c68a3010c13aaf3dadfeac5c76ad9f8d2f719a63507c6a6ae3d5",
+        "javascriptHash": "16bcc7d859f928086b1f2c39fa875cd95f5a86816b622885b2f3b3fe0d5ad7bc",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/lib-chat-biz-wiki/src/biz-component/office-sdk-editor/wiki-office-session-store.ts",
+        "originalBytes": 3139,
+        "javascriptBytes": 2283,
+        "originalHash": "f09dc0eab3270ab6838a136022c4e380f91bd8f3326e2bdfebbfec563293544c",
+        "javascriptHash": "9abe43bbc2e1e74fffffe5091bbeb2e44b2d492a9ed7dd4b6cc9878c990c1aa4",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/lib-chat-biz-write/src/biz-component/write-doc-management-next/utils/dialog.tsx",
+        "originalBytes": 2878,
+        "javascriptBytes": 3082,
+        "originalHash": "e1da5465030e65d21984283d7ae14f130897585157a3016263ea66d5566d2237",
+        "javascriptHash": "d38079507e08ac117901f6656cc2d2eb2357b13a70ce35aef1694e53e6a8a351",
+        "originalMatches": 13,
+        "javascriptMatches": 13,
+        "originalOutputHash": "ff233fc60546b67ae7fe38fd1d7a1b8be0a2b894a7d0a8bd4f69b98b050dc6c5",
+        "javascriptOutputHash": "ff233fc60546b67ae7fe38fd1d7a1b8be0a2b894a7d0a8bd4f69b98b050dc6c5"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/agent/src/goal/domain/goal-intent.ts",
+        "originalBytes": 2750,
+        "javascriptBytes": 1877,
+        "originalHash": "e8c35fdf87877485e9a7b739c0fb4f84ef384a8b919b785e956c2d01849718a2",
+        "javascriptHash": "648bf7400343cca6d1562dcef572f3da58acab8e849b5d7d1b923593404cbecf",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L4-Entry/app-flow-account/src/init/api-common-config.ts",
+        "originalBytes": 1578,
+        "javascriptBytes": 1460,
+        "originalHash": "b5aa99816cb5accf27f56c22a10de509ccfea23b9403824049973b9697face67",
+        "javascriptHash": "fb801c55f031a47a4e26e9ca07e7993f1be56e3fcc5dc698f15d05c6fc909989",
+        "originalMatches": 1,
+        "javascriptMatches": 1,
+        "originalOutputHash": "7afda15219bb5f30aad2a35d6eed4284dccfc71608e3b3f2f916a194ee72d5f9",
+        "javascriptOutputHash": "7afda15219bb5f30aad2a35d6eed4284dccfc71608e3b3f2f916a194ee72d5f9"
+      },
+      {
+        "filename": "packages/L2-Core/chat/foundation/flow-web/src/message/message-box-list/components/section-divider/container.tsx",
+        "originalBytes": 300,
+        "javascriptBytes": 229,
+        "originalHash": "7e9999844fc8a1bbb941bef148617ff81cf5a7a441fbe81773bf4c22b0219eea",
+        "javascriptHash": "497002e3464c375fd0195dcbeb7bc1106b395fca1561476c93a61c8800851c6f",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/business-components/src/pure/common-share-panel/components/goto-lark/index.tsx",
+        "originalBytes": 1629,
+        "javascriptBytes": 1659,
+        "originalHash": "2666c5834abc9270f1f49ab99d07311b4d069e9995ebb86d6bc7abeede19faae",
+        "javascriptHash": "7b6de9e6b2fd359d8765c21e4919c274abd3974e2c24b76c99e05a938f2bf9e3",
+        "originalMatches": 6,
+        "javascriptMatches": 6,
+        "originalOutputHash": "649e5309c3a4efca79d3ecca875d09498cfae99742d9f1a480386a34c991a25e",
+        "javascriptOutputHash": "649e5309c3a4efca79d3ecca875d09498cfae99742d9f1a480386a34c991a25e"
+      },
+      {
+        "filename": "packages/L3-Feature/desktop-foundation/native/src/service/local-file/search-worker-client.ts",
+        "originalBytes": 12827,
+        "javascriptBytes": 12505,
+        "originalHash": "20e217eaa29500111f0ca7e54e8c4693081c854e6a2297f2a7b496b408d40f9a",
+        "javascriptHash": "30faa024fbfb08d3b5138bb673fa1603c84f29ff5e4b47563ec0cee18ed81a08",
+        "originalMatches": 11,
+        "javascriptMatches": 10,
+        "originalOutputHash": "646d3c6db3f37d59fc23996e74162ce27b6c954ede7822a839550b603bb61631",
+        "javascriptOutputHash": "c8eeabeffb98248806dd4fc11eb7cd607d3365060aeb384dddee0183e8caa6e1"
+      },
+      {
+        "filename": "packages/L2-Core/chat/chat-core/lib-chat-message-core/src/store/actions/update-message-suggest.ts",
+        "originalBytes": 1292,
+        "javascriptBytes": 1320,
+        "originalHash": "d6768eabc3eb7bbcd72e5a7eb3f1f4d8b9aa81a321d69c2d17e3f56facf5d002",
+        "javascriptHash": "461b2f2f430a19ce1fa69f5e29d7a9e30eccda4b21575152046543bb1b456aeb",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/lib-chat-biz-ci/src/plugins/message/chat-receive-message-box/ci/components/text-message-box.tsx",
+        "originalBytes": 1369,
+        "javascriptBytes": 1276,
+        "originalHash": "2e53b009e4a39111a860013331231c9c43d1a51cd132db11ba6fb3f2fb83ea85",
+        "javascriptHash": "643b485322a4e242f46251827b3f52c0aebc24bbb642121dcdb81807e56adb5f",
+        "originalMatches": 3,
+        "javascriptMatches": 3,
+        "originalOutputHash": "f76ef9465a3b24ee77346e7455c561d0244bfac36479ebaaa9b207f8e793fb92",
+        "javascriptOutputHash": "f76ef9465a3b24ee77346e7455c561d0244bfac36479ebaaa9b207f8e793fb92"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/write-ui/stories/cases/docx/search-image-panel.tsx",
+        "originalBytes": 2161,
+        "javascriptBytes": 2341,
+        "originalHash": "a4d3bf7d2faa7592dfea5e89af1d8b1db74e2c94b8dd39c4a80b623a69186a38",
+        "javascriptHash": "46dd997c8df7ead392a75568364d1c3e7c8ccd2cb89cb2b5b1f90d63967ecc57",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L2-Core/chat/chat-core/lib-chat-message-core/src/sender/helpers/message-helper.ts",
+        "originalBytes": 6308,
+        "javascriptBytes": 5475,
+        "originalHash": "0d987330a0fef6e5df9fd1d1e748306a8b59cefb9bbc85c00c2e1f93c465c0be",
+        "javascriptHash": "56f6b498792f0b24a84102583c10f2c179dc72a0fcb18363773d88c2325553d4",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/setting-core/src/biz-components/avatar-popover-menu/collection-entry/index.tsx",
+        "originalBytes": 1193,
+        "javascriptBytes": 1216,
+        "originalHash": "874cfe96db578068951df17c8ebd7d3aad3a5e23666fd9000ccddaf254c8cee2",
+        "javascriptHash": "2f00cdc6328a5e938448e966dd7f3f969fb3c76a92f81c7d5cd2a03aa313546e",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/mobile-office-doc/src/docx-modules/revision/utils/animation-display-detect.ts",
+        "originalBytes": 3517,
+        "javascriptBytes": 3758,
+        "originalHash": "8333c86cfd79f167083f53409c068ab7ef1a8cac304e06db394f6fdc5b732ad7",
+        "javascriptHash": "c4f83035525261c04a74eee93f80bdfb47a4580046aa6b272795390ce5b06643",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/desktop-client-components/src/biz-plugin/screenshot/input/action/use-screenshot-attachment-action.local-desktop.ts",
+        "originalBytes": 1082,
+        "javascriptBytes": 1254,
+        "originalHash": "7262a4dfc3ee809bfc3d58f36c7663c75cf09482a9c4ae5169532f27f92aeffc",
+        "javascriptHash": "a5beedaf02db3bcb987e61efaabfe9242ffda3ed54abab36d1bc59748716cdee",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/general-session/src/lib-search/biz-component/academic-immersive-page/index.tsx",
+        "originalBytes": 2851,
+        "javascriptBytes": 2548,
+        "originalHash": "6571ce21653c2399f27a52a65e86284854afad5fdc6b261db2d32f5778c93fe2",
+        "javascriptHash": "a687ca7051880ce685e54a62f50bf0f68eed9a49a576688878cc3e632fa2bf1d",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L1-Arch/business/api/src/api/samantha_api/namespaces/alice_api.ts",
+        "originalBytes": 7259,
+        "javascriptBytes": 1985,
+        "originalHash": "cdebf29e316a2bef0fb73a072996a9778c5219560095168f618227dfc1f07080",
+        "javascriptHash": "8d2d4790592dd0a79c6dc32d9c0b41a762ab9b36b3d3e69973fc2da15b7e4877",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/input-engine/src/runtime/legacy/editor.ts",
+        "originalBytes": 2942,
+        "javascriptBytes": 2712,
+        "originalHash": "cb891e4364b69d98326900fb92204c12c744141d61d53c1985c220cf0a38f696",
+        "javascriptHash": "f26813d61be6d04e293cfcdc2da832f2c6f1fa1b383e75feb5bdb089f8747b51",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/lib-chat-biz-write/src/biz-component/base-docx-panel/components/base-docx-header/components/docx-share-popover/hooks/events.ts",
+        "originalBytes": 6520,
+        "javascriptBytes": 6195,
+        "originalHash": "17f7f83fb854787955d922777102a3cb24b489f91be33c3e6b8a0a8333d8bd15",
+        "javascriptHash": "8d98b4b3423a52efd3b2dd98e68ca7b5ed581e6f8a9bd3e14f766ad8e89c9463",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/agent/stories/goal-plan-foundation/goal-queue-debug/use-goal-queue-debug.ts",
+        "originalBytes": 10042,
+        "javascriptBytes": 10819,
+        "originalHash": "b30fb7acfcdb3803eabdfca880e6e8a74eb9a16855cb9e920865b2496eae0db8",
+        "javascriptHash": "80d249e982e408c72e08d74fd748bfb59ae3151cf382247ebde752288e8ec87f",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L1-Arch/business/api/src/api/aispace_facade_api/namespaces/flow_aispace_facade_base.ts",
+        "originalBytes": 1633,
+        "javascriptBytes": 3016,
+        "originalHash": "44f58c9aa69dd98dd041f5e7799f637c09d14c4f5c9899e58aed80519987a754",
+        "javascriptHash": "b6d925a7522e68d1bdd06e3ee48be31e02ba1e122ce433a606da39f6fcdc53db",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/biz-setting/src/modules/privacy/block-account.tsx",
+        "originalBytes": 816,
+        "javascriptBytes": 663,
+        "originalHash": "82a9f8974ee171b6ea6d9fecc9ae411db75638aeab14b79e0783215b8b8d9542",
+        "javascriptHash": "959b1a38f8a69b6fc46b53c92addbe256b8e2c33a73dc093f9122fc31f60f6f7",
+        "originalMatches": 1,
+        "javascriptMatches": 1,
+        "originalOutputHash": "fdc37597d29afa357bf42394182dc78445171523f2bf88e51e5e84fab16a2782",
+        "javascriptOutputHash": "fdc37597d29afa357bf42394182dc78445171523f2bf88e51e5e84fab16a2782"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/agent/src/components/task-runtime-env-button/use-probe-sandbox-ready/index.ts",
+        "originalBytes": 312,
+        "javascriptBytes": 216,
+        "originalHash": "5a531808c861e4e1c2bc63fbb8e1f1855a7816ba9c2659f58578a09326bdbd83",
+        "javascriptHash": "1958fb5a279322dfadbd21d43b970411cb8abc63ad3c6ee2e87253fb7033f6ef",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/agent/cloud-computer/src/components/dashboard/device-card/device-card.tsx",
+        "originalBytes": 8670,
+        "javascriptBytes": 12322,
+        "originalHash": "43b8ca20b5868fb28a8d32d327a378095aa7503d47a5c88d5a3e503334500358",
+        "javascriptHash": "7f6e9668d1b81d2cef8b14a9d34e2ff73c22716dc9fe3db7831303a5b0b14e5f",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L4-Entry/app-flow-desktop-js-runtime/src/entry-office/domain/artifact/gc-marker.ts",
+        "originalBytes": 9866,
+        "javascriptBytes": 7662,
+        "originalHash": "ec767f5d967e69cf83e41d93138ed3b64c38c691e4bdf4e668c102ecc7b38b1f",
+        "javascriptHash": "47a80f280a6d2a4d43aa25bc7fe651d6a6cdd04035dd23dfe6561df0b3a905a4",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/biz-setting/src/modules/ai-toolbar/launcher/components/skill-manage/skill-modal/add-skill-modal/index.tsx",
+        "originalBytes": 10377,
+        "javascriptBytes": 12013,
+        "originalHash": "012083fc88f15337d865d8425c80fc412a82315a944347a8a5ac90da3a690574",
+        "javascriptHash": "23395ea26914fdf9766e0bb98ba6b5d5763dfdea19442324050e8dddef6f0536",
+        "originalMatches": 14,
+        "javascriptMatches": 14,
+        "originalOutputHash": "29079ed9ab889ec821965ca9533501c89c31adf19068f9bb36804dd0da31d0ba",
+        "javascriptOutputHash": "29079ed9ab889ec821965ca9533501c89c31adf19068f9bb36804dd0da31d0ba"
+      },
+      {
+        "filename": "packages/L4-Entry/shared/chat-render-sdk/src/external/read-status.ts",
+        "originalBytes": 373,
+        "javascriptBytes": 147,
+        "originalHash": "f7ebbbb3c8dd264157b82c8d56e822d8b3a1e0834df06c5a4d1dee781cab69d5",
+        "javascriptHash": "bf674ac091449dd0b7dfa266b26a812ce422b6372f94c2fbd8b1a56f925e81f4",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/agent/src/tool-call-manager/helper/sandbox-acquire-failure.ts",
+        "originalBytes": 1727,
+        "javascriptBytes": 1351,
+        "originalHash": "d100307842b037d0211d4372aff419c9e16ae567b0a2a1f2f4d9698b59b60fa1",
+        "javascriptHash": "363dc501d89478121a7535ba53f05b56face5fd11cf1b382ac2bea944fbfefa6",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L1-Arch/business/samantha-ui-deprecated/src/components/flow-chat-input/expand-button/index.tsx",
+        "originalBytes": 1714,
+        "javascriptBytes": 1767,
+        "originalHash": "6521de432250281ba24ad3e64471b76169c061220f8e09130713305c2a52db6d",
+        "javascriptHash": "04f28ad037604a2272437a0d93c0532f9dac60617edfa6582134ac8e8898c11e",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/ai-space-core/src/drive-file-selector/utils/merge-upload-ext-list.ts",
+        "originalBytes": 882,
+        "javascriptBytes": 764,
+        "originalHash": "cadd21c89b6fad597874b06cde3bbbf03b595cd2e1e3aaa48e5334ea5c25c697",
+        "javascriptHash": "7fc517b286600ba18505db128944a52d379efb6ed5e119c25b245f5e3f53e57e",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L1-Arch/base/dbx-icons/svg-tsx/multi/DbxModeloptimisationIcon.tsx",
+        "originalBytes": 5027,
+        "javascriptBytes": 5699,
+        "originalHash": "acbd0c975831c13e0d70ce940cd9d8da4bf11a217be8d806d43fbbf2f3f5dd9c",
+        "javascriptHash": "f04be2374e7d2e1fcdfc7c7c12e512d293e93ea5df4eb954166f4e57be869635",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L4-Entry/shared/runtime-samantha/src/plugins/plugin-error-boundary/index.ts",
+        "originalBytes": 632,
+        "javascriptBytes": 532,
+        "originalHash": "dc97f5909a68f598d076b158deba838741c1aafb665797dc551fde30dfd6881c",
+        "javascriptHash": "f243ad5211718bed8fd5ef0c75be1adb50cfc2a728c136529f08573a43d5ad81",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/shared/agent/src/agent-tools/file-batch-upload/helpers/resource-register-types.ts",
+        "originalBytes": 762,
+        "javascriptBytes": 92,
+        "originalHash": "1b7713b980868f74890d1356b427f8dde5e29a4aa52804de549ed2ad36de8715",
+        "javascriptHash": "a4b6c5eebca65ec1f0e531def358299c3b649b46dbd8d5a1d56af7427eb7b36b",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/lib-chat-biz-write/src/plugins/message-node/receive-apply-doc-permission-node/props-selector.tsx",
+        "originalBytes": 666,
+        "javascriptBytes": 201,
+        "originalHash": "f2b380dce621409b211f6ba38da36705b8dbee524894e9739388205bfea999ec",
+        "javascriptHash": "67713d8ed8b9a7b8477bdacd02e5fa013b34883b9d93f118aa229e48c9549c5e",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      {
+        "filename": "packages/L3-Feature/business/mobile-office-ppt/src/modules/feishu-title-bar-module/service/title-bar-service.interface.ts",
+        "originalBytes": 287,
+        "javascriptBytes": 132,
+        "originalHash": "f924e1fcfaae1aa3678223a6a8a1268dca840f2e9495fa168445c0fe16a5764a",
+        "javascriptHash": "1822d3f6b65af983c3a99b71815f53d8330e440c8e195d2e7d15d772e9efbe33",
+        "originalMatches": 0,
+        "javascriptMatches": 0,
+        "originalOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "javascriptOutputHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    ]
+  },
+  "timestamp": "2026-10-12T06:58:58.131Z",
   "node": "v24.20.0",
   "platform": "darwin arm64",
   "cpu": "Apple M5 Max",
@@ -49,14 +923,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.2552430000000783
+        1.2872910000000246
       ],
       "setupMs": [
-        19.867961000000037
+        19.306920000000048
       ],
-      "observedHeapMiB": 16.390090942382812,
-      "observedRssMiB": 86.8125,
-      "peakRssMiB": 88.6875,
+      "observedHeapMiB": 16.39263916015625,
+      "observedRssMiB": 86.71875,
+      "peakRssMiB": 88.5625,
       "serverMemoryMiB": null,
       "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -71,14 +945,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        2.2673330000000647
+        2.369164999999981
       ],
       "setupMs": [
-        16.27275099999997
+        16.46612599999999
       ],
-      "observedHeapMiB": 12.225173950195312,
-      "observedRssMiB": 81.9375,
-      "peakRssMiB": 87.21875,
+      "observedHeapMiB": 12.245674133300781,
+      "observedRssMiB": 82.4375,
+      "peakRssMiB": 87.671875,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -93,14 +967,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        2.5145820000000185
+        2.4280799999999374
       ],
       "setupMs": [
-        20.163417999999965
+        19.448669999999964
       ],
-      "observedHeapMiB": 15.986892700195312,
-      "observedRssMiB": 86.96875,
-      "peakRssMiB": 88.984375,
+      "observedHeapMiB": 15.985099792480469,
+      "observedRssMiB": 87.09375,
+      "peakRssMiB": 89.125,
       "serverMemoryMiB": null,
       "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -115,14 +989,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.6318690000001226
+        1.5917989999999307
       ],
       "setupMs": [
-        17.322626000000014
+        16.72000400000001
       ],
-      "observedHeapMiB": 10.975059509277344,
-      "observedRssMiB": 78.78125,
-      "peakRssMiB": 82.640625,
+      "observedHeapMiB": 11.154884338378906,
+      "observedRssMiB": 78.828125,
+      "peakRssMiB": 82.671875,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -137,14 +1011,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        2.971414000000024
+        2.9739600000000337
       ],
       "setupMs": [
-        20.229455999999928
+        19.506121999999976
       ],
-      "observedHeapMiB": 16.72216033935547,
-      "observedRssMiB": 88.359375,
-      "peakRssMiB": 90.390625,
+      "observedHeapMiB": 16.709243774414062,
+      "observedRssMiB": 88.21875,
+      "peakRssMiB": 90.078125,
       "serverMemoryMiB": null,
       "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -159,14 +1033,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        2.0031649999999956
+        2.151958999999934
       ],
       "setupMs": [
-        17.41695900000009
+        17.096002000000084
       ],
-      "observedHeapMiB": 14.796066284179688,
-      "observedRssMiB": 81.0625,
-      "peakRssMiB": 83.84375,
+      "observedHeapMiB": 14.819320678710938,
+      "observedRssMiB": 81.28125,
+      "peakRssMiB": 84.046875,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -181,14 +1055,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.7676670000000456
+        1.7052500000000066
       ],
       "setupMs": [
-        20.602621
+        19.902496999999954
       ],
-      "observedHeapMiB": 15.707275390625,
-      "observedRssMiB": 86.3125,
-      "peakRssMiB": 87.828125,
+      "observedHeapMiB": 15.709754943847656,
+      "observedRssMiB": 86.359375,
+      "peakRssMiB": 88.0625,
       "serverMemoryMiB": null,
       "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -203,13 +1077,57 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        2.3813369999999736
+        2.270796999999959
       ],
       "setupMs": [
-        17.565788000000005
+        16.81416899999997
       ],
-      "observedHeapMiB": 10.56500244140625,
-      "observedRssMiB": 77.984375,
+      "observedHeapMiB": 10.718246459960938,
+      "observedRssMiB": 78.140625,
+      "peakRssMiB": 81.71875,
+      "serverMemoryMiB": null,
+      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
+      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
+      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
+      "matches": 58,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "oxc-walker",
+      "kind": "original",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        1.4630459999999843
+      ],
+      "setupMs": [
+        19.38966599999999
+      ],
+      "observedHeapMiB": 15.784873962402344,
+      "observedRssMiB": 86.59375,
+      "peakRssMiB": 88.328125,
+      "serverMemoryMiB": null,
+      "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
+      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
+      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
+      "matches": 59,
+      "repeat": 0,
+      "ast": "ESTree"
+    },
+    {
+      "id": "oxc-walker",
+      "kind": "javascript",
+      "status": "passed",
+      "normalizedFiles": 0,
+      "samplesMs": [
+        2.070167999999967
+      ],
+      "setupMs": [
+        17.37745399999993
+      ],
+      "observedHeapMiB": 14.042633056640625,
+      "observedRssMiB": 78.453125,
       "peakRssMiB": 81.671875,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
@@ -220,63 +1138,19 @@
       "ast": "ESTree"
     },
     {
-      "id": "oxc-walker",
-      "kind": "original",
-      "status": "passed",
-      "normalizedFiles": 0,
-      "samplesMs": [
-        1.5257120000000128
-      ],
-      "setupMs": [
-        19.98020400000005
-      ],
-      "observedHeapMiB": 15.782508850097656,
-      "observedRssMiB": 86.5,
-      "peakRssMiB": 88.390625,
-      "serverMemoryMiB": null,
-      "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
-      "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
-      "sourceHash": "3954bdc88a758a4ed1feecfa1da4d83474f9d160bd0b73ad61b67a8bc5dc607a",
-      "matches": 59,
-      "repeat": 0,
-      "ast": "ESTree"
-    },
-    {
-      "id": "oxc-walker",
-      "kind": "javascript",
-      "status": "passed",
-      "normalizedFiles": 0,
-      "samplesMs": [
-        2.038620999999978
-      ],
-      "setupMs": [
-        16.957875000000044
-      ],
-      "observedHeapMiB": 14.034111022949219,
-      "observedRssMiB": 78.59375,
-      "peakRssMiB": 81.953125,
-      "serverMemoryMiB": null,
-      "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
-      "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
-      "sourceHash": "781bd71ba328b0246a8b4800632b79a07c7e39570223afd8c25df301d4788f10",
-      "matches": 58,
-      "repeat": 0,
-      "ast": "ESTree"
-    },
-    {
       "id": "oxc-visitor",
       "kind": "original",
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.8962470000000025
+        1.8642170000000249
       ],
       "setupMs": [
-        20.036836999999963
+        19.67438100000001
       ],
-      "observedHeapMiB": 16.155982971191406,
+      "observedHeapMiB": 16.158462524414062,
       "observedRssMiB": 92.859375,
-      "peakRssMiB": 94.921875,
+      "peakRssMiB": 94.796875,
       "serverMemoryMiB": null,
       "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -291,14 +1165,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.0357480000000407
+        1.0655410000000671
       ],
       "setupMs": [
-        17.317161999999954
+        17.51557599999991
       ],
-      "observedHeapMiB": 11.146438598632812,
-      "observedRssMiB": 84.875,
-      "peakRssMiB": 85.390625,
+      "observedHeapMiB": 11.134872436523438,
+      "observedRssMiB": 84.953125,
+      "peakRssMiB": 85.421875,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -322,14 +1196,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.4694190000000944
+        1.475204999999967
       ],
       "setupMs": [
-        17.16541200000004
+        17.292284000000073
       ],
-      "observedHeapMiB": 10.037788391113281,
-      "observedRssMiB": 77.578125,
-      "peakRssMiB": 81.703125,
+      "observedHeapMiB": 10.604911804199219,
+      "observedRssMiB": 77.9375,
+      "peakRssMiB": 81.515625,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -353,14 +1227,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        0.9782450000000225
+        0.8810739999999697
       ],
       "setupMs": [
-        17.792285000000042
+        16.721374000000054
       ],
-      "observedHeapMiB": 10.812660217285156,
-      "observedRssMiB": 78.25,
-      "peakRssMiB": 81.9375,
+      "observedHeapMiB": 10.571212768554688,
+      "observedRssMiB": 78.125,
+      "peakRssMiB": 81.828125,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -384,14 +1258,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.5821720000000425
+        1.4680329999999344
       ],
       "setupMs": [
-        17.734501000000016
+        16.82732800000005
       ],
-      "observedHeapMiB": 10.314186096191406,
-      "observedRssMiB": 85.421875,
-      "peakRssMiB": 86.328125,
+      "observedHeapMiB": 10.383186340332031,
+      "observedRssMiB": 85.34375,
+      "peakRssMiB": 86.1875,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -415,14 +1289,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        2.65104300000003
+        2.6787940000000603
       ],
       "setupMs": [
-        17.724874999999997
+        17.17108000000004
       ],
-      "observedHeapMiB": 11.483840942382812,
-      "observedRssMiB": 84.40625,
-      "peakRssMiB": 85.046875,
+      "observedHeapMiB": 11.98583984375,
+      "observedRssMiB": 84.625,
+      "peakRssMiB": 85.359375,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -446,14 +1320,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.3200799999999475
+        1.3269159999999829
       ],
       "setupMs": [
-        17.346211999999923
+        17.425960999999944
       ],
-      "observedHeapMiB": 13.959190368652344,
-      "observedRssMiB": 78.640625,
-      "peakRssMiB": 81.90625,
+      "observedHeapMiB": 10.584136962890625,
+      "observedRssMiB": 78.125,
+      "peakRssMiB": 81.65625,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -477,14 +1351,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        4.224799999999917
+        3.9924140000000676
       ],
       "setupMs": [
-        18.30971099999995
+        16.803623000000016
       ],
-      "observedHeapMiB": 17.0150146484375,
-      "observedRssMiB": 89.109375,
-      "peakRssMiB": 92.34375,
+      "observedHeapMiB": 17.01598358154297,
+      "observedRssMiB": 88.890625,
+      "peakRssMiB": 92.25,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -508,14 +1382,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        8.636130999999992
+        8.534709000000007
       ],
       "setupMs": [
-        16.547043999999914
+        16.345879000000025
       ],
-      "observedHeapMiB": 13.408554077148438,
-      "observedRssMiB": 88.078125,
-      "peakRssMiB": 91.609375,
+      "observedHeapMiB": 13.428825378417969,
+      "observedRssMiB": 87.828125,
+      "peakRssMiB": 91.4375,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -548,13 +1422,13 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        2.26483199999997
+        2.1569170000000284
       ],
       "setupMs": [
-        20.82066800000014
+        20.199209000000074
       ],
-      "observedHeapMiB": 12.538108825683594,
-      "observedRssMiB": 90.46875,
+      "observedHeapMiB": 12.540168762207031,
+      "observedRssMiB": 90.640625,
       "peakRssMiB": 91.96875,
       "serverMemoryMiB": null,
       "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
@@ -570,14 +1444,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        2.1859540000000663
+        2.1714979999999926
       ],
       "setupMs": [
-        16.50387900000004
+        16.999251000000022
       ],
-      "observedHeapMiB": 13.297805786132812,
-      "observedRssMiB": 81.890625,
-      "peakRssMiB": 86.265625,
+      "observedHeapMiB": 13.307373046875,
+      "observedRssMiB": 82.015625,
+      "peakRssMiB": 85.984375,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -619,14 +1493,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        3.9290430000000214
+        3.8418820000000125
       ],
       "setupMs": [
-        16.9929139999999
+        16.968959999999953
       ],
-      "observedHeapMiB": 13.433296203613281,
-      "observedRssMiB": 84.609375,
-      "peakRssMiB": 88.171875,
+      "observedHeapMiB": 13.433509826660156,
+      "observedRssMiB": 84.375,
+      "peakRssMiB": 87.828125,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -641,14 +1515,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        7.064580000000035
+        6.906123000000079
       ],
       "setupMs": [
-        20.605290999999994
+        19.268501999999998
       ],
-      "observedHeapMiB": 21.69727325439453,
-      "observedRssMiB": 93.875,
-      "peakRssMiB": 93.875,
+      "observedHeapMiB": 21.700218200683594,
+      "observedRssMiB": 93.703125,
+      "peakRssMiB": 93.703125,
       "serverMemoryMiB": null,
       "astHash": "2079ecc4675a95f70b108b449c360dda3c71524dec2111e73586def259a81ed0",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -663,14 +1537,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        10.214502000000053
+        10.632085999999887
       ],
       "setupMs": [
-        16.624376999999967
+        16.790829999999943
       ],
-      "observedHeapMiB": 16.547019958496094,
-      "observedRssMiB": 85.890625,
-      "peakRssMiB": 89.875,
+      "observedHeapMiB": 16.545082092285156,
+      "observedRssMiB": 85.765625,
+      "peakRssMiB": 89.703125,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -694,14 +1568,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.8853760000000932
+        1.787164999999959
       ],
       "setupMs": [
-        16.820041999999972
+        16.582085000000177
       ],
-      "observedHeapMiB": 44.57402038574219,
-      "observedRssMiB": 167.859375,
-      "peakRssMiB": 173.640625,
+      "observedHeapMiB": 44.57875061035156,
+      "observedRssMiB": 165.203125,
+      "peakRssMiB": 170.90625,
       "serverMemoryMiB": null,
       "astHash": "9648bd98f7ff7d1e2adabdb0c97bd39a77cc044600f2fd01c513121a02e79830",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -716,14 +1590,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.8667490000000129
+        1.846415999999948
       ],
       "setupMs": [
-        21.438871000000077
+        21.926582999999994
       ],
-      "observedHeapMiB": 16.421218872070312,
-      "observedRssMiB": 90.390625,
-      "peakRssMiB": 96.65625,
+      "observedHeapMiB": 16.337249755859375,
+      "observedRssMiB": 92.640625,
+      "peakRssMiB": 99.03125,
       "serverMemoryMiB": null,
       "astHash": "6fdf6316f366be3571f2b94469a1bb01519641f7ab05917e4aae3d1039d64fbc",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -738,14 +1612,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.6381229999999078
+        1.9365029999999166
       ],
       "setupMs": [
-        9.656539000000038
+        18.61412100000001
       ],
-      "observedHeapMiB": 20.059242248535156,
-      "observedRssMiB": 100.84375,
-      "peakRssMiB": 107.140625,
+      "observedHeapMiB": 19.65728759765625,
+      "observedRssMiB": 102.234375,
+      "peakRssMiB": 108.359375,
       "serverMemoryMiB": null,
       "astHash": "b2062248d181a1f4b33bd649c0b74063134f33737d7d1d83aa9d75705f4a2b6b",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -760,14 +1634,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.6545430000000607
+        1.6118300000000545
       ],
       "setupMs": [
-        21.773327999999978
+        21.249747000000028
       ],
-      "observedHeapMiB": 15.288101196289062,
-      "observedRssMiB": 90.484375,
-      "peakRssMiB": 96.703125,
+      "observedHeapMiB": 15.309135437011719,
+      "observedRssMiB": 90.3125,
+      "peakRssMiB": 96.453125,
       "serverMemoryMiB": null,
       "astHash": "6fdf6316f366be3571f2b94469a1bb01519641f7ab05917e4aae3d1039d64fbc",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -782,14 +1656,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.3653719999999225
+        1.3151190000000241
       ],
       "setupMs": [
-        9.500127999999975
+        17.71003899999998
       ],
-      "observedHeapMiB": 19.052162170410156,
-      "observedRssMiB": 100.453125,
-      "peakRssMiB": 107.171875,
+      "observedHeapMiB": 18.827476501464844,
+      "observedRssMiB": 101.3125,
+      "peakRssMiB": 108,
       "serverMemoryMiB": null,
       "astHash": "b2062248d181a1f4b33bd649c0b74063134f33737d7d1d83aa9d75705f4a2b6b",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -804,14 +1678,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        14.722330999999983
+        15.373747000000009
       ],
       "setupMs": [
-        24.305449999999908
+        21.60816600000004
       ],
-      "observedHeapMiB": 39.40625,
-      "observedRssMiB": 150.40625,
-      "peakRssMiB": 150.40625,
+      "observedHeapMiB": 39.05950164794922,
+      "observedRssMiB": 151,
+      "peakRssMiB": 151,
       "serverMemoryMiB": null,
       "astHash": "6fdf6316f366be3571f2b94469a1bb01519641f7ab05917e4aae3d1039d64fbc",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -826,14 +1700,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        13.840162999999876
+        13.432084999999987
       ],
       "setupMs": [
-        18.58045800000002
+        18.392542999999904
       ],
-      "observedHeapMiB": 31.322494506835938,
-      "observedRssMiB": 152.203125,
-      "peakRssMiB": 152.203125,
+      "observedHeapMiB": 31.330055236816406,
+      "observedRssMiB": 152.28125,
+      "peakRssMiB": 152.28125,
       "serverMemoryMiB": null,
       "astHash": "b2062248d181a1f4b33bd649c0b74063134f33737d7d1d83aa9d75705f4a2b6b",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -848,14 +1722,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        7.177957000000077
+        7.285751999999931
       ],
       "setupMs": [
-        21.79720700000007
+        21.762956999999943
       ],
-      "observedHeapMiB": 33.398582458496094,
-      "observedRssMiB": 146.921875,
-      "peakRssMiB": 146.921875,
+      "observedHeapMiB": 33.39983367919922,
+      "observedRssMiB": 145.78125,
+      "peakRssMiB": 145.78125,
       "serverMemoryMiB": null,
       "astHash": "6fdf6316f366be3571f2b94469a1bb01519641f7ab05917e4aae3d1039d64fbc",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -870,14 +1744,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        4.046996000000007
+        4.3444589999999295
       ],
       "setupMs": [
-        9.680580000000091
+        9.985119999999938
       ],
-      "observedHeapMiB": 41.068084716796875,
-      "observedRssMiB": 145.84375,
-      "peakRssMiB": 145.84375,
+      "observedHeapMiB": 41.082908630371094,
+      "observedRssMiB": 145.78125,
+      "peakRssMiB": 145.796875,
       "serverMemoryMiB": null,
       "astHash": "b2062248d181a1f4b33bd649c0b74063134f33737d7d1d83aa9d75705f4a2b6b",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -910,14 +1784,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.1161189999999976
+        1.1218350000000044
       ],
       "setupMs": [
-        12.089494999999943
+        11.489084999999932
       ],
-      "observedHeapMiB": 23.28564453125,
-      "observedRssMiB": 150.65625,
-      "peakRssMiB": 152.5625,
+      "observedHeapMiB": 23.309661865234375,
+      "observedRssMiB": 149.71875,
+      "peakRssMiB": 150.96875,
       "serverMemoryMiB": null,
       "astHash": "909338f6407e0afed9a1bc6b52760e80250a24a9dbc09198d965f4ed26904a28",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -932,14 +1806,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        0.9555800000000545
+        0.889209999999963
       ],
       "setupMs": [
-        9.780919000000125
+        9.901792000000086
       ],
-      "observedHeapMiB": 20.370582580566406,
+      "observedHeapMiB": 20.35985565185547,
       "observedRssMiB": 148.109375,
-      "peakRssMiB": 150.046875,
+      "peakRssMiB": 150.265625,
       "serverMemoryMiB": null,
       "astHash": "564d2656303791a6a5ce359a5e111c4631d2c7c3b83357da25bd6e85ca242f02",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -954,14 +1828,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        11.526370999999841
+        11.425871
       ],
       "setupMs": [
-        12.579999999999984
+        12.570246999999824
       ],
-      "observedHeapMiB": 39.94189453125,
-      "observedRssMiB": 195.453125,
-      "peakRssMiB": 195.453125,
+      "observedHeapMiB": 39.89128112792969,
+      "observedRssMiB": 194.828125,
+      "peakRssMiB": 194.828125,
       "serverMemoryMiB": null,
       "astHash": "909338f6407e0afed9a1bc6b52760e80250a24a9dbc09198d965f4ed26904a28",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -976,14 +1850,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        8.703294999999855
+        10.528708999999878
       ],
       "setupMs": [
-        12.980125999999984
+        10.50641699999997
       ],
-      "observedHeapMiB": 35.297828674316406,
-      "observedRssMiB": 196.03125,
-      "peakRssMiB": 196.03125,
+      "observedHeapMiB": 35.36009216308594,
+      "observedRssMiB": 193.125,
+      "peakRssMiB": 193.125,
       "serverMemoryMiB": null,
       "astHash": "564d2656303791a6a5ce359a5e111c4631d2c7c3b83357da25bd6e85ca242f02",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -998,14 +1872,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        17.52650100000011
+        17.37587600000009
       ],
       "setupMs": [
-        17.16191299999994
+        17.004875000000084
       ],
-      "observedHeapMiB": 60.97358703613281,
-      "observedRssMiB": 225.421875,
-      "peakRssMiB": 225.421875,
+      "observedHeapMiB": 60.86974334716797,
+      "observedRssMiB": 225.609375,
+      "peakRssMiB": 225.609375,
       "serverMemoryMiB": null,
       "astHash": "909338f6407e0afed9a1bc6b52760e80250a24a9dbc09198d965f4ed26904a28",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -1020,14 +1894,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        15.095793999999984
+        13.87575000000001
       ],
       "setupMs": [
-        15.285000999999994
+        16.042294999999996
       ],
-      "observedHeapMiB": 51.32593536376953,
-      "observedRssMiB": 224.984375,
-      "peakRssMiB": 224.984375,
+      "observedHeapMiB": 51.35084533691406,
+      "observedRssMiB": 224.921875,
+      "peakRssMiB": 224.921875,
       "serverMemoryMiB": null,
       "astHash": "564d2656303791a6a5ce359a5e111c4631d2c7c3b83357da25bd6e85ca242f02",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -1042,14 +1916,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        17.805208000000135
+        18.83875000000009
       ],
       "setupMs": [
-        24.114005000000077
+        23.71670500000033
       ],
-      "observedHeapMiB": 45.26996612548828,
-      "observedRssMiB": 156.421875,
-      "peakRssMiB": 156.421875,
+      "observedHeapMiB": 45.50788879394531,
+      "observedRssMiB": 153.375,
+      "peakRssMiB": 153.375,
       "serverMemoryMiB": null,
       "astHash": "287673a4fcc1b4da1d8be148028941ac430b9596f38c2d8a8c18a5bc4cff924a",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -1064,14 +1938,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        18.085332000000022
+        19.438417999999928
       ],
       "setupMs": [
-        18.532035000000064
+        19.750912
       ],
-      "observedHeapMiB": 37.201438903808594,
-      "observedRssMiB": 161.515625,
-      "peakRssMiB": 161.515625,
+      "observedHeapMiB": 37.14471435546875,
+      "observedRssMiB": 164.5625,
+      "peakRssMiB": 164.5625,
       "serverMemoryMiB": null,
       "astHash": "13d0c95af96a2dfcca339ea6de4c0b4086eaf59f2c889f8004e766ab2ded939f",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -1086,14 +1960,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        5.497002000000009
+        6.199121000000048
       ],
       "setupMs": [
-        21.173451000000057
+        22.22395199999994
       ],
-      "observedHeapMiB": 47.0855712890625,
-      "observedRssMiB": 145.59375,
-      "peakRssMiB": 145.59375,
+      "observedHeapMiB": 47.090553283691406,
+      "observedRssMiB": 144.984375,
+      "peakRssMiB": 144.984375,
       "serverMemoryMiB": null,
       "astHash": "287673a4fcc1b4da1d8be148028941ac430b9596f38c2d8a8c18a5bc4cff924a",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -1108,14 +1982,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        5.1279140000000325
+        5.278620999999902
       ],
       "setupMs": [
-        9.955793000000142
+        9.914045000000073
       ],
-      "observedHeapMiB": 40.345375061035156,
-      "observedRssMiB": 141.78125,
-      "peakRssMiB": 141.796875,
+      "observedHeapMiB": 40.3538818359375,
+      "observedRssMiB": 141.078125,
+      "peakRssMiB": 141.09375,
       "serverMemoryMiB": null,
       "astHash": "13d0c95af96a2dfcca339ea6de4c0b4086eaf59f2c889f8004e766ab2ded939f",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",
@@ -1130,14 +2004,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.750045000000057
+        1.6696670000001177
       ],
       "setupMs": [
-        21.442790000000088
+        20.714833000000027
       ],
-      "observedHeapMiB": 21.48889923095703,
-      "observedRssMiB": 122.578125,
-      "peakRssMiB": 129.765625,
+      "observedHeapMiB": 21.469078063964844,
+      "observedRssMiB": 122.734375,
+      "peakRssMiB": 130,
       "serverMemoryMiB": null,
       "astHash": "287673a4fcc1b4da1d8be148028941ac430b9596f38c2d8a8c18a5bc4cff924a",
       "outputHash": "b05d508237f6b9f493e370e693753acb082fd9d4a457d60153afe85ef99b8d00",
@@ -1152,14 +2026,14 @@
       "status": "passed",
       "normalizedFiles": 0,
       "samplesMs": [
-        1.4501730000000492
+        1.4335840000001099
       ],
       "setupMs": [
-        9.538505999999927
+        9.456042000000124
       ],
-      "observedHeapMiB": 33.331451416015625,
-      "observedRssMiB": 130.296875,
-      "peakRssMiB": 138.109375,
+      "observedHeapMiB": 33.344818115234375,
+      "observedRssMiB": 130.1875,
+      "peakRssMiB": 137.015625,
       "serverMemoryMiB": null,
       "astHash": "13d0c95af96a2dfcca339ea6de4c0b4086eaf59f2c889f8004e766ab2ded939f",
       "outputHash": "724b41f84c8464d5afe7d0caf10b3a8a12c17d0419a0347a3f0d99b1f0357cf8",

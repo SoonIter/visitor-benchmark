@@ -4,7 +4,7 @@ import { parse } from 'acorn';
 import { full } from 'acorn-walk';
 import { walk } from 'yuku-ast';
 import { CHILD_KEYS } from '../../node_modules/yuku-ast/dist/generated.js';
-import { collectionBase } from '../../src/i18n/acorn-base.mjs';
+import { collectionBase } from './acorn-base-historical.mjs';
 import { loadCorpus, digest } from '../../src/i18n/corpus.mjs';
 import { variants,loadVariant } from './cases.mjs';
 const corpus=loadCorpus(), keys=new Set(corpus.keys);
