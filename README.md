@@ -67,13 +67,15 @@ The JavaScript compatibility track transforms the same modules before timing so 
 
 **Use each tool's native editing API when available.** Replacement, deletion, path maintenance and immutable reconstruction are part of its cost. Node-only APIs use manual edits; direct-ast is the explicit manual baseline. [Full API audit](docs/api-audit.md).
 
-- **ESTree:** identical Acorn AST clones for editing; Oxc TS-ESTree for original i18n and Acorn ESTree for its JavaScript track. Fresh AST preparation is outside every timed transform/collection.
+- **ESTree:** fresh Acorn parser output for editing; Oxc TS-ESTree for original i18n and Acorn ESTree for its JavaScript track. Every iteration reparses the source outside timing; no AST cloning or reuse.
 - **Native ASTs:** Babel, SWC and TypeScript parse the same source into their own representations, explicitly labeled **not ESTree**. These rows measure both tree layout and API costs.
 - **Correctness:** editing results are printed/reparsed and compared against independent expected source or a task oracle; coverage additionally checks exact branch metadata; i18n results are exact ordered arrays checked against Babel. Unsupported implementations are reported, not assigned a zero time.
 - **Timing:** isolated processes, sequential execution with rotated/reversed order. Edits: 3 processes × 8 warmups + 20 samples; i18n: 3 × 5 + 12. Preparation, external printing and checks are excluded; internal ts-morph text updates and tsquery.map printing/reparsing are included.
 - **Evidence:** [styled raw data](results/styled-components/latest.json), [debugger raw data](results/remove-debugger/latest.json), [coverage raw data](results/rstest-coverage/latest.json), [i18n raw data](results/i18n/latest.json) retain samples, source hashes, versions and whole-worker memory. Results are corpus-specific, not a universal performance ceiling.
 
 Apple M5 Max · darwin/arm64 · Node v24.20.0. Measured: styled 2026-10-12, debugger 2026-10-12, coverage 2026-10-12, i18n 2026-10-12. SWC Next uses the committed PR snapshot recorded in each result; no before/after variants.
+
+Fresh parser output is used for every iteration, without AST cloning. Earlier results through [8143bc9](https://github.com/SoonIter/visitor-benchmark/tree/8143bc994901c2321b31ad271c83bbcb6e5cf4ca) used cloned ASTs in editing and original-source i18n; do not interpret changes from those results as implementation speedups.
 
 ## Run
 

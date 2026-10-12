@@ -23,19 +23,19 @@ Case names identify the API and Babel major version: the **babel-traverse** pref
 
 ## Results
 
-**direct-ast leads the shared-ESTree original-source group at 0.922 ms / 64 files.** AST families are ranked separately: a native-AST result measures its tree layout as well as its traversal API.
+**direct-ast leads the shared-ESTree original-source group at 0.854 ms / 64 files.** AST families are ranked separately: a native-AST result measures its tree layout as well as its traversal API.
 
-For the existing Babel loader, the smallest measured changes are **`noScope: true` (3.3×)** or **`@babel/types.traverseFast` (19.6×)**, relative to its installed Babel 7.27.3 traverse. These are collection-stage speedups, not loader/build speedups.
+For the existing Babel loader, the smallest measured changes are **`noScope: true` (3.0×)** or **`@babel/types.traverseFast` (15.7×)**, relative to its installed Babel 7.27.3 traverse. These are collection-stage speedups, not loader/build speedups.
 
 | Original TS/TSX | AST | Collection, ms |
 | :-- | :-- | --: |
-| direct-ast | ESTree | 0.922 |
-| oxc-walker | ESTree | 1.106 |
-| swc-next | ESTree | 1.854 |
-| yuku-ast | ESTree | 2.014 |
-| babel-traverse-v7 | Babel 7 AST (not ESTree) | 22.275 |
-| babel-traverse-no-scope-v7 | Babel 7 AST (not ESTree) | 6.770 |
-| babel-types-traverse-fast-v7 | Babel 7 AST (not ESTree) | 1.135 |
+| direct-ast | ESTree | 0.854 |
+| oxc-walker | ESTree | 1.035 |
+| swc-next | ESTree | 1.762 |
+| yuku-ast | ESTree | 1.907 |
+| babel-traverse-v7 | Babel 7 AST (not ESTree) | 18.892 |
+| babel-traverse-no-scope-v7 | Babel 7 AST (not ESTree) | 6.343 |
+| babel-types-traverse-fast-v7 | Babel 7 AST (not ESTree) | 1.205 |
 
 Each chart groups one AST family. Left: original TS/TSX; right: the same modules pre-transpiled to ES2022 JavaScript. Implementation rows align across panels. Unsupported combinations show a label, never a zero-valued bar; implementations unsupported in both tracks are listed in the compatibility report.
 
@@ -51,13 +51,15 @@ The JavaScript compatibility track expands coverage to JS-only walkers. Transpil
 
 - **231.2 KiB** of original source: 40 TS + 24 TSX files, deterministically sampled from four application layers, without selecting by match count. 11 files contain matches.
 - **18,868 dictionary keys**, from the actual domestic configuration (`zh` + `zh-Hant`). Original source: **59 matches**; JavaScript: **58 matches**. No synthetic i18n strings are injected.
-- ESTree participants receive structurally identical inputs: Oxc TS-ESTree for original source, Acorn ESTree for JavaScript. Babel, SWC and TypeScript participants prepare their own ASTs, explicitly labeled **not ESTree**.
+- ESTree participants receive fresh, structurally identical parser output on every iteration, without cloning: Oxc TS-ESTree for original source, Acorn ESTree for JavaScript. Babel, SWC and TypeScript participants prepare their own ASTs, explicitly labeled **not ESTree**.
 - **3 isolated processes × 5 warmups + 12 measured iterations**, per variant and track; rotated process order. Each iteration collects all 64 files. Bars are medians of process medians, with min–max whiskers.
 - Fresh parsing/AST preparation occurs **outside each timed collection** to avoid warm NodePath/scope caches. Hook construction, scope analysis when enabled, traversal, `Set.has` and result allocation are timed. GC during collection is included.
 - Ordered arrays are checked against the Babel oracle per file, every iteration. The oracle was also checked against the business repository's installed Babel 7.27.3. Unsupported or mismatching implementations are excluded, not assigned zero time.
 - Corpus parity is not universal Babel compatibility. In particular, ESTree `Literal` includes directive strings, while Babel `StringLiteral` excludes directives. The actual dictionary/corpus passes; adapting arbitrary future inputs needs a separate semantic audit.
 
 SWC Next is pinned to the latest committed PR branch snapshot **[439dba8](https://github.com/swc-project/swc-next/commit/439dba831c8f3dd5336013116043b225b27951af)**. No before/after variants. `direct-ast` recursively inspects AST properties itself, with no package visitor or visitor-key table; it does not assume top-level declarations. The removed `handwritten` case is not restored.
+
+Fresh parser output is used for every iteration, without AST cloning. Earlier results through [8143bc9](https://github.com/SoonIter/visitor-benchmark/tree/8143bc994901c2321b31ad271c83bbcb6e5cf4ca) used cloned ASTs in editing and original-source i18n; do not interpret changes from those results as implementation speedups.
 
 ## Reproduce
 
