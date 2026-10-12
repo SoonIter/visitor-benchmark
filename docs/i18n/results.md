@@ -24,15 +24,15 @@ Benchmark implementation: `35133e716a9ee077c4ade32714c9bbe4ee3e5cce`. Time is mi
 | Variant | Collection ms | Process-median range | Preparation ms | Peak RSS MiB | Observed heap MiB |
 | :-- | --: | :-- | --: | --: | --: |
 | typescript | 0.944 | 0.938–1.048 | 7.63 | 167.9 | 33.2 |
-| babel-fast | 1.078 | 1.061–1.505 | 7.01 | 111.6 | 23.8 |
-| babel-business-fast | 1.162 | 1.079–1.178 | 8.24 | 158.3 | 43.8 |
-| babel-types | 1.217 | 1.198–1.259 | 6.88 | 110.7 | 30.0 |
-| babel-no-scope | 4.875 | 4.776–5.189 | 7.47 | 340.2 | 160.8 |
-| babel-business-no-scope | 6.629 | 6.556–7.962 | 7.80 | 383.1 | 190.8 |
+| babel-types-traverse-fast-v8 | 1.078 | 1.061–1.505 | 7.01 | 111.6 | 23.8 |
+| babel-types-traverse-fast-v7 | 1.162 | 1.079–1.178 | 8.24 | 158.3 | 43.8 |
+| babel-types-traverse-v8 | 1.217 | 1.198–1.259 | 6.88 | 110.7 | 30.0 |
+| babel-traverse-no-scope-v8 | 4.875 | 4.776–5.189 | 7.47 | 340.2 | 160.8 |
+| babel-traverse-no-scope-v7 | 6.629 | 6.556–7.962 | 7.80 | 383.1 | 190.8 |
 | tsquery | 8.872 | 8.383–10.355 | 7.77 | 397.8 | 160.6 |
-| babel | 10.641 | 10.530–12.259 | 8.59 | 339.2 | 163.9 |
+| babel-traverse-v8 | 10.641 | 10.530–12.259 | 8.59 | 339.2 | 163.9 |
 | ts-morph | 14.595 | 14.199–14.724 | 12.35 | 408.2 | 189.0 |
-| babel-business | 21.360 | 21.038–21.767 | 6.64 | 374.7 | 170.1 |
+| babel-traverse-v7 | 21.360 | 21.038–21.767 | 6.64 | 374.7 | 170.1 |
 
 ## Pre-transpiled JavaScript
 
@@ -63,15 +63,15 @@ Benchmark implementation: `35133e716a9ee077c4ade32714c9bbe4ee3e5cce`. Time is mi
 | Variant | Collection ms | Process-median range | Preparation ms | Peak RSS MiB | Observed heap MiB |
 | :-- | --: | :-- | --: | --: | --: |
 | typescript | 0.741 | 0.732–0.754 | 5.80 | 162.0 | 28.8 |
-| babel-business-fast | 0.816 | 0.792–0.894 | 4.65 | 164.0 | 47.5 |
-| babel-types | 1.002 | 0.900–1.114 | 5.32 | 108.6 | 20.3 |
-| babel-fast | 1.009 | 0.878–1.350 | 5.38 | 107.5 | 21.2 |
-| babel-no-scope | 3.699 | 3.536–3.753 | 5.01 | 350.5 | 172.0 |
-| babel-business-no-scope | 4.903 | 4.511–5.479 | 4.85 | 334.1 | 162.1 |
+| babel-types-traverse-fast-v7 | 0.816 | 0.792–0.894 | 4.65 | 164.0 | 47.5 |
+| babel-types-traverse-v8 | 1.002 | 0.900–1.114 | 5.32 | 108.6 | 20.3 |
+| babel-types-traverse-fast-v8 | 1.009 | 0.878–1.350 | 5.38 | 107.5 | 21.2 |
+| babel-traverse-no-scope-v8 | 3.699 | 3.536–3.753 | 5.01 | 350.5 | 172.0 |
+| babel-traverse-no-scope-v7 | 4.903 | 4.511–5.479 | 4.85 | 334.1 | 162.1 |
 | tsquery | 7.645 | 7.461–9.668 | 6.09 | 366.1 | 157.3 |
-| babel | 9.137 | 9.073–10.409 | 4.92 | 347.7 | 167.9 |
+| babel-traverse-v8 | 9.137 | 9.073–10.409 | 4.92 | 347.7 | 167.9 |
 | ts-morph | 11.685 | 11.282–11.775 | 9.99 | 389.0 | 160.2 |
-| babel-business | 18.175 | 16.738–19.194 | 5.99 | 380.7 | 187.5 |
+| babel-traverse-v7 | 18.175 | 16.738–19.194 | 5.99 | 380.7 | 187.5 |
 
 ## Compatibility failures
 
@@ -102,6 +102,6 @@ These are failures of the installed API on this shared AST and collection contra
 - ast-types and jscodeshift fill default AST fields during traversal and reject the corpus's PropertyDefinition nodes. Their callbacks are read-only, but their traversal machinery is not structurally read-only.
 - Original-source estree-toolkit/esquery/typescript-eslint results fail on this Oxc AST shape. These are recorded instead of silently sharing a custom universal walker.
 - Set lookup and allocation are part of the business task, so numbers are not pure per-node dispatch throughput. No source parsing, printing, module loading, dictionary loading, Rspack buildInfo work, or I/O is inside the timed region.
-- Original Babel uses 7.27.3 from the business workspace; the installed standalone Babel variants use the versions in package.json. `babel-business-fast` resolves @babel/types from that original traverse dependency tree (7.28.6).
+- Original Babel uses 7.27.3 from the business workspace; the installed standalone Babel variants use the versions in package.json. `babel-types-traverse-fast-v7` resolves @babel/types from that original traverse dependency tree (7.28.6).
 - All memory values cover the complete worker process, including imports, corpus, parsers, AST preparation and untimed correctness checks. Client RSS equals total RSS; there is no server process (N/A). Peak RSS is the OS high-water mark; heap/RSS samples are observed at iteration boundaries, not exact allocation peaks. See summary.json for all RSS fields.
 - This is a cold-AST, warm-code collection benchmark. It neither measures parser speed nor proves the same ranking on a cached AST, a larger corpus, a different dictionary, or a full build.

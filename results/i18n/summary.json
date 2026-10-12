@@ -42,7 +42,7 @@
       "normalizedFiles": 0
     },
     {
-      "id": "babel-business-fast",
+      "id": "babel-types-traverse-fast-v7",
       "kind": "javascript",
       "ast": "Babel 7 AST (not ESTree)",
       "medianMs": 0.815644999999904,
@@ -94,7 +94,7 @@
       "normalizedFiles": 0
     },
     {
-      "id": "babel-types",
+      "id": "babel-types-traverse-v8",
       "kind": "javascript",
       "ast": "Babel AST (not ESTree)",
       "medianMs": 1.0016645000000466,
@@ -120,7 +120,7 @@
       "normalizedFiles": 0
     },
     {
-      "id": "babel-fast",
+      "id": "babel-types-traverse-fast-v8",
       "kind": "javascript",
       "ast": "Babel AST (not ESTree)",
       "medianMs": 1.0088939999999553,
@@ -159,7 +159,7 @@
       "normalizedFiles": 0
     },
     {
-      "id": "babel-fast",
+      "id": "babel-types-traverse-fast-v8",
       "kind": "original",
       "ast": "Babel AST (not ESTree)",
       "medianMs": 1.0775809999999666,
@@ -198,7 +198,7 @@
       "normalizedFiles": 0
     },
     {
-      "id": "babel-business-fast",
+      "id": "babel-types-traverse-fast-v7",
       "kind": "original",
       "ast": "Babel 7 AST (not ESTree)",
       "medianMs": 1.161833999999942,
@@ -224,7 +224,7 @@
       "normalizedFiles": 0
     },
     {
-      "id": "babel-types",
+      "id": "babel-types-traverse-v8",
       "kind": "original",
       "ast": "Babel AST (not ESTree)",
       "medianMs": 1.2166025000000502,
@@ -393,7 +393,7 @@
       "normalizedFiles": 0
     },
     {
-      "id": "babel-no-scope",
+      "id": "babel-traverse-no-scope-v8",
       "kind": "javascript",
       "ast": "Babel AST (not ESTree)",
       "medianMs": 3.6987704999999806,
@@ -406,7 +406,7 @@
       "normalizedFiles": 0
     },
     {
-      "id": "babel-no-scope",
+      "id": "babel-traverse-no-scope-v8",
       "kind": "original",
       "ast": "Babel AST (not ESTree)",
       "medianMs": 4.874957499999951,
@@ -419,7 +419,7 @@
       "normalizedFiles": 0
     },
     {
-      "id": "babel-business-no-scope",
+      "id": "babel-traverse-no-scope-v7",
       "kind": "javascript",
       "ast": "Babel 7 AST (not ESTree)",
       "medianMs": 4.903417000000019,
@@ -445,7 +445,7 @@
       "normalizedFiles": 0
     },
     {
-      "id": "babel-business-no-scope",
+      "id": "babel-traverse-no-scope-v7",
       "kind": "original",
       "ast": "Babel 7 AST (not ESTree)",
       "medianMs": 6.629187999999942,
@@ -497,7 +497,7 @@
       "normalizedFiles": 0
     },
     {
-      "id": "babel",
+      "id": "babel-traverse-v8",
       "kind": "javascript",
       "ast": "Babel AST (not ESTree)",
       "medianMs": 9.136855000000068,
@@ -523,7 +523,7 @@
       "normalizedFiles": 0
     },
     {
-      "id": "babel",
+      "id": "babel-traverse-v8",
       "kind": "original",
       "ast": "Babel AST (not ESTree)",
       "medianMs": 10.64054349999978,
@@ -562,7 +562,7 @@
       "normalizedFiles": 0
     },
     {
-      "id": "babel-business",
+      "id": "babel-traverse-v7",
       "kind": "javascript",
       "ast": "Babel 7 AST (not ESTree)",
       "medianMs": 18.175269499999843,
@@ -575,7 +575,7 @@
       "normalizedFiles": 0
     },
     {
-      "id": "babel-business",
+      "id": "babel-traverse-v7",
       "kind": "original",
       "ast": "Babel 7 AST (not ESTree)",
       "medianMs": 21.359914999999546,

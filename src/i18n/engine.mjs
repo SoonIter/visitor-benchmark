@@ -4,19 +4,19 @@ import { babelOptions } from './corpus.mjs';
 export async function engine(id, kind) {
   const original = kind === 'original';
   let prepare, snapshot = ast => JSON.stringify(ast);
-  if (id.startsWith('babel-business')) {
+  if (id.startsWith('babel-') && id.endsWith('-v7')) {
     const root = process.env.FLOW_WEB_ROOT || '/Users/bytedance/Documents/codes/flow-web-monorepo';
     const req = createRequire(resolve(root, 'packages/Infra/build/src/plugins/edenx/inline-i18n/rspack-plugin/loader/index.ts'));
     const { parse } = req('@babel/parser'), traverse = req('@babel/traverse').default;
     const { traverseFast } = createRequire(req.resolve('@babel/traverse'))('@babel/types');
-    const collect = id === 'babel-business-fast' ? (ast, keys) => {
+    const collect = id === 'babel-types-traverse-fast-v7' ? (ast, keys) => {
       const output = [];
       traverseFast(ast, node => { if (node.type === 'StringLiteral' && keys.has(node.value)) output.push(node.value); });
       return output;
     } : (ast, keys) => {
       const output = [];
       const hooks = { StringLiteral(path) { if (keys.has(path.node.value)) output.push(path.node.value); } };
-      if (id === 'babel-business-no-scope') hooks.noScope = true;
+      if (id === 'babel-traverse-no-scope-v7') hooks.noScope = true;
       traverse(ast, hooks);
       return output;
     };

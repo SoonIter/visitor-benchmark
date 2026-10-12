@@ -17,6 +17,8 @@ traverse(ast, {
 
 All string literal positions count, including nested code, imports and object keys. Preserve order and duplicates. This requires neither scope analysis nor AST editing.
 
+Case names identify the API and Babel major version: the **babel-traverse** prefix means **@babel/traverse**; **babel-types** means **@babel/types**. The **v7** cases resolve dependencies from the business workspace; **v8** uses this benchmark's pinned dependencies.
+
 ## Results
 
 **direct-ast leads the shared-ESTree original-source group at 0.994 ms / 64 files.** AST families are ranked separately: a native-AST result measures its tree layout as well as its traversal API.
@@ -29,9 +31,9 @@ For the existing Babel loader, the smallest measured changes are **`noScope: tru
 | oxc-walker | ESTree | 1.099 |
 | swc-next | ESTree | 2.191 |
 | yuku-ast | ESTree | 2.120 |
-| babel-business | Babel 7 AST (not ESTree) | 21.360 |
-| babel-business-no-scope | Babel 7 AST (not ESTree) | 6.629 |
-| babel-business-fast | Babel 7 AST (not ESTree) | 1.162 |
+| babel-traverse-v7 | Babel 7 AST (not ESTree) | 21.360 |
+| babel-traverse-no-scope-v7 | Babel 7 AST (not ESTree) | 6.629 |
+| babel-types-traverse-fast-v7 | Babel 7 AST (not ESTree) | 1.162 |
 
 ![Original business source](charts/i18n/original.svg)
 

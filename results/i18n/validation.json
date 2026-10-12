@@ -711,7 +711,7 @@
       "ast": "ESTree"
     },
     {
-      "id": "babel-types",
+      "id": "babel-types-traverse-v8",
       "kind": "original",
       "status": "passed",
       "normalizedFiles": 0,
@@ -733,7 +733,7 @@
       "ast": "Babel AST (not ESTree)"
     },
     {
-      "id": "babel-types",
+      "id": "babel-types-traverse-v8",
       "kind": "javascript",
       "status": "passed",
       "normalizedFiles": 0,
@@ -755,7 +755,7 @@
       "ast": "Babel AST (not ESTree)"
     },
     {
-      "id": "babel-fast",
+      "id": "babel-types-traverse-fast-v8",
       "kind": "original",
       "status": "passed",
       "normalizedFiles": 0,
@@ -777,7 +777,7 @@
       "ast": "Babel AST (not ESTree)"
     },
     {
-      "id": "babel-fast",
+      "id": "babel-types-traverse-fast-v8",
       "kind": "javascript",
       "status": "passed",
       "normalizedFiles": 0,
@@ -799,7 +799,7 @@
       "ast": "Babel AST (not ESTree)"
     },
     {
-      "id": "babel",
+      "id": "babel-traverse-v8",
       "kind": "original",
       "status": "passed",
       "normalizedFiles": 0,
@@ -821,7 +821,7 @@
       "ast": "Babel AST (not ESTree)"
     },
     {
-      "id": "babel",
+      "id": "babel-traverse-v8",
       "kind": "javascript",
       "status": "passed",
       "normalizedFiles": 0,
@@ -843,7 +843,7 @@
       "ast": "Babel AST (not ESTree)"
     },
     {
-      "id": "babel-no-scope",
+      "id": "babel-traverse-no-scope-v8",
       "kind": "original",
       "status": "passed",
       "normalizedFiles": 0,
@@ -865,7 +865,7 @@
       "ast": "Babel AST (not ESTree)"
     },
     {
-      "id": "babel-no-scope",
+      "id": "babel-traverse-no-scope-v8",
       "kind": "javascript",
       "status": "passed",
       "normalizedFiles": 0,
@@ -1037,7 +1037,7 @@
       "ast": "TypeScript AST (not ESTree)"
     },
     {
-      "id": "babel-business",
+      "id": "babel-traverse-v7",
       "kind": "original",
       "status": "passed",
       "normalizedFiles": 0,
@@ -1059,7 +1059,7 @@
       "ast": "Babel 7 AST (not ESTree)"
     },
     {
-      "id": "babel-business",
+      "id": "babel-traverse-v7",
       "kind": "javascript",
       "status": "passed",
       "normalizedFiles": 0,
@@ -1081,7 +1081,7 @@
       "ast": "Babel 7 AST (not ESTree)"
     },
     {
-      "id": "babel-business-no-scope",
+      "id": "babel-traverse-no-scope-v7",
       "kind": "original",
       "status": "passed",
       "normalizedFiles": 0,
@@ -1103,7 +1103,7 @@
       "ast": "Babel 7 AST (not ESTree)"
     },
     {
-      "id": "babel-business-no-scope",
+      "id": "babel-traverse-no-scope-v7",
       "kind": "javascript",
       "status": "passed",
       "normalizedFiles": 0,
@@ -1125,7 +1125,7 @@
       "ast": "Babel 7 AST (not ESTree)"
     },
     {
-      "id": "babel-business-fast",
+      "id": "babel-types-traverse-fast-v7",
       "kind": "original",
       "status": "passed",
       "normalizedFiles": 0,
@@ -1147,7 +1147,7 @@
       "ast": "Babel 7 AST (not ESTree)"
     },
     {
-      "id": "babel-business-fast",
+      "id": "babel-types-traverse-fast-v7",
       "kind": "javascript",
       "status": "passed",
       "normalizedFiles": 0,

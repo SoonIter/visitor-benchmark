@@ -17,7 +17,7 @@ for kind, title in [('original', 'Original business TS / TSX'), ('javascript', '
         group.sort(key=lambda r: r['medianMs'])
         labels = [r['id'] for r in group]
         values = [r['medianMs'] for r in group]
-        colors = ['#e78831' if r['id'] == 'swc-next' else '#874dc7' if r['id'] == 'babel-business' else '#27877d' if r['ast'] == 'ESTree' else '#4b78ad' for r in group]
+        colors = ['#e78831' if r['id'] == 'swc-next' else '#874dc7' if r['id'] == 'babel-traverse-v7' else '#27877d' if r['ast'] == 'ESTree' else '#4b78ad' for r in group]
         ax.set_facecolor('#fafbfd')
         ax.barh(labels, values, height=.65, color=colors, zorder=3)
         ax.errorbar(values, range(len(group)), xerr=[[r['medianMs']-r['minMs'] for r in group], [r['maxMs']-r['medianMs'] for r in group]], fmt='none', ecolor='#25364a', capsize=2, linewidth=.8, zorder=4)
@@ -35,4 +35,6 @@ for kind, title in [('original', 'Original business TS / TSX'), ('javascript', '
     fig.text(.04, .025, f"{data['cpu']}  |  Node {data['node']}  |  Median of 3 process medians; whiskers show their range", fontsize=9, color='#536376')
     fig.subplots_adjust(left=.18, right=.955, top=.80, bottom=.16)
     for ext in ['svg', 'png']: fig.savefig(root / f'charts/i18n/{kind}.{ext}', dpi=180, facecolor=fig.get_facecolor())
+    svg_path = root / f'charts/i18n/{kind}.svg'
+    svg_path.write_text('\n'.join(line.rstrip() for line in svg_path.read_text().splitlines()) + '\n')
     plt.close(fig)

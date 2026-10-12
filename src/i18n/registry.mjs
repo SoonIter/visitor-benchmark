@@ -1,5 +1,11 @@
 import { variants as editingVariants } from '../registry.mjs';
-export const variants = editingVariants.map(({id, ast, group}) => ({ id, ast, group }));
-variants.push({ id: 'babel-business', ast: 'Babel 7 AST (not ESTree)', group: 'path' });
-variants.push({ id: 'babel-business-no-scope', ast: 'Babel 7 AST (not ESTree)', group: 'path' });
-variants.push({ id: 'babel-business-fast', ast: 'Babel 7 AST (not ESTree)', group: 'recursive' });
+const babelIds = {
+  "babel": "babel-traverse-v8",
+  "babel-no-scope": "babel-traverse-no-scope-v8",
+  "babel-fast": "babel-types-traverse-fast-v8",
+  "babel-types": "babel-types-traverse-v8"
+};
+export const variants = editingVariants.map(({id, ast, group}) => ({ id: babelIds[id] || id, ast, group }));
+variants.push({ id: 'babel-traverse-v7', ast: 'Babel 7 AST (not ESTree)', group: 'path' });
+variants.push({ id: 'babel-traverse-no-scope-v7', ast: 'Babel 7 AST (not ESTree)', group: 'path' });
+variants.push({ id: 'babel-types-traverse-fast-v7', ast: 'Babel 7 AST (not ESTree)', group: 'recursive' });
