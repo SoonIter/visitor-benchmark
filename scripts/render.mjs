@@ -90,6 +90,8 @@ ${styled.environment.cpu} · ${styled.environment.platform}/${styled.environment
 
 Fresh parser output is used for every iteration, without AST cloning. Earlier results through [8143bc9](https://github.com/SoonIter/visitor-benchmark/tree/8143bc994901c2321b31ad271c83bbcb6e5cf4ca) used cloned ASTs in editing and original-source i18n; do not interpret changes from those results as implementation speedups.
 
+The sync script vendors \`@swc-next/walker\` from PR #840; [source mapping](vendor/provenance.json) records its package paths. Package extraction did not change the three runtime files. Published results retain the commit actually measured.
+
 ## Run
 
 Node 24+; Python + Matplotlib for charts. The real i18n corpus additionally needs the business checkout and its installed Babel 7 dependencies.

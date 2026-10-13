@@ -57,7 +57,7 @@ The JavaScript compatibility track expands coverage to JS-only walkers. Transpil
 - Ordered arrays are checked against the Babel oracle per file, every iteration. The oracle was also checked against the business repository's installed Babel 7.27.3. Unsupported or mismatching implementations are excluded, not assigned zero time.
 - Corpus parity is not universal Babel compatibility. In particular, ESTree `Literal` includes directive strings, while Babel `StringLiteral` excludes directives. The actual dictionary/corpus passes; adapting arbitrary future inputs needs a separate semantic audit.
 
-SWC Next is pinned to the latest committed PR branch snapshot **[439dba8](https://github.com/swc-project/swc-next/commit/439dba831c8f3dd5336013116043b225b27951af)**. No before/after variants. `direct-ast` recursively inspects AST properties itself, with no package visitor or visitor-key table; it does not assume top-level declarations. The removed `handwritten` case is not restored.
+These measurements use SWC Next snapshot **[439dba8](https://github.com/swc-project/swc-next/commit/439dba831c8f3dd5336013116043b225b27951af)**. No before/after variants. `direct-ast` recursively inspects AST properties itself, with no package visitor or visitor-key table; it does not assume top-level declarations. The removed `handwritten` case is not restored.
 
 Fresh parser output is used for every iteration, without AST cloning. Earlier results through [8143bc9](https://github.com/SoonIter/visitor-benchmark/tree/8143bc994901c2321b31ad271c83bbcb6e5cf4ca) used cloned ASTs in editing and original-source i18n; do not interpret changes from those results as implementation speedups.
 
