@@ -16,24 +16,11 @@ The production converter only consumes this tree as analysis data; it does not e
 
 ## Results
 
-[Ir/Ct numbers and paired wall time](../cpu/results.md) · [Method and reproduction](../cpu/README.md) · [Comparison with the previous wall-time ranking](../cpu/historical-ranks.md)
+![Shared ESTree](../../charts/rstest-coverage/estree.svg)
 
-Three independent CPU samples per supported combination. Lower Ir (K) and Ct (K) are better. Ct is a model cost, not hardware elapsed cycles; simulation disables optimizing JIT. Each chart has Ir on the left and Ct on the right.
+Native Babel, SWC and TypeScript trees are **not ESTree** and do not constitute a same-AST ranking.
 
-![runtime: shared ESTree](../../charts/cpu/rstest-coverage-runtime-estree.svg)
-
-![tooling: shared ESTree](../../charts/cpu/rstest-coverage-tooling-estree.svg)
-
-<details>
-<summary>Native ASTs — not an ESTree comparison</summary>
-
-![runtime: native ASTs](../../charts/cpu/rstest-coverage-runtime-native.svg)
-
-![tooling: native ASTs](../../charts/cpu/rstest-coverage-tooling-native.svg)
-
-</details>
-
-Native Babel, SWC and TypeScript rows include their own AST representation and API costs. Unsupported combinations have no bar. Compare within each input track and AST family.
+![Native ASTs](../../charts/rstest-coverage/native.svg)
 
 ## Source and corpus
 

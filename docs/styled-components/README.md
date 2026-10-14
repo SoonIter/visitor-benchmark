@@ -1,6 +1,6 @@
 # Styled-components
 
-[All scenarios](../../README.md) · [Historical wall time and API strategies](../../results/styled-components/latest.md) · [Historical wall samples](../../results/styled-components/latest.json) · [Implementations](../../src/styled-components/plugins)
+[All scenarios](../../README.md) · [Full results and API strategies](../../results/styled-components/latest.md) · [Raw measurements](../../results/styled-components/latest.json) · [Implementations](../../src/styled-components/plugins)
 
 Inject displayName and componentId into eligible styled-components declarations. This is a scoped config-injection workload, not the complete upstream plugin. All target declarations are top-level; direct-ast intentionally exploits this and skips unrelated subtrees.
 
@@ -14,43 +14,22 @@ const Card = styled.div.withConfig({
 
 ## Results
 
-[Ir/Ct numbers and paired wall time](../cpu/results.md) · [Method and reproduction](../cpu/README.md) · [Comparison with the previous wall-time ranking](../cpu/historical-ranks.md)
+Synthetic JavaScript corpus; four files in each track. Dense has more targets, sparse has more unrelated code. 27 implementations run on the same source. 3 isolated processes per implementation/track, 8 warmups and 20 measured iterations. Small overlapping ranges are not stable rankings.
 
-Three independent CPU samples per supported combination. Lower Ir (K) and Ct (K) are better. Ct is a model cost, not hardware elapsed cycles; simulation disables optimizing JIT. Each chart has Ir on the left and Ct on the right.
+![Shared ESTree](../../charts/styled-components/estree.svg)
 
-![dense: shared ESTree](../../charts/cpu/styled-components-dense-estree.svg)
+Native Babel, SWC and TypeScript ASTs are **not ESTree**. Their chart includes AST representation and API costs; it is not a same-AST walker ranking.
 
-![sparse: shared ESTree](../../charts/cpu/styled-components-sparse-estree.svg)
-
-<details>
-<summary>Native ASTs — not an ESTree comparison</summary>
-
-![dense: native ASTs](../../charts/cpu/styled-components-dense-native.svg)
-
-![sparse: native ASTs](../../charts/cpu/styled-components-sparse-native.svg)
-
-</details>
-
-Native Babel, SWC and TypeScript rows include their own AST representation and API costs. Unsupported combinations have no bar. Compare within each input track and AST family.
+![Native ASTs](../../charts/styled-components/native.svg)
 
 ## Comparison boundaries
 
 - ESTree participants receive fresh, structurally identical Acorn parser output on every iteration (no AST cloning). Native participants parse the same source into their own ASTs outside measurement.
-- Measured work includes visitor construction, traversal, queries, scope work when enabled and all edits. Parsing, external printing and validation are excluded. ts-morph internal text synchronization and tsquery.map printing/reparsing stay timed.
+- Timing includes visitor construction, traversal, queries, scope work when enabled and all edits. Parsing, external printing and validation are excluded. ts-morph internal text synchronization and tsquery.map printing/reparsing stay timed.
 - The direct-ast baseline is specialized to this corpus. Other implementations use their package traversal; not all perform identical work, such as scope analysis or wrapper bookkeeping.
 - Every measured output is printed and reparsed, then compared structurally with independently authored expected source. Counts and cross-process input/output hashes must agree.
 - babel-traverse / babel-traverse-no-scope use @babel/traverse 8; babel-types-traverse-fast uses @babel/types.traverseFast; babel-types-traverse uses @babel/types.traverse. Exact versions are in raw results.
-- SWC Next: [a4c4343](https://github.com/swc-project/swc-next/commit/a4c4343d5ed4863884521ed96209d5e56dfd56df). One pinned implementation; no before/after variants.
-
-## CPU reproduction
-
-See [CPU setup](../cpu/README.md) for Linux, pinned tools and the private corpus. To check this scenario without overwriting the full published result:
-
-```sh
-npm run bench:cpu -- --match=styled-components/ --work=.cache/cpu-styled-components --output=results/tmp/cpu-styled-components.json
-```
-
-The commands below reproduce the **historical wall-time runner**. Its results and environment are kept for comparison.
+- SWC Next: `c9a29d6` ([vendored source](../../vendor/swc-next)). One pinned implementation; no before/after variants.
 
 ## Reproduce
 
@@ -58,7 +37,7 @@ The commands below reproduce the **historical wall-time runner**. Its results an
 npm ci
 npm test
 npm run bench -- styled-components
-PYTHON=.cache/charts-venv/bin/python node scripts/render-wall.mjs
+PYTHON=.cache/charts-venv/bin/python npm run report
 ```
 
-Use `--quick` for smoke checks; these write quick.json and never overwrite published results. Charts use recorded data only. Historical wall time measured 2026-10-12 on Apple M5 Max, darwin/arm64, Node v24.20.0.
+Use `--quick` for smoke checks; these write quick.json and never overwrite published results. Charts use recorded data only. Measured 2026-10-14 on Apple M5 Max, darwin/arm64, Node v24.20.0.

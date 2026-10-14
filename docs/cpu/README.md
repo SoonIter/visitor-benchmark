@@ -1,5 +1,8 @@
 # CPU simulation methodology
 
+This is an archived simulation study using the previous walker snapshot. The main README now uses normal-JIT wall time and an updated SWC Next walker. Do not treat the current wall-time files as the original paired control for these CPU results; the study's paired samples remain in `results/cpu/latest.json`.
+
+
 This branch adapts [SWC Next #747](https://github.com/swc-project/swc-next/pull/747) to the existing visitor benchmarks. It measures the existing business adapters, not a new implementation of each walker.
 
 | Metric | Meaning | Display conversion |

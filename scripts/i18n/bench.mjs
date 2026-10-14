@@ -7,11 +7,16 @@ import { businessDependencies } from '../../src/i18n/engine.mjs';
 const quick = process.argv.includes('--quick');
 const validate = process.argv.includes('--validate');
 const repeats = validate || quick ? 1 : 3, warmups = validate ? 0 : quick ? 1 : 5, iterations = validate ? 1 : quick ? 3 : 12;
-const out = new URL(`../../results/i18n/${validate ? 'validation' : quick ? 'quick' : 'latest'}.json`, import.meta.url);
+const stem = process.argv.find(x => x.startsWith('--output='))?.slice(9) ?? (validate ? 'validation' : quick ? 'quick' : 'latest');
+const out = new URL(`../../results/i18n/${stem}.json`, import.meta.url);
+const filter = process.argv.find(x => x.startsWith('--only='))?.slice(7).split(',');
+const selected = filter ? variants.filter(v => filter.includes(v.id)) : variants;
+if (!selected.length) throw new Error('No variants selected');
 const report = { astPreparation: "fresh-parse-v1", sourceManifest: sourceManifest(), businessDependencies: businessDependencies(), benchmarkCommit: execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(), corpus: JSON.parse(readFileSync(new URL('../../docs/i18n/corpus.json', import.meta.url))), timestamp: new Date().toISOString(), node: process.version, platform: `${os.platform()} ${os.arch()}`, cpu: os.cpus()[0].model, repeats, warmups, iterations, dependencies: JSON.parse(readFileSync(new URL('../../package.json', import.meta.url))).dependencies, swcNext: JSON.parse(readFileSync(new URL('../../vendor/provenance.json', import.meta.url))), runs: [] };
 const excluded = new Set();
 for (let repeat = 0; repeat < repeats; repeat++) {
-  let order = variants.slice(repeat * 7).concat(variants.slice(0, repeat * 7));
+  const offset = (repeat * 7) % selected.length;
+  let order = selected.slice(offset).concat(selected.slice(0, offset));
   if (repeat % 2) order.reverse();
   for (const variant of order) for (const kind of repeat % 2 ? ['javascript', 'original'] : ['original', 'javascript']) {
     if (excluded.has(`${variant.id}:${kind}`)) continue;

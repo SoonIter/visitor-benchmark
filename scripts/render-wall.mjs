@@ -15,6 +15,8 @@ const overview = `# JavaScript AST traversal benchmarks
 
 **Four concrete tasks. Same AST within each ESTree track. Validated output on every measured iteration.**
 
+Normal-JIT wall time is the primary metric. [SWC Next optimization and ranking verification](docs/walker-walltime.md) · [Archived Ir/Ct study](docs/cpu/README.md).
+
 | Scenario | Work | Corpus | Results |
 | :-- | :-- | :-- | :-- |
 | Styled-components | Inject displayName / componentId | Generated JS; dense + sparse | [Details](docs/styled-components/README.md) |
@@ -146,5 +148,5 @@ To add an editing scenario, implement \`workload.mjs\` (source + independently e
 
 Presentation inspired by [Native ECMAScript Parser Benchmark](https://github.com/yuku-toolchain/ecmascript-parser-benchmark-native).
 `;
-writeFileSync(new URL('docs/cpu/wall-time-baseline.md', root), overview.replace(/\]\((?!https?:|#)([^)]+)\)/g, '](../../$1)'));
-console.log('Updated the wall-time baseline report.');
+writeFileSync(new URL('README.md', root), overview);
+console.log('Updated the wall-time README.');

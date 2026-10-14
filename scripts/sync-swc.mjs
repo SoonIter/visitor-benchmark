@@ -4,13 +4,18 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 const repo='swc-project/swc-next';
 const gh=args=>execFileSync('gh',args,{encoding:'utf8'});
-const head=JSON.parse(gh(['pr','view','840','--repo',repo,'--json','headRefOid,headRefName']));
+const localRepo = process.argv.find(x => x.startsWith('--local-repo='))?.slice(13);
+const ref = process.argv.find(x => x.startsWith('--ref='))?.slice(6) ?? 'HEAD';
+const git = args => execFileSync('git', ['-C', localRepo, ...args], { encoding: 'utf8' });
+const head = localRepo
+  ? { headRefOid: git(['rev-parse', `${ref}^{commit}`]).trim(), headRefName: git(['rev-parse', '--abbrev-ref', ref]).trim() }
+  : JSON.parse(gh(['pr','view','840','--repo',repo,'--json','headRefOid,headRefName']));
 const base=new URL('../vendor/swc-next/',import.meta.url);
 mkdirSync(base,{recursive:true});
 const files=new Map();
 const sourceFiles=new Map();
 const sourceDirectory='packages/walker';
-function get(path){const value=JSON.parse(gh(['api',`repos/${repo}/contents/${path}?ref=${head.headRefOid}`]));return Buffer.from(value.content,'base64');}
+function get(path){if (localRepo) return execFileSync('git', ['-C', localRepo, 'show', `${head.headRefOid}:${path}`]);const value=JSON.parse(gh(['api',`repos/${repo}/contents/${path}?ref=${head.headRefOid}`]));return Buffer.from(value.content,'base64');}
 function visit(name){
  if(files.has(name))return;
  if(!/^[\w.-]+\.js$/.test(name))throw new Error(`Unexpected relative import: ${name}`);
