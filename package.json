@@ -20,7 +20,9 @@
     "report": "node scripts/render.mjs",
     "i18n:report": "node scripts/i18n/render.mjs",
     "sync:swc": "node scripts/sync-swc.mjs",
-    "fixtures": "node scripts/styled-components/fixtures.mjs"
+    "fixtures": "node scripts/styled-components/fixtures.mjs",
+    "bench:cpu": "node scripts/cpu/bench.mjs",
+    "report:cpu": "node scripts/cpu/render.mjs"
   },
   "dependencies": {
     "@babel/generator": "8.0.6",
@@ -47,5 +49,9 @@
     "typescript": "6.0.3",
     "yuku-ast": "0.18.0",
     "zimmerframe": "1.1.5"
+  },
+  "devDependencies": {
+    "@codspeed/tinybench-plugin": "5.7.1",
+    "tinybench": "6.1.2"
   }
 }
