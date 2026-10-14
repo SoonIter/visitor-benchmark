@@ -1,0 +1,60 @@
+{
+  "baseCommit": "4a30364ddf3e3e95cb71564a2948e3e12f9c7c11",
+  "reproduce": "Apply a source patch to the base commit and run cargo run -p ast_tools before measuring. Patches omit generated output. All experiments are rejected and excluded from the main leaderboard.",
+  "experiments": [
+    {
+      "name": "inline",
+      "sourcePatch": "inline.patch",
+      "results": "inline.json",
+      "note": "Existing walker tests passed; rejected for regressions."
+    },
+    {
+      "name": "plain",
+      "sourcePatch": "plain.patch",
+      "results": "plain.json",
+      "note": "Existing walker tests passed; exploratory single-process screen."
+    },
+    {
+      "name": "dispatch",
+      "sourcePatch": "dispatch.patch",
+      "results": "dispatch.json",
+      "note": "Existing walker tests passed; exploratory single-process screen."
+    },
+    {
+      "name": "depth",
+      "sourcePatch": "depth.patch",
+      "results": "depth.json",
+      "note": "Existing walker tests passed; exploratory single-process screen."
+    },
+    {
+      "name": "no-ancestors",
+      "sourcePatch": "no-ancestors.patch",
+      "results": "no-ancestors.json",
+      "note": "INVALID IMPLEMENTATION: disables ancestors; diagnostic ablation only, never eligible for adoption."
+    },
+    {
+      "name": "short-call",
+      "sourcePatch": "short-call.patch",
+      "results": "short-call.json",
+      "note": "Existing walker tests passed; exploratory single-process screen."
+    },
+    {
+      "name": "switch-child",
+      "sourcePatch": "switch-child.patch",
+      "results": "switch-child.json",
+      "note": "Existing walker tests passed; exploratory single-process screen."
+    },
+    {
+      "name": "guard",
+      "sourcePatch": "guard.patch",
+      "results": "guard.json",
+      "note": "Existing walker tests passed; exploratory single-process screen."
+    },
+    {
+      "name": "scalar-leaf",
+      "sourcePatch": "scalar-leaf.patch",
+      "results": "scalar-leaf.json",
+      "note": "Existing walker tests passed; exploratory single-process screen."
+    }
+  ]
+}

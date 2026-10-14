@@ -1,0 +1,9 @@
+{
+  "commit": "4a30364ddf3e3e95cb71564a2948e3e12f9c7c11",
+  "repository": "https://github.com/swc-project/swc-next",
+  "sha256": {
+    "visitor-keys.js": "5e9aa3076a3beda6be1007e72202b3489f3e0b04793ee93c36095bdd6dad4a7f",
+    "child-visitors.js": "347784c887285b257c07c5196ba328c3f17a0e9fa09407b9b234a9189a544203",
+    "index.js": "4e5dae92034c0de2b9ef0c046d65bea405710ddd1cb1b3957ada27b4a5576df7"
+  }
+}

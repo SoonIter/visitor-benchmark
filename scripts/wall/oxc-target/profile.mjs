@@ -1,0 +1,20 @@
+import { Session } from 'node:inspector';
+import { writeFileSync, mkdirSync } from 'node:fs';
+const [scenario,id,kind] = process.argv.slice(2);
+const { variants } = await import(`../../../src/${scenario}/registry.mjs`);
+const { corpus } = await import(`../../../src/${scenario}/workload.mjs`);
+const { load } = await import(`../../../src/${scenario}/execute.mjs`);
+const engine = await load(variants.find(v=>v.id===id));
+const fixtures=corpus(kind);
+for(let i=0;i<30;i++)for(const fixture of fixtures)engine.run(engine.prepare(fixture),fixture);
+const prepared=Array.from({length:160},()=>fixtures.map(fixture=>({fixture,ast:engine.prepare(fixture)})));
+global.gc?.();
+const session=new Session(); session.connect(); const post=(method,args={})=>new Promise((res,rej)=>session.post(method,args,(e,r)=>e?rej(e):res(r)));
+await post('Profiler.enable');await post('Profiler.setSamplingInterval',{interval:100});await post('Profiler.start');
+for(const batch of prepared)for(const {fixture,ast} of batch)engine.run(ast,fixture);
+const {profile}=await post('Profiler.stop');session.disconnect();
+const output = new URL('../../../results/oxc-target/profiles/', import.meta.url);
+mkdirSync(output, { recursive: true });
+writeFileSync(new URL(`${scenario}-${kind}-${id}.cpuprofile`, output),JSON.stringify(profile));
+const counts=new Map();for(let i=0;i<profile.samples.length;i++){const id=profile.samples[i];counts.set(id,(counts.get(id)||0)+profile.timeDeltas[i]);}
+console.log([...counts].sort((a,b)=>b[1]-a[1]).slice(0,18).map(([id,us])=>{let n=profile.nodes.find(n=>n.id===id);return {fn:n.callFrame.functionName,file:n.callFrame.url.split('/').slice(-2).join('/'),ms:(us/1000).toFixed(2)}}));

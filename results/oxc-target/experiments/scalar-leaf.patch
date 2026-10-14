@@ -1,0 +1,162 @@
+--- a/packages/walker/index.js
++++ b/packages/walker/index.js
+@@ -1,3 +1,4 @@
++import { nodeTypeIds, readNode } from "./read-visitors.js";
+ import { childVisitors, nodeWalkers } from "./child-visitors.js";
+ import { visitorKeys } from "./visitor-keys.js";
+ 
+@@ -44,7 +45,9 @@
+     );
+ }
+ 
+-function compile(hooks) {
++const emptyReadHooks = Object.keys(nodeTypeIds).map(() => null);
++
++function compile(hooks, readOnly = false) {
+   if (!hooks || typeof hooks !== "object")
+     throw new TypeError("Expected a hooks object");
+   const entries = Object.entries(hooks);
+@@ -106,18 +109,21 @@
+       leave: compact(pair.leave),
+     };
+   }
+-  const walkers = Object.create(nodeWalkers);
++  const walkers = readOnly ? null : Object.create(nodeWalkers);
++  const numeric = readOnly ? emptyReadHooks.slice() : null;
+   const types = enter || leave ? Object.keys(nodeWalkers) : [...table.keys()];
+   for (const type of types) {
+     const entry = dispatch[type];
+     const enterHook = entry.enter ?? enter ?? null;
+     const leaveHook = entry.leave ?? leave ?? null;
+     if (enterHook === null && leaveHook === null) continue;
+-    walkers[type] = enterHook === null ? walkLeave : walkEnter;
++    if (readOnly) numeric[nodeTypeIds[type]] = { enter: enterHook, leave: leaveHook };
++    else walkers[type] = enterHook === null ? walkLeave : walkEnter;
+   }
+   return {
+     dispatch,
+     walkers,
++    numeric,
+     globalEnter: enter ?? null,
+     globalLeave: leave ?? null,
+   };
+@@ -309,8 +315,11 @@
+   }
+ 
+   visitScalar(value, parent, key) {
++    const visit = this.#walkers[value.type];
++    if (visit === undefined || typeof value !== "object") assertNode(value);
++    if (visit === null) return false;
+     this.#ancestors[this.#depth++] = parent;
+-    this.visit(value, parent, key, null, 0);
++    visit(value, this, parent, key, null, 0);
+     this.#depth--;
+     return this.stopped;
+   }
+@@ -319,7 +328,11 @@
+     this.#ancestors[this.#depth++] = parent;
+     for (let i = 0; i < value.length; i++) {
+       const child = value[i];
+-      if (child != null) i = this.visit(child, parent, key, value, i);
++      if (child != null) {
++        const visit = this.#walkers[child.type];
++        if (visit === undefined || typeof child !== "object") assertNode(child);
++        if (visit !== null) i = visit(child, this, parent, key, value, i);
++      }
+       if (this.stopped) return true;
+     }
+     this.#depth--;
+@@ -425,54 +438,23 @@
+ // Reuse generated field accessors without allocating editing or ancestry state.
+ // Read-only callbacks receive user state directly, never a WalkContext.
+ class ReadVisitor {
+-  #compiled;
+-  #state;
+   constructor(compiled, state) {
+-    this.#compiled = compiled;
+-    this.#state = state;
+-  }
+-  visit(node) {
+-    const visit = this.#compiled.walkers[node.type];
+-    if (visit === undefined || typeof node !== "object") assertNode(node);
+-    if (visit !== null) visit(node, this);
+-  }
+-  visitScalar(node) {
+-    this.visit(node);
+-    return false;
+-  }
+-  visitList(nodes) {
+-    for (let i = 0; i < nodes.length; i++) {
+-      const node = nodes[i];
+-      if (node != null) this.visit(node);
+-    }
+-    return false;
+-  }
+-  #invoke(handlers, node) {
+-    if (typeof handlers === "function") assertSync(handlers(node, this.#state));
+-    else if (handlers !== null) {
+-      for (let i = 0; i < handlers.length; i++) {
+-        assertSync(handlers[i](node, this.#state));
+-      }
+-    }
+-  }
+-  visitHooks(node) {
+-    const compiled = this.#compiled;
+-    const entry = compiled.dispatch[node.type];
+-    this.#invoke(entry.enter ?? compiled.globalEnter, node);
+-    if (entry.children !== null) entry.children(node, this);
+-    this.#invoke(entry.leave ?? compiled.globalLeave, node);
+-  }
+-  visitLeaveHooks(node) {
+-    this.visitHooks(node);
+-  }
+-  leaveChanged() {
+-    throw new Error("Read-only visitors must not structurally edit the AST");
++    this.hooks = compiled.numeric;
++    this.state = state;
++  }
++  invalidNode(node) { assertNode(node); }
++  invalidResult(result) { assertSync(result); }
++  invoke(handlers, node) {
++    if (typeof handlers === "function") assertSync(handlers(node, this.state));
++    else {
++      for (let i = 0; i < handlers.length; i++) assertSync(handlers[i](node, this.state));
++    }
+   }
+ }
+ 
+ /** Visit without editing context. Callbacks receive (node, state). */
+ export function visit(root, hooks, state) {
+   assertNode(root);
+-  new ReadVisitor(compile(hooks), state).visit(root);
++  readNode(root, new ReadVisitor(compile(hooks, true), state));
+   return root;
+ }
+--- a/tasks/ast_tools/src/generator/estree_visitor_keys.rs
++++ b/tasks/ast_tools/src/generator/estree_visitor_keys.rs
+@@ -200,8 +200,25 @@
+         }
+         writeln!(children, "  if (node.type !== {name:?}) return walker.leaveChanged(node, parent, key, list, index);\n  return index;\n}}").unwrap();
+     }
++    let mut read = String::from("// generated by tasks/ast_tools, do not edit\nexport const nodeTypeIds = Object.assign(Object.create(null), {\n");
++    for (id, name) in keys.keys().enumerate() { writeln!(read, "  {name}: {id},").unwrap(); }
++    read.push_str("});\n\nexport function readNode(node, visitor) {\n  if (typeof node !== \"object\") return visitor.invalidNode(node);\n  switch (node.type) {\n");
++    for (name, _) in keys.iter().filter(|(_, fields)| fields.is_empty()).chain(keys.iter().filter(|(_, fields)| !fields.is_empty())) { writeln!(read, "    case {name:?}: return read{name}(node, visitor);").unwrap(); }
++    read.push_str("    default: return visitor.invalidNode(node);\n  }\n}\n");
++    for (id, (name, fields)) in keys.iter().enumerate() {
++        writeln!(read, "\nfunction read{name}(node, visitor) {{\n  const hooks = visitor.hooks[{id}];\n  if (hooks !== null && hooks.enter !== null) {{\n    const enter = hooks.enter;\n    if (typeof enter === \"function\") {{\n      const result = enter(node, visitor.state);\n      if (result !== undefined) visitor.invalidResult(result);\n    }} else visitor.invoke(enter, node);\n  }}").unwrap();
++        for (index, field) in fields.iter().enumerate() {
++            writeln!(read, "  const child{index} = node.{field};\n  if (child{index} != null) {{").unwrap();
++            if lists[&(name.clone(), field.clone())] {
++                writeln!(read, "    for (let i = 0; i < child{index}.length; i++) {{\n      const child = child{index}[i];\n      if (child != null) readNode(child, visitor);\n    }}").unwrap();
++            } else { writeln!(read, "    readNode(child{index}, visitor);").unwrap(); }
++            read.push_str("  }\n");
++        }
++        read.push_str("  if (hooks !== null && hooks.leave !== null) {\n    const leave = hooks.leave;\n    if (typeof leave === \"function\") {\n      const result = leave(node, visitor.state);\n      if (result !== undefined) visitor.invalidResult(result);\n    } else visitor.invoke(leave, node);\n  }\n}\n");
++    }
+     dts.push_str("};\nexport type NodeType = keyof typeof visitorKeys;\n");
+     vec![
++        RawOutput { path: "packages/walker/read-visitors.js".into(), content: read.into_bytes() },
+         RawOutput {
+             path: "packages/walker/child-visitors.js".into(),
+             content: children.into_bytes(),

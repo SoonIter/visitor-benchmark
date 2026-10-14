@@ -1,0 +1,10 @@
+{
+  "baseCommit": "4a30364ddf3e3e95cb71564a2948e3e12f9c7c11",
+  "patch": "../candidate.patch",
+  "status": "experimental",
+  "sha256": {
+    "visitor-keys.js": "5e9aa3076a3beda6be1007e72202b3489f3e0b04793ee93c36095bdd6dad4a7f",
+    "child-visitors.js": "d9e6c566423726ef3ccbafc499e75265a76e7339d2f63de9fefa0b2dbc7fdb45",
+    "index.js": "3a5fb418acbc38151faf410ba3d0222e472e26da633d4edb721774ed03a0e843"
+  }
+}

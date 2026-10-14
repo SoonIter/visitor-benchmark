@@ -1,0 +1,23 @@
+--- a/packages/walker/index.js
++++ b/packages/walker/index.js
+@@ -309,20 +309,16 @@
+   }
+ 
+   visitScalar(value, parent, key) {
+-    this.#ancestors[this.#depth++] = parent;
+     this.visit(value, parent, key, null, 0);
+-    this.#depth--;
+     return this.stopped;
+   }
+ 
+   visitList(value, parent, key) {
+-    this.#ancestors[this.#depth++] = parent;
+     for (let i = 0; i < value.length; i++) {
+       const child = value[i];
+       if (child != null) i = this.visit(child, parent, key, value, i);
+       if (this.stopped) return true;
+     }
+-    this.#depth--;
+     return this.stopped;
+   }
+ 

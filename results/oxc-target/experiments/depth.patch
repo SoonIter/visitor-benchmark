@@ -1,0 +1,196 @@
+--- a/packages/walker/index.js
++++ b/packages/walker/index.js
+@@ -123,11 +123,11 @@
+   };
+ }
+ 
+-function walkEnter(node, walker, parent, key, list, index) {
+-  return walker.visitHooks(node, parent, key, list, index);
+-}
+-function walkLeave(node, walker, parent, key, list, index) {
+-  return walker.visitLeaveHooks(node, parent, key, list, index);
++function walkEnter(node, walker, parent, key, list, index, depth) {
++  return walker.visitHooks(node, parent, key, list, index, depth);
++}
++function walkLeave(node, walker, parent, key, list, index, depth) {
++  return walker.visitLeaveHooks(node, parent, key, list, index, depth);
+ }
+ 
+ // One context per walk, with prototype methods instead of per-hook closures.
+@@ -297,7 +297,8 @@
+         undefined;
+   }
+ 
+-  #prepare(node, parent, key, list, index, after) {
++  #prepare(node, parent, key, list, index, after, depth) {
++    this.#depth = depth;
+     const frame = this.#storage;
+     frame.node = node;
+     frame.parent = parent;
+@@ -308,55 +309,60 @@
+     frame.flags = 0;
+   }
+ 
+-  visitScalar(value, parent, key) {
+-    this.#ancestors[this.#depth++] = parent;
+-    this.visit(value, parent, key, null, 0);
+-    this.#depth--;
++  track(node, depth) { this.#ancestors[depth] = node; }
++
++  visitScalar(value, parent, key, depth) {
++    const visit = this.#walkers[value.type];
++    if (visit === undefined || typeof value !== "object") assertNode(value);
++    if (visit !== null) visit(value, this, parent, key, null, 0, depth);
+     return this.stopped;
+   }
+ 
+-  visitList(value, parent, key) {
+-    this.#ancestors[this.#depth++] = parent;
++  visitList(value, parent, key, depth) {
+     for (let i = 0; i < value.length; i++) {
+       const child = value[i];
+-      if (child != null) i = this.visit(child, parent, key, value, i);
++      if (child != null) {
++        const visit = this.#walkers[child.type];
++        if (visit === undefined || typeof child !== "object") assertNode(child);
++        if (visit !== null) i = visit(child, this, parent, key, value, i, depth);
++      }
+       if (this.stopped) return true;
+     }
+-    this.#depth--;
+     return this.stopped;
+   }
+ 
+-  visit(node, parent, key, list, index) {
++  visit(node, parent, key, list, index, depth) {
+     const visit = this.#walkers[node.type];
+     if (visit === undefined || typeof node !== "object") assertNode(node);
+-    return visit === null ? index : visit(node, this, parent, key, list, index);
+-  }
+-
+-  leaveChanged(node, parent, key, list, index) {
++    return visit === null ? index : visit(node, this, parent, key, list, index, depth);
++  }
++
++  leaveChanged(node, parent, key, list, index, depth) {
+     const entry = this.#dispatch[node.type];
+     if (entry === undefined) assertNode(node);
+     const leave = entry.leave ?? this.#globalLeave;
+     if (leave === null) return index;
+-    this.#prepare(node, parent, key, list, index, 0);
++    this.#prepare(node, parent, key, list, index, 0, depth);
+     this.invoke(leave, this.#storage, "leave");
+     return this.#storage.index;
+   }
+ 
+-  visitLeaveHooks(node, parent, key, list, index) {
++  visitLeaveHooks(node, parent, key, list, index, depth) {
+     const handlers = this.#dispatch[node.type];
+     const type = node.type;
+     if (handlers.children !== null) {
+-      handlers.children(node, this);
++      this.track(node, depth);
++      handlers.children(node, this, depth);
+       if (this.stopped) return index;
+     }
+     if (node.type !== type)
+-      return this.leaveChanged(node, parent, key, list, index);
+-    this.#prepare(node, parent, key, list, index, 0);
++      return this.leaveChanged(node, parent, key, list, index, depth);
++    this.#prepare(node, parent, key, list, index, 0, depth);
+     this.invoke(handlers.leave ?? this.#globalLeave, this.#storage, "leave");
+     return this.#storage.index;
+   }
+ 
+-  visitHooks(node, parent, key, list, index) {
++  visitHooks(node, parent, key, list, index, depth) {
+     let handlers = this.#dispatch[node.type];
+     const enter = handlers.enter ?? this.#globalEnter;
+     const frame = this.#storage;
+@@ -364,7 +370,7 @@
+     let after = 0;
+     let skip = false;
+     if (enter !== null) {
+-      this.#prepare(node, parent, key, list, index, 0);
++      this.#prepare(node, parent, key, list, index, 0, depth);
+       this.invoke(enter, frame, "enter");
+       index = frame.index;
+       if (this.stopped || frame.flags & REMOVED) return index;
+@@ -378,7 +384,8 @@
+       }
+     }
+     if (!skip && handlers.children !== null) {
+-      handlers.children(node, this);
++      this.track(node, depth);
++      handlers.children(node, this, depth);
+       if (this.stopped) return index;
+     }
+     if (node.type !== type) {
+@@ -387,7 +394,7 @@
+     }
+     const leave = handlers.leave ?? this.#globalLeave;
+     if (leave !== null) {
+-      this.#prepare(node, parent, key, list, index, after);
++      this.#prepare(node, parent, key, list, index, after, depth);
+       this.invoke(leave, frame, "leave");
+       index = frame.index;
+     }
+@@ -398,7 +405,7 @@
+ function runWalk(root, compiled, state) {
+   const ctx = new WalkContext(state, compiled);
+   try {
+-    ctx.visit(root, null, null, null, 0);
++    ctx.visit(root, null, null, null, 0, 0);
+   } finally {
+     ctx.reset();
+   }
+@@ -425,6 +432,7 @@
+ // Reuse generated field accessors without allocating editing or ancestry state.
+ // Read-only callbacks receive user state directly, never a WalkContext.
+ class ReadVisitor {
++  track() {}
+   #compiled;
+   #state;
+   constructor(compiled, state) {
+--- a/tasks/ast_tools/src/generator/estree_visitor_keys.rs
++++ b/tasks/ast_tools/src/generator/estree_visitor_keys.rs
+@@ -157,7 +157,7 @@
+         if fields.is_empty() {
+             writeln!(children, "  {name}: null,").unwrap();
+         } else {
+-            writeln!(children, "  {name}(node, walker) {{").unwrap();
++            writeln!(children, "  {name}(node, walker, depth) {{").unwrap();
+             for (index, field) in fields.iter().enumerate() {
+                 writeln!(children, "    const child{index} = node.{field};").unwrap();
+                 let method = if lists[&(name.clone(), field.clone())] {
+@@ -165,7 +165,7 @@
+                 } else {
+                     "visitScalar"
+                 };
+-                writeln!(children, "    if (child{index} != null && walker.{method}(child{index}, node, {field:?})) return true;").unwrap();
++                writeln!(children, "    if (child{index} != null && walker.{method}(child{index}, node, {field:?}, depth + 1)) return true;").unwrap();
+             }
+             writeln!(children, "    return false;\n  }},").unwrap();
+         }
+@@ -187,7 +187,7 @@
+         }
+         writeln!(
+             children,
+-            "\nfunction walk{name}(node, walker, parent, key, list, index) {{"
++            "\nfunction walk{name}(node, walker, parent, key, list, index, depth) {{\n  walker.track(node, depth);"
+         )
+         .unwrap();
+         for (index, field) in fields.iter().enumerate() {
+@@ -196,9 +196,9 @@
+             } else {
+                 "visitScalar"
+             };
+-            writeln!(children, "  const child{index} = node.{field};\n  if (child{index} != null && walker.{method}(child{index}, node, {field:?})) return index;").unwrap();
+-        }
+-        writeln!(children, "  if (node.type !== {name:?}) return walker.leaveChanged(node, parent, key, list, index);\n  return index;\n}}").unwrap();
++            writeln!(children, "  const child{index} = node.{field};\n  if (child{index} != null && walker.{method}(child{index}, node, {field:?}, depth + 1)) return index;").unwrap();
++        }
++        writeln!(children, "  if (node.type !== {name:?}) return walker.leaveChanged(node, parent, key, list, index, depth);\n  return index;\n}}").unwrap();
+     }
+     dts.push_str("};\nexport type NodeType = keyof typeof visitorKeys;\n");
+     vec![
