@@ -9,6 +9,8 @@ import { sourceManifest } from '../shared/provenance.mjs';
 import { digest } from '../../src/shared/ast.mjs';
 const arg = (name, fallback) => process.argv.find(v => v.startsWith(`--${name}=`))?.slice(name.length + 3) ?? fallback;
 const repetitions = Number(arg('repetitions', '3'));
+const cpuWorkers = Number(arg('cpu-workers', '1'));
+assert.ok(Number.isSafeInteger(cpuWorkers) && cpuWorkers > 0);
 assert.ok(Number.isSafeInteger(repetitions) && repetitions > 0);
 assert.equal(os.platform(), 'linux', 'CPU simulation requires Linux; use the documented local VM workflow on macOS.');
 const selected = (await jobs()).filter(j => j.name.includes(arg('match', '')));
@@ -24,7 +26,7 @@ const manifest = sourceManifest();
 const pkg = JSON.parse(readFileSync('package.json'));
 const data = { createdAt: new Date().toISOString(), method: 'codspeed-fresh-parser-batch-v1',
   environment, sourceManifest: manifest, dependencies: pkg.dependencies, devDependencies: pkg.devDependencies,
-  swcNext: JSON.parse(readFileSync('vendor/provenance.json')), repetitions, jobs: selected,
+  swcNext: JSON.parse(readFileSync('vendor/provenance.json')), repetitions, cpuWorkers, jobs: selected,
   simulationWarmups: 7, wallWarmups: 8, wallSamples: 20,
   units: { Ir: 'instructions', Ct: 'centi-cycles', wall: 'milliseconds per corpus batch' },
   checks: [], runs: [] };
@@ -33,7 +35,7 @@ if (selected.some(j => j.scenario === 'i18n')) {
   data.businessDependencies = businessDependencies();
   data.privateCorpusHash = digest(readFileSync('.cache/i18n/corpus.json'));
 }
-const fingerprint = digest(JSON.stringify({ manifest, environment, jobs: selected, repetitions, privateCorpusHash: data.privateCorpusHash, businessDependencies: data.businessDependencies }));
+const fingerprint = digest(JSON.stringify({ manifest, environment, jobs: selected, repetitions, cpuWorkers, privateCorpusHash: data.privateCorpusHash, businessDependencies: data.businessDependencies }));
 const fingerprintPath = join(directory, 'fingerprint');
 if (existsSync(fingerprintPath)) assert.equal(readFileSync(fingerprintPath, 'utf8'), fingerprint,
   'Inputs/configuration changed: select a new --work directory, do not reuse old measurements.');
@@ -69,7 +71,7 @@ for (let rep = 0; rep < repetitions; rep++) {
   let order = [...supported.slice(offset), ...supported.slice(0, offset)];
   if (rep % 2) order.reverse();
   const plan = order.map(j => ({ name: j.name, output: join(directory, `simulation-${rep}-${safe(j.name)}.json`) }));
-  const planFile = join(directory, 'plan.json'); writeFileSync(planFile, JSON.stringify(plan));
+  const planFile = join(directory, 'plan.json'); writeFileSync(planFile, JSON.stringify({ items: plan, workers: cpuWorkers }));
   const archived = join(directory, `profiles-${rep}`), current = join(directory, 'current');
   if (!existsSync(archived)) {
     assert.ok(!existsSync(current), `Incomplete profile directory ${current}; inspect it before restarting with a new --work directory.`);

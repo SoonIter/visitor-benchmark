@@ -16,7 +16,7 @@ Every implementation runs in a separate process. A callback processes one full c
 
 The simulation uses CodSpeed runner **5.2.1**, `@codspeed/tinybench-plugin` **5.7.1**, and Tinybench **6.1.2**. The plugin executes seven warmups with fresh ASTs, then measures one callback. Three independent processes provide three counter samples. Only positive, complete Ir/Ct records with the exact expected benchmark manifest are accepted.
 
-The paired wall-time control uses the **same batch callback and fresh-parser lifecycle**, eight warmups and twenty samples in each of three processes. Explicit full GC happens after preparation and before timing, as it does in simulation. No other benchmark runs concurrently. Process order is rotated/reversed between repetitions.
+The paired wall-time control uses the **same batch callback and fresh-parser lifecycle**, eight warmups and twenty samples in each of three processes. Explicit full GC happens after preparation and before timing, as it does in simulation. Wall-time measurements are strictly serial and never overlap simulation. CPU simulation defaults to one process; `--cpu-workers=3` runs three independent simulated processes, each with its own modeled CPU/cache and counters. This changes collection throughput, not a wall-time measurement. The published run uses three simulation workers. Process launch order is rotated/reversed between repetitions.
 
 The historical wall-time suite parsed and measured one file at a time, without full GC before each sample. Its macOS results are retained in [the baseline report](wall-time-baseline.md). The new Linux paired control is the primary rank comparison; differences from historical numbers also include platform and harness effects.
 
@@ -41,7 +41,7 @@ npm run bench:cpu -- --match=styled-components/dense/direct-ast \
 
 # Complete suite (requires the existing private i18n corpus):
 export FLOW_WEB_ROOT=/absolute/path/to/flow-web-monorepo
-npm run bench:cpu
+npm run bench:cpu -- --cpu-workers=3
 
 # Render the completed run, including charts:
 python3 -m venv .cache/charts-venv
@@ -62,7 +62,7 @@ export FLOW_WEB_ROOT="$PWD/.cache/babel7-replay"
 
 This pins parser/traverse 7.27.3 and types 7.28.6, matching the business-resolved direct versions. Its full transitive graph is recorded in a dedicated lockfile; it is a dependency replay, not the original business installation. Source, dictionary, order and expected outputs come from the **existing** ignored `.cache/i18n/corpus.json`; do not regenerate the corpus when comparing runs.
 
-On macOS, use a local Ubuntu 24.04 ARM64 VM (for example Lima with Apple's Virtualization framework), copy the checkout into its Linux filesystem, and run `npm ci` there. Do not reuse macOS native `node_modules`. The private corpus stays on the same computer. The current run uses four virtual CPUs and 8 GiB of RAM; measurements run serially.
+On macOS, use a local Ubuntu 24.04 ARM64 VM (for example Lima with Apple's Virtualization framework), copy the checkout into its Linux filesystem, and run `npm ci` there. Do not reuse macOS native `node_modules`. The private corpus stays on the same computer. The current run uses four virtual CPUs and 8 GiB of RAM; wall-time measurements run serially.
 
 ## Evidence and privacy
 
