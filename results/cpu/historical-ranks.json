@@ -1,0 +1,1221 @@
+[
+  {
+    "scenario": "styled-components",
+    "kind": "dense",
+    "status": "compared",
+    "sourceHashesMatch": true,
+    "businessSourcesMatch": true,
+    "historicalDate": "2026-10-12T14:58:23.229Z",
+    "historicalEnvironment": {
+      "node": "v24.20.0",
+      "platform": "darwin",
+      "arch": "arm64",
+      "cpu": "Apple M5 Max",
+      "cpuCount": 18,
+      "totalMemoryGiB": 64,
+      "loadAverageAtStart": [
+        3.96435546875,
+        3.88525390625,
+        4.1181640625
+      ],
+      "loadAverageAtEnd": [
+        7.896484375,
+        5.16845703125,
+        4.57373046875
+      ]
+    },
+    "IrVsHistoricalWall": 0.8771929824561403,
+    "CtVsHistoricalWall": 0.8456140350877193,
+    "pairedVsHistoricalWall": 0.8824561403508772,
+    "historicalWinner": "oxc-visitor",
+    "pairedWinner": "oxc-visitor",
+    "CtWinner": "acorn-recursive",
+    "rows": [
+      {
+        "id": "direct-ast",
+        "historicalMs": 0.2475834999999762,
+        "pairedMs": 0.3432994999999437,
+        "Ir": 9361927,
+        "Ct": 2208648201
+      },
+      {
+        "id": "swc-next",
+        "historicalMs": 0.6880414999999687,
+        "pairedMs": 1.6640904999999862,
+        "Ir": 41227282,
+        "Ct": 10616637237
+      },
+      {
+        "id": "yuku-ast",
+        "historicalMs": 0.7698125000000289,
+        "pairedMs": 2.1745290000001205,
+        "Ir": 60283492,
+        "Ct": 15487455867
+      },
+      {
+        "id": "estree-walker",
+        "historicalMs": 0.8641250000000298,
+        "pairedMs": 2.4192314999999667,
+        "Ir": 65548467,
+        "Ct": 16438487522
+      },
+      {
+        "id": "oxc-walker",
+        "historicalMs": 0.78004150000001,
+        "pairedMs": 2.6146574999999643,
+        "Ir": 67850890,
+        "Ct": 17147389144
+      },
+      {
+        "id": "oxc-visitor",
+        "historicalMs": 0.43908350000006635,
+        "pairedMs": 0.5885195000000749,
+        "Ir": 53412634,
+        "Ct": 13822073382
+      },
+      {
+        "id": "acorn-simple",
+        "historicalMs": 0.8188545000000147,
+        "pairedMs": 1.2147180000000048,
+        "Ir": 34498106,
+        "Ct": 8277565768
+      },
+      {
+        "id": "acorn-recursive",
+        "historicalMs": 0.4927294999999816,
+        "pairedMs": 0.7173895000000243,
+        "Ir": 20733836,
+        "Ct": 4985077045
+      },
+      {
+        "id": "acorn-full",
+        "historicalMs": 0.7625630000000001,
+        "pairedMs": 1.093941500000028,
+        "Ir": 34382669,
+        "Ct": 8083366244
+      },
+      {
+        "id": "estraverse",
+        "historicalMs": 0.7620425000000353,
+        "pairedMs": 3.193257000000017,
+        "Ir": 90158777,
+        "Ct": 23063403711
+      },
+      {
+        "id": "esrecurse",
+        "historicalMs": 0.6628745000000151,
+        "pairedMs": 1.4400399999999536,
+        "Ir": 33564560,
+        "Ct": 8527769399
+      },
+      {
+        "id": "estree-toolkit",
+        "historicalMs": 3.339832500000057,
+        "pairedMs": 6.123964999999998,
+        "Ir": 207680812,
+        "Ct": 51772970030
+      },
+      {
+        "id": "estree-toolkit-scope",
+        "historicalMs": 5.914354000000003,
+        "pairedMs": 10.843685999999991,
+        "Ir": 428608636,
+        "Ct": 106907517045
+      },
+      {
+        "id": "ast-types",
+        "historicalMs": 6.357269999999971,
+        "pairedMs": 12.380668000000014,
+        "Ir": 662431419,
+        "Ct": 164091584093
+      },
+      {
+        "id": "zimmerframe",
+        "historicalMs": 1.7822494999999918,
+        "pairedMs": 3.168122500000038,
+        "Ir": 93139897,
+        "Ct": 22326464497
+      },
+      {
+        "id": "jscodeshift",
+        "historicalMs": 6.632125499999972,
+        "pairedMs": 13.482050499999957,
+        "Ir": 679127539,
+        "Ct": 168525518612
+      },
+      {
+        "id": "esquery",
+        "historicalMs": 1.2630829999999662,
+        "pairedMs": 3.1887125000000083,
+        "Ir": 126668133,
+        "Ct": 31729233211
+      },
+      {
+        "id": "estree-util-visit",
+        "historicalMs": 5.084187000000014,
+        "pairedMs": 7.065234999999973,
+        "Ir": 234582105,
+        "Ct": 54920069588
+      },
+      {
+        "id": "typescript-eslint",
+        "historicalMs": 0.7989784999999756,
+        "pairedMs": 2.1383445000000165,
+        "Ir": 52710122,
+        "Ct": 12963692190
+      }
+    ]
+  },
+  {
+    "scenario": "styled-components",
+    "kind": "sparse",
+    "status": "compared",
+    "sourceHashesMatch": true,
+    "businessSourcesMatch": true,
+    "historicalDate": "2026-10-12T14:58:23.229Z",
+    "historicalEnvironment": {
+      "node": "v24.20.0",
+      "platform": "darwin",
+      "arch": "arm64",
+      "cpu": "Apple M5 Max",
+      "cpuCount": 18,
+      "totalMemoryGiB": 64,
+      "loadAverageAtStart": [
+        3.96435546875,
+        3.88525390625,
+        4.1181640625
+      ],
+      "loadAverageAtEnd": [
+        7.896484375,
+        5.16845703125,
+        4.57373046875
+      ]
+    },
+    "IrVsHistoricalWall": 0.8614035087719298,
+    "CtVsHistoricalWall": 0.8385964912280702,
+    "pairedVsHistoricalWall": 0.8333333333333334,
+    "historicalWinner": "acorn-recursive",
+    "pairedWinner": "oxc-visitor",
+    "CtWinner": "acorn-recursive",
+    "rows": [
+      {
+        "id": "direct-ast",
+        "historicalMs": 0.08883349999997847,
+        "pairedMs": 0.10920150000004014,
+        "Ir": 2645462,
+        "Ct": 647048592
+      },
+      {
+        "id": "swc-next",
+        "historicalMs": 0.7711045000000354,
+        "pairedMs": 2.941175000000044,
+        "Ir": 65171547,
+        "Ct": 17056803077
+      },
+      {
+        "id": "yuku-ast",
+        "historicalMs": 1.0590840000000412,
+        "pairedMs": 3.5915255000000457,
+        "Ir": 108868207,
+        "Ct": 28221256541
+      },
+      {
+        "id": "estree-walker",
+        "historicalMs": 1.2571249999999736,
+        "pairedMs": 3.3928450000000225,
+        "Ir": 114468535,
+        "Ct": 28887975987
+      },
+      {
+        "id": "oxc-walker",
+        "historicalMs": 0.9848749999999598,
+        "pairedMs": 3.499774499999944,
+        "Ir": 120257648,
+        "Ct": 30623438265
+      },
+      {
+        "id": "oxc-visitor",
+        "historicalMs": 0.6805840000000671,
+        "pairedMs": 0.6637084999999843,
+        "Ir": 98802025,
+        "Ct": 25987040341
+      },
+      {
+        "id": "acorn-simple",
+        "historicalMs": 1.3122909999998456,
+        "pairedMs": 1.7711884999999938,
+        "Ir": 57998987,
+        "Ct": 13980104809
+      },
+      {
+        "id": "acorn-recursive",
+        "historicalMs": 0.6029795000000604,
+        "pairedMs": 0.830748500000027,
+        "Ir": 27871851,
+        "Ct": 6786460466
+      },
+      {
+        "id": "acorn-full",
+        "historicalMs": 1.1172505000000115,
+        "pairedMs": 1.5248315000000048,
+        "Ir": 57232414,
+        "Ct": 13428621699
+      },
+      {
+        "id": "estraverse",
+        "historicalMs": 1.098916499999973,
+        "pairedMs": 6.053834499999994,
+        "Ir": 165413490,
+        "Ct": 42581155096
+      },
+      {
+        "id": "esrecurse",
+        "historicalMs": 0.9000624999999332,
+        "pairedMs": 2.1604650000000447,
+        "Ir": 52796687,
+        "Ct": 13715948959
+      },
+      {
+        "id": "estree-toolkit",
+        "historicalMs": 3.481937500000015,
+        "pairedMs": 7.813427999999931,
+        "Ir": 346960542,
+        "Ct": 87359078074
+      },
+      {
+        "id": "estree-toolkit-scope",
+        "historicalMs": 8.78593699999999,
+        "pairedMs": 18.737207499999954,
+        "Ir": 761551701,
+        "Ct": 191498828842
+      },
+      {
+        "id": "ast-types",
+        "historicalMs": 13.443769999999972,
+        "pairedMs": 22.92824799999994,
+        "Ir": 1574436710,
+        "Ct": 390519068782
+      },
+      {
+        "id": "zimmerframe",
+        "historicalMs": 1.4797504999999376,
+        "pairedMs": 3.4138264999999706,
+        "Ir": 122195022,
+        "Ct": 30762166736
+      },
+      {
+        "id": "jscodeshift",
+        "historicalMs": 14.62491700000001,
+        "pairedMs": 22.87181549999991,
+        "Ir": 1591120330,
+        "Ct": 394804662520
+      },
+      {
+        "id": "esquery",
+        "historicalMs": 2.296498999999926,
+        "pairedMs": 5.103881999999999,
+        "Ir": 241363433,
+        "Ct": 60734548367
+      },
+      {
+        "id": "estree-util-visit",
+        "historicalMs": 9.72560349999992,
+        "pairedMs": 12.457204499999875,
+        "Ir": 450723906,
+        "Ct": 105469339882
+      },
+      {
+        "id": "typescript-eslint",
+        "historicalMs": 1.3296245000001363,
+        "pairedMs": 3.0893089999999575,
+        "Ir": 100284951,
+        "Ct": 24740250207
+      }
+    ]
+  },
+  {
+    "scenario": "remove-debugger",
+    "kind": "dense",
+    "status": "compared",
+    "sourceHashesMatch": true,
+    "businessSourcesMatch": true,
+    "historicalDate": "2026-10-12T15:00:54.082Z",
+    "historicalEnvironment": {
+      "node": "v24.20.0",
+      "platform": "darwin",
+      "arch": "arm64",
+      "cpu": "Apple M5 Max",
+      "cpuCount": 18,
+      "totalMemoryGiB": 64,
+      "loadAverageAtStart": [
+        7.896484375,
+        5.16845703125,
+        4.57373046875
+      ],
+      "loadAverageAtEnd": [
+        5.46142578125,
+        5.107421875,
+        4.6103515625
+      ]
+    },
+    "IrVsHistoricalWall": 0.8508771929824561,
+    "CtVsHistoricalWall": 0.8473684210526315,
+    "pairedVsHistoricalWall": 0.8456140350877193,
+    "historicalWinner": "oxc-visitor",
+    "pairedWinner": "oxc-visitor",
+    "CtWinner": "acorn-recursive",
+    "rows": [
+      {
+        "id": "direct-ast",
+        "historicalMs": 0.6193329999999975,
+        "pairedMs": 1.8996814999999856,
+        "Ir": 46167197,
+        "Ct": 11475298105
+      },
+      {
+        "id": "swc-next",
+        "historicalMs": 0.2570620000000048,
+        "pairedMs": 1.46953400000001,
+        "Ir": 21386828,
+        "Ct": 5612178042
+      },
+      {
+        "id": "yuku-ast",
+        "historicalMs": 0.2739169999999973,
+        "pairedMs": 1.736177999999967,
+        "Ir": 28185024,
+        "Ct": 7274868772
+      },
+      {
+        "id": "estree-walker",
+        "historicalMs": 0.3230415000000022,
+        "pairedMs": 1.2013844999999748,
+        "Ir": 28205912,
+        "Ct": 7250520606
+      },
+      {
+        "id": "oxc-walker",
+        "historicalMs": 0.2780829999999952,
+        "pairedMs": 1.0548815000000218,
+        "Ir": 29348548,
+        "Ct": 7576210351
+      },
+      {
+        "id": "oxc-visitor",
+        "historicalMs": 0.1781040000000189,
+        "pairedMs": 0.2643924999999854,
+        "Ir": 24905819,
+        "Ct": 6507685328
+      },
+      {
+        "id": "acorn-simple",
+        "historicalMs": 0.44008450000002597,
+        "pairedMs": 0.694470999999993,
+        "Ir": 19774453,
+        "Ct": 4781729467
+      },
+      {
+        "id": "acorn-recursive",
+        "historicalMs": 0.21495900000000745,
+        "pairedMs": 0.4051039999999375,
+        "Ir": 10699769,
+        "Ct": 2611178742
+      },
+      {
+        "id": "acorn-full",
+        "historicalMs": 0.42991649999999026,
+        "pairedMs": 0.7065925000000277,
+        "Ir": 24425872,
+        "Ct": 5825317190
+      },
+      {
+        "id": "estraverse",
+        "historicalMs": 0.34043749999999307,
+        "pairedMs": 2.2303509999999847,
+        "Ir": 52188828,
+        "Ct": 13711388028
+      },
+      {
+        "id": "esrecurse",
+        "historicalMs": 0.2516669999999692,
+        "pairedMs": 0.8953539999999975,
+        "Ir": 15648046,
+        "Ct": 4038572827
+      },
+      {
+        "id": "estree-toolkit",
+        "historicalMs": 1.222582999999986,
+        "pairedMs": 4.391341499999953,
+        "Ir": 83151906,
+        "Ct": 20773531564
+      },
+      {
+        "id": "estree-toolkit-scope",
+        "historicalMs": 2.928584500000028,
+        "pairedMs": 7.524781000000019,
+        "Ir": 199260847,
+        "Ct": 49219485551
+      },
+      {
+        "id": "ast-types",
+        "historicalMs": 3.6791669999999925,
+        "pairedMs": 8.284992499999987,
+        "Ir": 288258454,
+        "Ct": 70216705163
+      },
+      {
+        "id": "zimmerframe",
+        "historicalMs": 1.6007925000000114,
+        "pairedMs": 2.728362500000003,
+        "Ir": 65842350,
+        "Ct": 15303628139
+      },
+      {
+        "id": "jscodeshift",
+        "historicalMs": 3.7328329999999994,
+        "pairedMs": 8.727825500000023,
+        "Ir": 333934952,
+        "Ct": 82172262584
+      },
+      {
+        "id": "esquery",
+        "historicalMs": 1.8382705000000072,
+        "pairedMs": 4.117482000000052,
+        "Ir": 131954571,
+        "Ct": 31829175041
+      },
+      {
+        "id": "estree-util-visit",
+        "historicalMs": 2.1462080000000583,
+        "pairedMs": 3.6233005000000276,
+        "Ir": 96774373,
+        "Ct": 22741667551
+      },
+      {
+        "id": "typescript-eslint",
+        "historicalMs": 0.3473744999999724,
+        "pairedMs": 1.528410000000008,
+        "Ir": 28125265,
+        "Ct": 6920777330
+      }
+    ]
+  },
+  {
+    "scenario": "remove-debugger",
+    "kind": "sparse",
+    "status": "compared",
+    "sourceHashesMatch": true,
+    "businessSourcesMatch": true,
+    "historicalDate": "2026-10-12T15:00:54.082Z",
+    "historicalEnvironment": {
+      "node": "v24.20.0",
+      "platform": "darwin",
+      "arch": "arm64",
+      "cpu": "Apple M5 Max",
+      "cpuCount": 18,
+      "totalMemoryGiB": 64,
+      "loadAverageAtStart": [
+        7.896484375,
+        5.16845703125,
+        4.57373046875
+      ],
+      "loadAverageAtEnd": [
+        5.46142578125,
+        5.107421875,
+        4.6103515625
+      ]
+    },
+    "IrVsHistoricalWall": 0.875438596491228,
+    "CtVsHistoricalWall": 0.8649122807017544,
+    "pairedVsHistoricalWall": 0.8807017543859649,
+    "historicalWinner": "oxc-visitor",
+    "pairedWinner": "oxc-visitor",
+    "CtWinner": "acorn-recursive",
+    "rows": [
+      {
+        "id": "direct-ast",
+        "historicalMs": 1.659105000000011,
+        "pairedMs": 3.655195000000049,
+        "Ir": 129170768,
+        "Ct": 32024152527
+      },
+      {
+        "id": "swc-next",
+        "historicalMs": 0.4644364999999766,
+        "pairedMs": 1.7830694999999537,
+        "Ir": 36342793,
+        "Ct": 9534524217
+      },
+      {
+        "id": "yuku-ast",
+        "historicalMs": 0.5988129999999359,
+        "pairedMs": 2.199863999999991,
+        "Ir": 60333729,
+        "Ct": 15663974206
+      },
+      {
+        "id": "estree-walker",
+        "historicalMs": 0.6938119999999799,
+        "pairedMs": 2.474515999999994,
+        "Ir": 66539565,
+        "Ct": 16981330740
+      },
+      {
+        "id": "oxc-walker",
+        "historicalMs": 0.5722504999999671,
+        "pairedMs": 2.4286740000000577,
+        "Ir": 70762869,
+        "Ct": 18206516296
+      },
+      {
+        "id": "oxc-visitor",
+        "historicalMs": 0.31181250000003047,
+        "pairedMs": 0.41821350000003576,
+        "Ir": 54552092,
+        "Ct": 14307082159
+      },
+      {
+        "id": "acorn-simple",
+        "historicalMs": 0.7991240000000346,
+        "pairedMs": 1.1284089999999196,
+        "Ir": 35886107,
+        "Ct": 8582104555
+      },
+      {
+        "id": "acorn-recursive",
+        "historicalMs": 0.43018749999995975,
+        "pairedMs": 0.601406499999996,
+        "Ir": 18435097,
+        "Ct": 4413931741
+      },
+      {
+        "id": "acorn-full",
+        "historicalMs": 0.8275624999999849,
+        "pairedMs": 1.1105630000000417,
+        "Ir": 46941620,
+        "Ct": 11087556779
+      },
+      {
+        "id": "estraverse",
+        "historicalMs": 0.6332085000000234,
+        "pairedMs": 4.681792500000029,
+        "Ir": 93379619,
+        "Ct": 24076343770
+      },
+      {
+        "id": "esrecurse",
+        "historicalMs": 0.5334994999999481,
+        "pairedMs": 1.4422050000000013,
+        "Ir": 31517084,
+        "Ct": 8125947792
+      },
+      {
+        "id": "estree-toolkit",
+        "historicalMs": 1.9055420000000112,
+        "pairedMs": 5.453916499999934,
+        "Ir": 159312743,
+        "Ct": 39873763489
+      },
+      {
+        "id": "estree-toolkit-scope",
+        "historicalMs": 5.3500214999999685,
+        "pairedMs": 12.170104000000038,
+        "Ir": 425298954,
+        "Ct": 106054215103
+      },
+      {
+        "id": "ast-types",
+        "historicalMs": 7.864353499999993,
+        "pairedMs": 14.769469500000014,
+        "Ir": 844016290,
+        "Ct": 210225835672
+      },
+      {
+        "id": "zimmerframe",
+        "historicalMs": 1.1275625000000389,
+        "pairedMs": 2.571170499999994,
+        "Ir": 74135815,
+        "Ct": 18482128499
+      },
+      {
+        "id": "jscodeshift",
+        "historicalMs": 9.502207999999996,
+        "pairedMs": 16.447493500000007,
+        "Ir": 852147380,
+        "Ct": 212086203582
+      },
+      {
+        "id": "esquery",
+        "historicalMs": 3.423936999999981,
+        "pairedMs": 5.524256499999979,
+        "Ir": 291968593,
+        "Ct": 70581628136
+      },
+      {
+        "id": "estree-util-visit",
+        "historicalMs": 5.486791499999995,
+        "pairedMs": 7.657589999999999,
+        "Ir": 252992154,
+        "Ct": 59320427445
+      },
+      {
+        "id": "typescript-eslint",
+        "historicalMs": 0.9297694999999919,
+        "pairedMs": 2.5201699999999505,
+        "Ir": 71784258,
+        "Ct": 17489688904
+      }
+    ]
+  },
+  {
+    "scenario": "rstest-coverage",
+    "kind": "runtime",
+    "status": "compared",
+    "sourceHashesMatch": true,
+    "businessSourcesMatch": true,
+    "historicalDate": "2026-10-12T15:02:21.284Z",
+    "historicalEnvironment": {
+      "node": "v24.20.0",
+      "platform": "darwin",
+      "arch": "arm64",
+      "cpu": "Apple M5 Max",
+      "cpuCount": 18,
+      "totalMemoryGiB": 64,
+      "loadAverageAtStart": [
+        5.46142578125,
+        5.107421875,
+        4.6103515625
+      ],
+      "loadAverageAtEnd": [
+        5.43505859375,
+        5.15087890625,
+        4.6533203125
+      ]
+    },
+    "IrVsHistoricalWall": 0.868421052631579,
+    "CtVsHistoricalWall": 0.8491228070175438,
+    "pairedVsHistoricalWall": 0.8771929824561403,
+    "historicalWinner": "oxc-visitor",
+    "pairedWinner": "oxc-visitor",
+    "CtWinner": "acorn-recursive",
+    "rows": [
+      {
+        "id": "direct-ast",
+        "historicalMs": 0.5327915000000019,
+        "pairedMs": 1.8313614999999572,
+        "Ir": 48668132,
+        "Ct": 11745537461
+      },
+      {
+        "id": "swc-next",
+        "historicalMs": 0.29845899999999403,
+        "pairedMs": 1.1549729999999983,
+        "Ir": 16905841,
+        "Ct": 4366061341
+      },
+      {
+        "id": "yuku-ast",
+        "historicalMs": 0.3190830000000062,
+        "pairedMs": 1.6211014999999946,
+        "Ir": 27124066,
+        "Ct": 7010787875
+      },
+      {
+        "id": "estree-walker",
+        "historicalMs": 0.5572285000000079,
+        "pairedMs": 1.5571199999999976,
+        "Ir": 29958900,
+        "Ct": 7628053798
+      },
+      {
+        "id": "oxc-walker",
+        "historicalMs": 0.4191459999999836,
+        "pairedMs": 1.4812680000000285,
+        "Ir": 31228316,
+        "Ct": 7997639599
+      },
+      {
+        "id": "oxc-visitor",
+        "historicalMs": 0.18622950000001026,
+        "pairedMs": 0.2592990000000128,
+        "Ir": 26288987,
+        "Ct": 6889373499
+      },
+      {
+        "id": "acorn-simple",
+        "historicalMs": 0.37556200000000217,
+        "pairedMs": 0.6272064999999998,
+        "Ir": 13788910,
+        "Ct": 3328635661
+      },
+      {
+        "id": "acorn-recursive",
+        "historicalMs": 0.20270850000001417,
+        "pairedMs": 0.3791934999999853,
+        "Ir": 6831905,
+        "Ct": 1663216192
+      },
+      {
+        "id": "acorn-full",
+        "historicalMs": 0.3519160000000028,
+        "pairedMs": 0.6147249999999929,
+        "Ir": 13638630,
+        "Ct": 3212273524
+      },
+      {
+        "id": "estraverse",
+        "historicalMs": 0.3444999999999965,
+        "pairedMs": 2.3706564999999813,
+        "Ir": 41468572,
+        "Ct": 10655763006
+      },
+      {
+        "id": "esrecurse",
+        "historicalMs": 0.28347950000001276,
+        "pairedMs": 0.9859320000000196,
+        "Ir": 13396253,
+        "Ct": 3467075061
+      },
+      {
+        "id": "estree-toolkit",
+        "historicalMs": 0.9596254999999942,
+        "pairedMs": 3.4659505000000195,
+        "Ir": 66376931,
+        "Ct": 16557543548
+      },
+      {
+        "id": "estree-toolkit-scope",
+        "historicalMs": 2.8769385000000085,
+        "pairedMs": 5.932293500000014,
+        "Ir": 160855181,
+        "Ct": 39737040507
+      },
+      {
+        "id": "ast-types",
+        "historicalMs": 3.095124499999983,
+        "pairedMs": 7.511991500000022,
+        "Ir": 329394042,
+        "Ct": 81914577108
+      },
+      {
+        "id": "zimmerframe",
+        "historicalMs": 0.6348330000000004,
+        "pairedMs": 1.65523749999997,
+        "Ir": 30730664,
+        "Ct": 7693516072
+      },
+      {
+        "id": "jscodeshift",
+        "historicalMs": 3.1397704999999974,
+        "pairedMs": 9.111552499999988,
+        "Ir": 333326644,
+        "Ct": 82668620022
+      },
+      {
+        "id": "esquery",
+        "historicalMs": 0.6752704999999963,
+        "pairedMs": 2.9448370000000352,
+        "Ir": 66905900,
+        "Ct": 16923368095
+      },
+      {
+        "id": "estree-util-visit",
+        "historicalMs": 2.9467289999999977,
+        "pairedMs": 4.616142000000025,
+        "Ir": 115817728,
+        "Ct": 27264291604
+      },
+      {
+        "id": "typescript-eslint",
+        "historicalMs": 0.34027149999997164,
+        "pairedMs": 1.4300135000000296,
+        "Ir": 23828733,
+        "Ct": 5835579919
+      }
+    ]
+  },
+  {
+    "scenario": "rstest-coverage",
+    "kind": "tooling",
+    "status": "compared",
+    "sourceHashesMatch": true,
+    "businessSourcesMatch": true,
+    "historicalDate": "2026-10-12T15:02:21.284Z",
+    "historicalEnvironment": {
+      "node": "v24.20.0",
+      "platform": "darwin",
+      "arch": "arm64",
+      "cpu": "Apple M5 Max",
+      "cpuCount": 18,
+      "totalMemoryGiB": 64,
+      "loadAverageAtStart": [
+        5.46142578125,
+        5.107421875,
+        4.6103515625
+      ],
+      "loadAverageAtEnd": [
+        5.43505859375,
+        5.15087890625,
+        4.6533203125
+      ]
+    },
+    "IrVsHistoricalWall": 0.8473684210526315,
+    "CtVsHistoricalWall": 0.8368421052631579,
+    "pairedVsHistoricalWall": 0.856140350877193,
+    "historicalWinner": "oxc-visitor",
+    "pairedWinner": "oxc-visitor",
+    "CtWinner": "acorn-recursive",
+    "rows": [
+      {
+        "id": "direct-ast",
+        "historicalMs": 0.45695850000000604,
+        "pairedMs": 1.622769500000004,
+        "Ir": 40443976,
+        "Ct": 9767605504
+      },
+      {
+        "id": "swc-next",
+        "historicalMs": 0.2684165000000007,
+        "pairedMs": 1.0201975000000516,
+        "Ir": 13815579,
+        "Ct": 3591268721
+      },
+      {
+        "id": "yuku-ast",
+        "historicalMs": 0.2778119999999973,
+        "pairedMs": 1.4331435000000567,
+        "Ir": 22825843,
+        "Ct": 5896247374
+      },
+      {
+        "id": "estree-walker",
+        "historicalMs": 0.47800049999998606,
+        "pairedMs": 1.3473330000000203,
+        "Ir": 25310805,
+        "Ct": 6441624330
+      },
+      {
+        "id": "oxc-walker",
+        "historicalMs": 0.37066700000002584,
+        "pairedMs": 1.0963150000000041,
+        "Ir": 26415296,
+        "Ct": 6764136241
+      },
+      {
+        "id": "oxc-visitor",
+        "historicalMs": 0.17237550000000113,
+        "pairedMs": 0.24625300000001005,
+        "Ir": 22096643,
+        "Ct": 5781697449
+      },
+      {
+        "id": "acorn-simple",
+        "historicalMs": 0.3339160000000021,
+        "pairedMs": 0.572669999999988,
+        "Ir": 11320338,
+        "Ct": 2732812021
+      },
+      {
+        "id": "acorn-recursive",
+        "historicalMs": 0.18110400000000482,
+        "pairedMs": 0.333462499999996,
+        "Ir": 5672485,
+        "Ct": 1380113314
+      },
+      {
+        "id": "acorn-full",
+        "historicalMs": 0.3034794999999946,
+        "pairedMs": 0.5517010000000369,
+        "Ir": 11185854,
+        "Ct": 2634835257
+      },
+      {
+        "id": "estraverse",
+        "historicalMs": 0.29360350000000324,
+        "pairedMs": 1.9843629999999735,
+        "Ir": 34855463,
+        "Ct": 8954209168
+      },
+      {
+        "id": "esrecurse",
+        "historicalMs": 0.25735400000003494,
+        "pairedMs": 0.8400184999999851,
+        "Ir": 11264744,
+        "Ct": 2911827962
+      },
+      {
+        "id": "estree-toolkit",
+        "historicalMs": 0.7379595000000165,
+        "pairedMs": 2.6097224999999753,
+        "Ir": 54322920,
+        "Ct": 13557058060
+      },
+      {
+        "id": "estree-toolkit-scope",
+        "historicalMs": 2.573250000000016,
+        "pairedMs": 6.368075500000032,
+        "Ir": 148068912,
+        "Ct": 36638695059
+      },
+      {
+        "id": "ast-types",
+        "historicalMs": 2.8294375000000116,
+        "pairedMs": 6.5269910000000095,
+        "Ir": 273714982,
+        "Ct": 67681133369
+      },
+      {
+        "id": "zimmerframe",
+        "historicalMs": 0.6064160000000101,
+        "pairedMs": 1.5657634999999743,
+        "Ir": 27783183,
+        "Ct": 6883307008
+      },
+      {
+        "id": "jscodeshift",
+        "historicalMs": 2.7327289999999778,
+        "pairedMs": 6.915635500000008,
+        "Ir": 277452650,
+        "Ct": 68697664382
+      },
+      {
+        "id": "esquery",
+        "historicalMs": 0.599332999999973,
+        "pairedMs": 2.398028000000039,
+        "Ir": 59069580,
+        "Ct": 14981506294
+      },
+      {
+        "id": "estree-util-visit",
+        "historicalMs": 2.765521000000007,
+        "pairedMs": 4.269550500000008,
+        "Ir": 100769816,
+        "Ct": 23770304438
+      },
+      {
+        "id": "typescript-eslint",
+        "historicalMs": 0.3042509999999936,
+        "pairedMs": 1.5617680000000291,
+        "Ir": 19940595,
+        "Ct": 4882290526
+      }
+    ]
+  },
+  {
+    "scenario": "i18n",
+    "kind": "original",
+    "status": "compared",
+    "sourceHashesMatch": true,
+    "businessSourcesMatch": true,
+    "historicalDate": "2026-10-12T15:03:13.994Z",
+    "historicalEnvironment": {
+      "node": "v24.20.0",
+      "platform": "darwin arm64",
+      "cpu": "Apple M5 Max"
+    },
+    "IrVsHistoricalWall": 0.8095238095238095,
+    "CtVsHistoricalWall": 0.7142857142857143,
+    "pairedVsHistoricalWall": 0.8333333333333334,
+    "historicalWinner": "oxc-walker",
+    "pairedWinner": "oxc-visitor",
+    "CtWinner": "estree-walker",
+    "rows": [
+      {
+        "id": "direct-ast",
+        "historicalMs": 0.8540844999999848,
+        "pairedMs": 1.8313370000000049,
+        "Ir": 51152833,
+        "Ct": 12397148194
+      },
+      {
+        "id": "swc-next",
+        "historicalMs": 1.7623750000001053,
+        "pairedMs": 3.7255539999999883,
+        "Ir": 91268161,
+        "Ct": 23234615576
+      },
+      {
+        "id": "yuku-ast",
+        "historicalMs": 1.90689249999987,
+        "pairedMs": 4.3932374999999695,
+        "Ir": 124443805,
+        "Ct": 31619337677
+      },
+      {
+        "id": "estree-walker",
+        "historicalMs": 1.152539499999932,
+        "pairedMs": 2.77944149999999,
+        "Ir": 79797838,
+        "Ct": 20871286871
+      },
+      {
+        "id": "oxc-walker",
+        "historicalMs": 1.0351444999999302,
+        "pairedMs": 2.4857535000000013,
+        "Ir": 88310961,
+        "Ct": 23144095476
+      },
+      {
+        "id": "oxc-visitor",
+        "historicalMs": 1.3815620000000166,
+        "pairedMs": 1.4957389999999862,
+        "Ir": 124857120,
+        "Ct": 32636613474
+      },
+      {
+        "id": "zimmerframe",
+        "historicalMs": 1.8961040000000935,
+        "pairedMs": 2.925500999999997,
+        "Ir": 90819803,
+        "Ct": 22440869927
+      },
+      {
+        "id": "estree-util-visit",
+        "historicalMs": 6.122441000000066,
+        "pairedMs": 7.749787999999995,
+        "Ir": 277902193,
+        "Ct": 66274983229
+      }
+    ]
+  },
+  {
+    "scenario": "i18n",
+    "kind": "javascript",
+    "status": "compared",
+    "sourceHashesMatch": true,
+    "businessSourcesMatch": true,
+    "historicalDate": "2026-10-12T15:03:13.994Z",
+    "historicalEnvironment": {
+      "node": "v24.20.0",
+      "platform": "darwin arm64",
+      "cpu": "Apple M5 Max"
+    },
+    "IrVsHistoricalWall": 0.8627450980392157,
+    "CtVsHistoricalWall": 0.8578431372549019,
+    "pairedVsHistoricalWall": 0.9191176470588235,
+    "historicalWinner": "acorn-recursive",
+    "pairedWinner": "oxc-visitor",
+    "CtWinner": "acorn-recursive",
+    "rows": [
+      {
+        "id": "direct-ast",
+        "historicalMs": 1.6567055000000863,
+        "pairedMs": 3.364377499999989,
+        "Ir": 81188670,
+        "Ct": 19553615692
+      },
+      {
+        "id": "swc-next",
+        "historicalMs": 0.8234345000000189,
+        "pairedMs": 2.5859250000000316,
+        "Ir": 52943735,
+        "Ct": 13832118846
+      },
+      {
+        "id": "yuku-ast",
+        "historicalMs": 1.3235850000000227,
+        "pairedMs": 3.426724500000006,
+        "Ir": 86491567,
+        "Ct": 22360204960
+      },
+      {
+        "id": "estree-walker",
+        "historicalMs": 1.8182714999999803,
+        "pairedMs": 3.5672685000000115,
+        "Ir": 94442307,
+        "Ct": 24088404413
+      },
+      {
+        "id": "oxc-walker",
+        "historicalMs": 1.4322700000000381,
+        "pairedMs": 3.299275499999993,
+        "Ir": 98873990,
+        "Ct": 25374042808
+      },
+      {
+        "id": "oxc-visitor",
+        "historicalMs": 0.6342494999998536,
+        "pairedMs": 0.8197389999999984,
+        "Ir": 81972573,
+        "Ct": 21475934613
+      },
+      {
+        "id": "acorn-simple",
+        "historicalMs": 1.1104780000001142,
+        "pairedMs": 1.6513974999999874,
+        "Ir": 40247505,
+        "Ct": 9731455780
+      },
+      {
+        "id": "acorn-recursive",
+        "historicalMs": 0.6058734999999018,
+        "pairedMs": 0.93232900000001,
+        "Ir": 19436269,
+        "Ct": 4774287868
+      },
+      {
+        "id": "acorn-full",
+        "historicalMs": 1.0335814999998973,
+        "pairedMs": 1.3937924999999893,
+        "Ir": 39926057,
+        "Ct": 9412450901
+      },
+      {
+        "id": "estraverse",
+        "historicalMs": 1.3303564999999509,
+        "pairedMs": 4.20512100000002,
+        "Ir": 172836451,
+        "Ct": 44803320170
+      },
+      {
+        "id": "esrecurse",
+        "historicalMs": 0.9066660000000866,
+        "pairedMs": 2.129757500000011,
+        "Ir": 40110037,
+        "Ct": 10424672950
+      },
+      {
+        "id": "estree-toolkit",
+        "historicalMs": 3.156980500000074,
+        "pairedMs": 5.941445499999986,
+        "Ir": 210038001,
+        "Ct": 52290152908
+      },
+      {
+        "id": "estree-toolkit-scope",
+        "historicalMs": 7.555685499999896,
+        "pairedMs": 14.150398999999993,
+        "Ir": 490959249,
+        "Ct": 121087063624
+      },
+      {
+        "id": "zimmerframe",
+        "historicalMs": 1.6727699999999999,
+        "pairedMs": 3.2546155,
+        "Ir": 85269537,
+        "Ct": 21648346375
+      },
+      {
+        "id": "esquery",
+        "historicalMs": 2.318650500000018,
+        "pairedMs": 5.147513500000002,
+        "Ir": 218709909,
+        "Ct": 55259207244
+      },
+      {
+        "id": "estree-util-visit",
+        "historicalMs": 9.661645500000077,
+        "pairedMs": 12.355816999999945,
+        "Ir": 371134476,
+        "Ct": 87331695126
+      },
+      {
+        "id": "typescript-eslint",
+        "historicalMs": 1.2116874999999254,
+        "pairedMs": 3.146552999999983,
+        "Ir": 75047218,
+        "Ct": 18566832573
+      }
+    ]
+  }
+]

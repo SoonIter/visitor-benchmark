@@ -8,6 +8,8 @@ This branch adapts [SWC Next #747](https://github.com/swc-project/swc-next/pull/
 | Ct (K) | Modeled throughput cycles, not elapsed cycles | raw Ct **centi-cycles** / 100,000 |
 | Wall (ms) | Elapsed time with normal Node JIT optimizations | Median of process medians |
 
+This run uses Valgrind **3.26.0.codspeed7**. Its ARM64 [cost table is generated for Cortex-A72](https://github.com/CodSpeedHQ/valgrind-codspeed/blob/3.26.0-0codspeed7/callgrind/arm64_caps_lut.inc); Ct is a [cache-independent sum of instruction costs](https://github.com/CodSpeedHQ/valgrind-codspeed/blob/3.26.0-0codspeed7/callgrind/bbcc.c#L615). Unmatched instructions use a [one-cycle fallback](https://github.com/CodSpeedHQ/valgrind-codspeed/blob/3.26.0-0codspeed7/callgrind/cycledecode.c#L46). Ct is **not an Apple M5 Max hardware-cycle measurement**. [Recorded runtime](../../results/cpu/runtime.json).
+
 Lower is better. Ir and Ct are not interchangeable: instructions have different modeled costs. Counts are architecture-specific; do not compare ARM64 counts with x86-64 counts.
 
 ## Measurement boundary
@@ -16,7 +18,7 @@ Every implementation runs in a separate process. A callback processes one full c
 
 The simulation uses CodSpeed runner **5.2.1**, `@codspeed/tinybench-plugin` **5.7.1**, and Tinybench **6.1.2**. The plugin executes seven warmups with fresh ASTs, then measures one callback. Three independent processes provide three counter samples. Only positive, complete Ir/Ct records with the exact expected benchmark manifest are accepted.
 
-The paired wall-time control uses the **same batch callback and fresh-parser lifecycle**, eight warmups and twenty samples in each of three processes. Explicit full GC happens after preparation and before timing, as it does in simulation. Wall-time measurements are strictly serial and never overlap simulation. CPU simulation defaults to one process; `--cpu-workers=3` runs three independent simulated processes, each with its own modeled CPU/cache and counters. This changes collection throughput, not a wall-time measurement. The published run uses three simulation workers. Process launch order is rotated/reversed between repetitions.
+The paired wall-time control uses the **same batch callback and fresh-parser lifecycle**, eight warmups and twenty samples in each of three processes. Explicit full GC happens after preparation and before timing, as it does in simulation. Wall-time measurements are strictly serial and never overlap simulation. CPU simulation defaults to one process; `--cpu-workers=6` runs six independent simulated processes, each with its own modeled CPU/cache and counters. This changes collection throughput, not a wall-time measurement. The published run uses six simulation workers. Process launch order is rotated/reversed between repetitions.
 
 The historical wall-time suite parsed and measured one file at a time, without full GC before each sample. Its macOS results are retained in [the baseline report](wall-time-baseline.md). The new Linux paired control is the primary rank comparison; differences from historical numbers also include platform and harness effects.
 
@@ -41,7 +43,7 @@ npm run bench:cpu -- --match=styled-components/dense/direct-ast \
 
 # Complete suite (requires the existing private i18n corpus):
 export FLOW_WEB_ROOT=/absolute/path/to/flow-web-monorepo
-npm run bench:cpu -- --cpu-workers=3
+npm run bench:cpu -- --cpu-workers=6
 
 # Render the completed run, including charts:
 python3 -m venv .cache/charts-venv
@@ -49,7 +51,7 @@ python3 -m venv .cache/charts-venv
 PYTHON=.cache/charts-venv/bin/python npm run report
 ```
 
-`--match` filters the `scenario/track/implementation` identity. Use a different `--work` and `--output` for diagnostics. Interrupted completed repetitions can be reused only with the exact same source/configuration/environment fingerprint. An unfinished simulation directory is rejected; inspect it and use a new directory. Reports refuse incomplete datasets.
+`--match` filters the `scenario/track/implementation` identity and defaults to an unpublished `results/tmp/cpu-filtered.json` output. Use a different `--work` and `--output` for diagnostics. Interrupted completed repetitions can be reused only with the exact same source/configuration/environment fingerprint. An unfinished simulation directory is rejected; inspect it and use a new directory. Reports refuse incomplete datasets.
 
 On a local Linux VM without the business checkout, use the committed Babel 7 dependency replay:
 
@@ -62,10 +64,14 @@ export FLOW_WEB_ROOT="$PWD/.cache/babel7-replay"
 
 This pins parser/traverse 7.27.3 and types 7.28.6, matching the business-resolved direct versions. Its full transitive graph is recorded in a dedicated lockfile; it is a dependency replay, not the original business installation. Source, dictionary, order and expected outputs come from the **existing** ignored `.cache/i18n/corpus.json`; do not regenerate the corpus when comparing runs.
 
-On macOS, use a local Ubuntu 24.04 ARM64 VM (for example Lima with Apple's Virtualization framework), copy the checkout into its Linux filesystem, and run `npm ci` there. Do not reuse macOS native `node_modules`. The private corpus stays on the same computer. The current run uses four virtual CPUs and 8 GiB of RAM; wall-time measurements run serially.
+On macOS, use a local Ubuntu 24.04 ARM64 VM (for example Lima with Apple's Virtualization framework), copy the checkout into its Linux filesystem, and run `npm ci` there. Do not reuse macOS native `node_modules`. The private corpus stays on the same computer. The current run uses eight virtual CPUs and 16 GiB of RAM; wall-time measurements run serially.
 
 ## Evidence and privacy
 
 `results/cpu/latest.json` records source hashes, versions, flags, validation hashes, raw counts, wall samples and hashes of the Callgrind profiles. `summary.json` contains unrounded aggregate metrics and rank correlations. Full profiles and intermediate records remain under ignored `.cache/cpu/` because profiles may contain private business symbol names. No source, dictionaries, or profiles are uploaded: `CODSPEED_SKIP_UPLOAD=true`, with `GITHUB_ACTIONS` unset, follows #747's local-mode workflow.
 
 The report does not assert that instruction counts are perfectly deterministic. The repeated measurements show their actual variation alongside wall time.
+
+A [scheduling diagnostic](../../results/cpu/scheduling-control.json) compares eight serial measurements with their three-worker counterparts on this machine. The largest observed Ir/Ct difference was about 0.031%. This is a small diagnostic with run-to-run variation, not a randomized estimate of scheduling effects.
+
+After the full matrix, `node scripts/cpu/jit-control.mjs` reproduces the separately reported two-flag JIT diagnostic. Run it without other benchmarks in progress. The repository retains both the original macOS wall-time files and the new Linux paired samples.

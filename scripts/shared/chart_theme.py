@@ -23,7 +23,7 @@ plt.rcParams.update({
 })
 
 
-def render(title, subtitle, panels, environment, repetitions, output):
+def render(title, subtitle, panels, environment, repetitions, output, footer=None):
     """Panels contain title/xlabel/rows; each row has id, median, min, max, label?."""
     height = max(6.4, max(len(panel['rows']) for panel in panels) * .35 + 2.2)
     fig, axes = plt.subplots(1, 2, figsize=(16, height))
@@ -66,7 +66,7 @@ def render(title, subtitle, panels, environment, repetitions, output):
         ax.set_xlabel(panel['xlabel'], fontsize=9, labelpad=12)
     fig.text(.035, .065, environment, fontsize=9, color=MUTED)
     fig.text(.035, .029,
-             f'Median of {repetitions} process medians · Whiskers: min–max · Lower is better · External parsing/printing excluded',
+             footer or f'Median of {repetitions} process medians · Whiskers: min–max · Lower is better · External parsing/printing excluded',
              fontsize=8.5, color=MUTED)
     output = Path(output)
     output.parent.mkdir(parents=True, exist_ok=True)

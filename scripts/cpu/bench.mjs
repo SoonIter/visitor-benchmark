@@ -16,7 +16,7 @@ assert.equal(os.platform(), 'linux', 'CPU simulation requires Linux; use the doc
 const selected = (await jobs()).filter(j => j.name.includes(arg('match', '')));
 assert.ok(selected.length, 'No tasks selected');
 const directory = resolve(arg('work', '.cache/cpu'));
-const out = resolve(arg('output', 'results/cpu/latest.json'));
+const out = resolve(arg('output', arg('match', '') ? 'results/tmp/cpu-filtered.json' : 'results/cpu/latest.json'));
 mkdirSync(directory, { recursive: true }); mkdirSync(resolve(out, '..'), { recursive: true });
 const runner = process.env.CODSPEED_BIN ?? 'codspeed';
 const environment = { node: process.version, platform: os.platform(), arch: os.arch(), release: os.release(),
@@ -35,7 +35,7 @@ if (selected.some(j => j.scenario === 'i18n')) {
   data.businessDependencies = businessDependencies();
   data.privateCorpusHash = digest(readFileSync('.cache/i18n/corpus.json'));
 }
-const fingerprint = digest(JSON.stringify({ manifest, environment, jobs: selected, repetitions, cpuWorkers, privateCorpusHash: data.privateCorpusHash, businessDependencies: data.businessDependencies }));
+const fingerprint = digest(JSON.stringify({ manifest: { commit: manifest.commit, sha256: manifest.sha256 }, environment, jobs: selected, repetitions, cpuWorkers, privateCorpusHash: data.privateCorpusHash, businessDependencies: data.businessDependencies }));
 const fingerprintPath = join(directory, 'fingerprint');
 if (existsSync(fingerprintPath)) assert.equal(readFileSync(fingerprintPath, 'utf8'), fingerprint,
   'Inputs/configuration changed: select a new --work directory, do not reuse old measurements.');

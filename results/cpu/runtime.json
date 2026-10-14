@@ -1,0 +1,37 @@
+{
+  "host": {
+    "cpu": "Apple M5 Max",
+    "cpuCount": 18,
+    "memoryGiB": 64
+  },
+  "vm": {
+    "manager": "Lima 2.2.1",
+    "backend": "Apple Virtualization",
+    "cpus": 8,
+    "memoryGiB": 16,
+    "os": "Ubuntu 24.04.5 LTS",
+    "architecture": "arm64"
+  },
+  "valgrind": "3.26.0.codspeed7",
+  "cycleModel": {
+    "architecture": "Cortex-A72",
+    "method": "sum of reciprocal-throughput instruction costs, independent of cache simulation",
+    "fallbackCycles": 1,
+    "sources": [
+      "https://github.com/CodSpeedHQ/valgrind-codspeed/blob/3.26.0-0codspeed7/callgrind/arm64_caps_lut.inc",
+      "https://github.com/CodSpeedHQ/valgrind-codspeed/blob/3.26.0-0codspeed7/callgrind/bbcc.c",
+      "https://github.com/CodSpeedHQ/valgrind-codspeed/blob/3.26.0-0codspeed7/callgrind/cycledecode.c"
+    ]
+  },
+  "evidence": {
+    "measurementCommit": "031f8392d6f6bd3d69a5b8fe11cecec675960e36",
+    "allMeasuredSourceHashesMatchCommit": true,
+    "sourceFileCount": 174,
+    "pairedRuns": 621,
+    "jitControlRuns": 60,
+    "rawProfileCount": 627,
+    "datasetSha256": "89272b5ef5cf5285e592fefec8e38d9385cf749becbe1e92b0e23a5fd065abf0",
+    "rawProfiles": ".cache/cpu-final/profiles-{0,1,2}",
+    "note": "The dirty sourceManifest flag includes generated result files. Every hashed measurement source file was verified against the recorded commit. Raw profiles were copied from the local VM and checksum-verified; they remain ignored by Git."
+  }
+}

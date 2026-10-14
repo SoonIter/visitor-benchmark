@@ -26,6 +26,7 @@ for scenario, title in titles.items():
             env = data['environment']
             render(f'{title} / {kind}',
                    ('Shared ESTree' if family == 'estree' else 'Native ASTs (not ESTree; different tree representations)') +
-                   ' · Fresh parser output · TurboFan and Maglev disabled',
+                   ' · Fresh ASTs · No TurboFan/Maglev · Ct: ' + ('Cortex-A72 model' if data['environment']['arch'] == 'arm64' else 'instruction cost model'),
                    panels, f"{env['node']} · {env['platform']}/{env['arch']} · {env['codspeed']} · {data['createdAt'][:10]}",
-                   data['repetitions'], f'charts/cpu/{scenario}-{kind}-{family}')
+                   data['repetitions'], f'charts/cpu/{scenario}-{kind}-{family}',
+                   footer=f"Median of {data['repetitions']} independent counter samples · Whiskers: min–max · Lower is better · External parsing/validation excluded")

@@ -1,0 +1,7603 @@
+{
+  "rows": [
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "direct-ast",
+      "ast": "ESTree",
+      "group": "specialized",
+      "note": "direct top-level AST edits; no visitor API or child-key table",
+      "name": "styled-components/dense/direct-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 9361927,
+        "min": 9360355,
+        "max": 9363049,
+        "spreadPct": 0.028776126966168398
+      },
+      "Ct": {
+        "median": 2208648201,
+        "min": 2208191269,
+        "max": 2208962717,
+        "spreadPct": 0.03492851417671292
+      },
+      "wall": {
+        "median": 0.3432994999999437,
+        "min": 0.3416524999999524,
+        "max": 0.38987900000000764,
+        "spreadPct": 14.047937733688265
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "swc-next",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "typed leave + context.replace; pinned PR snapshot",
+      "name": "styled-components/dense/swc-next",
+      "status": "passed",
+      "Ir": {
+        "median": 41227282,
+        "min": 41227109,
+        "max": 41230192,
+        "spreadPct": 0.0074780578549902945
+      },
+      "Ct": {
+        "median": 10616637237,
+        "min": 10616547339,
+        "max": 10617435742,
+        "spreadPct": 0.008368026336096615
+      },
+      "wall": {
+        "median": 1.6640904999999862,
+        "min": 1.6116609999999696,
+        "max": 2.2061899999999923,
+        "spreadPct": 35.726963166968844
+      },
+      "rank": {
+        "Ir": 6,
+        "Ct": 6,
+        "wall": 7
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "yuku-ast",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "typed leave + context.replace",
+      "name": "styled-components/dense/yuku-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 60283492,
+        "min": 60281778,
+        "max": 60284315,
+        "spreadPct": 0.004208448973062145
+      },
+      "Ct": {
+        "median": 15487455867,
+        "min": 15486957727,
+        "max": 15487733511,
+        "spreadPct": 0.005009111933309892
+      },
+      "wall": {
+        "median": 2.1745290000001205,
+        "min": 2.1617299999999773,
+        "max": 2.2995355000000473,
+        "spreadPct": 6.337257401490729
+      },
+      "rank": {
+        "Ir": 9,
+        "Ct": 9,
+        "wall": 9
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "estree-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "generic leave + this.replace",
+      "name": "styled-components/dense/estree-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 65548467,
+        "min": 65547374,
+        "max": 65548467,
+        "spreadPct": 0.0016674684398034817
+      },
+      "Ct": {
+        "median": 16438487522,
+        "min": 16438180956,
+        "max": 16438487522,
+        "spreadPct": 0.0018649282641709937
+      },
+      "wall": {
+        "median": 2.4192314999999667,
+        "min": 2.3935809999999833,
+        "max": 2.578715500000044,
+        "spreadPct": 7.652616130372937
+      },
+      "rank": {
+        "Ir": 10,
+        "Ct": 10,
+        "wall": 10
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "oxc-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "generic leave + this.replace",
+      "name": "styled-components/dense/oxc-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 67850890,
+        "min": 67850875,
+        "max": 67851337,
+        "spreadPct": 0.0006809048488531248
+      },
+      "Ct": {
+        "median": 17147389144,
+        "min": 17147389110,
+        "max": 17147442992,
+        "spreadPct": 0.0003142285950794656
+      },
+      "wall": {
+        "median": 2.6146574999999643,
+        "min": 2.4342640000000983,
+        "max": 2.642862500000035,
+        "spreadPct": 7.978043013279549
+      },
+      "rank": {
+        "Ir": 11,
+        "Ct": 11,
+        "wall": 11
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "oxc-visitor",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "oxc-parser Visitor on shared Acorn AST",
+      "name": "styled-components/dense/oxc-visitor",
+      "status": "passed",
+      "Ir": {
+        "median": 53412634,
+        "min": 53411988,
+        "max": 53413261,
+        "spreadPct": 0.0023833312545492517
+      },
+      "Ct": {
+        "median": 13822073382,
+        "min": 13821895634,
+        "max": 13822257342,
+        "spreadPct": 0.0026168867000159295
+      },
+      "wall": {
+        "median": 0.5885195000000749,
+        "min": 0.5757125000000087,
+        "max": 0.6760764999999651,
+        "spreadPct": 17.053640533566618
+      },
+      "rank": {
+        "Ir": 8,
+        "Ct": 8,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "acorn-simple",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "acorn-walk.simple",
+      "name": "styled-components/dense/acorn-simple",
+      "status": "passed",
+      "Ir": {
+        "median": 34498106,
+        "min": 34498051,
+        "max": 34499385,
+        "spreadPct": 0.0038668789527169984
+      },
+      "Ct": {
+        "median": 8277565768,
+        "min": 8277548725,
+        "max": 8277907657,
+        "spreadPct": 0.00433620233363273
+      },
+      "wall": {
+        "median": 1.2147180000000048,
+        "min": 1.1375299999999697,
+        "max": 1.2768019999999751,
+        "spreadPct": 11.465377149264672
+      },
+      "rank": {
+        "Ir": 5,
+        "Ct": 4,
+        "wall": 5
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "acorn-recursive",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "acorn-walk.recursive",
+      "name": "styled-components/dense/acorn-recursive",
+      "status": "passed",
+      "Ir": {
+        "median": 20733836,
+        "min": 20733836,
+        "max": 20734101,
+        "spreadPct": 0.0012781040613999261
+      },
+      "Ct": {
+        "median": 4985077045,
+        "min": 4985077045,
+        "max": 4985227239,
+        "spreadPct": 0.003012872191226084
+      },
+      "wall": {
+        "median": 0.7173895000000243,
+        "min": 0.7141500000000747,
+        "max": 0.7241610000000946,
+        "spreadPct": 1.3954762371096365
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "acorn-full",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "acorn-walk.full",
+      "name": "styled-components/dense/acorn-full",
+      "status": "passed",
+      "Ir": {
+        "median": 34382669,
+        "min": 34382550,
+        "max": 34385977,
+        "spreadPct": 0.009967230874368712
+      },
+      "Ct": {
+        "median": 8083366244,
+        "min": 8083350130,
+        "max": 8084279669,
+        "spreadPct": 0.011499404727454534
+      },
+      "wall": {
+        "median": 1.093941500000028,
+        "min": 1.0886220000000435,
+        "max": 1.106837500000097,
+        "spreadPct": 1.665125603156383
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 3,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "estraverse",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "estraverse.replace; return replacement",
+      "name": "styled-components/dense/estraverse",
+      "status": "passed",
+      "Ir": {
+        "median": 90158777,
+        "min": 90156126,
+        "max": 90158777,
+        "spreadPct": 0.0029403681906643433
+      },
+      "Ct": {
+        "median": 23063403711,
+        "min": 23062682397,
+        "max": 23063403711,
+        "spreadPct": 0.0031275262274317824
+      },
+      "wall": {
+        "median": 3.193257000000017,
+        "min": 3.02945150000005,
+        "max": 3.2378655000001118,
+        "spreadPct": 6.526690460556746
+      },
+      "rank": {
+        "Ir": 12,
+        "Ct": 13,
+        "wall": 14
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "esrecurse",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "Visitor.visitChildren",
+      "name": "styled-components/dense/esrecurse",
+      "status": "passed",
+      "Ir": {
+        "median": 33564560,
+        "min": 33563595,
+        "max": 33564688,
+        "spreadPct": 0.003256410928670002
+      },
+      "Ct": {
+        "median": 8527769399,
+        "min": 8527535738,
+        "max": 8527800331,
+        "spreadPct": 0.0031027222667515753
+      },
+      "wall": {
+        "median": 1.4400399999999536,
+        "min": 1.433258999999964,
+        "max": 1.5990605000000642,
+        "spreadPct": 11.51367323130645
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 5,
+        "wall": 6
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "estree-toolkit",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "child path.replaceWith; scope disabled",
+      "name": "styled-components/dense/estree-toolkit",
+      "status": "passed",
+      "Ir": {
+        "median": 207680812,
+        "min": 207680741,
+        "max": 207682000,
+        "spreadPct": 0.0006062187391678727
+      },
+      "Ct": {
+        "median": 51772970030,
+        "min": 51772912299,
+        "max": 51773211006,
+        "spreadPct": 0.0005769555036670938
+      },
+      "wall": {
+        "median": 6.123964999999998,
+        "min": 6.08406100000002,
+        "max": 6.306500500000027,
+        "spreadPct": 3.6322790871601534
+      },
+      "rank": {
+        "Ir": 15,
+        "Ct": 15,
+        "wall": 15
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "estree-toolkit-scope",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "child path.replaceWith; scope enabled",
+      "name": "styled-components/dense/estree-toolkit-scope",
+      "status": "passed",
+      "Ir": {
+        "median": 428608636,
+        "min": 428604398,
+        "max": 428609073,
+        "spreadPct": 0.0010907386383133915
+      },
+      "Ct": {
+        "median": 106907517045,
+        "min": 106906403878,
+        "max": 106907603195,
+        "spreadPct": 0.0011218266340384446
+      },
+      "wall": {
+        "median": 10.843685999999991,
+        "min": 10.791700000000048,
+        "max": 10.945824500000015,
+        "spreadPct": 1.4213294261745164
+      },
+      "rank": {
+        "Ir": 17,
+        "Ct": 17,
+        "wall": 17
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "ast-types",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "visit + child path.replace; also used by recast",
+      "name": "styled-components/dense/ast-types",
+      "status": "passed",
+      "Ir": {
+        "median": 662431419,
+        "min": 662431004,
+        "max": 662435243,
+        "spreadPct": 0.0006399152996696855
+      },
+      "Ct": {
+        "median": 164091584093,
+        "min": 164091496829,
+        "max": 164092227166,
+        "spreadPct": 0.00044507888935125194
+      },
+      "wall": {
+        "median": 12.380668000000014,
+        "min": 12.299792500000024,
+        "max": 12.417899000000034,
+        "spreadPct": 0.9539590270897353
+      },
+      "rank": {
+        "Ir": 18,
+        "Ct": 18,
+        "wall": 18
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "zimmerframe",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "context.next + returned immutable replacement/root",
+      "name": "styled-components/dense/zimmerframe",
+      "status": "passed",
+      "Ir": {
+        "median": 93139897,
+        "min": 93139854,
+        "max": 93139897,
+        "spreadPct": 0.000046167111393734955
+      },
+      "Ct": {
+        "median": 22326464497,
+        "min": 22326459865,
+        "max": 22326464497,
+        "spreadPct": 0.00002074667935275825
+      },
+      "wall": {
+        "median": 3.168122500000038,
+        "min": 3.131104999999934,
+        "max": 3.3525145000000407,
+        "spreadPct": 6.988666000134273
+      },
+      "rank": {
+        "Ir": 13,
+        "Ct": 12,
+        "wall": 12
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "jscodeshift",
+      "ast": "ESTree",
+      "group": "query",
+      "note": "collection find + exposed child path.replace",
+      "name": "styled-components/dense/jscodeshift",
+      "status": "passed",
+      "Ir": {
+        "median": 679127539,
+        "min": 679123971,
+        "max": 679130183,
+        "spreadPct": 0.0009147030039669766
+      },
+      "Ct": {
+        "median": 168525518612,
+        "min": 168524844915,
+        "max": 168526525540,
+        "spreadPct": 0.0009972525311548453
+      },
+      "wall": {
+        "median": 13.482050499999957,
+        "min": 13.229473999999925,
+        "max": 13.555007499999931,
+        "spreadPct": 2.4145696531844836
+      },
+      "rank": {
+        "Ir": 19,
+        "Ct": 19,
+        "wall": 19
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "esquery",
+      "ast": "ESTree",
+      "group": "query",
+      "note": "selector query + manual edit",
+      "name": "styled-components/dense/esquery",
+      "status": "passed",
+      "Ir": {
+        "median": 126668133,
+        "min": 126667454,
+        "max": 126668159,
+        "spreadPct": 0.0005565725043093514
+      },
+      "Ct": {
+        "median": 31729233211,
+        "min": 31729065698,
+        "max": 31729253428,
+        "spreadPct": 0.0005916625805344616
+      },
+      "wall": {
+        "median": 3.1887125000000083,
+        "min": 3.145011000000011,
+        "max": 3.46108849999996,
+        "spreadPct": 9.912386268751042
+      },
+      "rank": {
+        "Ir": 14,
+        "Ct": 14,
+        "wall": 13
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "estree-util-visit",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "generic leave hook, structural duck typing",
+      "name": "styled-components/dense/estree-util-visit",
+      "status": "passed",
+      "Ir": {
+        "median": 234582105,
+        "min": 234581791,
+        "max": 234582131,
+        "spreadPct": 0.00014493859196974978
+      },
+      "Ct": {
+        "median": 54920069588,
+        "min": 54920026373,
+        "max": 54920075908,
+        "spreadPct": 0.0000901947145580882
+      },
+      "wall": {
+        "median": 7.065234999999973,
+        "min": 6.935512000000017,
+        "max": 7.100301000000002,
+        "spreadPct": 2.3323923408065745
+      },
+      "rank": {
+        "Ir": 16,
+        "Ct": 16,
+        "wall": 16
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "typescript-eslint",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "simpleTraverse; deferred edits because enter-only",
+      "name": "styled-components/dense/typescript-eslint",
+      "status": "passed",
+      "Ir": {
+        "median": 52710122,
+        "min": 52708766,
+        "max": 52710771,
+        "spreadPct": 0.003803823485743402
+      },
+      "Ct": {
+        "median": 12963692190,
+        "min": 12963325305,
+        "max": 12963912842,
+        "spreadPct": 0.004532173329857503
+      },
+      "wall": {
+        "median": 2.1383445000000165,
+        "min": 2.118622499999958,
+        "max": 2.1546685000000707,
+        "spreadPct": 1.685696575089389
+      },
+      "rank": {
+        "Ir": 7,
+        "Ct": 7,
+        "wall": 8
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "babel-types-traverse",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "note": "@babel/types.traverse, no NodePath",
+      "name": "styled-components/dense/babel-types-traverse",
+      "status": "passed",
+      "Ir": {
+        "median": 45762306,
+        "min": 45760731,
+        "max": 45762375,
+        "spreadPct": 0.003592476305717636
+      },
+      "Ct": {
+        "median": 11382047433,
+        "min": 11381603724,
+        "max": 11382068642,
+        "spreadPct": 0.0040846605387714514
+      },
+      "wall": {
+        "median": 0.721411000000046,
+        "min": 0.71977899999996,
+        "max": 0.7268790000001673,
+        "spreadPct": 0.9841823870452241
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "babel-types-traverse-fast",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "note": "@babel/types.traverseFast; deferred edits",
+      "name": "styled-components/dense/babel-types-traverse-fast",
+      "status": "passed",
+      "Ir": {
+        "median": 37707272,
+        "min": 37706881,
+        "max": 37708487,
+        "spreadPct": 0.004259125401593624
+      },
+      "Ct": {
+        "median": 9435198046,
+        "min": 9435108937,
+        "max": 9435531950,
+        "spreadPct": 0.004483350513022183
+      },
+      "wall": {
+        "median": 0.6634175000000369,
+        "min": 0.6539605000000392,
+        "max": 0.6682915000000094,
+        "spreadPct": 2.1601781683433616
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "babel-traverse",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "note": "child path.replaceWith; default scope analysis",
+      "name": "styled-components/dense/babel-traverse",
+      "status": "passed",
+      "Ir": {
+        "median": 588653679,
+        "min": 588650652,
+        "max": 588658213,
+        "spreadPct": 0.0012844564248446666
+      },
+      "Ct": {
+        "median": 152931891336,
+        "min": 152931101052,
+        "max": 152933194972,
+        "spreadPct": 0.0013691846623406622
+      },
+      "wall": {
+        "median": 15.295173999999975,
+        "min": 15.004290999999967,
+        "max": 16.827226499999995,
+        "spreadPct": 11.918370461166583
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 4,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "babel-traverse-no-scope",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "note": "child path.replaceWith; noScope:true",
+      "name": "styled-components/dense/babel-traverse-no-scope",
+      "status": "passed",
+      "Ir": {
+        "median": 273952933,
+        "min": 273950302,
+        "max": 273955256,
+        "spreadPct": 0.0018083398289442663
+      },
+      "Ct": {
+        "median": 71000194310,
+        "min": 70999725108,
+        "max": 71000900883,
+        "spreadPct": 0.0016560165946396547
+      },
+      "wall": {
+        "median": 8.698221499999931,
+        "min": 7.68707999999998,
+        "max": 8.887203999999997,
+        "spreadPct": 13.797349262720271
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 3,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "swc-visitor",
+      "ast": "SWC AST (not ESTree)",
+      "group": "recursive",
+      "note": "legacy @swc/core/Visitor.js",
+      "name": "styled-components/dense/swc-visitor",
+      "status": "passed",
+      "Ir": {
+        "median": 27317567,
+        "min": 27317332,
+        "max": 27319085,
+        "spreadPct": 0.006417116136294275
+      },
+      "Ct": {
+        "median": 6626844301,
+        "min": 6626776383,
+        "max": 6627245409,
+        "spreadPct": 0.007077667419003995
+      },
+      "wall": {
+        "median": 1.491286500000001,
+        "min": 1.4607829999999922,
+        "max": 1.584608000000003,
+        "spreadPct": 8.30323348330523
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "typescript",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "recursive",
+      "note": "transform + visitEachChild + factory",
+      "name": "styled-components/dense/typescript",
+      "status": "passed",
+      "Ir": {
+        "median": 97190669,
+        "min": 97190622,
+        "max": 97190669,
+        "spreadPct": 0.00004835855178648888
+      },
+      "Ct": {
+        "median": 23287648271,
+        "min": 23287634225,
+        "max": 23287648271,
+        "spreadPct": 0.00006031523594201403
+      },
+      "wall": {
+        "median": 1.5126875000000837,
+        "min": 1.5021214999998165,
+        "max": 1.890442999999891,
+        "spreadPct": 25.670966409126343
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "tsquery",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "query",
+      "note": "tsquery.map; internal print/reparse included",
+      "name": "styled-components/dense/tsquery",
+      "status": "passed",
+      "Ir": {
+        "median": 1336176269,
+        "min": 1336175522,
+        "max": 1336186192,
+        "spreadPct": 0.0007985473359727809
+      },
+      "Ct": {
+        "median": 314141739787,
+        "min": 314141476359,
+        "max": 314144112328,
+        "spreadPct": 0.0008391018021951769
+      },
+      "wall": {
+        "median": 22.683221499999945,
+        "min": 22.368662500000028,
+        "max": 23.20683900000006,
+        "spreadPct": 3.695138717399702
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "id": "ts-morph",
+      "ast": "TypeScript AST (not ESTree)",
+      "group": "wrapper",
+      "note": "SourceFile.transform + native factory",
+      "name": "styled-components/dense/ts-morph",
+      "status": "passed",
+      "Ir": {
+        "median": 1062602399,
+        "min": 1062601764,
+        "max": 1062602652,
+        "spreadPct": 0.00008356841663783972
+      },
+      "Ct": {
+        "median": 249045893052,
+        "min": 249045672264,
+        "max": 249045958495,
+        "spreadPct": 0.0001149310259616431
+      },
+      "wall": {
+        "median": 15.140698999999927,
+        "min": 14.986130000000003,
+        "max": 16.14382599999999,
+        "spreadPct": 7.6462519993297065
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "direct-ast",
+      "ast": "ESTree",
+      "group": "specialized",
+      "note": "direct top-level AST edits; no visitor API or child-key table",
+      "name": "styled-components/sparse/direct-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 2645462,
+        "min": 2644787,
+        "max": 2645820,
+        "spreadPct": 0.039047999933470974
+      },
+      "Ct": {
+        "median": 647048592,
+        "min": 646865025,
+        "max": 647146626,
+        "spreadPct": 0.04352084271284528
+      },
+      "wall": {
+        "median": 0.10920150000004014,
+        "min": 0.10264750000004597,
+        "max": 0.12579600000003666,
+        "spreadPct": 21.197968892352378
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "swc-next",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "typed leave + context.replace; pinned PR snapshot",
+      "name": "styled-components/sparse/swc-next",
+      "status": "passed",
+      "Ir": {
+        "median": 65171547,
+        "min": 65171461,
+        "max": 65172051,
+        "spreadPct": 0.0009053030458215148
+      },
+      "Ct": {
+        "median": 17056803077,
+        "min": 17056801604,
+        "max": 17056940005,
+        "spreadPct": 0.0008114123108252615
+      },
+      "wall": {
+        "median": 2.941175000000044,
+        "min": 2.7734499999999116,
+        "max": 3.1354215000000067,
+        "spreadPct": 12.307037153521629
+      },
+      "rank": {
+        "Ir": 6,
+        "Ct": 6,
+        "wall": 7
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "yuku-ast",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "typed leave + context.replace",
+      "name": "styled-components/sparse/yuku-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 108868207,
+        "min": 108865526,
+        "max": 108868207,
+        "spreadPct": 0.0024626105948451966
+      },
+      "Ct": {
+        "median": 28221256541,
+        "min": 28220542279,
+        "max": 28221256541,
+        "spreadPct": 0.00253093620747296
+      },
+      "wall": {
+        "median": 3.5915255000000457,
+        "min": 3.5424279999999726,
+        "max": 3.83864200000005,
+        "spreadPct": 8.24758170309729
+      },
+      "rank": {
+        "Ir": 9,
+        "Ct": 9,
+        "wall": 12
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "estree-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "generic leave + this.replace",
+      "name": "styled-components/sparse/estree-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 114468535,
+        "min": 114468535,
+        "max": 114469784,
+        "spreadPct": 0.0010911295405326888
+      },
+      "Ct": {
+        "median": 28887975987,
+        "min": 28887975987,
+        "max": 28888299498,
+        "spreadPct": 0.001119881157979308
+      },
+      "wall": {
+        "median": 3.3928450000000225,
+        "min": 3.163733500000035,
+        "max": 3.48342150000002,
+        "spreadPct": 9.422416880228331
+      },
+      "rank": {
+        "Ir": 10,
+        "Ct": 10,
+        "wall": 9
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "oxc-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "generic leave + this.replace",
+      "name": "styled-components/sparse/oxc-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 120257648,
+        "min": 120257556,
+        "max": 120257945,
+        "spreadPct": 0.00032347215039495864
+      },
+      "Ct": {
+        "median": 30623438265,
+        "min": 30623434044,
+        "max": 30623537380,
+        "spreadPct": 0.0003374408814117529
+      },
+      "wall": {
+        "median": 3.499774499999944,
+        "min": 3.4296155000000113,
+        "max": 3.5080790000000093,
+        "spreadPct": 2.2419587319125642
+      },
+      "rank": {
+        "Ir": 11,
+        "Ct": 11,
+        "wall": 11
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "oxc-visitor",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "oxc-parser Visitor on shared Acorn AST",
+      "name": "styled-components/sparse/oxc-visitor",
+      "status": "passed",
+      "Ir": {
+        "median": 98802025,
+        "min": 98801655,
+        "max": 98802025,
+        "spreadPct": 0.00037448625167348543
+      },
+      "Ct": {
+        "median": 25987040341,
+        "min": 25986967505,
+        "max": 25987040341,
+        "spreadPct": 0.00028027816574820164
+      },
+      "wall": {
+        "median": 0.6637084999999843,
+        "min": 0.6511229999999841,
+        "max": 0.8712659999999914,
+        "spreadPct": 33.168627492342274
+      },
+      "rank": {
+        "Ir": 7,
+        "Ct": 8,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "acorn-simple",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "acorn-walk.simple",
+      "name": "styled-components/sparse/acorn-simple",
+      "status": "passed",
+      "Ir": {
+        "median": 57998987,
+        "min": 57998375,
+        "max": 57999467,
+        "spreadPct": 0.001882791504617141
+      },
+      "Ct": {
+        "median": 13980104809,
+        "min": 13979960764,
+        "max": 13980277956,
+        "spreadPct": 0.0022688814163667834
+      },
+      "wall": {
+        "median": 1.7711884999999938,
+        "min": 1.7385285000000295,
+        "max": 1.7756219999999985,
+        "spreadPct": 2.0942717277110345
+      },
+      "rank": {
+        "Ir": 5,
+        "Ct": 5,
+        "wall": 5
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "acorn-recursive",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "acorn-walk.recursive",
+      "name": "styled-components/sparse/acorn-recursive",
+      "status": "passed",
+      "Ir": {
+        "median": 27871851,
+        "min": 27870396,
+        "max": 27873041,
+        "spreadPct": 0.009489861294106373
+      },
+      "Ct": {
+        "median": 6786460466,
+        "min": 6786053835,
+        "max": 6786775704,
+        "spreadPct": 0.010636899803904348
+      },
+      "wall": {
+        "median": 0.830748500000027,
+        "min": 0.7918660000000273,
+        "max": 0.8434570000000576,
+        "spreadPct": 6.210182744841392
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "acorn-full",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "acorn-walk.full",
+      "name": "styled-components/sparse/acorn-full",
+      "status": "passed",
+      "Ir": {
+        "median": 57232414,
+        "min": 57231649,
+        "max": 57232536,
+        "spreadPct": 0.0015498210507073843
+      },
+      "Ct": {
+        "median": 13428621699,
+        "min": 13428433965,
+        "max": 13428678701,
+        "spreadPct": 0.0018224953050708468
+      },
+      "wall": {
+        "median": 1.5248315000000048,
+        "min": 1.4937315000000808,
+        "max": 1.5389590000000908,
+        "spreadPct": 2.966065430836773
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 3,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "estraverse",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "estraverse.replace; return replacement",
+      "name": "styled-components/sparse/estraverse",
+      "status": "passed",
+      "Ir": {
+        "median": 165413490,
+        "min": 165413490,
+        "max": 165413490,
+        "spreadPct": 0
+      },
+      "Ct": {
+        "median": 42581155096,
+        "min": 42581155096,
+        "max": 42581155096,
+        "spreadPct": 0
+      },
+      "wall": {
+        "median": 6.053834499999994,
+        "min": 5.921216500000128,
+        "max": 7.121013999999832,
+        "spreadPct": 19.818802446609755
+      },
+      "rank": {
+        "Ir": 13,
+        "Ct": 13,
+        "wall": 14
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "esrecurse",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "Visitor.visitChildren",
+      "name": "styled-components/sparse/esrecurse",
+      "status": "passed",
+      "Ir": {
+        "median": 52796687,
+        "min": 52796608,
+        "max": 52796687,
+        "spreadPct": 0.0001496306008746344
+      },
+      "Ct": {
+        "median": 13715948959,
+        "min": 13715918186,
+        "max": 13715948959,
+        "spreadPct": 0.00022435924843397485
+      },
+      "wall": {
+        "median": 2.1604650000000447,
+        "min": 2.1377575000000206,
+        "max": 2.3207744999999704,
+        "spreadPct": 8.47118560124538
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 4,
+        "wall": 6
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "estree-toolkit",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "child path.replaceWith; scope disabled",
+      "name": "styled-components/sparse/estree-toolkit",
+      "status": "passed",
+      "Ir": {
+        "median": 346960542,
+        "min": 346960308,
+        "max": 346987981,
+        "spreadPct": 0.007975834900557654
+      },
+      "Ct": {
+        "median": 87359078074,
+        "min": 87357756938,
+        "max": 87368935325,
+        "spreadPct": 0.012795907702381001
+      },
+      "wall": {
+        "median": 7.813427999999931,
+        "min": 7.331714000000034,
+        "max": 8.169419500000004,
+        "spreadPct": 10.72135687434475
+      },
+      "rank": {
+        "Ir": 15,
+        "Ct": 15,
+        "wall": 15
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "estree-toolkit-scope",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "child path.replaceWith; scope enabled",
+      "name": "styled-components/sparse/estree-toolkit-scope",
+      "status": "passed",
+      "Ir": {
+        "median": 761551701,
+        "min": 761403360,
+        "max": 761572809,
+        "spreadPct": 0.02225049195970478
+      },
+      "Ct": {
+        "median": 191498828842,
+        "min": 191465127543,
+        "max": 191504287979,
+        "spreadPct": 0.02044943890090843
+      },
+      "wall": {
+        "median": 18.737207499999954,
+        "min": 18.544704499999966,
+        "max": 19.32828049999989,
+        "spreadPct": 4.181925188157987
+      },
+      "rank": {
+        "Ir": 17,
+        "Ct": 17,
+        "wall": 17
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "ast-types",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "visit + child path.replace; also used by recast",
+      "name": "styled-components/sparse/ast-types",
+      "status": "passed",
+      "Ir": {
+        "median": 1574436710,
+        "min": 1573128120,
+        "max": 1574457044,
+        "spreadPct": 0.08440631443356018
+      },
+      "Ct": {
+        "median": 390519068782,
+        "min": 390242475660,
+        "max": 390523540342,
+        "spreadPct": 0.07197207626163299
+      },
+      "wall": {
+        "median": 22.92824799999994,
+        "min": 22.760569499999974,
+        "max": 23.328136500000028,
+        "spreadPct": 2.475405011320774
+      },
+      "rank": {
+        "Ir": 18,
+        "Ct": 18,
+        "wall": 19
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "zimmerframe",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "context.next + returned immutable replacement/root",
+      "name": "styled-components/sparse/zimmerframe",
+      "status": "passed",
+      "Ir": {
+        "median": 122195022,
+        "min": 122195000,
+        "max": 122195749,
+        "spreadPct": 0.0006129545931912022
+      },
+      "Ct": {
+        "median": 30762166736,
+        "min": 30762161646,
+        "max": 30762366761,
+        "spreadPct": 0.0006667768293445999
+      },
+      "wall": {
+        "median": 3.4138264999999706,
+        "min": 3.309321999999952,
+        "max": 3.427407999999957,
+        "spreadPct": 3.4590510091829874
+      },
+      "rank": {
+        "Ir": 12,
+        "Ct": 12,
+        "wall": 10
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "jscodeshift",
+      "ast": "ESTree",
+      "group": "query",
+      "note": "collection find + exposed child path.replace",
+      "name": "styled-components/sparse/jscodeshift",
+      "status": "passed",
+      "Ir": {
+        "median": 1591120330,
+        "min": 1591104019,
+        "max": 1591132270,
+        "spreadPct": 0.0017755413885007679
+      },
+      "Ct": {
+        "median": 394804662520,
+        "min": 394800903600,
+        "max": 394808298646,
+        "spreadPct": 0.0018730898345521393
+      },
+      "wall": {
+        "median": 22.87181549999991,
+        "min": 22.688436000000024,
+        "max": 23.17854999999986,
+        "spreadPct": 2.1428731794370974
+      },
+      "rank": {
+        "Ir": 19,
+        "Ct": 19,
+        "wall": 18
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "esquery",
+      "ast": "ESTree",
+      "group": "query",
+      "note": "selector query + manual edit",
+      "name": "styled-components/sparse/esquery",
+      "status": "passed",
+      "Ir": {
+        "median": 241363433,
+        "min": 241361551,
+        "max": 241363433,
+        "spreadPct": 0.0007797370034921569
+      },
+      "Ct": {
+        "median": 60734548367,
+        "min": 60734088146,
+        "max": 60734548367,
+        "spreadPct": 0.0007577581662730536
+      },
+      "wall": {
+        "median": 5.103881999999999,
+        "min": 4.954975499999989,
+        "max": 5.135038000000009,
+        "spreadPct": 3.527951860956417
+      },
+      "rank": {
+        "Ir": 14,
+        "Ct": 14,
+        "wall": 13
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "estree-util-visit",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "generic leave hook, structural duck typing",
+      "name": "styled-components/sparse/estree-util-visit",
+      "status": "passed",
+      "Ir": {
+        "median": 450723906,
+        "min": 450723888,
+        "max": 450723949,
+        "spreadPct": 0.00001353378402786561
+      },
+      "Ct": {
+        "median": 105469339882,
+        "min": 105469339005,
+        "max": 105469341703,
+        "spreadPct": 0.0000025580893964241604
+      },
+      "wall": {
+        "median": 12.457204499999875,
+        "min": 12.31289500000014,
+        "max": 12.825572499999907,
+        "spreadPct": 4.115510024739282
+      },
+      "rank": {
+        "Ir": 16,
+        "Ct": 16,
+        "wall": 16
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "typescript-eslint",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "simpleTraverse; deferred edits because enter-only",
+      "name": "styled-components/sparse/typescript-eslint",
+      "status": "passed",
+      "Ir": {
+        "median": 100284951,
+        "min": 100284881,
+        "max": 100285022,
+        "spreadPct": 0.00014059936071564714
+      },
+      "Ct": {
+        "median": 24740250207,
+        "min": 24740233501,
+        "max": 24740263189,
+        "spreadPct": 0.00011999878639707566
+      },
+      "wall": {
+        "median": 3.0893089999999575,
+        "min": 2.9989494999999806,
+        "max": 3.2941359999999804,
+        "spreadPct": 9.555097919955688
+      },
+      "rank": {
+        "Ir": 8,
+        "Ct": 7,
+        "wall": 8
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "babel-types-traverse",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "note": "@babel/types.traverse, no NodePath",
+      "name": "styled-components/sparse/babel-types-traverse",
+      "status": "passed",
+      "Ir": {
+        "median": 86848026,
+        "min": 86847943,
+        "max": 86848151,
+        "spreadPct": 0.00023949882292085715
+      },
+      "Ct": {
+        "median": 21775083299,
+        "min": 21775064328,
+        "max": 21775107528,
+        "spreadPct": 0.00019839189318731067
+      },
+      "wall": {
+        "median": 1.0498464999998305,
+        "min": 1.0354149999999436,
+        "max": 1.1050715000000082,
+        "spreadPct": 6.634922343416477
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "babel-types-traverse-fast",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "note": "@babel/types.traverseFast; deferred edits",
+      "name": "styled-components/sparse/babel-types-traverse-fast",
+      "status": "passed",
+      "Ir": {
+        "median": 68504477,
+        "min": 68503322,
+        "max": 68504569,
+        "spreadPct": 0.0018203189844073985
+      },
+      "Ct": {
+        "median": 17370473112,
+        "min": 17370178136,
+        "max": 17370495949,
+        "spreadPct": 0.0018296162571441192
+      },
+      "wall": {
+        "median": 0.9699385000001257,
+        "min": 0.9541660000001002,
+        "max": 0.9815535000000182,
+        "spreadPct": 2.8236326323694145
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "babel-traverse",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "note": "child path.replaceWith; default scope analysis",
+      "name": "styled-components/sparse/babel-traverse",
+      "status": "passed",
+      "Ir": {
+        "median": 1270203084,
+        "min": 1270191595,
+        "max": 1270208525,
+        "spreadPct": 0.0013328577306461649
+      },
+      "Ct": {
+        "median": 330934012560,
+        "min": 330931561769,
+        "max": 330936100338,
+        "spreadPct": 0.0013714422899269486
+      },
+      "wall": {
+        "median": 27.148828999999978,
+        "min": 26.365908500000046,
+        "max": 27.510422500000004,
+        "spreadPct": 4.215703005090788
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 4,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "babel-traverse-no-scope",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "note": "child path.replaceWith; noScope:true",
+      "name": "styled-components/sparse/babel-traverse-no-scope",
+      "status": "passed",
+      "Ir": {
+        "median": 585454269,
+        "min": 585452251,
+        "max": 585455651,
+        "spreadPct": 0.0005807456158458724
+      },
+      "Ct": {
+        "median": 151043502988,
+        "min": 151042964184,
+        "max": 151043912616,
+        "spreadPct": 0.0006279197590348195
+      },
+      "wall": {
+        "median": 12.587176500000055,
+        "min": 12.114037500000109,
+        "max": 12.920387999999889,
+        "spreadPct": 6.406126902246719
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 3,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "swc-visitor",
+      "ast": "SWC AST (not ESTree)",
+      "group": "recursive",
+      "note": "legacy @swc/core/Visitor.js",
+      "name": "styled-components/sparse/swc-visitor",
+      "status": "passed",
+      "Ir": {
+        "median": 46021323,
+        "min": 46017574,
+        "max": 46021865,
+        "spreadPct": 0.009323938818534184
+      },
+      "Ct": {
+        "median": 11260025166,
+        "min": 11258818336,
+        "max": 11260087177,
+        "spreadPct": 0.011268544974759962
+      },
+      "wall": {
+        "median": 2.823723499999801,
+        "min": 2.785174499999812,
+        "max": 2.9214504999999917,
+        "spreadPct": 4.826109921888228
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "typescript",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "recursive",
+      "note": "transform + visitEachChild + factory",
+      "name": "styled-components/sparse/typescript",
+      "status": "passed",
+      "Ir": {
+        "median": 103815881,
+        "min": 103815797,
+        "max": 103815887,
+        "spreadPct": 0.00008669193877957843
+      },
+      "Ct": {
+        "median": 24098523838,
+        "min": 24098512501,
+        "max": 24098524666,
+        "spreadPct": 0.0000504802704173004
+      },
+      "wall": {
+        "median": 1.7199405000001207,
+        "min": 1.6951629999998659,
+        "max": 1.8696669999999358,
+        "spreadPct": 10.145932373826751
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "tsquery",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "query",
+      "note": "tsquery.map; internal print/reparse included",
+      "name": "styled-components/sparse/tsquery",
+      "status": "passed",
+      "Ir": {
+        "median": 2804389508,
+        "min": 2804385697,
+        "max": 2804394471,
+        "spreadPct": 0.0003128666675927387
+      },
+      "Ct": {
+        "median": 655979370369,
+        "min": 655978496607,
+        "max": 655981123899,
+        "spreadPct": 0.0004005144244890052
+      },
+      "wall": {
+        "median": 41.74080150000009,
+        "min": 39.39668800000004,
+        "max": 42.31510500000013,
+        "spreadPct": 6.991760807468165
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "id": "ts-morph",
+      "ast": "TypeScript AST (not ESTree)",
+      "group": "wrapper",
+      "note": "SourceFile.transform + native factory",
+      "name": "styled-components/sparse/ts-morph",
+      "status": "passed",
+      "Ir": {
+        "median": 1278519182,
+        "min": 1278516143,
+        "max": 1278519578,
+        "spreadPct": 0.00026867019661188
+      },
+      "Ct": {
+        "median": 296606245821,
+        "min": 296605508876,
+        "max": 296606323923,
+        "spreadPct": 0.00027479090932288583
+      },
+      "wall": {
+        "median": 11.856933000000026,
+        "min": 11.748173000000065,
+        "max": 12.579613499999937,
+        "spreadPct": 7.0122729039615015
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "direct-ast",
+      "ast": "ESTree",
+      "group": "specialized",
+      "note": "recursive direct AST edits; no visitor API or child-key table",
+      "name": "remove-debugger/dense/direct-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 46167197,
+        "min": 46166763,
+        "max": 46168345,
+        "spreadPct": 0.00342667543797385
+      },
+      "Ct": {
+        "median": 11475298105,
+        "min": 11475174941,
+        "max": 11475616949,
+        "spreadPct": 0.003851821503507686
+      },
+      "wall": {
+        "median": 1.8996814999999856,
+        "min": 1.844933999999995,
+        "max": 1.9655380000000093,
+        "spreadPct": 6.348643180449738
+      },
+      "rank": {
+        "Ir": 11,
+        "Ct": 11,
+        "wall": 11
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "swc-next",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/dense/swc-next",
+      "status": "passed",
+      "Ir": {
+        "median": 21386828,
+        "min": 21386828,
+        "max": 21386991,
+        "spreadPct": 0.000762151357835767
+      },
+      "Ct": {
+        "median": 5612178042,
+        "min": 5612178042,
+        "max": 5612242049,
+        "spreadPct": 0.0011405019498845043
+      },
+      "wall": {
+        "median": 1.46953400000001,
+        "min": 1.4050415000000385,
+        "max": 1.471756499999998,
+        "spreadPct": 4.539874545261218
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 4,
+        "wall": 8
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "yuku-ast",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/dense/yuku-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 28185024,
+        "min": 28184873,
+        "max": 28185579,
+        "spreadPct": 0.0025048763485175673
+      },
+      "Ct": {
+        "median": 7274868772,
+        "min": 7274851619,
+        "max": 7275027437,
+        "spreadPct": 0.0024167858625395422
+      },
+      "wall": {
+        "median": 1.736177999999967,
+        "min": 1.7248550000000336,
+        "max": 1.7441239999999993,
+        "spreadPct": 1.1098516396340785
+      },
+      "rank": {
+        "Ir": 8,
+        "Ct": 9,
+        "wall": 10
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "estree-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/dense/estree-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 28205912,
+        "min": 28205319,
+        "max": 28206201,
+        "spreadPct": 0.003127004012492133
+      },
+      "Ct": {
+        "median": 7250520606,
+        "min": 7250337547,
+        "max": 7250557823,
+        "spreadPct": 0.0030380714981723617
+      },
+      "wall": {
+        "median": 1.2013844999999748,
+        "min": 1.1510020000000054,
+        "max": 1.482500000000016,
+        "spreadPct": 27.592997911993827
+      },
+      "rank": {
+        "Ir": 9,
+        "Ct": 8,
+        "wall": 7
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "oxc-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/dense/oxc-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 29348548,
+        "min": 29348147,
+        "max": 29348677,
+        "spreadPct": 0.0018058815039163096
+      },
+      "Ct": {
+        "median": 7576210351,
+        "min": 7576144709,
+        "max": 7576223463,
+        "spreadPct": 0.0010394906734552992
+      },
+      "wall": {
+        "median": 1.0548815000000218,
+        "min": 1.0116160000000178,
+        "max": 1.1881869999999992,
+        "spreadPct": 16.738467780502145
+      },
+      "rank": {
+        "Ir": 10,
+        "Ct": 10,
+        "wall": 6
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "oxc-visitor",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/dense/oxc-visitor",
+      "status": "passed",
+      "Ir": {
+        "median": 24905819,
+        "min": 24905597,
+        "max": 24906229,
+        "spreadPct": 0.002537559596012482
+      },
+      "Ct": {
+        "median": 6507685328,
+        "min": 6507674888,
+        "max": 6507814768,
+        "spreadPct": 0.0021494585701332483
+      },
+      "wall": {
+        "median": 0.2643924999999854,
+        "min": 0.24824899999998706,
+        "max": 0.28492300000002047,
+        "spreadPct": 13.871043997101065
+      },
+      "rank": {
+        "Ir": 6,
+        "Ct": 6,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "acorn-simple",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/dense/acorn-simple",
+      "status": "passed",
+      "Ir": {
+        "median": 19774453,
+        "min": 19774365,
+        "max": 19775207,
+        "spreadPct": 0.004258019172515164
+      },
+      "Ct": {
+        "median": 4781729467,
+        "min": 4781680435,
+        "max": 4781929301,
+        "spreadPct": 0.005204518610211873
+      },
+      "wall": {
+        "median": 0.694470999999993,
+        "min": 0.6895199999999875,
+        "max": 0.7198569999999904,
+        "spreadPct": 4.368360953877592
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 3,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "acorn-recursive",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/dense/acorn-recursive",
+      "status": "passed",
+      "Ir": {
+        "median": 10699769,
+        "min": 10699581,
+        "max": 10699896,
+        "spreadPct": 0.002943988790786044
+      },
+      "Ct": {
+        "median": 2611178742,
+        "min": 2611099998,
+        "max": 2611197195,
+        "spreadPct": 0.0037223418847823937
+      },
+      "wall": {
+        "median": 0.4051039999999375,
+        "min": 0.4017000000000053,
+        "max": 0.4261549999999943,
+        "spreadPct": 6.036721434494052
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "acorn-full",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/dense/acorn-full",
+      "status": "passed",
+      "Ir": {
+        "median": 24425872,
+        "min": 24425019,
+        "max": 24426252,
+        "spreadPct": 0.005047926231661249
+      },
+      "Ct": {
+        "median": 5825317190,
+        "min": 5825081114,
+        "max": 5825395971,
+        "spreadPct": 0.005404976067921205
+      },
+      "wall": {
+        "median": 0.7065925000000277,
+        "min": 0.6987665000000334,
+        "max": 0.7291925000000106,
+        "spreadPct": 4.306017966504881
+      },
+      "rank": {
+        "Ir": 5,
+        "Ct": 5,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "estraverse",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/dense/estraverse",
+      "status": "passed",
+      "Ir": {
+        "median": 52188828,
+        "min": 52188828,
+        "max": 52188897,
+        "spreadPct": 0.00013221220449710042
+      },
+      "Ct": {
+        "median": 13711388028,
+        "min": 13711368751,
+        "max": 13711388028,
+        "spreadPct": 0.00014059116378760834
+      },
+      "wall": {
+        "median": 2.2303509999999847,
+        "min": 2.184714500000041,
+        "max": 2.4680774999999926,
+        "spreadPct": 12.70486125277831
+      },
+      "rank": {
+        "Ir": 12,
+        "Ct": 12,
+        "wall": 12
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "esrecurse",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/dense/esrecurse",
+      "status": "passed",
+      "Ir": {
+        "median": 15648046,
+        "min": 15648046,
+        "max": 15649252,
+        "spreadPct": 0.007707032558569933
+      },
+      "Ct": {
+        "median": 4038572827,
+        "min": 4038572827,
+        "max": 4038878140,
+        "spreadPct": 0.007559923098546614
+      },
+      "wall": {
+        "median": 0.8953539999999975,
+        "min": 0.8826329999999984,
+        "max": 0.9383685000000241,
+        "spreadPct": 6.224968001486099
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 5
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "estree-toolkit",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/dense/estree-toolkit",
+      "status": "passed",
+      "Ir": {
+        "median": 83151906,
+        "min": 83151893,
+        "max": 83152618,
+        "spreadPct": 0.0008718982340585194
+      },
+      "Ct": {
+        "median": 20773531564,
+        "min": 20773530163,
+        "max": 20773751046,
+        "spreadPct": 0.0010632905595252017
+      },
+      "wall": {
+        "median": 4.391341499999953,
+        "min": 4.09444849999997,
+        "max": 4.394435500000014,
+        "spreadPct": 6.8313293329623175
+      },
+      "rank": {
+        "Ir": 14,
+        "Ct": 14,
+        "wall": 16
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "estree-toolkit-scope",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/dense/estree-toolkit-scope",
+      "status": "passed",
+      "Ir": {
+        "median": 199260847,
+        "min": 199260597,
+        "max": 199263773,
+        "spreadPct": 0.0015938906452605814
+      },
+      "Ct": {
+        "median": 49219485551,
+        "min": 49219443678,
+        "max": 49220295636,
+        "spreadPct": 0.0017309364176860858
+      },
+      "wall": {
+        "median": 7.524781000000019,
+        "min": 7.297217000000046,
+        "max": 7.738803999999988,
+        "spreadPct": 5.868436569781107
+      },
+      "rank": {
+        "Ir": 17,
+        "Ct": 17,
+        "wall": 17
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "ast-types",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/dense/ast-types",
+      "status": "passed",
+      "Ir": {
+        "median": 288258454,
+        "min": 288257900,
+        "max": 288260027,
+        "spreadPct": 0.0007378794864417056
+      },
+      "Ct": {
+        "median": 70216705163,
+        "min": 70216526300,
+        "max": 70217090326,
+        "spreadPct": 0.0008032646913447143
+      },
+      "wall": {
+        "median": 8.284992499999987,
+        "min": 8.06557399999997,
+        "max": 8.329863500000016,
+        "spreadPct": 3.1899787477182007
+      },
+      "rank": {
+        "Ir": 18,
+        "Ct": 18,
+        "wall": 18
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "zimmerframe",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "return immutable parent replacements; propagate child edits and returned root",
+      "name": "remove-debugger/dense/zimmerframe",
+      "status": "passed",
+      "Ir": {
+        "median": 65842350,
+        "min": 65842184,
+        "max": 65842424,
+        "spreadPct": 0.00036450703840309464
+      },
+      "Ct": {
+        "median": 15303628139,
+        "min": 15303603395,
+        "max": 15303650135,
+        "spreadPct": 0.0003054177713642105
+      },
+      "wall": {
+        "median": 2.728362500000003,
+        "min": 2.6277469999999994,
+        "max": 2.737903999999986,
+        "spreadPct": 4.037476691604822
+      },
+      "rank": {
+        "Ir": 13,
+        "Ct": 13,
+        "wall": 13
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "jscodeshift",
+      "ast": "ESTree",
+      "group": "query",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/dense/jscodeshift",
+      "status": "passed",
+      "Ir": {
+        "median": 333934952,
+        "min": 333934794,
+        "max": 333935146,
+        "spreadPct": 0.0001054097505792086
+      },
+      "Ct": {
+        "median": 82172262584,
+        "min": 82172233052,
+        "max": 82172299910,
+        "spreadPct": 0.00008136322147836065
+      },
+      "wall": {
+        "median": 8.727825500000023,
+        "min": 8.469845499999991,
+        "max": 9.363190999999972,
+        "spreadPct": 10.235602212715856
+      },
+      "rank": {
+        "Ir": 19,
+        "Ct": 19,
+        "wall": 19
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "esquery",
+      "ast": "ESTree",
+      "group": "query",
+      "note": "query statement containers + manual slot edits",
+      "name": "remove-debugger/dense/esquery",
+      "status": "passed",
+      "Ir": {
+        "median": 131954571,
+        "min": 131953558,
+        "max": 131954842,
+        "spreadPct": 0.0009730621609159716
+      },
+      "Ct": {
+        "median": 31829175041,
+        "min": 31828808086,
+        "max": 31829217381,
+        "spreadPct": 0.0012859114302295812
+      },
+      "wall": {
+        "median": 4.117482000000052,
+        "min": 4.093103500000041,
+        "max": 4.2312020000000246,
+        "spreadPct": 3.3539551599735513
+      },
+      "rank": {
+        "Ir": 16,
+        "Ct": 16,
+        "wall": 15
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "estree-util-visit",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/dense/estree-util-visit",
+      "status": "passed",
+      "Ir": {
+        "median": 96774373,
+        "min": 96773917,
+        "max": 96774963,
+        "spreadPct": 0.0010808646623832944
+      },
+      "Ct": {
+        "median": 22741667551,
+        "min": 22741546524,
+        "max": 22741850555,
+        "spreadPct": 0.0013368896512016381
+      },
+      "wall": {
+        "median": 3.6233005000000276,
+        "min": 3.60708649999998,
+        "max": 3.797579500000012,
+        "spreadPct": 5.25744414519388
+      },
+      "rank": {
+        "Ir": 15,
+        "Ct": 15,
+        "wall": 14
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "typescript-eslint",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/dense/typescript-eslint",
+      "status": "passed",
+      "Ir": {
+        "median": 28125265,
+        "min": 28125122,
+        "max": 28125319,
+        "spreadPct": 0.0007004378447634182
+      },
+      "Ct": {
+        "median": 6920777330,
+        "min": 6920718980,
+        "max": 6920778212,
+        "spreadPct": 0.0008558576179476648
+      },
+      "wall": {
+        "median": 1.528410000000008,
+        "min": 1.521677499999953,
+        "max": 1.6127645000000257,
+        "spreadPct": 5.959591994299453
+      },
+      "rank": {
+        "Ir": 7,
+        "Ct": 7,
+        "wall": 9
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "babel-types-traverse",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/dense/babel-types-traverse",
+      "status": "passed",
+      "Ir": {
+        "median": 26234371,
+        "min": 26234222,
+        "max": 26234556,
+        "spreadPct": 0.0012731389671968884
+      },
+      "Ct": {
+        "median": 6533869913,
+        "min": 6533775387,
+        "max": 6533907812,
+        "spreadPct": 0.0020267468095213053
+      },
+      "wall": {
+        "median": 0.37560449999998013,
+        "min": 0.37170549999999025,
+        "max": 0.38264850000001616,
+        "spreadPct": 2.913436873100957
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "babel-types-traverse-fast",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/dense/babel-types-traverse-fast",
+      "status": "passed",
+      "Ir": {
+        "median": 22521013,
+        "min": 22520643,
+        "max": 22521013,
+        "spreadPct": 0.0016429101124358838
+      },
+      "Ct": {
+        "median": 5637398237,
+        "min": 5637238956,
+        "max": 5637398237,
+        "spreadPct": 0.002825434594181926
+      },
+      "wall": {
+        "median": 0.356179999999938,
+        "min": 0.353084999999993,
+        "max": 0.36804449999999633,
+        "spreadPct": 4.19998315458643
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "babel-traverse",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/dense/babel-traverse",
+      "status": "passed",
+      "Ir": {
+        "median": 348983227,
+        "min": 348982793,
+        "max": 348984716,
+        "spreadPct": 0.0005510293478947055
+      },
+      "Ct": {
+        "median": 90098041118,
+        "min": 90098007006,
+        "max": 90098330531,
+        "spreadPct": 0.0003590810587949236
+      },
+      "wall": {
+        "median": 12.625595499999974,
+        "min": 12.338040999999976,
+        "max": 12.833639500000004,
+        "spreadPct": 3.9253475212320024
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 4,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "babel-traverse-no-scope",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/dense/babel-traverse-no-scope",
+      "status": "passed",
+      "Ir": {
+        "median": 159930649,
+        "min": 159929888,
+        "max": 159930815,
+        "spreadPct": 0.0005796262353690567
+      },
+      "Ct": {
+        "median": 41240674066,
+        "min": 41240411081,
+        "max": 41240705755,
+        "spreadPct": 0.0007145227537464955
+      },
+      "wall": {
+        "median": 7.205347499999959,
+        "min": 7.1023270000000025,
+        "max": 7.334143999999981,
+        "spreadPct": 3.2172910466841396
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 3,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "swc-visitor",
+      "ast": "SWC AST (not ESTree)",
+      "group": "recursive",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/dense/swc-visitor",
+      "status": "passed",
+      "Ir": {
+        "median": 10865886,
+        "min": 10865886,
+        "max": 10866089,
+        "spreadPct": 0.0018682323742398917
+      },
+      "Ct": {
+        "median": 2623445849,
+        "min": 2623445849,
+        "max": 2623490519,
+        "spreadPct": 0.0017027223953193936
+      },
+      "wall": {
+        "median": 0.7119754999999941,
+        "min": 0.7064590000000521,
+        "max": 0.7701145000000338,
+        "spreadPct": 8.94068686352019
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "typescript",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "recursive",
+      "note": "compiler transform; undefined for lists, EmptyStatement for single slots",
+      "name": "remove-debugger/dense/typescript",
+      "status": "passed",
+      "Ir": {
+        "median": 42139329,
+        "min": 42139071,
+        "max": 42139475,
+        "spreadPct": 0.0009587243308976276
+      },
+      "Ct": {
+        "median": 10135182953,
+        "min": 10135118254,
+        "max": 10135209412,
+        "spreadPct": 0.000899421356503657
+      },
+      "wall": {
+        "median": 0.939706000000001,
+        "min": 0.8936364999999569,
+        "max": 0.9782079999999951,
+        "spreadPct": 8.999782910829357
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "tsquery",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "query",
+      "note": "tsquery.map removal/replacement; internal print/reparse included",
+      "name": "remove-debugger/dense/tsquery",
+      "status": "passed",
+      "Ir": {
+        "median": 690786716,
+        "min": 690784391,
+        "max": 690786785,
+        "spreadPct": 0.0003465613834994476
+      },
+      "Ct": {
+        "median": 162364047434,
+        "min": 162363574447,
+        "max": 162364079550,
+        "spreadPct": 0.00031109288539097387
+      },
+      "wall": {
+        "median": 12.02884400000005,
+        "min": 11.56808849999993,
+        "max": 12.035099499999944,
+        "spreadPct": 3.882426274711117
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "id": "ts-morph",
+      "ast": "TypeScript AST (not ESTree)",
+      "group": "wrapper",
+      "note": "one SourceFile.transform + factory statement-list updates; internal text synchronization timed",
+      "name": "remove-debugger/dense/ts-morph",
+      "status": "passed",
+      "Ir": {
+        "median": 481371693,
+        "min": 481370549,
+        "max": 481372268,
+        "spreadPct": 0.0003571045046888538
+      },
+      "Ct": {
+        "median": 112842112328,
+        "min": 112841815242,
+        "max": 112842263977,
+        "spreadPct": 0.00039766625308790276
+      },
+      "wall": {
+        "median": 10.809597000000053,
+        "min": 10.524637999999982,
+        "max": 10.817988999999898,
+        "spreadPct": 2.713801448841382
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "direct-ast",
+      "ast": "ESTree",
+      "group": "specialized",
+      "note": "recursive direct AST edits; no visitor API or child-key table",
+      "name": "remove-debugger/sparse/direct-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 129170768,
+        "min": 129169622,
+        "max": 129170774,
+        "spreadPct": 0.0008918426497239685
+      },
+      "Ct": {
+        "median": 32024152527,
+        "min": 32023850298,
+        "max": 32024158663,
+        "spreadPct": 0.0009629138499137901
+      },
+      "wall": {
+        "median": 3.655195000000049,
+        "min": 3.5939994999999954,
+        "max": 3.726980999999995,
+        "spreadPct": 3.6381506321823562
+      },
+      "rank": {
+        "Ir": 13,
+        "Ct": 13,
+        "wall": 12
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "swc-next",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/sparse/swc-next",
+      "status": "passed",
+      "Ir": {
+        "median": 36342793,
+        "min": 36342793,
+        "max": 36342793,
+        "spreadPct": 0
+      },
+      "Ct": {
+        "median": 9534524217,
+        "min": 9534524217,
+        "max": 9534524217,
+        "spreadPct": 0
+      },
+      "wall": {
+        "median": 1.7830694999999537,
+        "min": 1.6785680000000127,
+        "max": 1.8562185000000113,
+        "spreadPct": 9.96318427296318
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 4,
+        "wall": 6
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "yuku-ast",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/sparse/yuku-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 60333729,
+        "min": 60333557,
+        "max": 60334016,
+        "spreadPct": 0.0007607684915348096
+      },
+      "Ct": {
+        "median": 15663974206,
+        "min": 15663921094,
+        "max": 15664040703,
+        "spreadPct": 0.0007635929325916818
+      },
+      "wall": {
+        "median": 2.199863999999991,
+        "min": 2.1569489999999973,
+        "max": 2.469105500000012,
+        "spreadPct": 14.189809006375661
+      },
+      "rank": {
+        "Ir": 7,
+        "Ct": 7,
+        "wall": 7
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "estree-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/sparse/estree-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 66539565,
+        "min": 66539420,
+        "max": 66539588,
+        "spreadPct": 0.0002524813620287418
+      },
+      "Ct": {
+        "median": 16981330740,
+        "min": 16981294019,
+        "max": 16981336973,
+        "spreadPct": 0.0002529483740565788
+      },
+      "wall": {
+        "median": 2.474515999999994,
+        "min": 2.4712880000000155,
+        "max": 2.5190314999999828,
+        "spreadPct": 1.929407609405937
+      },
+      "rank": {
+        "Ir": 8,
+        "Ct": 8,
+        "wall": 9
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "oxc-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/sparse/oxc-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 70762869,
+        "min": 70762712,
+        "max": 70763037,
+        "spreadPct": 0.00045928041724820404
+      },
+      "Ct": {
+        "median": 18206516296,
+        "min": 18206480130,
+        "max": 18206556549,
+        "spreadPct": 0.0004197343344415064
+      },
+      "wall": {
+        "median": 2.4286740000000577,
+        "min": 2.3924410000000194,
+        "max": 2.549835500000029,
+        "spreadPct": 6.480676286731183
+      },
+      "rank": {
+        "Ir": 9,
+        "Ct": 10,
+        "wall": 8
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "oxc-visitor",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/sparse/oxc-visitor",
+      "status": "passed",
+      "Ir": {
+        "median": 54552092,
+        "min": 54551664,
+        "max": 54552207,
+        "spreadPct": 0.0009953788756625502
+      },
+      "Ct": {
+        "median": 14307082159,
+        "min": 14306969018,
+        "max": 14307097693,
+        "spreadPct": 0.0008993797517200656
+      },
+      "wall": {
+        "median": 0.41821350000003576,
+        "min": 0.4180039999999394,
+        "max": 0.46148499999998194,
+        "spreadPct": 10.396842760943583
+      },
+      "rank": {
+        "Ir": 6,
+        "Ct": 6,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "acorn-simple",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/sparse/acorn-simple",
+      "status": "passed",
+      "Ir": {
+        "median": 35886107,
+        "min": 35885876,
+        "max": 35886146,
+        "spreadPct": 0.000752380301379584
+      },
+      "Ct": {
+        "median": 8582104555,
+        "min": 8582038466,
+        "max": 8582120028,
+        "spreadPct": 0.0009503729473032503
+      },
+      "wall": {
+        "median": 1.1284089999999196,
+        "min": 1.0620059999999967,
+        "max": 1.1446940000000154,
+        "spreadPct": 7.327839462466591
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 3,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "acorn-recursive",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/sparse/acorn-recursive",
+      "status": "passed",
+      "Ir": {
+        "median": 18435097,
+        "min": 18434749,
+        "max": 18435097,
+        "spreadPct": 0.001887703655695438
+      },
+      "Ct": {
+        "median": 4413931741,
+        "min": 4413835138,
+        "max": 4413931741,
+        "spreadPct": 0.002188592974890773
+      },
+      "wall": {
+        "median": 0.601406499999996,
+        "min": 0.5560600000000022,
+        "max": 0.6229049999999461,
+        "spreadPct": 11.114778440197156
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "acorn-full",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/sparse/acorn-full",
+      "status": "passed",
+      "Ir": {
+        "median": 46941620,
+        "min": 46941599,
+        "max": 46941731,
+        "spreadPct": 0.00028120035056310367
+      },
+      "Ct": {
+        "median": 11087556779,
+        "min": 11087547172,
+        "max": 11087573618,
+        "spreadPct": 0.00023851963536357374
+      },
+      "wall": {
+        "median": 1.1105630000000417,
+        "min": 1.1030890000000113,
+        "max": 1.114838500000019,
+        "spreadPct": 1.0579769000054196
+      },
+      "rank": {
+        "Ir": 5,
+        "Ct": 5,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "estraverse",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/sparse/estraverse",
+      "status": "passed",
+      "Ir": {
+        "median": 93379619,
+        "min": 93379481,
+        "max": 93380004,
+        "spreadPct": 0.0005600793894864789
+      },
+      "Ct": {
+        "median": 24076343770,
+        "min": 24076293814,
+        "max": 24076425292,
+        "spreadPct": 0.0005460878996246364
+      },
+      "wall": {
+        "median": 4.681792500000029,
+        "min": 3.1999605000000315,
+        "max": 4.8295420000000036,
+        "spreadPct": 34.806786076058735
+      },
+      "rank": {
+        "Ir": 12,
+        "Ct": 12,
+        "wall": 13
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "esrecurse",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/sparse/esrecurse",
+      "status": "passed",
+      "Ir": {
+        "median": 31517084,
+        "min": 31516964,
+        "max": 31517176,
+        "spreadPct": 0.0006726510612466559
+      },
+      "Ct": {
+        "median": 8125947792,
+        "min": 8125917218,
+        "max": 8125976123,
+        "spreadPct": 0.0007249000548341204
+      },
+      "wall": {
+        "median": 1.4422050000000013,
+        "min": 1.406217999999967,
+        "max": 1.5044189999999844,
+        "spreadPct": 6.809087473695988
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 5
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "estree-toolkit",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/sparse/estree-toolkit",
+      "status": "passed",
+      "Ir": {
+        "median": 159312743,
+        "min": 159307517,
+        "max": 159366202,
+        "spreadPct": 0.036836350247261763
+      },
+      "Ct": {
+        "median": 39873763489,
+        "min": 39872361356,
+        "max": 39887666915,
+        "spreadPct": 0.03838503732967758
+      },
+      "wall": {
+        "median": 5.453916499999934,
+        "min": 5.279220500000065,
+        "max": 5.518949500000019,
+        "spreadPct": 4.395538508885444
+      },
+      "rank": {
+        "Ir": 14,
+        "Ct": 14,
+        "wall": 14
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "estree-toolkit-scope",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/sparse/estree-toolkit-scope",
+      "status": "passed",
+      "Ir": {
+        "median": 425298954,
+        "min": 425298655,
+        "max": 425303264,
+        "spreadPct": 0.0010837082848785939
+      },
+      "Ct": {
+        "median": 106054215103,
+        "min": 106053981220,
+        "max": 106055342706,
+        "spreadPct": 0.0012837641565474063
+      },
+      "wall": {
+        "median": 12.170104000000038,
+        "min": 11.913855999999953,
+        "max": 12.181852000000049,
+        "spreadPct": 2.202084715135509
+      },
+      "rank": {
+        "Ir": 17,
+        "Ct": 17,
+        "wall": 17
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "ast-types",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/sparse/ast-types",
+      "status": "passed",
+      "Ir": {
+        "median": 844016290,
+        "min": 844011658,
+        "max": 844022747,
+        "spreadPct": 0.0013138372009383846
+      },
+      "Ct": {
+        "median": 210225835672,
+        "min": 210224774906,
+        "max": 210227491307,
+        "spreadPct": 0.0012921347137552597
+      },
+      "wall": {
+        "median": 14.769469500000014,
+        "min": 14.584100999999919,
+        "max": 15.955575499999952,
+        "spreadPct": 9.285875162950383
+      },
+      "rank": {
+        "Ir": 18,
+        "Ct": 18,
+        "wall": 18
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "zimmerframe",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "return immutable parent replacements; propagate child edits and returned root",
+      "name": "remove-debugger/sparse/zimmerframe",
+      "status": "passed",
+      "Ir": {
+        "median": 74135815,
+        "min": 74135641,
+        "max": 74135966,
+        "spreadPct": 0.0004383846053354914
+      },
+      "Ct": {
+        "median": 18482128499,
+        "min": 18482100777,
+        "max": 18482176821,
+        "spreadPct": 0.000411446116739825
+      },
+      "wall": {
+        "median": 2.571170499999994,
+        "min": 2.5364509999999996,
+        "max": 2.5714854999999375,
+        "spreadPct": 1.3625895287744625
+      },
+      "rank": {
+        "Ir": 11,
+        "Ct": 11,
+        "wall": 11
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "jscodeshift",
+      "ast": "ESTree",
+      "group": "query",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/sparse/jscodeshift",
+      "status": "passed",
+      "Ir": {
+        "median": 852147380,
+        "min": 852145752,
+        "max": 852157063,
+        "spreadPct": 0.0013273525525596289
+      },
+      "Ct": {
+        "median": 212086203582,
+        "min": 212085859066,
+        "max": 212088686141,
+        "spreadPct": 0.001332983924579966
+      },
+      "wall": {
+        "median": 16.447493500000007,
+        "min": 16.375815999999986,
+        "max": 17.68688250000008,
+        "spreadPct": 7.971223700438576
+      },
+      "rank": {
+        "Ir": 19,
+        "Ct": 19,
+        "wall": 19
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "esquery",
+      "ast": "ESTree",
+      "group": "query",
+      "note": "query statement containers + manual slot edits",
+      "name": "remove-debugger/sparse/esquery",
+      "status": "passed",
+      "Ir": {
+        "median": 291968593,
+        "min": 291967666,
+        "max": 291968631,
+        "spreadPct": 0.0003305150016597847
+      },
+      "Ct": {
+        "median": 70581628136,
+        "min": 70581373502,
+        "max": 70581631125,
+        "spreadPct": 0.0003650000811876993
+      },
+      "wall": {
+        "median": 5.524256499999979,
+        "min": 5.214556500000015,
+        "max": 5.52772299999998,
+        "spreadPct": 5.668934815028356
+      },
+      "rank": {
+        "Ir": 16,
+        "Ct": 16,
+        "wall": 15
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "estree-util-visit",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/sparse/estree-util-visit",
+      "status": "passed",
+      "Ir": {
+        "median": 252992154,
+        "min": 252989477,
+        "max": 252992340,
+        "spreadPct": 0.0011316556481036169
+      },
+      "Ct": {
+        "median": 59320427445,
+        "min": 59319751569,
+        "max": 59320462448,
+        "spreadPct": 0.001198371337865197
+      },
+      "wall": {
+        "median": 7.657589999999999,
+        "min": 7.644591500000047,
+        "max": 7.661691000000019,
+        "spreadPct": 0.2233013258737027
+      },
+      "rank": {
+        "Ir": 15,
+        "Ct": 15,
+        "wall": 16
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "typescript-eslint",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/sparse/typescript-eslint",
+      "status": "passed",
+      "Ir": {
+        "median": 71784258,
+        "min": 71783818,
+        "max": 71784315,
+        "spreadPct": 0.0006923523539102403
+      },
+      "Ct": {
+        "median": 17489688904,
+        "min": 17489596022,
+        "max": 17489725530,
+        "spreadPct": 0.0007404820103482842
+      },
+      "wall": {
+        "median": 2.5201699999999505,
+        "min": 2.4307410000000687,
+        "max": 2.6197670000000244,
+        "spreadPct": 7.50052575818137
+      },
+      "rank": {
+        "Ir": 10,
+        "Ct": 9,
+        "wall": 10
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "babel-types-traverse",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/sparse/babel-types-traverse",
+      "status": "passed",
+      "Ir": {
+        "median": 66027665,
+        "min": 66027566,
+        "max": 66027782,
+        "spreadPct": 0.00032713560293249803
+      },
+      "Ct": {
+        "median": 16367086131,
+        "min": 16367053110,
+        "max": 16367101398,
+        "spreadPct": 0.0002950311351300361
+      },
+      "wall": {
+        "median": 0.9076675000000023,
+        "min": 0.8802820000000224,
+        "max": 1.0156659999999533,
+        "spreadPct": 14.915594091441035
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "babel-types-traverse-fast",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/sparse/babel-types-traverse-fast",
+      "status": "passed",
+      "Ir": {
+        "median": 55493532,
+        "min": 55493482,
+        "max": 55494091,
+        "spreadPct": 0.001097425191822355
+      },
+      "Ct": {
+        "median": 13834135361,
+        "min": 13834128604,
+        "max": 13834280275,
+        "spreadPct": 0.001096353303203739
+      },
+      "wall": {
+        "median": 0.8507779999999912,
+        "min": 0.8346534999999449,
+        "max": 0.8594909999999345,
+        "spreadPct": 2.9193867260307496
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "babel-traverse",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/sparse/babel-traverse",
+      "status": "passed",
+      "Ir": {
+        "median": 721533499,
+        "min": 721533366,
+        "max": 721534200,
+        "spreadPct": 0.00011558714892044118
+      },
+      "Ct": {
+        "median": 187535541948,
+        "min": 187535514749,
+        "max": 187536073573,
+        "spreadPct": 0.00029798298188988154
+      },
+      "wall": {
+        "median": 19.08600299999989,
+        "min": 18.95154500000001,
+        "max": 20.733678499999883,
+        "spreadPct": 9.33738457444381
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 4,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "babel-traverse-no-scope",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "note": "native remove for lists; replacement for single statement slots",
+      "name": "remove-debugger/sparse/babel-traverse-no-scope",
+      "status": "passed",
+      "Ir": {
+        "median": 305575722,
+        "min": 305574623,
+        "max": 305576387,
+        "spreadPct": 0.0005772709914434891
+      },
+      "Ct": {
+        "median": 79585935970,
+        "min": 79585662132,
+        "max": 79585969549,
+        "spreadPct": 0.0003862705090455695
+      },
+      "wall": {
+        "median": 8.96475700000002,
+        "min": 8.565050499999927,
+        "max": 9.19690949999972,
+        "spreadPct": 7.048255741898984
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 3,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "swc-visitor",
+      "ast": "SWC AST (not ESTree)",
+      "group": "recursive",
+      "note": "native traversal + manual statement-slot edits",
+      "name": "remove-debugger/sparse/swc-visitor",
+      "status": "passed",
+      "Ir": {
+        "median": 26977620,
+        "min": 26977541,
+        "max": 26977620,
+        "spreadPct": 0.00029283532053605915
+      },
+      "Ct": {
+        "median": 6591163739,
+        "min": 6591123960,
+        "max": 6591163739,
+        "spreadPct": 0.0006035201305139357
+      },
+      "wall": {
+        "median": 1.668897999999956,
+        "min": 1.6623935000000643,
+        "max": 1.6741574999999216,
+        "spreadPct": 0.7048962848453076
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "typescript",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "recursive",
+      "note": "compiler transform; undefined for lists, EmptyStatement for single slots",
+      "name": "remove-debugger/sparse/typescript",
+      "status": "passed",
+      "Ir": {
+        "median": 57678687,
+        "min": 57678486,
+        "max": 57678792,
+        "spreadPct": 0.0005305252527679765
+      },
+      "Ct": {
+        "median": 13441323334,
+        "min": 13441269929,
+        "max": 13441365166,
+        "spreadPct": 0.0007085388665496707
+      },
+      "wall": {
+        "median": 1.1959510000000364,
+        "min": 1.0915715000001,
+        "max": 1.2218924999999672,
+        "spreadPct": 10.896851125160074
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "tsquery",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "query",
+      "note": "tsquery.map removal/replacement; internal print/reparse included",
+      "name": "remove-debugger/sparse/tsquery",
+      "status": "passed",
+      "Ir": {
+        "median": 1571344819,
+        "min": 1571339721,
+        "max": 1571347637,
+        "spreadPct": 0.000503772304097946
+      },
+      "Ct": {
+        "median": 367583832821,
+        "min": 367582970370,
+        "max": 367584473868,
+        "spreadPct": 0.0004090217974118979
+      },
+      "wall": {
+        "median": 24.548404499999947,
+        "min": 23.898483000000056,
+        "max": 27.84226549999994,
+        "spreadPct": 16.065331251975632
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "id": "ts-morph",
+      "ast": "TypeScript AST (not ESTree)",
+      "group": "wrapper",
+      "note": "one SourceFile.transform + factory statement-list updates; internal text synchronization timed",
+      "name": "remove-debugger/sparse/ts-morph",
+      "status": "passed",
+      "Ir": {
+        "median": 1245561916,
+        "min": 1245559336,
+        "max": 1245563266,
+        "spreadPct": 0.0003155202442782459
+      },
+      "Ct": {
+        "median": 289972016177,
+        "min": 289971434052,
+        "max": 289972233722,
+        "spreadPct": 0.0002757748870194007
+      },
+      "wall": {
+        "median": 20.260618999999792,
+        "min": 20.03485499999988,
+        "max": 21.181654499999922,
+        "spreadPct": 5.660239205919891
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "direct-ast",
+      "ast": "ESTree",
+      "group": "specialized",
+      "note": "manual recursive traversal and branch assignment",
+      "name": "rstest-coverage/runtime/direct-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 48668132,
+        "min": 48668081,
+        "max": 48668374,
+        "spreadPct": 0.0006020366674439036
+      },
+      "Ct": {
+        "median": 11745537461,
+        "min": 11745527160,
+        "max": 11745603371,
+        "spreadPct": 0.0006488506826788622
+      },
+      "wall": {
+        "median": 1.8313614999999572,
+        "min": 1.8224644999999953,
+        "max": 1.8460689999999715,
+        "spreadPct": 1.2889044571471453
+      },
+      "rank": {
+        "Ir": 13,
+        "Ct": 13,
+        "wall": 12
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "swc-next",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "typed enter; ctx.replace and ctx.skip",
+      "name": "rstest-coverage/runtime/swc-next",
+      "status": "passed",
+      "Ir": {
+        "median": 16905841,
+        "min": 16905823,
+        "max": 16906263,
+        "spreadPct": 0.00260265076431276
+      },
+      "Ct": {
+        "median": 4366061341,
+        "min": 4366053223,
+        "max": 4366157971,
+        "spreadPct": 0.0023991417394059926
+      },
+      "wall": {
+        "median": 1.1549729999999983,
+        "min": 1.1213945000000365,
+        "max": 1.1808024999999844,
+        "spreadPct": 5.143670025182237
+      },
+      "rank": {
+        "Ir": 5,
+        "Ct": 5,
+        "wall": 6
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "yuku-ast",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "typed enter; ctx.replace and ctx.skip",
+      "name": "rstest-coverage/runtime/yuku-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 27124066,
+        "min": 27123953,
+        "max": 27124224,
+        "spreadPct": 0.0009991127436424908
+      },
+      "Ct": {
+        "median": 7010787875,
+        "min": 7010754212,
+        "max": 7010814937,
+        "spreadPct": 0.0008661651312620838
+      },
+      "wall": {
+        "median": 1.6211014999999946,
+        "min": 1.593402999999995,
+        "max": 1.9574570000000335,
+        "spreadPct": 22.457199626305922
+      },
+      "rank": {
+        "Ir": 8,
+        "Ct": 8,
+        "wall": 10
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "estree-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "generic enter; this.replace and this.skip",
+      "name": "rstest-coverage/runtime/estree-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 29958900,
+        "min": 29958850,
+        "max": 29958910,
+        "spreadPct": 0.0002002743758949761
+      },
+      "Ct": {
+        "median": 7628053798,
+        "min": 7628042104,
+        "max": 7628060020,
+        "spreadPct": 0.00023486986949013648
+      },
+      "wall": {
+        "median": 1.5571199999999976,
+        "min": 1.4997370000000103,
+        "max": 1.9905045000000143,
+        "spreadPct": 31.517641543362412
+      },
+      "rank": {
+        "Ir": 9,
+        "Ct": 9,
+        "wall": 9
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "oxc-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "generic enter; this.replace and this.skip",
+      "name": "rstest-coverage/runtime/oxc-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 31228316,
+        "min": 31228294,
+        "max": 31228316,
+        "spreadPct": 0.0000704488836349677
+      },
+      "Ct": {
+        "median": 7997639599,
+        "min": 7997631921,
+        "max": 7997639599,
+        "spreadPct": 0.00009600332579327573
+      },
+      "wall": {
+        "median": 1.4812680000000285,
+        "min": 1.453788000000003,
+        "max": 1.5081600000000037,
+        "spreadPct": 3.6706389390711003
+      },
+      "rank": {
+        "Ir": 11,
+        "Ct": 11,
+        "wall": 8
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "oxc-visitor",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "typed IfStatement hook; manual branch assignment",
+      "name": "rstest-coverage/runtime/oxc-visitor",
+      "status": "passed",
+      "Ir": {
+        "median": 26288987,
+        "min": 26288987,
+        "max": 26289392,
+        "spreadPct": 0.0015405690603445465
+      },
+      "Ct": {
+        "median": 6889373499,
+        "min": 6889373499,
+        "max": 6889497456,
+        "spreadPct": 0.0017992492353331184
+      },
+      "wall": {
+        "median": 0.2592990000000128,
+        "min": 0.25049700000000996,
+        "max": 0.2869984999999815,
+        "spreadPct": 14.076992198184236
+      },
+      "rank": {
+        "Ir": 7,
+        "Ct": 7,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "acorn-simple",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "post-order collection; source-order planning and manual edits",
+      "name": "rstest-coverage/runtime/acorn-simple",
+      "status": "passed",
+      "Ir": {
+        "median": 13788910,
+        "min": 13788831,
+        "max": 13788940,
+        "spreadPct": 0.0007904903288222202
+      },
+      "Ct": {
+        "median": 3328635661,
+        "min": 3328609597,
+        "max": 3328649347,
+        "spreadPct": 0.0011941829640813911
+      },
+      "wall": {
+        "median": 0.6272064999999998,
+        "min": 0.6171674999999652,
+        "max": 0.6540904999999952,
+        "spreadPct": 5.886896899191897
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 3,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "acorn-recursive",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "recursive override; edit before default child traversal",
+      "name": "rstest-coverage/runtime/acorn-recursive",
+      "status": "passed",
+      "Ir": {
+        "median": 6831905,
+        "min": 6831886,
+        "max": 6831957,
+        "spreadPct": 0.0010392416170892306
+      },
+      "Ct": {
+        "median": 1663216192,
+        "min": 1663214057,
+        "max": 1663237995,
+        "spreadPct": 0.0014392596774334434
+      },
+      "wall": {
+        "median": 0.3791934999999853,
+        "min": 0.36319699999998534,
+        "max": 0.39196199999997816,
+        "spreadPct": 7.585836782538187
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "acorn-full",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "post-order collection; source-order planning and manual edits",
+      "name": "rstest-coverage/runtime/acorn-full",
+      "status": "passed",
+      "Ir": {
+        "median": 13638630,
+        "min": 13638547,
+        "max": 13638705,
+        "spreadPct": 0.0011584741282665487
+      },
+      "Ct": {
+        "median": 3212273524,
+        "min": 3212266676,
+        "max": 3212294278,
+        "spreadPct": 0.000859266802586267
+      },
+      "wall": {
+        "median": 0.6147249999999929,
+        "min": 0.6142609999999991,
+        "max": 0.6360184999999774,
+        "spreadPct": 3.539387531006318
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 2,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "estraverse",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "replace; return updated node or Skip",
+      "name": "rstest-coverage/runtime/estraverse",
+      "status": "passed",
+      "Ir": {
+        "median": 41468572,
+        "min": 41468205,
+        "max": 41468576,
+        "spreadPct": 0.0008946534257316601
+      },
+      "Ct": {
+        "median": 10655763006,
+        "min": 10655678615,
+        "max": 10655769033,
+        "spreadPct": 0.0008485361390741125
+      },
+      "wall": {
+        "median": 2.3706564999999813,
+        "min": 2.261984500000011,
+        "max": 2.4231280000000055,
+        "spreadPct": 6.79742088320242
+      },
+      "rank": {
+        "Ir": 12,
+        "Ct": 12,
+        "wall": 13
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "esrecurse",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "typed visitor; manual edits and explicit child traversal",
+      "name": "rstest-coverage/runtime/esrecurse",
+      "status": "passed",
+      "Ir": {
+        "median": 13396253,
+        "min": 13396048,
+        "max": 13396317,
+        "spreadPct": 0.0020080241840759504
+      },
+      "Ct": {
+        "median": 3467075061,
+        "min": 3467026000,
+        "max": 3467097617,
+        "spreadPct": 0.002065631656077953
+      },
+      "wall": {
+        "median": 0.9859320000000196,
+        "min": 0.9609625000000221,
+        "max": 1.0406095000000164,
+        "spreadPct": 8.078346173974744
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 4,
+        "wall": 5
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "estree-toolkit",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "child path.replaceWith; scope disabled",
+      "name": "rstest-coverage/runtime/estree-toolkit",
+      "status": "passed",
+      "Ir": {
+        "median": 66376931,
+        "min": 66376842,
+        "max": 66377198,
+        "spreadPct": 0.0005363309129191285
+      },
+      "Ct": {
+        "median": 16557543548,
+        "min": 16557520689,
+        "max": 16557621404,
+        "spreadPct": 0.0006082725961615572
+      },
+      "wall": {
+        "median": 3.4659505000000195,
+        "min": 3.440655000000021,
+        "max": 3.559968000000012,
+        "spreadPct": 3.44243231402152
+      },
+      "rank": {
+        "Ir": 14,
+        "Ct": 14,
+        "wall": 15
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "estree-toolkit-scope",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "child path.replaceWith; scope enabled",
+      "name": "rstest-coverage/runtime/estree-toolkit-scope",
+      "status": "passed",
+      "Ir": {
+        "median": 160855181,
+        "min": 160854165,
+        "max": 160855315,
+        "spreadPct": 0.0007149287905125046
+      },
+      "Ct": {
+        "median": 39737040507,
+        "min": 39736745591,
+        "max": 39737089962,
+        "spreadPct": 0.0008666246796596145
+      },
+      "wall": {
+        "median": 5.932293500000014,
+        "min": 5.705256499999962,
+        "max": 5.939926500000013,
+        "spreadPct": 3.955805625599112
+      },
+      "rank": {
+        "Ir": 17,
+        "Ct": 17,
+        "wall": 17
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "ast-types",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "child path.replace; explicit child traversal",
+      "name": "rstest-coverage/runtime/ast-types",
+      "status": "passed",
+      "Ir": {
+        "median": 329394042,
+        "min": 329392499,
+        "max": 329394093,
+        "spreadPct": 0.00048391889249775806
+      },
+      "Ct": {
+        "median": 81914577108,
+        "min": 81914116545,
+        "max": 81914587865,
+        "spreadPct": 0.0005753798855344022
+      },
+      "wall": {
+        "median": 7.511991500000022,
+        "min": 7.509841499999993,
+        "max": 8.161101000000059,
+        "spreadPct": 8.669598467996988
+      },
+      "rank": {
+        "Ir": 18,
+        "Ct": 18,
+        "wall": 18
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "zimmerframe",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "immutable return-value replacement; child changes preserved",
+      "name": "rstest-coverage/runtime/zimmerframe",
+      "status": "passed",
+      "Ir": {
+        "median": 30730664,
+        "min": 30730274,
+        "max": 30730848,
+        "spreadPct": 0.0018678411895037476
+      },
+      "Ct": {
+        "median": 7693516072,
+        "min": 7693431128,
+        "max": 7693564188,
+        "spreadPct": 0.0017295083126460519
+      },
+      "wall": {
+        "median": 1.65523749999997,
+        "min": 1.6147864999999513,
+        "max": 1.6792094999999847,
+        "spreadPct": 3.892069869129632
+      },
+      "rank": {
+        "Ir": 10,
+        "Ct": 10,
+        "wall": 11
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "jscodeshift",
+      "ast": "ESTree",
+      "group": "query",
+      "note": "find IfStatement paths; source-order planning and child path.replace",
+      "name": "rstest-coverage/runtime/jscodeshift",
+      "status": "passed",
+      "Ir": {
+        "median": 333326644,
+        "min": 333325253,
+        "max": 333327679,
+        "spreadPct": 0.0007278146057835089
+      },
+      "Ct": {
+        "median": 82668620022,
+        "min": 82668144457,
+        "max": 82668855665,
+        "spreadPct": 0.0008603119294972281
+      },
+      "wall": {
+        "median": 9.111552499999988,
+        "min": 9.059906500000068,
+        "max": 9.30921950000004,
+        "spreadPct": 2.7362296381431452
+      },
+      "rank": {
+        "Ir": 19,
+        "Ct": 19,
+        "wall": 19
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "esquery",
+      "ast": "ESTree",
+      "group": "query",
+      "note": "query IfStatement nodes; source-order planning and manual edits",
+      "name": "rstest-coverage/runtime/esquery",
+      "status": "passed",
+      "Ir": {
+        "median": 66905900,
+        "min": 66905435,
+        "max": 66906006,
+        "spreadPct": 0.0008534374397474662
+      },
+      "Ct": {
+        "median": 16923368095,
+        "min": 16923244175,
+        "max": 16923388567,
+        "spreadPct": 0.0008532107745305176
+      },
+      "wall": {
+        "median": 2.9448370000000352,
+        "min": 2.8843794999999943,
+        "max": 2.956242000000003,
+        "spreadPct": 2.440287866527348
+      },
+      "rank": {
+        "Ir": 15,
+        "Ct": 15,
+        "wall": 14
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "estree-util-visit",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "enter callback; manual assignment and SKIP",
+      "name": "rstest-coverage/runtime/estree-util-visit",
+      "status": "passed",
+      "Ir": {
+        "median": 115817728,
+        "min": 115817631,
+        "max": 115818113,
+        "spreadPct": 0.0004161711754525179
+      },
+      "Ct": {
+        "median": 27264291604,
+        "min": 27264262767,
+        "max": 27264382667,
+        "spreadPct": 0.0004397693574492478
+      },
+      "wall": {
+        "median": 4.616142000000025,
+        "min": 4.541102500000022,
+        "max": 4.698043499999983,
+        "spreadPct": 3.399830421160351
+      },
+      "rank": {
+        "Ir": 16,
+        "Ct": 16,
+        "wall": 16
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "typescript-eslint",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "simpleTraverse enter; manual edits; ignored descendants still traversed",
+      "name": "rstest-coverage/runtime/typescript-eslint",
+      "status": "passed",
+      "Ir": {
+        "median": 23828733,
+        "min": 23828360,
+        "max": 23828807,
+        "spreadPct": 0.001875886560985009
+      },
+      "Ct": {
+        "median": 5835579919,
+        "min": 5835488001,
+        "max": 5835600426,
+        "spreadPct": 0.0019265437464742227
+      },
+      "wall": {
+        "median": 1.4300135000000296,
+        "min": 1.3944124999999872,
+        "max": 1.5263864999999726,
+        "spreadPct": 9.2288639233114
+      },
+      "rank": {
+        "Ir": 6,
+        "Ct": 6,
+        "wall": 7
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "babel-types-traverse",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "note": "enter callback; manual edits without NodePath",
+      "name": "rstest-coverage/runtime/babel-types-traverse",
+      "status": "passed",
+      "Ir": {
+        "median": 21285044,
+        "min": 21284995,
+        "max": 21285044,
+        "spreadPct": 0.00023020859153497639
+      },
+      "Ct": {
+        "median": 5322690517,
+        "min": 5322689429,
+        "max": 5322690517,
+        "spreadPct": 0.000020440790170404718
+      },
+      "wall": {
+        "median": 0.3456394999999475,
+        "min": 0.34475050000003193,
+        "max": 0.3958994999999561,
+        "spreadPct": 14.798366506123273
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "babel-types-traverse-fast",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "note": "fast callback; manual edits without NodePath",
+      "name": "rstest-coverage/runtime/babel-types-traverse-fast",
+      "status": "passed",
+      "Ir": {
+        "median": 16572332,
+        "min": 16572322,
+        "max": 16572345,
+        "spreadPct": 0.00013878553724364198
+      },
+      "Ct": {
+        "median": 4191365731,
+        "min": 4191364114,
+        "max": 4191366913,
+        "spreadPct": 0.00006678014231252013
+      },
+      "wall": {
+        "median": 0.32194050000001084,
+        "min": 0.31997250000000577,
+        "max": 0.33780250000000933,
+        "spreadPct": 5.5382904605052685
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "babel-traverse",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "note": "child path.replaceWith and path.skip; default scope analysis",
+      "name": "rstest-coverage/runtime/babel-traverse",
+      "status": "passed",
+      "Ir": {
+        "median": 311423687,
+        "min": 311422620,
+        "max": 311423948,
+        "spreadPct": 0.0004264287064329824
+      },
+      "Ct": {
+        "median": 80818968255,
+        "min": 80818666470,
+        "max": 80819012569,
+        "spreadPct": 0.000428239814826624
+      },
+      "wall": {
+        "median": 10.795841499999938,
+        "min": 10.23163900000003,
+        "max": 10.846922499999948,
+        "spreadPct": 5.6992639249096255
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 4,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "babel-traverse-no-scope",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "note": "child path.replaceWith and path.skip; noScope",
+      "name": "rstest-coverage/runtime/babel-traverse-no-scope",
+      "status": "passed",
+      "Ir": {
+        "median": 122926606,
+        "min": 122886628,
+        "max": 122927426,
+        "spreadPct": 0.033188909486364576
+      },
+      "Ct": {
+        "median": 31808363196,
+        "min": 31799368719,
+        "max": 31808525759,
+        "spreadPct": 0.028788152171097963
+      },
+      "wall": {
+        "median": 5.488595000000032,
+        "min": 5.4852710000000116,
+        "max": 5.60922800000003,
+        "spreadPct": 2.258446833843958
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 3,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "swc-visitor",
+      "ast": "SWC AST (not ESTree)",
+      "group": "recursive",
+      "note": "Visitor return-value update; byte offsets mapped to UTF-16",
+      "name": "rstest-coverage/runtime/swc-visitor",
+      "status": "passed",
+      "Ir": {
+        "median": 11231424,
+        "min": 11230931,
+        "max": 11232266,
+        "spreadPct": 0.011886293314187052
+      },
+      "Ct": {
+        "median": 2741548873,
+        "min": 2741441512,
+        "max": 2741858348,
+        "spreadPct": 0.015204397926485551
+      },
+      "wall": {
+        "median": 0.8393515000000207,
+        "min": 0.8364984999999763,
+        "max": 0.841858000000002,
+        "spreadPct": 0.6385286736278647
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "typescript",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "recursive",
+      "note": "transform + visitEachChild + factory updates",
+      "name": "rstest-coverage/runtime/typescript",
+      "status": "passed",
+      "Ir": {
+        "median": 22496467,
+        "min": 22492989,
+        "max": 22496932,
+        "spreadPct": 0.0175271966038045
+      },
+      "Ct": {
+        "median": 5179703409,
+        "min": 5178917233,
+        "max": 5179840563,
+        "spreadPct": 0.01782592413294682
+      },
+      "wall": {
+        "median": 0.6820324999999343,
+        "min": 0.6694180000000074,
+        "max": 0.7003725000000145,
+        "spreadPct": 4.538566710532135
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "tsquery",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "query",
+      "note": "map + compiler subtree transform; internal printing/reparsing included",
+      "name": "rstest-coverage/runtime/tsquery",
+      "status": "passed",
+      "Ir": {
+        "median": 747106620,
+        "min": 747106425,
+        "max": 747106727,
+        "spreadPct": 0.000040422610630862837
+      },
+      "Ct": {
+        "median": 176197794752,
+        "min": 176197779322,
+        "max": 176197824570,
+        "spreadPct": 0.000025680230597486745
+      },
+      "wall": {
+        "median": 12.999824499999875,
+        "min": 12.93374399999999,
+        "max": 13.135512499999948,
+        "spreadPct": 1.5520863377806318
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "id": "ts-morph",
+      "ast": "TypeScript AST (not ESTree)",
+      "group": "wrapper",
+      "note": "SourceFile.transform + factory updates; internal text synchronization included",
+      "name": "rstest-coverage/runtime/ts-morph",
+      "status": "passed",
+      "Ir": {
+        "median": 325093975,
+        "min": 325093807,
+        "max": 325095607,
+        "spreadPct": 0.0005536860533942532
+      },
+      "Ct": {
+        "median": 74648028109,
+        "min": 74647993933,
+        "max": 74648527434,
+        "spreadPct": 0.0007146886709733167
+      },
+      "wall": {
+        "median": 4.3517159999999535,
+        "min": 4.247273000000007,
+        "max": 4.493464000000017,
+        "spreadPct": 5.65733149865508
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "direct-ast",
+      "ast": "ESTree",
+      "group": "specialized",
+      "note": "manual recursive traversal and branch assignment",
+      "name": "rstest-coverage/tooling/direct-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 40443976,
+        "min": 40443741,
+        "max": 40443976,
+        "spreadPct": 0.000581050686015638
+      },
+      "Ct": {
+        "median": 9767605504,
+        "min": 9767545628,
+        "max": 9767605504,
+        "spreadPct": 0.00061300592018668
+      },
+      "wall": {
+        "median": 1.622769500000004,
+        "min": 1.621818999999988,
+        "max": 1.705009500000017,
+        "spreadPct": 5.126452031544149
+      },
+      "rank": {
+        "Ir": 13,
+        "Ct": 13,
+        "wall": 12
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "swc-next",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "typed enter; ctx.replace and ctx.skip",
+      "name": "rstest-coverage/tooling/swc-next",
+      "status": "passed",
+      "Ir": {
+        "median": 13815579,
+        "min": 13815088,
+        "max": 13815584,
+        "spreadPct": 0.0035901499314650513
+      },
+      "Ct": {
+        "median": 3591268721,
+        "min": 3591157362,
+        "max": 3591274425,
+        "spreadPct": 0.003259655823455156
+      },
+      "wall": {
+        "median": 1.0201975000000516,
+        "min": 1.0162235000000095,
+        "max": 1.1447815000000219,
+        "spreadPct": 12.60128553539936
+      },
+      "rank": {
+        "Ir": 5,
+        "Ct": 5,
+        "wall": 6
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "yuku-ast",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "typed enter; ctx.replace and ctx.skip",
+      "name": "rstest-coverage/tooling/yuku-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 22825843,
+        "min": 22825521,
+        "max": 22825843,
+        "spreadPct": 0.0014106817434957387
+      },
+      "Ct": {
+        "median": 5896247374,
+        "min": 5896166862,
+        "max": 5896247374,
+        "spreadPct": 0.0013654786662280225
+      },
+      "wall": {
+        "median": 1.4331435000000567,
+        "min": 1.379573999999991,
+        "max": 1.436589500000025,
+        "spreadPct": 3.978352481801845
+      },
+      "rank": {
+        "Ir": 8,
+        "Ct": 8,
+        "wall": 9
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "estree-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "generic enter; this.replace and this.skip",
+      "name": "rstest-coverage/tooling/estree-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 25310805,
+        "min": 25310805,
+        "max": 25310805,
+        "spreadPct": 0
+      },
+      "Ct": {
+        "median": 6441624330,
+        "min": 6441624330,
+        "max": 6441624330,
+        "spreadPct": 0
+      },
+      "wall": {
+        "median": 1.3473330000000203,
+        "min": 1.3175835000000404,
+        "max": 1.4556210000000078,
+        "spreadPct": 10.245240040878189
+      },
+      "rank": {
+        "Ir": 9,
+        "Ct": 9,
+        "wall": 8
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "oxc-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "generic enter; this.replace and this.skip",
+      "name": "rstest-coverage/tooling/oxc-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 26415296,
+        "min": 26415296,
+        "max": 26415544,
+        "spreadPct": 0.0009388499754081878
+      },
+      "Ct": {
+        "median": 6764136241,
+        "min": 6764136241,
+        "max": 6764205196,
+        "spreadPct": 0.0010194206258300586
+      },
+      "wall": {
+        "median": 1.0963150000000041,
+        "min": 1.0468505000000192,
+        "max": 1.2309669999999926,
+        "spreadPct": 16.79412395159901
+      },
+      "rank": {
+        "Ir": 10,
+        "Ct": 10,
+        "wall": 7
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "oxc-visitor",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "typed IfStatement hook; manual branch assignment",
+      "name": "rstest-coverage/tooling/oxc-visitor",
+      "status": "passed",
+      "Ir": {
+        "median": 22096643,
+        "min": 22095264,
+        "max": 22097612,
+        "spreadPct": 0.010626048490714177
+      },
+      "Ct": {
+        "median": 5781697449,
+        "min": 5781362129,
+        "max": 5781897084,
+        "spreadPct": 0.00925255955917454
+      },
+      "wall": {
+        "median": 0.24625300000001005,
+        "min": 0.2435700000000054,
+        "max": 0.260334499999999,
+        "spreadPct": 6.807835843621376
+      },
+      "rank": {
+        "Ir": 7,
+        "Ct": 7,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "acorn-simple",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "post-order collection; source-order planning and manual edits",
+      "name": "rstest-coverage/tooling/acorn-simple",
+      "status": "passed",
+      "Ir": {
+        "median": 11320338,
+        "min": 11320338,
+        "max": 11320518,
+        "spreadPct": 0.0015900585300544913
+      },
+      "Ct": {
+        "median": 2732812021,
+        "min": 2732812021,
+        "max": 2732851662,
+        "spreadPct": 0.0014505571439009709
+      },
+      "wall": {
+        "median": 0.572669999999988,
+        "min": 0.568460999999985,
+        "max": 0.5843155000000024,
+        "spreadPct": 2.7685228840375355
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 3,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "acorn-recursive",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "recursive override; edit before default child traversal",
+      "name": "rstest-coverage/tooling/acorn-recursive",
+      "status": "passed",
+      "Ir": {
+        "median": 5672485,
+        "min": 5672485,
+        "max": 5672505,
+        "spreadPct": 0.00035257916063242126
+      },
+      "Ct": {
+        "median": 1380113314,
+        "min": 1380105680,
+        "max": 1380113314,
+        "spreadPct": 0.0005531429863446705
+      },
+      "wall": {
+        "median": 0.333462499999996,
+        "min": 0.3193105000000003,
+        "max": 0.33491599999999266,
+        "spreadPct": 4.6798365633294825
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "acorn-full",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "post-order collection; source-order planning and manual edits",
+      "name": "rstest-coverage/tooling/acorn-full",
+      "status": "passed",
+      "Ir": {
+        "median": 11185854,
+        "min": 11185646,
+        "max": 11185974,
+        "spreadPct": 0.002932274996616262
+      },
+      "Ct": {
+        "median": 2634835257,
+        "min": 2634791043,
+        "max": 2634874166,
+        "spreadPct": 0.0031547702946196003
+      },
+      "wall": {
+        "median": 0.5517010000000369,
+        "min": 0.519244999999998,
+        "max": 0.5883154999999647,
+        "spreadPct": 12.519553163753939
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "estraverse",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "replace; return updated node or Skip",
+      "name": "rstest-coverage/tooling/estraverse",
+      "status": "passed",
+      "Ir": {
+        "median": 34855463,
+        "min": 34855326,
+        "max": 34855571,
+        "spreadPct": 0.0007029027271851187
+      },
+      "Ct": {
+        "median": 8954209168,
+        "min": 8954172856,
+        "max": 8954244513,
+        "spreadPct": 0.0008002605105103346
+      },
+      "wall": {
+        "median": 1.9843629999999735,
+        "min": 1.982253500000013,
+        "max": 2.121408500000001,
+        "spreadPct": 7.012577839840292
+      },
+      "rank": {
+        "Ir": 12,
+        "Ct": 12,
+        "wall": 13
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "esrecurse",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "typed visitor; manual edits and explicit child traversal",
+      "name": "rstest-coverage/tooling/esrecurse",
+      "status": "passed",
+      "Ir": {
+        "median": 11264744,
+        "min": 11264595,
+        "max": 11264883,
+        "spreadPct": 0.002556649312225826
+      },
+      "Ct": {
+        "median": 2911827962,
+        "min": 2911810397,
+        "max": 2911872656,
+        "spreadPct": 0.0021381414291123564
+      },
+      "wall": {
+        "median": 0.8400184999999851,
+        "min": 0.8345970000000023,
+        "max": 0.8968909999999966,
+        "spreadPct": 7.415789057026173
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 4,
+        "wall": 5
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "estree-toolkit",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "child path.replaceWith; scope disabled",
+      "name": "rstest-coverage/tooling/estree-toolkit",
+      "status": "passed",
+      "Ir": {
+        "median": 54322920,
+        "min": 54322795,
+        "max": 54323110,
+        "spreadPct": 0.0005798657362306739
+      },
+      "Ct": {
+        "median": 13557058060,
+        "min": 13557028783,
+        "max": 13557110041,
+        "spreadPct": 0.0005993778269619655
+      },
+      "wall": {
+        "median": 2.6097224999999753,
+        "min": 2.5407459999999844,
+        "max": 3.053828999999979,
+        "spreadPct": 19.66044282485971
+      },
+      "rank": {
+        "Ir": 14,
+        "Ct": 14,
+        "wall": 15
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "estree-toolkit-scope",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "child path.replaceWith; scope enabled",
+      "name": "rstest-coverage/tooling/estree-toolkit-scope",
+      "status": "passed",
+      "Ir": {
+        "median": 148068912,
+        "min": 148068853,
+        "max": 148068929,
+        "spreadPct": 0.000051327452179833675
+      },
+      "Ct": {
+        "median": 36638695059,
+        "min": 36638681730,
+        "max": 36638707353,
+        "spreadPct": 0.00006993425928172056
+      },
+      "wall": {
+        "median": 6.368075500000032,
+        "min": 6.229785000000021,
+        "max": 7.3731804999999895,
+        "spreadPct": 17.955118465538966
+      },
+      "rank": {
+        "Ir": 17,
+        "Ct": 17,
+        "wall": 17
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "ast-types",
+      "ast": "ESTree",
+      "group": "path",
+      "note": "child path.replace; explicit child traversal",
+      "name": "rstest-coverage/tooling/ast-types",
+      "status": "passed",
+      "Ir": {
+        "median": 273714982,
+        "min": 273714868,
+        "max": 273715607,
+        "spreadPct": 0.0002699888747777789
+      },
+      "Ct": {
+        "median": 67681133369,
+        "min": 67681117215,
+        "max": 67681151216,
+        "spreadPct": 0.00005023704289144408
+      },
+      "wall": {
+        "median": 6.5269910000000095,
+        "min": 6.5143424999999695,
+        "max": 6.901191499999982,
+        "spreadPct": 5.926911803616884
+      },
+      "rank": {
+        "Ir": 18,
+        "Ct": 18,
+        "wall": 18
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "zimmerframe",
+      "ast": "ESTree",
+      "group": "recursive",
+      "note": "immutable return-value replacement; child changes preserved",
+      "name": "rstest-coverage/tooling/zimmerframe",
+      "status": "passed",
+      "Ir": {
+        "median": 27783183,
+        "min": 27782825,
+        "max": 27783592,
+        "spreadPct": 0.0027606628081454886
+      },
+      "Ct": {
+        "median": 6883307008,
+        "min": 6883208249,
+        "max": 6883396843,
+        "spreadPct": 0.0027398748854411117
+      },
+      "wall": {
+        "median": 1.5657634999999743,
+        "min": 1.5568395000000095,
+        "max": 1.6360259999999585,
+        "spreadPct": 5.057372968519848
+      },
+      "rank": {
+        "Ir": 11,
+        "Ct": 11,
+        "wall": 11
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "jscodeshift",
+      "ast": "ESTree",
+      "group": "query",
+      "note": "find IfStatement paths; source-order planning and child path.replace",
+      "name": "rstest-coverage/tooling/jscodeshift",
+      "status": "passed",
+      "Ir": {
+        "median": 277452650,
+        "min": 277452540,
+        "max": 277454849,
+        "spreadPct": 0.0008322140732842163
+      },
+      "Ct": {
+        "median": 68697664382,
+        "min": 68697638812,
+        "max": 68698367194,
+        "spreadPct": 0.0010602718542944364
+      },
+      "wall": {
+        "median": 6.915635500000008,
+        "min": 6.703084499999989,
+        "max": 8.780635999999959,
+        "spreadPct": 30.04136785404563
+      },
+      "rank": {
+        "Ir": 19,
+        "Ct": 19,
+        "wall": 19
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "esquery",
+      "ast": "ESTree",
+      "group": "query",
+      "note": "query IfStatement nodes; source-order planning and manual edits",
+      "name": "rstest-coverage/tooling/esquery",
+      "status": "passed",
+      "Ir": {
+        "median": 59069580,
+        "min": 59069426,
+        "max": 59070446,
+        "spreadPct": 0.0017267771330014535
+      },
+      "Ct": {
+        "median": 14981506294,
+        "min": 14981451057,
+        "max": 14981723024,
+        "spreadPct": 0.0018153515051348413
+      },
+      "wall": {
+        "median": 2.398028000000039,
+        "min": 2.366119999999981,
+        "max": 3.0754849999999863,
+        "spreadPct": 29.581180870281486
+      },
+      "rank": {
+        "Ir": 15,
+        "Ct": 15,
+        "wall": 14
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "estree-util-visit",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "enter callback; manual assignment and SKIP",
+      "name": "rstest-coverage/tooling/estree-util-visit",
+      "status": "passed",
+      "Ir": {
+        "median": 100769816,
+        "min": 100769785,
+        "max": 100770308,
+        "spreadPct": 0.0005190046193991265
+      },
+      "Ct": {
+        "median": 23770304438,
+        "min": 23770302177,
+        "max": 23770442133,
+        "spreadPct": 0.0005887850547520194
+      },
+      "wall": {
+        "median": 4.269550500000008,
+        "min": 4.195118000000036,
+        "max": 5.041312000000005,
+        "spreadPct": 19.819276057279726
+      },
+      "rank": {
+        "Ir": 16,
+        "Ct": 16,
+        "wall": 16
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "typescript-eslint",
+      "ast": "ESTree",
+      "group": "hooks",
+      "note": "simpleTraverse enter; manual edits; ignored descendants still traversed",
+      "name": "rstest-coverage/tooling/typescript-eslint",
+      "status": "passed",
+      "Ir": {
+        "median": 19940595,
+        "min": 19939949,
+        "max": 19940605,
+        "spreadPct": 0.0032897714436304435
+      },
+      "Ct": {
+        "median": 4882290526,
+        "min": 4882130719,
+        "max": 4882300809,
+        "spreadPct": 0.003483815620848615
+      },
+      "wall": {
+        "median": 1.5617680000000291,
+        "min": 1.4277854999999704,
+        "max": 1.5880039999999838,
+        "spreadPct": 10.258790037957647
+      },
+      "rank": {
+        "Ir": 6,
+        "Ct": 6,
+        "wall": 10
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "babel-types-traverse",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "note": "enter callback; manual edits without NodePath",
+      "name": "rstest-coverage/tooling/babel-types-traverse",
+      "status": "passed",
+      "Ir": {
+        "median": 17806381,
+        "min": 17806269,
+        "max": 17806907,
+        "spreadPct": 0.003582985223106256
+      },
+      "Ct": {
+        "median": 4449206659,
+        "min": 4449196177,
+        "max": 4449350692,
+        "spreadPct": 0.0034728663297184013
+      },
+      "wall": {
+        "median": 0.3079335000000185,
+        "min": 0.29465599999997494,
+        "max": 0.333123999999998,
+        "spreadPct": 12.49230759239275
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "babel-types-traverse-fast",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "note": "fast callback; manual edits without NodePath",
+      "name": "rstest-coverage/tooling/babel-types-traverse-fast",
+      "status": "passed",
+      "Ir": {
+        "median": 13757190,
+        "min": 13757139,
+        "max": 13757335,
+        "spreadPct": 0.0014247095518779634
+      },
+      "Ct": {
+        "median": 3479063155,
+        "min": 3479059505,
+        "max": 3479090934,
+        "spreadPct": 0.000903375380088494
+      },
+      "wall": {
+        "median": 0.29592050000002246,
+        "min": 0.27818899999996916,
+        "max": 0.30375150000000417,
+        "spreadPct": 8.638299813643554
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "babel-traverse",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "note": "child path.replaceWith and path.skip; default scope analysis",
+      "name": "rstest-coverage/tooling/babel-traverse",
+      "status": "passed",
+      "Ir": {
+        "median": 289567225,
+        "min": 289567206,
+        "max": 289567778,
+        "spreadPct": 0.00019753616798309963
+      },
+      "Ct": {
+        "median": 75265168959,
+        "min": 75265160940,
+        "max": 75265199902,
+        "spreadPct": 0.000051766309089433104
+      },
+      "wall": {
+        "median": 9.93715800000001,
+        "min": 9.913257499999986,
+        "max": 10.240039999999993,
+        "spreadPct": 3.288490532202536
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 4,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "babel-traverse-no-scope",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "note": "child path.replaceWith and path.skip; noScope",
+      "name": "rstest-coverage/tooling/babel-traverse-no-scope",
+      "status": "passed",
+      "Ir": {
+        "median": 105060938,
+        "min": 105060716,
+        "max": 105061235,
+        "spreadPct": 0.0004939990160757941
+      },
+      "Ct": {
+        "median": 27188250093,
+        "min": 27188163268,
+        "max": 27188379627,
+        "spreadPct": 0.000795781263082116
+      },
+      "wall": {
+        "median": 4.952646999999956,
+        "min": 4.791279000000031,
+        "max": 5.013241999999991,
+        "spreadPct": 4.4817044299737425
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 3,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "swc-visitor",
+      "ast": "SWC AST (not ESTree)",
+      "group": "recursive",
+      "note": "Visitor return-value update; byte offsets mapped to UTF-16",
+      "name": "rstest-coverage/tooling/swc-visitor",
+      "status": "passed",
+      "Ir": {
+        "median": 9611233,
+        "min": 9609886,
+        "max": 9611553,
+        "spreadPct": 0.01734428870884724
+      },
+      "Ct": {
+        "median": 2345561095,
+        "min": 2345224972,
+        "max": 2345672340,
+        "spreadPct": 0.01907296300887869
+      },
+      "wall": {
+        "median": 0.7493800000000306,
+        "min": 0.7211670000000083,
+        "max": 0.7497115000000463,
+        "spreadPct": 3.809082174602575
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "typescript",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "recursive",
+      "note": "transform + visitEachChild + factory updates",
+      "name": "rstest-coverage/tooling/typescript",
+      "status": "passed",
+      "Ir": {
+        "median": 19158102,
+        "min": 19156482,
+        "max": 19158102,
+        "spreadPct": 0.008455952473788896
+      },
+      "Ct": {
+        "median": 4410293696,
+        "min": 4409901044,
+        "max": 4410293696,
+        "spreadPct": 0.00890308054441189
+      },
+      "wall": {
+        "median": 0.6325879999999415,
+        "min": 0.5992800000000216,
+        "max": 0.6627019999999675,
+        "spreadPct": 10.025798782138102
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "tsquery",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "query",
+      "note": "map + compiler subtree transform; internal printing/reparsing included",
+      "name": "rstest-coverage/tooling/tsquery",
+      "status": "passed",
+      "Ir": {
+        "median": 578978726,
+        "min": 578978529,
+        "max": 578979167,
+        "spreadPct": 0.00011019403155065149
+      },
+      "Ct": {
+        "median": 136486346345,
+        "min": 136486306739,
+        "max": 136486458466,
+        "spreadPct": 0.00011116643097506312
+      },
+      "wall": {
+        "median": 11.37769099999997,
+        "min": 11.325604000000055,
+        "max": 11.886336500000027,
+        "spreadPct": 4.928350576579847
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "id": "ts-morph",
+      "ast": "TypeScript AST (not ESTree)",
+      "group": "wrapper",
+      "note": "SourceFile.transform + factory updates; internal text synchronization included",
+      "name": "rstest-coverage/tooling/ts-morph",
+      "status": "passed",
+      "Ir": {
+        "median": 284749633,
+        "min": 284748362,
+        "max": 284750706,
+        "spreadPct": 0.0008231792874690027
+      },
+      "Ct": {
+        "median": 65781359173,
+        "min": 65780972808,
+        "max": 65781536286,
+        "spreadPct": 0.0008565922125720988
+      },
+      "wall": {
+        "median": 5.2659364999999525,
+        "min": 5.224097999999998,
+        "max": 5.553699500000022,
+        "spreadPct": 6.259124089324413
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "direct-ast",
+      "ast": "ESTree",
+      "group": "specialized",
+      "name": "i18n/original/direct-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 51152833,
+        "min": 51152824,
+        "max": 51152863,
+        "spreadPct": 0.00007624211155616737
+      },
+      "Ct": {
+        "median": 12397148194,
+        "min": 12397144781,
+        "max": 12397150908,
+        "spreadPct": 0.0000494226567604101
+      },
+      "wall": {
+        "median": 1.8313370000000049,
+        "min": 1.817243000000019,
+        "max": 1.9017499999999643,
+        "spreadPct": 4.614497495542603
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "swc-next",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/original/swc-next",
+      "status": "passed",
+      "Ir": {
+        "median": 91268161,
+        "min": 91267143,
+        "max": 91268237,
+        "spreadPct": 0.001198665545589332
+      },
+      "Ct": {
+        "median": 23234615576,
+        "min": 23234396436,
+        "max": 23234707123,
+        "spreadPct": 0.0013371729735908414
+      },
+      "wall": {
+        "median": 3.7255539999999883,
+        "min": 3.7058335000000113,
+        "max": 3.742026999999979,
+        "spreadPct": 0.9714930987436414
+      },
+      "rank": {
+        "Ir": 5,
+        "Ct": 5,
+        "wall": 6
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "yuku-ast",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/original/yuku-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 124443805,
+        "min": 124443607,
+        "max": 124443808,
+        "spreadPct": 0.00016151868708932517
+      },
+      "Ct": {
+        "median": 31619337677,
+        "min": 31619297727,
+        "max": 31619341578,
+        "spreadPct": 0.00013868411934478105
+      },
+      "wall": {
+        "median": 4.3932374999999695,
+        "min": 4.255362500000047,
+        "max": 4.406737499999991,
+        "spreadPct": 3.4456366176412225
+      },
+      "rank": {
+        "Ir": 6,
+        "Ct": 6,
+        "wall": 7
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "estree-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/original/estree-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 79797838,
+        "min": 79797838,
+        "max": 79797914,
+        "spreadPct": 0.00009524067556817767
+      },
+      "Ct": {
+        "median": 20871286871,
+        "min": 20871286871,
+        "max": 20871305648,
+        "spreadPct": 0.0000899657031981581
+      },
+      "wall": {
+        "median": 2.77944149999999,
+        "min": 2.71752699999999,
+        "max": 3.0625934999999913,
+        "spreadPct": 12.414958184944808
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "oxc-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/original/oxc-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 88310961,
+        "min": 88310847,
+        "max": 88311022,
+        "spreadPct": 0.00019816339672716277
+      },
+      "Ct": {
+        "median": 23144095476,
+        "min": 23144063110,
+        "max": 23144101395,
+        "spreadPct": 0.0001654201610069438
+      },
+      "wall": {
+        "median": 2.4857535000000013,
+        "min": 2.4318065000000217,
+        "max": 2.491438499999987,
+        "spreadPct": 2.3989506602309927
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 4,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "oxc-visitor",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/original/oxc-visitor",
+      "status": "passed",
+      "Ir": {
+        "median": 124857120,
+        "min": 124857104,
+        "max": 124857120,
+        "spreadPct": 0.000012814647654855406
+      },
+      "Ct": {
+        "median": 32636613474,
+        "min": 32636609833,
+        "max": 32636613474,
+        "spreadPct": 0.000011156182006753266
+      },
+      "wall": {
+        "median": 1.4957389999999862,
+        "min": 1.470698499999969,
+        "max": 1.7082389999999918,
+        "spreadPct": 15.881146376475108
+      },
+      "rank": {
+        "Ir": 7,
+        "Ct": 7,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "acorn-simple",
+      "ast": "ESTree",
+      "group": "recursive",
+      "name": "i18n/original/acorn-simple",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "acorn-recursive",
+      "ast": "ESTree",
+      "group": "recursive",
+      "name": "i18n/original/acorn-recursive",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "acorn-full",
+      "ast": "ESTree",
+      "group": "recursive",
+      "name": "i18n/original/acorn-full",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "estraverse",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/original/estraverse",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "esrecurse",
+      "ast": "ESTree",
+      "group": "recursive",
+      "name": "i18n/original/esrecurse",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "estree-toolkit",
+      "ast": "ESTree",
+      "group": "path",
+      "name": "i18n/original/estree-toolkit",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "estree-toolkit-scope",
+      "ast": "ESTree",
+      "group": "path",
+      "name": "i18n/original/estree-toolkit-scope",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "ast-types",
+      "ast": "ESTree",
+      "group": "path",
+      "name": "i18n/original/ast-types",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "zimmerframe",
+      "ast": "ESTree",
+      "group": "recursive",
+      "name": "i18n/original/zimmerframe",
+      "status": "passed",
+      "Ir": {
+        "median": 90819803,
+        "min": 90819775,
+        "max": 90820658,
+        "spreadPct": 0.0009722549166947654
+      },
+      "Ct": {
+        "median": 22440869927,
+        "min": 22440863455,
+        "max": 22441089110,
+        "spreadPct": 0.0010055537095221985
+      },
+      "wall": {
+        "median": 2.925500999999997,
+        "min": 2.9006789999999967,
+        "max": 3.134214500000013,
+        "spreadPct": 7.982752355921825
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 3,
+        "wall": 5
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "jscodeshift",
+      "ast": "ESTree",
+      "group": "query",
+      "name": "i18n/original/jscodeshift",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "esquery",
+      "ast": "ESTree",
+      "group": "query",
+      "name": "i18n/original/esquery",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "estree-util-visit",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/original/estree-util-visit",
+      "status": "passed",
+      "Ir": {
+        "median": 277902193,
+        "min": 277898121,
+        "max": 277902740,
+        "spreadPct": 0.001662095556043345
+      },
+      "Ct": {
+        "median": 66274983229,
+        "min": 66273950632,
+        "max": 66275094339,
+        "spreadPct": 0.0017256994182075435
+      },
+      "wall": {
+        "median": 7.749787999999995,
+        "min": 7.687914500000062,
+        "max": 8.039828,
+        "spreadPct": 4.540943571616904
+      },
+      "rank": {
+        "Ir": 8,
+        "Ct": 8,
+        "wall": 8
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "typescript-eslint",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/original/typescript-eslint",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "babel-types-traverse-v8",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "name": "i18n/original/babel-types-traverse-v8",
+      "status": "passed",
+      "Ir": {
+        "median": 80843706,
+        "min": 80843450,
+        "max": 80843842,
+        "spreadPct": 0.00048488623220711824
+      },
+      "Ct": {
+        "median": 20185045405,
+        "min": 20184973508,
+        "max": 20185074125,
+        "spreadPct": 0.0004984729931550036
+      },
+      "wall": {
+        "median": 1.2627320000000282,
+        "min": 1.2575590000000147,
+        "max": 1.3238889999999799,
+        "spreadPct": 5.252896101466001
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "babel-types-traverse-fast-v8",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "name": "i18n/original/babel-types-traverse-fast-v8",
+      "status": "passed",
+      "Ir": {
+        "median": 61975831,
+        "min": 61975803,
+        "max": 61975841,
+        "spreadPct": 0.00006131422424977247
+      },
+      "Ct": {
+        "median": 15667588799,
+        "min": 15667581628,
+        "max": 15667597459,
+        "spreadPct": 0.00010104298882933685
+      },
+      "wall": {
+        "median": 1.137242499999985,
+        "min": 1.0974239999999895,
+        "max": 1.2000724999999761,
+        "spreadPct": 9.02608722413979
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "babel-traverse-v8",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "name": "i18n/original/babel-traverse-v8",
+      "status": "passed",
+      "Ir": {
+        "median": 1139571428,
+        "min": 1139562528,
+        "max": 1139572339,
+        "spreadPct": 0.0008609376963073526
+      },
+      "Ct": {
+        "median": 296170403812,
+        "min": 296168641926,
+        "max": 296170845334,
+        "spreadPct": 0.0007439663017100982
+      },
+      "wall": {
+        "median": 23.868985000000066,
+        "min": 23.28965000000005,
+        "max": 23.877610000000004,
+        "spreadPct": 2.4632802777325935
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 4,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "babel-traverse-no-scope-v8",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "name": "i18n/original/babel-traverse-no-scope-v8",
+      "status": "passed",
+      "Ir": {
+        "median": 524918536,
+        "min": 524917571,
+        "max": 524918849,
+        "spreadPct": 0.00024346634998616244
+      },
+      "Ct": {
+        "median": 136701661937,
+        "min": 136701425406,
+        "max": 136701791948,
+        "spreadPct": 0.0002681328045367317
+      },
+      "wall": {
+        "median": 10.225705000000033,
+        "min": 9.810214999999914,
+        "max": 10.410200500000002,
+        "spreadPct": 5.86742429984129
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 3,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "swc-visitor",
+      "ast": "SWC AST (not ESTree)",
+      "group": "recursive",
+      "name": "i18n/original/swc-visitor",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "typescript",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "recursive",
+      "name": "i18n/original/typescript",
+      "status": "passed",
+      "Ir": {
+        "median": 41205695,
+        "min": 41205497,
+        "max": 41205727,
+        "spreadPct": 0.0005581752716463101
+      },
+      "Ct": {
+        "median": 9260319709,
+        "min": 9260264430,
+        "max": 9260330276,
+        "spreadPct": 0.000711055363844566
+      },
+      "wall": {
+        "median": 1.5028760000000432,
+        "min": 1.3712689999999839,
+        "max": 1.5601999999999805,
+        "spreadPct": 12.571296633919978
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "tsquery",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "query",
+      "name": "i18n/original/tsquery",
+      "status": "passed",
+      "Ir": {
+        "median": 600125410,
+        "min": 600125260,
+        "max": 600125629,
+        "spreadPct": 0.0000614871481612485
+      },
+      "Ct": {
+        "median": 142909733811,
+        "min": 142909722784,
+        "max": 142909773537,
+        "spreadPct": 0.00003551402598448718
+      },
+      "wall": {
+        "median": 10.30199799999997,
+        "min": 9.934685500000057,
+        "max": 10.323497999999944,
+        "spreadPct": 3.7741465296332586
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "ts-morph",
+      "ast": "TypeScript AST (not ESTree)",
+      "group": "wrapper",
+      "name": "i18n/original/ts-morph",
+      "status": "passed",
+      "Ir": {
+        "median": 650167399,
+        "min": 650166732,
+        "max": 650169643,
+        "spreadPct": 0.0004477308466215483
+      },
+      "Ct": {
+        "median": 152838554852,
+        "min": 152838419821,
+        "max": 152839242607,
+        "spreadPct": 0.0005383366787239897
+      },
+      "wall": {
+        "median": 19.023300500000005,
+        "min": 18.514723500000002,
+        "max": 19.787428500000033,
+        "spreadPct": 6.690242841929717
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "babel-traverse-v7",
+      "ast": "Babel 7 AST (not ESTree)",
+      "group": "path",
+      "name": "i18n/original/babel-traverse-v7",
+      "status": "passed",
+      "Ir": {
+        "median": 1543154220,
+        "min": 1543151586,
+        "max": 1543158400,
+        "spreadPct": 0.00044156312516839693
+      },
+      "Ct": {
+        "median": 395842220671,
+        "min": 395841337926,
+        "max": 395843921605,
+        "spreadPct": 0.0006527042506027666
+      },
+      "wall": {
+        "median": 27.862321500000007,
+        "min": 27.64118099999996,
+        "max": 28.288408999999945,
+        "spreadPct": 2.3229507275622527
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 3,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "babel-traverse-no-scope-v7",
+      "ast": "Babel 7 AST (not ESTree)",
+      "group": "path",
+      "name": "i18n/original/babel-traverse-no-scope-v7",
+      "status": "passed",
+      "Ir": {
+        "median": 462022487,
+        "min": 462016399,
+        "max": 462024403,
+        "spreadPct": 0.0017323832119019783
+      },
+      "Ct": {
+        "median": 117570881356,
+        "min": 117568727167,
+        "max": 117571301390,
+        "spreadPct": 0.0021895072745141326
+      },
+      "wall": {
+        "median": 11.067758999999995,
+        "min": 10.81832700000001,
+        "max": 12.168728499999986,
+        "spreadPct": 12.201218873666981
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "id": "babel-types-traverse-fast-v7",
+      "ast": "Babel 7 AST (not ESTree)",
+      "group": "recursive",
+      "name": "i18n/original/babel-types-traverse-fast-v7",
+      "status": "passed",
+      "Ir": {
+        "median": 66636151,
+        "min": 66635840,
+        "max": 66636346,
+        "spreadPct": 0.0007593475799645151
+      },
+      "Ct": {
+        "median": 16706173711,
+        "min": 16706103515,
+        "max": 16706213173,
+        "spreadPct": 0.0006563920733554737
+      },
+      "wall": {
+        "median": 1.218338000000017,
+        "min": 1.1835120000000074,
+        "max": 1.2618604999999548,
+        "spreadPct": 6.430768801428356
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "direct-ast",
+      "ast": "ESTree",
+      "group": "specialized",
+      "name": "i18n/javascript/direct-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 81188670,
+        "min": 81188650,
+        "max": 81188741,
+        "spreadPct": 0.00011208460490854205
+      },
+      "Ct": {
+        "median": 19553615692,
+        "min": 19553601583,
+        "max": 19553625512,
+        "spreadPct": 0.00012237634398118045
+      },
+      "wall": {
+        "median": 3.364377499999989,
+        "min": 3.351005000000015,
+        "max": 3.490042999999986,
+        "spreadPct": 4.132651582647053
+      },
+      "rank": {
+        "Ir": 7,
+        "Ct": 7,
+        "wall": 10
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "swc-next",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/javascript/swc-next",
+      "status": "passed",
+      "Ir": {
+        "median": 52943735,
+        "min": 52943588,
+        "max": 52943735,
+        "spreadPct": 0.00027765324830218344
+      },
+      "Ct": {
+        "median": 13832118846,
+        "min": 13832101099,
+        "max": 13832118846,
+        "spreadPct": 0.0001283028305177707
+      },
+      "wall": {
+        "median": 2.5859250000000316,
+        "min": 2.45290650000004,
+        "max": 2.714718499999975,
+        "spreadPct": 10.12450090392923
+      },
+      "rank": {
+        "Ir": 5,
+        "Ct": 5,
+        "wall": 6
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "yuku-ast",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/javascript/yuku-ast",
+      "status": "passed",
+      "Ir": {
+        "median": 86491567,
+        "min": 86491361,
+        "max": 86491629,
+        "spreadPct": 0.0003098567979465559
+      },
+      "Ct": {
+        "median": 22360204960,
+        "min": 22360141406,
+        "max": 22360219028,
+        "spreadPct": 0.0003471435084734572
+      },
+      "wall": {
+        "median": 3.426724500000006,
+        "min": 3.21167650000001,
+        "max": 3.4716564999999946,
+        "spreadPct": 7.586836934220539
+      },
+      "rank": {
+        "Ir": 10,
+        "Ct": 10,
+        "wall": 11
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "estree-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/javascript/estree-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 94442307,
+        "min": 94442161,
+        "max": 94442330,
+        "spreadPct": 0.0001789452263168455
+      },
+      "Ct": {
+        "median": 24088404413,
+        "min": 24088366926,
+        "max": 24088408515,
+        "spreadPct": 0.00017265153509941615
+      },
+      "wall": {
+        "median": 3.5672685000000115,
+        "min": 3.4625284999999906,
+        "max": 3.568887999999987,
+        "spreadPct": 2.981538956206858
+      },
+      "rank": {
+        "Ir": 11,
+        "Ct": 11,
+        "wall": 12
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "oxc-walker",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/javascript/oxc-walker",
+      "status": "passed",
+      "Ir": {
+        "median": 98873990,
+        "min": 98873990,
+        "max": 98874178,
+        "spreadPct": 0.00019014100675010688
+      },
+      "Ct": {
+        "median": 25374042808,
+        "min": 25374042808,
+        "max": 25374091357,
+        "spreadPct": 0.00019133332582182505
+      },
+      "wall": {
+        "median": 3.299275499999993,
+        "min": 3.258628499999986,
+        "max": 3.323535000000021,
+        "spreadPct": 1.9672955471598224
+      },
+      "rank": {
+        "Ir": 12,
+        "Ct": 12,
+        "wall": 9
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "oxc-visitor",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/javascript/oxc-visitor",
+      "status": "passed",
+      "Ir": {
+        "median": 81972573,
+        "min": 81972556,
+        "max": 81972637,
+        "spreadPct": 0.00009881353852342784
+      },
+      "Ct": {
+        "median": 21475934613,
+        "min": 21475924852,
+        "max": 21475944329,
+        "spreadPct": 0.0000906922113099097
+      },
+      "wall": {
+        "median": 0.8197389999999984,
+        "min": 0.783623499999976,
+        "max": 0.9190819999999746,
+        "spreadPct": 16.524588924035438
+      },
+      "rank": {
+        "Ir": 8,
+        "Ct": 8,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "acorn-simple",
+      "ast": "ESTree",
+      "group": "recursive",
+      "name": "i18n/javascript/acorn-simple",
+      "status": "passed",
+      "Ir": {
+        "median": 40247505,
+        "min": 40247451,
+        "max": 40247603,
+        "spreadPct": 0.00037766316197736976
+      },
+      "Ct": {
+        "median": 9731455780,
+        "min": 9731440206,
+        "max": 9731490064,
+        "spreadPct": 0.0005123385557838911
+      },
+      "wall": {
+        "median": 1.6513974999999874,
+        "min": 1.566804000000019,
+        "max": 1.6629414999999597,
+        "spreadPct": 5.821584445897577
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 3,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "acorn-recursive",
+      "ast": "ESTree",
+      "group": "recursive",
+      "name": "i18n/javascript/acorn-recursive",
+      "status": "passed",
+      "Ir": {
+        "median": 19436269,
+        "min": 19436166,
+        "max": 19436346,
+        "spreadPct": 0.0009261036673242174
+      },
+      "Ct": {
+        "median": 4774287868,
+        "min": 4774263006,
+        "max": 4774298572,
+        "spreadPct": 0.0007449487962044269
+      },
+      "wall": {
+        "median": 0.93232900000001,
+        "min": 0.8943664999999896,
+        "max": 0.9653725000000009,
+        "spreadPct": 7.615981053899478
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "acorn-full",
+      "ast": "ESTree",
+      "group": "recursive",
+      "name": "i18n/javascript/acorn-full",
+      "status": "passed",
+      "Ir": {
+        "median": 39926057,
+        "min": 39925944,
+        "max": 39926133,
+        "spreadPct": 0.00047337506931876595
+      },
+      "Ct": {
+        "median": 9412450901,
+        "min": 9412426094,
+        "max": 9412484084,
+        "spreadPct": 0.0006160988313239329
+      },
+      "wall": {
+        "median": 1.3937924999999893,
+        "min": 1.3631775000000061,
+        "max": 1.612865000000042,
+        "spreadPct": 17.91425194209595
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "estraverse",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/javascript/estraverse",
+      "status": "passed",
+      "Ir": {
+        "median": 172836451,
+        "min": 172836390,
+        "max": 172836463,
+        "spreadPct": 0.00004223646087248112
+      },
+      "Ct": {
+        "median": 44803320170,
+        "min": 44803301408,
+        "max": 44803321635,
+        "spreadPct": 0.00004514620774364812
+      },
+      "wall": {
+        "median": 4.20512100000002,
+        "min": 3.831326500000003,
+        "max": 4.591482000000013,
+        "spreadPct": 18.076899570785404
+      },
+      "rank": {
+        "Ir": 13,
+        "Ct": 13,
+        "wall": 13
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "esrecurse",
+      "ast": "ESTree",
+      "group": "recursive",
+      "name": "i18n/javascript/esrecurse",
+      "status": "passed",
+      "Ir": {
+        "median": 40110037,
+        "min": 40109857,
+        "max": 40110053,
+        "spreadPct": 0.0004886557446955235
+      },
+      "Ct": {
+        "median": 10424672950,
+        "min": 10424631491,
+        "max": 10424673402,
+        "spreadPct": 0.000402036593387805
+      },
+      "wall": {
+        "median": 2.129757500000011,
+        "min": 1.9135670000000005,
+        "max": 2.246835999999945,
+        "spreadPct": 15.648213470310251
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 4,
+        "wall": 5
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "estree-toolkit",
+      "ast": "ESTree",
+      "group": "path",
+      "name": "i18n/javascript/estree-toolkit",
+      "status": "passed",
+      "Ir": {
+        "median": 210038001,
+        "min": 210037918,
+        "max": 210038549,
+        "spreadPct": 0.0003004218270007245
+      },
+      "Ct": {
+        "median": 52290152908,
+        "min": 52290141951,
+        "max": 52290321699,
+        "spreadPct": 0.00034375114625549296
+      },
+      "wall": {
+        "median": 5.941445499999986,
+        "min": 5.9289719999999875,
+        "max": 6.735385000000008,
+        "spreadPct": 13.572673518591097
+      },
+      "rank": {
+        "Ir": 14,
+        "Ct": 14,
+        "wall": 15
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "estree-toolkit-scope",
+      "ast": "ESTree",
+      "group": "path",
+      "name": "i18n/javascript/estree-toolkit-scope",
+      "status": "passed",
+      "Ir": {
+        "median": 490959249,
+        "min": 490959216,
+        "max": 490960831,
+        "spreadPct": 0.00032894787159819857
+      },
+      "Ct": {
+        "median": 121087063624,
+        "min": 121087008550,
+        "max": 121087387226,
+        "spreadPct": 0.00031273035175406196
+      },
+      "wall": {
+        "median": 14.150398999999993,
+        "min": 13.516573000000022,
+        "max": 14.869124999999997,
+        "spreadPct": 9.55840185142465
+      },
+      "rank": {
+        "Ir": 17,
+        "Ct": 17,
+        "wall": 17
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "ast-types",
+      "ast": "ESTree",
+      "group": "path",
+      "name": "i18n/javascript/ast-types",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "zimmerframe",
+      "ast": "ESTree",
+      "group": "recursive",
+      "name": "i18n/javascript/zimmerframe",
+      "status": "passed",
+      "Ir": {
+        "median": 85269537,
+        "min": 85269537,
+        "max": 85269647,
+        "spreadPct": 0.00012900269412744673
+      },
+      "Ct": {
+        "median": 21648346375,
+        "min": 21648346375,
+        "max": 21648384152,
+        "spreadPct": 0.00017450293590842456
+      },
+      "wall": {
+        "median": 3.2546155,
+        "min": 3.1282515000000046,
+        "max": 3.3937499999999545,
+        "spreadPct": 8.157599568979805
+      },
+      "rank": {
+        "Ir": 9,
+        "Ct": 9,
+        "wall": 8
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "jscodeshift",
+      "ast": "ESTree",
+      "group": "query",
+      "name": "i18n/javascript/jscodeshift",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "esquery",
+      "ast": "ESTree",
+      "group": "query",
+      "name": "i18n/javascript/esquery",
+      "status": "passed",
+      "Ir": {
+        "median": 218709909,
+        "min": 218709258,
+        "max": 218710130,
+        "spreadPct": 0.0003987016427316972
+      },
+      "Ct": {
+        "median": 55259207244,
+        "min": 55259027550,
+        "max": 55259245866,
+        "spreadPct": 0.0003950762431969282
+      },
+      "wall": {
+        "median": 5.147513500000002,
+        "min": 5.122826000000003,
+        "max": 5.158113500000013,
+        "spreadPct": 0.6855251569521803
+      },
+      "rank": {
+        "Ir": 15,
+        "Ct": 15,
+        "wall": 14
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "estree-util-visit",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/javascript/estree-util-visit",
+      "status": "passed",
+      "Ir": {
+        "median": 371134476,
+        "min": 371134466,
+        "max": 371134989,
+        "spreadPct": 0.00014091927153649827
+      },
+      "Ct": {
+        "median": 87331695126,
+        "min": 87331694855,
+        "max": 87331805206,
+        "spreadPct": 0.00012635847711508211
+      },
+      "wall": {
+        "median": 12.355816999999945,
+        "min": 12.347757500000057,
+        "max": 13.0009905,
+        "spreadPct": 5.286845863773689
+      },
+      "rank": {
+        "Ir": 16,
+        "Ct": 16,
+        "wall": 16
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "typescript-eslint",
+      "ast": "ESTree",
+      "group": "hooks",
+      "name": "i18n/javascript/typescript-eslint",
+      "status": "passed",
+      "Ir": {
+        "median": 75047218,
+        "min": 75047193,
+        "max": 75047218,
+        "spreadPct": 0.00003331236075932888
+      },
+      "Ct": {
+        "median": 18566832573,
+        "min": 18566827352,
+        "max": 18566832573,
+        "spreadPct": 0.00002812003598067885
+      },
+      "wall": {
+        "median": 3.146552999999983,
+        "min": 2.9729844999999955,
+        "max": 3.442459499999984,
+        "spreadPct": 14.92029531998956
+      },
+      "rank": {
+        "Ir": 6,
+        "Ct": 6,
+        "wall": 7
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "babel-types-traverse-v8",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "name": "i18n/javascript/babel-types-traverse-v8",
+      "status": "passed",
+      "Ir": {
+        "median": 65876584,
+        "min": 65876363,
+        "max": 65876726,
+        "spreadPct": 0.0005510303934399513
+      },
+      "Ct": {
+        "median": 16472491433,
+        "min": 16472437723,
+        "max": 16472513974,
+        "spreadPct": 0.0004628990114224211
+      },
+      "wall": {
+        "median": 1.0321815000000072,
+        "min": 0.9881824999999935,
+        "max": 1.0572244999999896,
+        "spreadPct": 6.688939881212323
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "babel-types-traverse-fast-v8",
+      "ast": "Babel AST (not ESTree)",
+      "group": "recursive",
+      "name": "i18n/javascript/babel-types-traverse-fast-v8",
+      "status": "passed",
+      "Ir": {
+        "median": 50405881,
+        "min": 50405835,
+        "max": 50406032,
+        "spreadPct": 0.0003908274115871519
+      },
+      "Ct": {
+        "median": 12763988740,
+        "min": 12763977118,
+        "max": 12764030813,
+        "spreadPct": 0.0004206757079918891
+      },
+      "wall": {
+        "median": 0.961309,
+        "min": 0.9224379999999996,
+        "max": 1.1037520000000427,
+        "spreadPct": 18.861157026517287
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "babel-traverse-v8",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "name": "i18n/javascript/babel-traverse-v8",
+      "status": "passed",
+      "Ir": {
+        "median": 960330486,
+        "min": 960327908,
+        "max": 960335883,
+        "spreadPct": 0.0008304432813767823
+      },
+      "Ct": {
+        "median": 249384359314,
+        "min": 249383610877,
+        "max": 249386036318,
+        "spreadPct": 0.0009725714181401913
+      },
+      "wall": {
+        "median": 20.930230999999992,
+        "min": 20.78991050000002,
+        "max": 21.346640500000035,
+        "spreadPct": 2.6599324202394907
+      },
+      "rank": {
+        "Ir": 4,
+        "Ct": 4,
+        "wall": 4
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "babel-traverse-no-scope-v8",
+      "ast": "Babel AST (not ESTree)",
+      "group": "path",
+      "name": "i18n/javascript/babel-traverse-no-scope-v8",
+      "status": "passed",
+      "Ir": {
+        "median": 441457506,
+        "min": 441456503,
+        "max": 441458404,
+        "spreadPct": 0.00043061902315916223
+      },
+      "Ct": {
+        "median": 113688570753,
+        "min": 113688396991,
+        "max": 113688873507,
+        "spreadPct": 0.0004191415169034709
+      },
+      "wall": {
+        "median": 8.172481499999975,
+        "min": 8.010066499999994,
+        "max": 8.415757000000013,
+        "spreadPct": 4.964104231989038
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 3,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "swc-visitor",
+      "ast": "SWC AST (not ESTree)",
+      "group": "recursive",
+      "name": "i18n/javascript/swc-visitor",
+      "status": "unsupported"
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "typescript",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "recursive",
+      "name": "i18n/javascript/typescript",
+      "status": "passed",
+      "Ir": {
+        "median": 34850919,
+        "min": 34850770,
+        "max": 34850931,
+        "spreadPct": 0.0004619677317547924
+      },
+      "Ct": {
+        "median": 7839934955,
+        "min": 7839892853,
+        "max": 7839939591,
+        "spreadPct": 0.000596152905199709
+      },
+      "wall": {
+        "median": 1.2060725000000048,
+        "min": 1.203058999999996,
+        "max": 1.2549189999999726,
+        "spreadPct": 4.299907343876614
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "tsquery",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "group": "query",
+      "name": "i18n/javascript/tsquery",
+      "status": "passed",
+      "Ir": {
+        "median": 502354516,
+        "min": 502351686,
+        "max": 502359001,
+        "spreadPct": 0.0014561429761288341
+      },
+      "Ct": {
+        "median": 119805729583,
+        "min": 119804916051,
+        "max": 119806825247,
+        "spreadPct": 0.0015935765398242758
+      },
+      "wall": {
+        "median": 8.651332999999994,
+        "min": 8.440766499999995,
+        "max": 8.977307999999965,
+        "spreadPct": 6.201836179464718
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "ts-morph",
+      "ast": "TypeScript AST (not ESTree)",
+      "group": "wrapper",
+      "name": "i18n/javascript/ts-morph",
+      "status": "passed",
+      "Ir": {
+        "median": 531356811,
+        "min": 531355107,
+        "max": 531359981,
+        "spreadPct": 0.0009172744000076438
+      },
+      "Ct": {
+        "median": 124907035005,
+        "min": 124906612180,
+        "max": 124907768354,
+        "spreadPct": 0.000925627607727394
+      },
+      "wall": {
+        "median": 14.726726000000042,
+        "min": 14.715185499999961,
+        "max": 14.779000499999995,
+        "spreadPct": 0.4333278150217063
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "babel-traverse-v7",
+      "ast": "Babel 7 AST (not ESTree)",
+      "group": "path",
+      "name": "i18n/javascript/babel-traverse-v7",
+      "status": "passed",
+      "Ir": {
+        "median": 1319606431,
+        "min": 1319606397,
+        "max": 1319606755,
+        "spreadPct": 0.000027129300948367386
+      },
+      "Ct": {
+        "median": 338416354038,
+        "min": 338416342076,
+        "max": 338416373744,
+        "spreadPct": 0.000009357703793606876
+      },
+      "wall": {
+        "median": 25.217010000000016,
+        "min": 24.326588499999957,
+        "max": 27.93820649999992,
+        "spreadPct": 14.322150009061193
+      },
+      "rank": {
+        "Ir": 3,
+        "Ct": 3,
+        "wall": 3
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "babel-traverse-no-scope-v7",
+      "ast": "Babel 7 AST (not ESTree)",
+      "group": "path",
+      "name": "i18n/javascript/babel-traverse-no-scope-v7",
+      "status": "passed",
+      "Ir": {
+        "median": 354228327,
+        "min": 354227362,
+        "max": 354229867,
+        "spreadPct": 0.0007071709993424664
+      },
+      "Ct": {
+        "median": 90266102018,
+        "min": 90265842639,
+        "max": 90266338778,
+        "spreadPct": 0.0005496404396647866
+      },
+      "wall": {
+        "median": 8.319825499999979,
+        "min": 7.840570000000014,
+        "max": 8.897239499999955,
+        "spreadPct": 12.700620944513128
+      },
+      "rank": {
+        "Ir": 2,
+        "Ct": 2,
+        "wall": 2
+      }
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "id": "babel-types-traverse-fast-v7",
+      "ast": "Babel 7 AST (not ESTree)",
+      "group": "recursive",
+      "name": "i18n/javascript/babel-types-traverse-fast-v7",
+      "status": "passed",
+      "Ir": {
+        "median": 54220252,
+        "min": 54220195,
+        "max": 54220465,
+        "spreadPct": 0.0004979689139032404
+      },
+      "Ct": {
+        "median": 13619549252,
+        "min": 13619536925,
+        "max": 13619600033,
+        "spreadPct": 0.0004633633524305713
+      },
+      "wall": {
+        "median": 0.9867755000000216,
+        "min": 0.9663280000000043,
+        "max": 1.0864750000000356,
+        "spreadPct": 12.175717779781591
+      },
+      "rank": {
+        "Ir": 1,
+        "Ct": 1,
+        "wall": 1
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "libraryWinners": {
+        "Ir": "acorn-recursive",
+        "Ct": "acorn-recursive",
+        "wall": "oxc-visitor"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 5,
+      "scenario": "styled-components",
+      "kind": "dense",
+      "ast": "ESTree",
+      "count": 19,
+      "Ir": 0.9526315789473684,
+      "Ct": 0.9614035087719298,
+      "winners": {
+        "Ir": [
+          "direct-ast"
+        ],
+        "Ct": [
+          "direct-ast"
+        ],
+        "wall": [
+          "direct-ast"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "babel-types-traverse-fast",
+        "Ct": "babel-types-traverse-fast",
+        "wall": "babel-types-traverse-fast"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 4,
+      "scenario": "styled-components",
+      "kind": "dense",
+      "ast": "Babel AST (not ESTree)",
+      "count": 4,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "babel-types-traverse-fast"
+        ],
+        "Ct": [
+          "babel-types-traverse-fast"
+        ],
+        "wall": [
+          "babel-types-traverse-fast"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "typescript",
+        "Ct": "typescript",
+        "wall": "typescript"
+      },
+      "topFiveOverlap": 2,
+      "topFiveSize": 2,
+      "scenario": "styled-components",
+      "kind": "dense",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "count": 2,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "typescript"
+        ],
+        "Ct": [
+          "typescript"
+        ],
+        "wall": [
+          "typescript"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "acorn-recursive",
+        "Ct": "acorn-recursive",
+        "wall": "oxc-visitor"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 5,
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "count": 19,
+      "Ir": 0.9526315789473684,
+      "Ct": 0.9456140350877194,
+      "winners": {
+        "Ir": [
+          "direct-ast"
+        ],
+        "Ct": [
+          "direct-ast"
+        ],
+        "wall": [
+          "direct-ast"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "babel-types-traverse-fast",
+        "Ct": "babel-types-traverse-fast",
+        "wall": "babel-types-traverse-fast"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 4,
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "ast": "Babel AST (not ESTree)",
+      "count": 4,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "babel-types-traverse-fast"
+        ],
+        "Ct": [
+          "babel-types-traverse-fast"
+        ],
+        "wall": [
+          "babel-types-traverse-fast"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "typescript",
+        "Ct": "typescript",
+        "wall": "typescript"
+      },
+      "topFiveOverlap": 2,
+      "topFiveSize": 2,
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "count": 2,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "typescript"
+        ],
+        "Ct": [
+          "typescript"
+        ],
+        "wall": [
+          "typescript"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "acorn-recursive",
+        "Ct": "acorn-recursive",
+        "wall": "oxc-visitor"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 5,
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "ast": "ESTree",
+      "count": 19,
+      "Ir": 0.9245614035087719,
+      "Ct": 0.9298245614035088,
+      "winners": {
+        "Ir": [
+          "acorn-recursive"
+        ],
+        "Ct": [
+          "acorn-recursive"
+        ],
+        "wall": [
+          "oxc-visitor"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "babel-types-traverse-fast",
+        "Ct": "babel-types-traverse-fast",
+        "wall": "babel-types-traverse-fast"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 4,
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "ast": "Babel AST (not ESTree)",
+      "count": 4,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "babel-types-traverse-fast"
+        ],
+        "Ct": [
+          "babel-types-traverse-fast"
+        ],
+        "wall": [
+          "babel-types-traverse-fast"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "typescript",
+        "Ct": "typescript",
+        "wall": "typescript"
+      },
+      "topFiveOverlap": 2,
+      "topFiveSize": 2,
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "count": 2,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "typescript"
+        ],
+        "Ct": [
+          "typescript"
+        ],
+        "wall": [
+          "typescript"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "acorn-recursive",
+        "Ct": "acorn-recursive",
+        "wall": "oxc-visitor"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 5,
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "ast": "ESTree",
+      "count": 19,
+      "Ir": 0.956140350877193,
+      "Ct": 0.9526315789473684,
+      "winners": {
+        "Ir": [
+          "acorn-recursive"
+        ],
+        "Ct": [
+          "acorn-recursive"
+        ],
+        "wall": [
+          "oxc-visitor"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "babel-types-traverse-fast",
+        "Ct": "babel-types-traverse-fast",
+        "wall": "babel-types-traverse-fast"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 4,
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "ast": "Babel AST (not ESTree)",
+      "count": 4,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "babel-types-traverse-fast"
+        ],
+        "Ct": [
+          "babel-types-traverse-fast"
+        ],
+        "wall": [
+          "babel-types-traverse-fast"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "typescript",
+        "Ct": "typescript",
+        "wall": "typescript"
+      },
+      "topFiveOverlap": 2,
+      "topFiveSize": 2,
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "count": 2,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "typescript"
+        ],
+        "Ct": [
+          "typescript"
+        ],
+        "wall": [
+          "typescript"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "acorn-recursive",
+        "Ct": "acorn-recursive",
+        "wall": "oxc-visitor"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 5,
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "ast": "ESTree",
+      "count": 19,
+      "Ir": 0.9421052631578948,
+      "Ct": 0.9473684210526315,
+      "winners": {
+        "Ir": [
+          "acorn-recursive"
+        ],
+        "Ct": [
+          "acorn-recursive"
+        ],
+        "wall": [
+          "oxc-visitor"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "babel-types-traverse-fast",
+        "Ct": "babel-types-traverse-fast",
+        "wall": "babel-types-traverse-fast"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 4,
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "ast": "Babel AST (not ESTree)",
+      "count": 4,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "babel-types-traverse-fast"
+        ],
+        "Ct": [
+          "babel-types-traverse-fast"
+        ],
+        "wall": [
+          "babel-types-traverse-fast"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "typescript",
+        "Ct": "typescript",
+        "wall": "typescript"
+      },
+      "topFiveOverlap": 2,
+      "topFiveSize": 2,
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "count": 2,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "typescript"
+        ],
+        "Ct": [
+          "typescript"
+        ],
+        "wall": [
+          "typescript"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "acorn-recursive",
+        "Ct": "acorn-recursive",
+        "wall": "oxc-visitor"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 5,
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "ast": "ESTree",
+      "count": 19,
+      "Ir": 0.9350877192982456,
+      "Ct": 0.9368421052631579,
+      "winners": {
+        "Ir": [
+          "acorn-recursive"
+        ],
+        "Ct": [
+          "acorn-recursive"
+        ],
+        "wall": [
+          "oxc-visitor"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "babel-types-traverse-fast",
+        "Ct": "babel-types-traverse-fast",
+        "wall": "babel-types-traverse-fast"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 4,
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "ast": "Babel AST (not ESTree)",
+      "count": 4,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "babel-types-traverse-fast"
+        ],
+        "Ct": [
+          "babel-types-traverse-fast"
+        ],
+        "wall": [
+          "babel-types-traverse-fast"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "typescript",
+        "Ct": "typescript",
+        "wall": "typescript"
+      },
+      "topFiveOverlap": 2,
+      "topFiveSize": 2,
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "count": 2,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "typescript"
+        ],
+        "Ct": [
+          "typescript"
+        ],
+        "wall": [
+          "typescript"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "estree-walker",
+        "Ct": "estree-walker",
+        "wall": "oxc-visitor"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 5,
+      "scenario": "i18n",
+      "kind": "original",
+      "ast": "ESTree",
+      "count": 8,
+      "Ir": 0.47619047619047616,
+      "Ct": 0.42857142857142855,
+      "winners": {
+        "Ir": [
+          "direct-ast"
+        ],
+        "Ct": [
+          "direct-ast"
+        ],
+        "wall": [
+          "oxc-visitor"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "babel-types-traverse-fast-v8",
+        "Ct": "babel-types-traverse-fast-v8",
+        "wall": "babel-types-traverse-fast-v8"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 4,
+      "scenario": "i18n",
+      "kind": "original",
+      "ast": "Babel AST (not ESTree)",
+      "count": 4,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "babel-types-traverse-fast-v8"
+        ],
+        "Ct": [
+          "babel-types-traverse-fast-v8"
+        ],
+        "wall": [
+          "babel-types-traverse-fast-v8"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "typescript",
+        "Ct": "typescript",
+        "wall": "typescript"
+      },
+      "topFiveOverlap": 2,
+      "topFiveSize": 2,
+      "scenario": "i18n",
+      "kind": "original",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "count": 2,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "typescript"
+        ],
+        "Ct": [
+          "typescript"
+        ],
+        "wall": [
+          "typescript"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "babel-types-traverse-fast-v7",
+        "Ct": "babel-types-traverse-fast-v7",
+        "wall": "babel-types-traverse-fast-v7"
+      },
+      "topFiveOverlap": 3,
+      "topFiveSize": 3,
+      "scenario": "i18n",
+      "kind": "original",
+      "ast": "Babel 7 AST (not ESTree)",
+      "count": 3,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "babel-types-traverse-fast-v7"
+        ],
+        "Ct": [
+          "babel-types-traverse-fast-v7"
+        ],
+        "wall": [
+          "babel-types-traverse-fast-v7"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "acorn-recursive",
+        "Ct": "acorn-recursive",
+        "wall": "oxc-visitor"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 5,
+      "scenario": "i18n",
+      "kind": "javascript",
+      "ast": "ESTree",
+      "count": 17,
+      "Ir": 0.9019607843137255,
+      "Ct": 0.9044117647058824,
+      "winners": {
+        "Ir": [
+          "acorn-recursive"
+        ],
+        "Ct": [
+          "acorn-recursive"
+        ],
+        "wall": [
+          "oxc-visitor"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "babel-types-traverse-fast-v8",
+        "Ct": "babel-types-traverse-fast-v8",
+        "wall": "babel-types-traverse-fast-v8"
+      },
+      "topFiveOverlap": 4,
+      "topFiveSize": 4,
+      "scenario": "i18n",
+      "kind": "javascript",
+      "ast": "Babel AST (not ESTree)",
+      "count": 4,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "babel-types-traverse-fast-v8"
+        ],
+        "Ct": [
+          "babel-types-traverse-fast-v8"
+        ],
+        "wall": [
+          "babel-types-traverse-fast-v8"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "typescript",
+        "Ct": "typescript",
+        "wall": "typescript"
+      },
+      "topFiveOverlap": 2,
+      "topFiveSize": 2,
+      "scenario": "i18n",
+      "kind": "javascript",
+      "ast": "TypeScript 6 AST (not ESTree)",
+      "count": 2,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "typescript"
+        ],
+        "Ct": [
+          "typescript"
+        ],
+        "wall": [
+          "typescript"
+        ]
+      }
+    },
+    {
+      "libraryWinners": {
+        "Ir": "babel-types-traverse-fast-v7",
+        "Ct": "babel-types-traverse-fast-v7",
+        "wall": "babel-types-traverse-fast-v7"
+      },
+      "topFiveOverlap": 3,
+      "topFiveSize": 3,
+      "scenario": "i18n",
+      "kind": "javascript",
+      "ast": "Babel 7 AST (not ESTree)",
+      "count": 3,
+      "Ir": 1,
+      "Ct": 1,
+      "winners": {
+        "Ir": [
+          "babel-types-traverse-fast-v7"
+        ],
+        "Ct": [
+          "babel-types-traverse-fast-v7"
+        ],
+        "wall": [
+          "babel-types-traverse-fast-v7"
+        ]
+      }
+    }
+  ]
+}

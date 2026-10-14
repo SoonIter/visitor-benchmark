@@ -1,0 +1,128 @@
+{
+  "createdAt": "2026-10-14T08:14:28.198Z",
+  "description": "Diagnostic, not a randomized concurrency experiment: one serial and one three-worker measurement of identical business adapters, same VM and flags. Differences include run-to-run variation.",
+  "serialCommit": "ca06d78",
+  "parallelCommit": "031f839",
+  "rows": [
+    {
+      "name": "styled-components/dense/direct-ast",
+      "serial": {
+        "Ir": 9361927,
+        "Ct": 2208648201,
+        "profileSha256": "fc12fe93b15e66c5ec5c5a99d8849d86369e6dbef98837082edbe16c85b01cf8"
+      },
+      "parallel": {
+        "Ir": 9361840,
+        "Ct": 2208622743,
+        "profileSha256": "dd1eb029f97e44098568aed59c64636af6dbcd9d91d65b0929ee2c052f998bd1"
+      },
+      "IrChangePct": -0.0009292958597084677,
+      "CtChangePct": -0.0011526507475712044
+    },
+    {
+      "name": "styled-components/dense/swc-next",
+      "serial": {
+        "Ir": 41224068,
+        "Ct": 10616036490,
+        "profileSha256": "a40ee287459afc5cf0542057a78f2a16011942ddf3f3944d339c57468cb3bd00"
+      },
+      "parallel": {
+        "Ir": 41230196,
+        "Ct": 10617436497,
+        "profileSha256": "2d4548a5354d98da7047db3d77bddeeeb4af29834dc3f957be1a3b88bd1d1245"
+      },
+      "IrChangePct": 0.014865102590078116,
+      "CtChangePct": 0.013187661904878745
+    },
+    {
+      "name": "styled-components/dense/yuku-ast",
+      "serial": {
+        "Ir": 60280244,
+        "Ct": 15486746432,
+        "profileSha256": "4df6d2375516badf65dbcc1cf497eccbda859895cd039a3310ea601760ce4e33"
+      },
+      "parallel": {
+        "Ir": 60284735,
+        "Ct": 15487739119,
+        "profileSha256": "4e7cf5d0d97cffc7d06f2f2b1036d1af664bc5b949dc0e88a3b1238a948b03da"
+      },
+      "IrChangePct": 0.007450202092740277,
+      "CtChangePct": 0.006409913175486892
+    },
+    {
+      "name": "styled-components/dense/estree-walker",
+      "serial": {
+        "Ir": 65538953,
+        "Ct": 16436254203,
+        "profileSha256": "f5689de0abe9a299706780f1c1fa04062876fc20c0acdfccff22331d67d23df1"
+      },
+      "parallel": {
+        "Ir": 65547004,
+        "Ct": 16438083273,
+        "profileSha256": "0cf036d3ac9f0a0e107859e3b652aaaed27dbe498ca66347bf169c435d4005e8"
+      },
+      "IrChangePct": 0.012284297553555312,
+      "CtChangePct": 0.01112826546370016
+    },
+    {
+      "name": "styled-components/dense/oxc-walker",
+      "serial": {
+        "Ir": 67850514,
+        "Ct": 17147223447,
+        "profileSha256": "7965a9bf1e5afd9c8bbd715fbcfcf108faf3457fd8309c4aa7fea8de496d5c8e"
+      },
+      "parallel": {
+        "Ir": 67855000,
+        "Ct": 17148183635,
+        "profileSha256": "5ee7841022c5a5022c0fa62b58bee0b988d36e694efc44ab54464e21a81c6804"
+      },
+      "IrChangePct": 0.006611593244532088,
+      "CtChangePct": 0.005599670424594194
+    },
+    {
+      "name": "styled-components/dense/oxc-visitor",
+      "serial": {
+        "Ir": 53411583,
+        "Ct": 13821762987,
+        "profileSha256": "61eca5fc90f89323f152d518cd9e5bea7fa5b82e10b0cd94945a4f9bac190378"
+      },
+      "parallel": {
+        "Ir": 53414874,
+        "Ct": 13822714858,
+        "profileSha256": "64a31c88b1ea8d6d6f1c2fe91e01e65849a8e9d7c9a1e4a1d8f2e498d0adfaab"
+      },
+      "IrChangePct": 0.006161584838260126,
+      "CtChangePct": 0.006886755335733241
+    },
+    {
+      "name": "styled-components/dense/acorn-simple",
+      "serial": {
+        "Ir": 34498561,
+        "Ct": 8277691265,
+        "profileSha256": "d93c54d401b01248f838efa22ac30b8c5bcecf7003c7b9f06a9baacddbcd3b20"
+      },
+      "parallel": {
+        "Ir": 34496189,
+        "Ct": 8277304412,
+        "profileSha256": "544c64b804ef23be1141d75aa5537df28991f3cbc310c9fc49f392573f3fa867"
+      },
+      "IrChangePct": -0.0068756491031662925,
+      "CtChangePct": -0.004673440789415562
+    },
+    {
+      "name": "styled-components/dense/acorn-recursive",
+      "serial": {
+        "Ir": 20727788,
+        "Ct": 4983660164,
+        "profileSha256": "ef7544f16d5896157222e64904c91daf611822ae46fdf8bd5ddb60444d344c74"
+      },
+      "parallel": {
+        "Ir": 20734040,
+        "Ct": 4985162554,
+        "profileSha256": "7c2004edade9ae427f02848e27f23fd6cdda73650a93074a5b70c6ba8d3dab05"
+      },
+      "IrChangePct": 0.030162408067857527,
+      "CtChangePct": 0.030146317175727688
+    }
+  ]
+}

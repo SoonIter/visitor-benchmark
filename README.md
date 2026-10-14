@@ -1,134 +1,113 @@
 # JavaScript AST traversal benchmarks
 
-**Four concrete tasks. Same AST within each ESTree track. Validated output on every measured iteration.**
+**Four workloads. CPU instruction counts (Ir), simulated throughput cycles (Ct), and a paired wall-time control.**
 
-| Scenario | Work | Corpus | Results |
-| :-- | :-- | :-- | :-- |
-| Styled-components | Inject displayName / componentId | Generated JS; dense + sparse | [Details](docs/styled-components/README.md) |
-| Remove debugger | Delete list elements; replace single statement slots | Generated JS; dense + sparse | [Details](docs/remove-debugger/README.md) |
-| Rstest coverage | Normalize if branches and describe coverage ranges | Eight public Rstest modules; runtime + tooling | [Details](docs/rstest-coverage/README.md) |
-| Collect i18n strings | Read literals, check dictionary, preserve order and duplicates | 64 real TS/TSX modules + pre-transpiled JS | [Details](docs/i18n/README.md) |
+v24.20.0 · linux/arm64 · 8-vCPU VM · codspeed-runner 5.2.1 · 2026-10-14
 
-Lower is better. Bars show medians of process medians; whiskers show their min–max range, **not confidence intervals**. Compare implementations within a track; do not compare absolute times across scenarios or AST families. Scope analysis, query setup and wrapper work are included where the API performs them.
+207 supported combinations; 15 explicit compatibility failures. Each has 3 isolated CPU runs and 3 normal-JIT wall-time runs. Private i18n source stays local.
 
-## 1. Styled-components
+## Do the rankings agree?
 
-A focused config-injection transform, **not the complete official plugin**. Dense: 400 edits; sparse: 80 edits across more unrelated code. The direct-ast baseline exploits top-level declarations and skips unrelated subtrees.
+Same-ESTree comparisons only. Spearman ρ = 1 means identical ordering; 0 means no monotonic relationship. Near-ties can swap ranks.
 
-![Styled-components — shared ESTree](charts/styled-components/estree.svg)
+| Scenario / track | Ir ↔ wall ρ | Ct ↔ wall ρ | Ir winner | Ct winner | Wall winner |
+| :-- | --: | --: | :-- | :-- | :-- |
+| styled-components / dense | 0.953 | 0.961 | direct-ast | direct-ast | direct-ast |
+| styled-components / sparse | 0.953 | 0.946 | direct-ast | direct-ast | direct-ast |
+| remove-debugger / dense | 0.925 | 0.930 | acorn-recursive | acorn-recursive | oxc-visitor |
+| remove-debugger / sparse | 0.956 | 0.953 | acorn-recursive | acorn-recursive | oxc-visitor |
+| rstest-coverage / runtime | 0.942 | 0.947 | acorn-recursive | acorn-recursive | oxc-visitor |
+| rstest-coverage / tooling | 0.935 | 0.937 | acorn-recursive | acorn-recursive | oxc-visitor |
+| i18n / original | 0.476 | 0.429 | direct-ast | direct-ast | oxc-visitor |
+| i18n / javascript | 0.902 | 0.904 | acorn-recursive | acorn-recursive | oxc-visitor |
 
-Native Babel, SWC and TypeScript ASTs are **not ESTree**; these results are not a same-AST walker ranking.
+Across these tracks, Ir ↔ wall ρ ranges from **0.476–0.956**, and Ct ↔ wall from **0.429–0.961**. Excluding the manual direct-ast baseline, Ct and wall select the same fastest library in **0/8** tracks. High overall correlation can hide changes among the fastest libraries:
 
-![Styled-components — native ASTs](charts/styled-components/native.svg)
+| Scenario / track | Lowest Ct library | Fastest wall-time library | Top-five overlap |
+| :-- | :-- | :-- | --: |
+| styled-components / dense | acorn-recursive | oxc-visitor | 4/5 |
+| styled-components / sparse | acorn-recursive | oxc-visitor | 4/5 |
+| remove-debugger / dense | acorn-recursive | oxc-visitor | 4/5 |
+| remove-debugger / sparse | acorn-recursive | oxc-visitor | 4/5 |
+| rstest-coverage / runtime | acorn-recursive | oxc-visitor | 4/5 |
+| rstest-coverage / tooling | acorn-recursive | oxc-visitor | 4/5 |
+| i18n / original | estree-walker | oxc-visitor | 4/5 |
+| i18n / javascript | acorn-recursive | oxc-visitor | 4/5 |
 
-[All numbers and strategies](results/styled-components/latest.md)
+Process min–max spread, as a percentage of the median (median across all supported combinations / worst combination): **Ir 0.00074% / 0.084%; Ct 0.00080% / 0.072%; wall 6.337% / 35.727%.** These are observed ranges, not confidence intervals.
 
-## 2. Remove debugger
+**Simulation is a different execution mode.** CodSpeed disables TurboFan; this suite also disables Maglev, following [SWC Next #747](https://github.com/swc-project/swc-next/pull/747). Ir counts executed instructions; On ARM64, Ct uses a [Cortex-A72 cost table](https://github.com/CodSpeedHQ/valgrind-codspeed/blob/3.26.0-0codspeed7/callgrind/arm64_caps_lut.inc) and [cache-independent accumulation](https://github.com/CodSpeedHQ/valgrind-codspeed/blob/3.26.0-0codspeed7/callgrind/bbcc.c#L615); it is not a hardware-cycle counter for this host. Neither is a measurement of normal-JIT elapsed time. Use these counters for reproducible cost comparisons, and retain wall time to evaluate real runtime performance.
 
-Removes consecutive and nested debugger statements. Single statement slots (for example `if (flag) debugger;`) become empty statements to preserve control flow. APIs without built-in removal use explicit manual edits, **included in the timer**. See the [strategy table](results/remove-debugger/latest.md#implementations).
+A targeted two-flag control changes the ordering: disabling optimizing JIT slows oxc-visitor by **5.44×** in styled-components/dense and **4.87×** in original-source i18n. This establishes an execution-mode effect in those controls; it does not isolate individual V8 optimizations or explain every Ct difference. [Control and raw samples](docs/cpu/jit-control.md).
 
-![Remove debugger — shared ESTree](charts/remove-debugger/estree.svg)
+[Targeted JIT control](docs/cpu/jit-control.md) · [All numbers and per-family ranks](docs/cpu/results.md) · [Method and reproduction](docs/cpu/README.md) · [Raw measurements](results/cpu/latest.json) · [Comparison with the previous wall-time ranking](docs/cpu/historical-ranks.md)
 
-Native Babel, SWC and TypeScript ASTs are **not ESTree**; these results are not a same-AST walker ranking.
+## Styled-components
 
-![Remove debugger — native ASTs](charts/remove-debugger/native.svg)
+[Workload and editing strategy](docs/styled-components/README.md). Bars show Ir (K) and Ct (K), lower is better; rows share the Ct ordering.
 
-[All numbers and strategies](results/remove-debugger/latest.md)
+![Styled-components: dense, estree](charts/cpu/styled-components-dense-estree.svg)
 
-## 3. Normalize coverage branches
+![Styled-components: sparse, estree](charts/cpu/styled-components-sparse-estree.svg)
 
-The AST-editing phase of Rstest V8 coverage: wrap unbraced if/else arms and record branch ranges. Eight real modules pinned to a public commit, transpiled once outside timing. Runtime: 101 if statements / 10 edits; tooling: 84 if statements / 21 edits. This is a focused adaptation, not full coverage conversion or instrumentation.
+<details>
+<summary>Native ASTs — not an ESTree comparison</summary>
 
-![Rstest coverage — shared ESTree](charts/rstest-coverage/estree.svg)
+![Styled-components: dense, native](charts/cpu/styled-components-dense-native.svg)
 
-Native Babel, SWC and TypeScript ASTs are **not ESTree**; their costs include their node representations and native editing APIs.
+![Styled-components: sparse, native](charts/cpu/styled-components-sparse-native.svg)
 
-![Rstest coverage — native ASTs](charts/rstest-coverage/native.svg)
+</details>
 
-[Contract, boundaries and provenance](docs/rstest-coverage/README.md) · [All numbers and strategies](results/rstest-coverage/latest.md)
+## Remove debugger
 
-## 4. Collect i18n strings
+[Workload and editing strategy](docs/remove-debugger/README.md). Bars show Ir (K) and Ct (K), lower is better; rows share the Ct ordering.
 
-The application's Babel StringLiteral collector, using 18,868 real dictionary keys. No source edits. Original source: 59 matches; pre-transpiled JavaScript: 58 matches. Private source stays outside Git.
+![Remove debugger: dense, estree](charts/cpu/remove-debugger-dense-estree.svg)
 
-Each chart uses the same layout as the editing scenarios: one AST family per image, with original TS/TSX on the left and pre-transpiled JavaScript on the right. Rows align across columns; unsupported combinations have no timing bar.
+![Remove debugger: sparse, estree](charts/cpu/remove-debugger-sparse-estree.svg)
 
-![i18n — shared ESTree](charts/i18n/estree.svg)
+<details>
+<summary>Native ASTs — not an ESTree comparison</summary>
 
-Native Babel and TypeScript ASTs are **not ESTree**; these results are not a same-AST walker ranking.
+![Remove debugger: dense, native](charts/cpu/remove-debugger-dense-native.svg)
 
-![i18n — native ASTs](charts/i18n/native.svg)
+![Remove debugger: sparse, native](charts/cpu/remove-debugger-sparse-native.svg)
 
-[Compatibility failures and all results](docs/i18n/results.md) · [Corpus provenance](docs/i18n/corpus.json) · [Historical Acorn/Yuku profiling study](docs/i18n-dispatch/README.md) · [Oxc performance attribution](docs/oxc-attribution/README.md)
+</details>
 
-The JavaScript compatibility track transforms the same modules before timing so JS-only walkers can participate. It is not captured loader input and must not be compared directly with the original TS/TSX track. Acorn's static destructuring-key collection is covered by a regression fixture.
+## Normalize coverage branches
 
-## Measurement
+[Workload and editing strategy](docs/rstest-coverage/README.md). Bars show Ir (K) and Ct (K), lower is better; rows share the Ct ordering.
 
-**Use each tool's native editing API when available.** Replacement, deletion, path maintenance and immutable reconstruction are part of its cost. Node-only APIs use manual edits; direct-ast is the explicit manual baseline. [Full API audit](docs/api-audit.md).
+![Normalize coverage branches: runtime, estree](charts/cpu/rstest-coverage-runtime-estree.svg)
 
-- **ESTree:** fresh Acorn parser output for editing; Oxc TS-ESTree for original i18n and Acorn ESTree for its JavaScript track. Every iteration reparses the source outside timing; no AST cloning or reuse.
-- **Native ASTs:** Babel, SWC and TypeScript parse the same source into their own representations, explicitly labeled **not ESTree**. These rows measure both tree layout and API costs.
-- **Correctness:** editing results are printed/reparsed and compared against independent expected source or a task oracle; coverage additionally checks exact branch metadata; i18n results are exact ordered arrays checked against Babel. Unsupported implementations are reported, not assigned a zero time.
-- **Timing:** isolated processes, sequential execution with rotated/reversed order. Edits: 3 processes × 8 warmups + 20 samples; i18n: 3 × 5 + 12. Preparation, external printing and checks are excluded; internal ts-morph text updates and tsquery.map printing/reparsing are included.
-- **Evidence:** [styled raw data](results/styled-components/latest.json), [debugger raw data](results/remove-debugger/latest.json), [coverage raw data](results/rstest-coverage/latest.json), [i18n raw data](results/i18n/latest.json) retain samples, source hashes, versions and whole-worker memory. Results are corpus-specific, not a universal performance ceiling.
+![Normalize coverage branches: tooling, estree](charts/cpu/rstest-coverage-tooling-estree.svg)
 
-Apple M5 Max · darwin/arm64 · Node v24.20.0. Measured: styled 2026-10-12, debugger 2026-10-12, coverage 2026-10-12, i18n 2026-10-12. SWC Next uses the committed PR snapshot recorded in each result; no before/after variants.
+<details>
+<summary>Native ASTs — not an ESTree comparison</summary>
 
-Fresh parser output is used for every iteration, without AST cloning. Earlier results through [8143bc9](https://github.com/SoonIter/visitor-benchmark/tree/8143bc994901c2321b31ad271c83bbcb6e5cf4ca) used cloned ASTs in editing and original-source i18n; do not interpret changes from those results as implementation speedups.
+![Normalize coverage branches: runtime, native](charts/cpu/rstest-coverage-runtime-native.svg)
 
-The sync script vendors `@swc-next/walker` from PR #840; [source mapping](vendor/provenance.json) records its package paths. Package extraction did not change the three runtime files. Published results retain the commit actually measured.
+![Normalize coverage branches: tooling, native](charts/cpu/rstest-coverage-tooling-native.svg)
 
-## Run
+</details>
 
-Node 24+; Python + Matplotlib for charts. The real i18n corpus additionally needs the business checkout and its installed Babel 7 dependencies.
+## Collect i18n strings
 
-```sh
-npm ci
-npm test
-# Editing scenarios are self-contained (public corpus is committed):
-npm run bench -- styled-components
-npm run bench -- remove-debugger
-npm run bench -- rstest-coverage
+[Workload and editing strategy](docs/i18n/README.md). Bars show Ir (K) and Ct (K), lower is better; rows share the Ct ordering.
 
-# Private business corpus:
-export FLOW_WEB_ROOT=/absolute/path/to/flow-web-monorepo
-npm run i18n:prepare
-npm run bench -- i18n
+![Collect i18n strings: original, estree](charts/cpu/i18n-original-estree.svg)
 
-# All four, sequentially (requires the prepared business corpus):
-npm run bench
+![Collect i18n strings: javascript, estree](charts/cpu/i18n-javascript-estree.svg)
 
-python3 -m venv .cache/charts-venv
-.cache/charts-venv/bin/pip install -r scripts/requirements-charts.txt
-PYTHON=.cache/charts-venv/bin/python npm run report
-```
+<details>
+<summary>Native ASTs — not an ESTree comparison</summary>
 
-`--quick` writes smoke results separately. Runs use the committed SWC Next snapshot; `npm run sync:swc` explicitly refreshes PR #840 via GitHub CLI. Rerun tests and all benchmarks after refreshing. `i18n:prepare` resamples the current checkout: check corpus hashes before comparing reruns.
+![Collect i18n strings: original, native](charts/cpu/i18n-original-native.svg)
 
-## Layout & extension
+![Collect i18n strings: javascript, native](charts/cpu/i18n-javascript-native.svg)
 
-```text
-src/
-  scenarios.mjs          # Scenario catalog
-  shared/                # AST oracle, implementation identities, Babel I/O
-  styled-components/     # Workload, registry, plugins
-  remove-debugger/       # Workload, registry, plugins
-  rstest-coverage/       # Real-source branch normalization and native adapters
-  i18n/                  # Corpus, registry, collectors
-scripts/
-  bench.mjs              # One entry point; sequential scenario execution
-  render.mjs             # Generate all reports and this README
-  shared/                # Mutation runner, measurement provenance, charts
-  styled-components/     # Input AST sample generation
-  i18n/                  # Business corpus preparation and read-only runner
-results/<scenario>/      # Raw samples and summaries
-charts/<scenario>/       # Generated SVG/PNG charts
-docs/<scenario>/         # Contracts, methodology and interpretation
-experiments/             # Separate profiling/ablation studies
-vendor/                  # Pinned SWC Next source and provenance
-```
-
-To add an editing scenario, implement `workload.mjs` (source + independently expected output), `registry.mjs` and `execute.mjs` (prepare/run/validate), add package-specific modules under `plugins/`, then register it in `src/scenarios.mjs`. [Extension guide](docs/extending.md) covers runners, validation and reports.
+</details>
 
 Presentation inspired by [Native ECMAScript Parser Benchmark](https://github.com/yuku-toolchain/ecmascript-parser-benchmark-native).
