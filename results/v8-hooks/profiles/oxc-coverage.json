@@ -1,0 +1,151 @@
+{
+  "scenario": "rstest-coverage",
+  "id": "oxc-visitor",
+  "kind": "runtime",
+  "node": "v24.20.0",
+  "v8": "13.6.233.17-node.53",
+  "rounds": 160,
+  "totalSampledUs": 32250,
+  "self": [
+    {
+      "functionName": "walkNode",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 5,
+      "samples": 189,
+      "us": 23914
+    },
+    {
+      "functionName": "plan",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/rstest-coverage/business.mjs",
+      "lineNumber": 14,
+      "samples": 9,
+      "us": 1209
+    },
+    {
+      "functionName": "walkExpressionStatement",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 969,
+      "samples": 8,
+      "us": 1083
+    },
+    {
+      "functionName": "walkMemberExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 1186,
+      "samples": 7,
+      "us": 959
+    },
+    {
+      "functionName": "editIf",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/rstest-coverage/business.mjs",
+      "lineNumber": 64,
+      "samples": 6,
+      "us": 750
+    },
+    {
+      "functionName": "createState",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/rstest-coverage/business.mjs",
+      "lineNumber": 2,
+      "samples": 5,
+      "us": 667
+    },
+    {
+      "functionName": "walkVariableDeclarator",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 1508,
+      "samples": 4,
+      "us": 542
+    },
+    {
+      "functionName": "IfStatement",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/rstest-coverage/plugins/oxc-visitor.mjs",
+      "lineNumber": 4,
+      "samples": 3,
+      "us": 417
+    },
+    {
+      "functionName": "walkCallExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 777,
+      "samples": 3,
+      "us": 417
+    },
+    {
+      "functionName": "walkProperty",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 1290,
+      "samples": 3,
+      "us": 375
+    },
+    {
+      "functionName": "walkAwaitExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 728,
+      "samples": 3,
+      "us": 375
+    },
+    {
+      "functionName": "walkUnaryExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 1459,
+      "samples": 2,
+      "us": 292
+    },
+    {
+      "functionName": "walkBinaryExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 740,
+      "samples": 2,
+      "us": 250
+    },
+    {
+      "functionName": "run",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/rstest-coverage/plugins/oxc-visitor.mjs",
+      "lineNumber": 2,
+      "samples": 2,
+      "us": 250
+    },
+    {
+      "functionName": "run",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/rstest-coverage/execute.mjs",
+      "lineNumber": 7,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkLiteral",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 519,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkConditionalExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 864,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkIfStatement",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 1069,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "createCompiledVisitor",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/visit/visitor.js",
+      "lineNumber": 89,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkExportNamedDeclaration",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 941,
+      "samples": 1,
+      "us": 125
+    }
+  ]
+}

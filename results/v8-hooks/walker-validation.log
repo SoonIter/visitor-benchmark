@@ -1,0 +1,45 @@
+$ pnpm test:unit && pnpm test:types && pnpm test:integration
+$ node --test test/*.test.js
+✔ compiled walkers snapshot hooks and isolate each invocation (1.0775ms)
+✔ a compiled walker is reentrant and recovers after hook failures (0.116083ms)
+✔ read-only visits preserve global, alias and concrete hook order (0.237417ms)
+✔ read-only traversal collects supported fields and rejects invalid callbacks (1.763542ms)
+✔ unobserved parents select leave hooks after a child changes their type (0.153333ms)
+✔ compiled hooks snapshot alias and concrete pairs without freezing caller objects (0.087583ms)
+✔ all supported node kinds dispatch typed hooks and reject unknown names (3.687375ms)
+✔ walk works without a parser or binding and visits only schema child keys (0.176541ms)
+✔ aliases surround typed hooks and global hooks surround aliases (0.145833ms)
+✔ replacement visits new children once and leaves with the replacement type (0.099584ms)
+✔ global replacement stops remaining enter hooks; leave replacement is not traversed (0.131208ms)
+✔ skip retains leave; removal skips children and leave without losing siblings (0.086875ms)
+✔ insertions preserve call order; before is unvisited and after is visited (0.099583ms)
+✔ insertions followed by removal and removal during leave retain subsequent visits (0.081666ms)
+✔ stop aborts siblings and pending leave hooks while retaining edits (0.118459ms)
+✔ contexts are reused within a walk and isolated across nested walks (0.183791ms)
+✔ structural edits reject roots and scalar deletion/insertion (0.17ms)
+✔ invalid hooks, nodes, async callbacks, and stale containers fail explicitly (0.166042ms)
+✔ optional hooks and array holes are accepted, detached lists are rejected (0.072958ms)
+✔ replace plus skip preserves leave, and removed contexts reject further edits (0.085166ms)
+✔ nested edits restore parent positions for leave and later siblings (0.083917ms)
+✔ generated child accessors stop before later scalar fields (0.121209ms)
+✔ child fields are read once, in traversal order, and stop leaves later getters untouched (0.088208ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 41.563709
+$ tsc --ignoreConfig --noEmit --strict --target esnext --module nodenext --moduleResolution nodenext --types node test/types.ts
+$ node --test test/integration/*.test.js
+✔ walker edits round-trip through the core encoder and parser (5.449125ms)
+✔ visitor keys cover projected JS, JSX, and TypeScript children (5.712333ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 55.863584

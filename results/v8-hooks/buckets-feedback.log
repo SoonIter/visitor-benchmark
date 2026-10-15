@@ -1,0 +1,528 @@
+WALKERS_FAST true DISPATCH_FAST true
+{"id":"swc-next","kind":"sparse","ast":"ESTree","warmups":8,"iterations":20,"samplesMs":[0.90462500000001,0.6445000000000078,0.4577919999999551,0.4660010000000341,0.40433300000000827,0.38037499999995816,0.3824580000000424,0.4209160000000338,0.4033330000000319,0.37829199999998764,0.41496000000000777,0.386540000000025,0.3788750000001073,0.42458299999998417,0.3722910000000752,0.3923330000000078,0.3518340000000535,0.40087500000004184,0.3625430000000165,0.41112499999991314],"setupMs":[4.243373999999989,2.59904200000004,2.538125000000008,2.2877499999999884,2.4254999999999995,2.1174990000000093,2.114501000000047,2.2268339999999966,2.3816260000000398,2.089666999999963,2.2001260000000116,2.306291000000101,2.4279180000000338,2.1813750000000027,2.2202510000000757,2.150622999999996,2.075166000000081,2.1303349999999455,2.142332999999951,2.1171670000000518],"edits":240,"outputHash":"0e3e4aad35c567f34c597c776b055414cc075c60bfd47a9d70f62fa242e0e1ea","inputHash":"c053024fba914d4351deaff667f8b3669179613ebd5407f3ec836a5ab441ec57","sharedESTreeHash":"25a34b4e447c794697e02e3f90fa97e12d7f1c6c819492a5a0729f361106165d","sourceBytes":52008,"files":4,"peakRssMiB":216.90625,"observedHeapMiB":79.36112976074219}DebugPrint: 0x14d4e12c8c81: [Function]
+ - map: 0x3a6fc51c1099 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x3a6fc51cc139 <JSFunction (sfi = 0x169394c06b79)>
+ - elements: 0x276542f80cf9 <FixedArray[0]> [HOLEY_ELEMENTS]
+ - function prototype: <no-prototype-slot>
+ - shared_info: 0x389079070d01 <SharedFunctionInfo visit>
+ - name: 0x38907906dea9 <String[5]: #visit>
+ - formal_parameter_count: 6
+ - kind: ConciseMethod
+ - context: 0x2daf388a09b9 <BlockContext[17]>
+ - code: 0x2a53d65b3dd1 <Code MAGLEV>
+ - dispatch_handle: 0x2caa00
+ - source code: (node, parent, key, list, index) {
+    if (typeof node !== "object") assertNode(node);
+    return dispatchNode(node, this, parent, key, list, index, this.#walkers);
+  }
+ - properties: 0x276542f80cf9 <FixedArray[0]>
+ - All own properties (excluding elements): {
+    0x276542f894c1: [String] in ReadOnlySpace: #length: 0x276542f918b1 <AccessorInfo name= 0x276542f894c1 <String[6]: #length>, data= 0x276542f80011 <undefined>> (const accessor descriptor, attrs: [__C]), location: descriptor
+    0x276542f81891: [String] in ReadOnlySpace: #name: 0x276542f91881 <AccessorInfo name= 0x276542f81891 <String[4]: #name>, data= 0x276542f80011 <undefined>> (const accessor descriptor, attrs: [__C]), location: descriptor
+ }
+ - feedback vector: 0x1f3b65315da1: [FeedbackVector]
+ - map: 0x276542f80e49 <Map(FEEDBACK_VECTOR_TYPE)>
+ - length: 6
+ - shared function info: 0x389079070d01 <SharedFunctionInfo visit>
+ - tiering_in_progress: 0
+ - osr_tiering_in_progress: 0
+ - invocation count: 6134
+ - closure feedback cell array: 0x276542f83ba9: [ClosureFeedbackCellArray] in ReadOnlySpace
+ - map: 0x276542f80e01 <Map(CLOSURE_FEEDBACK_CELL_ARRAY_TYPE)>
+ - length: 0
+ - elements:
+
+ - slot #0 Call UNINITIALIZED {
+     [0]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+     [1]: 0
+  }
+ - slot #2 LoadKeyed MONOMORPHIC
+   0x1c666a183cf1 <Symbol: #walkers>: LoadHandler(<unexpected>)(0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>) {
+     [2]: 0x1c666a183cf1 <Symbol: #walkers>
+     [3]: 0x187c5f6b86b1 <WeakFixedArray[2]>
+  }
+ - slot #4 Call MONOMORPHIC {
+     [4]: [weak] 0x1c666a183099 <JSFunction dispatchNode (sfi = 0x389079075a61)>
+     [5]: 24532
+  }
+0x3a6fc51c1099: [Map]
+ - map: 0x3a6fc51c0079 <MetaMap (0x3a6fc51c0109 <NativeContext[302]>)>
+ - type: JS_FUNCTION_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - callable
+ - back pointer: 0x276542f80011 <undefined>
+ - prototype_validity cell: 0x276542f812c9 <Cell value= 1>
+ - instance descriptors (own) #2: 0x3a6fc51c1319 <DescriptorArray[2]>
+ - transitions #2: 0x007000019631 <TransitionArray[7]>
+   Transitions #2:
+     0x276542f895b1 <Symbol: Symbol.toPrimitive>: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x0070000195e9 <Map[56](HOLEY_ELEMENTS)>
+     0x26f5f6944f79: [String]: #enabled: (transition to (const accessor descriptor, attrs: [WEC]) @ 0x3a6fc51c1409 <AccessorPair>(get: 0x3a6fc51c1421 <JSFunction get (sfi = 0x169394c2f329)>, set: 0x276542f80041 <null>)) -> 0x3a6fc51c1361 <Map[56](HOLEY_ELEMENTS)>
+ - prototype: 0x3a6fc51cc139 <JSFunction (sfi = 0x169394c06b79)>
+ - constructor: 0x3a6fc51c11d9 <JSFunction Function (sfi = 0x4310a70f079)>
+ - dependent code: 0x276542f80d19 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+DebugPrint: 0x14d4e12c8c11: [Function]
+ - map: 0x3a6fc51c1099 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x3a6fc51cc139 <JSFunction (sfi = 0x169394c06b79)>
+ - elements: 0x276542f80cf9 <FixedArray[0]> [HOLEY_ELEMENTS]
+ - function prototype: <no-prototype-slot>
+ - shared_info: 0x389079070c71 <SharedFunctionInfo visitScalar>
+ - name: 0x38907906dec1 <String[11]: #visitScalar>
+ - formal_parameter_count: 4
+ - kind: ConciseMethod
+ - context: 0x2daf388a09b9 <BlockContext[17]>
+ - code: 0x2f542a5c3cd1 <Code TURBOFAN_JS>
+ - dispatch_handle: 0x2ca800
+ - source code: (value, parent, key) {
+    this.#ancestors[this.#depth++] = parent;
+    this.visit(value, parent, key, null, 0);
+    this.#depth--;
+    return this.stopped;
+  }
+ - properties: 0x276542f80cf9 <FixedArray[0]>
+ - All own properties (excluding elements): {
+    0x276542f894c1: [String] in ReadOnlySpace: #length: 0x276542f918b1 <AccessorInfo name= 0x276542f894c1 <String[6]: #length>, data= 0x276542f80011 <undefined>> (const accessor descriptor, attrs: [__C]), location: descriptor
+    0x276542f81891: [String] in ReadOnlySpace: #name: 0x276542f91881 <AccessorInfo name= 0x276542f81891 <String[4]: #name>, data= 0x276542f80011 <undefined>> (const accessor descriptor, attrs: [__C]), location: descriptor
+ }
+ - feedback vector: 0x1f3b65316341: [FeedbackVector]
+ - map: 0x276542f80e49 <Map(FEEDBACK_VECTOR_TYPE)>
+ - length: 20
+ - shared function info: 0x389079070c71 <SharedFunctionInfo visitScalar>
+ - tiering_in_progress: 0
+ - osr_tiering_in_progress: 0
+ - invocation count: 2133
+ - closure feedback cell array: 0x276542f83ba9: [ClosureFeedbackCellArray] in ReadOnlySpace
+ - map: 0x276542f80e01 <Map(CLOSURE_FEEDBACK_CELL_ARRAY_TYPE)>
+ - length: 0
+ - elements:
+
+ - slot #0 LoadKeyed MONOMORPHIC
+   0x1c666a183ca9 <Symbol: #ancestors>: LoadHandler(<unexpected>)(0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>) {
+     [0]: 0x1c666a183ca9 <Symbol: #ancestors>
+     [1]: 0x187c5f6b8ac9 <WeakFixedArray[2]>
+  }
+ - slot #2 LoadKeyed MONOMORPHIC
+   0x1c666a183cc1 <Symbol: #depth>: LoadHandler(<unexpected>)(0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>) {
+     [2]: 0x1c666a183cc1 <Symbol: #depth>
+     [3]: 0x187c5f6b8141 <WeakFixedArray[2]>
+  }
+ - slot #4 BinaryOp BinaryOp:SignedSmall {
+     [4]: 1
+  }
+ - slot #5 StoreKeyedStrict MONOMORPHIC with name 0x1c666a183cc1 <Symbol: #depth>
+   [weak] 0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>: StoreHandler(Smi)(kind = kField, descriptor = 5, is in object = 1, representation = s, field index = 8)
+ {
+     [5]: 0x1c666a183cc1 <Symbol: #depth>
+     [6]: 0x187c5f6b8161 <WeakFixedArray[2]>
+  }
+ - slot #7 StoreKeyedStrict MONOMORPHIC
+   0x3a6fc51c2c29 <Map[32](PACKED_ELEMENTS)>: StoreHandler(builtin = 0x276542f95e79 <Code BUILTIN StoreFastElementIC_NoTransitionGrowAndHandleCOW>, validity cell = 0x389079043961 <Cell value= 0>)
+ {
+     [7]: [weak] 0x3a6fc51c2c29 <Map[32](PACKED_ELEMENTS)>
+     [8]: 0x1f3b65316569 <Other heap object (STORE_HANDLER_TYPE)>
+  }
+ - slot #9 LoadProperty MONOMORPHIC
+   [weak] 0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>: LoadHandler(do access check on lookup start object = 0, lookup on lookup start object = 0, kind = kConstantFromPrototype, data1 = [weak] 0x14d4e12c8c81 <JSFunction visit (sfi = 0x389079070d01)>, validity cell = 0x1f3b653160d9 <Cell value= 0>) {
+     [9]: [weak] 0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>
+     [10]: 0x0d85e8e727a1 <Other heap object (LOAD_HANDLER_TYPE)>
+  }
+ - slot #11 Call MONOMORPHIC {
+     [11]: [weak] 0x14d4e12c8c81 <JSFunction visit (sfi = 0x389079070d01)>
+     [12]: 8528
+  }
+ - slot #13 LoadKeyed MONOMORPHIC
+   0x1c666a183cc1 <Symbol: #depth>: LoadHandler(<unexpected>)(0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>) {
+     [13]: 0x1c666a183cc1 <Symbol: #depth>
+     [14]: 0x187c5f6b8181 <WeakFixedArray[2]>
+  }
+ - slot #15 BinaryOp BinaryOp:SignedSmall {
+     [15]: 1
+  }
+ - slot #16 StoreKeyedStrict MONOMORPHIC with name 0x1c666a183cc1 <Symbol: #depth>
+   [weak] 0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>: StoreHandler(Smi)(kind = kField, descriptor = 5, is in object = 1, representation = s, field index = 8)
+ {
+     [16]: 0x1c666a183cc1 <Symbol: #depth>
+     [17]: 0x187c5f6b7999 <WeakFixedArray[2]>
+  }
+ - slot #18 LoadProperty MONOMORPHIC
+   [weak] 0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>: LoadHandler(Smi)(kind = kField, is in object = 1, is double = 0, field index = 14) {
+     [18]: [weak] 0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>
+     [19]: 7300
+  }
+0x3a6fc51c1099: [Map]
+ - map: 0x3a6fc51c0079 <MetaMap (0x3a6fc51c0109 <NativeContext[302]>)>
+ - type: JS_FUNCTION_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - callable
+ - back pointer: 0x276542f80011 <undefined>
+ - prototype_validity cell: 0x276542f812c9 <Cell value= 1>
+ - instance descriptors (own) #2: 0x3a6fc51c1319 <DescriptorArray[2]>
+ - transitions #2: 0x007000019631 <TransitionArray[7]>
+   Transitions #2:
+     0x276542f895b1 <Symbol: Symbol.toPrimitive>: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x0070000195e9 <Map[56](HOLEY_ELEMENTS)>
+     0x26f5f6944f79: [String]: #enabled: (transition to (const accessor descriptor, attrs: [WEC]) @ 0x3a6fc51c1409 <AccessorPair>(get: 0x3a6fc51c1421 <JSFunction get (sfi = 0x169394c2f329)>, set: 0x276542f80041 <null>)) -> 0x3a6fc51c1361 <Map[56](HOLEY_ELEMENTS)>
+ - prototype: 0x3a6fc51cc139 <JSFunction (sfi = 0x169394c06b79)>
+ - constructor: 0x3a6fc51c11d9 <JSFunction Function (sfi = 0x4310a70f079)>
+ - dependent code: 0x276542f80d19 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+DebugPrint: 0x14d4e12c8d29: [Function]
+ - map: 0x3a6fc51c1099 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x3a6fc51cc139 <JSFunction (sfi = 0x169394c06b79)>
+ - elements: 0x276542f80cf9 <FixedArray[0]> [HOLEY_ELEMENTS]
+ - function prototype: <no-prototype-slot>
+ - shared_info: 0x389079070dd9 <SharedFunctionInfo visitHooks>
+ - name: 0x38907906dee1 <String[10]: #visitHooks>
+ - formal_parameter_count: 6
+ - kind: ConciseMethod
+ - context: 0x2daf388a09b9 <BlockContext[17]>
+ - code: 0x2a53d65a95a9 <Code BASELINE>
+ - dispatch_handle: 0x2cad00
+ - source code: (node, parent, key, list, index) {
+    let handlers = this.#dispatch[node.type];
+    const enter = handlers.enter ?? this.#globalEnter;
+    const frame = this.#storage;
+    let type = node.type;
+    let after = 0;
+    let skip = false;
+    if (enter !== null) {
+      this.#prepare(node, parent, key, list, index, 0);
+      this.invoke(enter, frame, "enter");
+      index = frame.index;
+      if (this.stopped || frame.flags & REMOVED) return index;
+      node = frame.node;
+      after = frame.after;
+      skip = frame.flags & SKIP;
+      if (node.type !== type) {
+        type = node.type;
+        handlers = this.#dispatch[type];
+        if (handlers === undefined) assertNode(node);
+      }
+    }
+    if (!skip && handlers.children !== null) {
+      handlers.children(node, this);
+      if (this.stopped) return index;
+    }
+    if (node.type !== type) {
+      handlers = this.#dispatch[node.type];
+      if (handlers === undefined) assertNode(node);
+    }
+    const leave = handlers.leave ?? this.#globalLeave;
+    if (leave !== null) {
+      this.#prepare(node, parent, key, list, index, after);
+      this.invoke(leave, frame, "leave");
+      index = frame.index;
+    }
+    return index;
+  }
+ - properties: 0x276542f80cf9 <FixedArray[0]>
+ - All own properties (excluding elements): {
+    0x276542f894c1: [String] in ReadOnlySpace: #length: 0x276542f918b1 <AccessorInfo name= 0x276542f894c1 <String[6]: #length>, data= 0x276542f80011 <undefined>> (const accessor descriptor, attrs: [__C]), location: descriptor
+    0x276542f81891: [String] in ReadOnlySpace: #name: 0x276542f91881 <AccessorInfo name= 0x276542f81891 <String[4]: #name>, data= 0x276542f80011 <undefined>> (const accessor descriptor, attrs: [__C]), location: descriptor
+ }
+ - feedback vector: 0x1f3b65319401: [FeedbackVector]
+ - map: 0x276542f80e49 <Map(FEEDBACK_VECTOR_TYPE)>
+ - length: 64
+ - shared function info: 0x389079070dd9 <SharedFunctionInfo visitHooks>
+ - tiering_in_progress: 0
+ - osr_tiering_in_progress: 0
+ - invocation count: 5630
+ - closure feedback cell array: 0x276542f83ba9: [ClosureFeedbackCellArray] in ReadOnlySpace
+ - map: 0x276542f80e01 <Map(CLOSURE_FEEDBACK_CELL_ARRAY_TYPE)>
+ - length: 0
+ - elements:
+
+ - slot #0 LoadKeyed MONOMORPHIC
+   0x1c666a183cd9 <Symbol: #dispatch>: LoadHandler(<unexpected>)(0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>) {
+     [0]: 0x1c666a183cd9 <Symbol: #dispatch>
+     [1]: 0x187c5f6b8351 <WeakFixedArray[2]>
+  }
+ - slot #2 LoadProperty POLYMORPHIC
+   [weak] 0x14d4e12d8551 <Map[88](HOLEY_ELEMENTS)>: LoadHandler(Smi)(kind = kField, is in object = 1, is double = 0, field index = 3)
+   [weak] 0x1f3b653189b1 <Map[32](HOLEY_ELEMENTS)>: LoadHandler(Smi)(kind = kField, is in object = 1, is double = 0, field index = 3) {
+     [2]: 0x0d85e8e41a99 <WeakFixedArray[4]>
+     [3]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+  }
+ - slot #4 LoadKeyed MONOMORPHIC
+   0x38907906dd11 <String[17]: #DebuggerStatement>: LoadHandler(<unexpected>)(0x1c666a184989 <Map[56](HOLEY_ELEMENTS)>) {
+     [4]: 0x38907906dd11 <String[17]: #DebuggerStatement>
+     [5]: 0x0d85e8e41ac9 <WeakFixedArray[2]>
+  }
+ - slot #6 LoadProperty MONOMORPHIC
+   [weak] 0x1c666a1837a1 <Map[48](HOLEY_ELEMENTS)>: LoadHandler(Smi)(kind = kField, is in object = 1, is double = 0, field index = 4) {
+     [6]: [weak] 0x1c666a1837a1 <Map[48](HOLEY_ELEMENTS)>
+     [7]: 2180
+  }
+ - slot #8 LoadKeyed UNINITIALIZED {
+     [8]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+     [9]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+  }
+ - slot #10 LoadKeyed MONOMORPHIC
+   0x1c666a183d39 <Symbol: #storage>: LoadHandler(<unexpected>)(0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>) {
+     [10]: 0x1c666a183d39 <Symbol: #storage>
+     [11]: 0x187c5f6b8371 <WeakFixedArray[2]>
+  }
+ - slot #12 LoadKeyed MONOMORPHIC
+   0x1c666a183c49 <Symbol: WalkContext>: LoadHandler(<unexpected>)(0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>) {
+     [12]: 0x1c666a183c49 <Symbol: WalkContext>
+     [13]: 0x187c5f6b8391 <WeakFixedArray[2]>
+  }
+ - slot #14 Call MONOMORPHIC {
+     [14]: [weak] 0x2daf388ae609 <JSFunction #prepare (sfi = 0x389079070761)>
+     [15]: 22516
+  }
+ - slot #16 LoadProperty MONOMORPHIC
+   [weak] 0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>: LoadHandler(do access check on lookup start object = 0, lookup on lookup start object = 0, kind = kConstantFromPrototype, data1 = [weak] 0x14d4e12c8ba1 <JSFunction invoke (sfi = 0x389079070be1)>, validity cell = 0x1f3b653160d9 <Cell value= 0>) {
+     [16]: [weak] 0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>
+     [17]: 0x0d85e8e729d1 <Other heap object (LOAD_HANDLER_TYPE)>
+  }
+ - slot #18 Call MONOMORPHIC {
+     [18]: [weak] 0x14d4e12c8ba1 <JSFunction invoke (sfi = 0x389079070be1)>
+     [19]: 22516
+  }
+ - slot #20 LoadProperty MONOMORPHIC
+   [weak] 0x1f3b65315241 <Map[80](HOLEY_ELEMENTS)>: LoadHandler(Smi)(kind = kField, is in object = 1, is double = 0, field index = 7) {
+     [20]: [weak] 0x1f3b65315241 <Map[80](HOLEY_ELEMENTS)>
+     [21]: 3716
+  }
+ - slot #22 LoadProperty MONOMORPHIC
+   [weak] 0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>: LoadHandler(Smi)(kind = kField, is in object = 1, is double = 0, field index = 14) {
+     [22]: [weak] 0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>
+     [23]: 7300
+  }
+ - slot #24 BinaryOp BinaryOp:SignedSmall {
+     [24]: 1
+  }
+ - slot #25 LoadProperty MONOMORPHIC
+   [weak] 0x1f3b65315241 <Map[80](HOLEY_ELEMENTS)>: LoadHandler(Smi)(kind = kField, is in object = 1, is double = 0, field index = 9) {
+     [25]: [weak] 0x1f3b65315241 <Map[80](HOLEY_ELEMENTS)>
+     [26]: 4740
+  }
+ - slot #27 LoadProperty MONOMORPHIC
+   [weak] 0x1f3b65315241 <Map[80](HOLEY_ELEMENTS)>: LoadHandler(Smi)(kind = kField, is in object = 1, is double = 0, field index = 3) {
+     [27]: [weak] 0x1f3b65315241 <Map[80](HOLEY_ELEMENTS)>
+     [28]: 1668
+  }
+ - slot #29 LoadProperty MONOMORPHIC
+   [weak] 0x1f3b65315241 <Map[80](HOLEY_ELEMENTS)>: LoadHandler(Smi)(kind = kField, is in object = 1, is double = 0, field index = 8) {
+     [29]: [weak] 0x1f3b65315241 <Map[80](HOLEY_ELEMENTS)>
+     [30]: 4228
+  }
+ - slot #31 BinaryOp BinaryOp:SignedSmall {
+     [31]: 1
+  }
+ - slot #32 CompareOp CompareOp:InternalizedString {
+     [32]: 16
+  }
+ - slot #33 LoadKeyed MONOMORPHIC
+   0x1c666a183cd9 <Symbol: #dispatch>: LoadHandler(<unexpected>)(0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>) {
+     [33]: 0x1c666a183cd9 <Symbol: #dispatch>
+     [34]: 0x187c5f6b81e9 <WeakFixedArray[2]>
+  }
+ - slot #35 LoadKeyed MONOMORPHIC
+   0x389079072329 <String[14]: #EmptyStatement>: LoadHandler(<unexpected>)(0x1c666a184989 <Map[56](HOLEY_ELEMENTS)>) {
+     [35]: 0x389079072329 <String[14]: #EmptyStatement>
+     [36]: 0x0d85e8e41b49 <WeakFixedArray[2]>
+  }
+ - slot #37 Call UNINITIALIZED {
+     [37]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+     [38]: 0
+  }
+ - slot #39 LoadProperty MONOMORPHIC
+   [weak] 0x1c666a1837a1 <Map[48](HOLEY_ELEMENTS)>: LoadHandler(Smi)(kind = kField, is in object = 1, is double = 0, field index = 3) {
+     [39]: [weak] 0x1c666a1837a1 <Map[48](HOLEY_ELEMENTS)>
+     [40]: 1668
+  }
+ - slot #41 Call UNINITIALIZED {
+     [41]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+     [42]: 0
+  }
+ - slot #43 LoadProperty UNINITIALIZED {
+     [43]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+     [44]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+  }
+ - slot #45 CompareOp CompareOp:InternalizedString {
+     [45]: 16
+  }
+ - slot #46 LoadKeyed UNINITIALIZED {
+     [46]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+     [47]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+  }
+ - slot #48 LoadKeyed UNINITIALIZED {
+     [48]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+     [49]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+  }
+ - slot #50 Call UNINITIALIZED {
+     [50]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+     [51]: 0
+  }
+ - slot #52 LoadProperty MONOMORPHIC
+   [weak] 0x1c666a1837a1 <Map[48](HOLEY_ELEMENTS)>: LoadHandler(Smi)(kind = kField, is in object = 1, is double = 0, field index = 5) {
+     [52]: [weak] 0x1c666a1837a1 <Map[48](HOLEY_ELEMENTS)>
+     [53]: 2692
+  }
+ - slot #54 LoadKeyed MONOMORPHIC
+   0x1c666a183d21 <Symbol: #globalLeave>: LoadHandler(<unexpected>)(0x0d85e8e726d9 <Map[120](HOLEY_ELEMENTS)>) {
+     [54]: 0x1c666a183d21 <Symbol: #globalLeave>
+     [55]: 0x187c5f6b8209 <WeakFixedArray[2]>
+  }
+ - slot #56 LoadKeyed UNINITIALIZED {
+     [56]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+     [57]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+  }
+ - slot #58 Call UNINITIALIZED {
+     [58]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+     [59]: 0
+  }
+ - slot #60 LoadProperty UNINITIALIZED {
+     [60]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+     [61]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+  }
+ - slot #62 Call UNINITIALIZED {
+     [62]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+     [63]: 0
+  }
+0x3a6fc51c1099: [Map]
+ - map: 0x3a6fc51c0079 <MetaMap (0x3a6fc51c0109 <NativeContext[302]>)>
+ - type: JS_FUNCTION_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - callable
+ - back pointer: 0x276542f80011 <undefined>
+ - prototype_validity cell: 0x276542f812c9 <Cell value= 1>
+ - instance descriptors (own) #2: 0x3a6fc51c1319 <DescriptorArray[2]>
+ - transitions #2: 0x007000019631 <TransitionArray[7]>
+   Transitions #2:
+     0x276542f895b1 <Symbol: Symbol.toPrimitive>: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x0070000195e9 <Map[56](HOLEY_ELEMENTS)>
+     0x26f5f6944f79: [String]: #enabled: (transition to (const accessor descriptor, attrs: [WEC]) @ 0x3a6fc51c1409 <AccessorPair>(get: 0x3a6fc51c1421 <JSFunction get (sfi = 0x169394c2f329)>, set: 0x276542f80041 <null>)) -> 0x3a6fc51c1361 <Map[56](HOLEY_ELEMENTS)>
+ - prototype: 0x3a6fc51cc139 <JSFunction (sfi = 0x169394c06b79)>
+ - constructor: 0x3a6fc51c11d9 <JSFunction Function (sfi = 0x4310a70f079)>
+ - dependent code: 0x276542f80d19 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+DebugPrint: 0x1c666a183099: [Function]
+ - map: 0x3a6fc51c2039 <Map[64](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x3a6fc51cc139 <JSFunction (sfi = 0x169394c06b79)>
+ - elements: 0x276542f80cf9 <FixedArray[0]> [HOLEY_ELEMENTS]
+ - function prototype: 
+ - initial_map: 
+ - shared_info: 0x389079075a61 <SharedFunctionInfo dispatchNode>
+ - name: 0x38907906df01 <String[12]: #dispatchNode>
+ - formal_parameter_count: 8
+ - kind: NormalFunction
+ - context: 0x1c666a182fd9 <ModuleContext[4]>
+ - code: 0x3b00ca2f9839 <Code TURBOFAN_JS>
+ - dispatch_handle: 0x2de700
+ - source code: (node, walker, parent, key, list, index, walkers) {
+  const type = node.type;
+  const dispatch = typeof type === "string" ? dispatchByLength[type.length] : null;
+  if (dispatch == null) throw new TypeError(`Unsupported AST node type: ${type}`);
+  return dispatch(type, node, walker, parent, key, list, index, walkers);
+}
+ - properties: 0x276542f80cf9 <FixedArray[0]>
+ - All own properties (excluding elements): {
+    0x276542f894c1: [String] in ReadOnlySpace: #length: 0x276542f918b1 <AccessorInfo name= 0x276542f894c1 <String[6]: #length>, data= 0x276542f80011 <undefined>> (const accessor descriptor, attrs: [__C]), location: descriptor
+    0x276542f81891: [String] in ReadOnlySpace: #name: 0x276542f91881 <AccessorInfo name= 0x276542f81891 <String[4]: #name>, data= 0x276542f80011 <undefined>> (const accessor descriptor, attrs: [__C]), location: descriptor
+    0x276542f81871: [String] in ReadOnlySpace: #prototype: 0x276542f918e1 <AccessorInfo name= 0x276542f81871 <String[9]: #prototype>, data= 0x276542f80011 <undefined>> (const accessor descriptor, attrs: [W__]), location: descriptor
+ }
+ - feedback vector: 0x1f3b65315d09: [FeedbackVector]
+ - map: 0x276542f80e49 <Map(FEEDBACK_VECTOR_TYPE)>
+ - length: 13
+ - shared function info: 0x389079075a61 <SharedFunctionInfo dispatchNode>
+ - tiering_in_progress: 0
+ - osr_tiering_in_progress: 0
+ - invocation count: 761
+ - closure feedback cell array: 0x276542f83ba9: [ClosureFeedbackCellArray] in ReadOnlySpace
+ - map: 0x276542f80e01 <Map(CLOSURE_FEEDBACK_CELL_ARRAY_TYPE)>
+ - length: 0
+ - elements:
+
+ - slot #0 LoadProperty MEGAMORPHIC {
+     [0]: 0x276542f81949 <Symbol: (megamorphic_symbol)>
+     [1]: 1
+  }
+ - slot #2 LoadProperty MONOMORPHIC
+   [weak] 0x276542f80249 <Map(INTERNALIZED_ONE_BYTE_STRING_TYPE)>: LoadHandler(Code)(LoadIC_StringLength) {
+     [2]: [weak] 0x276542f80249 <Map(INTERNALIZED_ONE_BYTE_STRING_TYPE)>
+     [3]: 0x276542f95931 <Code BUILTIN LoadIC_StringLength>
+  }
+ - slot #4 LoadKeyed MONOMORPHIC
+   [weak] 0x3a6fc51c2c29 <Map[32](PACKED_ELEMENTS)>: LoadHandler(Smi)(kind = kElement, allow out of bounds = 0, is JSArray = 1, alow reading holes = 0, elements kind = PACKED_ELEMENTS) {
+     [4]: [weak] 0x3a6fc51c2c29 <Map[32](PACKED_ELEMENTS)>
+     [5]: 2304
+  }
+ - slot #6 LoadGlobalNotInsideTypeof UNINITIALIZED {
+     [6]: [cleared]
+     [7]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+  }
+ - slot #8 BinaryOp BinaryOp:None {
+     [8]: 0
+  }
+ - slot #9 Call UNINITIALIZED {
+     [9]: 0x276542f81931 <Symbol: (uninitialized_symbol)>
+     [10]: 0
+  }
+ - slot #11 Call GENERIC {
+     [11]: 0x276542f81949 <Symbol: (megamorphic_symbol)>
+     [12]: 3040
+  }
+0x3a6fc51c2039: [Map]
+ - map: 0x3a6fc51c0079 <MetaMap (0x3a6fc51c0109 <NativeContext[302]>)>
+ - type: JS_FUNCTION_TYPE
+ - instance size: 64
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - callable
+ - constructor
+ - has_prototype_slot
+ - back pointer: 0x276542f80011 <undefined>
+ - prototype_validity cell: 0x276542f812c9 <Cell value= 1>
+ - instance descriptors (own) #3: 0x3a6fc51c2081 <DescriptorArray[3]>
+ - transitions #18: 0x2daf388b76c9 <TransitionArray[39]>
+   Transitions #18:
+     0x26f5f6942871: [String]: #withoutStackTrace: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x3a6fc51c6319 <Map[64](HOLEY_ELEMENTS)>
+     0x2440b3bf7549: [String]: #exportChallenge: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x2440b3bf7959 <Map[64](HOLEY_ELEMENTS)>
+     0x26f5f695e371: [String]: #_stat: (transition to (const accessor descriptor, attrs: [W_C]) @ 0x1430144d75b9 <AccessorPair>(get: 0x1430144d75d1 <JSFunction get (sfi = 0x25104c4ce871)>, set: 0x1430144d7621 <JSFunction set (sfi = 0x25104c4ce919)>)) -> 0x38907904e731 <Map[64](HOLEY_ELEMENTS)>
+     0x26f5f694c531: [String]: #listener: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x1c666a1a3589 <Map[64](HOLEY_ELEMENTS)>
+     0x169394c06569 <Symbol: nodejs.util.promisify.custom>: (transition to (const data field, attrs: [___]) @ Any) -> 0x1430144ee3a9 <Map[64](HOLEY_ELEMENTS)>
+     0x169394c06569 <Symbol: nodejs.util.promisify.custom>: (transition to (const accessor descriptor, attrs: [WE_]) @ 0x0ce9b0c02d11 <AccessorPair>(get: 0x0ce9b0c02d29 <JSFunction get (sfi = 0x376170851889)>, set: 0x276542f80041 <null>)) -> 0x0ce9b0c02c51 <Map[64](HOLEY_ELEMENTS)>
+     0x700002b669: [String]: #extend: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x2daf388b7681 <Map[64](HOLEY_ELEMENTS)>
+     0x26f5f6944b71: [String]: #fail: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x3a6fc51c5a19 <Map[64](HOLEY_ELEMENTS)>
+     0x2440b3beedf1: [String]: #convertKey: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x2440b3bf0211 <Map[64](HOLEY_ELEMENTS)>
+     0x26f5f696bfa9: [String]: #custom: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x35bd52aa8871 <Map[64](HOLEY_ELEMENTS)>
+     0x3a4827382199 <Symbol: customPromisifyArgs>: (transition to (const data field, attrs: [___]) @ Any) -> 0x1430144ead69 <Map[64](HOLEY_ELEMENTS)>
+     0x276542f86621: [String] in ReadOnlySpace: #bigint: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x3a6fc51c43a1 <Map[64](HOLEY_ELEMENTS)>
+     0x276542f895b1 <Symbol: Symbol.toPrimitive>: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x0070000198f1 <Map[64](HOLEY_ELEMENTS)>
+     0x26f5f695c329: [String]: #kEscape: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x007000013629 <Map[64](HOLEY_ELEMENTS)>
+     0x276542f87889: [String] in ReadOnlySpace: #native: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x1430144eabd9 <Map[64](HOLEY_ELEMENTS)>
+     0x26f5f6950491: [String]: #rss: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x3a6fc51c4001 <Map[64](HOLEY_ELEMENTS)>
+     0x276542f893c9 <Symbol: Symbol.hasInstance>: (transition to (const data field, attrs: [___]) @ Any) -> 0x0ce9b0c197e9 <Map[64](HOLEY_ELEMENTS)>
+     0x2440b3be1559: [String]: #kContextNode: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x2440b3be2211 <Map[64](HOLEY_ELEMENTS)>
+   Prototype transitions #17: 0x2440b3bf94e9 <WeakFixedArray[31]>
+     0x1430144fafc9 <JSFunction Uint8Array (sfi = 0x4310a717191)> -> 0x1430144d87d1 <Map[64](HOLEY_ELEMENTS)>
+     0x0ce9b0c35fc9 <JSFunction Blob (sfi = 0x37617086f901)> -> 0x0ce9b0c35f39 <Map[64](HOLEY_ELEMENTS)>
+     0x1430144cabd9 <JSFunction StatsBase (sfi = 0x3761708765f1)> -> 0x1430144e87f9 <Map[64](HOLEY_ELEMENTS)>
+     0x0ce9b0c0c3f1 <JSFunction EventEmitter (sfi = 0x169394c32d41)> -> 0x1c666a18e4b1 <Map[64](HOLEY_ELEMENTS)>
+     0x2daf38880711 <JSFunction Readable (sfi = 0x1c666a190d81)> -> 0x1c666a19dc91 <Map[64](HOLEY_ELEMENTS)>
+     0x0cbf9ac0cbd9 <JSFunction Transform (sfi = 0x1c666a19ef81)> -> 0x1c666a19f939 <Map[64](HOLEY_ELEMENTS)>
+     0x2daf38880781 <JSFunction Writable (sfi = 0x1c666a199f09)> -> 0x1c666a1a0c69 <Map[64](HOLEY_ELEMENTS)>
+     0x06a81a101301 <JSFunction LazyTransform (sfi = 0x2440b3bf17b9)> -> 0x2440b3bf2309 <Map[64](HOLEY_ELEMENTS)>
+ - prototype: 0x3a6fc51cc139 <JSFunction (sfi = 0x169394c06b79)>
+ - constructor: 0x3a6fc51c11d9 <JSFunction Function (sfi = 0x4310a70f079)>
+ - dependent code: 0x276542f80d19 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+

@@ -1,0 +1,1550 @@
+diff --git a/packages/walker/child-visitors.js b/packages/walker/child-visitors.js
+index 3fce5d8e..cae9f81a 100644
+--- a/packages/walker/child-visitors.js
++++ b/packages/walker/child-visitors.js
+@@ -2481,7 +2481,8 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "Super": {
+           const visit = walkers.Super;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -2489,15 +2490,21 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "JSXText": {
+           const visit = walkers.JSXText;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "Literal": {
+           const visit = walkers.Literal;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "Program": {
+           const visit = walkers.Program;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.Program) {
++            if (!visit(node, walker) && node.type !== "Program") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -2505,11 +2512,16 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "Hashbang": {
+           const visit = walkers.Hashbang;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "Property": {
+           const visit = walkers.Property;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.Property) {
++            if (!visit(node, walker) && node.type !== "Property") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -2517,11 +2529,19 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "ClassBody": {
+           const visit = walkers.ClassBody;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ClassBody) {
++            if (!visit(node, walker) && node.type !== "ClassBody") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "Decorator": {
+           const visit = walkers.Decorator;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.Decorator) {
++            if (!visit(node, walker) && node.type !== "Decorator") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -2529,27 +2549,48 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "Identifier": {
+           const visit = walkers.Identifier;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.Identifier) {
++            if (!visit(node, walker) && node.type !== "Identifier") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "JSXElement": {
+           const visit = walkers.JSXElement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.JSXElement) {
++            if (!visit(node, walker) && node.type !== "JSXElement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "SwitchCase": {
+           const visit = walkers.SwitchCase;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.SwitchCase) {
++            if (!visit(node, walker) && node.type !== "SwitchCase") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSEnumBody": {
+           const visit = walkers.TSEnumBody;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSEnumBody) {
++            if (!visit(node, walker) && node.type !== "TSEnumBody") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSRestType": {
+           const visit = walkers.TSRestType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSRestType) {
++            if (!visit(node, walker) && node.type !== "TSRestType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSThisType": {
+           const visit = walkers.TSThisType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -2557,43 +2598,83 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "CatchClause": {
+           const visit = walkers.CatchClause;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.CatchClause) {
++            if (!visit(node, walker) && node.type !== "CatchClause") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "IfStatement": {
+           const visit = walkers.IfStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.IfStatement) {
++            if (!visit(node, walker) && node.type !== "IfStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "JSXFragment": {
+           const visit = walkers.JSXFragment;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.JSXFragment) {
++            if (!visit(node, walker) && node.type !== "JSXFragment") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "RestElement": {
+           const visit = walkers.RestElement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.RestElement) {
++            if (!visit(node, walker) && node.type !== "RestElement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "StaticBlock": {
+           const visit = walkers.StaticBlock;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.StaticBlock) {
++            if (!visit(node, walker) && node.type !== "StaticBlock") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSArrayType": {
+           const visit = walkers.TSArrayType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSArrayType) {
++            if (!visit(node, walker) && node.type !== "TSArrayType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSInferType": {
+           const visit = walkers.TSInferType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSInferType) {
++            if (!visit(node, walker) && node.type !== "TSInferType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSTupleType": {
+           const visit = walkers.TSTupleType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSTupleType) {
++            if (!visit(node, walker) && node.type !== "TSTupleType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSTypeQuery": {
+           const visit = walkers.TSTypeQuery;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSTypeQuery) {
++            if (!visit(node, walker) && node.type !== "TSTypeQuery") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSUnionType": {
+           const visit = walkers.TSUnionType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSUnionType) {
++            if (!visit(node, walker) && node.type !== "TSUnionType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -2601,39 +2682,72 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "ArrayPattern": {
+           const visit = walkers.ArrayPattern;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ArrayPattern) {
++            if (!visit(node, walker) && node.type !== "ArrayPattern") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ForStatement": {
+           const visit = walkers.ForStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ForStatement) {
++            if (!visit(node, walker) && node.type !== "ForStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "JSXAttribute": {
+           const visit = walkers.JSXAttribute;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.JSXAttribute) {
++            if (!visit(node, walker) && node.type !== "JSXAttribute") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "MetaProperty": {
+           const visit = walkers.MetaProperty;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.MetaProperty) {
++            if (!visit(node, walker) && node.type !== "MetaProperty") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSAnyKeyword": {
+           const visit = walkers.TSAnyKeyword;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSEnumMember": {
+           const visit = walkers.TSEnumMember;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSEnumMember) {
++            if (!visit(node, walker) && node.type !== "TSEnumMember") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSImportType": {
+           const visit = walkers.TSImportType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSImportType) {
++            if (!visit(node, walker) && node.type !== "TSImportType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSMappedType": {
+           const visit = walkers.TSMappedType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSMappedType) {
++            if (!visit(node, walker) && node.type !== "TSMappedType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TryStatement": {
+           const visit = walkers.TryStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TryStatement) {
++            if (!visit(node, walker) && node.type !== "TryStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -2641,43 +2755,74 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "JSXIdentifier": {
+           const visit = walkers.JSXIdentifier;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "NewExpression": {
+           const visit = walkers.NewExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.NewExpression) {
++            if (!visit(node, walker) && node.type !== "NewExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ObjectPattern": {
+           const visit = walkers.ObjectPattern;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ObjectPattern) {
++            if (!visit(node, walker) && node.type !== "ObjectPattern") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "SpreadElement": {
+           const visit = walkers.SpreadElement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.SpreadElement) {
++            if (!visit(node, walker) && node.type !== "SpreadElement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSLiteralType": {
+           const visit = walkers.TSLiteralType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSLiteralType) {
++            if (!visit(node, walker) && node.type !== "TSLiteralType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSModuleBlock": {
+           const visit = walkers.TSModuleBlock;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSModuleBlock) {
++            if (!visit(node, walker) && node.type !== "TSModuleBlock") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSNullKeyword": {
+           const visit = walkers.TSNullKeyword;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSTypeLiteral": {
+           const visit = walkers.TSTypeLiteral;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSTypeLiteral) {
++            if (!visit(node, walker) && node.type !== "TSTypeLiteral") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSVoidKeyword": {
+           const visit = walkers.TSVoidKeyword;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "WithStatement": {
+           const visit = walkers.WithStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.WithStatement) {
++            if (!visit(node, walker) && node.type !== "WithStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -2685,63 +2830,114 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "BlockStatement": {
+           const visit = walkers.BlockStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.BlockStatement) {
++            if (!visit(node, walker) && node.type !== "BlockStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "BreakStatement": {
+           const visit = walkers.BreakStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.BreakStatement) {
++            if (!visit(node, walker) && node.type !== "BreakStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "CallExpression": {
+           const visit = walkers.CallExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.CallExpression) {
++            if (!visit(node, walker) && node.type !== "CallExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "EmptyStatement": {
+           const visit = walkers.EmptyStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ForInStatement": {
+           const visit = walkers.ForInStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ForInStatement) {
++            if (!visit(node, walker) && node.type !== "ForInStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ForOfStatement": {
+           const visit = walkers.ForOfStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ForOfStatement) {
++            if (!visit(node, walker) && node.type !== "ForOfStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "JSXSpreadChild": {
+           const visit = walkers.JSXSpreadChild;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.JSXSpreadChild) {
++            if (!visit(node, walker) && node.type !== "JSXSpreadChild") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSAsExpression": {
+           const visit = walkers.TSAsExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSAsExpression) {
++            if (!visit(node, walker) && node.type !== "TSAsExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSFunctionType": {
+           const visit = walkers.TSFunctionType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSFunctionType) {
++            if (!visit(node, walker) && node.type !== "TSFunctionType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSNeverKeyword": {
+           const visit = walkers.TSNeverKeyword;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSOptionalType": {
+           const visit = walkers.TSOptionalType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSOptionalType) {
++            if (!visit(node, walker) && node.type !== "TSOptionalType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSTypeOperator": {
+           const visit = walkers.TSTypeOperator;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSTypeOperator) {
++            if (!visit(node, walker) && node.type !== "TSTypeOperator") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ThisExpression": {
+           const visit = walkers.ThisExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ThrowStatement": {
+           const visit = walkers.ThrowStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ThrowStatement) {
++            if (!visit(node, walker) && node.type !== "ThrowStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "WhileStatement": {
+           const visit = walkers.WhileStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.WhileStatement) {
++            if (!visit(node, walker) && node.type !== "WhileStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -2749,99 +2945,177 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "ArrayExpression": {
+           const visit = walkers.ArrayExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ArrayExpression) {
++            if (!visit(node, walker) && node.type !== "ArrayExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "AwaitExpression": {
+           const visit = walkers.AwaitExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.AwaitExpression) {
++            if (!visit(node, walker) && node.type !== "AwaitExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ChainExpression": {
+           const visit = walkers.ChainExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ChainExpression) {
++            if (!visit(node, walker) && node.type !== "ChainExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ClassExpression": {
+           const visit = walkers.ClassExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ClassExpression) {
++            if (!visit(node, walker) && node.type !== "ClassExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ExportSpecifier": {
+           const visit = walkers.ExportSpecifier;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ExportSpecifier) {
++            if (!visit(node, walker) && node.type !== "ExportSpecifier") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ImportAttribute": {
+           const visit = walkers.ImportAttribute;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ImportAttribute) {
++            if (!visit(node, walker) && node.type !== "ImportAttribute") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ImportSpecifier": {
+           const visit = walkers.ImportSpecifier;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ImportSpecifier) {
++            if (!visit(node, walker) && node.type !== "ImportSpecifier") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ReturnStatement": {
+           const visit = walkers.ReturnStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ReturnStatement) {
++            if (!visit(node, walker) && node.type !== "ReturnStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "SwitchStatement": {
+           const visit = walkers.SwitchStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.SwitchStatement) {
++            if (!visit(node, walker) && node.type !== "SwitchStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSBigIntKeyword": {
+           const visit = walkers.TSBigIntKeyword;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSInterfaceBody": {
+           const visit = walkers.TSInterfaceBody;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSInterfaceBody) {
++            if (!visit(node, walker) && node.type !== "TSInterfaceBody") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSNumberKeyword": {
+           const visit = walkers.TSNumberKeyword;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSObjectKeyword": {
+           const visit = walkers.TSObjectKeyword;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSQualifiedName": {
+           const visit = walkers.TSQualifiedName;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSQualifiedName) {
++            if (!visit(node, walker) && node.type !== "TSQualifiedName") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSStringKeyword": {
+           const visit = walkers.TSStringKeyword;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSSymbolKeyword": {
+           const visit = walkers.TSSymbolKeyword;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSTypeAssertion": {
+           const visit = walkers.TSTypeAssertion;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSTypeAssertion) {
++            if (!visit(node, walker) && node.type !== "TSTypeAssertion") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSTypeParameter": {
+           const visit = walkers.TSTypeParameter;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSTypeParameter) {
++            if (!visit(node, walker) && node.type !== "TSTypeParameter") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSTypePredicate": {
+           const visit = walkers.TSTypePredicate;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSTypePredicate) {
++            if (!visit(node, walker) && node.type !== "TSTypePredicate") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSTypeReference": {
+           const visit = walkers.TSTypeReference;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSTypeReference) {
++            if (!visit(node, walker) && node.type !== "TSTypeReference") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TemplateElement": {
+           const visit = walkers.TemplateElement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TemplateLiteral": {
+           const visit = walkers.TemplateLiteral;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TemplateLiteral) {
++            if (!visit(node, walker) && node.type !== "TemplateLiteral") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "UnaryExpression": {
+           const visit = walkers.UnaryExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.UnaryExpression) {
++            if (!visit(node, walker) && node.type !== "UnaryExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "YieldExpression": {
+           const visit = walkers.YieldExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.YieldExpression) {
++            if (!visit(node, walker) && node.type !== "YieldExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -2849,59 +3123,109 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "AccessorProperty": {
+           const visit = walkers.AccessorProperty;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.AccessorProperty) {
++            if (!visit(node, walker) && node.type !== "AccessorProperty") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "BinaryExpression": {
+           const visit = walkers.BinaryExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.BinaryExpression) {
++            if (!visit(node, walker) && node.type !== "BinaryExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ClassDeclaration": {
+           const visit = walkers.ClassDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ClassDeclaration) {
++            if (!visit(node, walker) && node.type !== "ClassDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "DoWhileStatement": {
+           const visit = walkers.DoWhileStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.DoWhileStatement) {
++            if (!visit(node, walker) && node.type !== "DoWhileStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ImportExpression": {
+           const visit = walkers.ImportExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ImportExpression) {
++            if (!visit(node, walker) && node.type !== "ImportExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "LabeledStatement": {
+           const visit = walkers.LabeledStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.LabeledStatement) {
++            if (!visit(node, walker) && node.type !== "LabeledStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "MemberExpression": {
+           const visit = walkers.MemberExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.MemberExpression) {
++            if (!visit(node, walker) && node.type !== "MemberExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "MethodDefinition": {
+           const visit = walkers.MethodDefinition;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.MethodDefinition) {
++            if (!visit(node, walker) && node.type !== "MethodDefinition") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ObjectExpression": {
+           const visit = walkers.ObjectExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ObjectExpression) {
++            if (!visit(node, walker) && node.type !== "ObjectExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSBooleanKeyword": {
+           const visit = walkers.TSBooleanKeyword;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSIndexSignature": {
+           const visit = walkers.TSIndexSignature;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSIndexSignature) {
++            if (!visit(node, walker) && node.type !== "TSIndexSignature") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSTypeAnnotation": {
+           const visit = walkers.TSTypeAnnotation;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSTypeAnnotation) {
++            if (!visit(node, walker) && node.type !== "TSTypeAnnotation") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSUnknownKeyword": {
+           const visit = walkers.TSUnknownKeyword;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "UpdateExpression": {
+           const visit = walkers.UpdateExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.UpdateExpression) {
++            if (!visit(node, walker) && node.type !== "UpdateExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -2909,63 +3233,117 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "AssignmentPattern": {
+           const visit = walkers.AssignmentPattern;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.AssignmentPattern) {
++            if (!visit(node, walker) && node.type !== "AssignmentPattern") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ContinueStatement": {
+           const visit = walkers.ContinueStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ContinueStatement) {
++            if (!visit(node, walker) && node.type !== "ContinueStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "DebuggerStatement": {
+           const visit = walkers.DebuggerStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ImportDeclaration": {
+           const visit = walkers.ImportDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ImportDeclaration) {
++            if (!visit(node, walker) && node.type !== "ImportDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "JSXClosingElement": {
+           const visit = walkers.JSXClosingElement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.JSXClosingElement) {
++            if (!visit(node, walker) && node.type !== "JSXClosingElement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "JSXNamespacedName": {
+           const visit = walkers.JSXNamespacedName;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.JSXNamespacedName) {
++            if (!visit(node, walker) && node.type !== "JSXNamespacedName") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "JSXOpeningElement": {
+           const visit = walkers.JSXOpeningElement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.JSXOpeningElement) {
++            if (!visit(node, walker) && node.type !== "JSXOpeningElement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "LogicalExpression": {
+           const visit = walkers.LogicalExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.LogicalExpression) {
++            if (!visit(node, walker) && node.type !== "LogicalExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "PrivateIdentifier": {
+           const visit = walkers.PrivateIdentifier;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSClassImplements": {
+           const visit = walkers.TSClassImplements;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSClassImplements) {
++            if (!visit(node, walker) && node.type !== "TSClassImplements") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSConditionalType": {
+           const visit = walkers.TSConditionalType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSConditionalType) {
++            if (!visit(node, walker) && node.type !== "TSConditionalType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSConstructorType": {
+           const visit = walkers.TSConstructorType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSConstructorType) {
++            if (!visit(node, walker) && node.type !== "TSConstructorType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSDeclareFunction": {
+           const visit = walkers.TSDeclareFunction;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSDeclareFunction) {
++            if (!visit(node, walker) && node.type !== "TSDeclareFunction") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSEnumDeclaration": {
+           const visit = walkers.TSEnumDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSEnumDeclaration) {
++            if (!visit(node, walker) && node.type !== "TSEnumDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSMethodSignature": {
+           const visit = walkers.TSMethodSignature;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSMethodSignature) {
++            if (!visit(node, walker) && node.type !== "TSMethodSignature") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -2973,59 +3351,97 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "FunctionExpression": {
+           const visit = walkers.FunctionExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.FunctionExpression) {
++            if (!visit(node, walker) && node.type !== "FunctionExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "JSXClosingFragment": {
+           const visit = walkers.JSXClosingFragment;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "JSXEmptyExpression": {
+           const visit = walkers.JSXEmptyExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "JSXOpeningFragment": {
+           const visit = walkers.JSXOpeningFragment;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "JSXSpreadAttribute": {
+           const visit = walkers.JSXSpreadAttribute;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.JSXSpreadAttribute) {
++            if (!visit(node, walker) && node.type !== "JSXSpreadAttribute") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "PropertyDefinition": {
+           const visit = walkers.PropertyDefinition;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.PropertyDefinition) {
++            if (!visit(node, walker) && node.type !== "PropertyDefinition") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "SequenceExpression": {
+           const visit = walkers.SequenceExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.SequenceExpression) {
++            if (!visit(node, walker) && node.type !== "SequenceExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSExportAssignment": {
+           const visit = walkers.TSExportAssignment;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSExportAssignment) {
++            if (!visit(node, walker) && node.type !== "TSExportAssignment") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSIntersectionType": {
+           const visit = walkers.TSIntersectionType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSIntersectionType) {
++            if (!visit(node, walker) && node.type !== "TSIntersectionType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSIntrinsicKeyword": {
+           const visit = walkers.TSIntrinsicKeyword;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSJSDocUnknownType": {
+           const visit = walkers.TSJSDocUnknownType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSNamedTupleMember": {
+           const visit = walkers.TSNamedTupleMember;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSNamedTupleMember) {
++            if (!visit(node, walker) && node.type !== "TSNamedTupleMember") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSUndefinedKeyword": {
+           const visit = walkers.TSUndefinedKeyword;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === null) return index;
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "VariableDeclarator": {
+           const visit = walkers.VariableDeclarator;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.VariableDeclarator) {
++            if (!visit(node, walker) && node.type !== "VariableDeclarator") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -3033,51 +3449,99 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "ExpressionStatement": {
+           const visit = walkers.ExpressionStatement;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ExpressionStatement) {
++            if (!visit(node, walker) && node.type !== "ExpressionStatement") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "FunctionDeclaration": {
+           const visit = walkers.FunctionDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.FunctionDeclaration) {
++            if (!visit(node, walker) && node.type !== "FunctionDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "JSXMemberExpression": {
+           const visit = walkers.JSXMemberExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.JSXMemberExpression) {
++            if (!visit(node, walker) && node.type !== "JSXMemberExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSIndexedAccessType": {
+           const visit = walkers.TSIndexedAccessType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSIndexedAccessType) {
++            if (!visit(node, walker) && node.type !== "TSIndexedAccessType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSInterfaceHeritage": {
+           const visit = walkers.TSInterfaceHeritage;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSInterfaceHeritage) {
++            if (!visit(node, walker) && node.type !== "TSInterfaceHeritage") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSJSDocNullableType": {
+           const visit = walkers.TSJSDocNullableType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSJSDocNullableType) {
++            if (!visit(node, walker) && node.type !== "TSJSDocNullableType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSModuleDeclaration": {
+           const visit = walkers.TSModuleDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSModuleDeclaration) {
++            if (!visit(node, walker) && node.type !== "TSModuleDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSNonNullExpression": {
+           const visit = walkers.TSNonNullExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSNonNullExpression) {
++            if (!visit(node, walker) && node.type !== "TSNonNullExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSParameterProperty": {
+           const visit = walkers.TSParameterProperty;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSParameterProperty) {
++            if (!visit(node, walker) && node.type !== "TSParameterProperty") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSParenthesizedType": {
+           const visit = walkers.TSParenthesizedType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSParenthesizedType) {
++            if (!visit(node, walker) && node.type !== "TSParenthesizedType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSPropertySignature": {
+           const visit = walkers.TSPropertySignature;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSPropertySignature) {
++            if (!visit(node, walker) && node.type !== "TSPropertySignature") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "VariableDeclaration": {
+           const visit = walkers.VariableDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.VariableDeclaration) {
++            if (!visit(node, walker) && node.type !== "VariableDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -3085,11 +3549,19 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "AssignmentExpression": {
+           const visit = walkers.AssignmentExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.AssignmentExpression) {
++            if (!visit(node, walker) && node.type !== "AssignmentExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ExportAllDeclaration": {
+           const visit = walkers.ExportAllDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ExportAllDeclaration) {
++            if (!visit(node, walker) && node.type !== "ExportAllDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -3097,15 +3569,27 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "ConditionalExpression": {
+           const visit = walkers.ConditionalExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ConditionalExpression) {
++            if (!visit(node, walker) && node.type !== "ConditionalExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSSatisfiesExpression": {
+           const visit = walkers.TSSatisfiesExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSSatisfiesExpression) {
++            if (!visit(node, walker) && node.type !== "TSSatisfiesExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSTemplateLiteralType": {
+           const visit = walkers.TSTemplateLiteralType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSTemplateLiteralType) {
++            if (!visit(node, walker) && node.type !== "TSTemplateLiteralType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -3113,27 +3597,51 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "ExportNamedDeclaration": {
+           const visit = walkers.ExportNamedDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ExportNamedDeclaration) {
++            if (!visit(node, walker) && node.type !== "ExportNamedDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ImportDefaultSpecifier": {
+           const visit = walkers.ImportDefaultSpecifier;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ImportDefaultSpecifier) {
++            if (!visit(node, walker) && node.type !== "ImportDefaultSpecifier") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "JSXExpressionContainer": {
+           const visit = walkers.JSXExpressionContainer;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.JSXExpressionContainer) {
++            if (!visit(node, walker) && node.type !== "JSXExpressionContainer") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSInterfaceDeclaration": {
+           const visit = walkers.TSInterfaceDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSInterfaceDeclaration) {
++            if (!visit(node, walker) && node.type !== "TSInterfaceDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSJSDocNonNullableType": {
+           const visit = walkers.TSJSDocNonNullableType;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSJSDocNonNullableType) {
++            if (!visit(node, walker) && node.type !== "TSJSDocNonNullableType") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSTypeAliasDeclaration": {
+           const visit = walkers.TSTypeAliasDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSTypeAliasDeclaration) {
++            if (!visit(node, walker) && node.type !== "TSTypeAliasDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -3141,11 +3649,19 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "ArrowFunctionExpression": {
+           const visit = walkers.ArrowFunctionExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ArrowFunctionExpression) {
++            if (!visit(node, walker) && node.type !== "ArrowFunctionExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ParenthesizedExpression": {
+           const visit = walkers.ParenthesizedExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ParenthesizedExpression) {
++            if (!visit(node, walker) && node.type !== "ParenthesizedExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -3153,15 +3669,27 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "ExportDefaultDeclaration": {
+           const visit = walkers.ExportDefaultDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ExportDefaultDeclaration) {
++            if (!visit(node, walker) && node.type !== "ExportDefaultDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "ImportNamespaceSpecifier": {
+           const visit = walkers.ImportNamespaceSpecifier;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.ImportNamespaceSpecifier) {
++            if (!visit(node, walker) && node.type !== "ImportNamespaceSpecifier") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TaggedTemplateExpression": {
+           const visit = walkers.TaggedTemplateExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TaggedTemplateExpression) {
++            if (!visit(node, walker) && node.type !== "TaggedTemplateExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -3169,15 +3697,27 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "TSExternalModuleReference": {
+           const visit = walkers.TSExternalModuleReference;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSExternalModuleReference) {
++            if (!visit(node, walker) && node.type !== "TSExternalModuleReference") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSImportEqualsDeclaration": {
+           const visit = walkers.TSImportEqualsDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSImportEqualsDeclaration) {
++            if (!visit(node, walker) && node.type !== "TSImportEqualsDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSInstantiationExpression": {
+           const visit = walkers.TSInstantiationExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSInstantiationExpression) {
++            if (!visit(node, walker) && node.type !== "TSInstantiationExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -3185,19 +3725,35 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "TSAbstractAccessorProperty": {
+           const visit = walkers.TSAbstractAccessorProperty;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSAbstractAccessorProperty) {
++            if (!visit(node, walker) && node.type !== "TSAbstractAccessorProperty") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSAbstractMethodDefinition": {
+           const visit = walkers.TSAbstractMethodDefinition;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSAbstractMethodDefinition) {
++            if (!visit(node, walker) && node.type !== "TSAbstractMethodDefinition") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSCallSignatureDeclaration": {
+           const visit = walkers.TSCallSignatureDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSCallSignatureDeclaration) {
++            if (!visit(node, walker) && node.type !== "TSCallSignatureDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSTypeParameterDeclaration": {
+           const visit = walkers.TSTypeParameterDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSTypeParameterDeclaration) {
++            if (!visit(node, walker) && node.type !== "TSTypeParameterDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -3205,15 +3761,27 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "TSAbstractPropertyDefinition": {
+           const visit = walkers.TSAbstractPropertyDefinition;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSAbstractPropertyDefinition) {
++            if (!visit(node, walker) && node.type !== "TSAbstractPropertyDefinition") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSNamespaceExportDeclaration": {
+           const visit = walkers.TSNamespaceExportDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSNamespaceExportDeclaration) {
++            if (!visit(node, walker) && node.type !== "TSNamespaceExportDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+         case "TSTypeParameterInstantiation": {
+           const visit = walkers.TSTypeParameterInstantiation;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSTypeParameterInstantiation) {
++            if (!visit(node, walker) && node.type !== "TSTypeParameterInstantiation") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -3221,7 +3789,11 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "TSEmptyBodyFunctionExpression": {
+           const visit = walkers.TSEmptyBodyFunctionExpression;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSEmptyBodyFunctionExpression) {
++            if (!visit(node, walker) && node.type !== "TSEmptyBodyFunctionExpression") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+@@ -3229,7 +3801,11 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+       switch (type) {
+         case "TSConstructSignatureDeclaration": {
+           const visit = walkers.TSConstructSignatureDeclaration;
+-          return visit === null ? index : visit(node, walker, parent, key, list, index);
++          if (visit === childVisitors.TSConstructSignatureDeclaration) {
++            if (!visit(node, walker) && node.type !== "TSConstructSignatureDeclaration") return walker.leaveChanged(node, parent, key, list, index);
++            return index;
++          }
++          return visit(node, walker, parent, key, list, index);
+         }
+       }
+       break;
+diff --git a/packages/walker/index.js b/packages/walker/index.js
+index 588258e7..e86798e7 100644
+--- a/packages/walker/index.js
++++ b/packages/walker/index.js
+@@ -44,7 +44,7 @@ function assertSync(result) {
+     );
+ }
+ 
+-function compile(hooks) {
++function compile(hooks, editing = true) {
+   if (!hooks || typeof hooks !== "object")
+     throw new TypeError("Expected a hooks object");
+   const entries = Object.entries(hooks);
+@@ -106,7 +106,7 @@ function compile(hooks) {
+       leave: compact(pair.leave),
+     };
+   }
+-  const walkers = Object.create(nodeWalkers);
++  const walkers = Object.create(editing ? childVisitors : nodeWalkers);
+   const types = enter || leave ? Object.keys(nodeWalkers) : [...table.keys()];
+   for (const type of types) {
+     const entry = dispatch[type];
+@@ -472,6 +472,6 @@ class ReadVisitor {
+ /** Visit without editing context. Callbacks receive (node, state). */
+ export function visit(root, hooks, state) {
+   assertNode(root);
+-  new ReadVisitor(compile(hooks), state).visit(root);
++  new ReadVisitor(compile(hooks, false), state).visit(root);
+   return root;
+ }
+diff --git a/tasks/ast_tools/src/generator/estree_visitor_keys.rs b/tasks/ast_tools/src/generator/estree_visitor_keys.rs
+index fe1a6e6a..52f32e1b 100644
+--- a/tasks/ast_tools/src/generator/estree_visitor_keys.rs
++++ b/tasks/ast_tools/src/generator/estree_visitor_keys.rs
+@@ -213,7 +213,13 @@ pub fn estree_visitor_keys(schema: &Schema) -> Vec<RawOutput> {
+     for (length, names) in by_length {
+         writeln!(children, "    case {length}:\n      switch (type) {{").unwrap();
+         for name in names {
+-            writeln!(children, "        case {name:?}: {{\n          const visit = walkers.{name};\n          return visit === null ? index : visit(node, walker, parent, key, list, index);\n        }}").unwrap();
++            writeln!(children, "        case {name:?}: {{\n          const visit = walkers.{name};").unwrap();
++            if keys[name].is_empty() {
++                children.push_str("          if (visit === null) return index;\n");
++            } else {
++                writeln!(children, "          if (visit === childVisitors.{name}) {{\n            if (!visit(node, walker) && node.type !== {name:?}) return walker.leaveChanged(node, parent, key, list, index);\n            return index;\n          }}").unwrap();
++            }
++            children.push_str("          return visit(node, walker, parent, key, list, index);\n        }\n");
+         }
+         children.push_str("      }\n      break;\n");
+     }

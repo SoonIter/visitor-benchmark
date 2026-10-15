@@ -1,0 +1,277 @@
+{
+  "scenario": "rstest-coverage",
+  "id": "swc-next",
+  "kind": "runtime",
+  "node": "v24.20.0",
+  "v8": "13.6.233.17-node.53",
+  "rounds": 160,
+  "totalSampledUs": 41208,
+  "self": [
+    {
+      "functionName": "dispatchNode",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 2476,
+      "samples": 146,
+      "us": 18462
+    },
+    {
+      "functionName": "visit",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/index.js",
+      "lineNumber": 328,
+      "samples": 27,
+      "us": 3374
+    },
+    {
+      "functionName": "walkProperty",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1765,
+      "samples": 16,
+      "us": 2001
+    },
+    {
+      "functionName": "visitScalar",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/index.js",
+      "lineNumber": 310,
+      "samples": 14,
+      "us": 1873
+    },
+    {
+      "functionName": "walkCallExpression",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1297,
+      "samples": 14,
+      "us": 1665
+    },
+    {
+      "functionName": "walkMemberExpression",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1693,
+      "samples": 12,
+      "us": 1624
+    },
+    {
+      "functionName": "plan",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/rstest-coverage/business.mjs",
+      "lineNumber": 14,
+      "samples": 11,
+      "us": 1416
+    },
+    {
+      "functionName": "visitHooks",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/index.js",
+      "lineNumber": 357,
+      "samples": 10,
+      "us": 1375
+    },
+    {
+      "functionName": "visitList",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/index.js",
+      "lineNumber": 317,
+      "samples": 10,
+      "us": 1250
+    },
+    {
+      "functionName": "IfStatement",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/rstest-coverage/plugins/swc-next.mjs",
+      "lineNumber": 4,
+      "samples": 7,
+      "us": 917
+    },
+    {
+      "functionName": "walkVariableDeclaration",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 2435,
+      "samples": 5,
+      "us": 667
+    },
+    {
+      "functionName": "walkExpressionStatement",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1443,
+      "samples": 5,
+      "us": 625
+    },
+    {
+      "functionName": "walkBlockStatement",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1283,
+      "samples": 4,
+      "us": 541
+    },
+    {
+      "functionName": "walkVariableDeclarator",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 2442,
+      "samples": 4,
+      "us": 500
+    },
+    {
+      "functionName": "walkEnter",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/index.js",
+      "lineNumber": 125,
+      "samples": 2,
+      "us": 417
+    },
+    {
+      "functionName": "createState",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/rstest-coverage/business.mjs",
+      "lineNumber": 2,
+      "samples": 3,
+      "us": 417
+    },
+    {
+      "functionName": "runWalk",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/index.js",
+      "lineNumber": 396,
+      "samples": 3,
+      "us": 417
+    },
+    {
+      "functionName": "walkImportDeclaration",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1544,
+      "samples": 3,
+      "us": 375
+    },
+    {
+      "functionName": "replaceIf",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/rstest-coverage/business.mjs",
+      "lineNumber": 57,
+      "samples": 3,
+      "us": 375
+    },
+    {
+      "functionName": "invoke",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/index.js",
+      "lineNumber": 267,
+      "samples": 2,
+      "us": 292
+    },
+    {
+      "functionName": "replace",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/index.js",
+      "lineNumber": 224,
+      "samples": 2,
+      "us": 292
+    },
+    {
+      "functionName": "walkImportSpecifier",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1578,
+      "samples": 2,
+      "us": 250
+    },
+    {
+      "functionName": "#check",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/index.js",
+      "lineNumber": 165,
+      "samples": 1,
+      "us": 167
+    },
+    {
+      "functionName": "#prepare",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/index.js",
+      "lineNumber": 299,
+      "samples": 1,
+      "us": 167
+    },
+    {
+      "functionName": "isBlock",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/rstest-coverage/business.mjs",
+      "lineNumber": 54,
+      "samples": 1,
+      "us": 166
+    },
+    {
+      "functionName": "walkProgram",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1758,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "run",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/rstest-coverage/plugins/swc-next.mjs",
+      "lineNumber": 2,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkArrayPattern",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1221,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "compile",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/index.js",
+      "lineNumber": 46,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkImportExpression",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1562,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "IfStatement",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 266,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkObjectExpression",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1733,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkTryStatement",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 2410,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkAssignmentExpression",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1245,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkForOfStatement",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1461,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkBinaryExpression",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1274,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "reset",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/index.js",
+      "lineNumber": 287,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkArrowFunctionExpression",
+      "url": "file:///Users/bytedance/.codex/worktrees/b976/swc-next/packages/walker/child-visitors.js",
+      "lineNumber": 1232,
+      "samples": 1,
+      "us": 83
+    }
+  ]
+}

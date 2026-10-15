@@ -74,6 +74,8 @@ Matched-operation controls reuse Oxc's business helpers and hook positions with 
 
 The candidate adds roughly 30 KB of generated source. Module loading and startup are outside this benchmark; other engines and Node versions were not measured. Replacement, removal, insertion, skip/stop, aliases, ancestry, callback lifetime and reentrancy are unchanged. No AST tags, callback-arity heuristics, runtime code generation or read-only substitution were introduced. The separate read-only `visit` implementation is unchanged.
 
+[Further context/inlining experiments](v8-hooks.md) did not establish an additional improvement; the accepted runtime remains unchanged.
+
 ## Reproduce and inspect
 
 ```sh

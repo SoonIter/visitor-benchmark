@@ -1,0 +1,179 @@
+diff --git a/packages/walker/child-visitors.js b/packages/walker/child-visitors.js
+index 3fce5d8e..1493c7e7 100644
+--- a/packages/walker/child-visitors.js
++++ b/packages/walker/child-visitors.js
+@@ -3236,3 +3236,120 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
+   }
+   throw new TypeError(`Unsupported AST node type: ${type}`);
+ }
++
++export const knownChildTypes = {
++  "AccessorProperty.decorators": "Decorator",
++  "AccessorProperty.typeAnnotation": "TSTypeAnnotation",
++  "ArrowFunctionExpression.returnType": "TSTypeAnnotation",
++  "ArrowFunctionExpression.typeParameters": "TSTypeParameterDeclaration",
++  "BreakStatement.label": "Identifier",
++  "CallExpression.typeArguments": "TSTypeParameterInstantiation",
++  "CatchClause.body": "BlockStatement",
++  "ClassDeclaration.body": "ClassBody",
++  "ClassDeclaration.decorators": "Decorator",
++  "ClassDeclaration.id": "Identifier",
++  "ClassDeclaration.implements": "TSClassImplements",
++  "ClassDeclaration.superTypeArguments": "TSTypeParameterInstantiation",
++  "ClassDeclaration.typeParameters": "TSTypeParameterDeclaration",
++  "ClassExpression.body": "ClassBody",
++  "ClassExpression.decorators": "Decorator",
++  "ClassExpression.id": "Identifier",
++  "ClassExpression.implements": "TSClassImplements",
++  "ClassExpression.superTypeArguments": "TSTypeParameterInstantiation",
++  "ClassExpression.typeParameters": "TSTypeParameterDeclaration",
++  "ContinueStatement.label": "Identifier",
++  "ExportAllDeclaration.attributes": "ImportAttribute",
++  "ExportAllDeclaration.source": "Literal",
++  "ExportNamedDeclaration.attributes": "ImportAttribute",
++  "ExportNamedDeclaration.source": "Literal",
++  "ExportNamedDeclaration.specifiers": "ExportSpecifier",
++  "FunctionDeclaration.body": "BlockStatement",
++  "FunctionDeclaration.id": "Identifier",
++  "FunctionDeclaration.returnType": "TSTypeAnnotation",
++  "FunctionDeclaration.typeParameters": "TSTypeParameterDeclaration",
++  "FunctionExpression.body": "BlockStatement",
++  "FunctionExpression.id": "Identifier",
++  "FunctionExpression.returnType": "TSTypeAnnotation",
++  "FunctionExpression.typeParameters": "TSTypeParameterDeclaration",
++  "Identifier.typeAnnotation": "TSTypeAnnotation",
++  "ImportAttribute.value": "Literal",
++  "ImportDeclaration.attributes": "ImportAttribute",
++  "ImportDeclaration.source": "Literal",
++  "ImportDefaultSpecifier.local": "Identifier",
++  "ImportNamespaceSpecifier.local": "Identifier",
++  "ImportSpecifier.local": "Identifier",
++  "JSXElement.closingElement": "JSXClosingElement",
++  "JSXElement.openingElement": "JSXOpeningElement",
++  "JSXFragment.closingFragment": "JSXClosingFragment",
++  "JSXFragment.openingFragment": "JSXOpeningFragment",
++  "JSXMemberExpression.property": "JSXIdentifier",
++  "JSXNamespacedName.name": "JSXIdentifier",
++  "JSXNamespacedName.namespace": "JSXIdentifier",
++  "JSXOpeningElement.typeArguments": "TSTypeParameterInstantiation",
++  "LabeledStatement.label": "Identifier",
++  "MetaProperty.meta": "Identifier",
++  "MetaProperty.property": "Identifier",
++  "MethodDefinition.decorators": "Decorator",
++  "NewExpression.typeArguments": "TSTypeParameterInstantiation",
++  "PropertyDefinition.decorators": "Decorator",
++  "PropertyDefinition.typeAnnotation": "TSTypeAnnotation",
++  "SwitchStatement.cases": "SwitchCase",
++  "TSAbstractAccessorProperty.decorators": "Decorator",
++  "TSAbstractAccessorProperty.typeAnnotation": "TSTypeAnnotation",
++  "TSAbstractMethodDefinition.decorators": "Decorator",
++  "TSAbstractPropertyDefinition.decorators": "Decorator",
++  "TSAbstractPropertyDefinition.typeAnnotation": "TSTypeAnnotation",
++  "TSCallSignatureDeclaration.returnType": "TSTypeAnnotation",
++  "TSCallSignatureDeclaration.typeParameters": "TSTypeParameterDeclaration",
++  "TSClassImplements.typeArguments": "TSTypeParameterInstantiation",
++  "TSConstructSignatureDeclaration.returnType": "TSTypeAnnotation",
++  "TSConstructSignatureDeclaration.typeParameters": "TSTypeParameterDeclaration",
++  "TSConstructorType.returnType": "TSTypeAnnotation",
++  "TSConstructorType.typeParameters": "TSTypeParameterDeclaration",
++  "TSDeclareFunction.id": "Identifier",
++  "TSDeclareFunction.returnType": "TSTypeAnnotation",
++  "TSDeclareFunction.typeParameters": "TSTypeParameterDeclaration",
++  "TSEmptyBodyFunctionExpression.id": "Identifier",
++  "TSEmptyBodyFunctionExpression.returnType": "TSTypeAnnotation",
++  "TSEmptyBodyFunctionExpression.typeParameters": "TSTypeParameterDeclaration",
++  "TSEnumBody.members": "TSEnumMember",
++  "TSEnumDeclaration.body": "TSEnumBody",
++  "TSEnumDeclaration.id": "Identifier",
++  "TSExternalModuleReference.expression": "Literal",
++  "TSFunctionType.returnType": "TSTypeAnnotation",
++  "TSFunctionType.typeParameters": "TSTypeParameterDeclaration",
++  "TSImportEqualsDeclaration.id": "Identifier",
++  "TSImportType.source": "Literal",
++  "TSImportType.typeArguments": "TSTypeParameterInstantiation",
++  "TSIndexSignature.typeAnnotation": "TSTypeAnnotation",
++  "TSInferType.typeParameter": "TSTypeParameter",
++  "TSInstantiationExpression.typeArguments": "TSTypeParameterInstantiation",
++  "TSInterfaceDeclaration.body": "TSInterfaceBody",
++  "TSInterfaceDeclaration.extends": "TSInterfaceHeritage",
++  "TSInterfaceDeclaration.id": "Identifier",
++  "TSInterfaceDeclaration.typeParameters": "TSTypeParameterDeclaration",
++  "TSInterfaceHeritage.typeArguments": "TSTypeParameterInstantiation",
++  "TSMappedType.key": "Identifier",
++  "TSMethodSignature.returnType": "TSTypeAnnotation",
++  "TSMethodSignature.typeParameters": "TSTypeParameterDeclaration",
++  "TSNamedTupleMember.label": "Identifier",
++  "TSNamespaceExportDeclaration.id": "Identifier",
++  "TSParameterProperty.decorators": "Decorator",
++  "TSPropertySignature.typeAnnotation": "TSTypeAnnotation",
++  "TSQualifiedName.right": "Identifier",
++  "TSTemplateLiteralType.quasis": "TemplateElement",
++  "TSTypeAliasDeclaration.id": "Identifier",
++  "TSTypeAliasDeclaration.typeParameters": "TSTypeParameterDeclaration",
++  "TSTypeParameter.name": "Identifier",
++  "TSTypeParameterDeclaration.params": "TSTypeParameter",
++  "TSTypePredicate.typeAnnotation": "TSTypeAnnotation",
++  "TSTypeQuery.typeArguments": "TSTypeParameterInstantiation",
++  "TSTypeReference.typeArguments": "TSTypeParameterInstantiation",
++  "TaggedTemplateExpression.quasi": "TemplateLiteral",
++  "TaggedTemplateExpression.typeArguments": "TSTypeParameterInstantiation",
++  "TemplateLiteral.quasis": "TemplateElement",
++  "TryStatement.block": "BlockStatement",
++  "TryStatement.finalizer": "BlockStatement",
++  "TryStatement.handler": "CatchClause",
++  "VariableDeclaration.declarations": "VariableDeclarator",
++};
+diff --git a/tasks/ast_tools/src/generator/estree_visitor_keys.rs b/tasks/ast_tools/src/generator/estree_visitor_keys.rs
+index fe1a6e6a..e3a16e56 100644
+--- a/tasks/ast_tools/src/generator/estree_visitor_keys.rs
++++ b/tasks/ast_tools/src/generator/estree_visitor_keys.rs
+@@ -11,6 +11,7 @@ use crate::{
+ pub fn estree_visitor_keys(schema: &Schema) -> Vec<RawOutput> {
+     let mut keys: BTreeMap<String, Vec<String>> = BTreeMap::new();
+     let mut lists = BTreeMap::new();
++    let mut known_children = BTreeMap::new();
+     for ty in &schema.types {
+         let AstType::Struct(ast) = ty else { continue };
+         let name = ast.name.as_str();
+@@ -131,6 +132,10 @@ pub fn estree_visitor_keys(schema: &Schema) -> Vec<RawOutput> {
+                             && is_list(f.type_id, schema)
+                     })
+                 };
++                let known = ast.fields.iter().find(|f| estree_field_name(ast.name.as_str(), &f.name) == *field)
++                    .and_then(|f| known_child(f.type_id, schema));
++                let slot = known_children.entry((name.clone(), field.clone())).or_insert(known.clone());
++                if *slot != known { *slot = None; }
+                 let previous = lists.insert((name.clone(), field.clone()), list);
+                 assert!(previous.is_none_or(|previous| previous == list));
+             }
+@@ -218,6 +223,13 @@ pub fn estree_visitor_keys(schema: &Schema) -> Vec<RawOutput> {
+         children.push_str("      }\n      break;\n");
+     }
+     children.push_str("  }\n  throw new TypeError(`Unsupported AST node type: ${type}`);\n}\n");
++    children.push_str("\nexport const knownChildTypes = {\n");
++    for ((parent, field), child) in &known_children {
++        if let Some(child) = child { if keys.contains_key(child) {
++            writeln!(children, "  \"{parent}.{field}\": {child:?},").unwrap();
++        }}
++    }
++    children.push_str("};\n");
+     dts.push_str("};\nexport type NodeType = keyof typeof visitorKeys;\n");
+     vec![
+         RawOutput {
+@@ -251,3 +263,16 @@ fn is_list(id: TypeId, schema: &Schema) -> bool {
+         _ => false,
+     }
+ }
++
++fn known_child(id: TypeId, schema: &Schema) -> Option<String> {
++    match &schema.types[id] {
++        AstType::Option(opt) => known_child(opt.inner_type_id, schema),
++        AstType::SubRange(range) => known_child(range.inner_type_id, schema),
++        AstType::Struct(ast) => Some(match ast.name.as_str() {
++            "FunctionBody" => "BlockStatement".into(),
++            "StringLiteral" | "NumericLiteral" | "BigIntLiteral" | "BooleanLiteral" | "NullLiteral" | "RegExpLiteral" => "Literal".into(),
++            name => estree_type(name),
++        }),
++        _ => None,
++    }
++}

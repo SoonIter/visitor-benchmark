@@ -1,0 +1,61 @@
+{
+  "acceptedCommit": "da1432ed7c1e5ac6499ca54009e3a9f74e8c2e8f",
+  "runtimeSha256": {
+    "index.js": "5eed44ede0ea6df6416b5c3d42488af128cf3a1e821c58e23b4e673c6b5919f0",
+    "child-visitors.js": "66fb4ac7c051d32cc68ed6bcd04e5702dcba1a8864b8d94866ee2882d647dabd",
+    "visitor-keys.js": "5e9aa3076a3beda6be1007e72202b3489f3e0b04793ee93c36095bdd6dad4a7f"
+  },
+  "originalComparison": "../v8-walker/comparison.json",
+  "validatedRuns": 252,
+  "tracks": [
+    {
+      "scenario": "styled-components",
+      "kind": "dense",
+      "pairedMedianRatio": 0.9328105839866461
+    },
+    {
+      "scenario": "styled-components",
+      "kind": "sparse",
+      "pairedMedianRatio": 0.7656429104332447
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "dense",
+      "pairedMedianRatio": 0.8929083339020649
+    },
+    {
+      "scenario": "remove-debugger",
+      "kind": "sparse",
+      "pairedMedianRatio": 0.8705722127069271
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "runtime",
+      "pairedMedianRatio": 0.8921400402860408
+    },
+    {
+      "scenario": "rstest-coverage",
+      "kind": "tooling",
+      "pairedMedianRatio": 0.9179009487383644
+    },
+    {
+      "scenario": "i18n",
+      "kind": "original",
+      "pairedMedianRatio": 0.6657922602609823
+    },
+    {
+      "scenario": "i18n",
+      "kind": "javascript",
+      "pairedMedianRatio": 0.9197329450639088
+    }
+  ],
+  "defaultV8": true,
+  "experimentalRuntimeRetained": false,
+  "unitLog": "walker-validation.log",
+  "benchmarkLog": "benchmark-validation.log",
+  "limitations": [
+    "Not faster than Oxc in every workload.",
+    "Desktop load and CPU frequency were not controlled.",
+    "Main charts retain historical snapshots."
+  ]
+}
