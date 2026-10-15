@@ -1,7 +1,7 @@
 {
   "repository": "https://github.com/swc-project/swc-next",
   "branch": "codex/optimize-js-walker",
-  "commit": "c9a29d656d43ab1e060cbea139eed50876f452c9",
+  "commit": "da1432ed7c1e5ac6499ca54009e3a9f74e8c2e8f",
   "package": "@swc-next/walker",
   "sourceFiles": {
     "vendor/swc-next/ast.js": "packages/walker/index.js",
@@ -9,8 +9,8 @@
     "vendor/swc-next/visitor-keys.js": "packages/walker/visitor-keys.js"
   },
   "sha256": {
-    "vendor/swc-next/ast.js": "4e5dae92034c0de2b9ef0c046d65bea405710ddd1cb1b3957ada27b4a5576df7",
-    "vendor/swc-next/child-visitors.js": "347784c887285b257c07c5196ba328c3f17a0e9fa09407b9b234a9189a544203",
+    "vendor/swc-next/ast.js": "5eed44ede0ea6df6416b5c3d42488af128cf3a1e821c58e23b4e673c6b5919f0",
+    "vendor/swc-next/child-visitors.js": "66fb4ac7c051d32cc68ed6bcd04e5702dcba1a8864b8d94866ee2882d647dabd",
     "vendor/swc-next/visitor-keys.js": "5e9aa3076a3beda6be1007e72202b3489f3e0b04793ee93c36095bdd6dad4a7f"
   }
 }

@@ -4,6 +4,8 @@
 
 Normal-JIT wall time is the primary metric. [SWC Next optimization and ranking verification](docs/walker-walltime.md) · [Archived Ir/Ct study](docs/cpu/README.md) · [Earlier Oxc target study](docs/oxc-target.md) · [V8-guided optimization: current SWC vs Oxc](docs/v8-walker.md).
 
+The vendored SWC runtime is pinned to `da1432ed`. The V8 study measures this version; existing charts retain their recorded snapshots.
+
 | Scenario | Work | Corpus | Results |
 | :-- | :-- | :-- | :-- |
 | Styled-components | Inject displayName / componentId | Generated JS; dense + sparse | [Details](docs/styled-components/README.md) |
