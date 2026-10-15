@@ -2,6 +2,25 @@
 
 **Four concrete tasks. Same AST within each ESTree track. Validated output on every measured iteration.**
 
+Normal-JIT wall time is the primary metric.
+
+## Latest SWC Next ranking
+
+All charts below were refreshed together with SWC Next **`da1432ed`**. Rank is by median wall time within each shared-ESTree track, including the direct-ast baseline; unsupported implementations and native ASTs are excluded. Close or overlapping results can change order between runs.
+
+| Track | SWC rank | SWC ms | Oxc Visitor ms | Fastest in this run |
+| :-- | --: | --: | --: | :-- |
+| styled-components / dense | **5/19** | 0.690 | 0.474 | direct-ast |
+| styled-components / sparse | **2/19** | 0.543 | 0.728 | direct-ast |
+| remove-debugger / dense | **3/19** | 0.221 | 0.169 | oxc-visitor |
+| remove-debugger / sparse | **2/19** | 0.323 | 0.297 | oxc-visitor |
+| rstest-coverage / runtime | **3/19** | 0.258 | 0.186 | oxc-visitor |
+| rstest-coverage / tooling | **3/19** | 0.226 | 0.169 | oxc-visitor |
+| i18n / original | **2/8** | 1.005 | 1.383 | direct-ast |
+| i18n / javascript | **3/17** | 0.762 | 0.596 | acorn-recursive |
+
+Three isolated processes per implementation/track; full editing-capable SWC `walk`, including hook setup.
+
 | Scenario | Work | Corpus | Results |
 | :-- | :-- | :-- | :-- |
 | Styled-components | Inject displayName / componentId | Generated JS; dense + sparse | [Details](docs/styled-components/README.md) |
@@ -73,11 +92,11 @@ The JavaScript compatibility track transforms the same modules before timing so 
 - **Timing:** isolated processes, sequential execution with rotated/reversed order. Edits: 3 processes × 8 warmups + 20 samples; i18n: 3 × 5 + 12. Preparation, external printing and checks are excluded; internal ts-morph text updates and tsquery.map printing/reparsing are included.
 - **Evidence:** [styled raw data](results/styled-components/latest.json), [debugger raw data](results/remove-debugger/latest.json), [coverage raw data](results/rstest-coverage/latest.json), [i18n raw data](results/i18n/latest.json) retain samples, source hashes, versions and whole-worker memory. Results are corpus-specific, not a universal performance ceiling.
 
-Apple M5 Max · darwin/arm64 · Node v24.20.0. Measured: styled 2026-10-12, debugger 2026-10-12, coverage 2026-10-12, i18n 2026-10-12. SWC Next uses the committed PR snapshot recorded in each result; no before/after variants.
+Apple M5 Max · darwin/arm64 · Node v24.20.0. Measured: styled 2026-10-15, debugger 2026-10-15, coverage 2026-10-15, i18n 2026-10-15. SWC Next uses the committed snapshot recorded in each result; no before/after variants.
 
 Fresh parser output is used for every iteration, without AST cloning. Earlier results through [8143bc9](https://github.com/SoonIter/visitor-benchmark/tree/8143bc994901c2321b31ad271c83bbcb6e5cf4ca) used cloned ASTs in editing and original-source i18n; do not interpret changes from those results as implementation speedups.
 
-The sync script vendors `@swc-next/walker` from PR #840; [source mapping](vendor/provenance.json) records its package paths. Package extraction did not change the three runtime files. Published results retain the commit actually measured.
+The vendored `@swc-next/walker` is pinned to `da1432ed` on `codex/optimize-js-walker`; [source mapping and hashes](vendor/provenance.json) identify the exact runtime. Published results record that same version.
 
 ## Run
 
