@@ -2,7 +2,7 @@
 
 [Overview](../../README.md) · [Raw samples](../../results/i18n/latest.json) · [Dependency versions](../../package.json)
 
-Benchmark implementation: `42ea237ea32fbc85dfdd74596a6b3c2fa7acd236`. Time is milliseconds per 64-file collection. Range is the minimum and maximum process median, not a confidence interval. Small overlapping differences should not be treated as stable winners.
+Benchmark implementation: `3853c51658388034f7aea7a38022ba333eabd916`. Time is milliseconds per 64-file collection. Range is the minimum and maximum process median, not a confidence interval. Small overlapping differences should not be treated as stable winners.
 
 ## Original TS / TSX
 
@@ -10,29 +10,29 @@ Benchmark implementation: `42ea237ea32fbc85dfdd74596a6b3c2fa7acd236`. Time is mi
 
 | Variant | Collection ms | Process-median range | Preparation ms | Peak RSS MiB | Observed heap MiB |
 | :-- | --: | :-- | --: | --: | --: |
-| direct-ast | 0.808 | 0.784–0.838 | 7.97 | 174.0 | 53.5 |
-| oxc-walker | 0.967 | 0.911–0.980 | 8.12 | 173.8 | 53.7 |
-| estree-walker | 1.010 | 0.999–1.059 | 8.05 | 173.6 | 53.6 |
-| oxc-visitor | 1.281 | 1.252–1.315 | 8.12 | 180.5 | 55.3 |
-| swc-next | 1.462 | 1.448–1.507 | 8.11 | 169.8 | 46.8 |
-| yuku-ast | 1.717 | 1.715–1.829 | 8.04 | 156.5 | 53.5 |
-| zimmerframe | 1.784 | 1.764–2.049 | 8.09 | 172.0 | 54.3 |
-| estree-util-visit | 6.100 | 5.846–6.113 | 7.99 | 222.9 | 84.9 |
+| direct-ast | 0.834 | 0.817–1.155 | 8.17 | 173.9 | 53.5 |
+| swc-next | 1.005 | 1.002–1.028 | 8.31 | 180.9 | 55.5 |
+| estree-walker | 1.086 | 1.040–1.231 | 8.35 | 173.6 | 53.6 |
+| oxc-walker | 1.122 | 0.979–1.358 | 8.64 | 174.1 | 53.7 |
+| oxc-visitor | 1.383 | 1.375–1.554 | 8.53 | 181.4 | 55.3 |
+| zimmerframe | 1.799 | 1.794–1.809 | 8.13 | 172.5 | 54.2 |
+| yuku-ast | 1.883 | 1.786–2.129 | 8.85 | 157.0 | 53.5 |
+| estree-util-visit | 6.298 | 6.033–6.433 | 8.61 | 222.8 | 84.9 |
 
 ### Native ASTs — not ESTree
 
 | Variant | Collection ms | Process-median range | Preparation ms | Peak RSS MiB | Observed heap MiB |
 | :-- | --: | :-- | --: | --: | --: |
-| typescript | 0.846 | 0.788–0.878 | 7.25 | 167.5 | 32.7 |
-| babel-types-traverse-fast-v8 | 0.990 | 0.990–1.068 | 6.72 | 109.8 | 23.9 |
-| babel-types-traverse-fast-v7 | 1.008 | 1.002–1.021 | 7.94 | 158.5 | 44.1 |
-| babel-types-traverse-v8 | 1.103 | 1.080–1.108 | 6.37 | 110.5 | 29.7 |
-| babel-traverse-no-scope-v8 | 4.618 | 4.549–4.673 | 9.05 | 340.2 | 162.0 |
-| babel-traverse-no-scope-v7 | 5.705 | 5.639–6.826 | 7.40 | 383.5 | 191.0 |
-| tsquery | 8.133 | 8.056–10.137 | 7.43 | 397.4 | 160.6 |
-| babel-traverse-v8 | 12.515 | 10.426–13.201 | 7.84 | 340.2 | 162.5 |
-| ts-morph | 13.863 | 13.774–13.896 | 11.33 | 405.3 | 189.0 |
-| babel-traverse-v7 | 17.660 | 16.942–19.303 | 6.82 | 373.7 | 170.2 |
+| typescript | 0.862 | 0.801–0.879 | 7.35 | 168.4 | 32.5 |
+| babel-types-traverse-fast-v8 | 0.977 | 0.966–1.087 | 6.61 | 111.6 | 23.8 |
+| babel-types-traverse-fast-v7 | 1.029 | 1.021–2.138 | 8.10 | 158.6 | 43.9 |
+| babel-types-traverse-v8 | 1.210 | 1.075–1.745 | 6.82 | 111.6 | 29.9 |
+| babel-traverse-no-scope-v8 | 5.255 | 5.016–8.333 | 9.33 | 340.6 | 161.9 |
+| babel-traverse-no-scope-v7 | 7.686 | 6.182–9.775 | 7.08 | 382.3 | 190.9 |
+| tsquery | 8.236 | 7.903–9.232 | 8.01 | 400.1 | 160.5 |
+| babel-traverse-v8 | 12.641 | 10.384–12.906 | 7.51 | 340.8 | 162.4 |
+| ts-morph | 14.425 | 14.085–15.509 | 12.39 | 407.2 | 189.0 |
+| babel-traverse-v7 | 19.515 | 18.245–26.883 | 6.93 | 373.2 | 172.0 |
 
 ## Pre-transpiled JavaScript
 
@@ -40,38 +40,38 @@ Benchmark implementation: `42ea237ea32fbc85dfdd74596a6b3c2fa7acd236`. Time is mi
 
 | Variant | Collection ms | Process-median range | Preparation ms | Peak RSS MiB | Observed heap MiB |
 | :-- | --: | :-- | --: | --: | --: |
-| acorn-recursive | 0.536 | 0.531–0.547 | 5.14 | 91.5 | 18.7 |
-| oxc-visitor | 0.589 | 0.571–0.608 | 5.16 | 95.4 | 15.3 |
-| swc-next | 0.712 | 0.700–0.719 | 5.14 | 93.3 | 14.2 |
-| esrecurse | 0.793 | 0.780–0.800 | 5.05 | 90.8 | 18.4 |
-| yuku-ast | 0.926 | 0.925–0.934 | 5.08 | 91.2 | 14.9 |
-| acorn-full | 0.972 | 0.964–0.982 | 5.27 | 90.2 | 18.7 |
-| acorn-simple | 1.041 | 1.040–1.049 | 5.12 | 90.5 | 18.7 |
-| typescript-eslint | 1.162 | 1.127–1.208 | 5.28 | 175.0 | 48.1 |
-| estraverse | 1.210 | 1.206–1.211 | 5.20 | 91.1 | 18.0 |
-| oxc-walker | 1.278 | 1.262–1.281 | 5.07 | 89.9 | 18.5 |
-| direct-ast | 1.549 | 1.540–1.553 | 5.26 | 90.2 | 13.1 |
-| zimmerframe | 1.559 | 1.521–1.563 | 5.25 | 90.8 | 17.8 |
-| estree-walker | 1.704 | 1.704–1.720 | 5.04 | 90.1 | 18.4 |
-| esquery | 2.166 | 2.134–2.218 | 5.20 | 91.4 | 19.2 |
-| estree-toolkit | 2.874 | 2.809–2.998 | 5.21 | 107.9 | 26.7 |
-| estree-toolkit-scope | 7.233 | 7.190–7.392 | 5.13 | 107.8 | 27.1 |
-| estree-util-visit | 9.390 | 9.366–9.705 | 5.45 | 103.4 | 25.8 |
+| acorn-recursive | 0.543 | 0.543–0.578 | 5.19 | 90.1 | 18.6 |
+| oxc-visitor | 0.596 | 0.593–0.949 | 5.14 | 95.7 | 15.3 |
+| swc-next | 0.762 | 0.755–1.242 | 5.60 | 92.3 | 14.5 |
+| esrecurse | 0.816 | 0.795–0.852 | 5.22 | 90.2 | 18.3 |
+| acorn-full | 0.958 | 0.941–1.089 | 5.12 | 90.7 | 18.7 |
+| yuku-ast | 1.023 | 0.968–1.058 | 5.56 | 91.4 | 15.0 |
+| acorn-simple | 1.109 | 1.045–1.171 | 5.04 | 90.3 | 18.6 |
+| typescript-eslint | 1.263 | 1.139–1.395 | 5.41 | 175.2 | 47.9 |
+| estraverse | 1.269 | 1.206–1.292 | 5.32 | 91.8 | 18.0 |
+| direct-ast | 1.572 | 1.558–1.652 | 5.08 | 90.3 | 13.2 |
+| oxc-walker | 1.616 | 1.364–1.645 | 6.92 | 90.6 | 18.5 |
+| zimmerframe | 1.648 | 1.640–1.731 | 5.51 | 90.6 | 17.9 |
+| estree-walker | 2.124 | 1.721–2.550 | 5.18 | 91.3 | 18.4 |
+| esquery | 2.364 | 2.214–2.673 | 5.40 | 92.0 | 19.2 |
+| estree-toolkit | 2.921 | 2.879–2.941 | 5.25 | 107.9 | 26.6 |
+| estree-toolkit-scope | 7.749 | 7.320–7.986 | 5.79 | 107.7 | 27.0 |
+| estree-util-visit | 9.873 | 9.334–13.568 | 5.56 | 105.0 | 25.7 |
 
 ### Native ASTs — not ESTree
 
 | Variant | Collection ms | Process-median range | Preparation ms | Peak RSS MiB | Observed heap MiB |
 | :-- | --: | :-- | --: | --: | --: |
-| typescript | 0.654 | 0.646–0.658 | 5.45 | 150.6 | 25.6 |
-| babel-types-traverse-fast-v7 | 0.766 | 0.763–0.777 | 4.12 | 164.8 | 51.0 |
-| babel-types-traverse-fast-v8 | 0.771 | 0.744–0.774 | 4.37 | 107.7 | 21.1 |
-| babel-types-traverse-v8 | 0.811 | 0.809–0.894 | 4.29 | 107.9 | 21.2 |
-| babel-traverse-no-scope-v8 | 3.524 | 3.521–3.570 | 4.61 | 350.3 | 171.9 |
-| babel-traverse-no-scope-v7 | 3.975 | 3.896–4.024 | 4.76 | 333.8 | 162.3 |
-| tsquery | 7.465 | 7.276–7.557 | 5.63 | 365.7 | 157.3 |
-| babel-traverse-v8 | 9.986 | 8.778–10.067 | 4.47 | 347.8 | 167.9 |
-| ts-morph | 10.875 | 10.649–11.197 | 9.32 | 389.2 | 159.9 |
-| babel-traverse-v7 | 17.099 | 16.773–17.141 | 5.85 | 380.2 | 187.6 |
+| typescript | 0.703 | 0.676–0.736 | 5.70 | 167.1 | 28.5 |
+| babel-types-traverse-fast-v8 | 0.772 | 0.752–1.035 | 4.37 | 107.8 | 21.1 |
+| babel-types-traverse-fast-v7 | 0.839 | 0.807–0.978 | 4.76 | 164.9 | 50.9 |
+| babel-types-traverse-v8 | 0.946 | 0.811–1.069 | 4.78 | 108.3 | 21.1 |
+| babel-traverse-no-scope-v8 | 3.492 | 3.446–3.787 | 4.57 | 350.7 | 171.9 |
+| babel-traverse-no-scope-v7 | 4.640 | 4.370–5.411 | 5.22 | 334.8 | 162.2 |
+| tsquery | 7.292 | 7.188–8.965 | 5.88 | 368.6 | 157.4 |
+| babel-traverse-v8 | 10.595 | 10.238–10.816 | 4.78 | 348.7 | 167.9 |
+| ts-morph | 11.071 | 10.826–13.770 | 10.10 | 388.9 | 159.7 |
+| babel-traverse-v7 | 17.253 | 17.028–17.785 | 6.24 | 380.6 | 187.8 |
 
 ## Compatibility failures
 
@@ -87,12 +87,12 @@ These are failures of the installed API on this shared AST and collection contra
 | estree-toolkit | original | Ordered output mismatch: expected 11 matches, received 10 |
 | estree-toolkit-scope | original | identifierCrawlers.AssignmentPattern is not implemented |
 | ast-types | original | did not recognize object of type "PropertyDefinition" |
+| ast-types | javascript | did not recognize object of type "PropertyDefinition" |
 | jscodeshift | original | did not recognize object of type "PropertyDefinition" |
+| jscodeshift | javascript | did not recognize object of type "PropertyDefinition" |
 | esquery | original | Ordered output mismatch: expected 11 matches, received 10 |
 | typescript-eslint | original | Ordered output mismatch: expected 2 matches, received 0 |
 | swc-visitor | original | Public contract fixture: ordered output differs from Babel |
-| ast-types | javascript | did not recognize object of type "PropertyDefinition" |
-| jscodeshift | javascript | did not recognize object of type "PropertyDefinition" |
 | swc-visitor | javascript | Public contract fixture: ordered output differs from Babel |
 
 ## Interpretation

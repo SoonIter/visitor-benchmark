@@ -23,19 +23,19 @@ Case names identify the API and Babel major version: the **babel-traverse** pref
 
 ## Results
 
-**direct-ast leads the shared-ESTree original-source group at 0.808 ms / 64 files.** AST families are ranked separately: a native-AST result measures its tree layout as well as its traversal API.
+**direct-ast leads the shared-ESTree original-source group at 0.834 ms / 64 files.** AST families are ranked separately: a native-AST result measures its tree layout as well as its traversal API.
 
-For the existing Babel loader, the smallest measured changes are **`noScope: true` (3.1×)** or **`@babel/types.traverseFast` (17.5×)**, relative to its installed Babel 7.27.3 traverse. These are collection-stage speedups, not loader/build speedups.
+For the existing Babel loader, the smallest measured changes are **`noScope: true` (2.5×)** or **`@babel/types.traverseFast` (19.0×)**, relative to its installed Babel 7.27.3 traverse. These are collection-stage speedups, not loader/build speedups.
 
 | Original TS/TSX | AST | Collection, ms |
 | :-- | :-- | --: |
-| direct-ast | ESTree | 0.808 |
-| oxc-walker | ESTree | 0.967 |
-| swc-next | ESTree | 1.462 |
-| yuku-ast | ESTree | 1.717 |
-| babel-traverse-v7 | Babel 7 AST (not ESTree) | 17.660 |
-| babel-traverse-no-scope-v7 | Babel 7 AST (not ESTree) | 5.705 |
-| babel-types-traverse-fast-v7 | Babel 7 AST (not ESTree) | 1.008 |
+| direct-ast | ESTree | 0.834 |
+| oxc-walker | ESTree | 1.122 |
+| swc-next | ESTree | 1.005 |
+| yuku-ast | ESTree | 1.883 |
+| babel-traverse-v7 | Babel 7 AST (not ESTree) | 19.515 |
+| babel-traverse-no-scope-v7 | Babel 7 AST (not ESTree) | 7.686 |
+| babel-types-traverse-fast-v7 | Babel 7 AST (not ESTree) | 1.029 |
 
 Each chart groups one AST family. Left: original TS/TSX; right: the same modules pre-transpiled to ES2022 JavaScript. Implementation rows align across panels. Unsupported combinations show a label, never a zero-valued bar; implementations unsupported in both tracks are listed in the compatibility report.
 
@@ -57,7 +57,7 @@ The JavaScript compatibility track expands coverage to JS-only walkers. Transpil
 - Ordered arrays are checked against the Babel oracle per file, every iteration. The oracle was also checked against the business repository's installed Babel 7.27.3. Unsupported or mismatching implementations are excluded, not assigned zero time.
 - Corpus parity is not universal Babel compatibility. In particular, ESTree `Literal` includes directive strings, while Babel `StringLiteral` excludes directives. The actual dictionary/corpus passes; adapting arbitrary future inputs needs a separate semantic audit.
 
-These measurements use SWC Next snapshot **`c9a29d6`** ([vendored source](../../vendor/swc-next)). No before/after variants. `direct-ast` recursively inspects AST properties itself, with no package visitor or visitor-key table; it does not assume top-level declarations. The removed `handwritten` case is not restored.
+These measurements use SWC Next snapshot **`da1432e`** ([vendored source](../../vendor/swc-next)). No before/after variants. `direct-ast` recursively inspects AST properties itself, with no package visitor or visitor-key table; it does not assume top-level declarations. The removed `handwritten` case is not restored.
 
 Fresh parser output is used for every iteration, without AST cloning. Earlier results through [8143bc9](https://github.com/SoonIter/visitor-benchmark/tree/8143bc994901c2321b31ad271c83bbcb6e5cf4ca) used cloned ASTs in editing and original-source i18n; do not interpret changes from those results as implementation speedups.
 

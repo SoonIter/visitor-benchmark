@@ -29,7 +29,7 @@ Native Babel, SWC and TypeScript ASTs are **not ESTree**. Their chart includes A
 - The direct-ast baseline is specialized to this corpus. Other implementations use their package traversal; not all perform identical work, such as scope analysis or wrapper bookkeeping.
 - Every measured output is printed and reparsed, then compared structurally with independently authored expected source. Counts and cross-process input/output hashes must agree.
 - babel-traverse / babel-traverse-no-scope use @babel/traverse 8; babel-types-traverse-fast uses @babel/types.traverseFast; babel-types-traverse uses @babel/types.traverse. Exact versions are in raw results.
-- SWC Next: `c9a29d6` ([vendored source](../../vendor/swc-next)). One pinned implementation; no before/after variants.
+- SWC Next: `da1432e` ([vendored source](../../vendor/swc-next)). One pinned implementation; no before/after variants.
 
 ## Reproduce
 
@@ -40,4 +40,4 @@ npm run bench -- styled-components
 PYTHON=.cache/charts-venv/bin/python npm run report
 ```
 
-Use `--quick` for smoke checks; these write quick.json and never overwrite published results. Charts use recorded data only. Measured 2026-10-14 on Apple M5 Max, darwin/arm64, Node v24.20.0.
+Use `--quick` for smoke checks; these write quick.json and never overwrite published results. Charts use recorded data only. Measured 2026-10-15 on Apple M5 Max, darwin/arm64, Node v24.20.0.

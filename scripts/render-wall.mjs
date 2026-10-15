@@ -2,20 +2,52 @@ import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync } from 'node:fs';
 import { scenarios } from '../src/scenarios.mjs';
 const root = new URL('../', import.meta.url);
+const styled = JSON.parse(readFileSync(new URL('results/styled-components/latest.json', root)));
+const removal = JSON.parse(readFileSync(new URL('results/remove-debugger/latest.json', root)));
+const i18n = JSON.parse(readFileSync(new URL('results/i18n/latest.json', root)));
+const coverage = JSON.parse(readFileSync(new URL('results/rstest-coverage/latest.json', root)));
+const swcSource = JSON.parse(readFileSync(new URL('vendor/provenance.json', root)));
+for (const data of [styled, removal, coverage, i18n]) {
+  const measured = data.provenance ?? data.swcNext;
+  if (measured.commit !== swcSource.commit || JSON.stringify(measured.sha256) !== JSON.stringify(swcSource.sha256)) {
+    throw new Error('Refresh all scenarios before publishing the current SWC ranking');
+  }
+}
 for (const scenario of scenarios) {
   execFileSync(process.execPath, scenario.runner === 'mutation'
     ? [new URL('shared/render.mjs', import.meta.url).pathname, scenario.id]
     : [new URL('i18n/render.mjs', import.meta.url).pathname], { stdio: 'inherit' });
 }
-const styled = JSON.parse(readFileSync(new URL('results/styled-components/latest.json', root)));
-const removal = JSON.parse(readFileSync(new URL('results/remove-debugger/latest.json', root)));
-const i18n = JSON.parse(readFileSync(new URL('results/i18n/latest.json', root)));
-const coverage = JSON.parse(readFileSync(new URL('results/rstest-coverage/latest.json', root)));
+const rankingRows = [];
+for (const scenario of scenarios) {
+  const summary = JSON.parse(readFileSync(new URL(`results/${scenario.id}/summary.json`, root)));
+  const rows = (Array.isArray(summary) ? summary : summary.rows)
+    .filter(row => row.ast === 'ESTree')
+    .map(row => ({ ...row, time: row.ms ?? row.medianMs }));
+  const kinds = scenario.id === 'i18n' ? ['original', 'javascript'] : [...new Set(rows.map(row => row.kind))];
+  for (const kind of kinds) {
+    const ranked = rows.filter(row => row.kind === kind).sort((a, b) => a.time - b.time);
+    const index = ranked.findIndex(row => row.id === 'swc-next');
+    if (index === -1) throw new Error(`Missing SWC result: ${scenario.id}/${kind}`);
+    const swc = ranked[index], oxc = ranked.find(row => row.id === 'oxc-visitor');
+    rankingRows.push(`| ${scenario.id} / ${kind} | **${index + 1}/${ranked.length}** | ${swc.time.toFixed(3)} | ${oxc.time.toFixed(3)} | ${ranked[0].id} |`);
+  }
+}
 const overview = `# JavaScript AST traversal benchmarks
 
 **Four concrete tasks. Same AST within each ESTree track. Validated output on every measured iteration.**
 
-Normal-JIT wall time is the primary metric. [SWC Next optimization and ranking verification](docs/walker-walltime.md) · [Archived Ir/Ct study](docs/cpu/README.md).
+Normal-JIT wall time is the primary metric. [V8 optimization evidence](docs/v8-walker.md) · [Follow-up experiments](docs/v8-hooks.md) · [Archived Ir/Ct study](docs/cpu/README.md).
+
+## Latest SWC Next ranking
+
+All charts below were refreshed together with SWC Next **\`${swcSource.commit.slice(0, 8)}\`**. Rank is by median wall time within each shared-ESTree track, including the direct-ast baseline; unsupported implementations and native ASTs are excluded. Close or overlapping results can change order between runs.
+
+| Track | SWC rank | SWC ms | Oxc Visitor ms | Fastest in this run |
+| :-- | --: | --: | --: | :-- |
+${rankingRows.join('\n')}
+
+Three isolated processes per implementation/track; full editing-capable SWC \`walk\`, including hook setup. The separate seven-round V8 study compares fixed SWC/Oxc versions; its timings are not mixed into this leaderboard.
 
 | Scenario | Work | Corpus | Results |
 | :-- | :-- | :-- | :-- |
@@ -88,11 +120,11 @@ The JavaScript compatibility track transforms the same modules before timing so 
 - **Timing:** isolated processes, sequential execution with rotated/reversed order. Edits: ${styled.config.repetitions} processes × ${styled.config.warmups} warmups + ${styled.config.iterations} samples; i18n: ${i18n.repeats} × ${i18n.warmups} + ${i18n.iterations}. Preparation, external printing and checks are excluded; internal ts-morph text updates and tsquery.map printing/reparsing are included.
 - **Evidence:** [styled raw data](results/styled-components/latest.json), [debugger raw data](results/remove-debugger/latest.json), [coverage raw data](results/rstest-coverage/latest.json), [i18n raw data](results/i18n/latest.json) retain samples, source hashes, versions and whole-worker memory. Results are corpus-specific, not a universal performance ceiling.
 
-${styled.environment.cpu} · ${styled.environment.platform}/${styled.environment.arch} · Node ${styled.environment.node}. Measured: styled ${styled.createdAt.slice(0,10)}, debugger ${removal.createdAt.slice(0,10)}, coverage ${coverage.createdAt.slice(0,10)}, i18n ${i18n.timestamp.slice(0,10)}. SWC Next uses the committed PR snapshot recorded in each result; no before/after variants.
+${styled.environment.cpu} · ${styled.environment.platform}/${styled.environment.arch} · Node ${styled.environment.node}. Measured: styled ${styled.createdAt.slice(0,10)}, debugger ${removal.createdAt.slice(0,10)}, coverage ${coverage.createdAt.slice(0,10)}, i18n ${i18n.timestamp.slice(0,10)}. SWC Next uses the committed snapshot recorded in each result; no before/after variants.
 
 Fresh parser output is used for every iteration, without AST cloning. Earlier results through [8143bc9](https://github.com/SoonIter/visitor-benchmark/tree/8143bc994901c2321b31ad271c83bbcb6e5cf4ca) used cloned ASTs in editing and original-source i18n; do not interpret changes from those results as implementation speedups.
 
-The sync script vendors \`@swc-next/walker\` from PR #840; [source mapping](vendor/provenance.json) records its package paths. Package extraction did not change the three runtime files. Published results retain the commit actually measured.
+The vendored \`@swc-next/walker\` is pinned to \`${swcSource.commit.slice(0, 8)}\` on \`${swcSource.branch}\`; [source mapping and hashes](vendor/provenance.json) identify the exact runtime. Published results record that same version. Historical studies retain their original snapshots.
 
 ## Run
 
