@@ -2,7 +2,7 @@
 
 **Four concrete tasks. Same AST within each ESTree track. Validated output on every measured iteration.**
 
-Normal-JIT wall time is the primary metric. [SWC Next optimization and ranking verification](docs/walker-walltime.md) · [Archived Ir/Ct study](docs/cpu/README.md) · [Oxc target study: no candidate adopted](docs/oxc-target.md).
+Normal-JIT wall time is the primary metric. [SWC Next optimization and ranking verification](docs/walker-walltime.md) · [Archived Ir/Ct study](docs/cpu/README.md) · [Earlier Oxc target study](docs/oxc-target.md) · [V8-guided optimization: current SWC vs Oxc](docs/v8-walker.md).
 
 | Scenario | Work | Corpus | Results |
 | :-- | :-- | :-- | :-- |

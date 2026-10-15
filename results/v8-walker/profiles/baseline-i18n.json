@@ -1,0 +1,368 @@
+{
+  "scenario": "i18n",
+  "id": "swc-next",
+  "kind": "original",
+  "node": "v24.20.0",
+  "v8": "13.6.233.17-node.53",
+  "rounds": 40,
+  "totalSampledUs": 75958,
+  "self": [
+    {
+      "functionName": "visit",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/index.js",
+      "lineNumber": 328,
+      "samples": 415,
+      "us": 52745
+    },
+    {
+      "functionName": "walkIdentifier",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1515,
+      "samples": 23,
+      "us": 2917
+    },
+    {
+      "functionName": "visitScalar",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/index.js",
+      "lineNumber": 310,
+      "samples": 17,
+      "us": 2167
+    },
+    {
+      "functionName": "visitList",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/index.js",
+      "lineNumber": 317,
+      "samples": 16,
+      "us": 2125
+    },
+    {
+      "functionName": "Literal",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/i18n/plugins/swc-next.mjs",
+      "lineNumber": 3,
+      "samples": 12,
+      "us": 1709
+    },
+    {
+      "functionName": "walkEnter",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/index.js",
+      "lineNumber": 125,
+      "samples": 10,
+      "us": 1375
+    },
+    {
+      "functionName": "walkCallExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1297,
+      "samples": 10,
+      "us": 1209
+    },
+    {
+      "functionName": "compile",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/index.js",
+      "lineNumber": 46,
+      "samples": 6,
+      "us": 959
+    },
+    {
+      "functionName": "walkBlockStatement",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1283,
+      "samples": 5,
+      "us": 751
+    },
+    {
+      "functionName": "walkObjectExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1733,
+      "samples": 6,
+      "us": 750
+    },
+    {
+      "functionName": "walkMemberExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1693,
+      "samples": 5,
+      "us": 708
+    },
+    {
+      "functionName": "walkArrowFunctionExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1232,
+      "samples": 4,
+      "us": 501
+    },
+    {
+      "functionName": "walkImportSpecifier",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1578,
+      "samples": 3,
+      "us": 458
+    },
+    {
+      "functionName": "add",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/index.js",
+      "lineNumber": 52,
+      "samples": 3,
+      "us": 417
+    },
+    {
+      "functionName": "walkVariableDeclarator",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 2442,
+      "samples": 3,
+      "us": 417
+    },
+    {
+      "functionName": "walkTSTypeParameterInstantiation",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 2342,
+      "samples": 3,
+      "us": 416
+    },
+    {
+      "functionName": "walkJSXAttribute",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1587,
+      "samples": 3,
+      "us": 375
+    },
+    {
+      "functionName": "walkObjectPattern",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1740,
+      "samples": 3,
+      "us": 375
+    },
+    {
+      "functionName": "walkVariableDeclaration",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 2435,
+      "samples": 3,
+      "us": 375
+    },
+    {
+      "functionName": "walkJSXElement",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1603,
+      "samples": 3,
+      "us": 375
+    },
+    {
+      "functionName": "walkTSTypeAnnotation",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 2294,
+      "samples": 2,
+      "us": 292
+    },
+    {
+      "functionName": "walkLogicalExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1684,
+      "samples": 2,
+      "us": 292
+    },
+    {
+      "functionName": "walkTSPropertySignature",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 2233,
+      "samples": 2,
+      "us": 291
+    },
+    {
+      "functionName": "walkTSNonNullExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 2203,
+      "samples": 2,
+      "us": 291
+    },
+    {
+      "functionName": "walkJSXFragment",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1621,
+      "samples": 2,
+      "us": 250
+    },
+    {
+      "functionName": "WalkContext",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/index.js",
+      "lineNumber": 135,
+      "samples": 2,
+      "us": 250
+    },
+    {
+      "functionName": "walkParenthesizedExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1751,
+      "samples": 2,
+      "us": 209
+    },
+    {
+      "functionName": "walkJSXExpressionContainer",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1614,
+      "samples": 2,
+      "us": 208
+    },
+    {
+      "functionName": "walkJSXClosingElement",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1596,
+      "samples": 1,
+      "us": 167
+    },
+    {
+      "functionName": "#prepare",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/index.js",
+      "lineNumber": 299,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkExpressionStatement",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1443,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkTSInterfaceBody",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 2088,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkJSXOpeningElement",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1650,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkCatchClause",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1308,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "reset",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/index.js",
+      "lineNumber": 287,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkBinaryExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1274,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkTSTypePredicate",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 2349,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "owns",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/index.js",
+      "lineNumber": 25,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkReturnStatement",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1798,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkTSUnionType",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 2376,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkSwitchStatement",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1835,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkTSArrayType",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1881,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkTSTypeAliasDeclaration",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 2283,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkImportDeclaration",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1544,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkAssignmentExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1245,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "WalkContext",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/index.js",
+      "lineNumber": 157,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkProperty",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1765,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkProgram",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1758,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkNewExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 1722,
+      "samples": 1,
+      "us": 125
+    },
+    {
+      "functionName": "walkTSTypeReference",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 2367,
+      "samples": 1,
+      "us": 42
+    },
+    {
+      "functionName": "walkTemplateLiteral",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/results/oxc-target/baseline/child-visitors.js",
+      "lineNumber": 2394,
+      "samples": 1,
+      "us": 42
+    }
+  ]
+}

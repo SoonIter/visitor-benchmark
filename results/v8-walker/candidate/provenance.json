@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/swc-project/swc-next",
+  "commit": "da1432ed7c1e5ac6499ca54009e3a9f74e8c2e8f",
+  "branch": "codex/optimize-js-walker",
+  "sha256": {
+    "index.js": "5eed44ede0ea6df6416b5c3d42488af128cf3a1e821c58e23b4e673c6b5919f0",
+    "child-visitors.js": "66fb4ac7c051d32cc68ed6bcd04e5702dcba1a8864b8d94866ee2882d647dabd",
+    "visitor-keys.js": "5e9aa3076a3beda6be1007e72202b3489f3e0b04793ee93c36095bdd6dad4a7f"
+  }
+}

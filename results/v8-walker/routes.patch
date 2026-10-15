@@ -1,0 +1,1588 @@
+diff --git a/packages/walker/child-visitors.js b/packages/walker/child-visitors.js
+index 96da93cb..904e3079 100644
+--- a/packages/walker/child-visitors.js
++++ b/packages/walker/child-visitors.js
+@@ -2473,3 +2473,1497 @@ function walkYieldExpression(node, walker, parent, key, list, index) {
+   if (node.type !== "YieldExpression") return walker.leaveChanged(node, parent, key, list, index);
+   return index;
+ }
++
++export const nodeTypeIds = {
++  AccessorProperty: 0,
++  ArrayExpression: 1,
++  ArrayPattern: 2,
++  ArrowFunctionExpression: 3,
++  AssignmentExpression: 4,
++  AssignmentPattern: 5,
++  AwaitExpression: 6,
++  BinaryExpression: 7,
++  BlockStatement: 8,
++  BreakStatement: 9,
++  CallExpression: 10,
++  CatchClause: 11,
++  ChainExpression: 12,
++  ClassBody: 13,
++  ClassDeclaration: 14,
++  ClassExpression: 15,
++  ConditionalExpression: 16,
++  ContinueStatement: 17,
++  DebuggerStatement: 18,
++  Decorator: 19,
++  DoWhileStatement: 20,
++  EmptyStatement: 21,
++  ExportAllDeclaration: 22,
++  ExportDefaultDeclaration: 23,
++  ExportNamedDeclaration: 24,
++  ExportSpecifier: 25,
++  ExpressionStatement: 26,
++  ForInStatement: 27,
++  ForOfStatement: 28,
++  ForStatement: 29,
++  FunctionDeclaration: 30,
++  FunctionExpression: 31,
++  Hashbang: 32,
++  Identifier: 33,
++  IfStatement: 34,
++  ImportAttribute: 35,
++  ImportDeclaration: 36,
++  ImportDefaultSpecifier: 37,
++  ImportExpression: 38,
++  ImportNamespaceSpecifier: 39,
++  ImportSpecifier: 40,
++  JSXAttribute: 41,
++  JSXClosingElement: 42,
++  JSXClosingFragment: 43,
++  JSXElement: 44,
++  JSXEmptyExpression: 45,
++  JSXExpressionContainer: 46,
++  JSXFragment: 47,
++  JSXIdentifier: 48,
++  JSXMemberExpression: 49,
++  JSXNamespacedName: 50,
++  JSXOpeningElement: 51,
++  JSXOpeningFragment: 52,
++  JSXSpreadAttribute: 53,
++  JSXSpreadChild: 54,
++  JSXText: 55,
++  LabeledStatement: 56,
++  Literal: 57,
++  LogicalExpression: 58,
++  MemberExpression: 59,
++  MetaProperty: 60,
++  MethodDefinition: 61,
++  NewExpression: 62,
++  ObjectExpression: 63,
++  ObjectPattern: 64,
++  ParenthesizedExpression: 65,
++  PrivateIdentifier: 66,
++  Program: 67,
++  Property: 68,
++  PropertyDefinition: 69,
++  RestElement: 70,
++  ReturnStatement: 71,
++  SequenceExpression: 72,
++  SpreadElement: 73,
++  StaticBlock: 74,
++  Super: 75,
++  SwitchCase: 76,
++  SwitchStatement: 77,
++  TSAbstractAccessorProperty: 78,
++  TSAbstractMethodDefinition: 79,
++  TSAbstractPropertyDefinition: 80,
++  TSAnyKeyword: 81,
++  TSArrayType: 82,
++  TSAsExpression: 83,
++  TSBigIntKeyword: 84,
++  TSBooleanKeyword: 85,
++  TSCallSignatureDeclaration: 86,
++  TSClassImplements: 87,
++  TSConditionalType: 88,
++  TSConstructSignatureDeclaration: 89,
++  TSConstructorType: 90,
++  TSDeclareFunction: 91,
++  TSEmptyBodyFunctionExpression: 92,
++  TSEnumBody: 93,
++  TSEnumDeclaration: 94,
++  TSEnumMember: 95,
++  TSExportAssignment: 96,
++  TSExternalModuleReference: 97,
++  TSFunctionType: 98,
++  TSImportEqualsDeclaration: 99,
++  TSImportType: 100,
++  TSIndexSignature: 101,
++  TSIndexedAccessType: 102,
++  TSInferType: 103,
++  TSInstantiationExpression: 104,
++  TSInterfaceBody: 105,
++  TSInterfaceDeclaration: 106,
++  TSInterfaceHeritage: 107,
++  TSIntersectionType: 108,
++  TSIntrinsicKeyword: 109,
++  TSJSDocNonNullableType: 110,
++  TSJSDocNullableType: 111,
++  TSJSDocUnknownType: 112,
++  TSLiteralType: 113,
++  TSMappedType: 114,
++  TSMethodSignature: 115,
++  TSModuleBlock: 116,
++  TSModuleDeclaration: 117,
++  TSNamedTupleMember: 118,
++  TSNamespaceExportDeclaration: 119,
++  TSNeverKeyword: 120,
++  TSNonNullExpression: 121,
++  TSNullKeyword: 122,
++  TSNumberKeyword: 123,
++  TSObjectKeyword: 124,
++  TSOptionalType: 125,
++  TSParameterProperty: 126,
++  TSParenthesizedType: 127,
++  TSPropertySignature: 128,
++  TSQualifiedName: 129,
++  TSRestType: 130,
++  TSSatisfiesExpression: 131,
++  TSStringKeyword: 132,
++  TSSymbolKeyword: 133,
++  TSTemplateLiteralType: 134,
++  TSThisType: 135,
++  TSTupleType: 136,
++  TSTypeAliasDeclaration: 137,
++  TSTypeAnnotation: 138,
++  TSTypeAssertion: 139,
++  TSTypeLiteral: 140,
++  TSTypeOperator: 141,
++  TSTypeParameter: 142,
++  TSTypeParameterDeclaration: 143,
++  TSTypeParameterInstantiation: 144,
++  TSTypePredicate: 145,
++  TSTypeQuery: 146,
++  TSTypeReference: 147,
++  TSUndefinedKeyword: 148,
++  TSUnionType: 149,
++  TSUnknownKeyword: 150,
++  TSVoidKeyword: 151,
++  TaggedTemplateExpression: 152,
++  TemplateElement: 153,
++  TemplateLiteral: 154,
++  ThisExpression: 155,
++  ThrowStatement: 156,
++  TryStatement: 157,
++  UnaryExpression: 158,
++  UpdateExpression: 159,
++  VariableDeclaration: 160,
++  VariableDeclarator: 161,
++  WhileStatement: 162,
++  WithStatement: 163,
++  YieldExpression: 164,
++};
++
++export function dispatchNode(node, walker, parent, key, list, index, routes) {
++  switch (node.type) {
++    case "AccessorProperty": return routeAccessorProperty(node, walker, parent, key, list, index, routes);
++    case "ArrayExpression": return routeArrayExpression(node, walker, parent, key, list, index, routes);
++    case "ArrayPattern": return routeArrayPattern(node, walker, parent, key, list, index, routes);
++    case "ArrowFunctionExpression": return routeArrowFunctionExpression(node, walker, parent, key, list, index, routes);
++    case "AssignmentExpression": return routeAssignmentExpression(node, walker, parent, key, list, index, routes);
++    case "AssignmentPattern": return routeAssignmentPattern(node, walker, parent, key, list, index, routes);
++    case "AwaitExpression": return routeAwaitExpression(node, walker, parent, key, list, index, routes);
++    case "BinaryExpression": return routeBinaryExpression(node, walker, parent, key, list, index, routes);
++    case "BlockStatement": return routeBlockStatement(node, walker, parent, key, list, index, routes);
++    case "BreakStatement": return routeBreakStatement(node, walker, parent, key, list, index, routes);
++    case "CallExpression": return routeCallExpression(node, walker, parent, key, list, index, routes);
++    case "CatchClause": return routeCatchClause(node, walker, parent, key, list, index, routes);
++    case "ChainExpression": return routeChainExpression(node, walker, parent, key, list, index, routes);
++    case "ClassBody": return routeClassBody(node, walker, parent, key, list, index, routes);
++    case "ClassDeclaration": return routeClassDeclaration(node, walker, parent, key, list, index, routes);
++    case "ClassExpression": return routeClassExpression(node, walker, parent, key, list, index, routes);
++    case "ConditionalExpression": return routeConditionalExpression(node, walker, parent, key, list, index, routes);
++    case "ContinueStatement": return routeContinueStatement(node, walker, parent, key, list, index, routes);
++    case "DebuggerStatement": return routeDebuggerStatement(node, walker, parent, key, list, index, routes);
++    case "Decorator": return routeDecorator(node, walker, parent, key, list, index, routes);
++    case "DoWhileStatement": return routeDoWhileStatement(node, walker, parent, key, list, index, routes);
++    case "EmptyStatement": return routeEmptyStatement(node, walker, parent, key, list, index, routes);
++    case "ExportAllDeclaration": return routeExportAllDeclaration(node, walker, parent, key, list, index, routes);
++    case "ExportDefaultDeclaration": return routeExportDefaultDeclaration(node, walker, parent, key, list, index, routes);
++    case "ExportNamedDeclaration": return routeExportNamedDeclaration(node, walker, parent, key, list, index, routes);
++    case "ExportSpecifier": return routeExportSpecifier(node, walker, parent, key, list, index, routes);
++    case "ExpressionStatement": return routeExpressionStatement(node, walker, parent, key, list, index, routes);
++    case "ForInStatement": return routeForInStatement(node, walker, parent, key, list, index, routes);
++    case "ForOfStatement": return routeForOfStatement(node, walker, parent, key, list, index, routes);
++    case "ForStatement": return routeForStatement(node, walker, parent, key, list, index, routes);
++    case "FunctionDeclaration": return routeFunctionDeclaration(node, walker, parent, key, list, index, routes);
++    case "FunctionExpression": return routeFunctionExpression(node, walker, parent, key, list, index, routes);
++    case "Hashbang": return routeHashbang(node, walker, parent, key, list, index, routes);
++    case "Identifier": return routeIdentifier(node, walker, parent, key, list, index, routes);
++    case "IfStatement": return routeIfStatement(node, walker, parent, key, list, index, routes);
++    case "ImportAttribute": return routeImportAttribute(node, walker, parent, key, list, index, routes);
++    case "ImportDeclaration": return routeImportDeclaration(node, walker, parent, key, list, index, routes);
++    case "ImportDefaultSpecifier": return routeImportDefaultSpecifier(node, walker, parent, key, list, index, routes);
++    case "ImportExpression": return routeImportExpression(node, walker, parent, key, list, index, routes);
++    case "ImportNamespaceSpecifier": return routeImportNamespaceSpecifier(node, walker, parent, key, list, index, routes);
++    case "ImportSpecifier": return routeImportSpecifier(node, walker, parent, key, list, index, routes);
++    case "JSXAttribute": return routeJSXAttribute(node, walker, parent, key, list, index, routes);
++    case "JSXClosingElement": return routeJSXClosingElement(node, walker, parent, key, list, index, routes);
++    case "JSXClosingFragment": return routeJSXClosingFragment(node, walker, parent, key, list, index, routes);
++    case "JSXElement": return routeJSXElement(node, walker, parent, key, list, index, routes);
++    case "JSXEmptyExpression": return routeJSXEmptyExpression(node, walker, parent, key, list, index, routes);
++    case "JSXExpressionContainer": return routeJSXExpressionContainer(node, walker, parent, key, list, index, routes);
++    case "JSXFragment": return routeJSXFragment(node, walker, parent, key, list, index, routes);
++    case "JSXIdentifier": return routeJSXIdentifier(node, walker, parent, key, list, index, routes);
++    case "JSXMemberExpression": return routeJSXMemberExpression(node, walker, parent, key, list, index, routes);
++    case "JSXNamespacedName": return routeJSXNamespacedName(node, walker, parent, key, list, index, routes);
++    case "JSXOpeningElement": return routeJSXOpeningElement(node, walker, parent, key, list, index, routes);
++    case "JSXOpeningFragment": return routeJSXOpeningFragment(node, walker, parent, key, list, index, routes);
++    case "JSXSpreadAttribute": return routeJSXSpreadAttribute(node, walker, parent, key, list, index, routes);
++    case "JSXSpreadChild": return routeJSXSpreadChild(node, walker, parent, key, list, index, routes);
++    case "JSXText": return routeJSXText(node, walker, parent, key, list, index, routes);
++    case "LabeledStatement": return routeLabeledStatement(node, walker, parent, key, list, index, routes);
++    case "Literal": return routeLiteral(node, walker, parent, key, list, index, routes);
++    case "LogicalExpression": return routeLogicalExpression(node, walker, parent, key, list, index, routes);
++    case "MemberExpression": return routeMemberExpression(node, walker, parent, key, list, index, routes);
++    case "MetaProperty": return routeMetaProperty(node, walker, parent, key, list, index, routes);
++    case "MethodDefinition": return routeMethodDefinition(node, walker, parent, key, list, index, routes);
++    case "NewExpression": return routeNewExpression(node, walker, parent, key, list, index, routes);
++    case "ObjectExpression": return routeObjectExpression(node, walker, parent, key, list, index, routes);
++    case "ObjectPattern": return routeObjectPattern(node, walker, parent, key, list, index, routes);
++    case "ParenthesizedExpression": return routeParenthesizedExpression(node, walker, parent, key, list, index, routes);
++    case "PrivateIdentifier": return routePrivateIdentifier(node, walker, parent, key, list, index, routes);
++    case "Program": return routeProgram(node, walker, parent, key, list, index, routes);
++    case "Property": return routeProperty(node, walker, parent, key, list, index, routes);
++    case "PropertyDefinition": return routePropertyDefinition(node, walker, parent, key, list, index, routes);
++    case "RestElement": return routeRestElement(node, walker, parent, key, list, index, routes);
++    case "ReturnStatement": return routeReturnStatement(node, walker, parent, key, list, index, routes);
++    case "SequenceExpression": return routeSequenceExpression(node, walker, parent, key, list, index, routes);
++    case "SpreadElement": return routeSpreadElement(node, walker, parent, key, list, index, routes);
++    case "StaticBlock": return routeStaticBlock(node, walker, parent, key, list, index, routes);
++    case "Super": return routeSuper(node, walker, parent, key, list, index, routes);
++    case "SwitchCase": return routeSwitchCase(node, walker, parent, key, list, index, routes);
++    case "SwitchStatement": return routeSwitchStatement(node, walker, parent, key, list, index, routes);
++    case "TSAbstractAccessorProperty": return routeTSAbstractAccessorProperty(node, walker, parent, key, list, index, routes);
++    case "TSAbstractMethodDefinition": return routeTSAbstractMethodDefinition(node, walker, parent, key, list, index, routes);
++    case "TSAbstractPropertyDefinition": return routeTSAbstractPropertyDefinition(node, walker, parent, key, list, index, routes);
++    case "TSAnyKeyword": return routeTSAnyKeyword(node, walker, parent, key, list, index, routes);
++    case "TSArrayType": return routeTSArrayType(node, walker, parent, key, list, index, routes);
++    case "TSAsExpression": return routeTSAsExpression(node, walker, parent, key, list, index, routes);
++    case "TSBigIntKeyword": return routeTSBigIntKeyword(node, walker, parent, key, list, index, routes);
++    case "TSBooleanKeyword": return routeTSBooleanKeyword(node, walker, parent, key, list, index, routes);
++    case "TSCallSignatureDeclaration": return routeTSCallSignatureDeclaration(node, walker, parent, key, list, index, routes);
++    case "TSClassImplements": return routeTSClassImplements(node, walker, parent, key, list, index, routes);
++    case "TSConditionalType": return routeTSConditionalType(node, walker, parent, key, list, index, routes);
++    case "TSConstructSignatureDeclaration": return routeTSConstructSignatureDeclaration(node, walker, parent, key, list, index, routes);
++    case "TSConstructorType": return routeTSConstructorType(node, walker, parent, key, list, index, routes);
++    case "TSDeclareFunction": return routeTSDeclareFunction(node, walker, parent, key, list, index, routes);
++    case "TSEmptyBodyFunctionExpression": return routeTSEmptyBodyFunctionExpression(node, walker, parent, key, list, index, routes);
++    case "TSEnumBody": return routeTSEnumBody(node, walker, parent, key, list, index, routes);
++    case "TSEnumDeclaration": return routeTSEnumDeclaration(node, walker, parent, key, list, index, routes);
++    case "TSEnumMember": return routeTSEnumMember(node, walker, parent, key, list, index, routes);
++    case "TSExportAssignment": return routeTSExportAssignment(node, walker, parent, key, list, index, routes);
++    case "TSExternalModuleReference": return routeTSExternalModuleReference(node, walker, parent, key, list, index, routes);
++    case "TSFunctionType": return routeTSFunctionType(node, walker, parent, key, list, index, routes);
++    case "TSImportEqualsDeclaration": return routeTSImportEqualsDeclaration(node, walker, parent, key, list, index, routes);
++    case "TSImportType": return routeTSImportType(node, walker, parent, key, list, index, routes);
++    case "TSIndexSignature": return routeTSIndexSignature(node, walker, parent, key, list, index, routes);
++    case "TSIndexedAccessType": return routeTSIndexedAccessType(node, walker, parent, key, list, index, routes);
++    case "TSInferType": return routeTSInferType(node, walker, parent, key, list, index, routes);
++    case "TSInstantiationExpression": return routeTSInstantiationExpression(node, walker, parent, key, list, index, routes);
++    case "TSInterfaceBody": return routeTSInterfaceBody(node, walker, parent, key, list, index, routes);
++    case "TSInterfaceDeclaration": return routeTSInterfaceDeclaration(node, walker, parent, key, list, index, routes);
++    case "TSInterfaceHeritage": return routeTSInterfaceHeritage(node, walker, parent, key, list, index, routes);
++    case "TSIntersectionType": return routeTSIntersectionType(node, walker, parent, key, list, index, routes);
++    case "TSIntrinsicKeyword": return routeTSIntrinsicKeyword(node, walker, parent, key, list, index, routes);
++    case "TSJSDocNonNullableType": return routeTSJSDocNonNullableType(node, walker, parent, key, list, index, routes);
++    case "TSJSDocNullableType": return routeTSJSDocNullableType(node, walker, parent, key, list, index, routes);
++    case "TSJSDocUnknownType": return routeTSJSDocUnknownType(node, walker, parent, key, list, index, routes);
++    case "TSLiteralType": return routeTSLiteralType(node, walker, parent, key, list, index, routes);
++    case "TSMappedType": return routeTSMappedType(node, walker, parent, key, list, index, routes);
++    case "TSMethodSignature": return routeTSMethodSignature(node, walker, parent, key, list, index, routes);
++    case "TSModuleBlock": return routeTSModuleBlock(node, walker, parent, key, list, index, routes);
++    case "TSModuleDeclaration": return routeTSModuleDeclaration(node, walker, parent, key, list, index, routes);
++    case "TSNamedTupleMember": return routeTSNamedTupleMember(node, walker, parent, key, list, index, routes);
++    case "TSNamespaceExportDeclaration": return routeTSNamespaceExportDeclaration(node, walker, parent, key, list, index, routes);
++    case "TSNeverKeyword": return routeTSNeverKeyword(node, walker, parent, key, list, index, routes);
++    case "TSNonNullExpression": return routeTSNonNullExpression(node, walker, parent, key, list, index, routes);
++    case "TSNullKeyword": return routeTSNullKeyword(node, walker, parent, key, list, index, routes);
++    case "TSNumberKeyword": return routeTSNumberKeyword(node, walker, parent, key, list, index, routes);
++    case "TSObjectKeyword": return routeTSObjectKeyword(node, walker, parent, key, list, index, routes);
++    case "TSOptionalType": return routeTSOptionalType(node, walker, parent, key, list, index, routes);
++    case "TSParameterProperty": return routeTSParameterProperty(node, walker, parent, key, list, index, routes);
++    case "TSParenthesizedType": return routeTSParenthesizedType(node, walker, parent, key, list, index, routes);
++    case "TSPropertySignature": return routeTSPropertySignature(node, walker, parent, key, list, index, routes);
++    case "TSQualifiedName": return routeTSQualifiedName(node, walker, parent, key, list, index, routes);
++    case "TSRestType": return routeTSRestType(node, walker, parent, key, list, index, routes);
++    case "TSSatisfiesExpression": return routeTSSatisfiesExpression(node, walker, parent, key, list, index, routes);
++    case "TSStringKeyword": return routeTSStringKeyword(node, walker, parent, key, list, index, routes);
++    case "TSSymbolKeyword": return routeTSSymbolKeyword(node, walker, parent, key, list, index, routes);
++    case "TSTemplateLiteralType": return routeTSTemplateLiteralType(node, walker, parent, key, list, index, routes);
++    case "TSThisType": return routeTSThisType(node, walker, parent, key, list, index, routes);
++    case "TSTupleType": return routeTSTupleType(node, walker, parent, key, list, index, routes);
++    case "TSTypeAliasDeclaration": return routeTSTypeAliasDeclaration(node, walker, parent, key, list, index, routes);
++    case "TSTypeAnnotation": return routeTSTypeAnnotation(node, walker, parent, key, list, index, routes);
++    case "TSTypeAssertion": return routeTSTypeAssertion(node, walker, parent, key, list, index, routes);
++    case "TSTypeLiteral": return routeTSTypeLiteral(node, walker, parent, key, list, index, routes);
++    case "TSTypeOperator": return routeTSTypeOperator(node, walker, parent, key, list, index, routes);
++    case "TSTypeParameter": return routeTSTypeParameter(node, walker, parent, key, list, index, routes);
++    case "TSTypeParameterDeclaration": return routeTSTypeParameterDeclaration(node, walker, parent, key, list, index, routes);
++    case "TSTypeParameterInstantiation": return routeTSTypeParameterInstantiation(node, walker, parent, key, list, index, routes);
++    case "TSTypePredicate": return routeTSTypePredicate(node, walker, parent, key, list, index, routes);
++    case "TSTypeQuery": return routeTSTypeQuery(node, walker, parent, key, list, index, routes);
++    case "TSTypeReference": return routeTSTypeReference(node, walker, parent, key, list, index, routes);
++    case "TSUndefinedKeyword": return routeTSUndefinedKeyword(node, walker, parent, key, list, index, routes);
++    case "TSUnionType": return routeTSUnionType(node, walker, parent, key, list, index, routes);
++    case "TSUnknownKeyword": return routeTSUnknownKeyword(node, walker, parent, key, list, index, routes);
++    case "TSVoidKeyword": return routeTSVoidKeyword(node, walker, parent, key, list, index, routes);
++    case "TaggedTemplateExpression": return routeTaggedTemplateExpression(node, walker, parent, key, list, index, routes);
++    case "TemplateElement": return routeTemplateElement(node, walker, parent, key, list, index, routes);
++    case "TemplateLiteral": return routeTemplateLiteral(node, walker, parent, key, list, index, routes);
++    case "ThisExpression": return routeThisExpression(node, walker, parent, key, list, index, routes);
++    case "ThrowStatement": return routeThrowStatement(node, walker, parent, key, list, index, routes);
++    case "TryStatement": return routeTryStatement(node, walker, parent, key, list, index, routes);
++    case "UnaryExpression": return routeUnaryExpression(node, walker, parent, key, list, index, routes);
++    case "UpdateExpression": return routeUpdateExpression(node, walker, parent, key, list, index, routes);
++    case "VariableDeclaration": return routeVariableDeclaration(node, walker, parent, key, list, index, routes);
++    case "VariableDeclarator": return routeVariableDeclarator(node, walker, parent, key, list, index, routes);
++    case "WhileStatement": return routeWhileStatement(node, walker, parent, key, list, index, routes);
++    case "WithStatement": return routeWithStatement(node, walker, parent, key, list, index, routes);
++    case "YieldExpression": return routeYieldExpression(node, walker, parent, key, list, index, routes);
++    default: throw new TypeError(`Unsupported AST node type: ${node.type}`);
++  }
++}
++
++function routeAccessorProperty(node, walker, parent, key, list, index, routes) {
++  const mode = routes[0];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkAccessorProperty(node, walker, parent, key, list, index);
++}
++
++function routeArrayExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[1];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkArrayExpression(node, walker, parent, key, list, index);
++}
++
++function routeArrayPattern(node, walker, parent, key, list, index, routes) {
++  const mode = routes[2];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkArrayPattern(node, walker, parent, key, list, index);
++}
++
++function routeArrowFunctionExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[3];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkArrowFunctionExpression(node, walker, parent, key, list, index);
++}
++
++function routeAssignmentExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[4];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkAssignmentExpression(node, walker, parent, key, list, index);
++}
++
++function routeAssignmentPattern(node, walker, parent, key, list, index, routes) {
++  const mode = routes[5];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkAssignmentPattern(node, walker, parent, key, list, index);
++}
++
++function routeAwaitExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[6];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkAwaitExpression(node, walker, parent, key, list, index);
++}
++
++function routeBinaryExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[7];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkBinaryExpression(node, walker, parent, key, list, index);
++}
++
++function routeBlockStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[8];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkBlockStatement(node, walker, parent, key, list, index);
++}
++
++function routeBreakStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[9];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkBreakStatement(node, walker, parent, key, list, index);
++}
++
++function routeCallExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[10];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkCallExpression(node, walker, parent, key, list, index);
++}
++
++function routeCatchClause(node, walker, parent, key, list, index, routes) {
++  const mode = routes[11];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkCatchClause(node, walker, parent, key, list, index);
++}
++
++function routeChainExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[12];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkChainExpression(node, walker, parent, key, list, index);
++}
++
++function routeClassBody(node, walker, parent, key, list, index, routes) {
++  const mode = routes[13];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkClassBody(node, walker, parent, key, list, index);
++}
++
++function routeClassDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[14];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkClassDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeClassExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[15];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkClassExpression(node, walker, parent, key, list, index);
++}
++
++function routeConditionalExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[16];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkConditionalExpression(node, walker, parent, key, list, index);
++}
++
++function routeContinueStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[17];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkContinueStatement(node, walker, parent, key, list, index);
++}
++
++function routeDebuggerStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[18];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeDecorator(node, walker, parent, key, list, index, routes) {
++  const mode = routes[19];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkDecorator(node, walker, parent, key, list, index);
++}
++
++function routeDoWhileStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[20];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkDoWhileStatement(node, walker, parent, key, list, index);
++}
++
++function routeEmptyStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[21];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeExportAllDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[22];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkExportAllDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeExportDefaultDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[23];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkExportDefaultDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeExportNamedDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[24];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkExportNamedDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeExportSpecifier(node, walker, parent, key, list, index, routes) {
++  const mode = routes[25];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkExportSpecifier(node, walker, parent, key, list, index);
++}
++
++function routeExpressionStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[26];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkExpressionStatement(node, walker, parent, key, list, index);
++}
++
++function routeForInStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[27];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkForInStatement(node, walker, parent, key, list, index);
++}
++
++function routeForOfStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[28];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkForOfStatement(node, walker, parent, key, list, index);
++}
++
++function routeForStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[29];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkForStatement(node, walker, parent, key, list, index);
++}
++
++function routeFunctionDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[30];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkFunctionDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeFunctionExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[31];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkFunctionExpression(node, walker, parent, key, list, index);
++}
++
++function routeHashbang(node, walker, parent, key, list, index, routes) {
++  const mode = routes[32];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeIdentifier(node, walker, parent, key, list, index, routes) {
++  const mode = routes[33];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkIdentifier(node, walker, parent, key, list, index);
++}
++
++function routeIfStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[34];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkIfStatement(node, walker, parent, key, list, index);
++}
++
++function routeImportAttribute(node, walker, parent, key, list, index, routes) {
++  const mode = routes[35];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkImportAttribute(node, walker, parent, key, list, index);
++}
++
++function routeImportDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[36];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkImportDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeImportDefaultSpecifier(node, walker, parent, key, list, index, routes) {
++  const mode = routes[37];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkImportDefaultSpecifier(node, walker, parent, key, list, index);
++}
++
++function routeImportExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[38];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkImportExpression(node, walker, parent, key, list, index);
++}
++
++function routeImportNamespaceSpecifier(node, walker, parent, key, list, index, routes) {
++  const mode = routes[39];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkImportNamespaceSpecifier(node, walker, parent, key, list, index);
++}
++
++function routeImportSpecifier(node, walker, parent, key, list, index, routes) {
++  const mode = routes[40];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkImportSpecifier(node, walker, parent, key, list, index);
++}
++
++function routeJSXAttribute(node, walker, parent, key, list, index, routes) {
++  const mode = routes[41];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkJSXAttribute(node, walker, parent, key, list, index);
++}
++
++function routeJSXClosingElement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[42];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkJSXClosingElement(node, walker, parent, key, list, index);
++}
++
++function routeJSXClosingFragment(node, walker, parent, key, list, index, routes) {
++  const mode = routes[43];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeJSXElement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[44];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkJSXElement(node, walker, parent, key, list, index);
++}
++
++function routeJSXEmptyExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[45];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeJSXExpressionContainer(node, walker, parent, key, list, index, routes) {
++  const mode = routes[46];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkJSXExpressionContainer(node, walker, parent, key, list, index);
++}
++
++function routeJSXFragment(node, walker, parent, key, list, index, routes) {
++  const mode = routes[47];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkJSXFragment(node, walker, parent, key, list, index);
++}
++
++function routeJSXIdentifier(node, walker, parent, key, list, index, routes) {
++  const mode = routes[48];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeJSXMemberExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[49];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkJSXMemberExpression(node, walker, parent, key, list, index);
++}
++
++function routeJSXNamespacedName(node, walker, parent, key, list, index, routes) {
++  const mode = routes[50];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkJSXNamespacedName(node, walker, parent, key, list, index);
++}
++
++function routeJSXOpeningElement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[51];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkJSXOpeningElement(node, walker, parent, key, list, index);
++}
++
++function routeJSXOpeningFragment(node, walker, parent, key, list, index, routes) {
++  const mode = routes[52];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeJSXSpreadAttribute(node, walker, parent, key, list, index, routes) {
++  const mode = routes[53];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkJSXSpreadAttribute(node, walker, parent, key, list, index);
++}
++
++function routeJSXSpreadChild(node, walker, parent, key, list, index, routes) {
++  const mode = routes[54];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkJSXSpreadChild(node, walker, parent, key, list, index);
++}
++
++function routeJSXText(node, walker, parent, key, list, index, routes) {
++  const mode = routes[55];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeLabeledStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[56];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkLabeledStatement(node, walker, parent, key, list, index);
++}
++
++function routeLiteral(node, walker, parent, key, list, index, routes) {
++  const mode = routes[57];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeLogicalExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[58];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkLogicalExpression(node, walker, parent, key, list, index);
++}
++
++function routeMemberExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[59];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkMemberExpression(node, walker, parent, key, list, index);
++}
++
++function routeMetaProperty(node, walker, parent, key, list, index, routes) {
++  const mode = routes[60];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkMetaProperty(node, walker, parent, key, list, index);
++}
++
++function routeMethodDefinition(node, walker, parent, key, list, index, routes) {
++  const mode = routes[61];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkMethodDefinition(node, walker, parent, key, list, index);
++}
++
++function routeNewExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[62];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkNewExpression(node, walker, parent, key, list, index);
++}
++
++function routeObjectExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[63];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkObjectExpression(node, walker, parent, key, list, index);
++}
++
++function routeObjectPattern(node, walker, parent, key, list, index, routes) {
++  const mode = routes[64];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkObjectPattern(node, walker, parent, key, list, index);
++}
++
++function routeParenthesizedExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[65];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkParenthesizedExpression(node, walker, parent, key, list, index);
++}
++
++function routePrivateIdentifier(node, walker, parent, key, list, index, routes) {
++  const mode = routes[66];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeProgram(node, walker, parent, key, list, index, routes) {
++  const mode = routes[67];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkProgram(node, walker, parent, key, list, index);
++}
++
++function routeProperty(node, walker, parent, key, list, index, routes) {
++  const mode = routes[68];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkProperty(node, walker, parent, key, list, index);
++}
++
++function routePropertyDefinition(node, walker, parent, key, list, index, routes) {
++  const mode = routes[69];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkPropertyDefinition(node, walker, parent, key, list, index);
++}
++
++function routeRestElement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[70];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkRestElement(node, walker, parent, key, list, index);
++}
++
++function routeReturnStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[71];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkReturnStatement(node, walker, parent, key, list, index);
++}
++
++function routeSequenceExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[72];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkSequenceExpression(node, walker, parent, key, list, index);
++}
++
++function routeSpreadElement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[73];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkSpreadElement(node, walker, parent, key, list, index);
++}
++
++function routeStaticBlock(node, walker, parent, key, list, index, routes) {
++  const mode = routes[74];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkStaticBlock(node, walker, parent, key, list, index);
++}
++
++function routeSuper(node, walker, parent, key, list, index, routes) {
++  const mode = routes[75];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeSwitchCase(node, walker, parent, key, list, index, routes) {
++  const mode = routes[76];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkSwitchCase(node, walker, parent, key, list, index);
++}
++
++function routeSwitchStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[77];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkSwitchStatement(node, walker, parent, key, list, index);
++}
++
++function routeTSAbstractAccessorProperty(node, walker, parent, key, list, index, routes) {
++  const mode = routes[78];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSAbstractAccessorProperty(node, walker, parent, key, list, index);
++}
++
++function routeTSAbstractMethodDefinition(node, walker, parent, key, list, index, routes) {
++  const mode = routes[79];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSAbstractMethodDefinition(node, walker, parent, key, list, index);
++}
++
++function routeTSAbstractPropertyDefinition(node, walker, parent, key, list, index, routes) {
++  const mode = routes[80];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSAbstractPropertyDefinition(node, walker, parent, key, list, index);
++}
++
++function routeTSAnyKeyword(node, walker, parent, key, list, index, routes) {
++  const mode = routes[81];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTSArrayType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[82];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSArrayType(node, walker, parent, key, list, index);
++}
++
++function routeTSAsExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[83];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSAsExpression(node, walker, parent, key, list, index);
++}
++
++function routeTSBigIntKeyword(node, walker, parent, key, list, index, routes) {
++  const mode = routes[84];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTSBooleanKeyword(node, walker, parent, key, list, index, routes) {
++  const mode = routes[85];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTSCallSignatureDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[86];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSCallSignatureDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeTSClassImplements(node, walker, parent, key, list, index, routes) {
++  const mode = routes[87];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSClassImplements(node, walker, parent, key, list, index);
++}
++
++function routeTSConditionalType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[88];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSConditionalType(node, walker, parent, key, list, index);
++}
++
++function routeTSConstructSignatureDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[89];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSConstructSignatureDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeTSConstructorType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[90];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSConstructorType(node, walker, parent, key, list, index);
++}
++
++function routeTSDeclareFunction(node, walker, parent, key, list, index, routes) {
++  const mode = routes[91];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSDeclareFunction(node, walker, parent, key, list, index);
++}
++
++function routeTSEmptyBodyFunctionExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[92];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSEmptyBodyFunctionExpression(node, walker, parent, key, list, index);
++}
++
++function routeTSEnumBody(node, walker, parent, key, list, index, routes) {
++  const mode = routes[93];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSEnumBody(node, walker, parent, key, list, index);
++}
++
++function routeTSEnumDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[94];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSEnumDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeTSEnumMember(node, walker, parent, key, list, index, routes) {
++  const mode = routes[95];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSEnumMember(node, walker, parent, key, list, index);
++}
++
++function routeTSExportAssignment(node, walker, parent, key, list, index, routes) {
++  const mode = routes[96];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSExportAssignment(node, walker, parent, key, list, index);
++}
++
++function routeTSExternalModuleReference(node, walker, parent, key, list, index, routes) {
++  const mode = routes[97];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSExternalModuleReference(node, walker, parent, key, list, index);
++}
++
++function routeTSFunctionType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[98];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSFunctionType(node, walker, parent, key, list, index);
++}
++
++function routeTSImportEqualsDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[99];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSImportEqualsDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeTSImportType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[100];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSImportType(node, walker, parent, key, list, index);
++}
++
++function routeTSIndexSignature(node, walker, parent, key, list, index, routes) {
++  const mode = routes[101];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSIndexSignature(node, walker, parent, key, list, index);
++}
++
++function routeTSIndexedAccessType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[102];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSIndexedAccessType(node, walker, parent, key, list, index);
++}
++
++function routeTSInferType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[103];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSInferType(node, walker, parent, key, list, index);
++}
++
++function routeTSInstantiationExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[104];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSInstantiationExpression(node, walker, parent, key, list, index);
++}
++
++function routeTSInterfaceBody(node, walker, parent, key, list, index, routes) {
++  const mode = routes[105];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSInterfaceBody(node, walker, parent, key, list, index);
++}
++
++function routeTSInterfaceDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[106];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSInterfaceDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeTSInterfaceHeritage(node, walker, parent, key, list, index, routes) {
++  const mode = routes[107];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSInterfaceHeritage(node, walker, parent, key, list, index);
++}
++
++function routeTSIntersectionType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[108];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSIntersectionType(node, walker, parent, key, list, index);
++}
++
++function routeTSIntrinsicKeyword(node, walker, parent, key, list, index, routes) {
++  const mode = routes[109];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTSJSDocNonNullableType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[110];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSJSDocNonNullableType(node, walker, parent, key, list, index);
++}
++
++function routeTSJSDocNullableType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[111];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSJSDocNullableType(node, walker, parent, key, list, index);
++}
++
++function routeTSJSDocUnknownType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[112];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTSLiteralType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[113];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSLiteralType(node, walker, parent, key, list, index);
++}
++
++function routeTSMappedType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[114];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSMappedType(node, walker, parent, key, list, index);
++}
++
++function routeTSMethodSignature(node, walker, parent, key, list, index, routes) {
++  const mode = routes[115];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSMethodSignature(node, walker, parent, key, list, index);
++}
++
++function routeTSModuleBlock(node, walker, parent, key, list, index, routes) {
++  const mode = routes[116];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSModuleBlock(node, walker, parent, key, list, index);
++}
++
++function routeTSModuleDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[117];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSModuleDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeTSNamedTupleMember(node, walker, parent, key, list, index, routes) {
++  const mode = routes[118];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSNamedTupleMember(node, walker, parent, key, list, index);
++}
++
++function routeTSNamespaceExportDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[119];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSNamespaceExportDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeTSNeverKeyword(node, walker, parent, key, list, index, routes) {
++  const mode = routes[120];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTSNonNullExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[121];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSNonNullExpression(node, walker, parent, key, list, index);
++}
++
++function routeTSNullKeyword(node, walker, parent, key, list, index, routes) {
++  const mode = routes[122];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTSNumberKeyword(node, walker, parent, key, list, index, routes) {
++  const mode = routes[123];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTSObjectKeyword(node, walker, parent, key, list, index, routes) {
++  const mode = routes[124];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTSOptionalType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[125];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSOptionalType(node, walker, parent, key, list, index);
++}
++
++function routeTSParameterProperty(node, walker, parent, key, list, index, routes) {
++  const mode = routes[126];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSParameterProperty(node, walker, parent, key, list, index);
++}
++
++function routeTSParenthesizedType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[127];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSParenthesizedType(node, walker, parent, key, list, index);
++}
++
++function routeTSPropertySignature(node, walker, parent, key, list, index, routes) {
++  const mode = routes[128];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSPropertySignature(node, walker, parent, key, list, index);
++}
++
++function routeTSQualifiedName(node, walker, parent, key, list, index, routes) {
++  const mode = routes[129];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSQualifiedName(node, walker, parent, key, list, index);
++}
++
++function routeTSRestType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[130];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSRestType(node, walker, parent, key, list, index);
++}
++
++function routeTSSatisfiesExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[131];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSSatisfiesExpression(node, walker, parent, key, list, index);
++}
++
++function routeTSStringKeyword(node, walker, parent, key, list, index, routes) {
++  const mode = routes[132];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTSSymbolKeyword(node, walker, parent, key, list, index, routes) {
++  const mode = routes[133];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTSTemplateLiteralType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[134];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSTemplateLiteralType(node, walker, parent, key, list, index);
++}
++
++function routeTSThisType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[135];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTSTupleType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[136];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSTupleType(node, walker, parent, key, list, index);
++}
++
++function routeTSTypeAliasDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[137];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSTypeAliasDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeTSTypeAnnotation(node, walker, parent, key, list, index, routes) {
++  const mode = routes[138];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSTypeAnnotation(node, walker, parent, key, list, index);
++}
++
++function routeTSTypeAssertion(node, walker, parent, key, list, index, routes) {
++  const mode = routes[139];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSTypeAssertion(node, walker, parent, key, list, index);
++}
++
++function routeTSTypeLiteral(node, walker, parent, key, list, index, routes) {
++  const mode = routes[140];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSTypeLiteral(node, walker, parent, key, list, index);
++}
++
++function routeTSTypeOperator(node, walker, parent, key, list, index, routes) {
++  const mode = routes[141];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSTypeOperator(node, walker, parent, key, list, index);
++}
++
++function routeTSTypeParameter(node, walker, parent, key, list, index, routes) {
++  const mode = routes[142];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSTypeParameter(node, walker, parent, key, list, index);
++}
++
++function routeTSTypeParameterDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[143];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSTypeParameterDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeTSTypeParameterInstantiation(node, walker, parent, key, list, index, routes) {
++  const mode = routes[144];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSTypeParameterInstantiation(node, walker, parent, key, list, index);
++}
++
++function routeTSTypePredicate(node, walker, parent, key, list, index, routes) {
++  const mode = routes[145];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSTypePredicate(node, walker, parent, key, list, index);
++}
++
++function routeTSTypeQuery(node, walker, parent, key, list, index, routes) {
++  const mode = routes[146];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSTypeQuery(node, walker, parent, key, list, index);
++}
++
++function routeTSTypeReference(node, walker, parent, key, list, index, routes) {
++  const mode = routes[147];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSTypeReference(node, walker, parent, key, list, index);
++}
++
++function routeTSUndefinedKeyword(node, walker, parent, key, list, index, routes) {
++  const mode = routes[148];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTSUnionType(node, walker, parent, key, list, index, routes) {
++  const mode = routes[149];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTSUnionType(node, walker, parent, key, list, index);
++}
++
++function routeTSUnknownKeyword(node, walker, parent, key, list, index, routes) {
++  const mode = routes[150];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTSVoidKeyword(node, walker, parent, key, list, index, routes) {
++  const mode = routes[151];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTaggedTemplateExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[152];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTaggedTemplateExpression(node, walker, parent, key, list, index);
++}
++
++function routeTemplateElement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[153];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeTemplateLiteral(node, walker, parent, key, list, index, routes) {
++  const mode = routes[154];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTemplateLiteral(node, walker, parent, key, list, index);
++}
++
++function routeThisExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[155];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return index;
++}
++
++function routeThrowStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[156];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkThrowStatement(node, walker, parent, key, list, index);
++}
++
++function routeTryStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[157];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkTryStatement(node, walker, parent, key, list, index);
++}
++
++function routeUnaryExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[158];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkUnaryExpression(node, walker, parent, key, list, index);
++}
++
++function routeUpdateExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[159];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkUpdateExpression(node, walker, parent, key, list, index);
++}
++
++function routeVariableDeclaration(node, walker, parent, key, list, index, routes) {
++  const mode = routes[160];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkVariableDeclaration(node, walker, parent, key, list, index);
++}
++
++function routeVariableDeclarator(node, walker, parent, key, list, index, routes) {
++  const mode = routes[161];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkVariableDeclarator(node, walker, parent, key, list, index);
++}
++
++function routeWhileStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[162];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkWhileStatement(node, walker, parent, key, list, index);
++}
++
++function routeWithStatement(node, walker, parent, key, list, index, routes) {
++  const mode = routes[163];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkWithStatement(node, walker, parent, key, list, index);
++}
++
++function routeYieldExpression(node, walker, parent, key, list, index, routes) {
++  const mode = routes[164];
++  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);
++  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);
++  return walkYieldExpression(node, walker, parent, key, list, index);
++}
+diff --git a/packages/walker/index.js b/packages/walker/index.js
+index d073cb03..0d0c3ca1 100644
+--- a/packages/walker/index.js
++++ b/packages/walker/index.js
+@@ -1,4 +1,4 @@
+-import { childVisitors, nodeWalkers } from "./child-visitors.js";
++import { childVisitors, nodeWalkers, dispatchNode, nodeTypeIds } from "./child-visitors.js";
+ import { visitorKeys } from "./visitor-keys.js";
+ 
+ export { visitorKeys };
+@@ -44,7 +44,7 @@ function assertSync(result) {
+     );
+ }
+ 
+-function compile(hooks) {
++function compile(hooks, editing = true) {
+   if (!hooks || typeof hooks !== "object")
+     throw new TypeError("Expected a hooks object");
+   const entries = Object.entries(hooks);
+@@ -106,14 +106,16 @@ function compile(hooks) {
+       leave: compact(pair.leave),
+     };
+   }
+-  const walkers = Object.create(nodeWalkers);
++  const walkers = editing ? [] : Object.create(nodeWalkers);
++  if (editing) for (const type of Object.keys(nodeWalkers)) walkers.push(0);
+   const types = enter || leave ? Object.keys(nodeWalkers) : [...table.keys()];
+   for (const type of types) {
+     const entry = dispatch[type];
+     const enterHook = entry.enter ?? enter ?? null;
+     const leaveHook = entry.leave ?? leave ?? null;
+     if (enterHook === null && leaveHook === null) continue;
+-    walkers[type] = enterHook === null ? walkLeave : walkEnter;
++    if (editing) walkers[nodeTypeIds[type]] = enterHook === null ? 2 : 1;
++    else walkers[type] = enterHook === null ? walkLeave : walkEnter;
+   }
+   return {
+     dispatch,
+@@ -327,9 +329,8 @@ class WalkContext {
+   }
+ 
+   visit(node, parent, key, list, index) {
+-    const visit = this.#walkers[node.type];
+-    if (visit === undefined || typeof node !== "object") assertNode(node);
+-    return visit === null ? index : visit(node, this, parent, key, list, index);
++    if (typeof node !== "object") assertNode(node);
++    return dispatchNode(node, this, parent, key, list, index, this.#walkers);
+   }
+ 
+   leaveChanged(node, parent, key, list, index) {
+@@ -473,6 +474,6 @@ class ReadVisitor {
+ /** Visit without editing context. Callbacks receive (node, state). */
+ export function visit(root, hooks, state) {
+   assertNode(root);
+-  new ReadVisitor(compile(hooks), state).visit(root);
++  new ReadVisitor(compile(hooks, false), state).visit(root);
+   return root;
+ }
+diff --git a/tasks/ast_tools/src/generator/estree_visitor_keys.rs b/tasks/ast_tools/src/generator/estree_visitor_keys.rs
+index e7241e53..8d806bbb 100644
+--- a/tasks/ast_tools/src/generator/estree_visitor_keys.rs
++++ b/tasks/ast_tools/src/generator/estree_visitor_keys.rs
+@@ -200,6 +200,23 @@ pub fn estree_visitor_keys(schema: &Schema) -> Vec<RawOutput> {
+         }
+         writeln!(children, "  if (node.type !== {name:?}) return walker.leaveChanged(node, parent, key, list, index);\n  return index;\n}}").unwrap();
+     }
++    children.push_str("\nexport const nodeTypeIds = {\n");
++    for (id, name) in keys.keys().enumerate() {
++        writeln!(children, "  {name}: {id},").unwrap();
++    }
++    children.push_str("};\n\nexport function dispatchNode(node, walker, parent, key, list, index, routes) {\n  switch (node.type) {\n");
++    for name in keys.keys() {
++        writeln!(children, "    case {name:?}: return route{name}(node, walker, parent, key, list, index, routes);").unwrap();
++    }
++    children.push_str("    default: throw new TypeError(`Unsupported AST node type: ${node.type}`);\n  }\n}\n");
++    for (id, (name, fields)) in keys.iter().enumerate() {
++        writeln!(children, "\nfunction route{name}(node, walker, parent, key, list, index, routes) {{\n  const mode = routes[{id}];\n  if (mode === 1) return walker.visitHooks(node, parent, key, list, index);\n  if (mode === 2) return walker.visitLeaveHooks(node, parent, key, list, index);").unwrap();
++        if fields.is_empty() {
++            children.push_str("  return index;\n}\n");
++        } else {
++            writeln!(children, "  return walk{name}(node, walker, parent, key, list, index);\n}}").unwrap();
++        }
++    }
+     dts.push_str("};\nexport type NodeType = keyof typeof visitorKeys;\n");
+     vec![
+         RawOutput {

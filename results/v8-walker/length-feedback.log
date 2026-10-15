@@ -1,0 +1,168 @@
+WALKERS_FAST true DISPATCH_FAST true
+{"id":"swc-next","kind":"sparse","ast":"ESTree","warmups":8,"iterations":20,"samplesMs":[0.77962500000001,0.573207999999994,0.38633299999995074,0.40108299999999986,0.30879200000001106,0.32120899999998187,0.3079170000000033,0.30495900000002507,0.31441699999999173,0.2964179999999601,0.32466700000003357,0.35062499999997954,0.3613339999999994,0.38933399999996254,0.29641700000001947,0.272166000000027,0.26458300000007284,0.2588739999999916,0.2503759999999602,0.29337599999996655],"setupMs":[4.072833000000003,2.685459999999992,2.7102929999999787,2.288498999999973,2.301167000000021,2.23783499999999,2.5407079999999667,2.257456999999988,2.2476670000000354,2.2249579999999582,2.638666999999998,2.908999999999992,2.309084000000041,2.3626670000000445,2.3253330000000005,2.2500009999999975,2.5795000000001096,2.187166999999988,2.1904160000000275,2.258168000000012],"edits":240,"outputHash":"0e3e4aad35c567f34c597c776b055414cc075c60bfd47a9d70f62fa242e0e1ea","inputHash":"c053024fba914d4351deaff667f8b3669179613ebd5407f3ec836a5ab441ec57","sharedESTreeHash":"25a34b4e447c794697e02e3f90fa97e12d7f1c6c819492a5a0729f361106165d","sourceBytes":52008,"files":4,"peakRssMiB":217.421875,"observedHeapMiB":76.46072387695312}DebugPrint: 0x10d1b674f351: [Function]
+ - map: 0x052998c81099 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x052998c8c139 <JSFunction (sfi = 0x32b90cc46b79)>
+ - elements: 0x366f1db40cf9 <FixedArray[0]> [HOLEY_ELEMENTS]
+ - function prototype: <no-prototype-slot>
+ - shared_info: 0x09a45c7f0dc1 <SharedFunctionInfo visit>
+ - name: 0x09a45c7ee061 <String[5]: #visit>
+ - builtin: CompileLazy
+ - formal_parameter_count: 6
+ - kind: ConciseMethod
+ - context: 0x10d1b6741e79 <BlockContext[17]>
+ - code: 0x366f1db54341 <Code BUILTIN CompileLazy>
+ - dispatch_handle: 0x2caa00
+ - source code: (node, parent, key, list, index) {
+    if (typeof node !== "object") assertNode(node);
+    return dispatchNode(node, this, parent, key, list, index, this.#walkers);
+  }
+ - properties: 0x366f1db40cf9 <FixedArray[0]>
+ - All own properties (excluding elements): {
+    0x366f1db494c1: [String] in ReadOnlySpace: #length: 0x366f1db518b1 <AccessorInfo name= 0x366f1db494c1 <String[6]: #length>, data= 0x366f1db40011 <undefined>> (const accessor descriptor, attrs: [__C]), location: descriptor
+    0x366f1db41891: [String] in ReadOnlySpace: #name: 0x366f1db51881 <AccessorInfo name= 0x366f1db41891 <String[4]: #name>, data= 0x366f1db40011 <undefined>> (const accessor descriptor, attrs: [__C]), location: descriptor
+ }
+ - feedback vector: feedback metadata is not available in SFI
+0x52998c81099: [Map]
+ - map: 0x052998c80079 <MetaMap (0x052998c80109 <NativeContext[302]>)>
+ - type: JS_FUNCTION_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - callable
+ - back pointer: 0x366f1db40011 <undefined>
+ - prototype_validity cell: 0x366f1db412c9 <Cell value= 1>
+ - instance descriptors (own) #2: 0x052998c81319 <DescriptorArray[2]>
+ - transitions #2: 0x1a40b6217af9 <TransitionArray[7]>
+   Transitions #2:
+     0x366f1db495b1 <Symbol: Symbol.toPrimitive>: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x1a40b6217ab1 <Map[56](HOLEY_ELEMENTS)>
+     0x1d37d55c4f79: [String]: #enabled: (transition to (const accessor descriptor, attrs: [WEC]) @ 0x052998c81409 <AccessorPair>(get: 0x052998c81421 <JSFunction get (sfi = 0x32b90cc6f329)>, set: 0x366f1db40041 <null>)) -> 0x052998c81361 <Map[56](HOLEY_ELEMENTS)>
+ - prototype: 0x052998c8c139 <JSFunction (sfi = 0x32b90cc46b79)>
+ - constructor: 0x052998c811d9 <JSFunction Function (sfi = 0x124d8f94f079)>
+ - dependent code: 0x366f1db40d19 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+DebugPrint: 0x10d1b674f2e1: [Function]
+ - map: 0x052998c81099 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x052998c8c139 <JSFunction (sfi = 0x32b90cc46b79)>
+ - elements: 0x366f1db40cf9 <FixedArray[0]> [HOLEY_ELEMENTS]
+ - function prototype: <no-prototype-slot>
+ - shared_info: 0x09a45c7f0d31 <SharedFunctionInfo visitScalar>
+ - name: 0x09a45c7ee079 <String[11]: #visitScalar>
+ - builtin: CompileLazy
+ - formal_parameter_count: 4
+ - kind: ConciseMethod
+ - context: 0x10d1b6741e79 <BlockContext[17]>
+ - code: 0x366f1db54341 <Code BUILTIN CompileLazy>
+ - dispatch_handle: 0x2ca800
+ - source code: (value, parent, key) {
+    this.#ancestors[this.#depth++] = parent;
+    this.visit(value, parent, key, null, 0);
+    this.#depth--;
+    return this.stopped;
+  }
+ - properties: 0x366f1db40cf9 <FixedArray[0]>
+ - All own properties (excluding elements): {
+    0x366f1db494c1: [String] in ReadOnlySpace: #length: 0x366f1db518b1 <AccessorInfo name= 0x366f1db494c1 <String[6]: #length>, data= 0x366f1db40011 <undefined>> (const accessor descriptor, attrs: [__C]), location: descriptor
+    0x366f1db41891: [String] in ReadOnlySpace: #name: 0x366f1db51881 <AccessorInfo name= 0x366f1db41891 <String[4]: #name>, data= 0x366f1db40011 <undefined>> (const accessor descriptor, attrs: [__C]), location: descriptor
+ }
+ - feedback vector: feedback metadata is not available in SFI
+0x52998c81099: [Map]
+ - map: 0x052998c80079 <MetaMap (0x052998c80109 <NativeContext[302]>)>
+ - type: JS_FUNCTION_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - callable
+ - back pointer: 0x366f1db40011 <undefined>
+ - prototype_validity cell: 0x366f1db412c9 <Cell value= 1>
+ - instance descriptors (own) #2: 0x052998c81319 <DescriptorArray[2]>
+ - transitions #2: 0x1a40b6217af9 <TransitionArray[7]>
+   Transitions #2:
+     0x366f1db495b1 <Symbol: Symbol.toPrimitive>: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x1a40b6217ab1 <Map[56](HOLEY_ELEMENTS)>
+     0x1d37d55c4f79: [String]: #enabled: (transition to (const accessor descriptor, attrs: [WEC]) @ 0x052998c81409 <AccessorPair>(get: 0x052998c81421 <JSFunction get (sfi = 0x32b90cc6f329)>, set: 0x366f1db40041 <null>)) -> 0x052998c81361 <Map[56](HOLEY_ELEMENTS)>
+ - prototype: 0x052998c8c139 <JSFunction (sfi = 0x32b90cc46b79)>
+ - constructor: 0x052998c811d9 <JSFunction Function (sfi = 0x124d8f94f079)>
+ - dependent code: 0x366f1db40d19 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+
+DebugPrint: 0x10d1b674f3f9: [Function]
+ - map: 0x052998c81099 <Map[56](HOLEY_ELEMENTS)> [FastProperties]
+ - prototype: 0x052998c8c139 <JSFunction (sfi = 0x32b90cc46b79)>
+ - elements: 0x366f1db40cf9 <FixedArray[0]> [HOLEY_ELEMENTS]
+ - function prototype: <no-prototype-slot>
+ - shared_info: 0x09a45c7f0e99 <SharedFunctionInfo visitHooks>
+ - name: 0x09a45c7ee099 <String[10]: #visitHooks>
+ - builtin: CompileLazy
+ - formal_parameter_count: 6
+ - kind: ConciseMethod
+ - context: 0x10d1b6741e79 <BlockContext[17]>
+ - code: 0x366f1db54341 <Code BUILTIN CompileLazy>
+ - dispatch_handle: 0x2cad00
+ - source code: (node, parent, key, list, index) {
+    let handlers = this.#dispatch[node.type];
+    const enter = handlers.enter ?? this.#globalEnter;
+    const frame = this.#storage;
+    let type = node.type;
+    let after = 0;
+    let skip = false;
+    if (enter !== null) {
+      this.#prepare(node, parent, key, list, index, 0);
+      this.invoke(enter, frame, "enter");
+      index = frame.index;
+      if (this.stopped || frame.flags & REMOVED) return index;
+      node = frame.node;
+      after = frame.after;
+      skip = frame.flags & SKIP;
+      if (node.type !== type) {
+        type = node.type;
+        handlers = this.#dispatch[type];
+        if (handlers === undefined) assertNode(node);
+      }
+    }
+    if (!skip && handlers.children !== null) {
+      handlers.children(node, this);
+      if (this.stopped) return index;
+    }
+    if (node.type !== type) {
+      handlers = this.#dispatch[node.type];
+      if (handlers === undefined) assertNode(node);
+    }
+    const leave = handlers.leave ?? this.#globalLeave;
+    if (leave !== null) {
+      this.#prepare(node, parent, key, list, index, after);
+      this.invoke(leave, frame, "leave");
+      index = frame.index;
+    }
+    return index;
+  }
+ - properties: 0x366f1db40cf9 <FixedArray[0]>
+ - All own properties (excluding elements): {
+    0x366f1db494c1: [String] in ReadOnlySpace: #length: 0x366f1db518b1 <AccessorInfo name= 0x366f1db494c1 <String[6]: #length>, data= 0x366f1db40011 <undefined>> (const accessor descriptor, attrs: [__C]), location: descriptor
+    0x366f1db41891: [String] in ReadOnlySpace: #name: 0x366f1db51881 <AccessorInfo name= 0x366f1db41891 <String[4]: #name>, data= 0x366f1db40011 <undefined>> (const accessor descriptor, attrs: [__C]), location: descriptor
+ }
+ - feedback vector: feedback metadata is not available in SFI
+0x52998c81099: [Map]
+ - map: 0x052998c80079 <MetaMap (0x052998c80109 <NativeContext[302]>)>
+ - type: JS_FUNCTION_TYPE
+ - instance size: 56
+ - inobject properties: 0
+ - unused property fields: 0
+ - elements kind: HOLEY_ELEMENTS
+ - enum length: invalid
+ - callable
+ - back pointer: 0x366f1db40011 <undefined>
+ - prototype_validity cell: 0x366f1db412c9 <Cell value= 1>
+ - instance descriptors (own) #2: 0x052998c81319 <DescriptorArray[2]>
+ - transitions #2: 0x1a40b6217af9 <TransitionArray[7]>
+   Transitions #2:
+     0x366f1db495b1 <Symbol: Symbol.toPrimitive>: (transition to (const data field, attrs: [WEC]) @ Any) -> 0x1a40b6217ab1 <Map[56](HOLEY_ELEMENTS)>
+     0x1d37d55c4f79: [String]: #enabled: (transition to (const accessor descriptor, attrs: [WEC]) @ 0x052998c81409 <AccessorPair>(get: 0x052998c81421 <JSFunction get (sfi = 0x32b90cc6f329)>, set: 0x366f1db40041 <null>)) -> 0x052998c81361 <Map[56](HOLEY_ELEMENTS)>
+ - prototype: 0x052998c8c139 <JSFunction (sfi = 0x32b90cc46b79)>
+ - constructor: 0x052998c811d9 <JSFunction Function (sfi = 0x124d8f94f079)>
+ - dependent code: 0x366f1db40d19 <Other heap object (WEAK_ARRAY_LIST_TYPE)>
+ - construction counter: 0
+

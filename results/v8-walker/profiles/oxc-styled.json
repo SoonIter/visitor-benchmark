@@ -1,0 +1,214 @@
+{
+  "scenario": "styled-components",
+  "id": "oxc-visitor",
+  "kind": "dense",
+  "node": "v24.20.0",
+  "v8": "13.6.233.17-node.53",
+  "rounds": 160,
+  "totalSampledUs": 93791,
+  "self": [
+    {
+      "functionName": "walkNode",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 5,
+      "samples": 323,
+      "us": 41583
+    },
+    {
+      "functionName": "hash",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/styled-components/workload.mjs",
+      "lineNumber": 2,
+      "samples": 56,
+      "us": 7250
+    },
+    {
+      "functionName": "str",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/styled-components/estree-plugin.mjs",
+      "lineNumber": 23,
+      "samples": 49,
+      "us": 6418
+    },
+    {
+      "functionName": "walkVariableDeclarator",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 1508,
+      "samples": 45,
+      "us": 5706
+    },
+    {
+      "functionName": "(garbage collector)",
+      "url": "",
+      "lineNumber": -1,
+      "samples": 43,
+      "us": 5667
+    },
+    {
+      "functionName": "edit",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/styled-components/estree-plugin.mjs",
+      "lineNumber": 24,
+      "samples": 45,
+      "us": 5582
+    },
+    {
+      "functionName": "walkIdentifier",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 1056,
+      "samples": 38,
+      "us": 5250
+    },
+    {
+      "functionName": "walkConditionalExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 864,
+      "samples": 21,
+      "us": 2459
+    },
+    {
+      "functionName": "styledTag",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/styled-components/estree-plugin.mjs",
+      "lineNumber": 8,
+      "samples": 13,
+      "us": 1792
+    },
+    {
+      "functionName": "walkMemberExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 1186,
+      "samples": 11,
+      "us": 1458
+    },
+    {
+      "functionName": "VariableDeclarator:exit",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/styled-components/plugins/oxc-visitor.mjs",
+      "lineNumber": 4,
+      "samples": 11,
+      "us": 1334
+    },
+    {
+      "functionName": "metadata",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/styled-components/workload.mjs",
+      "lineNumber": 3,
+      "samples": 10,
+      "us": 1292
+    },
+    {
+      "functionName": "walkArrowFunctionExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 685,
+      "samples": 10,
+      "us": 1291
+    },
+    {
+      "functionName": "walkTaggedTemplateExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 1406,
+      "samples": 9,
+      "us": 1166
+    },
+    {
+      "functionName": "walkExportNamedDeclaration",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 941,
+      "samples": 6,
+      "us": 749
+    },
+    {
+      "functionName": "walkProperty",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 1290,
+      "samples": 5,
+      "us": 709
+    },
+    {
+      "functionName": "stateFor",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/styled-components/estree-plugin.mjs",
+      "lineNumber": 2,
+      "samples": 5,
+      "us": 625
+    },
+    {
+      "functionName": "walkLiteral",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 519,
+      "samples": 4,
+      "us": 542
+    },
+    {
+      "functionName": "walkTemplateElement",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 534,
+      "samples": 4,
+      "us": 541
+    },
+    {
+      "functionName": "run",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/styled-components/plugins/oxc-visitor.mjs",
+      "lineNumber": 2,
+      "samples": 3,
+      "us": 500
+    },
+    {
+      "functionName": "walkTemplateLiteral",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 1420,
+      "samples": 3,
+      "us": 375
+    },
+    {
+      "functionName": "Visitor",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/visit/index.js",
+      "lineNumber": 14,
+      "samples": 2,
+      "us": 292
+    },
+    {
+      "functionName": "walkCallExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 777,
+      "samples": 2,
+      "us": 209
+    },
+    {
+      "functionName": "createCompiledVisitor",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/visit/visitor.js",
+      "lineNumber": 89,
+      "samples": 2,
+      "us": 208
+    },
+    {
+      "functionName": "addVisitorToCompiled",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/visit/visitor.js",
+      "lineNumber": 193,
+      "samples": 1,
+      "us": 167
+    },
+    {
+      "functionName": "",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/src/styled-components/estree-plugin.mjs",
+      "lineNumber": 26,
+      "samples": 1,
+      "us": 167
+    },
+    {
+      "functionName": "walkVariableDeclaration",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 1496,
+      "samples": 1,
+      "us": 167
+    },
+    {
+      "functionName": "walkObjectExpression",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/generated/visit/walk.js",
+      "lineNumber": 1240,
+      "samples": 1,
+      "us": 167
+    },
+    {
+      "functionName": "finalizeCompiledVisitor",
+      "url": "file:///Users/bytedance/Documents/codes/visitor-benchmark/node_modules/oxc-parser/src-js/visit/visitor.js",
+      "lineNumber": 284,
+      "samples": 1,
+      "us": 125
+    }
+  ]
+}

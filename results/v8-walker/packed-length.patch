@@ -1,0 +1,1037 @@
+diff --git a/packages/walker/child-visitors.js b/packages/walker/child-visitors.js
+index 96da93cb..b2a5d59d 100644
+--- a/packages/walker/child-visitors.js
++++ b/packages/walker/child-visitors.js
+@@ -2473,3 +2473,934 @@ function walkYieldExpression(node, walker, parent, key, list, index) {
+   if (node.type !== "YieldExpression") return walker.leaveChanged(node, parent, key, list, index);
+   return index;
+ }
++
++export const nodeTypeIds = {
++  AccessorProperty: 0,
++  ArrayExpression: 1,
++  ArrayPattern: 2,
++  ArrowFunctionExpression: 3,
++  AssignmentExpression: 4,
++  AssignmentPattern: 5,
++  AwaitExpression: 6,
++  BinaryExpression: 7,
++  BlockStatement: 8,
++  BreakStatement: 9,
++  CallExpression: 10,
++  CatchClause: 11,
++  ChainExpression: 12,
++  ClassBody: 13,
++  ClassDeclaration: 14,
++  ClassExpression: 15,
++  ConditionalExpression: 16,
++  ContinueStatement: 17,
++  DebuggerStatement: 18,
++  Decorator: 19,
++  DoWhileStatement: 20,
++  EmptyStatement: 21,
++  ExportAllDeclaration: 22,
++  ExportDefaultDeclaration: 23,
++  ExportNamedDeclaration: 24,
++  ExportSpecifier: 25,
++  ExpressionStatement: 26,
++  ForInStatement: 27,
++  ForOfStatement: 28,
++  ForStatement: 29,
++  FunctionDeclaration: 30,
++  FunctionExpression: 31,
++  Hashbang: 32,
++  Identifier: 33,
++  IfStatement: 34,
++  ImportAttribute: 35,
++  ImportDeclaration: 36,
++  ImportDefaultSpecifier: 37,
++  ImportExpression: 38,
++  ImportNamespaceSpecifier: 39,
++  ImportSpecifier: 40,
++  JSXAttribute: 41,
++  JSXClosingElement: 42,
++  JSXClosingFragment: 43,
++  JSXElement: 44,
++  JSXEmptyExpression: 45,
++  JSXExpressionContainer: 46,
++  JSXFragment: 47,
++  JSXIdentifier: 48,
++  JSXMemberExpression: 49,
++  JSXNamespacedName: 50,
++  JSXOpeningElement: 51,
++  JSXOpeningFragment: 52,
++  JSXSpreadAttribute: 53,
++  JSXSpreadChild: 54,
++  JSXText: 55,
++  LabeledStatement: 56,
++  Literal: 57,
++  LogicalExpression: 58,
++  MemberExpression: 59,
++  MetaProperty: 60,
++  MethodDefinition: 61,
++  NewExpression: 62,
++  ObjectExpression: 63,
++  ObjectPattern: 64,
++  ParenthesizedExpression: 65,
++  PrivateIdentifier: 66,
++  Program: 67,
++  Property: 68,
++  PropertyDefinition: 69,
++  RestElement: 70,
++  ReturnStatement: 71,
++  SequenceExpression: 72,
++  SpreadElement: 73,
++  StaticBlock: 74,
++  Super: 75,
++  SwitchCase: 76,
++  SwitchStatement: 77,
++  TSAbstractAccessorProperty: 78,
++  TSAbstractMethodDefinition: 79,
++  TSAbstractPropertyDefinition: 80,
++  TSAnyKeyword: 81,
++  TSArrayType: 82,
++  TSAsExpression: 83,
++  TSBigIntKeyword: 84,
++  TSBooleanKeyword: 85,
++  TSCallSignatureDeclaration: 86,
++  TSClassImplements: 87,
++  TSConditionalType: 88,
++  TSConstructSignatureDeclaration: 89,
++  TSConstructorType: 90,
++  TSDeclareFunction: 91,
++  TSEmptyBodyFunctionExpression: 92,
++  TSEnumBody: 93,
++  TSEnumDeclaration: 94,
++  TSEnumMember: 95,
++  TSExportAssignment: 96,
++  TSExternalModuleReference: 97,
++  TSFunctionType: 98,
++  TSImportEqualsDeclaration: 99,
++  TSImportType: 100,
++  TSIndexSignature: 101,
++  TSIndexedAccessType: 102,
++  TSInferType: 103,
++  TSInstantiationExpression: 104,
++  TSInterfaceBody: 105,
++  TSInterfaceDeclaration: 106,
++  TSInterfaceHeritage: 107,
++  TSIntersectionType: 108,
++  TSIntrinsicKeyword: 109,
++  TSJSDocNonNullableType: 110,
++  TSJSDocNullableType: 111,
++  TSJSDocUnknownType: 112,
++  TSLiteralType: 113,
++  TSMappedType: 114,
++  TSMethodSignature: 115,
++  TSModuleBlock: 116,
++  TSModuleDeclaration: 117,
++  TSNamedTupleMember: 118,
++  TSNamespaceExportDeclaration: 119,
++  TSNeverKeyword: 120,
++  TSNonNullExpression: 121,
++  TSNullKeyword: 122,
++  TSNumberKeyword: 123,
++  TSObjectKeyword: 124,
++  TSOptionalType: 125,
++  TSParameterProperty: 126,
++  TSParenthesizedType: 127,
++  TSPropertySignature: 128,
++  TSQualifiedName: 129,
++  TSRestType: 130,
++  TSSatisfiesExpression: 131,
++  TSStringKeyword: 132,
++  TSSymbolKeyword: 133,
++  TSTemplateLiteralType: 134,
++  TSThisType: 135,
++  TSTupleType: 136,
++  TSTypeAliasDeclaration: 137,
++  TSTypeAnnotation: 138,
++  TSTypeAssertion: 139,
++  TSTypeLiteral: 140,
++  TSTypeOperator: 141,
++  TSTypeParameter: 142,
++  TSTypeParameterDeclaration: 143,
++  TSTypeParameterInstantiation: 144,
++  TSTypePredicate: 145,
++  TSTypeQuery: 146,
++  TSTypeReference: 147,
++  TSUndefinedKeyword: 148,
++  TSUnionType: 149,
++  TSUnknownKeyword: 150,
++  TSVoidKeyword: 151,
++  TaggedTemplateExpression: 152,
++  TemplateElement: 153,
++  TemplateLiteral: 154,
++  ThisExpression: 155,
++  ThrowStatement: 156,
++  TryStatement: 157,
++  UnaryExpression: 158,
++  UpdateExpression: 159,
++  VariableDeclaration: 160,
++  VariableDeclarator: 161,
++  WhileStatement: 162,
++  WithStatement: 163,
++  YieldExpression: 164,
++};
++
++export function dispatchNode(node, walker, parent, key, list, index, walkers) {
++  const type = node.type;
++  switch (typeof type === "string" ? type.length : -1) {
++    case 5:
++      switch (type) {
++        case "Super": {
++          const visit = walkers[75];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 7:
++      switch (type) {
++        case "JSXText": {
++          const visit = walkers[55];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "Literal": {
++          const visit = walkers[57];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "Program": {
++          const visit = walkers[67];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 8:
++      switch (type) {
++        case "Hashbang": {
++          const visit = walkers[32];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "Property": {
++          const visit = walkers[68];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 9:
++      switch (type) {
++        case "ClassBody": {
++          const visit = walkers[13];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "Decorator": {
++          const visit = walkers[19];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 10:
++      switch (type) {
++        case "Identifier": {
++          const visit = walkers[33];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "JSXElement": {
++          const visit = walkers[44];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "SwitchCase": {
++          const visit = walkers[76];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSEnumBody": {
++          const visit = walkers[93];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSRestType": {
++          const visit = walkers[130];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSThisType": {
++          const visit = walkers[135];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 11:
++      switch (type) {
++        case "CatchClause": {
++          const visit = walkers[11];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "IfStatement": {
++          const visit = walkers[34];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "JSXFragment": {
++          const visit = walkers[47];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "RestElement": {
++          const visit = walkers[70];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "StaticBlock": {
++          const visit = walkers[74];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSArrayType": {
++          const visit = walkers[82];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSInferType": {
++          const visit = walkers[103];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSTupleType": {
++          const visit = walkers[136];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSTypeQuery": {
++          const visit = walkers[146];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSUnionType": {
++          const visit = walkers[149];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 12:
++      switch (type) {
++        case "ArrayPattern": {
++          const visit = walkers[2];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ForStatement": {
++          const visit = walkers[29];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "JSXAttribute": {
++          const visit = walkers[41];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "MetaProperty": {
++          const visit = walkers[60];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSAnyKeyword": {
++          const visit = walkers[81];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSEnumMember": {
++          const visit = walkers[95];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSImportType": {
++          const visit = walkers[100];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSMappedType": {
++          const visit = walkers[114];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TryStatement": {
++          const visit = walkers[157];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 13:
++      switch (type) {
++        case "JSXIdentifier": {
++          const visit = walkers[48];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "NewExpression": {
++          const visit = walkers[62];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ObjectPattern": {
++          const visit = walkers[64];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "SpreadElement": {
++          const visit = walkers[73];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSLiteralType": {
++          const visit = walkers[113];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSModuleBlock": {
++          const visit = walkers[116];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSNullKeyword": {
++          const visit = walkers[122];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSTypeLiteral": {
++          const visit = walkers[140];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSVoidKeyword": {
++          const visit = walkers[151];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "WithStatement": {
++          const visit = walkers[163];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 14:
++      switch (type) {
++        case "BlockStatement": {
++          const visit = walkers[8];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "BreakStatement": {
++          const visit = walkers[9];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "CallExpression": {
++          const visit = walkers[10];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "EmptyStatement": {
++          const visit = walkers[21];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ForInStatement": {
++          const visit = walkers[27];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ForOfStatement": {
++          const visit = walkers[28];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "JSXSpreadChild": {
++          const visit = walkers[54];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSAsExpression": {
++          const visit = walkers[83];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSFunctionType": {
++          const visit = walkers[98];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSNeverKeyword": {
++          const visit = walkers[120];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSOptionalType": {
++          const visit = walkers[125];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSTypeOperator": {
++          const visit = walkers[141];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ThisExpression": {
++          const visit = walkers[155];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ThrowStatement": {
++          const visit = walkers[156];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "WhileStatement": {
++          const visit = walkers[162];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 15:
++      switch (type) {
++        case "ArrayExpression": {
++          const visit = walkers[1];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "AwaitExpression": {
++          const visit = walkers[6];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ChainExpression": {
++          const visit = walkers[12];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ClassExpression": {
++          const visit = walkers[15];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ExportSpecifier": {
++          const visit = walkers[25];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ImportAttribute": {
++          const visit = walkers[35];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ImportSpecifier": {
++          const visit = walkers[40];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ReturnStatement": {
++          const visit = walkers[71];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "SwitchStatement": {
++          const visit = walkers[77];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSBigIntKeyword": {
++          const visit = walkers[84];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSInterfaceBody": {
++          const visit = walkers[105];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSNumberKeyword": {
++          const visit = walkers[123];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSObjectKeyword": {
++          const visit = walkers[124];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSQualifiedName": {
++          const visit = walkers[129];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSStringKeyword": {
++          const visit = walkers[132];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSSymbolKeyword": {
++          const visit = walkers[133];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSTypeAssertion": {
++          const visit = walkers[139];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSTypeParameter": {
++          const visit = walkers[142];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSTypePredicate": {
++          const visit = walkers[145];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSTypeReference": {
++          const visit = walkers[147];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TemplateElement": {
++          const visit = walkers[153];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TemplateLiteral": {
++          const visit = walkers[154];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "UnaryExpression": {
++          const visit = walkers[158];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "YieldExpression": {
++          const visit = walkers[164];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 16:
++      switch (type) {
++        case "AccessorProperty": {
++          const visit = walkers[0];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "BinaryExpression": {
++          const visit = walkers[7];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ClassDeclaration": {
++          const visit = walkers[14];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "DoWhileStatement": {
++          const visit = walkers[20];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ImportExpression": {
++          const visit = walkers[38];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "LabeledStatement": {
++          const visit = walkers[56];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "MemberExpression": {
++          const visit = walkers[59];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "MethodDefinition": {
++          const visit = walkers[61];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ObjectExpression": {
++          const visit = walkers[63];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSBooleanKeyword": {
++          const visit = walkers[85];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSIndexSignature": {
++          const visit = walkers[101];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSTypeAnnotation": {
++          const visit = walkers[138];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSUnknownKeyword": {
++          const visit = walkers[150];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "UpdateExpression": {
++          const visit = walkers[159];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 17:
++      switch (type) {
++        case "AssignmentPattern": {
++          const visit = walkers[5];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ContinueStatement": {
++          const visit = walkers[17];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "DebuggerStatement": {
++          const visit = walkers[18];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ImportDeclaration": {
++          const visit = walkers[36];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "JSXClosingElement": {
++          const visit = walkers[42];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "JSXNamespacedName": {
++          const visit = walkers[50];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "JSXOpeningElement": {
++          const visit = walkers[51];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "LogicalExpression": {
++          const visit = walkers[58];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "PrivateIdentifier": {
++          const visit = walkers[66];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSClassImplements": {
++          const visit = walkers[87];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSConditionalType": {
++          const visit = walkers[88];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSConstructorType": {
++          const visit = walkers[90];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSDeclareFunction": {
++          const visit = walkers[91];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSEnumDeclaration": {
++          const visit = walkers[94];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSMethodSignature": {
++          const visit = walkers[115];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 18:
++      switch (type) {
++        case "FunctionExpression": {
++          const visit = walkers[31];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "JSXClosingFragment": {
++          const visit = walkers[43];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "JSXEmptyExpression": {
++          const visit = walkers[45];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "JSXOpeningFragment": {
++          const visit = walkers[52];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "JSXSpreadAttribute": {
++          const visit = walkers[53];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "PropertyDefinition": {
++          const visit = walkers[69];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "SequenceExpression": {
++          const visit = walkers[72];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSExportAssignment": {
++          const visit = walkers[96];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSIntersectionType": {
++          const visit = walkers[108];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSIntrinsicKeyword": {
++          const visit = walkers[109];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSJSDocUnknownType": {
++          const visit = walkers[112];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSNamedTupleMember": {
++          const visit = walkers[118];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSUndefinedKeyword": {
++          const visit = walkers[148];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "VariableDeclarator": {
++          const visit = walkers[161];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 19:
++      switch (type) {
++        case "ExpressionStatement": {
++          const visit = walkers[26];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "FunctionDeclaration": {
++          const visit = walkers[30];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "JSXMemberExpression": {
++          const visit = walkers[49];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSIndexedAccessType": {
++          const visit = walkers[102];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSInterfaceHeritage": {
++          const visit = walkers[107];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSJSDocNullableType": {
++          const visit = walkers[111];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSModuleDeclaration": {
++          const visit = walkers[117];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSNonNullExpression": {
++          const visit = walkers[121];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSParameterProperty": {
++          const visit = walkers[126];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSParenthesizedType": {
++          const visit = walkers[127];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSPropertySignature": {
++          const visit = walkers[128];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "VariableDeclaration": {
++          const visit = walkers[160];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 20:
++      switch (type) {
++        case "AssignmentExpression": {
++          const visit = walkers[4];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ExportAllDeclaration": {
++          const visit = walkers[22];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 21:
++      switch (type) {
++        case "ConditionalExpression": {
++          const visit = walkers[16];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSSatisfiesExpression": {
++          const visit = walkers[131];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSTemplateLiteralType": {
++          const visit = walkers[134];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 22:
++      switch (type) {
++        case "ExportNamedDeclaration": {
++          const visit = walkers[24];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ImportDefaultSpecifier": {
++          const visit = walkers[37];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "JSXExpressionContainer": {
++          const visit = walkers[46];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSInterfaceDeclaration": {
++          const visit = walkers[106];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSJSDocNonNullableType": {
++          const visit = walkers[110];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSTypeAliasDeclaration": {
++          const visit = walkers[137];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 23:
++      switch (type) {
++        case "ArrowFunctionExpression": {
++          const visit = walkers[3];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ParenthesizedExpression": {
++          const visit = walkers[65];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 24:
++      switch (type) {
++        case "ExportDefaultDeclaration": {
++          const visit = walkers[23];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "ImportNamespaceSpecifier": {
++          const visit = walkers[39];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TaggedTemplateExpression": {
++          const visit = walkers[152];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 25:
++      switch (type) {
++        case "TSExternalModuleReference": {
++          const visit = walkers[97];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSImportEqualsDeclaration": {
++          const visit = walkers[99];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSInstantiationExpression": {
++          const visit = walkers[104];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 26:
++      switch (type) {
++        case "TSAbstractAccessorProperty": {
++          const visit = walkers[78];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSAbstractMethodDefinition": {
++          const visit = walkers[79];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSCallSignatureDeclaration": {
++          const visit = walkers[86];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSTypeParameterDeclaration": {
++          const visit = walkers[143];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 28:
++      switch (type) {
++        case "TSAbstractPropertyDefinition": {
++          const visit = walkers[80];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSNamespaceExportDeclaration": {
++          const visit = walkers[119];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++        case "TSTypeParameterInstantiation": {
++          const visit = walkers[144];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 29:
++      switch (type) {
++        case "TSEmptyBodyFunctionExpression": {
++          const visit = walkers[92];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++    case 31:
++      switch (type) {
++        case "TSConstructSignatureDeclaration": {
++          const visit = walkers[89];
++          return visit === null ? index : visit(node, walker, parent, key, list, index);
++        }
++      }
++      break;
++  }
++  throw new TypeError(`Unsupported AST node type: ${type}`);
++}
+diff --git a/packages/walker/index.js b/packages/walker/index.js
+index d073cb03..a05a9075 100644
+--- a/packages/walker/index.js
++++ b/packages/walker/index.js
+@@ -1,4 +1,4 @@
+-import { childVisitors, nodeWalkers } from "./child-visitors.js";
++import { childVisitors, nodeWalkers, dispatchNode, nodeTypeIds } from "./child-visitors.js";
+ import { visitorKeys } from "./visitor-keys.js";
+ 
+ export { visitorKeys };
+@@ -10,6 +10,9 @@ for (const [type, children] of Object.entries(childVisitors)) {
+   baseDispatch[type] = { children, enter: null, leave: null };
+ }
+ 
++const baseWalkers = [];
++for (const type of Object.keys(nodeWalkers)) baseWalkers.push(nodeWalkers[type]);
++
+ const aliases = {
+   Function: [
+     "FunctionDeclaration",
+@@ -44,7 +47,7 @@ function assertSync(result) {
+     );
+ }
+ 
+-function compile(hooks) {
++function compile(hooks, editing = true) {
+   if (!hooks || typeof hooks !== "object")
+     throw new TypeError("Expected a hooks object");
+   const entries = Object.entries(hooks);
+@@ -106,14 +109,14 @@ function compile(hooks) {
+       leave: compact(pair.leave),
+     };
+   }
+-  const walkers = Object.create(nodeWalkers);
++  const walkers = editing ? baseWalkers.slice() : Object.create(nodeWalkers);
+   const types = enter || leave ? Object.keys(nodeWalkers) : [...table.keys()];
+   for (const type of types) {
+     const entry = dispatch[type];
+     const enterHook = entry.enter ?? enter ?? null;
+     const leaveHook = entry.leave ?? leave ?? null;
+     if (enterHook === null && leaveHook === null) continue;
+-    walkers[type] = enterHook === null ? walkLeave : walkEnter;
++    walkers[editing ? nodeTypeIds[type] : type] = enterHook === null ? walkLeave : walkEnter;
+   }
+   return {
+     dispatch,
+@@ -327,9 +330,8 @@ class WalkContext {
+   }
+ 
+   visit(node, parent, key, list, index) {
+-    const visit = this.#walkers[node.type];
+-    if (visit === undefined || typeof node !== "object") assertNode(node);
+-    return visit === null ? index : visit(node, this, parent, key, list, index);
++    if (typeof node !== "object") assertNode(node);
++    return dispatchNode(node, this, parent, key, list, index, this.#walkers);
+   }
+ 
+   leaveChanged(node, parent, key, list, index) {
+@@ -473,6 +475,6 @@ class ReadVisitor {
+ /** Visit without editing context. Callbacks receive (node, state). */
+ export function visit(root, hooks, state) {
+   assertNode(root);
+-  new ReadVisitor(compile(hooks), state).visit(root);
++  new ReadVisitor(compile(hooks, false), state).visit(root);
+   return root;
+ }
+diff --git a/tasks/ast_tools/src/generator/estree_visitor_keys.rs b/tasks/ast_tools/src/generator/estree_visitor_keys.rs
+index e7241e53..3d7c84c5 100644
+--- a/tasks/ast_tools/src/generator/estree_visitor_keys.rs
++++ b/tasks/ast_tools/src/generator/estree_visitor_keys.rs
+@@ -200,6 +200,27 @@ pub fn estree_visitor_keys(schema: &Schema) -> Vec<RawOutput> {
+         }
+         writeln!(children, "  if (node.type !== {name:?}) return walker.leaveChanged(node, parent, key, list, index);\n  return index;\n}}").unwrap();
+     }
++    // Keep a separate property/call feedback site for every node kind. A single
++    // walkers[node.type](...) site becomes megamorphic across the whole AST.
++    children.push_str("\nexport const nodeTypeIds = {\n");
++    for (id, name) in keys.keys().enumerate() {
++        writeln!(children, "  {name}: {id},").unwrap();
++    }
++    children.push_str("};\n");
++    let mut by_length: BTreeMap<usize, Vec<&String>> = BTreeMap::new();
++    for name in keys.keys() {
++        by_length.entry(name.len()).or_default().push(name);
++    }
++    children.push_str("\nexport function dispatchNode(node, walker, parent, key, list, index, walkers) {\n  const type = node.type;\n  switch (typeof type === \"string\" ? type.length : -1) {\n");
++    for (length, names) in by_length {
++        writeln!(children, "    case {length}:\n      switch (type) {{").unwrap();
++        for name in names {
++            let id = keys.keys().position(|key| key == name).unwrap();
++            writeln!(children, "        case {name:?}: {{\n          const visit = walkers[{id}];\n          return visit === null ? index : visit(node, walker, parent, key, list, index);\n        }}").unwrap();
++        }
++        children.push_str("      }\n      break;\n");
++    }
++    children.push_str("  }\n  throw new TypeError(`Unsupported AST node type: ${type}`);\n}\n");
+     dts.push_str("};\nexport type NodeType = keyof typeof visitorKeys;\n");
+     vec![
+         RawOutput {
