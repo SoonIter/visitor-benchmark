@@ -153,6 +153,8 @@ PYTHON=.cache/charts-venv/bin/python npm run report
 
 \`--quick\` writes smoke results separately. Runs use the committed SWC Next snapshot; \`npm run sync:swc\` explicitly refreshes PR #840 via GitHub CLI. Rerun tests and all benchmarks after refreshing. \`i18n:prepare\` resamples the current checkout: check corpus hashes before comparing reruns.
 
+To reproduce a local checkpoint, use \`npm run sync:swc -- --local-repo /path/to/swc-next --ref ${swcSource.commit}\` with a checkout containing that commit. The sync reads committed Git objects, ignoring working-tree edits. The default PR sync may replace a local optimization with an older upstream version.
+
 ## Layout & extension
 
 \`\`\`text

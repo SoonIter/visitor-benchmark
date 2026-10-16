@@ -4,9 +4,11 @@
 
 Normal-JIT wall time is the primary metric.
 
-## Latest SWC Next ranking
+The current vendored walker is the accepted optimization checkpoint **`13cf4d3`** (experiments 6, 18, 22 and 28). It is a committed local snapshot, not a published package release. Later experiments were not accepted. This is the latest retained optimization baseline, not a claim that it is fastest in every scenario.
 
-All charts below were refreshed together with SWC Next **`da1432ed`**. Rank is by median wall time within each shared-ESTree track, including the direct-ast baseline; unsupported implementations and native ASTs are excluded. Close or overlapping results can change order between runs.
+## Historical SWC Next ranking
+
+All charts below were measured with the older SWC Next **`da1432ed`** and do not measure the current vendored checkpoint. Rerun all four scenarios and `npm run report` to refresh them. Rank is by median wall time within each shared-ESTree track, including the direct-ast baseline; unsupported implementations and native ASTs are excluded. Close or overlapping results can change order between runs.
 
 | Track | SWC rank | SWC ms | Oxc Visitor ms | Fastest in this run |
 | :-- | --: | --: | --: | :-- |
@@ -96,7 +98,7 @@ Apple M5 Max · darwin/arm64 · Node v24.20.0. Measured: styled 2026-10-15, debu
 
 Fresh parser output is used for every iteration, without AST cloning. Earlier results through [8143bc9](https://github.com/SoonIter/visitor-benchmark/tree/8143bc994901c2321b31ad271c83bbcb6e5cf4ca) used cloned ASTs in editing and original-source i18n; do not interpret changes from those results as implementation speedups.
 
-The vendored `@swc-next/walker` is pinned to `da1432ed` on `codex/optimize-js-walker`; [source mapping and hashes](vendor/provenance.json) identify the exact runtime. Published results record that same version.
+The vendored `@swc-next/walker` is pinned to local commit `13cf4d3bf6b4274662c59916451608dfb66226c1` on `codex/v8-walker-goal-20261016`; [source mapping and hashes](vendor/provenance.json) identify the exact runtime. Historical results retain their own original source provenance.
 
 ## Run
 
@@ -124,6 +126,8 @@ PYTHON=.cache/charts-venv/bin/python npm run report
 ```
 
 `--quick` writes smoke results separately. Runs use the committed SWC Next snapshot; `npm run sync:swc` explicitly refreshes PR #840 via GitHub CLI. Rerun tests and all benchmarks after refreshing. `i18n:prepare` resamples the current checkout: check corpus hashes before comparing reruns.
+
+To reproduce the current local checkpoint, use `npm run sync:swc -- --local-repo /path/to/swc-next --ref 13cf4d3bf6b4274662c59916451608dfb66226c1` with a checkout containing that commit. The sync reads committed Git objects, ignoring working-tree edits. The default PR sync may replace this local optimization with an older upstream version.
 
 ## Layout & extension
 

@@ -24,9 +24,11 @@ const SKIP = 1;
 const REMOVED = 2;
 const REPLACED = 4;
 const owns = (object, key) => Object.prototype.hasOwnProperty.call(object, key);
+// Every supported type has an entry; the table has no inherited properties.
+const isNodeType = (type) => baseDispatch[type] !== undefined;
 
 function assertNode(node) {
-  if (!node || typeof node !== "object" || !owns(visitorKeys, node.type)) {
+  if (!node || typeof node !== "object" || !isNodeType(node.type)) {
     throw new TypeError(`Unsupported AST node type: ${node?.type}`);
   }
 }
@@ -74,7 +76,7 @@ function compile(hooks) {
         throw new TypeError(`Invalid hook: ${name}`);
       if (name === "enter") enter = value;
       else leave = value;
-    } else if (!owns(aliases, name) && !owns(visitorKeys, name)) {
+    } else if (!owns(aliases, name) && !isNodeType(name)) {
       throw new TypeError(`Unknown AST hook: ${name}`);
     }
   }
@@ -85,7 +87,7 @@ function compile(hooks) {
     }
   }
   for (const [name, value] of entries) {
-    if (value !== undefined && owns(visitorKeys, name)) add(name, value);
+    if (value !== undefined && isNodeType(name)) add(name, value);
   }
   for (const pair of table.values()) {
     if (enter) pair.enter.unshift(enter);
@@ -315,6 +317,20 @@ class WalkContext {
     return this.stopped;
   }
 
+  visitListKnown(value, parent, key, dispatch) {
+    this.#ancestors[this.#depth++] = parent;
+    for (let i = 0; i < value.length; i++) {
+      const child = value[i];
+      if (child != null) {
+        if (typeof child !== "object") assertNode(child);
+        i = dispatch(child, this, parent, key, value, i, this.#walkers);
+      }
+      if (this.stopped) return true;
+    }
+    this.#depth--;
+    return this.stopped;
+  }
+
   visitList(value, parent, key) {
     this.#ancestors[this.#depth++] = parent;
     for (let i = 0; i < value.length; i++) {
@@ -438,6 +454,9 @@ class ReadVisitor {
   visitScalar(node) {
     this.visit(node);
     return false;
+  }
+  visitListKnown(nodes) {
+    return this.visitList(nodes);
   }
   visitList(nodes) {
     for (let i = 0; i < nodes.length; i++) {

@@ -170,7 +170,7 @@ export const childVisitors = {
     const child1 = node.source;
     if (child1 != null && walker.visitScalar(child1, node, "source")) return true;
     const child2 = node.attributes;
-    if (child2 != null && walker.visitList(child2, node, "attributes")) return true;
+    if (child2 != null && walker.visitListKnown(child2, node, "attributes", dispatchImportAttribute)) return true;
     return false;
   },
   ExportDefaultDeclaration(node, walker) {
@@ -182,11 +182,11 @@ export const childVisitors = {
     const child0 = node.declaration;
     if (child0 != null && walker.visitScalar(child0, node, "declaration")) return true;
     const child1 = node.specifiers;
-    if (child1 != null && walker.visitList(child1, node, "specifiers")) return true;
+    if (child1 != null && walker.visitListKnown(child1, node, "specifiers", dispatchExportSpecifier)) return true;
     const child2 = node.source;
     if (child2 != null && walker.visitScalar(child2, node, "source")) return true;
     const child3 = node.attributes;
-    if (child3 != null && walker.visitList(child3, node, "attributes")) return true;
+    if (child3 != null && walker.visitListKnown(child3, node, "attributes", dispatchImportAttribute)) return true;
     return false;
   },
   ExportSpecifier(node, walker) {
@@ -286,7 +286,7 @@ export const childVisitors = {
     const child1 = node.source;
     if (child1 != null && walker.visitScalar(child1, node, "source")) return true;
     const child2 = node.attributes;
-    if (child2 != null && walker.visitList(child2, node, "attributes")) return true;
+    if (child2 != null && walker.visitListKnown(child2, node, "attributes", dispatchImportAttribute)) return true;
     return false;
   },
   ImportDefaultSpecifier(node, walker) {
@@ -517,7 +517,7 @@ export const childVisitors = {
     const child0 = node.discriminant;
     if (child0 != null && walker.visitScalar(child0, node, "discriminant")) return true;
     const child1 = node.cases;
-    if (child1 != null && walker.visitList(child1, node, "cases")) return true;
+    if (child1 != null && walker.visitListKnown(child1, node, "cases", dispatchSwitchCase)) return true;
     return false;
   },
   TSAbstractAccessorProperty(node, walker) {
@@ -639,7 +639,7 @@ export const childVisitors = {
   },
   TSEnumBody(node, walker) {
     const child0 = node.members;
-    if (child0 != null && walker.visitList(child0, node, "members")) return true;
+    if (child0 != null && walker.visitListKnown(child0, node, "members", dispatchTSEnumMember)) return true;
     return false;
   },
   TSEnumDeclaration(node, walker) {
@@ -730,7 +730,7 @@ export const childVisitors = {
     const child1 = node.typeParameters;
     if (child1 != null && walker.visitScalar(child1, node, "typeParameters")) return true;
     const child2 = node.extends;
-    if (child2 != null && walker.visitList(child2, node, "extends")) return true;
+    if (child2 != null && walker.visitListKnown(child2, node, "extends", dispatchTSInterfaceHeritage)) return true;
     const child3 = node.body;
     if (child3 != null && walker.visitScalar(child3, node, "body")) return true;
     return false;
@@ -826,7 +826,7 @@ export const childVisitors = {
   },
   TSParameterProperty(node, walker) {
     const child0 = node.decorators;
-    if (child0 != null && walker.visitList(child0, node, "decorators")) return true;
+    if (child0 != null && walker.visitListKnown(child0, node, "decorators", dispatchDecorator)) return true;
     const child1 = node.parameter;
     if (child1 != null && walker.visitScalar(child1, node, "parameter")) return true;
     return false;
@@ -866,7 +866,7 @@ export const childVisitors = {
   TSSymbolKeyword: null,
   TSTemplateLiteralType(node, walker) {
     const child0 = node.quasis;
-    if (child0 != null && walker.visitList(child0, node, "quasis")) return true;
+    if (child0 != null && walker.visitListKnown(child0, node, "quasis", dispatchTemplateElement)) return true;
     const child1 = node.types;
     if (child1 != null && walker.visitList(child1, node, "types")) return true;
     return false;
@@ -919,7 +919,7 @@ export const childVisitors = {
   },
   TSTypeParameterDeclaration(node, walker) {
     const child0 = node.params;
-    if (child0 != null && walker.visitList(child0, node, "params")) return true;
+    if (child0 != null && walker.visitListKnown(child0, node, "params", dispatchTSTypeParameter)) return true;
     return false;
   },
   TSTypeParameterInstantiation(node, walker) {
@@ -968,7 +968,7 @@ export const childVisitors = {
   TemplateElement: null,
   TemplateLiteral(node, walker) {
     const child0 = node.quasis;
-    if (child0 != null && walker.visitList(child0, node, "quasis")) return true;
+    if (child0 != null && walker.visitListKnown(child0, node, "quasis", dispatchTemplateElement)) return true;
     const child1 = node.expressions;
     if (child1 != null && walker.visitList(child1, node, "expressions")) return true;
     return false;
@@ -1000,7 +1000,7 @@ export const childVisitors = {
   },
   VariableDeclaration(node, walker) {
     const child0 = node.declarations;
-    if (child0 != null && walker.visitList(child0, node, "declarations")) return true;
+    if (child0 != null && walker.visitListKnown(child0, node, "declarations", dispatchVariableDeclarator)) return true;
     return false;
   },
   VariableDeclarator(node, walker) {
@@ -1407,7 +1407,7 @@ function walkExportAllDeclaration(node, walker, parent, key, list, index) {
   const child1 = node.source;
   if (child1 != null && walker.visitScalar(child1, node, "source")) return index;
   const child2 = node.attributes;
-  if (child2 != null && walker.visitList(child2, node, "attributes")) return index;
+  if (child2 != null && walker.visitListKnown(child2, node, "attributes", dispatchImportAttribute)) return index;
   if (node.type !== "ExportAllDeclaration") return walker.leaveChanged(node, parent, key, list, index);
   return index;
 }
@@ -1423,11 +1423,11 @@ function walkExportNamedDeclaration(node, walker, parent, key, list, index) {
   const child0 = node.declaration;
   if (child0 != null && walker.visitScalar(child0, node, "declaration")) return index;
   const child1 = node.specifiers;
-  if (child1 != null && walker.visitList(child1, node, "specifiers")) return index;
+  if (child1 != null && walker.visitListKnown(child1, node, "specifiers", dispatchExportSpecifier)) return index;
   const child2 = node.source;
   if (child2 != null && walker.visitScalar(child2, node, "source")) return index;
   const child3 = node.attributes;
-  if (child3 != null && walker.visitList(child3, node, "attributes")) return index;
+  if (child3 != null && walker.visitListKnown(child3, node, "attributes", dispatchImportAttribute)) return index;
   if (node.type !== "ExportNamedDeclaration") return walker.leaveChanged(node, parent, key, list, index);
   return index;
 }
@@ -1548,7 +1548,7 @@ function walkImportDeclaration(node, walker, parent, key, list, index) {
   const child1 = node.source;
   if (child1 != null && walker.visitScalar(child1, node, "source")) return index;
   const child2 = node.attributes;
-  if (child2 != null && walker.visitList(child2, node, "attributes")) return index;
+  if (child2 != null && walker.visitListKnown(child2, node, "attributes", dispatchImportAttribute)) return index;
   if (node.type !== "ImportDeclaration") return walker.leaveChanged(node, parent, key, list, index);
   return index;
 }
@@ -1837,7 +1837,7 @@ function walkSwitchStatement(node, walker, parent, key, list, index) {
   const child0 = node.discriminant;
   if (child0 != null && walker.visitScalar(child0, node, "discriminant")) return index;
   const child1 = node.cases;
-  if (child1 != null && walker.visitList(child1, node, "cases")) return index;
+  if (child1 != null && walker.visitListKnown(child1, node, "cases", dispatchSwitchCase)) return index;
   if (node.type !== "SwitchStatement") return walker.leaveChanged(node, parent, key, list, index);
   return index;
 }
@@ -1982,7 +1982,7 @@ function walkTSEmptyBodyFunctionExpression(node, walker, parent, key, list, inde
 
 function walkTSEnumBody(node, walker, parent, key, list, index) {
   const child0 = node.members;
-  if (child0 != null && walker.visitList(child0, node, "members")) return index;
+  if (child0 != null && walker.visitListKnown(child0, node, "members", dispatchTSEnumMember)) return index;
   if (node.type !== "TSEnumBody") return walker.leaveChanged(node, parent, key, list, index);
   return index;
 }
@@ -2099,7 +2099,7 @@ function walkTSInterfaceDeclaration(node, walker, parent, key, list, index) {
   const child1 = node.typeParameters;
   if (child1 != null && walker.visitScalar(child1, node, "typeParameters")) return index;
   const child2 = node.extends;
-  if (child2 != null && walker.visitList(child2, node, "extends")) return index;
+  if (child2 != null && walker.visitListKnown(child2, node, "extends", dispatchTSInterfaceHeritage)) return index;
   const child3 = node.body;
   if (child3 != null && walker.visitScalar(child3, node, "body")) return index;
   if (node.type !== "TSInterfaceDeclaration") return walker.leaveChanged(node, parent, key, list, index);
@@ -2217,7 +2217,7 @@ function walkTSOptionalType(node, walker, parent, key, list, index) {
 
 function walkTSParameterProperty(node, walker, parent, key, list, index) {
   const child0 = node.decorators;
-  if (child0 != null && walker.visitList(child0, node, "decorators")) return index;
+  if (child0 != null && walker.visitListKnown(child0, node, "decorators", dispatchDecorator)) return index;
   const child1 = node.parameter;
   if (child1 != null && walker.visitScalar(child1, node, "parameter")) return index;
   if (node.type !== "TSParameterProperty") return walker.leaveChanged(node, parent, key, list, index);
@@ -2267,7 +2267,7 @@ function walkTSSatisfiesExpression(node, walker, parent, key, list, index) {
 
 function walkTSTemplateLiteralType(node, walker, parent, key, list, index) {
   const child0 = node.quasis;
-  if (child0 != null && walker.visitList(child0, node, "quasis")) return index;
+  if (child0 != null && walker.visitListKnown(child0, node, "quasis", dispatchTemplateElement)) return index;
   const child1 = node.types;
   if (child1 != null && walker.visitList(child1, node, "types")) return index;
   if (node.type !== "TSTemplateLiteralType") return walker.leaveChanged(node, parent, key, list, index);
@@ -2335,7 +2335,7 @@ function walkTSTypeParameter(node, walker, parent, key, list, index) {
 
 function walkTSTypeParameterDeclaration(node, walker, parent, key, list, index) {
   const child0 = node.params;
-  if (child0 != null && walker.visitList(child0, node, "params")) return index;
+  if (child0 != null && walker.visitListKnown(child0, node, "params", dispatchTSTypeParameter)) return index;
   if (node.type !== "TSTypeParameterDeclaration") return walker.leaveChanged(node, parent, key, list, index);
   return index;
 }
@@ -2394,7 +2394,7 @@ function walkTaggedTemplateExpression(node, walker, parent, key, list, index) {
 
 function walkTemplateLiteral(node, walker, parent, key, list, index) {
   const child0 = node.quasis;
-  if (child0 != null && walker.visitList(child0, node, "quasis")) return index;
+  if (child0 != null && walker.visitListKnown(child0, node, "quasis", dispatchTemplateElement)) return index;
   const child1 = node.expressions;
   if (child1 != null && walker.visitList(child1, node, "expressions")) return index;
   if (node.type !== "TemplateLiteral") return walker.leaveChanged(node, parent, key, list, index);
@@ -2435,7 +2435,7 @@ function walkUpdateExpression(node, walker, parent, key, list, index) {
 
 function walkVariableDeclaration(node, walker, parent, key, list, index) {
   const child0 = node.declarations;
-  if (child0 != null && walker.visitList(child0, node, "declarations")) return index;
+  if (child0 != null && walker.visitListKnown(child0, node, "declarations", dispatchVariableDeclarator)) return index;
   if (node.type !== "VariableDeclaration") return walker.leaveChanged(node, parent, key, list, index);
   return index;
 }
@@ -2473,6 +2473,123 @@ function walkYieldExpression(node, walker, parent, key, list, index) {
   if (node.type !== "YieldExpression") return walker.leaveChanged(node, parent, key, list, index);
   return index;
 }
+
+const dispatchDecorator = function(node, walker, parent, key, list, index, walkers) {
+  const type = node.type;
+  if (type !== "Decorator") {
+    if (typeof type !== "string") throw new TypeError(`Unsupported AST node type: ${type}`);
+    const fallback = walkers[type];
+    if (fallback === undefined) throw new TypeError(`Unsupported AST node type: ${type}`);
+    return fallback === null ? index : fallback(node, walker, parent, key, list, index);
+  }
+  const visit = walkers.Decorator;
+  return visit === null ? index : visit(node, walker, parent, key, list, index);
+};
+
+
+const dispatchExportSpecifier = function(node, walker, parent, key, list, index, walkers) {
+  const type = node.type;
+  if (type !== "ExportSpecifier") {
+    if (typeof type !== "string") throw new TypeError(`Unsupported AST node type: ${type}`);
+    const fallback = walkers[type];
+    if (fallback === undefined) throw new TypeError(`Unsupported AST node type: ${type}`);
+    return fallback === null ? index : fallback(node, walker, parent, key, list, index);
+  }
+  const visit = walkers.ExportSpecifier;
+  return visit === null ? index : visit(node, walker, parent, key, list, index);
+};
+
+
+const dispatchImportAttribute = function(node, walker, parent, key, list, index, walkers) {
+  const type = node.type;
+  if (type !== "ImportAttribute") {
+    if (typeof type !== "string") throw new TypeError(`Unsupported AST node type: ${type}`);
+    const fallback = walkers[type];
+    if (fallback === undefined) throw new TypeError(`Unsupported AST node type: ${type}`);
+    return fallback === null ? index : fallback(node, walker, parent, key, list, index);
+  }
+  const visit = walkers.ImportAttribute;
+  return visit === null ? index : visit(node, walker, parent, key, list, index);
+};
+
+
+const dispatchSwitchCase = function(node, walker, parent, key, list, index, walkers) {
+  const type = node.type;
+  if (type !== "SwitchCase") {
+    if (typeof type !== "string") throw new TypeError(`Unsupported AST node type: ${type}`);
+    const fallback = walkers[type];
+    if (fallback === undefined) throw new TypeError(`Unsupported AST node type: ${type}`);
+    return fallback === null ? index : fallback(node, walker, parent, key, list, index);
+  }
+  const visit = walkers.SwitchCase;
+  return visit === null ? index : visit(node, walker, parent, key, list, index);
+};
+
+
+const dispatchTSEnumMember = function(node, walker, parent, key, list, index, walkers) {
+  const type = node.type;
+  if (type !== "TSEnumMember") {
+    if (typeof type !== "string") throw new TypeError(`Unsupported AST node type: ${type}`);
+    const fallback = walkers[type];
+    if (fallback === undefined) throw new TypeError(`Unsupported AST node type: ${type}`);
+    return fallback === null ? index : fallback(node, walker, parent, key, list, index);
+  }
+  const visit = walkers.TSEnumMember;
+  return visit === null ? index : visit(node, walker, parent, key, list, index);
+};
+
+
+const dispatchTSInterfaceHeritage = function(node, walker, parent, key, list, index, walkers) {
+  const type = node.type;
+  if (type !== "TSInterfaceHeritage") {
+    if (typeof type !== "string") throw new TypeError(`Unsupported AST node type: ${type}`);
+    const fallback = walkers[type];
+    if (fallback === undefined) throw new TypeError(`Unsupported AST node type: ${type}`);
+    return fallback === null ? index : fallback(node, walker, parent, key, list, index);
+  }
+  const visit = walkers.TSInterfaceHeritage;
+  return visit === null ? index : visit(node, walker, parent, key, list, index);
+};
+
+
+const dispatchTSTypeParameter = function(node, walker, parent, key, list, index, walkers) {
+  const type = node.type;
+  if (type !== "TSTypeParameter") {
+    if (typeof type !== "string") throw new TypeError(`Unsupported AST node type: ${type}`);
+    const fallback = walkers[type];
+    if (fallback === undefined) throw new TypeError(`Unsupported AST node type: ${type}`);
+    return fallback === null ? index : fallback(node, walker, parent, key, list, index);
+  }
+  const visit = walkers.TSTypeParameter;
+  return visit === null ? index : visit(node, walker, parent, key, list, index);
+};
+
+
+const dispatchTemplateElement = function(node, walker, parent, key, list, index, walkers) {
+  const type = node.type;
+  if (type !== "TemplateElement") {
+    if (typeof type !== "string") throw new TypeError(`Unsupported AST node type: ${type}`);
+    const fallback = walkers[type];
+    if (fallback === undefined) throw new TypeError(`Unsupported AST node type: ${type}`);
+    return fallback === null ? index : fallback(node, walker, parent, key, list, index);
+  }
+  const visit = walkers.TemplateElement;
+  return visit === null ? index : visit(node, walker, parent, key, list, index);
+};
+
+
+const dispatchVariableDeclarator = function(node, walker, parent, key, list, index, walkers) {
+  const type = node.type;
+  if (type !== "VariableDeclarator") {
+    if (typeof type !== "string") throw new TypeError(`Unsupported AST node type: ${type}`);
+    const fallback = walkers[type];
+    if (fallback === undefined) throw new TypeError(`Unsupported AST node type: ${type}`);
+    return fallback === null ? index : fallback(node, walker, parent, key, list, index);
+  }
+  const visit = walkers.VariableDeclarator;
+  return visit === null ? index : visit(node, walker, parent, key, list, index);
+};
+
 
 export function dispatchNode(node, walker, parent, key, list, index, walkers) {
   const type = node.type;
@@ -2746,103 +2863,159 @@ export function dispatchNode(node, walker, parent, key, list, index, walkers) {
       }
       break;
     case 15:
-      switch (type) {
-        case "ArrayExpression": {
-          const visit = walkers.ArrayExpression;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "AwaitExpression": {
-          const visit = walkers.AwaitExpression;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "ChainExpression": {
-          const visit = walkers.ChainExpression;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "ClassExpression": {
-          const visit = walkers.ClassExpression;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "ExportSpecifier": {
-          const visit = walkers.ExportSpecifier;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "ImportAttribute": {
-          const visit = walkers.ImportAttribute;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "ImportSpecifier": {
-          const visit = walkers.ImportSpecifier;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "ReturnStatement": {
-          const visit = walkers.ReturnStatement;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "SwitchStatement": {
-          const visit = walkers.SwitchStatement;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "TSBigIntKeyword": {
-          const visit = walkers.TSBigIntKeyword;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "TSInterfaceBody": {
-          const visit = walkers.TSInterfaceBody;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "TSNumberKeyword": {
-          const visit = walkers.TSNumberKeyword;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "TSObjectKeyword": {
-          const visit = walkers.TSObjectKeyword;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "TSQualifiedName": {
-          const visit = walkers.TSQualifiedName;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "TSStringKeyword": {
-          const visit = walkers.TSStringKeyword;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "TSSymbolKeyword": {
-          const visit = walkers.TSSymbolKeyword;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "TSTypeAssertion": {
-          const visit = walkers.TSTypeAssertion;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "TSTypeParameter": {
-          const visit = walkers.TSTypeParameter;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "TSTypePredicate": {
-          const visit = walkers.TSTypePredicate;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "TSTypeReference": {
-          const visit = walkers.TSTypeReference;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "TemplateElement": {
-          const visit = walkers.TemplateElement;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "TemplateLiteral": {
-          const visit = walkers.TemplateLiteral;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "UnaryExpression": {
-          const visit = walkers.UnaryExpression;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
-        case "YieldExpression": {
-          const visit = walkers.YieldExpression;
-          return visit === null ? index : visit(node, walker, parent, key, list, index);
-        }
+      switch (type.charCodeAt(2)) {
+        case 66:
+          switch (type) {
+            case "TSBigIntKeyword": {
+              const visit = walkers.TSBigIntKeyword;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+          }
+          break;
+        case 73:
+          switch (type) {
+            case "TSInterfaceBody": {
+              const visit = walkers.TSInterfaceBody;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+          }
+          break;
+        case 78:
+          switch (type) {
+            case "TSNumberKeyword": {
+              const visit = walkers.TSNumberKeyword;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+          }
+          break;
+        case 79:
+          switch (type) {
+            case "TSObjectKeyword": {
+              const visit = walkers.TSObjectKeyword;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+          }
+          break;
+        case 81:
+          switch (type) {
+            case "TSQualifiedName": {
+              const visit = walkers.TSQualifiedName;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+          }
+          break;
+        case 83:
+          switch (type) {
+            case "TSStringKeyword": {
+              const visit = walkers.TSStringKeyword;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+            case "TSSymbolKeyword": {
+              const visit = walkers.TSSymbolKeyword;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+          }
+          break;
+        case 84:
+          switch (type) {
+            case "TSTypeAssertion": {
+              const visit = walkers.TSTypeAssertion;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+            case "TSTypeParameter": {
+              const visit = walkers.TSTypeParameter;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+            case "TSTypePredicate": {
+              const visit = walkers.TSTypePredicate;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+            case "TSTypeReference": {
+              const visit = walkers.TSTypeReference;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+          }
+          break;
+        case 97:
+          switch (type) {
+            case "AwaitExpression": {
+              const visit = walkers.AwaitExpression;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+            case "ChainExpression": {
+              const visit = walkers.ChainExpression;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+            case "ClassExpression": {
+              const visit = walkers.ClassExpression;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+            case "UnaryExpression": {
+              const visit = walkers.UnaryExpression;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+          }
+          break;
+        case 101:
+          switch (type) {
+            case "YieldExpression": {
+              const visit = walkers.YieldExpression;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+          }
+          break;
+        case 105:
+          switch (type) {
+            case "SwitchStatement": {
+              const visit = walkers.SwitchStatement;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+          }
+          break;
+        case 109:
+          switch (type) {
+            case "TemplateElement": {
+              const visit = walkers.TemplateElement;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+            case "TemplateLiteral": {
+              const visit = walkers.TemplateLiteral;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+          }
+          break;
+        case 112:
+          switch (type) {
+            case "ExportSpecifier": {
+              const visit = walkers.ExportSpecifier;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+            case "ImportAttribute": {
+              const visit = walkers.ImportAttribute;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+            case "ImportSpecifier": {
+              const visit = walkers.ImportSpecifier;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+          }
+          break;
+        case 114:
+          switch (type) {
+            case "ArrayExpression": {
+              const visit = walkers.ArrayExpression;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+          }
+          break;
+        case 116:
+          switch (type) {
+            case "ReturnStatement": {
+              const visit = walkers.ReturnStatement;
+              return visit === null ? index : visit(node, walker, parent, key, list, index);
+            }
+          }
+          break;
       }
       break;
     case 16:
